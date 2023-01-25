@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>First</name>
+   <name>Website launch</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>ff19c5cf-d1f3-4d05-9edb-969ced479454</testCaseGuid>
+   <testCaseGuid>0cb88d71-d392-4dc6-b921-c8313a223e43</testCaseGuid>
 </TestCaseEntity>
