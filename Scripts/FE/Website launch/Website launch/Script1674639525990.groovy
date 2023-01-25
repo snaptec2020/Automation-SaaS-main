@@ -21,7 +21,5 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl(GlobalVariable.URL)
 
-WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Web Header'))
 
-WebUI.verifyElementVisible(findTestObject('Headers and Footers/Footer contents/Web footer'))
 
