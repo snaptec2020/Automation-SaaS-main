@@ -22,9 +22,9 @@ WebUI.callTestCase(findTestCase('FE/Website launch/Website launch'), [:], Failur
 
 WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Web Header'))
 
-WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Logo')) //Verify the logo is existing
+WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Logo')) //Verify the logo is exists
 
-WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Login'))
+WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Login')) //Verify the login is exists
 
 WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Fav'))
 
