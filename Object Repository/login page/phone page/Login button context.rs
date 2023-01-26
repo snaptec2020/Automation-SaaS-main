@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>password field</name>
+   <name>Login button context</name>
    <tag></tag>
-   <elementGuidId>3dc31fab-3b90-4fbc-891c-aedab4d0d8be</elementGuidId>
+   <elementGuidId>eb6f82b8-c09b-447e-b5ef-d7ca6909c598</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@name='password']</value>
+         <value>//button[contains(text(),'تسجيل الدخول') or contains(text(),'Sign In')]</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

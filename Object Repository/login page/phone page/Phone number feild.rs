@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Login button context</name>
+   <name>Phone number feild</name>
    <tag></tag>
-   <elementGuidId>eb6f82b8-c09b-447e-b5ef-d7ca6909c598</elementGuidId>
+   <elementGuidId>b7387380-d40f-4567-8c92-89632cd68873</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//button[contains(text(),'تسجيل الدخول')]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[@class='input-phone form-block-element styles_inputPhone__qgQ_i ']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

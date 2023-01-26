@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Phone number feild</name>
+   <name>email field</name>
    <tag></tag>
-   <elementGuidId>b7387380-d40f-4567-8c92-89632cd68873</elementGuidId>
+   <elementGuidId>743e34c1-9351-4dcb-9e4d-13c264eaf42c</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@class='input-phone form-block-element styles_inputPhone__qgQ_i ']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//input[@name='email']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

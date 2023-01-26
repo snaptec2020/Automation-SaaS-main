@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Forget password context</name>
+   <name>Select e-mail Way</name>
    <tag></tag>
-   <elementGuidId>0c72c9df-0f8b-4b26-addf-911932614b47</elementGuidId>
+   <elementGuidId>00d67e2c-e87b-48d1-8f49-bac06e75139c</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//a[contains(text(),'هل نسيت كلمة المرور؟')]</value>
+         <value>//div[@class='styles_tabId__xBeUL styles_tabActive___e_Hb']</value>
       </entry>
       <entry>
          <key>BASIC</key>

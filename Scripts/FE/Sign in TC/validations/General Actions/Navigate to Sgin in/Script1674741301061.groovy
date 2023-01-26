@@ -17,15 +17,5 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('FE/Sign in TC/verifications/veifiry Login page components'), [:], FailureHandling.STOP_ON_FAILURE)
-
-WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate sign in By email'), [:], FailureHandling.STOP_ON_FAILURE)
-
-WebUI.verifyElementVisible(findTestObject('login page/email page/email field'))
-
-WebUI.verifyElementVisible(findTestObject('login page/email page/password field'))
-
-WebUI.verifyElementVisible(findTestObject('login page/email page/Forget password context'))
-
-WebUI.verifyElementVisible(findTestObject('login page/email page/login in Button Email page'))
+WebUI.click(findTestObject('login page/My account'))
 
