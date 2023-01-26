@@ -20,17 +20,48 @@ import org.openqa.selenium.Keys as Keys
 //We want to add all check after Launch here like Header, footer and header contents (signin, favorit, logo)
 WebUI.callTestCase(findTestCase('FE/Website launch/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Web Header'))
+'Verfy header visible'
+if(WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Web Header'), FailureHandling.CONTINUE_ON_FAILURE)) {
+	'Verify the tob bar visible'
+	WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Top bar'), FailureHandling.CONTINUE_ON_FAILURE)
+	
+	'Verify Language bar visible'
+	WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Language'), FailureHandling.CONTINUE_ON_FAILURE)
+	
+	'Verfy Logo visible'
+	WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Logo'), FailureHandling.CONTINUE_ON_FAILURE)
+	
+	'Verfy login part visible'
+	WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Login'), FailureHandling.CONTINUE_ON_FAILURE)
+	
+	'Verfy wish list part visible'
+	WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Fav'), FailureHandling.CONTINUE_ON_FAILURE)
+	
+	'Verfy search bar visible'
+	WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Search'), FailureHandling.CONTINUE_ON_FAILURE)
+	
+	'Verify Cart visible'
+	WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Cart'), FailureHandling.CONTINUE_ON_FAILURE)
+}
 
-WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Logo')) //Verify the logo is exists
+'Verify mega menu visible'
+WebUI.verifyElementVisible(findTestObject('Mega Menu/Mega menu'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Login')) //Verify the login is exists
+'Verify footer block visible'
+if(WebUI.verifyElementVisible(findTestObject('Headers and Footers/Footer contents/Web footer'), FailureHandling.CONTINUE_ON_FAILURE)) {
+	'Verify subscribe block visible'
+	for(int j=1;j<=3;j++) {
+	if(!WebUI.verifyElementVisible(findTestObject('Subscribe/Subscribe block'), FailureHandling.CONTINUE_ON_FAILURE)) {
+		for(int i; i<=5;i++) {
+		WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0,FailureHandling.CONTINUE_ON_FAILURE)
+		}
+	}else {
+		WebUI.verifyElementVisible(findTestObject('Subscribe/Subscribe block'), FailureHandling.CONTINUE_ON_FAILURE)
+		break;
+	}
+	}
+}
 
-WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Fav'))
 
-WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Search'))
 
-WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Cart'))
-
-WebUI.verifyElementVisible(findTestObject('Headers and Footers/Footer contents/Web footer'))
 
