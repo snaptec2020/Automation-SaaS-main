@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Search by search button</name>
+   <name>Filter results</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>e02a2514-892c-4c8c-b18d-013cc3db020b</testCaseGuid>
+   <testCaseGuid>dbbb0e0d-cde4-4b74-8047-867e758ca60f</testCaseGuid>
 </TestCaseEntity>

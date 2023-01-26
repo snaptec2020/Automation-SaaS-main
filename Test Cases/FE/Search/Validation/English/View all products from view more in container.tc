@@ -4,30 +4,30 @@
    <name>View all products from view more in container</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>cdb0f784-02ab-4383-b069-2f8e56d6ca22</testCaseGuid>
+   <testCaseGuid>e6561474-5491-41f9-bbd4-f641a2860392</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>d1474846-1cd1-45d2-b2af-b8e014ff4179</variableId>
+      <variableId>4b73ac11-28c2-4334-aa65-44c24ccd3c46</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>a8eb7f16-e16b-42a0-9a16-ddea1b946b22</variableId>
+      <variableId>6321b7d0-3034-4795-a649-ae72e21d5d8a</variableId>
    </variableLinks>
    <variable>
       <defaultValue>'Wrong'</defaultValue>
       <description></description>
-      <id>d1474846-1cd1-45d2-b2af-b8e014ff4179</id>
+      <id>4b73ac11-28c2-4334-aa65-44c24ccd3c46</id>
       <masked>false</masked>
       <name>InvalidProduct</name>
    </variable>
    <variable>
       <defaultValue>'Test'</defaultValue>
       <description></description>
-      <id>a8eb7f16-e16b-42a0-9a16-ddea1b946b22</id>
+      <id>6321b7d0-3034-4795-a649-ae72e21d5d8a</id>
       <masked>false</masked>
       <name>validProduct</name>
    </variable>

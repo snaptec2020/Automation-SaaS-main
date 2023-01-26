@@ -14,6 +14,26 @@ public class GlobalVariable {
      */
     public static Object URL
      
+    /**
+     * <p></p>
+     */
+    public static Object Running_mode
+     
+    /**
+     * <p></p>
+     */
+    public static Object URL_AR
+     
+    /**
+     * <p></p>
+     */
+    public static Object URL_EN
+     
+    /**
+     * <p></p>
+     */
+    public static Object store
+     
 
     static {
         try {
@@ -22,6 +42,10 @@ public class GlobalVariable {
             selectedVariables += TestCaseMain.getParsedValues(RunConfiguration.getOverridingParameters())
     
             URL = selectedVariables['URL']
+            Running_mode = selectedVariables['Running_mode']
+            URL_AR = selectedVariables['URL_AR']
+            URL_EN = selectedVariables['URL_EN']
+            store = selectedVariables['store']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)

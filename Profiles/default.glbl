@@ -9,4 +9,9 @@
       <initValue>'https://release-tonez.snaptec.co/'</initValue>
       <name>URL</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'ar'</initValue>
+      <name>Running_mode</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

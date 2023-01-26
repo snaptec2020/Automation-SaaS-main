@@ -4,30 +4,30 @@
    <name>View one product</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>f9a00865-d93c-4f8c-975c-41fa63fa8d5d</testCaseGuid>
+   <testCaseGuid>13b82f03-66ca-4d28-a592-e10d70e4cb8e</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>708d2db2-d454-45b4-bdde-39210cb55781</variableId>
+      <variableId>6c23f01e-62bc-4da2-b9bf-512962ff1290</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>a92a1cb8-0bee-4e96-9ebe-6adc5ae195ef</variableId>
+      <variableId>8b99f506-34c6-4766-be47-58579d8b9cba</variableId>
    </variableLinks>
    <variable>
       <defaultValue>'Test'</defaultValue>
       <description></description>
-      <id>708d2db2-d454-45b4-bdde-39210cb55781</id>
+      <id>6c23f01e-62bc-4da2-b9bf-512962ff1290</id>
       <masked>false</masked>
       <name>validProduct</name>
    </variable>
    <variable>
       <defaultValue>'invalid'</defaultValue>
       <description></description>
-      <id>a92a1cb8-0bee-4e96-9ebe-6adc5ae195ef</id>
+      <id>8b99f506-34c6-4766-be47-58579d8b9cba</id>
       <masked>false</masked>
       <name>InvalidProduct</name>
    </variable>

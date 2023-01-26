@@ -17,24 +17,18 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('FE/Website launch/Verifications after launch'), [:], FailureHandling.STOP_ON_FAILURE)
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search'))
 
 
 
 
-WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), InvalidProduct )
-if (WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found in Arabic')
-)
-)
-
+WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Arabic/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
 WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), validProduct )
 	
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'));
+WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'),FailureHandling.STOP_ON_FAILURE);
 
-WebUI.click(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'), FailureHandling.STOP_ON_FAILURE);
+WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/View more button'),FailureHandling.STOP_ON_FAILURE);
+
+WebUI.click(findTestObject('Object Repository/Search contents/Search box/View more button'), FailureHandling.STOP_ON_FAILURE);
 	
