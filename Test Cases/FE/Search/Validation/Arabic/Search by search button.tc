@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Search non-existing product</name>
+   <name>Search by search button</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>b348cb0e-e37b-4c4a-82fc-870eb20816fc</testCaseGuid>
+   <testCaseGuid>421d8dbf-6df4-4d78-b75c-a8ddfb90dd9e</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>373ca897-084c-49d6-86c7-ba89c9535b28</variableId>
+      <variableId>c9fa203d-7dab-4db7-9cdd-7685e3b00d24</variableId>
    </variableLinks>
    <variable>
-      <defaultValue>'Wrong'</defaultValue>
+      <defaultValue>'Test '</defaultValue>
       <description></description>
-      <id>373ca897-084c-49d6-86c7-ba89c9535b28</id>
+      <id>c9fa203d-7dab-4db7-9cdd-7685e3b00d24</id>
       <masked>false</masked>
-      <name>InvalidProduct</name>
+      <name>Product</name>
    </variable>
 </TestCaseEntity>

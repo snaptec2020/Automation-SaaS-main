@@ -11,12 +11,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'a.aldon@snaptec.co'</initValue>
-      <name>Vaild_email</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>'aaa@aaaa.com'</initValue>
-      <name>Wrong_email</name>
+      <initValue>'ar'</initValue>
+      <name>Running_mode</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

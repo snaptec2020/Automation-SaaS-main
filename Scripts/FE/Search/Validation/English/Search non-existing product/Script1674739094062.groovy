@@ -17,17 +17,12 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+
 WebUI.callTestCase(findTestCase('FE/Website launch/Verifications after launch'), [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search'))
 
-WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), 'Test ')
+WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), InvalidProduct)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'),FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'));
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search button'));
-
-WebUI.click(findTestObject('Object Repository/Search contents/Search button'), FailureHandling.STOP_ON_FAILURE);
-
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search page/Filter button'));
