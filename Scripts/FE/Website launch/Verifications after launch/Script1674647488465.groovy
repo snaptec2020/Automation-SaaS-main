@@ -17,3 +17,20 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+//We want to add all check after Launch here like Header, footer and header contents (signin, favorit, logo)
+WebUI.callTestCase(findTestCase('FE/Website launch/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Web Header'))
+
+WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Logo')) //Verify the logo is exists
+
+WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Login')) //Verify the login is exists
+
+WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Fav'))
+
+WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Search'))
+
+WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Cart'))
+
+WebUI.verifyElementVisible(findTestObject('Headers and Footers/Footer contents/Web footer'))
+
