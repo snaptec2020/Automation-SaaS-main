@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Verifications after launch</name>
+   <name>Veifiry login by Email components</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>cf4aaf5c-26ce-4950-992b-eee285863116</testCaseGuid>
+   <testCaseGuid>2f2dbd28-7fbb-49d7-a2ce-4fb950d854c2</testCaseGuid>
 </TestCaseEntity>
