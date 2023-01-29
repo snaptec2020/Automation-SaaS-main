@@ -17,15 +17,24 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('FE/Sign in TC/verifications/veifiry Login page components'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('FE/Website launch/Verifications after launch'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate sign in By email'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search'))
 
-WebUI.verifyElementVisible(findTestObject('login page/email page/email field'))
 
-WebUI.verifyElementVisible(findTestObject('login page/email page/password field'))
 
-WebUI.verifyElementVisible(findTestObject('login page/email page/Forget password context'))
 
-WebUI.verifyElementVisible(findTestObject('login page/email page/login in Button Email page'))
+WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), InvalidProduct )
+if (WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found')
+)
+)
 
+
+
+WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), validProduct )
+	
+WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'));
+
+WebUI.click(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'), FailureHandling.STOP_ON_FAILURE);
+	

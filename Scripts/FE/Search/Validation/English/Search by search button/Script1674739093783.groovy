@@ -17,15 +17,16 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('FE/Sign in TC/verifications/veifiry Login page components'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('FE/Website launch/Verifications after launch'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate sign in By email'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search'))
 
-WebUI.verifyElementVisible(findTestObject('login page/email page/email field'))
+WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), 'Test ')
 
-WebUI.verifyElementVisible(findTestObject('login page/email page/password field'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'),FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('login page/email page/Forget password context'))
 
-WebUI.verifyElementVisible(findTestObject('login page/email page/login in Button Email page'))
+WebUI.click(findTestObject('Object Repository/Search contents/Search button'), FailureHandling.STOP_ON_FAILURE);
 
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search page/Filter button'));

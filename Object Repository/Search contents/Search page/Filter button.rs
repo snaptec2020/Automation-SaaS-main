@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Phone number feild</name>
+   <name>Filter button</name>
    <tag></tag>
-   <elementGuidId>b7387380-d40f-4567-8c92-89632cd68873</elementGuidId>
+   <elementGuidId>0bd9533e-1061-4d1c-a5cb-51f94bcd746d</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='input-phone form-block-element styles_inputPhone__qgQ_i ']</value>
+         <value>//button[@class=&quot;styles_filterButton__mx02R &quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>

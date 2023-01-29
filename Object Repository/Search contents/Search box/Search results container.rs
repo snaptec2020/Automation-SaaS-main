@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
-   <description></description>
-   <name>Login button context</name>
+   <description>The container thar contain the results after tyype text</description>
+   <name>Search results container</name>
    <tag></tag>
-   <elementGuidId>eb6f82b8-c09b-447e-b5ef-d7ca6909c598</elementGuidId>
+   <elementGuidId>baae699f-df0d-4129-b1d5-07b41838d290</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//button[contains(text(),'تسجيل الدخول')]</value>
+         <value>//div[@class=&quot;auto-complete__container auto-complete__container--show-message-and-suggestions&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>

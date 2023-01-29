@@ -17,15 +17,21 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('FE/Sign in TC/verifications/veifiry Login page components'), [:], FailureHandling.STOP_ON_FAILURE)
+//WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate to Sgin in'), [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate sign in By email'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('login page/email page/email field'))
+//WebUI.click(findTestObject('login page/email page/email field'))
 
-WebUI.verifyElementVisible(findTestObject('login page/email page/password field'))
+WebUI.setText(findTestObject('login page/email page/email field'), GlobalVariable.Vaild_email)
 
-WebUI.verifyElementVisible(findTestObject('login page/email page/Forget password context'))
+//WebUI.click(findTestObject('login page/email page/password field'), FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('login page/email page/login in Button Email page'))
+WebUI.setEncryptedText(findTestObject('login page/email page/password field'), 'kdI8ZSiJDoc7QAd5zRkYUQ==')
+
+WebUI.click(findTestObject('login page/email page/login in Button Email page'))
+
+WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'))
 

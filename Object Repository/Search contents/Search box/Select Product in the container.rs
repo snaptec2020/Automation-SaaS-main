@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>password field</name>
+   <name>Select Product in the container</name>
    <tag></tag>
-   <elementGuidId>3dc31fab-3b90-4fbc-891c-aedab4d0d8be</elementGuidId>
+   <elementGuidId>2081d3ad-d8b5-4cc8-847f-30397fda14fe</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@name='password']</value>
+         <value>//a[@class=&quot;suggested-product__container&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>

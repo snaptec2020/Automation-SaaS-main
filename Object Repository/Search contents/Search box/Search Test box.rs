@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
-   <description></description>
-   <name>login by phone</name>
+   <description>the box that we write inside it to search</description>
+   <name>Search Test box</name>
    <tag></tag>
-   <elementGuidId>d9dd04b9-f220-4428-99ab-3963fdb22310</elementGuidId>
+   <elementGuidId>6f49ef4e-b5ee-4092-9e4f-20a71f5a4c41</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='styles_tabId__xBeUL styles_tabActive___e_Hb']</value>
+         <value>//input[@placeholder=&quot;عما تبحث ؟&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>
