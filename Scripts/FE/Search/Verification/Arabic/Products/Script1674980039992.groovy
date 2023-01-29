@@ -19,10 +19,44 @@ import org.openqa.selenium.Keys as Keys
 
 
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Arabic/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search'))
+WebUI.delay(10)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search button'));
+WebUI.scrollToPosition(9999999, 9999999)
 
+
+
+//WebUI.scrollToElement(findTestObject('Object Repository/Subscribe/Subscribe block'), 10)
+
+WebUI.waitForElementPresent(findTestObject('Object Repository/Products/List of products'), 10)
+WebUI.delay(10)
+
+WebUI.scrollToPosition(9999999, 9999999)
+WebUI.scrollToElement(findTestObject('Object Repository/Products/Products action block'), 10)
+WebUI.waitForElementPresent(findTestObject('Object Repository/Products/Products action block'), 10)
+
+WebUI.waitForElementClickable(findTestObject('Object Repository/Products/Products action block'), 10)
+
+
+List products = WebUI.findWebElements(findTestObject('Object Repository/Products/List of products'),30)
+
+//for (int i = 0; i < products.size(); i++) {
+//if (products.size() > 0) {
+//WebUI.click((products[0]))
+//}
+//}
+
+
+sleep(1000)
+
+WebUI.waitForElementClickable(findTestObject('Object Repository/Products/List of products'), 10)
+
+
+int size = products.size()
+if (size > 0) {
+	for (int i = 0; i < size; i++) {
+	products.get(i).sendKeys(Keys.ENTER);
+	}
+	}
