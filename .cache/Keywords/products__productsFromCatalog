@@ -1,12 +1,13 @@
 {
-  "keywordFileContentHash": "919FE094FD33029DB891F565380C4919",
+  "keywordFileContentHash": "C97364EE2CC831AC32D318CB1D111C49",
   "keywordClasses": [
     {
       "name": "products.productsFromCatalog",
       "keywordMethods": [
         {
           "name": "getProducts",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "getSpecifiedProduct",
@@ -37,10 +38,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }
