@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button_English</name>
+   <tag></tag>
+   <elementGuidId>12e3f057-590f-4b7c-a008-4edf13ac328f</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@class='dropdown-menu show']//button[contains(@class,'dropdown-item drop-item')][normalize-space()='English']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>e871eafb-4698-4886-a509-ca6927c338b9</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>dropdown-item drop-item </value>
+      <webElementGuid>b3cf5404-20d3-4704-838f-f47e86071b3f</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>English</value>
+      <webElementGuid>58844dab-d9f3-4834-89b7-8df1a740fe89</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;__next&quot;)/div[@class=&quot;styles_headerContainer__SUhQl&quot;]/div[@class=&quot;header&quot;]/div[@class=&quot;topbar&quot;]/div[@class=&quot;topbar-content&quot;]/div[@class=&quot;desktop-content&quot;]/div[@class=&quot;right-content&quot;]/div[@class=&quot;language-container&quot;]/div[@class=&quot;dropdown language-trigger show&quot;]/div[@class=&quot;dropdown-menu show&quot;]/button[@class=&quot;dropdown-item drop-item&quot;]</value>
+      <webElementGuid>5315ac97-1f1d-4873-944e-ba69ac4f5b6b</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='__next']/div[4]/div/div/div/div/div/div[2]/div/div[2]/button[2]</value>
+      <webElementGuid>e338a552-e750-40f8-88d2-da47bf44d56a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Arabic'])[4]/following::button[1]</value>
+      <webElementGuid>e8786706-2443-4d2a-8755-d31c9da01fad</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Arabic'])[3]/following::button[2]</value>
+      <webElementGuid>7d8b904d-ad65-442e-820a-44cc32319f77</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='بحث'])[1]/preceding::button[1]</value>
+      <webElementGuid>9ab315c5-03ae-4ff0-89ce-2b1b5041b261</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div/div/div/div/div[2]/div/div[2]/button[2]</value>
+      <webElementGuid>2336e753-0911-474a-ad3f-3d075b9f6d66</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[(text() = 'English' or . = 'English')]</value>
+      <webElementGuid>69912866-961d-4383-8f8b-9c5fdc4cd6dc</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

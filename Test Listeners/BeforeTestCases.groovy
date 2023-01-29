@@ -29,6 +29,14 @@ class BeforeTestCases {
 	 */
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
+
 		WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
+		
+/*		def languageMode = GlobalVariable.languageMode;
+		if(languageMode=='ar') {
+			GlobalVariable.URL=GlobalVariable.URL+"ar"
+		} else {
+			GlobalVariable.URL=GlobalVariable.URL+"en"
+		}*/
 	}
 }
