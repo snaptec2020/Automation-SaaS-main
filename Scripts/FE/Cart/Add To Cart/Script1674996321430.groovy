@@ -29,7 +29,11 @@ if(WebUI.verifyElementPresent(findTestObject('Object Repository/Products/SKU sta
 		WebUI.click(findTestObject('Object Repository/Products/Add To Cart'))
 		
 	} 
-	else {	println '*** ELSE after exception ***'}
+	else {	println '*** ELSE after exception ***'
+		
+		
+		WebUI.closeBrowser();
+	}
 
 
 //WebUI.click(findTestObject('Object Repository/Products/Add To Cart'))
