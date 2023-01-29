@@ -22,13 +22,14 @@ WebUI.callTestCase(findTestCase('Test Cases/FE/Products/Products list for Random
 //if (WebUI.verifyTextPresent("متوفرة", true))
 //if (WebUI.verifyElementPresent('Object Repository/Products/SKU status', 0) )
 //&& WebUI.verifyTextPresent("متوفرة", true))
-if(WebUI.verifyElementPresent(findTestObject('Object Repository/Products/SKU status'),5, FailureHandling.STOP_ON_FAILURE))
+if(WebUI.verifyElementPresent(findTestObject('Object Repository/Products/SKU status'),5, FailureHandling.CONTINUE_ON_FAILURE))
 	{	println '*** Added To Cart ***'
 		
 		
 		WebUI.click(findTestObject('Object Repository/Products/Add To Cart'))
 		
 	} 
+	
 	else {	println '*** ELSE after exception ***'
 		
 		
