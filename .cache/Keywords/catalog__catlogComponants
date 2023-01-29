@@ -1,0 +1,48 @@
+{
+  "keywordFileContentHash": "BFC92AB4AFC241B859448A76F960DB50",
+  "keywordClasses": [
+    {
+      "name": "catalog.catlogComponants",
+      "keywordMethods": [
+        {
+          "name": "getCategoryElements",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "getSpecifiedCatalogElement",
+          "parameters": [
+            {
+              "name": "elementIndex",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "catalogList",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.util.List",
+                "unresolvedClassName": "List",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}
