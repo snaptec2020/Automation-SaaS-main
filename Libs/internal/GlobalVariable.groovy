@@ -24,6 +24,26 @@ public class GlobalVariable {
      */
     public static Object Wrong_email
      
+    /**
+     * <p></p>
+     */
+    public static Object store
+     
+    /**
+     * <p></p>
+     */
+    public static Object languageMode
+     
+    /**
+     * <p></p>
+     */
+    public static Object URL_AR
+     
+    /**
+     * <p></p>
+     */
+    public static Object URL_EN
+     
 
     static {
         try {
@@ -34,6 +54,10 @@ public class GlobalVariable {
             URL = selectedVariables['URL']
             Vaild_email = selectedVariables['Vaild_email']
             Wrong_email = selectedVariables['Wrong_email']
+            store = selectedVariables['store']
+            languageMode = selectedVariables['languageMode']
+            URL_AR = selectedVariables['URL_AR']
+            URL_EN = selectedVariables['URL_EN']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)
