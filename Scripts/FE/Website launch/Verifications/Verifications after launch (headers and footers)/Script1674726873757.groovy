@@ -18,7 +18,7 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 //We want to add all check after Launch here like Header, footer and header contents (signin, favorit, logo)
-WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
+//WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 
 'Verfy header visible'
 if(WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Web Header'), FailureHandling.CONTINUE_ON_FAILURE)) {
