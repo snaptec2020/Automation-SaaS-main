@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSuiteEntity>
+   <description></description>
+   <name>Fail sign up</name>
+   <tag></tag>
+   <isRerun>false</isRerun>
+   <mailRecipient></mailRecipient>
+   <numberOfRerun>0</numberOfRerun>
+   <pageLoadTimeout>30</pageLoadTimeout>
+   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <rerunImmediately>false</rerunImmediately>
+   <testSuiteGuid>e8d14c4f-850a-4495-8a4a-52c82e6e16e1</testSuiteGuid>
+   <testCaseLink>
+      <guid>e01b2f98-95e4-4bee-a784-ccd5a65fee19</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Sign up TC/Validations/Sgin up By email/SignUp by Email</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>553bfe42-eb7b-44d0-9d87-f5f8a30c22a1</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/Signup TD</testDataId>
+      </testDataLink>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId>553bfe42-eb7b-44d0-9d87-f5f8a30c22a1</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>firstName</value>
+         <variableId>ae961791-9f6e-4c30-b0ea-96dc7c037605</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>553bfe42-eb7b-44d0-9d87-f5f8a30c22a1</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>lastName</value>
+         <variableId>726d604e-660f-44d1-bc10-67cf56c0ca1b</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>553bfe42-eb7b-44d0-9d87-f5f8a30c22a1</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Email</value>
+         <variableId>2c4ab827-bc38-4452-b2a5-ad73dbccfc16</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>553bfe42-eb7b-44d0-9d87-f5f8a30c22a1</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Password</value>
+         <variableId>69dcaf1a-1027-4492-a841-8264d3124f00</variableId>
+      </variableLink>
+   </testCaseLink>
+</TestSuiteEntity>
