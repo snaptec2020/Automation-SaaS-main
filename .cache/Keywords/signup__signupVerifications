@@ -1,0 +1,35 @@
+{
+  "keywordFileContentHash": "12667FD1B1433B0F56D805CE8B1B5054",
+  "keywordClasses": [
+    {
+      "name": "signup.signupVerifications",
+      "keywordMethods": [
+        {
+          "name": "verificationMessage",
+          "parameters": [
+            {
+              "name": "expectedMessage",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "verificationElement",
+          "parameters": [],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Select e-mail Way</name>
+   <name>Password feild</name>
    <tag></tag>
-   <elementGuidId>00d67e2c-e87b-48d1-8f49-bac06e75139c</elementGuidId>
+   <elementGuidId>1ee3609f-1806-4e78-9cb4-eda15c941ce8</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='styles_tabId__xBeUL styles_tabActive___e_Hb']
-</value>
+         <value>//input[@name='password']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

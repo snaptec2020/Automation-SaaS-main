@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Select e-mail Way</name>
+   <name>Services and Privacy Policy Check box</name>
    <tag></tag>
-   <elementGuidId>00d67e2c-e87b-48d1-8f49-bac06e75139c</elementGuidId>
+   <elementGuidId>53907aab-3ce2-40b9-8df2-0be1fd3265fc</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='styles_tabId__xBeUL styles_tabActive___e_Hb']
-</value>
+         <value>//input[@type='checkbox']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
