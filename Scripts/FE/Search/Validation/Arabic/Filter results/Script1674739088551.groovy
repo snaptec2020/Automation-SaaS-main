@@ -14,8 +14,15 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
+import internal.GlobalVariable
+
+import org.openqa.selenium.By
+import org.openqa.selenium.Keys
+import org.openqa.selenium.remote.server.handler.FindElement
+import org.openqa.selenium.remote.server.handler.FindElements
+
+import java.util.List
+
 
 WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Arabic/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
 
@@ -43,4 +50,34 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Sea
 //WebUI.click(findTestObject('Object Repository/Search contents/Search page/Price Range button'), FailureHandling.STOP_ON_FAILURE)
 
 WebUI.dragAndDropByOffset(findTestObject('Object Repository/Search contents/Search page/Sider button to change price'), 0, 40)
+
+
+WebUI.delay(10)
+
+
+WebUI.waitForElementPresent(findTestObject('Object Repository/Products/List of products'), 10)
+
+
+List products = WebUI.findWebElements(findTestObject('Object Repository/Products/List of products'),30)
+
+//for (int i = 0; i < products.size(); i++) {
+//if (products.size() > 0) {
+//WebUI.click((products[0]))
+//}
+//}
+
+int size = products.size()
+
+if (size > 0) {
+for (int i = 0; i < size; i++) {
+products.get(i).click()
+}
+}
+
+//List<WebElement> elements =FindElements(By.className("styles_productItem__YY5Bs"))
+	
+//ByClassName("styles_productItem__YY5Bs"));
+////div[@class="styles_productItem__YY5Bs"]
+
+
 
