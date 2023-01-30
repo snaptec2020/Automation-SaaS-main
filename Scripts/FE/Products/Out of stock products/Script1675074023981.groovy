@@ -17,15 +17,24 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Products/Products list for Random Category'), [:], FailureHandling.STOP_ON_FAILURE)
+Random randomNumberforCatalog = new Random()
+
+Random randomNumberforProduct = new Random()
+
+List Categories = CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
+
+	   int elementIndex= Math.abs((randomNumberforCatalog.nextInt(Categories.size() - 1)))
+
+CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex
+	, Categories)
+
+//-------->
+//WebUI.delay(3)
+
+List OutOfStockProducts = CustomKeywords.'products.productsFromCatalog.getOutOfStockProduct'()
+
+int elementIndexProduct = Math.abs((randomNumberforProduct.nextInt(OutOfStockProducts.size() - 1)))
 
 
-/*if(WebUI.verifyElementPresent(findTestObject('Object Repository/Products/In stock products'),5, FailureHandling.CONTINUE_ON_FAILURE))
-	{	println '*** Added To Cart ***'*/
-		
-		WebUI.callTestCase(findTestCase('Test Cases/FE/Products/Out of stock products'), [:], FailureHandling.STOP_ON_FAILURE)
-		
-	//	WebUI.sendKeys(findTestObject('Object Repository/Products/Sold out button'),Enter )
-		
-		
-		//WebUI.closeBrowser();
+CustomKeywords.'products.productsFromCatalog.getSpecifiedOutOfStockProduct'(elementIndexProduct, OutOfStockProducts)
+
