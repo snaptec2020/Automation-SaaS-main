@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>verify if the add to cart button is disabled when we tried to add product  which is out of stock to cart.</description>
+   <name>Add out of stock products to cart</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>63d59177-6bc5-4222-bf65-8cc2182198c8</testCaseGuid>
+</TestCaseEntity>
