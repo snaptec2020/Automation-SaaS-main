@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Forget password context</name>
+   <name>Password feild</name>
    <tag></tag>
-   <elementGuidId>0c72c9df-0f8b-4b26-addf-911932614b47</elementGuidId>
+   <elementGuidId>1ee3609f-1806-4e78-9cb4-eda15c941ce8</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//input[@name='password']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//a[contains(text(),'هل نسيت كلمة المرور؟') or normalize-space()='Forgot your password?']</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

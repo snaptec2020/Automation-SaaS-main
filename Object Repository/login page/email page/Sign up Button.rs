@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Forget password context</name>
+   <name>Sign up Button</name>
    <tag></tag>
-   <elementGuidId>0c72c9df-0f8b-4b26-addf-911932614b47</elementGuidId>
+   <elementGuidId>351016d7-e7bf-42b1-a816-30c3a0678d0d</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//button[contains(text(),'إنشاء حساب') or normalize-space()='Create an account']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//a[contains(text(),'هل نسيت كلمة المرور؟') or normalize-space()='Forgot your password?']</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

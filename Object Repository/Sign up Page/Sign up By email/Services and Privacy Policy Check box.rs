@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Forget password context</name>
+   <name>Services and Privacy Policy Check box</name>
    <tag></tag>
-   <elementGuidId>0c72c9df-0f8b-4b26-addf-911932614b47</elementGuidId>
+   <elementGuidId>53907aab-3ce2-40b9-8df2-0be1fd3265fc</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//input[@type='checkbox']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//a[contains(text(),'هل نسيت كلمة المرور؟') or normalize-space()='Forgot your password?']</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

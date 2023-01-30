@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Select e-mail Way</name>
+   <name>Sign up Context</name>
    <tag></tag>
-   <elementGuidId>00d67e2c-e87b-48d1-8f49-bac06e75139c</elementGuidId>
+   <elementGuidId>4b4bf6d7-39e9-4e32-b3a8-9fd5c492eec7</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='styles_tabId__xBeUL styles_tabActive___e_Hb']
+         <value>//h3[contains(text(),'إنشاء حساب له فوائد عديدة: الشراء بشكل أسرع ، حفظ ') or ('Creating an account has many benefits: check out faster, keep more than one address, track orders and more.')]
 </value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
