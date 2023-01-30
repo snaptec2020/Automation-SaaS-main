@@ -20,19 +20,20 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('Test Cases/FE/Products/Products list for Random Category'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
-if(WebUI.verifyElementPresent(findTestObject('Object Repository/Products/SKU status'),5, FailureHandling.CONTINUE_ON_FAILURE))
-	{	println '*** Added To Cart ***'
+/*if(WebUI.verifyElementPresent(findTestObject('Object Repository/Products/In stock products'),5, FailureHandling.CONTINUE_ON_FAILURE))
+	{	println '*** Added To Cart ***'*/
 		
+		WebUI.callTestCase(findTestCase('Test Cases/FE/Products/in Stock products'), [:], FailureHandling.STOP_ON_FAILURE)
 		
-		WebUI.click(findTestObject('Object Repository/Products/Add To Cart'))
+		WebUI.closeBrowser();
 		
-	}
+	/*}
 	
 	else {	println '*** ELSE after exception ***'
 		
 		
 		WebUI.closeBrowser();
-	}
+	}*/
 
 
 

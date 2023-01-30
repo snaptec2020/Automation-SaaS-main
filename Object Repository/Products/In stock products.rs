@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
-   <description>in stock or out of stock</description>
-   <name>SKU status</name>
+   <description>to get the products with status in stock ( avalable)</description>
+   <name>In stock products</name>
    <tag></tag>
-   <elementGuidId>220e5b15-9d95-47b0-9007-88b7ad348849</elementGuidId>
+   <elementGuidId>13935a70-417d-42c1-b555-4b298692cf12</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[@class='sku__status'][contains(text(),'Available') or contains(text(),'متوفرة')]</value>
+         <value></value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

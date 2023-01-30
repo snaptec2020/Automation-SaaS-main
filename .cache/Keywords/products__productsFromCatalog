@@ -1,13 +1,12 @@
 {
-  "keywordFileContentHash": "C97364EE2CC831AC32D318CB1D111C49",
+  "keywordFileContentHash": "D9E7FD4AB6E4178546AC47488AD3E3B6",
   "keywordClasses": [
     {
       "name": "products.productsFromCatalog",
       "keywordMethods": [
         {
           "name": "getProducts",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getSpecifiedProduct",
@@ -38,11 +37,80 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
+        },
+        {
+          "name": "getinStockProduct",
+          "parameters": []
+        },
+        {
+          "name": "getSpecifiedinStockProducts",
+          "parameters": [
+            {
+              "name": "elementIndex",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "productList",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.util.List",
+                "unresolvedClassName": "List",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "getOutOfStockProduct",
+          "parameters": []
+        },
+        {
+          "name": "getSpecifiedOutOfStockProduct",
+          "parameters": [
+            {
+              "name": "elementIndex",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "productList",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.util.List",
+                "unresolvedClassName": "List",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }
