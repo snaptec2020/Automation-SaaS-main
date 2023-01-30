@@ -7,6 +7,18 @@ import java.util.List
 
 
 
+def static "signup.signupVerifications.verificationMessage"(
+    	Object expectedMessage	) {
+    (new signup.signupVerifications()).verificationMessage(
+        	expectedMessage)
+}
+
+
+def static "signup.signupVerifications.verificationElement"() {
+    (new signup.signupVerifications()).verificationElement()
+}
+
+
 def static "catalog.catlogComponants.getCategoryElements"() {
     (new catalog.catlogComponants()).getCategoryElements()
 }
@@ -32,16 +44,4 @@ def static "products.productsFromCatalog.getSpecifiedProduct"(
     (new products.productsFromCatalog()).getSpecifiedProduct(
         	elementIndex
          , 	productList)
-}
-
-
-def static "signup.signupVerifications.verificationMessage"(
-    	Object expectedMessage	) {
-    (new signup.signupVerifications()).verificationMessage(
-        	expectedMessage)
-}
-
-
-def static "signup.signupVerifications.verificationElement"() {
-    (new signup.signupVerifications()).verificationElement()
 }
