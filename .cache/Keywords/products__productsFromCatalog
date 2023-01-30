@@ -1,0 +1,48 @@
+{
+  "keywordFileContentHash": "C97364EE2CC831AC32D318CB1D111C49",
+  "keywordClasses": [
+    {
+      "name": "products.productsFromCatalog",
+      "keywordMethods": [
+        {
+          "name": "getProducts",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "getSpecifiedProduct",
+          "parameters": [
+            {
+              "name": "elementIndex",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "productList",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.util.List",
+                "unresolvedClassName": "List",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}
