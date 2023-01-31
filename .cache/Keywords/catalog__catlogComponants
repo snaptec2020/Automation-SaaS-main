@@ -1,12 +1,13 @@
 {
-  "keywordFileContentHash": "B7DA6C8BF501EF3DCBEF7B325409797B",
+  "keywordFileContentHash": "46C873EF6C37D7435A8EECF15A16AE64",
   "keywordClasses": [
     {
       "name": "catalog.catlogComponants",
       "keywordMethods": [
         {
           "name": "getCategoryElements",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "getSpecifiedCatalogElement",
@@ -37,10 +38,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

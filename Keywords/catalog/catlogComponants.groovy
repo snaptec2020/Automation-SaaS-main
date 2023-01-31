@@ -35,10 +35,9 @@ public class catlogComponants {
 
 			catalogList.get(elementIndex).click()
 		else {
-			
-			WebUI.scrollToPosition(9999, 9999)
-			
-			
+
+WebUI.scrollToPosition(9999999, 9999999)
+
 			catalogList.get(2).click()
 		}
 	}
