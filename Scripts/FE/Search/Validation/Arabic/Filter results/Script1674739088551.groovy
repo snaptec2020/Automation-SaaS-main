@@ -47,7 +47,6 @@ WebUI.click(findTestObject('Object Repository/Search contents/Search page/Sider 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search page/Price Range button'))
 
 
-//WebUI.click(findTestObject('Object Repository/Search contents/Search page/Price Range button'), FailureHandling.STOP_ON_FAILURE)
 
 WebUI.dragAndDropByOffset(findTestObject('Object Repository/Search contents/Search page/Sider button to change price'), 0, 40)
 
@@ -60,11 +59,7 @@ WebUI.waitForElementPresent(findTestObject('Object Repository/Products/List of p
 
 List products = WebUI.findWebElements(findTestObject('Object Repository/Products/List of products'),30)
 
-//for (int i = 0; i < products.size(); i++) {
-//if (products.size() > 0) {
-//WebUI.click((products[0]))
-//}
-//}
+
 
 int size = products.size()
 
@@ -74,10 +69,6 @@ products.get(i).click()
 }
 }
 
-//List<WebElement> elements =FindElements(By.className("styles_productItem__YY5Bs"))
-	
-//ByClassName("styles_productItem__YY5Bs"));
-////div[@class="styles_productItem__YY5Bs"]
 
 
 
