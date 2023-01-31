@@ -68,7 +68,7 @@ public class productsFromCatalog {
 	@Keyword
 	def getSpecifiedOutOfStockProduct(int elementIndex,List productList) {
 
-		
+
 		productList.get(elementIndex).click()
 	}
 }

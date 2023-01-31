@@ -31,9 +31,16 @@ public class catlogComponants {
 
 	@Keyword
 	def getSpecifiedCatalogElement(int elementIndex,List catalogList) {
+		if (elementIndex !=1)
 
-
-		catalogList.get(elementIndex).click()
+			catalogList.get(elementIndex).click()
+		else {
+			
+			WebUI.scrollToPosition(9999, 9999)
+			
+			
+			catalogList.get(2).click()
+		}
 	}
 }
 

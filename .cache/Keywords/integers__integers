@@ -1,18 +1,19 @@
 {
-  "keywordFileContentHash": "B7DA6C8BF501EF3DCBEF7B325409797B",
+  "keywordFileContentHash": "F83D38CE1755A9FEB1549579E8A6C008",
   "keywordClasses": [
     {
-      "name": "catalog.catlogComponants",
+      "name": "integers.integers",
       "keywordMethods": [
         {
-          "name": "getCategoryElements",
-          "parameters": []
+          "name": "getIntValues",
+          "parameters": [],
+          "javadoc": ""
         },
         {
-          "name": "getSpecifiedCatalogElement",
+          "name": "getIntSpecifiedValue",
           "parameters": [
             {
-              "name": "elementIndex",
+              "name": "min",
               "initialExpression": "",
               "type": {
                 "fullClassName": "int",
@@ -25,22 +26,23 @@
               }
             },
             {
-              "name": "catalogList",
+              "name": "max",
               "initialExpression": "",
               "type": {
-                "fullClassName": "java.util.List",
-                "unresolvedClassName": "List",
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
                 "isArray": false,
                 "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
+                "hasImmutableClassName": true,
                 "genericsTypes": [],
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }
