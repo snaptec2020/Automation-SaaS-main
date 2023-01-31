@@ -17,22 +17,8 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Products/Products list for Random Category'), [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Add in stock products to cart'), [:], FailureHandling.STOP_ON_FAILURE);
 
 
-if(WebUI.verifyElementPresent(findTestObject('Object Repository/Products/SKU status'),5, FailureHandling.CONTINUE_ON_FAILURE))
-	{	println '*** Added To Cart ***'
-		
-		
-		WebUI.click(findTestObject('Object Repository/Products/Add To Cart'))
-		
-	} 
-	
-	else {	println '*** ELSE after exception ***'
-		
-		
-		WebUI.closeBrowser();
-	}
-
-
-
+WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'));

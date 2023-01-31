@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Add To Cart</name>
+   <name>Continue shopping after adding product to cart</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>fb897c9a-29eb-4b27-b874-a60a712bbc8e</testCaseGuid>
+   <testCaseGuid>d3e024cc-06b5-49f5-a6b8-61ce28fe3db3</testCaseGuid>
 </TestCaseEntity>
