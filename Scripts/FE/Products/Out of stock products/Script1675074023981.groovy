@@ -25,7 +25,7 @@ List Categories = CustomKeywords.'catalog.catlogComponants.getCategoryElements'(
 
 	   int elementIndex= Math.abs((randomNumberforCatalog.nextInt(Categories.size() - 1)))
 
-CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex
+CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(1
 	, Categories)
 
 //-------->
