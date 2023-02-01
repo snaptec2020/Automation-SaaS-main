@@ -25,12 +25,15 @@ import internal.GlobalVariable
 public class signupVerifications {
 	TestObject signUpObj = new TestObject();
 	@Keyword
-	def verificationMessage(def expectedMessage) {
-		signUpObj.addProperty('xpath', ConditionType.EQUALS, "//p[@class='error-message' and normalize-space(text()) ='"+expectedMessage+"']")
+	def verificationMessage(def expectedMessageAr, def expectedMessageEn) {
+		//p[@class='error-message' and (normalize-space(text()) ='الرجاء ادخال كلمة مرور من 8 خانات على الأقل' or normalize-space(text()) ='')]
+		signUpObj.addProperty('xpath', ConditionType.EQUALS, "//p[@class='error-message' and (normalize-space(text()) ='"+expectedMessageAr+"' or normalize-space(text()) ='"+expectedMessageEn+"')]")
 		//WebUI.verifyElementVisible(findTestObject('Sign up Page/Sign up By email/Error message by email'))
 		WebUI.verifyElementVisible(signUpObj)
 	}
 	@Keyword
-	def verificationElement() {
+	def verificationElement(def message) {
+		signUpObj.addProperty('xpath', ConditionType.EQUALS, "//button[contains(text(),'اشتراك')or normalize-space()='Sign Up']")
+		WebUI.verifyElementNotClickable(signUpObj, FailureHandling.CONTINUE_ON_FAILURE)
 	}
 }

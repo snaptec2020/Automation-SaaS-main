@@ -8,14 +8,18 @@ import java.util.List
 
 
 def static "signup.signupVerifications.verificationMessage"(
-    	Object expectedMessage	) {
+    	Object expectedMessageAr	
+     , 	Object expectedMessageEn	) {
     (new signup.signupVerifications()).verificationMessage(
-        	expectedMessage)
+        	expectedMessageAr
+         , 	expectedMessageEn)
 }
 
 
-def static "signup.signupVerifications.verificationElement"() {
-    (new signup.signupVerifications()).verificationElement()
+def static "signup.signupVerifications.verificationElement"(
+    	Object message	) {
+    (new signup.signupVerifications()).verificationElement(
+        	message)
 }
 
 
