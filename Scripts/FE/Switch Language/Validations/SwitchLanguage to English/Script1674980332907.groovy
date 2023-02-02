@@ -24,9 +24,27 @@ WebUI.waitForElementVisible(findTestObject('Switch Language/button_English'), 0)
 WebUI.click(findTestObject('Switch Language/button_English'), FailureHandling.STOP_ON_FAILURE)
 
 
-GlobalVariable.URL = (GlobalVariable.URL + 'en')
- 
+//GlobalVariable.URL = (GlobalVariable.URL + 'en')
 
 
+def x = GlobalVariable.URL
+def matcher = ''
+try {
+	matcher = x =~ 'http\\w://.*(/.*)'
+
+	if (matcher[0][1].size() > 1) {
+		
+		GlobalVariable.URL = x.replace(matcher[0][1].toString(), '/en')
+		println GlobalVariable.URL
+	} else {
+		
+		GlobalVariable.URL = x + 'en'
+		println GlobalVariable.URL
+	}
+} catch (Exception ex) {
+	matcher = 'null'
+	GlobalVariable.URL = x +'/en'
+	println GlobalVariable.URL
+}
 
 
