@@ -23,11 +23,12 @@ import org.openqa.selenium.remote.server.handler.FindElements
 
 import java.util.List
 
+try
+{
+WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Validation/View all products from view more in container'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Arabic/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
 
-
-WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), 'Test ')
+/*WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), 'Test ')
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'))
 
@@ -35,7 +36,7 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Sea
 
 WebUI.click(findTestObject('Object Repository/Search contents/Search button'), FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search page/Filter button'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search page/Filter button'))*/
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search page/Price filter'))
 
@@ -48,27 +49,13 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Sea
 
 
 
-WebUI.dragAndDropByOffset(findTestObject('Object Repository/Search contents/Search page/Sider button to change price'), 0, 1)
-
-
-//WebUI.delay(10)
-
-
-/*WebUI.waitForElementPresent(findTestObject('Object Repository/Products/List of products'), 10)
-
-
-List products = WebUI.findWebElements(findTestObject('Object Repository/Products/List of products'),30)
-
-
-
-int size = products.size()
-
-if (size > 0) {
-for (int i = 0; i < size; i++) {
-products.get(i).click()
+WebUI.dragAndDropByOffset(findTestObject('Object Repository/Search contents/Search page/Sider button to change price'), 0, 40)
 }
-}*/
 
 
-
+catch (Exception e)
+{
+e.printStackTrace();
+WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+}
 

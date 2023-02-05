@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Sider button to change price</name>
+   <name>Product in item container</name>
    <tag></tag>
-   <elementGuidId>688c5d47-41f2-47f0-b81b-82f2486659d0</elementGuidId>
+   <elementGuidId>e0374f15-8e5d-4a75-896d-b4fc96125297</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='styles_trackChildren__RCcdR']//div[1]</value>
+         <value>//div[@class=&quot;product__row&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

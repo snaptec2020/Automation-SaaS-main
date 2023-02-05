@@ -1,5 +1,4 @@
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -18,29 +17,21 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-
-
-
 try
 {
-WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
-
-WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), InvalidProduct )
-if (WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found')))
+WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/General Actions/View cart after adding products to cart'), [:], FailureHandling.STOP_ON_FAILURE);
 
 
+WebUI.delay(10)
 
-WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), validProduct )
-	
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'));
+//WebUI.scrollToElement(findTestObject('Object Repository/Cart/Filled cart'), 5, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'), FailureHandling.STOP_ON_FAILURE);
+WebUI.verifyElementPresent(findTestObject('Object Repository/Cart/Filled cart'), 10)	
 	
 }
 
 catch (Exception e)
 {
 e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
 }
