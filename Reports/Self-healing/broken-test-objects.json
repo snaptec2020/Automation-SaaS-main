@@ -1,3 +1,14 @@
 {
-  "brokenTestObjects" : [ ]
+  "brokenTestObjects": [
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Subscribe/Subscribe block",
+      "brokenLocator": "//div[contains(@class,\u0027subcribe-block\u0027)]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//div[6]/div",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/Self-healing/Object Repository/Subscribe/Subscribe block_position.png"
+    }
+  ]
 }

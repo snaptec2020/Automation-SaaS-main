@@ -14,6 +14,56 @@ public class GlobalVariable {
      */
     public static Object URL
      
+    /**
+     * <p></p>
+     */
+    public static Object Vaild_email
+     
+    /**
+     * <p></p>
+     */
+    public static Object Wrong_email
+     
+    /**
+     * <p></p>
+     */
+    public static Object store
+     
+    /**
+     * <p></p>
+     */
+    public static Object languageMode
+     
+    /**
+     * <p></p>
+     */
+    public static Object gDBUrl
+     
+    /**
+     * <p></p>
+     */
+    public static Object gDBUserName
+     
+    /**
+     * <p></p>
+     */
+    public static Object gDBPassword
+     
+    /**
+     * <p></p>
+     */
+    public static Object gJDBCClass
+     
+    /**
+     * <p></p>
+     */
+    public static Object URL_AR
+     
+    /**
+     * <p></p>
+     */
+    public static Object URL_EN
+     
 
     static {
         try {
@@ -22,6 +72,16 @@ public class GlobalVariable {
             selectedVariables += TestCaseMain.getParsedValues(RunConfiguration.getOverridingParameters())
     
             URL = selectedVariables['URL']
+            Vaild_email = selectedVariables['Vaild_email']
+            Wrong_email = selectedVariables['Wrong_email']
+            store = selectedVariables['store']
+            languageMode = selectedVariables['languageMode']
+            gDBUrl = selectedVariables['gDBUrl']
+            gDBUserName = selectedVariables['gDBUserName']
+            gDBPassword = selectedVariables['gDBPassword']
+            gJDBCClass = selectedVariables['gJDBCClass']
+            URL_AR = selectedVariables['URL_AR']
+            URL_EN = selectedVariables['URL_EN']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)
