@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
-   <description>in stock or out of stock</description>
-   <name>SKU status</name>
+   <description></description>
+   <name>another catategory</name>
    <tag></tag>
-   <elementGuidId>220e5b15-9d95-47b0-9007-88b7ad348849</elementGuidId>
+   <elementGuidId>4c68127b-fd80-4eed-96a2-39e8a1d2f627</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[@class='sku__status'][contains(text(),'Available') or contains(text(),'متوفرة')]</value>
+         <value>//div[contains(@class,'styles_megaMenu__Niti_')]//a[2]</value>
       </entry>
       <entry>
          <key>BASIC</key>
