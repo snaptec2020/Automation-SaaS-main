@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Sider button to change price</name>
+   <name>Empty cart</name>
    <tag></tag>
-   <elementGuidId>688c5d47-41f2-47f0-b81b-82f2486659d0</elementGuidId>
+   <elementGuidId>dea73965-1881-4e2c-995f-439ddcf3f5b9</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='styles_trackChildren__RCcdR']//div[1]</value>
+         <value>//div[@class='cart-items-container']/h3[@class='no-items-message'][contains(text(),'لا توجد عناصر في سلة التسوق.') or contains(text(),'There are no items in your cart.')]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -7,6 +7,20 @@ import java.util.List
 
 
 
+def static "cart.cartItems.getProductsInCart"() {
+    (new cart.cartItems()).getProductsInCart()
+}
+
+
+def static "cart.cartItems.getSpecifiedIteminThecart"(
+    	int elementIndex	
+     , 	List items	) {
+    (new cart.cartItems()).getSpecifiedIteminThecart(
+        	elementIndex
+         , 	items)
+}
+
+
 def static "signup.signupVerifications.verificationMessage"(
     	Object expectedMessage	) {
     (new signup.signupVerifications()).verificationMessage(
@@ -86,4 +100,18 @@ def static "products.productsFromCatalog.getSpecifiedOutOfStockProduct"(
     (new products.productsFromCatalog()).getSpecifiedOutOfStockProduct(
         	elementIndex
          , 	productList)
+}
+
+
+def static "cart.removeItem.getProductsInCart"() {
+    (new cart.removeItem()).getProductsInCart()
+}
+
+
+def static "cart.removeItem.getSpecifiedIteminThecart"(
+    	int elementIndex	
+     , 	List items	) {
+    (new cart.removeItem()).getSpecifiedIteminThecart(
+        	elementIndex
+         , 	items)
 }

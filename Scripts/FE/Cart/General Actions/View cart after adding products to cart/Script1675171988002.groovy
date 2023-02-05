@@ -24,8 +24,16 @@ import org.openqa.selenium.Keys as Keys
 
 try 
 {
-WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Add in stock products to cart'), [:], FailureHandling.STOP_ON_FAILURE);
+WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Validations/Add in stock product to cart from list in one page'), [:], FailureHandling.STOP_ON_FAILURE);
 
+//WebUI.delay(15)
+
+
+//WebUI.waitForElementPresent(findTestObject('//div[@class="add-to-cart-modal"]'), 15, FailureHandling.CONTINUE_ON_FAILURE)
+
+//WebUI.verifyElementPresent(findTestObject('Object Repository/Cart/View Cart'), 2, FailureHandling.STOP_ON_FAILURE)
+
+//WebUI.verifyElementClickable(findTestObject('Object Repository/Cart/View Cart'), FailureHandling.STOP_ON_FAILURE)
 
 WebUI.click(findTestObject('Object Repository/Cart/View Cart'));
 }
@@ -34,6 +42,6 @@ WebUI.click(findTestObject('Object Repository/Cart/View Cart'));
 catch (Exception e)
 {
 e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
 }
 

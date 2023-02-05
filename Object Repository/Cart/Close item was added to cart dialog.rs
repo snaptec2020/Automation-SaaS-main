@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Sider button to change price</name>
+   <name>Close item was added to cart dialog</name>
    <tag></tag>
-   <elementGuidId>688c5d47-41f2-47f0-b81b-82f2486659d0</elementGuidId>
+   <elementGuidId>a4b5ff5f-1e0a-47c2-bfeb-27bb11d7899a</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='styles_trackChildren__RCcdR']//div[1]</value>
+         <value>//button[@class='popup-button button--transparent p-0']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
