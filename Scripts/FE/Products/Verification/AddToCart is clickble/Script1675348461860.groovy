@@ -17,34 +17,51 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.click(findTestObject('Headers and Footers/Header contents/Language'))
-
-WebUI.waitForElementVisible(findTestObject('Switch Language/button_English'), 0)
-
-WebUI.click(findTestObject('Switch Language/button_English'), FailureHandling.STOP_ON_FAILURE)
 
 
-//GlobalVariable.URL = (GlobalVariable.URL + 'en')
+Random randomNumberforCatalog = new Random()
+
+Random randomNumberforProduct = new Random()
+int elementIndex;
+int elementIndexProduct;
+try 
+{
+List Categories = CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
+if(Categories.size()==0)
+{WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)}
 
 
-def x = GlobalVariable.URL
-def matcher = ''
-try {
-	matcher = x =~ 'http\\w://.*(/.*)'
+else
+{
+elementIndex= Math.abs((randomNumberforCatalog.nextInt(Categories.size() - 1)))
 
-	if (matcher[0][1].size() > 1) {
-		
-		GlobalVariable.URL = x.replace(matcher[0][1].toString(), '/en')
-		//println GlobalVariable.URL
-	} else {
-		
-		GlobalVariable.URL = x + 'en'
-		//println GlobalVariable.URL
-	}
-} catch (Exception ex) {
-	matcher = 'null'
-	GlobalVariable.URL = x +'/en'
-	//println GlobalVariable.URL
+CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
+
+}
+//-------->
+
+
+WebUI.delay(15)
+
+List OutOfStockProducts = CustomKeywords.'products.productsFromCatalog.getOutOfStockProduct'()
+
+if(OutOfStockProducts.size()==0)
+{WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)}
+
+else
+{
+
+elementIndexProduct = Math.abs((randomNumberforProduct.nextInt(OutOfStockProducts.size() - 1)))
+
+
+CustomKeywords.'products.productsFromCatalog.getSpecifiedOutOfStockProduct'(elementIndexProduct, OutOfStockProducts)
+}
 }
 
 
+
+catch (Exception e)
+{
+e.printStackTrace();
+WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+}

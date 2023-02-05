@@ -17,34 +17,22 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.click(findTestObject('Headers and Footers/Header contents/Language'))
-
-WebUI.waitForElementVisible(findTestObject('Switch Language/button_English'), 0)
-
-WebUI.click(findTestObject('Switch Language/button_English'), FailureHandling.STOP_ON_FAILURE)
 
 
-//GlobalVariable.URL = (GlobalVariable.URL + 'en')
+
+try
+{
+WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Add in stock products to cart'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
-def x = GlobalVariable.URL
-def matcher = ''
-try {
-	matcher = x =~ 'http\\w://.*(/.*)'
+WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Cart'), 10)
 
-	if (matcher[0][1].size() > 1) {
-		
-		GlobalVariable.URL = x.replace(matcher[0][1].toString(), '/en')
-		//println GlobalVariable.URL
-	} else {
-		
-		GlobalVariable.URL = x + 'en'
-		//println GlobalVariable.URL
-	}
-} catch (Exception ex) {
-	matcher = 'null'
-	GlobalVariable.URL = x +'/en'
-	//println GlobalVariable.URL
+WebUI.click(findTestObject('Object Repository/Products/Add To Cart'))
 }
 
 
+catch (Exception e)
+{
+e.printStackTrace();
+WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+}

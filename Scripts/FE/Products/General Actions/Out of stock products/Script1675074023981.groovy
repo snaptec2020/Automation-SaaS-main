@@ -17,3 +17,45 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+Random randomNumberforCatalog = new Random()
+
+Random randomNumberforProduct = new Random()
+
+
+
+
+try 
+{
+	
+List Categories = CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
+	
+int elementIndex= Math.abs((randomNumberforCatalog.nextInt(Categories.size() - 1)))
+	
+CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
+	
+}
+
+catch (Exception e) 
+{
+e.printStackTrace();
+WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+}
+
+//-------->
+WebUI.delay(5)
+try 
+{
+List OutOfStockProducts = CustomKeywords.'products.productsFromCatalog.getOutOfStockProduct'()
+	
+int elementIndexProduct = Math.abs((randomNumberforProduct.nextInt(OutOfStockProducts.size() - 1)))
+	
+	
+CustomKeywords.'products.productsFromCatalog.getSpecifiedOutOfStockProduct'(elementIndexProduct, OutOfStockProducts)
+}
+
+catch (Exception e)
+{
+e.printStackTrace();
+WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+}
+

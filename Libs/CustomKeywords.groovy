@@ -63,3 +63,45 @@ def static "products.productsFromCatalog.getSpecifiedProduct"(
         	elementIndex
          , 	productList)
 }
+
+
+def static "products.productsFromCatalog.getinStockProduct"() {
+    (new products.productsFromCatalog()).getinStockProduct()
+}
+
+
+def static "products.productsFromCatalog.getSpecifiedinStockProducts"(
+    	int elementIndex	
+     , 	List productList	) {
+    (new products.productsFromCatalog()).getSpecifiedinStockProducts(
+        	elementIndex
+         , 	productList)
+}
+
+
+def static "products.productsFromCatalog.getinStockProductFromOnePage"() {
+    (new products.productsFromCatalog()).getinStockProductFromOnePage()
+}
+
+
+def static "products.productsFromCatalog.getSpecifiedinStockProductsFromOnePage"(
+    	int elementIndex	
+     , 	List productList	) {
+    (new products.productsFromCatalog()).getSpecifiedinStockProductsFromOnePage(
+        	elementIndex
+         , 	productList)
+}
+
+
+def static "products.productsFromCatalog.getOutOfStockProduct"() {
+    (new products.productsFromCatalog()).getOutOfStockProduct()
+}
+
+
+def static "products.productsFromCatalog.getSpecifiedOutOfStockProduct"(
+    	int elementIndex	
+     , 	List productList	) {
+    (new products.productsFromCatalog()).getSpecifiedOutOfStockProduct(
+        	elementIndex
+         , 	productList)
+}

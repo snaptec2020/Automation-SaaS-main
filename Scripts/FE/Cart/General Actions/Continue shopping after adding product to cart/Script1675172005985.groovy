@@ -17,3 +17,17 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+
+try 
+{
+WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Add in stock products to cart'), [:], FailureHandling.STOP_ON_FAILURE);
+WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'));
+}
+
+
+
+catch (Exception e) 
+{
+e.printStackTrace();
+WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+}

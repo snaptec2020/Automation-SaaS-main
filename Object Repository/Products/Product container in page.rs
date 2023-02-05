@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
-   <description>in stock or out of stock</description>
-   <name>SKU status</name>
+   <description></description>
+   <name>Product container in page</name>
    <tag></tag>
-   <elementGuidId>220e5b15-9d95-47b0-9007-88b7ad348849</elementGuidId>
+   <elementGuidId>5bc079dd-e31e-4861-bd4f-d8c02f2b2b63</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[@class='sku__status'][contains(text(),'Available') or contains(text(),'متوفرة')]</value>
+         <value>//*[(text() = 'أضف إلى السلة')]/preceding::div[@class='styles_productItem__YY5Bs']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

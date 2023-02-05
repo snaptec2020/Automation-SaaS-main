@@ -17,34 +17,24 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.click(findTestObject('Headers and Footers/Header contents/Language'))
 
-WebUI.waitForElementVisible(findTestObject('Switch Language/button_English'), 0)
+try
+{	
 
-WebUI.click(findTestObject('Switch Language/button_English'), FailureHandling.STOP_ON_FAILURE)
-
-
-//GlobalVariable.URL = (GlobalVariable.URL + 'en')
-
-
-def x = GlobalVariable.URL
-def matcher = ''
-try {
-	matcher = x =~ 'http\\w://.*(/.*)'
-
-	if (matcher[0][1].size() > 1) {
+WebUI.callTestCase(findTestCase('Test Cases/FE/Products/General Actions/in Stock products'), [:], FailureHandling.STOP_ON_FAILURE);
 		
-		GlobalVariable.URL = x.replace(matcher[0][1].toString(), '/en')
-		//println GlobalVariable.URL
-	} else {
 		
-		GlobalVariable.URL = x + 'en'
-		//println GlobalVariable.URL
-	}
-} catch (Exception ex) {
-	matcher = 'null'
-	GlobalVariable.URL = x +'/en'
-	//println GlobalVariable.URL
+WebUI.delay(5)
+		
+WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Cart'), 20, FailureHandling.STOP_ON_FAILURE)
+		
+WebUI.waitForElementClickable(findTestObject('Object Repository/Products/Add To Cart'), 10)
+}		
+		
+catch (Exception e) 
+{
+e.printStackTrace();
+WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
 }
 
 
