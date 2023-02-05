@@ -47,8 +47,9 @@ WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/Sign
             'Signup TD').getValue(3, rowNumber), ('password') : findTestData('Signup TD').getValue(4, rowNumber)], FailureHandling.STOP_ON_FAILURE)
 
 if (td.getValue(7, rowNumber) != 'ButtonDisabled') {
-    CustomKeywords.'signup.signupVerifications.verificationMessage'(td.getValue(5, rowNumber))
-} else {
+    CustomKeywords.'signup.signupVerifications.verificationMessage'(td.getValue(5, rowNumber),td.getValue(6, rowNumber))
+}
+ else {
 	CustomKeywords.'signup.signupVerifications.verificationElement'()
 }
 }

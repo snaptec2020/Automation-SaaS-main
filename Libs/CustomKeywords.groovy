@@ -8,14 +8,18 @@ import java.util.List
 
 
 def static "signup.signupVerifications.verificationMessage"(
-    	Object expectedMessage	) {
+    	Object expectedMessageAr	
+     , 	Object expectedMessageEn	) {
     (new signup.signupVerifications()).verificationMessage(
-        	expectedMessage)
+        	expectedMessageAr
+         , 	expectedMessageEn)
 }
 
 
-def static "signup.signupVerifications.verificationElement"() {
-    (new signup.signupVerifications()).verificationElement()
+def static "signup.signupVerifications.verificationElement"(
+    	Object message	) {
+    (new signup.signupVerifications()).verificationElement(
+        	message)
 }
 
 
@@ -30,6 +34,20 @@ def static "catalog.catlogComponants.getSpecifiedCatalogElement"(
     (new catalog.catlogComponants()).getSpecifiedCatalogElement(
         	elementIndex
          , 	catalogList)
+}
+
+
+def static "dbconnections.executeQueries.getDataFromDBByQuery"(
+    	Object mQuery	) {
+    (new dbconnections.executeQueries()).getDataFromDBByQuery(
+        	mQuery)
+}
+
+
+def static "dbconnections.executeQueries.getOtp"(
+    	Object mobileNumber	) {
+    (new dbconnections.executeQueries()).getOtp(
+        	mobileNumber)
 }
 
 

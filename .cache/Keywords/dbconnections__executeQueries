@@ -1,27 +1,14 @@
 {
-  "keywordFileContentHash": "CBA65970F15932F66D20DBE618FD47A7",
+  "keywordFileContentHash": "5144DF698FAFC7CE3F687BFD435F4DA7",
   "keywordClasses": [
     {
-      "name": "signup.signupVerifications",
+      "name": "dbconnections.executeQueries",
       "keywordMethods": [
         {
-          "name": "verificationMessage",
+          "name": "getDataFromDBByQuery",
           "parameters": [
             {
-              "name": "expectedMessageAr",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "java.lang.Object",
-                "unresolvedClassName": "java.lang.Object",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": true,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            },
-            {
-              "name": "expectedMessageEn",
+              "name": "mQuery",
               "initialExpression": "",
               "type": {
                 "fullClassName": "java.lang.Object",
@@ -37,10 +24,10 @@
           "javadoc": ""
         },
         {
-          "name": "verificationElement",
+          "name": "getOtp",
           "parameters": [
             {
-              "name": "message",
+              "name": "mobileNumber",
               "initialExpression": "",
               "type": {
                 "fullClassName": "java.lang.Object",

@@ -37,6 +37,26 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
+    public static Object gDBUrl
+     
+    /**
+     * <p></p>
+     */
+    public static Object gDBUserName
+     
+    /**
+     * <p></p>
+     */
+    public static Object gDBPassword
+     
+    /**
+     * <p></p>
+     */
+    public static Object gJDBCClass
+     
+    /**
+     * <p></p>
+     */
     public static Object URL_AR
      
     /**
@@ -56,6 +76,10 @@ public class GlobalVariable {
             Wrong_email = selectedVariables['Wrong_email']
             store = selectedVariables['store']
             languageMode = selectedVariables['languageMode']
+            gDBUrl = selectedVariables['gDBUrl']
+            gDBUserName = selectedVariables['gDBUserName']
+            gDBPassword = selectedVariables['gDBPassword']
+            gJDBCClass = selectedVariables['gJDBCClass']
             URL_AR = selectedVariables['URL_AR']
             URL_EN = selectedVariables['URL_EN']
             
