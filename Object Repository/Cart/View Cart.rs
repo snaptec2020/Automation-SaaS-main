@@ -6,12 +6,11 @@
    <elementGuidId>e3ce235b-9735-4b3e-a9b0-00eb53a6496c</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[@class=&quot;add-to-cart-modal&quot;]//button[@class='button button--primary button--medium']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//button[@class=&quot;button button--primary button--medium&quot;]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -26,7 +26,7 @@ WebUI.callTestCase(findTestCase('Test Cases/FE/Products/General Actions/in Stock
 		
 WebUI.delay(5)
 		
-WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Cart'), 20, FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Cart'), 5, FailureHandling.STOP_ON_FAILURE)
 		
 WebUI.waitForElementClickable(findTestObject('Object Repository/Products/Add To Cart'), 10)
 }		

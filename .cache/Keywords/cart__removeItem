@@ -1,0 +1,46 @@
+{
+  "keywordFileContentHash": "4D1DEB4F78937F0522F1A9EF45ADF9BE",
+  "keywordClasses": [
+    {
+      "name": "cart.removeItem",
+      "keywordMethods": [
+        {
+          "name": "getProductsInCart",
+          "parameters": []
+        },
+        {
+          "name": "getSpecifiedIteminThecart",
+          "parameters": [
+            {
+              "name": "elementIndex",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "items",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.util.List",
+                "unresolvedClassName": "List",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "javadocParsed": false
+}

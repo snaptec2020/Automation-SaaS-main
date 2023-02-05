@@ -20,19 +20,24 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
 
 
-Random randomNumberforCatalog = new Random()
+Random randomNumberforCatalog = new Random();
 
-Random randomNumberforProduct = new Random()
+Random randomNumberforProduct = new Random();
+int elementIndex;
+int elementIndexProduct;
 
 
 try {
 	
-List Categories = CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
-	
-int elementIndex= Math.abs((randomNumberforCatalog.nextInt(Categories.size() - 1)))
+List Categories = CustomKeywords.'catalog.catlogComponants.getCategoryElements'();
+if (Categories.size()==0)
+{WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)}
+else
+{
+elementIndex= Math.abs((randomNumberforCatalog.nextInt(Categories.size() - 1)))
 	
 CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
-	
+}
 } 
 catch (Exception e) {
 	e.printStackTrace();
@@ -47,12 +52,14 @@ catch (Exception e) {
 //-------->
 WebUI.delay(15)
 try {
-List inStockProducts = CustomKeywords.'products.productsFromCatalog.getinStockProduct'()
-	
-int elementIndexProduct = Math.abs((randomNumberforProduct.nextInt(inStockProducts.size() - 1)))
+List inStockProducts = CustomKeywords.'products.productsFromCatalog.getinStockProduct'();
+if(inStockProducts.size()==0)
+{WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)}
+else	
+{elementIndexProduct = Math.abs((randomNumberforProduct.nextInt(inStockProducts.size() - 1)))
 	
 CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProducts'(elementIndexProduct, inStockProducts)
-	
+}	
 }
 catch (Exception e){
 	e.printStackTrace();

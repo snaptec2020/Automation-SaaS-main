@@ -34,5 +34,5 @@ WebUI.click(findTestObject('Object Repository/Products/Add To Cart'))
 catch (Exception e)
 {
 e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
 }

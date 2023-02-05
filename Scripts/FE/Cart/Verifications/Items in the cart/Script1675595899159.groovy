@@ -1,5 +1,4 @@
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -18,29 +17,55 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+Random randomNumberforProduct = new Random()
 
+int elementIndex;
 
+try {
+    WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Cart is filled'), [:], FailureHandling.STOP_ON_FAILURE)
 
-try
-{
-WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
+    List Items = CustomKeywords.'cart.cartItems.getProductsInCart'()
 
-WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), InvalidProduct )
-if (WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found')))
+    if (Items.size() == 0) {
+        WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)
+    } 
+else {
+elementIndex = Math.abs(randomNumberforProduct.nextInt(Items.size() - 1))
 
-
-
-WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), validProduct )
-	
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'));
-
-WebUI.click(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'), FailureHandling.STOP_ON_FAILURE);
-	
+CustomKeywords.'cart.cartItems.getSpecifiedIteminThecart'(elementIndex, Items)
+    }
 }
 
-catch (Exception e)
+
+
+catch (Exception e) {
+    e.printStackTrace()
+
+    WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE) /*Random randomNumberforCatalog = new Random();
+
+Random randomNumberforProduct = new Random();
+int elementIndex;
+int elementIndexProduct;
+
+
+try {
+	
+List Categories = CustomKeywords.'catalog.catlogComponants.getCategoryElements'();
+if (Categories.size()==0)
+{WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)}
+else
 {
-e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+elementIndex= Math.abs((randomNumberforCatalog.nextInt(Categories.size() - 1)))
+	
+CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
 }
+} 
+catch (Exception e) {
+	e.printStackTrace();
+	WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+}
+
+*/
+} 
+
+

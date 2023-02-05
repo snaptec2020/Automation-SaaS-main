@@ -18,10 +18,21 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Arabic/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
+
+try {
+
+WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
 WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), InvalidProduct)
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'));
 
+}
+
+
+catch (Exception e)
+{
+e.printStackTrace();
+WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+}

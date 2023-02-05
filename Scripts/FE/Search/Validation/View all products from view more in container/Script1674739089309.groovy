@@ -20,8 +20,9 @@ import org.openqa.selenium.Keys as Keys
 
 
 
-
-WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Arabic/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
+try
+{
+WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
 WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), validProduct )
@@ -31,4 +32,10 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Sea
 WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/View more button'),FailureHandling.STOP_ON_FAILURE);
 
 WebUI.click(findTestObject('Object Repository/Search contents/Search box/View more button'), FailureHandling.STOP_ON_FAILURE);
-	
+}
+
+catch (Exception e)
+{
+e.printStackTrace();
+WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+}
