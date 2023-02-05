@@ -17,46 +17,20 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-Random randomNumberforCatalog = new Random()
-Random randomNumberforProduct= new Random()
 
 
-List Categories = CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
+try 
+{
 
-       int elementIndexCatalog= Math.abs((randomNumberforCatalog.nextInt(Categories.size() - 1)))
-
-CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndexCatalog
-	, Categories)
-//-------->
-
-List Products = CustomKeywords.'products.productsFromCatalog.getProducts'()
-int elementIndexProduct= Math.abs((randomNumberforProduct.nextInt(Products.size() - 1)))
-
-//int elementIndex = Math.abs((randomNumberforProduct.nextInt(Products.size() - 1)))
-
-CustomKeywords.'products.productsFromCatalog.getSpecifiedProduct'(elementIndexProduct, Products)
+WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Validations/Website launch'),  [:], FailureHandling.STOP_ON_FAILURE);
+WebUI.click(findTestObject('Object Repository/Cart/Cart'), FailureHandling.STOP_ON_FAILURE)
+}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-/*List products = WebUI.findWebElements(findTestObject('Object Repository/Products/List of products'), 30)
-
-int size = products.size()
-
-if (size > 0) {
-    for (int i = 0; i < size; i++) {
-        products.get(1).click()
-    }
-}*/
-
-
+catch (Exception e)
+{
+e.printStackTrace();
+WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+}

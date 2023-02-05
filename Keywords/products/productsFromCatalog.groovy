@@ -42,25 +42,46 @@ public class productsFromCatalog {
 	def getinStockProduct() {
 
 
-		List inStockProducts = WebUI.findWebElements(findTestObject('Object Repository/Products/Add to cart enabled button'),30)
+		List inStockProducts = WebUI.findWebElements(findTestObject('Object Repository/Products/Product container in page'),30)
+
 
 		return inStockProducts
 	}
 
 	@Keyword
-	def getSpecifiedinStockProducts(int elementIndex,List productList) {
+	def getSpecifiedinStockProducts(int elementIndex,List productList ) {
+
+
+
+		productList.get(elementIndex).click()
+	}
+	//-------------------------------------------------
+	@Keyword
+	def getinStockProductFromOnePage() {
+
+
+		List listOfInStockProducts = WebUI.findWebElements(findTestObject('Object Repository/Products/Add to cart enabled button'),30)
+
+
+		return listOfInStockProducts
+	}
+
+	@Keyword
+	def getSpecifiedinStockProductsFromOnePage(int elementIndex,List productList ) {
+
 
 
 		productList.get(elementIndex).click()
 	}
 	//-------------------------------------------------
 
+
 	@Keyword
 	def getOutOfStockProduct() {
 
 
 
-		List OutOfStockProducts = WebUI.findWebElements(findTestObject('Object Repository/Products/Sold out button'),30)
+		List OutOfStockProducts = WebUI.findWebElements(findTestObject('Object Repository/Products/Out of Stock products'),30)
 		return OutOfStockProducts;
 	}
 
@@ -68,6 +89,7 @@ public class productsFromCatalog {
 	@Keyword
 	def getSpecifiedOutOfStockProduct(int elementIndex,List productList) {
 
+		//	WebUI.verifyElementNotClickable(findTestObject('Object Repository/Products/Out of Stock products'), FailureHandling.STOP_ON_FAILURE)
 
 		productList.get(elementIndex).click()
 	}

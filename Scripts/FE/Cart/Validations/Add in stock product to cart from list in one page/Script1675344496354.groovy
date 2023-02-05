@@ -18,7 +18,46 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Add in stock products to cart'), [:], FailureHandling.STOP_ON_FAILURE);
 
 
-WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'));
+Random randomNumberforCatalog = new Random()
+
+Random randomNumberforProduct = new Random()
+int elementIndexcatalog;
+int elementIndexproduct;
+
+
+try {
+List Categories = CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
+
+if (Categories.size()==0)
+{WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)}
+
+else 
+	{
+elementIndexcatalog= Math.abs((randomNumberforCatalog.nextInt(Categories.size() - 1)))
+
+CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(2
+	, Categories)}
+
+
+List prod = CustomKeywords.'products.productsFromCatalog.getinStockProductFromOnePage'()
+if(prod.size()==0)
+		{WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)}
+
+		else
+
+{elementIndexproduct= Math.abs((randomNumberforProduct.nextInt(prod.size() - 1)))
+
+
+CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsFromOnePage'(elementIndexproduct, prod)
+}
+}
+
+
+catch (Exception e)
+{
+e.printStackTrace();
+WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+}
+

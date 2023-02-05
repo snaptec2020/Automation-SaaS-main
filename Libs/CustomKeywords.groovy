@@ -61,6 +61,20 @@ def static "products.productsFromCatalog.getSpecifiedinStockProducts"(
 }
 
 
+def static "products.productsFromCatalog.getinStockProductFromOnePage"() {
+    (new products.productsFromCatalog()).getinStockProductFromOnePage()
+}
+
+
+def static "products.productsFromCatalog.getSpecifiedinStockProductsFromOnePage"(
+    	int elementIndex	
+     , 	List productList	) {
+    (new products.productsFromCatalog()).getSpecifiedinStockProductsFromOnePage(
+        	elementIndex
+         , 	productList)
+}
+
+
 def static "products.productsFromCatalog.getOutOfStockProduct"() {
     (new products.productsFromCatalog()).getOutOfStockProduct()
 }

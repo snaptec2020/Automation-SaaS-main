@@ -34,11 +34,16 @@ public class catlogComponants {
 		if (elementIndex !=1)
 
 			catalogList.get(elementIndex).click()
+			
 		else {
 
-WebUI.scrollToPosition(9999999, 9999999)
 
-			catalogList.get(2).click()
+			WebUI.scrollToPosition(9999999, 9999999)
+
+			WebUI.scrollToPosition(9999999, 9999999)
+
+			WebUI.click(findTestObject('Object Repository/Mega Menu/another catategory'), FailureHandling.STOP_ON_FAILURE)
+			//catalogList.get(2).click()
 		}
 	}
 }

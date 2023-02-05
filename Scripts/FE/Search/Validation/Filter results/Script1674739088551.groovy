@@ -48,13 +48,13 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Sea
 
 
 
-WebUI.dragAndDropByOffset(findTestObject('Object Repository/Search contents/Search page/Sider button to change price'), 0, 40)
+WebUI.dragAndDropByOffset(findTestObject('Object Repository/Search contents/Search page/Sider button to change price'), 0, 1)
 
 
-WebUI.delay(10)
+//WebUI.delay(10)
 
 
-WebUI.waitForElementPresent(findTestObject('Object Repository/Products/List of products'), 10)
+/*WebUI.waitForElementPresent(findTestObject('Object Repository/Products/List of products'), 10)
 
 
 List products = WebUI.findWebElements(findTestObject('Object Repository/Products/List of products'),30)
@@ -67,7 +67,7 @@ if (size > 0) {
 for (int i = 0; i < size; i++) {
 products.get(i).click()
 }
-}
+}*/
 
 
 

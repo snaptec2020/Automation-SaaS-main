@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Home Page</name>
+   <name>Parent in breadcrumbs</name>
    <tag></tag>
-   <elementGuidId>4c68127b-fd80-4eed-96a2-39e8a1d2f627</elementGuidId>
+   <elementGuidId>47d1e8eb-97ad-4a09-ba9d-5d950c449d09</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,'styles_megaMenu__Niti_')]//a[1]</value>
+         <value>//a[@class='styles_link__aAvGq styles_text__Zlak8']</value>
       </entry>
       <entry>
          <key>BASIC</key>

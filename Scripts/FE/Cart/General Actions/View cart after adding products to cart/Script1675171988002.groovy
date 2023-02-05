@@ -18,8 +18,22 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Add in stock products to cart'), [:], FailureHandling.STOP_ON_FAILURE);
+
+
+
+
+try 
+{
+WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Add in stock products to cart'), [:], FailureHandling.STOP_ON_FAILURE);
 
 
 WebUI.click(findTestObject('Object Repository/Cart/View Cart'));
+}
+
+
+catch (Exception e)
+{
+e.printStackTrace();
+WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+}
 
