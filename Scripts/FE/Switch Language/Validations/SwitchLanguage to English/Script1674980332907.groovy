@@ -35,16 +35,16 @@ try {
 	if (matcher[0][1].size() > 1) {
 		
 		GlobalVariable.URL = x.replace(matcher[0][1].toString(), '/en')
-		println GlobalVariable.URL
+		//println GlobalVariable.URL
 	} else {
 		
 		GlobalVariable.URL = x + 'en'
-		println GlobalVariable.URL
+		//println GlobalVariable.URL
 	}
 } catch (Exception ex) {
 	matcher = 'null'
 	GlobalVariable.URL = x +'/en'
-	println GlobalVariable.URL
+	//println GlobalVariable.URL
 }
 
 
