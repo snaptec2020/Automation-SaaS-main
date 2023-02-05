@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Products list for Random Category</name>
+   <name>Out of stock is not clickble</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>b96464a9-d77b-4669-b207-3f73303d9602</testCaseGuid>
+   <testCaseGuid>26a72fdf-9b5e-4b03-b2c2-4b30d5e8e170</testCaseGuid>
 </TestCaseEntity>
