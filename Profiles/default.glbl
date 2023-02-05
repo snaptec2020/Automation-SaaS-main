@@ -29,4 +29,24 @@
       <initValue>'ar'</initValue>
       <name>languageMode</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'jdbc:mysql://perf-cluster.cluster-ciw0fgz2cdaz.me-south-1.rds.amazonaws.com/release_clone'</initValue>
+      <name>gDBUrl</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'admin'</initValue>
+      <name>gDBUserName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'wgrZpko:!FaMz=Y'</initValue>
+      <name>gDBPassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>gJDBCClass</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

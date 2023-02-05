@@ -37,6 +37,20 @@ def static "catalog.catlogComponants.getSpecifiedCatalogElement"(
 }
 
 
+def static "dbconnections.executeQueries.getDataFromDBByQuery"(
+    	Object mQuery	) {
+    (new dbconnections.executeQueries()).getDataFromDBByQuery(
+        	mQuery)
+}
+
+
+def static "dbconnections.executeQueries.getOtp"(
+    	Object mobileNumber	) {
+    (new dbconnections.executeQueries()).getOtp(
+        	mobileNumber)
+}
+
+
 def static "products.productsFromCatalog.getProducts"() {
     (new products.productsFromCatalog()).getProducts()
 }
