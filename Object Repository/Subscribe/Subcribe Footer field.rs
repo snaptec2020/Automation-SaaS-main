@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Send lets stay in touch Button</name>
+   <name>Subcribe Footer field</name>
    <tag></tag>
-   <elementGuidId>708cae17-a9fb-4ae1-be17-f6abf7f75d5e</elementGuidId>
+   <elementGuidId>85eaa18b-e793-43d9-8e17-fe9a97f65d22</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//button[@id='buttonSubcribe']</value>
+         <value>//input[@id='subscribeEmailInput_bot']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

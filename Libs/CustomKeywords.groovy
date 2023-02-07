@@ -7,6 +7,7 @@ import java.util.List
 
 
 
+<<<<<<< Updated upstream
 def static "cart.cartItems.getProductsInCart"() {
     (new cart.cartItems()).getProductsInCart()
 }
@@ -18,6 +19,23 @@ def static "cart.cartItems.getSpecifiedIteminThecart"(
     (new cart.cartItems()).getSpecifiedIteminThecart(
         	elementIndex
          , 	items)
+=======
+def static "generalactions.notificationsObject.verifyNotificationVisble"(
+    	Object arText	
+     , 	Object enText	) {
+    (new generalactions.notificationsObject()).verifyNotificationVisble(
+        	arText
+         , 	enText)
+}
+
+
+def static "generalactions.notificationsObject.verifyNotificationNotVisble"(
+    	Object arText	
+     , 	Object enText	) {
+    (new generalactions.notificationsObject()).verifyNotificationNotVisble(
+        	arText
+         , 	enText)
+>>>>>>> Stashed changes
 }
 
 
@@ -121,6 +139,7 @@ def static "products.productsFromCatalog.getSpecifiedOutOfStockProduct"(
 }
 
 
+<<<<<<< Updated upstream
 def static "cart.removeItem.getProductsInCart"() {
     (new cart.removeItem()).getProductsInCart()
 }
@@ -132,4 +151,8 @@ def static "cart.removeItem.getSpecifiedIteminThecart"(
     (new cart.removeItem()).getSpecifiedIteminThecart(
         	elementIndex
          , 	items)
+=======
+def static "generalactions.generalStrings.generatRandomEmail"() {
+    (new generalactions.generalStrings()).generatRandomEmail()
+>>>>>>> Stashed changes
 }

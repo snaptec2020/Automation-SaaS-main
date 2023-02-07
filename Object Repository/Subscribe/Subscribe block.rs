@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,'subcribe-block')]</value>
+         <value>//div[@class='subcribe-block ']</value>
       </entry>
       <entry>
          <key>CSS</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +21,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>div</value>
-      <webElementGuid>d0f40f04-dd8d-4bc8-a7e7-71fd008f2fd9</webElementGuid>
+      <webElementGuid>e777af66-397a-4376-8f16-c40772ee0d8f</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +29,7 @@
       <name>class</name>
       <type>Main</type>
       <value>subcribe-block </value>
-      <webElementGuid>caa1bf3d-4a61-43fe-ae02-d21e7db2d9a5</webElementGuid>
+      <webElementGuid>762f4d28-a13b-4435-8abc-bc72a96724ec</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -53,7 +52,7 @@
 
 
 </value>
-      <webElementGuid>ac18fd7c-779c-456a-b05a-1788a467a769</webElementGuid>
+      <webElementGuid>733cb281-f22b-404e-a0bc-d03b490f1bb6</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -61,7 +60,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;__next&quot;)/div[@class=&quot;main-page-content&quot;]/div[@class=&quot;container&quot;]/div[@class=&quot;infinite-scroll-component__outerdiv&quot;]/div[@class=&quot;infinite-scroll-component landing-infinite-scroll&quot;]/div[6]/div[@class=&quot;subcribe-block&quot;]</value>
-      <webElementGuid>7bff02b5-1953-473a-b156-2659bd3a7d18</webElementGuid>
+      <webElementGuid>debef8ba-906f-4c43-af68-9df4f99a1fcf</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -69,7 +68,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='__next']/div[5]/div/div/div/div[6]/div</value>
-      <webElementGuid>1e70974c-bc46-4ee6-9e6b-1d1716cdeca0</webElementGuid>
+      <webElementGuid>4b0d5f66-866d-44b9-bdc9-e886961225bb</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -77,7 +76,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='(0)'])[103]/following::div[2]</value>
-      <webElementGuid>54c6e68b-390e-4d05-8ae1-9ba0e131b1a1</webElementGuid>
+      <webElementGuid>d9de3daf-8e87-4cd5-8acb-d1e0453f969e</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -85,7 +84,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[6]/div</value>
-      <webElementGuid>54bbc91f-5468-4e74-bfea-3cd8f8fc1535</webElementGuid>
+      <webElementGuid>e9e737a8-9c8d-4383-8d7d-cbaf03a06a37</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -123,6 +122,6 @@
 
 
 ')]</value>
-      <webElementGuid>d1a30e8e-920b-4979-9852-eabd214ad5ad</webElementGuid>
+      <webElementGuid>ee9cab1f-c14d-4f9c-a9fd-3191f04b2f38</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Send lets stay in touch Button</name>
+   <name>Subcribe Button on touch</name>
    <tag></tag>
-   <elementGuidId>708cae17-a9fb-4ae1-be17-f6abf7f75d5e</elementGuidId>
+   <elementGuidId>bad98e31-4a1e-4f00-8974-fea06b80ac0a</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>

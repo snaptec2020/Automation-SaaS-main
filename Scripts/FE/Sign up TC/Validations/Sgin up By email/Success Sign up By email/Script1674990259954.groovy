@@ -17,13 +17,13 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-def generator = { String alphabet, int n ->
-	new Random().with {
-	  (1..n).collect { alphabet[ nextInt( alphabet.length() ) ] }.join()
-	}
-  }
-  
-  def randomEmail= generator( (('A'..'Z')+('0'..'9')).join(), 4 )
+/*
+ * def generator = { String alphabet, int n -> new Random().with({
+ * (1..n).collect({ alphabet[nextInt(alphabet.length())] }).join() }) }
+ */
+
+def randomEmail = CustomKeywords.'generalactions.generalStrings.generatRandomEmail'()
+
 /*
  * WebUI.callTestCase(findTestCase('FE/Sign up TC/General Actions Sign
  * up/Navigate to Sign up page'), [:], FailureHandling.STOP_ON_FAILURE)
@@ -45,9 +45,10 @@ def generator = { String alphabet, int n ->
  * 
  * WebUI.click(findTestObject('Sign up Page/Sign up By email/Sign Up Button'))
  */
-
-
-WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/SignUp by Email'), [('firstName') : 'Automationtest', ('lastName') : randomEmail
-        , ('email') : randomEmail+'@aa.com', ('password') : 'Abc123456'], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/SignUp by Email'), [('firstName') : 'Automationtest'
+        , ('lastName') : randomEmail, ('email') : randomEmail, ('password') : 'Abc123456'], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'))
+
+
+
