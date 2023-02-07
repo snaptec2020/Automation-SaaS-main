@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Add to favorite</name>
+   <name>Wish list button</name>
    <tag></tag>
-   <elementGuidId>54a92913-c4a2-4e90-911e-320ee1946405</elementGuidId>
+   <elementGuidId>69f6587d-2b75-43df-b388-e82fab4dfc49</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//button[@class='button--transparent p-0   styles_wishListButton__U9rgd']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//button[@class='button--transparent p-0  ']</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
