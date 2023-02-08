@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Send lets stay in touch Button</name>
+   <name>Input Subcribe on touch</name>
    <tag></tag>
-   <elementGuidId>708cae17-a9fb-4ae1-be17-f6abf7f75d5e</elementGuidId>
+   <elementGuidId>b2388dd6-fe3f-4e92-adbc-338a5387c5a2</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//button[@id='buttonSubcribe']</value>
+         <value>//input[@id='inputSubcribe']</value>
       </entry>
       <entry>
          <key>BASIC</key>
