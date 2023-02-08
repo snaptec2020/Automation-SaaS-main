@@ -6,12 +6,11 @@
    <elementGuidId>12e3f057-590f-4b7c-a008-4edf13ac328f</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@class='dropdown-menu show']//button[contains(@class,'dropdown-item drop-item')][normalize-space()='English']</value>
+         <key>CSS</key>
       </entry>
       <entry>
-         <key>CSS</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[@class='language-container']//span[@class='top-bar__item'][normalize-space()='English']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +21,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>button</value>
-      <webElementGuid>e871eafb-4698-4886-a509-ca6927c338b9</webElementGuid>
+      <webElementGuid>ac7b7b62-3fd2-49be-8b9d-76469d8fbebd</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +29,7 @@
       <name>class</name>
       <type>Main</type>
       <value>dropdown-item drop-item </value>
-      <webElementGuid>b3cf5404-20d3-4704-838f-f47e86071b3f</webElementGuid>
+      <webElementGuid>e18659cb-1388-4eee-8ccc-8f6861c0be66</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +37,7 @@
       <name>text</name>
       <type>Main</type>
       <value>English</value>
-      <webElementGuid>58844dab-d9f3-4834-89b7-8df1a740fe89</webElementGuid>
+      <webElementGuid>69cb6457-72b9-47ff-962e-05ed9d566e7e</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -46,7 +45,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;__next&quot;)/div[@class=&quot;styles_headerContainer__SUhQl&quot;]/div[@class=&quot;header&quot;]/div[@class=&quot;topbar&quot;]/div[@class=&quot;topbar-content&quot;]/div[@class=&quot;desktop-content&quot;]/div[@class=&quot;right-content&quot;]/div[@class=&quot;language-container&quot;]/div[@class=&quot;dropdown language-trigger show&quot;]/div[@class=&quot;dropdown-menu show&quot;]/button[@class=&quot;dropdown-item drop-item&quot;]</value>
-      <webElementGuid>5315ac97-1f1d-4873-944e-ba69ac4f5b6b</webElementGuid>
+      <webElementGuid>9c1ba29b-5666-4b39-a5da-3179e7e741ef</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -54,7 +53,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='__next']/div[4]/div/div/div/div/div/div[2]/div/div[2]/button[2]</value>
-      <webElementGuid>e338a552-e750-40f8-88d2-da47bf44d56a</webElementGuid>
+      <webElementGuid>66b61926-e6b9-451c-a94d-b4ef372d8cf6</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -62,7 +61,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Arabic'])[4]/following::button[1]</value>
-      <webElementGuid>e8786706-2443-4d2a-8755-d31c9da01fad</webElementGuid>
+      <webElementGuid>09e5cc44-d9a0-4c6d-8620-7b78b6b0aeac</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,7 +69,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Arabic'])[3]/following::button[2]</value>
-      <webElementGuid>7d8b904d-ad65-442e-820a-44cc32319f77</webElementGuid>
+      <webElementGuid>2e05932f-a5dc-4ada-8edf-954b7ea032c6</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,7 +77,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='بحث'])[1]/preceding::button[1]</value>
-      <webElementGuid>9ab315c5-03ae-4ff0-89ce-2b1b5041b261</webElementGuid>
+      <webElementGuid>c4f5d9d8-1602-45e1-a2c0-93e93c1981c4</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,14 +85,14 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div/div/div/div/div[2]/div/div[2]/button[2]</value>
-      <webElementGuid>2336e753-0911-474a-ad3f-3d075b9f6d66</webElementGuid>
+      <webElementGuid>12bfb760-ffea-49ba-8a92-b170cb2ce922</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:customAttributes</name>
       <type>Main</type>
-      <value>//button[(text() = 'English' or . = 'English')]</value>
-      <webElementGuid>69912866-961d-4383-8f8b-9c5fdc4cd6dc</webElementGuid>
+      <value>//div[@class='dropdown-menu show']//button[contains(@class,'dropdown-item drop-item')][normalize-space()='English']</value>
+      <webElementGuid>54b88b01-43bf-45df-bdfb-bf87b1337689</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

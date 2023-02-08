@@ -17,7 +17,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.click(findTestObject('Headers and Footers/Header contents/Language'))
+//WebUI.click(findTestObject('Headers and Footers/Header contents/Language'))
 
 WebUI.waitForElementVisible(findTestObject('Switch Language/button_English'), 0)
 

@@ -1,12 +1,13 @@
 {
-  "keywordFileContentHash": "0D4138FB16ED87D94193E0FEECF3DE6E",
+  "keywordFileContentHash": "231A1D7F78868C7E90B4DA20B6043131",
   "keywordClasses": [
     {
       "name": "cart.cartItems",
       "keywordMethods": [
         {
           "name": "getProductsInCart",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "getSpecifiedIteminThecart",
@@ -37,10 +38,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }
