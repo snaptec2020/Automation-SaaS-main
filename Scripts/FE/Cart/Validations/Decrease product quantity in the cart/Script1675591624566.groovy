@@ -18,11 +18,11 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 try {
-	WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Validations/Increase product quantity in the cart'), [:], FailureHandling.STOP_ON_FAILURE)
+	WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/General Actions/View cart after adding products to cart'), [:], FailureHandling.STOP_ON_FAILURE)
 	
 	
-	WebUI.delay(15)
-	WebUI.scrollToPosition(2, 1)
+	WebUI.delay(10)
+	WebUI.scrollToPosition(400, 450);
 	
 
 	

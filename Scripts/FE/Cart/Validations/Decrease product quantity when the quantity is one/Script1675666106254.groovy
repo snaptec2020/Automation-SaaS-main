@@ -17,21 +17,22 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+
+
 try {
-	WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Cart is filled'), [:], FailureHandling.STOP_ON_FAILURE)
+	WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Validations/Increase product quantity in the cart'), [:], FailureHandling.STOP_ON_FAILURE)
 	
+	
+	WebUI.delay(15)
 	WebUI.scrollToPosition(400, 450);
-
-	
-//	WebUI.scrollToElement(findTestObject('Object Repository/Cart/Product in item container'), 0)
-	//WebUI.scrollToElement(findTestObject('Object Repository/Cart/Plus quantity'), 0)
 	
 
-	WebUI.click(findTestObject('Object Repository/Cart/Plus quantity'))}
+	
+
+	WebUI.click(findTestObject('Object Repository/Cart/Minus quantity'))}
 
 
 catch (Exception e)
 {
 e.printStackTrace();
-//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
 }

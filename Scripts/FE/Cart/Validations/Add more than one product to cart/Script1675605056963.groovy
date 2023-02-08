@@ -20,13 +20,42 @@ import org.openqa.selenium.Keys as Keys
 try 
 {
 	
-	WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Validations/Add in stock product to cart from list in one page'), [:], FailureHandling.STOP_ON_FAILURE);
+	WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/General Actions/Continue shopping after adding product to cart'), [:], FailureHandling.STOP_ON_FAILURE);
 	
-	WebUI.click(findTestObject('Object Repository/Cart/Close item was added to cart dialog'), FailureHandling.STOP_ON_FAILURE)
-}
+	WebUI.delay(5)
+	
 
+List prod = CustomKeywords.'products.productsFromCatalog.getinStockProductFromOnePage'()
+if(prod.size()==0)
+		{WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)}
+
+		else
+
+{
+	
+//elementIndexproduct= Math.abs((randomNumberforProduct.nextInt(prod.size() - 1)))
+
+for (int i=1;i<=2;i++) {
+	CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsFromOnePage'(i, prod)
+	
+}
+	
+	WebUI.delay(5)
+	
+WebUI.click(findTestObject('Object Repository/Cart/View Cart'));
+
+
+WebUI.scrollToPosition(650, 600);
+	
+	
+	//WebUI.waitForElementClickable(findTestObject('Object Repository/Cart/Close item was added to cart dialog'), 5)
+	
+	
+	//WebUI.click(findTestObject('Object Repository/Cart/Close item was added to cart dialog'), FailureHandling.STOP_ON_FAILURE)
+}
+}
 catch (Exception e)
 {
 e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
 }

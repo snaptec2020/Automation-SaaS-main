@@ -27,6 +27,10 @@ try {
 	
 	
 	WebUI.scrollToElement(findTestObject('Object Repository/Cart/Product in item container'), 0)
+	
+	
+	WebUI.scrollToPosition(400, 450);
+	
 
 	WebUI.click(findTestObject('Object Repository/Cart/Remove product from cart'))
 	/*List Items = CustomKeywords.'cart.removeItem.getProductsInCart'()

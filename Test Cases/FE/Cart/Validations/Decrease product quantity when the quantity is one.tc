@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Decrease product quantity when the quantity is one</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>cd6c2051-259a-49b8-8e7c-d580c6087375</testCaseGuid>
+</TestCaseEntity>
