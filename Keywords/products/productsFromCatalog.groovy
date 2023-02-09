@@ -11,7 +11,9 @@ import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.testcase.TestCase
 import com.kms.katalon.core.testdata.TestData
+import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
@@ -21,7 +23,7 @@ import internal.GlobalVariable
 
 
 public class productsFromCatalog {
-
+ TestObject tb = new TestObject()
 	@Keyword
 	def getProducts() {
 		List Products = WebUI.findWebElements(findTestObject('Object Repository/Products/List of products'),30)
@@ -69,9 +71,13 @@ public class productsFromCatalog {
 	@Keyword
 	def getSpecifiedinStockProductsFromOnePage(int elementIndex,List productList ) {
 
+		tb.addProperty('xpath', ConditionType.EQUALS, "//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')]["+elementIndex+"]")
 
-
-		productList.get(elementIndex).click()
+		//def product = productList.get(elementIndex).cl
+		//KeywordUtil.logInfo("***************************\t"+product.toString())
+		WebUI.waitForElementClickable(tb, 0)
+		WebUI.click(tb)
+		//productList.get(elementIndex).click()
 	}
 	//-------------------------------------------------
 
