@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='language-container']//div[@id='languageTriggerDropdownMenuButton']</value>
+         <value>//div[@class='language-container']//span[@class='language-trigger']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -18,7 +18,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>DIV</value>
-      <webElementGuid>dc73f3fb-7d44-4c6c-94f9-280aa17dada8</webElementGuid>
+      <webElementGuid>0306b76c-d37a-4294-92b2-08b8974a4203</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -26,6 +26,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>xpath1674720503510</value>
-      <webElementGuid>6645397b-0b41-43e5-805b-a04e61cc504e</webElementGuid>
+      <webElementGuid>2e3a0903-6616-4aa1-b441-32c08c8e369a</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
