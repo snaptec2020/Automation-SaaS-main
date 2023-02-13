@@ -17,18 +17,10 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+WebUI.callTestCase(findTestCase('Test Cases/FE/Wishlist/Validations/Wishlist after sign in/Wishlist is not empty'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
+WebUI.click(findTestObject('Object Repository/WishList/Add all in Wishlist to cart'), FailureHandling.STOP_ON_FAILURE)
 
-try
-{
-	WebUI.callTestCase(findTestCase('Test Cases/FE/Sign in TC/validations/login by Eamil/Success login fucation'), [:], FailureHandling.STOP_ON_FAILURE);
-	
-	WebUI.click(findTestObject('Object Repository/WishList/WishList'), FailureHandling.STOP_ON_FAILURE)
-}
 
-catch (Exception e)
-{
-e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}
+CustomKeywords.'generalactions.notificationsObject.verifyNotificationVisble'('تمت إضافة المنتجات إلى عربة التسوق', 'Products has been add to cart')

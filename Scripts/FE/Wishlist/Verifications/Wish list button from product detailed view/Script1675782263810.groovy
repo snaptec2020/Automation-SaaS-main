@@ -24,7 +24,7 @@ try
 {
 	WebUI.callTestCase(findTestCase('Test Cases/FE/Products/General Actions/Products list for Random Category'), [:], FailureHandling.STOP_ON_FAILURE);
 	
-	WebUI.verifyElementPresent(findTestObject('Object Repository/WishList/WishList'), 5, FailureHandling.STOP_ON_FAILURE)
+	WebUI.verifyElementPresent(findTestObject('Object Repository/WishList/WishList icon'), 5, FailureHandling.STOP_ON_FAILURE)
 	
 }
 
