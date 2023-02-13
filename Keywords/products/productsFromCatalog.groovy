@@ -99,4 +99,38 @@ public class productsFromCatalog {
 
 		productList.get(elementIndex).click()
 	}
+
+
+	//------------------------------------------------
+
+
+	@Keyword
+	def getProductsTRoWishList() {
+		List Products = WebUI.findWebElements(findTestObject('Object Repository/WishList/Wish list button'),30)
+
+
+		return Products
+	}
+
+	@Keyword
+	def getSpecifiedProductToBVeAddedinwishlist(int elementIndex,List productList) {
+
+
+		productList.get(elementIndex).click()
+	}
+	//--------------------------------------------------------------
+	@Keyword
+	def getWishListItems() {
+		List Products = WebUI.findWebElements(findTestObject('Object Repository/WishList/Item added to wishlist'),30)
+
+
+		return Products
+	}
+
+	@Keyword
+	def getSpecifieditemfromWishListItems(int elementIndex,List productList) {
+
+
+		productList.get(elementIndex).click()
+	}
 }

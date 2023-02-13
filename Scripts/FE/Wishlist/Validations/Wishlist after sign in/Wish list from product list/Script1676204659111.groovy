@@ -17,29 +17,24 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-Random randomNumberforProduct = new Random();
-
-int elementIndex;
-
-try {
-	
-	//WebUI.callTestCase(findTestCase('Test Cases/FE/Sign in TC/validations/login by Eamil/Success login fucation'), [:], FailureHandling.STOP_ON_FAILURE);
-	
-	
-	
-	WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Cart is filled'), [:], FailureHandling.STOP_ON_FAILURE)
-	
-	
-	//WebUI.scrollToElement(findTestObject('Object Repository/Cart/Product in item container'), 0)
-	
-	
-	//WebUI.click(findTestObject('Object Repository/Cart/Add to favorite'))
-	
-	}
+WebUI.callTestCase(findTestCase('Test Cases/FE/Sign in TC/validations/login by Eamil/Success login fucation'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
-catch (Exception e)
-{
-e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}
+//Random randomNumber = new Random()
+
+
+List Categories = CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
+
+	   //int elementIndex= Math.abs((randomNumber.nextInt(Categories.size() - 1)))
+
+CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(2
+	, Categories)
+
+Random randomNumber = new Random()
+
+List Products = CustomKeywords.'products.productsFromCatalog.getProductsTRoWishList'()
+
+int elementIndex = Math.abs(randomNumber.nextInt(Products.size() - 1))
+
+CustomKeywords.'products.productsFromCatalog.getSpecifiedProductToBVeAddedinwishlist'(elementIndex, Products)
+

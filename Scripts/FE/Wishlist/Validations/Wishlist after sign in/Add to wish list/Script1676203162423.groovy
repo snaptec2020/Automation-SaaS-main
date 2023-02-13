@@ -13,33 +13,28 @@ import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-Random randomNumberforProduct = new Random();
-
-int elementIndex;
-
-try {
-	
-	//WebUI.callTestCase(findTestCase('Test Cases/FE/Sign in TC/validations/login by Eamil/Success login fucation'), [:], FailureHandling.STOP_ON_FAILURE);
-	
-	
-	
-	WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Cart is filled'), [:], FailureHandling.STOP_ON_FAILURE)
-	
-	
-	//WebUI.scrollToElement(findTestObject('Object Repository/Cart/Product in item container'), 0)
-	
-	
-	//WebUI.click(findTestObject('Object Repository/Cart/Add to favorite'))
-	
-	}
 
 
-catch (Exception e)
-{
-e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}
+
+
+
+
+WebUI.callTestCase(findTestCase('Test Cases/FE/Sign in TC/validations/login by Eamil/Success login fucation'), [:], FailureHandling.STOP_ON_FAILURE);
+
+
+
+WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), 'test' )
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'));
+
+WebUI.click(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'), FailureHandling.STOP_ON_FAILURE);
+
+WebUI.click(findTestObject('Object Repository/WishList/Wishlist button in the product detailed page'), FailureHandling.STOP_ON_FAILURE)
+
+

@@ -156,3 +156,34 @@ def static "cart.removeItem.getSpecifiedIteminThecart"(
 def static "generalactions.generalStrings.generatRandomEmail"() {
     (new generalactions.generalStrings()).generatRandomEmail()
 }
+
+
+
+
+
+def static "products.productsFromCatalog.getProductsTRoWishList"() {
+    (new products.productsFromCatalog()).getProductsTRoWishList()
+}
+
+
+def static "products.productsFromCatalog.getSpecifiedProductToBVeAddedinwishlist"(
+    	int elementIndex	
+     , 	List productList	) {
+    (new products.productsFromCatalog()).getSpecifiedProductToBVeAddedinwishlist(
+        	elementIndex
+         , 	productList)
+}
+
+
+def static "products.productsFromCatalog.getWishListItems"() {
+    (new products.productsFromCatalog()).getWishListItems()
+}
+
+
+def static "products.productsFromCatalog.getSpecifieditemfromWishListItems"(
+    	int elementIndex	
+     , 	List productList	) {
+    (new products.productsFromCatalog()).getSpecifieditemfromWishListItems(
+        	elementIndex
+         , 	productList)
+}

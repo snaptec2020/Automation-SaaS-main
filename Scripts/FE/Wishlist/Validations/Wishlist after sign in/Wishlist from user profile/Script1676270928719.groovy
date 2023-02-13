@@ -17,29 +17,9 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-Random randomNumberforProduct = new Random();
-
-int elementIndex;
-
-try {
-	
-	//WebUI.callTestCase(findTestCase('Test Cases/FE/Sign in TC/validations/login by Eamil/Success login fucation'), [:], FailureHandling.STOP_ON_FAILURE);
-	
-	
-	
-	WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Cart is filled'), [:], FailureHandling.STOP_ON_FAILURE)
-	
-	
-	//WebUI.scrollToElement(findTestObject('Object Repository/Cart/Product in item container'), 0)
-	
-	
-	//WebUI.click(findTestObject('Object Repository/Cart/Add to favorite'))
-	
-	}
 
 
-catch (Exception e)
-{
-e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}
+
+WebUI.callTestCase(findTestCase('Test Cases/FE/Sign in TC/validations/login by Eamil/Success login fucation'), [:], FailureHandling.STOP_ON_FAILURE);
+
+WebUI.click(findTestObject('Object Repository/WishList/Wishlist from user profile'), FailureHandling.STOP_ON_FAILURE)

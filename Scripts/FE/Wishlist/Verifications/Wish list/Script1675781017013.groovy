@@ -25,9 +25,9 @@ try
 {
 	WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE);
 	
-	WebUI.verifyElementPresent(findTestObject('Object Repository/WishList/WishList'), 5, FailureHandling.STOP_ON_FAILURE)
+	WebUI.verifyElementPresent(findTestObject('Object Repository/WishList/WishList icon'), 5, FailureHandling.STOP_ON_FAILURE)
 	
-	WebUI.click(findTestObject('Object Repository/WishList/WishList'), FailureHandling.STOP_ON_FAILURE)
+	WebUI.click(findTestObject('Object Repository/WishList/WishList icon'), FailureHandling.STOP_ON_FAILURE)
 }
 
 catch (Exception e) 
