@@ -49,4 +49,9 @@
       <initValue>''</initValue>
       <name>gJDBCClass</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Not Run'</initValue>
+      <name>testSuiteStatus</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
