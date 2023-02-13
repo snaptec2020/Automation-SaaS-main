@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "F9F331F37E01B0913EA9BA87C11005DB",
+  "keywordFileContentHash": "BFDADC79305E09B6C20B971C164E8775",
   "keywordClasses": [
     {
       "name": "products.productsFromCatalog",
@@ -122,6 +122,80 @@
         },
         {
           "name": "getSpecifiedOutOfStockProduct",
+          "parameters": [
+            {
+              "name": "elementIndex",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "productList",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.util.List",
+                "unresolvedClassName": "List",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "getProductsTRoWishList",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "getSpecifiedProductToBVeAddedinwishlist",
+          "parameters": [
+            {
+              "name": "elementIndex",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "productList",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.util.List",
+                "unresolvedClassName": "List",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "getWishListItems",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "getSpecifieditemfromWishListItems",
           "parameters": [
             {
               "name": "elementIndex",
