@@ -57,6 +57,11 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
+    public static Object testSuiteStatus
+     
+    /**
+     * <p></p>
+     */
     public static Object URL_AR
      
     /**
@@ -80,6 +85,7 @@ public class GlobalVariable {
             gDBUserName = selectedVariables['gDBUserName']
             gDBPassword = selectedVariables['gDBPassword']
             gJDBCClass = selectedVariables['gJDBCClass']
+            testSuiteStatus = selectedVariables['testSuiteStatus']
             URL_AR = selectedVariables['URL_AR']
             URL_EN = selectedVariables['URL_EN']
             
