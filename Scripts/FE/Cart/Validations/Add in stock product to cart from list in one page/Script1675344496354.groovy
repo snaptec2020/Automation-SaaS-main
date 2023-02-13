@@ -35,9 +35,9 @@ if (Categories.size()==0)
 
 else 
 	{
-elementIndexcatalog= Math.abs((randomNumberforCatalog.nextInt(Categories.size() - 1)))
+elementIndexcatalog= Math.abs((randomNumberforCatalog.nextInt(Categories.size() - 2)))+2
 
-CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(2
+CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndexcatalog
 	, Categories)}
 
 
@@ -45,11 +45,11 @@ List prod = CustomKeywords.'products.productsFromCatalog.getinStockProductFromOn
 if(prod.size()==0)
 		{WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)}
 
-		else
+else{elementIndexproduct= Math.abs((randomNumberforProduct.nextInt(prod.size())))
 
-{elementIndexproduct= Math.abs((randomNumberforProduct.nextInt(prod.size() - 1)))
-
-
+if(elementIndexproduct==0) {
+	elementIndexproduct=1
+}
 CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsFromOnePage'(elementIndexproduct, prod)
 }
 }

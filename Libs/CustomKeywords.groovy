@@ -139,7 +139,28 @@ def static "products.productsFromCatalog.getSpecifiedOutOfStockProduct"(
 }
 
 
-<<<<<<< Updated upstream
+def static "cart.removeItem.getProductsInCart"() {
+    (new cart.removeItem()).getProductsInCart()
+}
+
+
+def static "cart.removeItem.getSpecifiedIteminThecart"(
+    	int elementIndex	
+     , 	List items	) {
+    (new cart.removeItem()).getSpecifiedIteminThecart(
+        	elementIndex
+         , 	items)
+}
+
+
+def static "generalactions.generalStrings.generatRandomEmail"() {
+    (new generalactions.generalStrings()).generatRandomEmail()
+}
+
+
+
+
+
 def static "products.productsFromCatalog.getProductsTRoWishList"() {
     (new products.productsFromCatalog()).getProductsTRoWishList()
 }
@@ -165,25 +186,4 @@ def static "products.productsFromCatalog.getSpecifieditemfromWishListItems"(
     (new products.productsFromCatalog()).getSpecifieditemfromWishListItems(
         	elementIndex
          , 	productList)
-}
-
-
-=======
->>>>>>> Stashed changes
-def static "cart.removeItem.getProductsInCart"() {
-    (new cart.removeItem()).getProductsInCart()
-}
-
-
-def static "cart.removeItem.getSpecifiedIteminThecart"(
-    	int elementIndex	
-     , 	List items	) {
-    (new cart.removeItem()).getSpecifiedIteminThecart(
-        	elementIndex
-         , 	items)
-}
-
-
-def static "generalactions.generalStrings.generatRandomEmail"() {
-    (new generalactions.generalStrings()).generatRandomEmail()
 }
