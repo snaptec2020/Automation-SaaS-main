@@ -139,6 +139,7 @@ def static "products.productsFromCatalog.getSpecifiedOutOfStockProduct"(
 }
 
 
+<<<<<<< Updated upstream
 def static "products.productsFromCatalog.getProductsTRoWishList"() {
     (new products.productsFromCatalog()).getProductsTRoWishList()
 }
@@ -167,6 +168,8 @@ def static "products.productsFromCatalog.getSpecifieditemfromWishListItems"(
 }
 
 
+=======
+>>>>>>> Stashed changes
 def static "cart.removeItem.getProductsInCart"() {
     (new cart.removeItem()).getProductsInCart()
 }
