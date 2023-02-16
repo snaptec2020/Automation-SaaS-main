@@ -101,6 +101,18 @@ public class productsFromCatalog {
 
 			WebElement element = WebUiCommonHelper.findWebElement(tb,30)
 			WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
+			if(WebUI.verifyElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)) {
+			WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
+			
+			} else {
+				//WebUI.takeScreenshot(FailureHandling.CONTINUE_ON_FAILURE)
+				if(WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Cart'), 10,FailureHandling.CONTINUE_ON_FAILURE)) {
+					WebUI.verifyElementNotClickable(findTestObject('Object Repository/Products/Add To Cart'), FailureHandling.STOP_ON_FAILURE)
+				} else {
+					//WebUI.takeScreenshot(FailureHandling.CONTINUE_ON_FAILURE)
+					KeywordUtil.markError("The product you selected is not found")
+				}
+			}
 		}
 
 		/*		String javaScript = '$x'+xPathDef+'.click()'

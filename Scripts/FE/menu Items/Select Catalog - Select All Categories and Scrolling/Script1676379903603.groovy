@@ -70,7 +70,7 @@ try {
 	 */
         CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromOnePage'()
 
-        WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
+        //WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
 
         //}
         elementIndex = (elementIndex + 1)
