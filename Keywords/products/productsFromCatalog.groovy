@@ -15,15 +15,19 @@ import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import java.util.List
+import org.openqa.selenium.WebElement
 import internal.GlobalVariable
 
 
 
 public class productsFromCatalog {
- TestObject tb = new TestObject()
+	TestObject tb=new TestObject();
+	Random randomNumberforProduct = new Random()
 	@Keyword
 	def getProducts() {
 		List Products = WebUI.findWebElements(findTestObject('Object Repository/Products/List of products'),30)
@@ -61,25 +65,68 @@ public class productsFromCatalog {
 	@Keyword
 	def getinStockProductFromOnePage() {
 
-
+		//WebUI.waitForElementVisible(findTestObject('Object Repository/Products/Add to cart enabled button'), 0)
 		List listOfInStockProducts = WebUI.findWebElements(findTestObject('Object Repository/Products/Add to cart enabled button'),30)
-
-
 		return listOfInStockProducts
 	}
 
 	@Keyword
 	def getSpecifiedinStockProductsFromOnePage(int elementIndex,List productList ) {
-
 		tb.addProperty('xpath', ConditionType.EQUALS, "//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')]["+elementIndex+"]")
 
 		//def product = productList.get(elementIndex).cl
 		//KeywordUtil.logInfo("***************************\t"+product.toString())
 		WebUI.waitForElementClickable(tb, 0)
-		WebUI.click(tb)
+		WebElement element = WebUiCommonHelper.findWebElement(tb,30)
+		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
 		//productList.get(elementIndex).click()
 	}
-	//-------------------------------------------------
+
+	@Keyword
+	def getRandominStockProductsFromOnePage() {
+		//def xPathDef = "(\"//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')]\")["+elementIndex+"]"
+		List prod = getinStockProductFromOnePage()
+		//KeywordUtil.markError(prod.get(1))
+		if(prod.size()==0){
+			//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)
+			KeywordUtil.markError("No Products in this Page")
+
+		} else{
+			def elementIndexproduct= Math.abs((randomNumberforProduct.nextInt(prod.size())))
+			//KeywordUtil.logInfo(elementIndexproduct.toString() +prod.get(elementIndexproduct).toString())
+			if(elementIndexproduct==0) {
+				elementIndexproduct=1
+			}
+			tb.addProperty('xpath', ConditionType.EQUALS, "(//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]")
+
+			WebElement element = WebUiCommonHelper.findWebElement(tb,30)
+			WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
+			if(WebUI.verifyElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)) {
+			WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
+			
+			} else {
+				//WebUI.takeScreenshot(FailureHandling.CONTINUE_ON_FAILURE)
+				if(WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Cart'), 10,FailureHandling.CONTINUE_ON_FAILURE)) {
+					WebUI.verifyElementNotClickable(findTestObject('Object Repository/Products/Add To Cart'), FailureHandling.STOP_ON_FAILURE)
+				} else {
+					//WebUI.takeScreenshot(FailureHandling.CONTINUE_ON_FAILURE)
+					KeywordUtil.markError("The product you selected is not found")
+				}
+			}
+		}
+
+		/*		String javaScript = '$x'+xPathDef+'.click()'
+		 KeywordUtil.logInfo("**************** " + javaScript)
+		 WebUI.executeJavaScript(javaScript, "")*/
+		/*if(WebUI.waitForElementVisible(tb, 0)) {
+		 WebUI.click(tb,FailureHandling.CONTINUE_ON_FAILURE)
+		 KeywordUtil.logInfo("4")
+		 }*/
+
+
+		//productList.get(elementIndex).click()
+	}
+
 
 
 	@Keyword

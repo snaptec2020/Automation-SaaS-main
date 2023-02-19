@@ -31,20 +31,16 @@ public class catlogComponants {
 
 	@Keyword
 	def getSpecifiedCatalogElement(int elementIndex,List catalogList) {
-		if (elementIndex !=1)
+		//if (elementIndex >=0)
 
-			catalogList.get(elementIndex).click()
-			
-		else {
+		catalogList.get(elementIndex).click()
 
-
-			WebUI.scrollToPosition(9999999, 9999999)
-
-			WebUI.scrollToPosition(9999999, 9999999)
-
-			WebUI.click(findTestObject('Object Repository/Mega Menu/another catategory'), FailureHandling.STOP_ON_FAILURE)
-			//catalogList.get(2).click()
-		}
+		/*		else {
+		 WebUI.scrollToPosition(9999999, 9999999)
+		 WebUI.scrollToPosition(9999999, 9999999)
+		 WebUI.click(findTestObject('Object Repository/Mega Menu/another catategory'), FailureHandling.STOP_ON_FAILURE)
+		 //catalogList.get(2).click()
+		 }*/
 	}
 }
 
