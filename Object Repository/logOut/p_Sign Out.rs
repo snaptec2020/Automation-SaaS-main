@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>p_Sign Out</name>
+   <tag></tag>
+   <elementGuidId>c926edd8-5a2b-459f-ae01-bbcdae636f49</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//*/text()[normalize-space(.)='تسجيل الخروج' or normalize-space(.)='Sign Out']/parent::*</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>p</value>
+      <webElementGuid>7c6e5d2d-eb13-4287-b8ae-3879484318bd</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>private-account-menu__sidebarTitle</value>
+      <webElementGuid>82a1283e-3a95-4494-a465-bcba97fc532b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Sign Out</value>
+      <webElementGuid>486cf88c-b871-4406-b318-517b895dde12</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;__next&quot;)/div[@class=&quot;main-page-content&quot;]/div[@class=&quot;main-page&quot;]/div[@class=&quot;styles_privateAccountPageContainer__EgAXB&quot;]/div[@class=&quot;styles_privateAccountMenuContainer__Zffje&quot;]/div[@class=&quot;private-account-menu&quot;]/button[@class=&quot;private-account-menu__itemV4&quot;]/div[@class=&quot;private-account-menu__titleV4&quot;]/div[1]/p[@class=&quot;private-account-menu__sidebarTitle&quot;]</value>
+      <webElementGuid>310b62f1-d8d5-4f8f-9cbf-c5a1ac5f7889</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='__next']/div[5]/div/div/div/div/button[9]/div/div/p</value>
+      <webElementGuid>94819460-e064-4fef-9bcc-e72ced8e93d7</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Account menu'])[1]/following::p[17]</value>
+      <webElementGuid>436fe389-e356-40c1-a87e-91f0fccb3d60</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Search'])[1]/following::p[25]</value>
+      <webElementGuid>42d379f7-0047-4cac-a55d-3a16825b700d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Azeez Saleh'])[1]/preceding::p[2]</value>
+      <webElementGuid>26bc5174-acb5-4ff6-ab4b-95e9c1151991</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='a.aldon@snaptec.co'])[1]/preceding::p[2]</value>
+      <webElementGuid>166f4fcd-2750-4fa5-bab2-e4fd463df469</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Sign Out']/parent::*</value>
+      <webElementGuid>2f5712f4-196c-4582-a61d-284c842fec68</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//button[9]/div/div/p</value>
+      <webElementGuid>ae6bc52f-58da-4b5c-9c59-417e8b90dba1</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//p[(text() = 'Sign Out' or . = 'Sign Out')]</value>
+      <webElementGuid>d2f2311b-44a9-4746-9266-6e13fc95df62</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

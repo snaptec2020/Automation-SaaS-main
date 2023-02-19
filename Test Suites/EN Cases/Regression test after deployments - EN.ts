@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>Regression test after deployments - AR</name>
+   <name>Regression test after deployments - EN</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
@@ -10,7 +10,14 @@
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <rerunImmediately>false</rerunImmediately>
-   <testSuiteGuid>cc8feea0-9979-427f-9ac2-6b8101ac3cc4</testSuiteGuid>
+   <testSuiteGuid>ea6e01b2-e90f-4403-a73c-6f29c5d5561a</testSuiteGuid>
+   <testCaseLink>
+      <guid>1d1ca87b-6b05-4860-bd02-07a70b8ba8bd</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Switch Language/Validations/SwitchLanguage to English</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
    <testCaseLink>
       <guid>688fdca3-777b-40eb-9d8e-8bb3c39c22b5</guid>
       <isReuseDriver>false</isReuseDriver>
@@ -18,8 +25,6 @@
       <testCaseId>Test Cases/FE/Website launch/Verifications/Verifications after launch (headers and footers)</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
-<<<<<<< Updated upstream
-=======
    <testCaseLink>
       <guid>e5c791a1-0b9e-40c3-8ac6-9ea687726471</guid>
       <isReuseDriver>false</isReuseDriver>
@@ -245,5 +250,4 @@
       <testCaseId>Test Cases/FE/Sign in TC/validations/login by Eamil/Fail login</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
->>>>>>> Stashed changes
 </TestSuiteEntity>
