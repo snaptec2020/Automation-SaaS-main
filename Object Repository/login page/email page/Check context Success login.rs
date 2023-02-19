@@ -6,12 +6,11 @@
    <elementGuidId>a97420f3-1608-434b-843e-9ad919d8f1e2</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//span[contains(text(),'البيانات الشخصية')or normalize-space()='Private information']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//span[contains(text(),'البيانات الشخصية')]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
