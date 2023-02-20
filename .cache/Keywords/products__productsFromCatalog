@@ -1,5 +1,9 @@
 {
+<<<<<<< Updated upstream
   "keywordFileContentHash": "87BC4D40D19C15F82DAFD143EA792656",
+=======
+  "keywordFileContentHash": "477C8529E88A1EB492D2896CE7BC3D12",
+>>>>>>> Stashed changes
   "keywordClasses": [
     {
       "name": "products.productsFromCatalog",
