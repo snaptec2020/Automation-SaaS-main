@@ -1,5 +1,9 @@
 {
-  "keywordFileContentHash": "CC4CC6FD591F5256EF0691B21F3694A3",
+<<<<<<< Updated upstream
+  "keywordFileContentHash": "87BC4D40D19C15F82DAFD143EA792656",
+=======
+  "keywordFileContentHash": "477C8529E88A1EB492D2896CE7BC3D12",
+>>>>>>> Stashed changes
   "keywordClasses": [
     {
       "name": "products.productsFromCatalog",
@@ -113,6 +117,11 @@
               }
             }
           ],
+          "javadoc": ""
+        },
+        {
+          "name": "getRandominStockProductsFromOnePage",
+          "parameters": [],
           "javadoc": ""
         },
         {

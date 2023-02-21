@@ -125,6 +125,11 @@ def static "products.productsFromCatalog.getSpecifiedinStockProductsFromOnePage"
 }
 
 
+def static "products.productsFromCatalog.getRandominStockProductsFromOnePage"() {
+    (new products.productsFromCatalog()).getRandominStockProductsFromOnePage()
+}
+
+
 def static "products.productsFromCatalog.getOutOfStockProduct"() {
     (new products.productsFromCatalog()).getOutOfStockProduct()
 }
@@ -137,28 +142,6 @@ def static "products.productsFromCatalog.getSpecifiedOutOfStockProduct"(
         	elementIndex
          , 	productList)
 }
-
-
-def static "cart.removeItem.getProductsInCart"() {
-    (new cart.removeItem()).getProductsInCart()
-}
-
-
-def static "cart.removeItem.getSpecifiedIteminThecart"(
-    	int elementIndex	
-     , 	List items	) {
-    (new cart.removeItem()).getSpecifiedIteminThecart(
-        	elementIndex
-         , 	items)
-}
-
-
-def static "generalactions.generalStrings.generatRandomEmail"() {
-    (new generalactions.generalStrings()).generatRandomEmail()
-}
-
-
-
 
 
 def static "products.productsFromCatalog.getProductsTRoWishList"() {
@@ -186,4 +169,23 @@ def static "products.productsFromCatalog.getSpecifieditemfromWishListItems"(
     (new products.productsFromCatalog()).getSpecifieditemfromWishListItems(
         	elementIndex
          , 	productList)
+}
+
+
+def static "cart.removeItem.getProductsInCart"() {
+    (new cart.removeItem()).getProductsInCart()
+}
+
+
+def static "cart.removeItem.getSpecifiedIteminThecart"(
+    	int elementIndex	
+     , 	List items	) {
+    (new cart.removeItem()).getSpecifiedIteminThecart(
+        	elementIndex
+         , 	items)
+}
+
+
+def static "generalactions.generalStrings.generatRandomEmail"() {
+    (new generalactions.generalStrings()).generatRandomEmail()
 }
