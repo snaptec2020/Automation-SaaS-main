@@ -1,0 +1,49 @@
+{
+  "keywordFileContentHash": "BD9492D74FBC8F94357961C95FF42F67",
+  "keywordClasses": [
+    {
+      "name": "dbconnections.executeQueries",
+      "keywordMethods": [
+        {
+          "name": "getDataFromDBByQuery",
+          "parameters": [
+            {
+              "name": "mQuery",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "getOtp",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

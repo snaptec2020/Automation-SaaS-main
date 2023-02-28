@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Search non-existing product</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f1f05546-ca04-4af6-bc6b-05f3b8001f3c</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>f7b80d26-4c60-4924-a188-df7a593c5e54</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'Wrong'</defaultValue>
+      <description></description>
+      <id>f7b80d26-4c60-4924-a188-df7a593c5e54</id>
+      <masked>false</masked>
+      <name>InvalidProduct</name>
+   </variable>
+</TestCaseEntity>

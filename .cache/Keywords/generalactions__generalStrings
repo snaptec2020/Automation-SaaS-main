@@ -1,0 +1,16 @@
+{
+  "keywordFileContentHash": "4C5468DBE3A0CC932FDA528FC9C94BAE",
+  "keywordClasses": [
+    {
+      "name": "generalactions.generalStrings",
+      "keywordMethods": [
+        {
+          "name": "generatRandomEmail",
+          "parameters": [],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}
