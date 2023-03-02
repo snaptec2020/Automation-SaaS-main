@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>Signup TD</name>
+   <tag></tag>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>dd2d3a81-f12d-478a-9f19-d4a8ad0928fd</dataFileGUID>
+   <dataSourceUrl></dataSourceUrl>
+   <driver>InternalData</driver>
+   <data>Azez saleh 2123%40hh.com 1234567 %D8%A7%D9%84%D8%B1%D8%AC%D8%A7%D8%A1+%D8%A7%D8%AF%D8%AE%D8%A7%D9%84+%D9%83%D9%84%D9%85%D8%A9+%D9%85%D8%B1%D9%88%D8%B1+%D9%85%D9%86+8+%D8%AE%D8%A7%D9%86%D8%A7%D8%AA+%D8%B9%D9%84%D9%89+%D8%A7%D9%84%D8%A3%D9%82%D9%84 Please+enter+a+password+with+at+least+8+characters. null</data>
+   <data>Azez saleh Aaa%40aaa.com Aaaaa12345 %D8%A7%D9%84%D8%A8%D8%B1%D9%8A%D8%AF+%D8%A7%D9%84%D8%A7%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A+%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85+%D9%85%D8%B3%D8%AC%D9%84+%D9%85%D8%B3%D8%A8%D9%82%D8%A7%D9%8B A+customer+with+the+same+email+already+exists+in+an+associated+website null</data>
+   <data>Azez saleh Ass%40ii.com 12345678 %D8%A7%D9%84%D8%AD%D8%AF+%D8%A7%D9%84%D8%A3%D8%AF%D9%86%D9%89+%D9%85%D9%86+%D8%A7%D9%84%D9%81%D8%A6%D8%A7%D8%AA+%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D9%84%D9%81%D8%A9+%D9%85%D9%86+%D8%A7%D9%84%D8%B1%D9%85%D9%88%D8%B2+%D9%88+%D8%A7%D9%84%D8%A3%D8%AD%D8%B1%D9%81+%D9%87%D9%88+3+%D8%A7%D9%84%D9%81%D8%A6%D8%A7%D8%AA+%D9%87%D9%8A%3A+%D8%AD%D8%B1%D9%88%D9%81+%D8%B5%D8%BA%D9%8A%D8%B1%D8%A9%2C+%D8%AD%D8%B1%D9%88%D9%81+%D9%83%D8%A8%D9%8A%D8%B1%D8%A9%2C+%D8%A7%D8%B1%D9%82%D8%A7%D9%85%2C+%D8%B1%D9%85%D9%88%D8%B2. Minimum+of+different+classes+of+characters+in+password+is+3.+Classes+of+characters%3A+Lower+Case%2C+Upper+Case%2C+Digits%2C+Special+Characters. null</data>
+   <data>Azez Saleh aaddd 212418445224 null null ButtonDisabled</data>
+   <internalDataColumns>
+      <columnIndex>0</columnIndex>
+      <name>firstName</name>
+      <size>4</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>1</columnIndex>
+      <name>lastName</name>
+      <size>4</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>2</columnIndex>
+      <name>Email</name>
+      <size>4</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>3</columnIndex>
+      <name>Password</name>
+      <size>4</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>4</columnIndex>
+      <name>Expected AR message</name>
+      <size>4</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>5</columnIndex>
+      <name>Expected EN message </name>
+      <size>4</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>6</columnIndex>
+      <name>Expected Result </name>
+      <size>4</size>
+   </internalDataColumns>
+   <isInternalPath>false</isInternalPath>
+   <query></query>
+   <secureUserAccount>false</secureUserAccount>
+   <sheetName></sheetName>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

@@ -23,5 +23,5 @@ WebUI.navigateToUrl(GlobalVariable.URL)
 
 WebUI.maximizeWindow()
 
-WebUI.waitForPageLoad(30)
+WebUI.waitForPageLoad(0)
 

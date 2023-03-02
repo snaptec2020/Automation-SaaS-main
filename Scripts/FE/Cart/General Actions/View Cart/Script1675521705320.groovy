@@ -22,10 +22,7 @@ import org.openqa.selenium.Keys as Keys
 try 
 {
 
-	
-
-	
-	WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Validations/Website launch'),  [:], FailureHandling.STOP_ON_FAILURE);
+WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Validations/Website launch'),  [:], FailureHandling.STOP_ON_FAILURE);
 
 
 WebUI.click(findTestObject('Object Repository/Cart/Cart'), FailureHandling.STOP_ON_FAILURE)
@@ -37,5 +34,5 @@ WebUI.click(findTestObject('Object Repository/Cart/Cart'), FailureHandling.STOP_
 catch (Exception e)
 {
 e.printStackTrace();
-//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
 }

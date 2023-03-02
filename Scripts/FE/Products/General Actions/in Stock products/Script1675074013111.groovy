@@ -41,7 +41,7 @@ CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementInde
 } 
 catch (Exception e) {
 	e.printStackTrace();
-	//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+	WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
 }
 
 
@@ -63,7 +63,7 @@ CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProducts'(elemen
 }
 catch (Exception e){
 	e.printStackTrace();
-	//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+	WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
 	
 }
 
