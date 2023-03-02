@@ -26,7 +26,7 @@ import com.katalon.cdp.CdpUtils as CdpUtils
 
 
 
-//WebUI.waitForElementPresent(findTestObject('Headers and Footers/Footer contents/Web footer'), 50, FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.waitForElementPresent(findTestObject('Headers and Footers/Footer contents/Web footer'), 50, FailureHandling.CONTINUE_ON_FAILURE)
 
 
 CustomKeywords.'mobileBrowsers.mobileBrowsers.captureFullPageScreenshot'(Width, Highet)
