@@ -26,8 +26,12 @@ import internal.GlobalVariable
 
 
 public class productsFromCatalog {
+<<<<<<< Updated upstream
 	TestObject tb=new TestObject();
 	Random randomNumberforProduct = new Random()
+=======
+	TestObject tb = new TestObject()
+>>>>>>> Stashed changes
 	@Keyword
 	def getProducts() {
 		List Products = WebUI.findWebElements(findTestObject('Object Repository/Products/List of products'),30)
