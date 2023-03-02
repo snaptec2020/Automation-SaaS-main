@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Subscribe email General</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c184306c-aaa4-4eff-9af9-ae6f9a94efec</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>f788a5d3-44f4-4a3a-a09f-a947a1b09f42</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>45ca9d6e-a97b-4736-a756-db125a7861e0</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'aaa@aaa.co'</defaultValue>
+      <description></description>
+      <id>f788a5d3-44f4-4a3a-a09f-a947a1b09f42</id>
+      <masked>false</masked>
+      <name>subscribeEmail</name>
+   </variable>
+   <variable>
+      <defaultValue>'Footer'</defaultValue>
+      <description></description>
+      <id>45ca9d6e-a97b-4736-a756-db125a7861e0</id>
+      <masked>false</masked>
+      <name>subscribeMode</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,16 @@
+{
+  "keywordFileContentHash": "E7C02F43A59542574651DCBDDB04B296",
+  "keywordClasses": [
+    {
+      "name": "generalactions.generalStrings",
+      "keywordMethods": [
+        {
+          "name": "generatRandomEmail",
+          "parameters": [],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}
