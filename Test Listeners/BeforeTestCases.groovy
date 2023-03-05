@@ -45,14 +45,14 @@ class BeforeTestCases {
 	@AfterTestCase
 	def sampleAfterTestCase(TestCaseContext testCaseContext) {
 			if(GlobalVariable.testSuiteStatus == 'Not Run') {
-			WebUI.closeBrowser()
+			//WebUI.closeBrowser()
 			}
 	}
 	
 	@BeforeTestSuite
 	def sampleBeforeTestSuite(TestSuiteContext testSuiteContext) {
 		
-		GlobalVariable.testSuiteStatus = testSuiteContext.testSuiteId
+	//	GlobalVariable.testSuiteStatus = testSuiteContext.testSuiteId
 		//KeywordUtil.logInfo('**************************'+GlobalVariable.testSuiteStatus)
 		//sampleBeforeTestCase(testCaseContext.skipThisTestCase())
 		WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
@@ -61,7 +61,7 @@ class BeforeTestCases {
 	@AfterTestSuite
 	def sampleAfterTestSuite(TestSuiteContext testSuiteContext) {
 		
-		GlobalVariable.testSuiteStatus = 'Not Run'
+		//GlobalVariable.testSuiteStatus = 'Not Run'
 		//KeywordUtil.logInfo('**************************'+GlobalVariable.testSuiteStatus)
 	//	WebUI.closeBrowser()
 		//sampleBeforeTestCase(testCaseContext.skipThisTestCase())

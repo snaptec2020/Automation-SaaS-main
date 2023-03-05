@@ -39,4 +39,32 @@
          <variableId>edf7ce8a-4b69-4fab-838c-50b30dd343a6</variableId>
       </variableLink>
    </testCaseLink>
+   <testCaseLink>
+      <guid>d0b23a11-7bc9-4298-9bf9-b04d7406db9d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Cart/General Actions/Mobile/Andriod/View Cart</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>42217ca9-f652-4bc7-b413-0f8267f15d88</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Cart/Verifications/Mobile/Andriod/Browsers/Cart is empty</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>29dd20d0-7e76-4fa9-b6c9-7283ed8aaac5</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Cart/General Actions/Mobile/Andriod/Continue shopping from cart</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>8186d6bd-3299-44e6-8725-d99ad0d96cec</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Cart/General Actions/Mobile/Andriod/Continue shopping after adding product to cart</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
 </TestSuiteEntity>
