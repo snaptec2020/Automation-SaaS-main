@@ -24,11 +24,11 @@ import com.github.kklisura.cdt.protocol.commands.Emulation as Emulation
 import com.github.kklisura.cdt.protocol.types.page.CaptureScreenshotFormat as CaptureScreenshotFormat
 import com.katalon.cdp.CdpUtils as CdpUtils
 
-WebUI.openBrowser('')
+//WebUI.openBrowser('')
 
-WebUI.navigateToUrl(GlobalVariable.URL)
+//WebUI.navigateToUrl(GlobalVariable.URL)
 
-WebUI.maximizeWindow()
+//WebUI.maximizeWindow()
 
 WebUI.waitForElementPresent(findTestObject('Headers and Footers/Footer contents/Web footer'), 50, FailureHandling.CONTINUE_ON_FAILURE)
 
@@ -39,5 +39,9 @@ Page page = cdts.getPage()
 
 
 	page.enable()
-CustomKeywords.'mobileBrowsers.mobileBrowsers.captureFullPageScreenshot'(cdts, '',390,844)
+CustomKeywords.'mobileBrowsers.mobileBrowsers.captureFullPageScreenshot'(cdts, '',375,2436)
+
+
+
+
 

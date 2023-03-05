@@ -63,7 +63,7 @@ class BeforeTestCases {
 		
 		GlobalVariable.testSuiteStatus = 'Not Run'
 		//KeywordUtil.logInfo('**************************'+GlobalVariable.testSuiteStatus)
-		WebUI.closeBrowser()
+	//	WebUI.closeBrowser()
 		//sampleBeforeTestCase(testCaseContext.skipThisTestCase())
 		//WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 		

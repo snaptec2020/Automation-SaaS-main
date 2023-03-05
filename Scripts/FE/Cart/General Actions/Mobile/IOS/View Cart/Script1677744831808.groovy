@@ -13,14 +13,31 @@ import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Mobile/Andriod/Browser/Launch website on Samsung S9'), [:], FailureHandling.STOP_ON_FAILURE)
+
+try 
+{
+
+	
+WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Mobile/IOS/Browser/Launch Website on iPhone 14'), [:],FailureHandling.STOP_ON_FAILURE)
+
+	
+	
+	//WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Validations/Website launch'),  [:], FailureHandling.STOP_ON_FAILURE);
+
+
+WebUI.click(findTestObject('Object Repository/Cart/Cart'), FailureHandling.STOP_ON_FAILURE)
+}
 
 
 
-WebUI.click(findTestObject('Object Repository/Mega Menu/MenuSider on mobile'), FailureHandling.CONTINUE_ON_FAILURE)
+
+catch (Exception e)
+{
+e.printStackTrace();
+//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+}

@@ -28,34 +28,35 @@ import com.github.kklisura.cdt.protocol.commands.Fetch as Fetch
 
 public class mobileBrowsers {
 
-	
-	
 
-	
+
+
+	ChromeDevToolsService cdts = CdpUtils.getService()
+
+
 	@Keyword
-	def SetMobileDim(double Width,double Height) {
-			double width = Width
-	
-			double height = Height}
-	
-	@Keyword
-		def captureFullPageScreenshot(ChromeDevToolsService devToolsService, String outputFilename,double Width,double Height) {
+	def captureFullPageScreenshot(String  Width,String Height) {
 
-			double width = Width
-			
-					double height = Height
+		double width  = Width as double
+
+		double height = Height as double
+
+		Page page = cdts.getPage()
 
 
 
+		page.enable()
 
 
-		Emulation emulation = devToolsService.getEmulation()
+
+		Emulation emulation = cdts.getEmulation()
 
 		emulation.setDeviceMetricsOverride(Double.valueOf(width).intValue(), Double.valueOf(height).intValue(), 1.0, Boolean.FALSE)
 
 		emulation.setScrollbarsHidden(Boolean.TRUE)
 
-	
+
 
 		emulation.setScrollbarsHidden(Boolean.FALSE)
-	}}
+	}
+}

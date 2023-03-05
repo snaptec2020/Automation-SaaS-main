@@ -1,59 +1,14 @@
 {
-  "keywordFileContentHash": "D963961BFA42176D08CEEC256C706EFC",
+  "keywordFileContentHash": "29C9201C50325187DD23EA0AD12065E5",
   "keywordClasses": [
     {
       "name": "mobileBrowsers.mobileBrowsers",
       "keywordMethods": [
         {
-          "name": "SetMobileDim",
-          "parameters": [
-            {
-              "name": "Width",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "double",
-                "unresolvedClassName": "double",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": true,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            },
-            {
-              "name": "Height",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "double",
-                "unresolvedClassName": "double",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": true,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": ""
-        },
-        {
           "name": "captureFullPageScreenshot",
           "parameters": [
             {
-              "name": "devToolsService",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "com.github.kklisura.cdt.services.ChromeDevToolsService",
-                "unresolvedClassName": "ChromeDevToolsService",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            },
-            {
-              "name": "outputFilename",
+              "name": "Width",
               "initialExpression": "",
               "type": {
                 "fullClassName": "java.lang.String",
@@ -66,27 +21,14 @@
               }
             },
             {
-              "name": "Width",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "double",
-                "unresolvedClassName": "double",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": true,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            },
-            {
               "name": "Height",
               "initialExpression": "",
               "type": {
-                "fullClassName": "double",
-                "unresolvedClassName": "double",
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
                 "isArray": false,
                 "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": true,
+                "hasImmutableClassName": false,
                 "genericsTypes": [],
                 "errorOnParsing": false
               }
