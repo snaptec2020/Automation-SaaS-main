@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>View all products from view more in container</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5ca40259-df43-4cd6-804c-a6014746930d</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>c23f928f-3b2e-4b4a-989b-c722d8a50870</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>ed76801a-b2bf-4e8f-9b0a-495662b78b02</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'Wrong'</defaultValue>
+      <description></description>
+      <id>c23f928f-3b2e-4b4a-989b-c722d8a50870</id>
+      <masked>false</masked>
+      <name>InvalidProduct</name>
+   </variable>
+   <variable>
+      <defaultValue>'Test'</defaultValue>
+      <description></description>
+      <id>ed76801a-b2bf-4e8f-9b0a-495662b78b02</id>
+      <masked>false</masked>
+      <name>validProduct</name>
+   </variable>
+</TestCaseEntity>

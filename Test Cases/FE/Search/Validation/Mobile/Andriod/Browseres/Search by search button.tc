@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Search by search button</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f05ca9b9-9f6e-4054-864d-fe6f91a4a11c</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>e030ec0f-a7b1-420c-a61b-1e9abdfe3651</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'Test '</defaultValue>
+      <description></description>
+      <id>e030ec0f-a7b1-420c-a61b-1e9abdfe3651</id>
+      <masked>false</masked>
+      <name>Product</name>
+   </variable>
+</TestCaseEntity>

@@ -61,10 +61,138 @@
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>8186d6bd-3299-44e6-8725-d99ad0d96cec</guid>
+      <guid>26edd895-42d8-4528-aeef-fa7a02fb6e18</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Cart/General Actions/Mobile/Andriod/Continue shopping after adding product to cart</testCaseId>
+      <testCaseId>Test Cases/FE/Search/Verification/Mobile/Andriod/Browsers/Verify elemnts for the search</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>36a219ca-0d68-4a20-8229-f153e3dca4d7</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Search/Validation/Mobile/Andriod/Browseres/Search by search button</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>e030ec0f-a7b1-420c-a61b-1e9abdfe3651</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>fe15fb39-2f20-4750-9598-628ceb722c9d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Search/Validation/Mobile/Andriod/Browseres/Search non-existing product</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>7b4e4bcd-d642-47b2-bb97-57a3986559ff</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>f4d565ab-f811-4612-b588-2585c51bd454</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Search/Validation/Mobile/Andriod/Browseres/View all products from view more in container</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>c23f928f-3b2e-4b4a-989b-c722d8a50870</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>ed76801a-b2bf-4e8f-9b0a-495662b78b02</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>f3d184c8-4423-4012-af53-59780c43aaf2</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Search/Validation/Mobile/Andriod/Browseres/View one product</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>c74dac75-1a8a-4933-8af5-4d00ed3b0292</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>4fe2683a-9456-4613-8892-fa41a72a0856</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>c36f01c7-84be-4450-8863-d444ad7cb226</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Search/Validation/Search by search button</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>c9fa203d-7dab-4db7-9cdd-7685e3b00d24</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>cbe7e5c0-a470-40fa-aee3-638bbb29fea3</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Search/Validation/Search non-existing product</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>f7b80d26-4c60-4924-a188-df7a593c5e54</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>18c26416-d395-4bf0-9ae0-43fda514b48a</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Search/Validation/View all products from view more in container</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>3362ef26-c942-40b6-90e7-2f4557f6dbf1</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>4f14c89d-a551-48e6-8afb-72e722addc3e</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>1456c7c6-62e3-4083-bcf8-11ce1162e693</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Search/Validation/View one product</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>9007a792-6605-4465-86aa-188365f9dbfc</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>446e26b0-c195-42c2-8b53-db3c58c3718f</variableId>
+      </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

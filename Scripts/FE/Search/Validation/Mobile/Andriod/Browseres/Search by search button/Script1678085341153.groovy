@@ -1,4 +1,5 @@
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -17,11 +18,30 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('')
 
-WebUI.navigateToUrl(GlobalVariable.URL)
 
-WebUI.maximizeWindow()
 
-WebUI.waitForPageLoad(30)
+try {
 
+WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Mobile/Andriod/Browsers/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE);
+
+WebUI.click(findTestObject('Object Repository/Search contents/Mobile/SearchButton'), FailureHandling.STOP_ON_FAILURE);
+
+WebUI.setText(findTestObject('Object Repository/Search contents/Mobile/TextBox'), Product);
+
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'),FailureHandling.CONTINUE_ON_FAILURE);
+
+
+WebUI.click(findTestObject('Object Repository/Search contents/Mobile/SearchButtonfromtextbox'), FailureHandling.STOP_ON_FAILURE);
+
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Mobile/SearchpageHeader'));
+}
+
+
+catch (Exception e)
+{
+e.printStackTrace();
+//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+}
