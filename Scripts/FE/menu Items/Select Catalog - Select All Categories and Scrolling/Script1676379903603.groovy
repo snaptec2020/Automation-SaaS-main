@@ -36,10 +36,11 @@ Random randomNumberforProduct = new Random()
 try {
     List Categories = CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
 
-    int elementIndex = 0
+   // int elementIndex = 0
 
     //= Math.abs((randomNumber.nextInt(Categories.size() - 1)))
-    for (def Category : Categories) {
+    for (int elementIndex=0; elementIndex<=Categories.size()-1 ;elementIndex++ ) {
+		//elementIndex = elementIndex++
         CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
 
         //WebUI.delay(5)
@@ -73,7 +74,7 @@ try {
         //WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
 
         //}
-        elementIndex = (elementIndex + 1)
+       
     }
 }
 catch (Exception e) {

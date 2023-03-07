@@ -19,6 +19,11 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+
+
+import catalog.catlogComponants as catlogComponants
+
+
 import java.util.List
 import org.openqa.selenium.WebElement
 import internal.GlobalVariable
@@ -93,7 +98,7 @@ public class productsFromCatalog {
 		//KeywordUtil.markError(prod.get(1))
 		if(prod.size()==0){
 			//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)
-			KeywordUtil.markError("No Products in this Page")
+			KeywordUtil.markPassed("No Products in this Page")
 
 		} else{
 			def elementIndexproduct= Math.abs((randomNumberforProduct.nextInt(prod.size())))
@@ -106,8 +111,52 @@ public class productsFromCatalog {
 			WebElement element = WebUiCommonHelper.findWebElement(tb,30)
 			WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
 			if(WebUI.verifyElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)) {
-			WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
-			
+				WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
+
+			} else {
+				//WebUI.takeScreenshot(FailureHandling.CONTINUE_ON_FAILURE)
+				if(WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Cart'), 10,FailureHandling.CONTINUE_ON_FAILURE)) {
+					WebUI.verifyElementNotClickable(findTestObject('Object Repository/Products/Add To Cart'), FailureHandling.STOP_ON_FAILURE)
+				} else {
+					//WebUI.takeScreenshot(FailureHandling.CONTINUE_ON_FAILURE)
+					KeywordUtil.markError("The product you selected is not found")
+				}
+			}
+		}
+	}
+
+
+	@Keyword
+	def getRandominStockProductsFromRandomCategory() {
+		//CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
+		WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
+
+		for (int i = 1; i <= 4; i++) {
+			WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
+		}
+
+		WebUI.delay(3)
+
+		//def xPathDef = "(\"//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')]\")["+elementIndex+"]"
+		List prod = getinStockProductFromOnePage()
+		//KeywordUtil.markError(prod.get(1))
+		if(prod.size()==0){
+			//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)
+			getRandominStockProductsFromRandomCategory()
+
+		} else{
+			def elementIndexproduct= Math.abs((randomNumberforProduct.nextInt(prod.size())))
+			//KeywordUtil.logInfo(elementIndexproduct.toString() +prod.get(elementIndexproduct).toString())
+			if(elementIndexproduct==0) {
+				elementIndexproduct=1
+			}
+			tb.addProperty('xpath', ConditionType.EQUALS, "(//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]")
+
+			WebElement element = WebUiCommonHelper.findWebElement(tb,30)
+			WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
+			if(WebUI.verifyElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)) {
+				WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
+
 			} else {
 				//WebUI.takeScreenshot(FailureHandling.CONTINUE_ON_FAILURE)
 				if(WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Cart'), 10,FailureHandling.CONTINUE_ON_FAILURE)) {

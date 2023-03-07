@@ -39,4 +39,10 @@ public class notificationsObject {
 	def verifyNotificationNotVisble(def arText, def enText) {
 		WebUI.verifyElementNotVisible(getNotificationObject(arText,enText), FailureHandling.CONTINUE_ON_FAILURE)
 	}
+	@Keyword
+	def getMessageText() {
+		tb.addProperty('xpath', ConditionType.EQUALS, "//div[contains(@class,'react-toast-notifications__container')]//*[contains(@class,'react-toast-notifications__toast__content')]")
+		
+		return WebUI.getText(tb, FailureHandling.CONTINUE_ON_FAILURE)
+	}
 }

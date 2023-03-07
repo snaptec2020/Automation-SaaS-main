@@ -6,17 +6,7 @@
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'https://release-tonez.snaptec.co/ar'</initValue>
-      <name>URL_AR</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>'https://release-tonez.snaptec.co/en'</initValue>
-      <name>URL_EN</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>'tonez_ar'</initValue>
-      <name>store</name>
+      <initValue>'https://release-tonez.snaptec.co/'</initValue>
+      <name>URL</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
