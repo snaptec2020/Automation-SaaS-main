@@ -22,7 +22,7 @@ import internal.GlobalVariable
 
 public class catlogComponants {
 	@Keyword
-	def getCategoryElements() {
+	public def getCategoryElements() {
 		List Catalogs = WebUI.findWebElements(findTestObject('Object Repository/Mega Menu/Catalog list'),30)
 
 
@@ -30,7 +30,7 @@ public class catlogComponants {
 	}
 
 	@Keyword
-	def getSpecifiedCatalogElement(int elementIndex,List catalogList) {
+	public def getSpecifiedCatalogElement(int elementIndex,List catalogList) {
 		//if (elementIndex >=0)
 
 		catalogList.get(elementIndex).click()

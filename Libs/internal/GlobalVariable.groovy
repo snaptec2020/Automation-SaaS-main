@@ -59,16 +59,6 @@ public class GlobalVariable {
      */
     public static Object testSuiteStatus
      
-    /**
-     * <p></p>
-     */
-    public static Object URL_AR
-     
-    /**
-     * <p></p>
-     */
-    public static Object URL_EN
-     
 
     static {
         try {
@@ -86,8 +76,6 @@ public class GlobalVariable {
             gDBPassword = selectedVariables['gDBPassword']
             gJDBCClass = selectedVariables['gJDBCClass']
             testSuiteStatus = selectedVariables['testSuiteStatus']
-            URL_AR = selectedVariables['URL_AR']
-            URL_EN = selectedVariables['URL_EN']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)
