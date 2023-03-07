@@ -25,6 +25,11 @@ def static "generalactions.notificationsObject.verifyNotificationNotVisble"(
 }
 
 
+def static "generalactions.notificationsObject.getMessageText"() {
+    (new generalactions.notificationsObject()).getMessageText()
+}
+
+
 def static "cart.cartItems.getProductsInCart"() {
     (new cart.cartItems()).getProductsInCart()
 }
@@ -52,6 +57,16 @@ def static "signup.signupVerifications.verificationElement"(
     	Object message	) {
     (new signup.signupVerifications()).verificationElement(
         	message)
+}
+
+
+def static "checkout.Payments.getPaymentMethodsList"() {
+    (new checkout.Payments()).getPaymentMethodsList()
+}
+
+
+def static "checkout.Payments.getRandomPaymentMethods"() {
+    (new checkout.Payments()).getRandomPaymentMethods()
 }
 
 
@@ -127,6 +142,11 @@ def static "products.productsFromCatalog.getSpecifiedinStockProductsFromOnePage"
 
 def static "products.productsFromCatalog.getRandominStockProductsFromOnePage"() {
     (new products.productsFromCatalog()).getRandominStockProductsFromOnePage()
+}
+
+
+def static "products.productsFromCatalog.getRandominStockProductsFromRandomCategory"() {
+    (new products.productsFromCatalog()).getRandominStockProductsFromRandomCategory()
 }
 
 

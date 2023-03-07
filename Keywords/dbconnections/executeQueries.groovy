@@ -38,7 +38,7 @@ public class executeQueries {
 	def getOtp(def mobileNumber) {
 		def mQuery = "SELECT otp_code FROM release_clone.magedelight_smsprofileotp where customer_mobile like'%"+mobileNumber+"' order by updated_at desc LIMIT 1;"
 		DBData dBag = getDataFromDBByQuery(mQuery)
-		
+
 		if(!dBag.allData.empty){
 			return dBag.getValue('otp_code',1)//allData.first().toString()
 		} else {
