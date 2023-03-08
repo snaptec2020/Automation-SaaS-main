@@ -1,0 +1,21 @@
+{
+  "keywordFileContentHash": "8ACB1734B60B7F9B2C374819A471CC02",
+  "keywordClasses": [
+    {
+      "name": "checkout.Payments",
+      "keywordMethods": [
+        {
+          "name": "getPaymentMethodsList",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "getRandomPaymentMethods",
+          "parameters": [],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

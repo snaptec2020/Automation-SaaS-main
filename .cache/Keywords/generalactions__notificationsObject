@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "409798DC69E7111155D045CFBA8BC336",
+  "keywordFileContentHash": "8FDAB2B1D083D2C3800EC7C246E1D6F1",
   "keywordClasses": [
     {
       "name": "generalactions.notificationsObject",
@@ -66,6 +66,11 @@
               }
             }
           ],
+          "javadoc": ""
+        },
+        {
+          "name": "getMessageText",
+          "parameters": [],
           "javadoc": ""
         }
       ]
