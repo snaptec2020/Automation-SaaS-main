@@ -126,6 +126,11 @@ def static "products.productsFromCatalog.getSpecifiedinStockProducts"(
 }
 
 
+def static "products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategory"() {
+    (new products.productsFromCatalog()).getSpecifiedinStockProductsFromRandomCategory()
+}
+
+
 def static "products.productsFromCatalog.getinStockProductFromOnePage"() {
     (new products.productsFromCatalog()).getinStockProductFromOnePage()
 }

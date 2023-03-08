@@ -10,7 +10,7 @@
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <rerunImmediately>false</rerunImmediately>
-   <testSuiteGuid>cc8feea0-9979-427f-9ac2-6b8101ac3cc4</testSuiteGuid>
+   <testSuiteGuid>9040d0e1-7c0e-444c-a611-a3665d5c0eac</testSuiteGuid>
    <testCaseLink>
       <guid>688fdca3-777b-40eb-9d8e-8bb3c39c22b5</guid>
       <isReuseDriver>false</isReuseDriver>
@@ -18,8 +18,6 @@
       <testCaseId>Test Cases/FE/Website launch/Verifications/Verifications after launch (headers and footers)</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
-<<<<<<< Updated upstream
-=======
    <testCaseLink>
       <guid>e5c791a1-0b9e-40c3-8ac6-9ea687726471</guid>
       <isReuseDriver>false</isReuseDriver>
@@ -94,7 +92,7 @@
       <guid>3b476bbe-437e-4054-a552-fc8a6be4c9cf</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Cart/Validations/Add more than one product to cart</testCaseId>
+      <testCaseId>Test Cases/FE/menu Items/Select Catalog - Select All Categories and Scrolling</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
@@ -122,14 +120,7 @@
       <guid>21b9eae1-dc58-4a98-b9ea-d7f2d74aab66</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Cart/Validations/Decrease product quantity when the quantity is one</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>0aeb845c-3f55-4560-b23a-f36b17db163b</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Cart/Validations/Add to wish list</testCaseId>
+      <testCaseId>Test Cases/FE/Wishlist/Validations/Wishlist before sign in/Wishlist from cart</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
@@ -245,5 +236,4 @@
       <testCaseId>Test Cases/FE/Sign in TC/validations/login by Eamil/Fail login</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
->>>>>>> Stashed changes
 </TestSuiteEntity>

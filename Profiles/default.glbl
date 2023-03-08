@@ -21,11 +21,6 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'tonez_ar'</initValue>
-      <name>store</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
       <initValue>'ar'</initValue>
       <name>languageMode</name>
    </GlobalVariableEntity>

@@ -18,8 +18,7 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 
-try
-{	
+	
 
 WebUI.callTestCase(findTestCase('Test Cases/FE/Products/General Actions/in Stock products'), [:], FailureHandling.STOP_ON_FAILURE);
 		
@@ -29,12 +28,8 @@ WebUI.delay(5)
 WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Cart'), 5, FailureHandling.STOP_ON_FAILURE)
 		
 WebUI.waitForElementClickable(findTestObject('Object Repository/Products/Add To Cart'), 10)
-}		
 		
-catch (Exception e) 
-{
-e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}
+		
+
 
 

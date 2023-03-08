@@ -27,11 +27,6 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
-    public static Object store
-     
-    /**
-     * <p></p>
-     */
     public static Object languageMode
      
     /**
@@ -69,7 +64,6 @@ public class GlobalVariable {
             URL = selectedVariables['URL']
             Vaild_email = selectedVariables['Vaild_email']
             Wrong_email = selectedVariables['Wrong_email']
-            store = selectedVariables['store']
             languageMode = selectedVariables['languageMode']
             gDBUrl = selectedVariables['gDBUrl']
             gDBUserName = selectedVariables['gDBUserName']
