@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "B9C76CEDF8D2F644899916A9040F6A84",
+  "keywordClasses": [
+    {
+      "name": "checkout.PaymentProcess",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}
