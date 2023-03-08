@@ -19,10 +19,15 @@ import org.openqa.selenium.Keys as Keys
 
 
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Mobile/Andriod/Browser/Launch website on Samsung S9'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Test Cases/FE/Sign in TC/validations/General Actions/Mobile/Andriod/Browsers/Navigate sign in By email'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
-//WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search'))
+WebUI.setText(findTestObject('login page/email page/email field'), GlobalVariable.Vaild_email)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Mobile/SearchButton'));
+
+WebUI.setEncryptedText(findTestObject('login page/email page/password field'), 'kdI8ZSiJDoc7QAd5zRkYUQ==')
+
+WebUI.click(findTestObject('login page/email page/login in Button Email page'))
+
+WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'))
 

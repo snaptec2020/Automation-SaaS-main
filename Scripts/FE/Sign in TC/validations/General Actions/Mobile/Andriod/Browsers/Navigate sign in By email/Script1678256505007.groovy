@@ -19,10 +19,9 @@ import org.openqa.selenium.Keys as Keys
 
 
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Mobile/Andriod/Browser/Launch website on Samsung S9'), [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Test Cases/FE/Sign in TC/validations/General Actions/Mobile/Andriod/Browsers/Navigate to Sgin in'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
-//WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search'))
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Mobile/SearchButton'));
+WebUI.click(findTestObject('login page/email page/Select e-mail Way'))
 

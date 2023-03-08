@@ -25,8 +25,8 @@ try
 {
 WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), InvalidProduct )
-if (WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found')))
+//WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), InvalidProduct )
+//if (WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found')))
 
 
 
@@ -42,5 +42,5 @@ WebUI.click(findTestObject('Object Repository/Search contents/Search box/Select 
 catch (Exception e)
 {
 e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
 }

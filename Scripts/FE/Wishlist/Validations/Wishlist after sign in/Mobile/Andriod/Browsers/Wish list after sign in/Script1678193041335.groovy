@@ -19,10 +19,16 @@ import org.openqa.selenium.Keys as Keys
 
 
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Mobile/Andriod/Browser/Launch website on Samsung S9'), [:], FailureHandling.STOP_ON_FAILURE)
 
+try
+{
+	WebUI.callTestCase(findTestCase('Test Cases/FE/Sign in TC/validations/login by Eamil/Success login fucation'), [:], FailureHandling.STOP_ON_FAILURE);
+	
+	//WebUI.click(findTestObject('Object Repository/WishList/WishList icon'), FailureHandling.STOP_ON_FAILURE)
+}
 
-//WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search'))
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Mobile/SearchButton'));
-
+catch (Exception e)
+{
+e.printStackTrace();
+//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+}

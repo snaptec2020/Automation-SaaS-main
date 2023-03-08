@@ -195,4 +195,46 @@
          <variableId>446e26b0-c195-42c2-8b53-db3c58c3718f</variableId>
       </variableLink>
    </testCaseLink>
+   <testCaseLink>
+      <guid>de950b29-3fb9-40fd-9815-05e1e5dc1e47</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Wishlist/Validations/Wishlist before sign in/Mobile/Andriod/Browsers/Wish list before sign in</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>ce507a32-a9f4-429f-ad65-08e32f52ae92</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Sign in TC/validations/General Actions/Mobile/Andriod/Browsers/Navigate to Sgin in</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>b3b26aba-f5a7-49f6-977b-07e25e52efd1</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Sign in TC/validations/General Actions/Mobile/Andriod/Browsers/Navigate sign in By email</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>d4a3d6e1-c49d-42c4-a58e-48c604e94ed3</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Sign in TC/validations/General Actions/Mobile/Andriod/Browsers/Success login fucation</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>f13f3554-7503-4fe5-850c-0b1081b58ea2</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Sign in TC/validations/General Actions/Mobile/Andriod/Browsers/Fail login</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>959f7420-38a0-4c30-8b62-ce562468a5a8</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Wishlist/Validations/Wishlist after sign in/Mobile/Andriod/Browsers/Wish list after sign in</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
 </TestSuiteEntity>

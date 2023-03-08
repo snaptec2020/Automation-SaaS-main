@@ -17,12 +17,16 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+//WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Test Cases/FE/Sign in TC/validations/General Actions/Mobile/Andriod/Browsers/Navigate sign in By email'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Mobile/Andriod/Browser/Launch website on Samsung S9'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.setText(findTestObject('login page/email page/email field'), GlobalVariable.Wrong_email)
 
+WebUI.setEncryptedText(findTestObject('login page/email page/password field'), 'F0FVcr/TNaOaP6DcvHpilA==')
 
-//WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search'))
+WebUI.click(findTestObject('login page/email page/login in Button Email page'))
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Mobile/SearchButton'));
+WebUI.verifyElementVisible(findTestObject('login page/email page/Validate Context wrong credential'))
 
