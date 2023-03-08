@@ -22,8 +22,7 @@ import org.openqa.selenium.Keys as Keys
 
 
 
-try 
-{
+
 WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Validations/Add in stock product to cart from list in one page'), [:], FailureHandling.STOP_ON_FAILURE);
 
 //WebUI.delay(15)
@@ -36,12 +35,8 @@ WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Validations/Add in stock pro
 //WebUI.verifyElementClickable(findTestObject('Object Repository/Cart/View Cart'), FailureHandling.STOP_ON_FAILURE)
 
 WebUI.click(findTestObject('Object Repository/Cart/View Cart'));
-}
 
 
-catch (Exception e)
-{
-e.printStackTrace();
-//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}
+
+
 

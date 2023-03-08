@@ -70,6 +70,50 @@ public class productsFromCatalog {
 
 		productList.get(elementIndex).click()
 	}
+	
+	@Keyword
+	def getSpecifiedinStockProductsFromRandomCategory() {
+		WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
+		
+				for (int i = 1; i <= 4; i++) {
+					WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
+				}
+		
+				WebUI.delay(3)
+		
+				//def xPathDef = "(\"//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')]\")["+elementIndex+"]"
+				List prod = getinStockProduct()
+				//KeywordUtil.markError(prod.get(1))
+				if(prod.size()==0){
+					//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)
+					getRandominStockProductsFromRandomCategory()
+		
+				} else{
+					def elementIndexproduct= Math.abs((randomNumberforProduct.nextInt(prod.size())))
+					//KeywordUtil.logInfo(elementIndexproduct.toString() +prod.get(elementIndexproduct).toString())
+					if(elementIndexproduct==0) {
+						elementIndexproduct=1
+					}
+					tb.addProperty('xpath', ConditionType.EQUALS, "(//button[text() = 'أضف إلى السلة' or text() ='Add to Cart']//parent::div//parent::div[@class='styles_bottomContainer__Fvu6h']//parent::div[@class='styles_productItem__YY5Bs']//p)["+elementIndexproduct+"]")
+					
+							WebElement element = WebUiCommonHelper.findWebElement(tb,30)
+							WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
+										
+				}
+		
+				/*		String javaScript = '$x'+xPathDef+'.click()'
+				 KeywordUtil.logInfo("**************** " + javaScript)
+				 WebUI.executeJavaScript(javaScript, "")*/
+				/*if(WebUI.waitForElementVisible(tb, 0)) {
+				 WebUI.click(tb,FailureHandling.CONTINUE_ON_FAILURE)
+				 KeywordUtil.logInfo("4")
+				 }*/
+		
+		
+				//productList.get(elementIndex).click()
+			
+		
+	}
 	//-------------------------------------------------
 	@Keyword
 	def getinStockProductFromOnePage() {

@@ -17,16 +17,12 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components after click on proceed'), [:], 
+    FailureHandling.STOP_ON_FAILURE)
 
+WebUI.callTestCase(findTestCase('FE/Check out/validation/Select location common case'), [:], FailureHandling.STOP_ON_FAILURE)
 
+CustomKeywords.'checkout.Payments.getRandomPaymentMethods'()
 
-
-WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Add in stock products to cart'), [:], FailureHandling.STOP_ON_FAILURE)
-
-
-WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Cart'), 10)
-
-WebUI.click(findTestObject('Object Repository/Products/Add To Cart'))
-
-
+WebUI.takeFullPageScreenshot('./paymentResult.png')
 

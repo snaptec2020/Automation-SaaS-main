@@ -17,16 +17,32 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components after click on proceed'), [:], 
+    FailureHandling.STOP_ON_FAILURE)
 
+WebUI.click(findTestObject('Check Out/Add manually address Button'))
 
+WebUI.click(findTestObject('Check Out/Add Country icon Button'))
 
+WebUI.click(findTestObject('Check Out/Add First option from list'))
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Add in stock products to cart'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.click(findTestObject('Check Out/Add City icon button'))
 
+WebUI.click(findTestObject('Check Out/Add First option from list'))
 
-WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Cart'), 10)
+if (WebUI.verifyElementVisible(findTestObject('Object Repository/Check Out/Add Distric icon Button'), FailureHandling.CONTINUE_ON_FAILURE)) {
+    WebUI.click(findTestObject('Object Repository/Check Out/Add First option from list'))
+} else {
+    WebUI.sendKeys(findTestObject('Object Repository/Check Out/Distric Feild'), 'Test')
+}
 
-WebUI.click(findTestObject('Object Repository/Products/Add To Cart'))
+WebUI.sendKeys(findTestObject('Check Out/Street Address Field'), 'Test2')
 
+WebUI.sendKeys(findTestObject('Check Out/Zip Code Field'), 'Test3')
 
+CustomKeywords.'checkout.Payments.getRandomPaymentMethods'()
+
+WebUI.takeFullPageScreenshot('./paymentResult.png')
+
+WebUI.acceptAlert()
 

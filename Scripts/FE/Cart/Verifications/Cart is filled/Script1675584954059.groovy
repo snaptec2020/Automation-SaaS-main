@@ -17,8 +17,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-try
-{
+
 WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/General Actions/View cart after adding products to cart'), [:], FailureHandling.STOP_ON_FAILURE);
 
 
@@ -27,11 +26,5 @@ WebUI.delay(10)
 //WebUI.scrollToElement(findTestObject('Object Repository/Cart/Filled cart'), 5, FailureHandling.STOP_ON_FAILURE)
 
 WebUI.verifyElementPresent(findTestObject('Object Repository/Cart/Filled cart'), 10)	
-	
-}
 
-catch (Exception e)
-{
-e.printStackTrace();
-//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}
+
