@@ -45,10 +45,7 @@ def setUp() {
 @TearDown(skipped = true) // Please change skipped to be false to activate this method.
 def tearDown() {
 	// Put your code here.
-<<<<<<< Updated upstream
-=======
-	//WebUI.deleteAllCookies()
->>>>>>> Stashed changes
+
 }
 
 /**

@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//body/div/div[@class='main-page-content']/div[@class='main-page']/div[@class='content-container']/div[@class='infinite-scroll-component__outerdiv']/div[@class='infinite-scroll-component styles_infiniteScroll__ZM3ep']/div[@class='styles_productListContainer__v8REx styles_gridContainer__bRMl5']/div//*[(text() = 'Sold out') or (text() ='مباع بالكامل')]/following::div[@class='styles_productItem__YY5Bs']</value>
+         <value>(//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Sold out') or contains(text(),'مباع بالكامل')])</value>
       </entry>
       <entry>
          <key>BASIC</key>

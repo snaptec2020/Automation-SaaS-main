@@ -19,8 +19,7 @@ import org.openqa.selenium.Keys as Keys
 
 
 
-try
-{
+
 		
 	    WebUI.callTestCase(findTestCase('Test Cases/FE/Products/General Actions/Out of stock products'), [:], FailureHandling.STOP_ON_FAILURE)
 		
@@ -30,12 +29,7 @@ try
 		WebUI.click(findTestObject('Object Repository/Mega Menu/Parent in breadcrumbs'), FailureHandling.STOP_ON_FAILURE)
 		
 		
-		WebUI.closeBrowser();
-}
+		
+
 		
 		
-catch (Exception e)
-{
-e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}

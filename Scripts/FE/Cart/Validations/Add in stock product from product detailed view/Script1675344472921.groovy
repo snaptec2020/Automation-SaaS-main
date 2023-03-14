@@ -28,5 +28,6 @@ WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Car
 
 WebUI.click(findTestObject('Object Repository/Products/Add To Cart'))
 
+WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
 
 

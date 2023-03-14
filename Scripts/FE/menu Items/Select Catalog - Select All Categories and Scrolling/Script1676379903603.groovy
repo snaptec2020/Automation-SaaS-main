@@ -45,13 +45,13 @@ try {
 
         //WebUI.delay(5)
         for (int i = 1; i <= 3; i++) {
-            WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
+            WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 30, FailureHandling.CONTINUE_ON_FAILURE)
         }
         
         WebUI.delay(3)
 
         for (int i = 1; i <= 4; i++) {
-            WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
+            WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 30, FailureHandling.CONTINUE_ON_FAILURE)
         }
         
         WebUI.delay(2)

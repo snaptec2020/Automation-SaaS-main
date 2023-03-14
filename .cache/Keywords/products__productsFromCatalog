@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "DBF8B727E26EA87F408E7DF35E3569F3",
+  "keywordFileContentHash": "7A1001EA07E3EFEC0EBF2B8F040496A6",
   "keywordClasses": [
     {
       "name": "products.productsFromCatalog",
@@ -80,6 +80,11 @@
         },
         {
           "name": "getSpecifiedinStockProductsFromRandomCategory",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "getSpecifiedinStockProductsText",
           "parameters": [],
           "javadoc": ""
         },

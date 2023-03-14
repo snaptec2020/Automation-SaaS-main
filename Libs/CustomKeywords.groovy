@@ -53,10 +53,8 @@ def static "signup.signupVerifications.verificationMessage"(
 }
 
 
-def static "signup.signupVerifications.verificationElement"(
-    	Object message	) {
-    (new signup.signupVerifications()).verificationElement(
-        	message)
+def static "signup.signupVerifications.verificationElementSignUp"() {
+    (new signup.signupVerifications()).verificationElementSignUp()
 }
 
 
@@ -98,6 +96,18 @@ def static "dbconnections.executeQueries.getOtp"(
 }
 
 
+def static "signIn.signInVerifications.verificationElementSignIn"() {
+    (new signIn.signInVerifications()).verificationElementSignIn()
+}
+
+
+def static "signIn.signInVerifications.verifyActualMessageWithExpectedSignIn"(
+    	Object expectedMessage	) {
+    (new signIn.signInVerifications()).verifyActualMessageWithExpectedSignIn(
+        	expectedMessage)
+}
+
+
 def static "products.productsFromCatalog.getProducts"() {
     (new products.productsFromCatalog()).getProducts()
 }
@@ -128,6 +138,11 @@ def static "products.productsFromCatalog.getSpecifiedinStockProducts"(
 
 def static "products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategory"() {
     (new products.productsFromCatalog()).getSpecifiedinStockProductsFromRandomCategory()
+}
+
+
+def static "products.productsFromCatalog.getSpecifiedinStockProductsText"() {
+    (new products.productsFromCatalog()).getSpecifiedinStockProductsText()
 }
 
 

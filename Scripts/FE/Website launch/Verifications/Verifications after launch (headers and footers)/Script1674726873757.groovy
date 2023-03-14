@@ -51,7 +51,7 @@ if (WebUI.verifyElementVisible(findTestObject('Headers and Footers/Footer conten
     'Verify subscribe block visible'
     for (int j = 1; j <= 3; j++) {
         for (int i; i <= 7; i++) {
-            WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
+            WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 30, FailureHandling.CONTINUE_ON_FAILURE)
         }
         
         if (!(WebUI.verifyElementVisible(findTestObject('Subscribe/Subscribe block'), FailureHandling.CONTINUE_ON_FAILURE))) {
