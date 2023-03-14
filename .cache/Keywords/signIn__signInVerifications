@@ -1,0 +1,35 @@
+{
+  "keywordFileContentHash": "4DD40A3FC099DC1EB9DC126B110C34A0",
+  "keywordClasses": [
+    {
+      "name": "signIn.signInVerifications",
+      "keywordMethods": [
+        {
+          "name": "verificationElementSignIn",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "verifyActualMessageWithExpectedSignIn",
+          "parameters": [
+            {
+              "name": "expectedMessage",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

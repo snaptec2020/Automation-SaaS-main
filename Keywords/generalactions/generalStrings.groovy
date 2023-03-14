@@ -31,7 +31,7 @@ public class generalStrings {
 			}
 		}
 
-		def randomEmail= generator( (('A'..'Z')+('0'..'9')).join(), 4 )+'@aa.com'
+		def randomEmail= generator( (('A'..'Z')+('0'..'9')).join(), 5 )+'@aa.com'
 		return randomEmail
 	}
 }
