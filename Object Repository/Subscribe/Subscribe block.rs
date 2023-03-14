@@ -21,7 +21,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>div</value>
-      <webElementGuid>e777af66-397a-4376-8f16-c40772ee0d8f</webElementGuid>
+      <webElementGuid>9041a1f2-c904-40c9-b651-886244719b1f</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -29,7 +29,7 @@
       <name>class</name>
       <type>Main</type>
       <value>subcribe-block </value>
-      <webElementGuid>762f4d28-a13b-4435-8abc-bc72a96724ec</webElementGuid>
+      <webElementGuid>cc78cdf2-d156-4afc-ac86-f6577b01863b</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -52,7 +52,7 @@
 
 
 </value>
-      <webElementGuid>733cb281-f22b-404e-a0bc-d03b490f1bb6</webElementGuid>
+      <webElementGuid>80650dbb-01c3-4fba-864a-7809351aa374</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -60,7 +60,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;__next&quot;)/div[@class=&quot;main-page-content&quot;]/div[@class=&quot;container&quot;]/div[@class=&quot;infinite-scroll-component__outerdiv&quot;]/div[@class=&quot;infinite-scroll-component landing-infinite-scroll&quot;]/div[6]/div[@class=&quot;subcribe-block&quot;]</value>
-      <webElementGuid>debef8ba-906f-4c43-af68-9df4f99a1fcf</webElementGuid>
+      <webElementGuid>3275eaa0-f5be-4eab-a6f4-4c3d41fc5766</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -68,7 +68,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='__next']/div[5]/div/div/div/div[6]/div</value>
-      <webElementGuid>4b0d5f66-866d-44b9-bdc9-e886961225bb</webElementGuid>
+      <webElementGuid>b9ad2277-c6f9-4cc3-8d74-e4a6edbe3494</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -76,7 +76,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='(0)'])[103]/following::div[2]</value>
-      <webElementGuid>d9de3daf-8e87-4cd5-8acb-d1e0453f969e</webElementGuid>
+      <webElementGuid>1f1cda09-a021-46ab-ac8c-5f5963ef37be</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -84,7 +84,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[6]/div</value>
-      <webElementGuid>e9e737a8-9c8d-4383-8d7d-cbaf03a06a37</webElementGuid>
+      <webElementGuid>b5924176-d37f-4822-b8fe-0af76559a204</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -122,6 +122,6 @@
 
 
 ')]</value>
-      <webElementGuid>ee9cab1f-c14d-4f9c-a9fd-3191f04b2f38</webElementGuid>
+      <webElementGuid>f1232064-d0c2-4d79-9845-1065bc5379db</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

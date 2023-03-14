@@ -10,28 +10,27 @@ import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
-import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-try
-{
+if(WebUI.verifyElementVisible(findTestObject('Object Repository/Cart/Cart count'))) {
+	WebUI.click(findTestObject('Object Repository/Cart/Cart'), FailureHandling.STOP_ON_FAILURE)
+}else {
+	KeywordUtil.markPassed("Add to cart now")
+
 WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/General Actions/View cart after adding products to cart'), [:], FailureHandling.STOP_ON_FAILURE);
+}
 
 
-WebUI.delay(10)
+//WebUI.delay(10)
 
 //WebUI.scrollToElement(findTestObject('Object Repository/Cart/Filled cart'), 5, FailureHandling.STOP_ON_FAILURE)
 
 WebUI.verifyElementPresent(findTestObject('Object Repository/Cart/Filled cart'), 10)	
-	
-}
 
-catch (Exception e)
-{
-e.printStackTrace();
-//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}
+

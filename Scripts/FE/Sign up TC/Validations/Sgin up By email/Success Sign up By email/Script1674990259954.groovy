@@ -46,7 +46,8 @@ def randomEmail = CustomKeywords.'generalactions.generalStrings.generatRandomEma
  * WebUI.click(findTestObject('Sign up Page/Sign up By email/Sign Up Button'))
  */
 WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/SignUp by Email'), [('firstName') : 'Automationtest'
-        , ('lastName') : randomEmail, ('email') : randomEmail, ('password') : 'Abc123456'], FailureHandling.STOP_ON_FAILURE)
+        , ('lastName') : randomEmail.toString().replaceAll("(@.*)", ""), ('email') : randomEmail, ('password') : 'Abc123456'], FailureHandling.STOP_ON_FAILURE)
+GlobalVariable.Vaild_email = randomEmail
 
 WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'))
 

@@ -21,17 +21,9 @@ import org.openqa.selenium.Keys as Keys
 
 
 
-try 
-{
-	WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE);
+
+	//WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE);
 	
 	WebUI.verifyElementPresent(findTestObject('Object Repository/WishList/WishList icon'), 5, FailureHandling.STOP_ON_FAILURE)
 	
 	WebUI.click(findTestObject('Object Repository/WishList/WishList icon'), FailureHandling.STOP_ON_FAILURE)
-}
-
-catch (Exception e) 
-{
-e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}

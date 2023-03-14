@@ -18,17 +18,14 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 //WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
-
 WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate to Sgin in'), [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate sign in By email'), [:], FailureHandling.STOP_ON_FAILURE)
 
 //WebUI.click(findTestObject('login page/email page/email field'))
-
 WebUI.setText(findTestObject('login page/email page/email field'), GlobalVariable.Vaild_email)
 
 //WebUI.click(findTestObject('login page/email page/password field'), FailureHandling.STOP_ON_FAILURE)
-
 WebUI.setEncryptedText(findTestObject('login page/email page/password field'), 'kdI8ZSiJDoc7QAd5zRkYUQ==')
 
 WebUI.click(findTestObject('login page/email page/login in Button Email page'))

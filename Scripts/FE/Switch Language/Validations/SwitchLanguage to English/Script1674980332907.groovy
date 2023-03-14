@@ -26,7 +26,7 @@ WebUI.click(findTestObject('Switch Language/button_English'), FailureHandling.ST
 
 //GlobalVariable.URL = (GlobalVariable.URL + 'en')
 
-
+GlobalVariable.languageMode='en'
 def x = GlobalVariable.URL
 def matcher = ''
 try {

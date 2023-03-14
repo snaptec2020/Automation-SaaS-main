@@ -18,11 +18,11 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 
-Random randomNumberforProduct = new Random();
+//Random randomNumberforProduct = new Random();
 
-int elementIndex;
+//int elementIndex;
 
-try {
+
 	WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Cart is filled'), [:], FailureHandling.STOP_ON_FAILURE)
 	
 	
@@ -43,15 +43,7 @@ else {
 elementIndex = Math.abs(randomNumberforProduct.nextInt(Items.size() - 1))
 
 CustomKeywords.'cart.removeItem.getSpecifiedIteminThecart'(1, Items)*/
-	}
 
-
-
-catch (Exception e)
-{
-e.printStackTrace();
-//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}
 
 
 

@@ -24,8 +24,7 @@ Random randomNumberforCatalog = new Random()
 Random randomNumberforProduct = new Random()
 int elementIndex;
 int elementIndexProduct;
-try 
-{
+
 List Categories = CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
 if(Categories.size()==0)
 {WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)}
@@ -56,12 +55,7 @@ elementIndexProduct = Math.abs((randomNumberforProduct.nextInt(OutOfStockProduct
 
 CustomKeywords.'products.productsFromCatalog.getSpecifiedOutOfStockProduct'(elementIndexProduct, OutOfStockProducts)
 }
-}
 
 
 
-catch (Exception e)
-{
-e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}
+
