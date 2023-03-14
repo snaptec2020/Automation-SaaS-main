@@ -17,16 +17,37 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+int messageColumn=3
+
 //WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate to Sgin in'), [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate sign in By email'), [:], FailureHandling.STOP_ON_FAILURE)
+TestData td = findTestData('SingIn TD')
+int rowNumber=0;
+for(def rowData:td.allData) {
+	rowNumber=rowNumber+1
+	//WebUI.delay(1)
+WebUI.setText(findTestObject('login page/email page/email field'), findTestData('SingIn TD').getValue(1, rowNumber))
 
-WebUI.setText(findTestObject('login page/email page/email field'), GlobalVariable.Wrong_email)
-
-WebUI.setEncryptedText(findTestObject('login page/email page/password field'), 'F0FVcr/TNaOaP6DcvHpilA==')
+WebUI.setText(findTestObject('login page/email page/password field'), findTestData('SingIn TD').getValue(2, rowNumber))
 
 WebUI.click(findTestObject('login page/email page/login in Button Email page'))
+if (GlobalVariable.languageMode=='en') {
+	messageColumn=4
+	
+}
+if (findTestData('SingIn TD').getValue(5,rowNumber)== 'Button Disable') {
 
-WebUI.verifyElementVisible(findTestObject('login page/email page/Validate Context wrong credential'))
+	CustomKeywords.'signIn.signInVerifications.verificationElementSignIn'()
+	
+}else {
+	CustomKeywords.'signIn.signInVerifications.verifyActualMessageWithExpectedSignIn'(findTestData('SingIn TD').getValue(messageColumn,
+		rowNumber))
+}
+}
+
+//CustomKeywords.'signIn.signInVerifications.verificationElementSignIn'()
+
+//WebUI.verifyElementVisible(findTestObject('login page/email page/Validate Context wrong credential'))
 

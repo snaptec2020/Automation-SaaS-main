@@ -170,12 +170,6 @@
       <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Search/Validation/Search by search button</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>c9fa203d-7dab-4db7-9cdd-7685e3b00d24</variableId>
-      </variableLink>
    </testCaseLink>
    <testCaseLink>
       <guid>2e243f65-8bb7-4f39-8117-9369b7c61e02</guid>

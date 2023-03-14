@@ -50,7 +50,7 @@ if (td.getValue(7, rowNumber) != 'ButtonDisabled') {
     CustomKeywords.'signup.signupVerifications.verificationMessage'(td.getValue(5, rowNumber),td.getValue(6, rowNumber))
 }
  else {
-	CustomKeywords.'signup.signupVerifications.verificationElement'()
+	CustomKeywords.'signup.signupVerifications.verificationElementSignUp'()
 }
 }
 

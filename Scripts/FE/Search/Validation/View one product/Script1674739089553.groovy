@@ -21,26 +21,15 @@ import org.openqa.selenium.Keys as Keys
 
 
 
-try
-{
-WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
+//WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), InvalidProduct )
-if (WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found')))
+if (WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'))) {
 
-
-
-WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), validProduct )
+WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), GlobalVariable.textSearch )
+}
 	
 WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'));
 
 WebUI.click(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'), FailureHandling.STOP_ON_FAILURE);
-	
-}
-
-catch (Exception e)
-{
-e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}
