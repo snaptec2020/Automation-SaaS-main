@@ -10,29 +10,19 @@ import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
+import com.kms.katalon.core.testobject.ConditionType as ConditionType
 import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.common.WebUiCommonHelper as WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.By as By
 import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.WebElement as WebElement
 
+WebUI.openBrowser('https://prod-bed-quarter-multisites.snaptec.co/ksa_ar/bq002177-la-bonne-maison-pillow-mist-100-ml.html')
 
-	if(GlobalVariable.testSuiteStatus == 'Not Run') {
-		WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/login by Eamil/Success login fucation'), [:], FailureHandling.STOP_ON_FAILURE)
-		
-	}	
-
-//WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog - Select All Categories and Scrolling'), [:], FailureHandling.STOP_ON_FAILURE)
-CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromRandomCategory'()
-
-WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
-
-WebUI.verifyElementVisible(findTestObject('Check Out/Apply Discount Button'))
-
-WebUI.verifyElementVisible(findTestObject('Check Out/Cart Calculation'))
-
-WebUI.verifyElementVisible(findTestObject('Check Out/Proceed To Checkout Button'))
-
-WebUI.verifyElementVisible(findTestObject('Check Out/Shopping Cart head'))
+CustomKeywords.'products.productsFromCatalog.checkOnAddToStoreClickable'()
 
