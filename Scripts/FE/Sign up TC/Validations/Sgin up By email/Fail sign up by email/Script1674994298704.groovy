@@ -40,11 +40,17 @@ import org.openqa.selenium.Keys as Keys
  */
 TestData td = findTestData('Signup TD')
 int rowNumber=0;
+def emailForCheck
 for(def rowData:td.allData) {
 	rowNumber=rowNumber+1
+	if(rowNumber==2) {
+		emailForCheck=GlobalVariable.Vaild_email
+	}
+	else {
+		emailForCheck=findTestData('Signup TD').getValue(3, rowNumber)
+	}
 WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/SignUp by Email'), [('firstName') : findTestData(
-            'Signup TD').getValue(1, rowNumber), ('lastName') : findTestData('Signup TD').getValue(2, rowNumber), ('email') : findTestData(
-            'Signup TD').getValue(3, rowNumber), ('password') : findTestData('Signup TD').getValue(4, rowNumber)], FailureHandling.STOP_ON_FAILURE)
+            'Signup TD').getValue(1, rowNumber), ('lastName') : findTestData('Signup TD').getValue(2, rowNumber), ('email') : emailForCheck, ('password') : findTestData('Signup TD').getValue(4, rowNumber)], FailureHandling.STOP_ON_FAILURE)
 
 if (td.getValue(7, rowNumber) != 'ButtonDisabled') {
     CustomKeywords.'signup.signupVerifications.verificationMessage'(td.getValue(5, rowNumber),td.getValue(6, rowNumber))
