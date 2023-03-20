@@ -54,4 +54,9 @@
       <initValue>'Test'</initValue>
       <name>textSearch</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Az0785846593'</initValue>
+      <name>ValidPassword</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

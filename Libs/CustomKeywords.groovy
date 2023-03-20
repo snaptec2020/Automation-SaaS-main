@@ -212,6 +212,18 @@ def static "products.productsFromCatalog.getSpecifieditemfromWishListItems"(
 }
 
 
+def static "products.productsFromCatalog.configurableProduct"() {
+    (new products.productsFromCatalog()).configurableProduct()
+}
+
+
+def static "products.productsFromCatalog.checkOnAddToStoreClickable"(
+    	Object currentURL	) {
+    (new products.productsFromCatalog()).checkOnAddToStoreClickable(
+        	currentURL)
+}
+
+
 def static "cart.removeItem.getProductsInCart"() {
     (new cart.removeItem()).getProductsInCart()
 }
