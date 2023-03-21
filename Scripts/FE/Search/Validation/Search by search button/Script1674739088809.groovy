@@ -42,5 +42,5 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Sea
 catch (Exception e)
 {
 e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
+//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
 }

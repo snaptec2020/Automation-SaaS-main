@@ -21,8 +21,6 @@ import org.openqa.selenium.Keys as Keys
 
 
 
-try
-{
 WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Mobile/Andriod/Browsers/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE);
 
 WebUI.click(findTestObject('Object Repository/Search contents/Mobile/SearchButton'), FailureHandling.STOP_ON_FAILURE);
@@ -37,10 +35,5 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Sea
 
 WebUI.click(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'), FailureHandling.STOP_ON_FAILURE);
 	
-}
 
-catch (Exception e)
-{
-e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}
+

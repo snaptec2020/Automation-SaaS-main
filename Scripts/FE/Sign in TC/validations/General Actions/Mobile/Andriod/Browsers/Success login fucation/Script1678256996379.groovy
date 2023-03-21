@@ -22,10 +22,10 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('Test Cases/FE/Sign in TC/validations/General Actions/Mobile/Andriod/Browsers/Navigate sign in By email'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
-WebUI.setText(findTestObject('login page/email page/email field'), GlobalVariable.Vaild_email)
+WebUI.setText(findTestObject('login page/email page/email field'), 'test@api.com')
 
 
-WebUI.setEncryptedText(findTestObject('login page/email page/password field'), 'kdI8ZSiJDoc7QAd5zRkYUQ==')
+WebUI.setEncryptedText(findTestObject('login page/email page/password field'), 'Test12344321')
 
 WebUI.click(findTestObject('login page/email page/login in Button Email page'))
 

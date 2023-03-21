@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//button[@class='styles_searchButton__sfhgT ']</value>
+         <value>//input/following-sibling::button[contains(@class,'styles_searchButton__sfhgT')]</value>
       </entry>
       <entry>
          <key>BASIC</key>

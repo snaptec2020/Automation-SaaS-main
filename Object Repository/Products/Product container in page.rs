@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//*[(text() = 'أضف إلى السلة')]/preceding::div[@class='styles_productItem__YY5Bs']</value>
+         <value>//*[contains(text(),'أضف إلى السلة') or contains(text(),'Add to cart')]/parent::div</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -21,13 +21,12 @@ import org.openqa.selenium.Keys as Keys
 
 
 
-try {
 
 WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Mobile/Andriod/Browsers/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE);
 
 WebUI.click(findTestObject('Object Repository/Search contents/Mobile/SearchButton'), FailureHandling.STOP_ON_FAILURE);
 
-WebUI.setText(findTestObject('Object Repository/Search contents/Mobile/TextBox'), Product);
+WebUI.sendKeys(findTestObject('Object Repository/Search contents/Mobile/TextBox'), Product);
 
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'),FailureHandling.CONTINUE_ON_FAILURE);
@@ -37,11 +36,6 @@ WebUI.click(findTestObject('Object Repository/Search contents/Mobile/SearchButto
 
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Mobile/SearchpageHeader'));
-}
 
 
-catch (Exception e)
-{
-e.printStackTrace();
-//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}
+

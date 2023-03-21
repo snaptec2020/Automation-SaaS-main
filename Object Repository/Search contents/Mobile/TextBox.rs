@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@placeholder='Search product']</value>
+         <value>//div[@class='styles_searchInputGroup__X_7yE']//input</value>
       </entry>
       <entry>
          <key>BASIC</key>
