@@ -17,20 +17,13 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate to Sgin in'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Check Out/Proceed To Checkout Button'))
-//boolean otpRequierd=WebUI.verifyElementVisible(findTestObject('OTP/OTP container'))
-int otpRequierd=WebUI.findWebElements(findTestObject('Sign up Page/Sgin up By phone/insert phone number'),10).size()
-if(otpRequierd!= 0) {
-	WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), CustomKeywords.'generalactions.generalStrings.generateRandomPhoneNumber'())
-	WebUI.click(findTestObject('Check Out/Update added phone number'))
-	WebUI.callTestCase(findTestCase('FE/OTP/General Actions/Insert fixed OTP'), [:], FailureHandling.STOP_ON_FAILURE)
-}
+WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), GlobalVariable.phoneNumber)
 
-WebUI.verifyElementVisible(findTestObject('Check Out/checkout user details 1'))
+WebUI.click(findTestObject('login page/phone page/Submit Button phone number'))
 
-WebUI.verifyElementVisible(findTestObject('Check Out/Checkout address 2'))
+WebUI.callTestCase(findTestCase('FE/OTP/General Actions/Insert fixed OTP'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Check Out/Checkout payment method'))
+WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'))
 

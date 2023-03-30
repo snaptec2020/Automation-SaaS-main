@@ -54,10 +54,42 @@ public class generalStrings {
 		ZerosfromString = phoneFormate =~ '(0.*?$)'
 
 		def randomNumber=generator( (('0'..'9')).join(), ZerosfromString[0][1].toString().replaceAll("-","").length() )
-		KeywordUtil.logInfo(nonZerosFromString[0].toString()+randomNumber)
-		KeywordUtil.logInfo(ZerosfromString[0].toString())
-		KeywordUtil.logInfo(nonZerosFromString[0].toString())
-		KeywordUtil.logInfo(phoneFormate)
+//		KeywordUtil.logInfo(nonZerosFromString[0].toString()+randomNumber)
+//		KeywordUtil.logInfo(ZerosfromString[0].toString())
+//		KeywordUtil.logInfo(nonZerosFromString[0].toString())
+//		KeywordUtil.logInfo(phoneFormate)
 		return nonZerosFromString[0].toString()+randomNumber
 	}
-}
+	@Keyword
+	def generatePhoneWithConditions(int expectedPhoneSize , int isPhoneKeyReplaced) {
+		
+	
+	def generator = { String alphabet, int n ->
+		new Random().with {
+			(1..n).collect { alphabet[ nextInt( alphabet.length() ) ] }.join()
+		}
+	}
+	def phoneFormate =WebUiCommonHelper.findWebElement(findTestObject('Object Repository/OTP/input Phone number'),30).getAttribute("placeholder")
+	def nonZerosFromString
+	def ZerosfromString = ''
+	
+	nonZerosFromString = phoneFormate =~ '[1-9]+'
+	
+	ZerosfromString = phoneFormate =~ '(0.*?$)'
+	def phoneSizeFraction =nonZerosFromString[0].toString().length() +ZerosfromString[0][1].toString().replaceAll("-","").length() -expectedPhoneSize
+	def randomNumber=generator( (('0'..'9')).join(), ZerosfromString[0][1].toString().replaceAll("-","").length() - phoneSizeFraction )
+	def replacedPhoneKey=nonZerosFromString[0].toString()
+	if(isPhoneKeyReplaced==1) {
+		def replacingWith= generator( (('1'..'9')).join(), nonZerosFromString[0].toString().length() )
+		if(replacingWith==replacedPhoneKey) {
+			replacedPhoneKey=generator( (('1'..'4')).join(), nonZerosFromString[0].toString().length() )
+		}else {
+			replacedPhoneKey=replacingWith
+		}
+		
+	}
+	return replacedPhoneKey+randomNumber
+	}
+
+	}
+
