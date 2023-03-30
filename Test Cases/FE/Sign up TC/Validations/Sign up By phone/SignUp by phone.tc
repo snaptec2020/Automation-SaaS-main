@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>SignUp by phone</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>45aee8ae-8bf2-4307-b906-2c8aff130a50</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>bd6e6170-fe9b-4c66-91cf-613a64f32210</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>32b0905d-b97f-4fb9-af81-bd21cb679132</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>463e93d4-c668-44a7-b51b-dc55866e9b1f</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'Azeez'</defaultValue>
+      <description></description>
+      <id>bd6e6170-fe9b-4c66-91cf-613a64f32210</id>
+      <masked>false</masked>
+      <name>FirstName</name>
+   </variable>
+   <variable>
+      <defaultValue>'Saleh'</defaultValue>
+      <description></description>
+      <id>32b0905d-b97f-4fb9-af81-bd21cb679132</id>
+      <masked>false</masked>
+      <name>SecondName</name>
+   </variable>
+   <variable>
+      <defaultValue>'542450508\r\n'</defaultValue>
+      <description></description>
+      <id>463e93d4-c668-44a7-b51b-dc55866e9b1f</id>
+      <masked>false</masked>
+      <name>PhoneNumber</name>
+   </variable>
+</TestCaseEntity>

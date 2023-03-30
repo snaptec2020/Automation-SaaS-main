@@ -17,9 +17,16 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('')
 
-WebUI.navigateToUrl(GlobalVariable.URL)
 
-WebUI.maximizeWindow()
+WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/First name sign up mobile'), FirstName)
+
+WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/Last name sign up Mobile'), SecondName)
+
+WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), PhoneNumber)
+
+
+WebUI.click(findTestObject('Sign up Page/Sgin up By phone/Check box rules'))
+
+WebUI.click(findTestObject('Sign up Page/Sgin up By phone/Submit Button Sign up mobile page'))
 

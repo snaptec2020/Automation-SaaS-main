@@ -17,9 +17,13 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('')
+WebUI.callTestCase(findTestCase('FE/Sign up TC/General Actions Sign up/Navigate to Sign Up Mobile page'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.navigateToUrl(GlobalVariable.URL)
 
-WebUI.maximizeWindow()
+WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sign up By phone/SignUp by phone'), [('FirstName') : 'Azeez', ('SecondName') : 'Saleh'
+        , ('PhoneNumber') : CustomKeywords.'generalactions.generalStrings.generateRandomPhoneNumber'()], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('FE/OTP/Validation/Insert fixed OTP'), [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'))
 

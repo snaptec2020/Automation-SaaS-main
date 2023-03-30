@@ -17,9 +17,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('')
+WebUI.callTestCase(findTestCase('FE/OTP/Verification/Check OTP elements'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.navigateToUrl(GlobalVariable.URL)
-
-WebUI.maximizeWindow()
+WebUI.setText(findTestObject('OTP/OTP code'), GlobalVariable.FixedOTP)
 

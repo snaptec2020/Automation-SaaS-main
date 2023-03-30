@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>CVV Field</name>
+   <name>OTP num 1</name>
    <tag></tag>
-   <elementGuidId>66f5b257-9119-4617-8c3b-0872b401c662</elementGuidId>
+   <elementGuidId>97929da6-5a3d-4609-a9ba-8d3094dd679f</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='checkout-com-form-container']//iframe[@id='cvv']</value>
+         <value>//div[contains(@class,'ReactInputVerificationCode__container')]//div[1]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

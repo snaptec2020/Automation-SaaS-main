@@ -15,13 +15,16 @@ import com.kms.katalon.core.testcase.TestCase
 import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import internal.GlobalVariable
 
 public class generalStrings {
+	Random random = new Random()
 
 	@Keyword
 	def generatRandomEmail() {
@@ -31,7 +34,30 @@ public class generalStrings {
 			}
 		}
 
-		def randomEmail= generator( (('A'..'Z')+('0'..'9')).join(), 5 )+'@aa.com'
+		def randomEmail= generator( (('A'..'Z')+('a'..'z')+('0'..'9')).join(), 5 )+'@aa.com'
 		return randomEmail
+	}
+	@Keyword
+	def generateRandomPhoneNumber() {
+		def generator = { String alphabet, int n ->
+			new Random().with {
+				(1..n).collect { alphabet[ nextInt( alphabet.length() ) ] }.join()
+			}
+		}
+
+
+		def phoneFormate =WebUiCommonHelper.findWebElement(findTestObject('Object Repository/OTP/input Phone number'),30).getAttribute("placeholder")
+		def nonZerosFromString
+		def ZerosfromString = ''
+		nonZerosFromString = phoneFormate =~ '[1-9]+'
+
+		ZerosfromString = phoneFormate =~ '(0.*?$)'
+
+		def randomNumber=generator( (('0'..'9')).join(), ZerosfromString[0][1].toString().replaceAll("-","").length() )
+		KeywordUtil.logInfo(nonZerosFromString[0].toString()+randomNumber)
+		KeywordUtil.logInfo(ZerosfromString[0].toString())
+		KeywordUtil.logInfo(nonZerosFromString[0].toString())
+		KeywordUtil.logInfo(phoneFormate)
+		return nonZerosFromString[0].toString()+randomNumber
 	}
 }

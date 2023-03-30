@@ -20,6 +20,13 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components'), [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.click(findTestObject('Check Out/Proceed To Checkout Button'))
+//boolean otpRequierd=WebUI.verifyElementVisible(findTestObject('OTP/OTP container'))
+int otpRequierd=WebUI.findWebElements(findTestObject('Sign up Page/Sgin up By phone/insert phone number'),10).size()
+if(otpRequierd!= 0) {
+	WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), CustomKeywords.'generalactions.generalStrings.generateRandomPhoneNumber'())
+	WebUI.click(findTestObject('Check Out/Update added phone number'))
+	WebUI.callTestCase(findTestCase('FE/OTP/Validation/Insert fixed OTP'), [:], FailureHandling.STOP_ON_FAILURE)
+}
 
 WebUI.verifyElementVisible(findTestObject('Check Out/checkout user details 1'))
 

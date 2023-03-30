@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>CVV Field</name>
+   <name>input Phone number</name>
    <tag></tag>
-   <elementGuidId>66f5b257-9119-4617-8c3b-0872b401c662</elementGuidId>
+   <elementGuidId>30779c43-09af-4404-b80c-1f0a815a47ad</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='checkout-com-form-container']//iframe[@id='cvv']</value>
+         <value>//input[contains(@class,'input-phone')]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

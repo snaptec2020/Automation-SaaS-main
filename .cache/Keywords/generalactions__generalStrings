@@ -1,11 +1,16 @@
 {
-  "keywordFileContentHash": "1C345604143D0FADF13D793D72797600",
+  "keywordFileContentHash": "FE7C3F9515960073D25C1DDBA01055CD",
   "keywordClasses": [
     {
       "name": "generalactions.generalStrings",
       "keywordMethods": [
         {
           "name": "generatRandomEmail",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "generateRandomPhoneNumber",
           "parameters": [],
           "javadoc": ""
         }

@@ -14,35 +14,37 @@ import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.testcase.TestCase
 import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
-import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import internal.GlobalVariable
 
-public class notificationsObject {
-
-	TestObject tb = new TestObject()
-
-	TestObject getNotificationObject(def arText, def enText) {
-		tb.addProperty('xpath', ConditionType.EQUALS, "//div[contains(@class,'react-toast-notifications__container')]//*[contains(@class,'react-toast-notifications__toast__content')][normalize-space()='"+arText+"' or normalize-space() ='"+enText+"']")
-		return tb
-	}
+public class scrolling {
 
 	@Keyword
-	def verifyNotificationVisble(def arText, def enText) {
-		WebUI.verifyElementVisible(getNotificationObject(arText,enText), FailureHandling.CONTINUE_ON_FAILURE)
-	}
-	@Keyword
-	def verifyNotificationNotVisble(def arText, def enText) {
-		WebUI.verifyElementNotVisible(getNotificationObject(arText,enText), FailureHandling.CONTINUE_ON_FAILURE)
-	}
-	@Keyword
-	def getMessageText() {
-		tb.addProperty('xpath', ConditionType.EQUALS, "//div[contains(@class,'react-toast-notifications__container')]//*[contains(@class,'react-toast-notifications__toast__content')]")
-		WebUI.waitForElementPresent(tb, 60)
-		return WebUI.getText(tb, FailureHandling.CONTINUE_ON_FAILURE)
+	def scrollingAtTheBottom() {
+
+		try {
+			long lastHeight=((Number) WebUI.executeJavaScript("return document.body.scrollHeight", null)).longValue();
+			int  scrollingCount=0
+
+			while (true) {
+				WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight);", null);
+				Thread.sleep(2000);
+				long newHeight = ((Number)WebUI.executeJavaScript("return document.body.scrollHeight", null)).longValue();
+				KeywordUtil.logInfo(lastHeight.toString())
+				KeywordUtil.logInfo(newHeight.toString())
+				if (newHeight == lastHeight || scrollingCount==10) {
+					break;
+				}
+				lastHeight = newHeight;
+				scrollingCount++;
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }
