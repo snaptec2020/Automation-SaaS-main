@@ -64,6 +64,11 @@ public class GlobalVariable {
      */
     public static Object ValidPassword
      
+    /**
+     * <p></p>
+     */
+    public static Object FixedOTP
+     
 
     static {
         try {
@@ -82,6 +87,7 @@ public class GlobalVariable {
             testSuiteStatus = selectedVariables['testSuiteStatus']
             textSearch = selectedVariables['textSearch']
             ValidPassword = selectedVariables['ValidPassword']
+            FixedOTP = selectedVariables['FixedOTP']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)

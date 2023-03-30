@@ -224,6 +224,11 @@ def static "products.productsFromCatalog.checkOnAddToStoreClickable"(
 }
 
 
+def static "generalactions.scrolling.scrollingAtTheBottom"() {
+    (new generalactions.scrolling()).scrollingAtTheBottom()
+}
+
+
 def static "cart.removeItem.getProductsInCart"() {
     (new cart.removeItem()).getProductsInCart()
 }
@@ -240,4 +245,9 @@ def static "cart.removeItem.getSpecifiedIteminThecart"(
 
 def static "generalactions.generalStrings.generatRandomEmail"() {
     (new generalactions.generalStrings()).generatRandomEmail()
+}
+
+
+def static "generalactions.generalStrings.generateRandomPhoneNumber"() {
+    (new generalactions.generalStrings()).generateRandomPhoneNumber()
 }

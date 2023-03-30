@@ -11,7 +11,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'a.aldon@snaptec.co'</initValue>
+      <initValue>'sss@ss.co'</initValue>
       <name>Vaild_email</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -58,5 +58,10 @@
       <description></description>
       <initValue>'Az0785846593'</initValue>
       <name>ValidPassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'3691'</initValue>
+      <name>FixedOTP</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

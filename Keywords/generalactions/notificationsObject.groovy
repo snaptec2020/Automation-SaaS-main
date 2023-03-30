@@ -42,7 +42,7 @@ public class notificationsObject {
 	@Keyword
 	def getMessageText() {
 		tb.addProperty('xpath', ConditionType.EQUALS, "//div[contains(@class,'react-toast-notifications__container')]//*[contains(@class,'react-toast-notifications__toast__content')]")
-		
+		WebUI.waitForElementPresent(tb, 60)
 		return WebUI.getText(tb, FailureHandling.CONTINUE_ON_FAILURE)
 	}
 }

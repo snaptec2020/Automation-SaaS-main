@@ -40,7 +40,7 @@ class BeforeTestCases {
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
 			if(GlobalVariable.testSuiteStatus == 'Not Run') {
 			WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
-			CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
+			//CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
 			}
 	}
 	@AfterTestCase
@@ -57,6 +57,10 @@ class BeforeTestCases {
 		//KeywordUtil.logInfo('**************************'+GlobalVariable.testSuiteStatus)
 		//sampleBeforeTestCase(testCaseContext.skipThisTestCase())
 		WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
+		
+		WebUI.callTestCase(findTestCase('FE/Website launch/Verifications/Verifications after launch (headers and footers)'), [:],
+			FailureHandling.STOP_ON_FAILURE)
+		
 		CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
 		
 	}

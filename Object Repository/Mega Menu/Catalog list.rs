@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//a[@class=&quot;styles_megaMenuItem__v14fq  styles_underlineHighlight__yK8MD&quot;]</value>
+         <value>//a[contains(@class,'styles_megaMenuItem')]</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
