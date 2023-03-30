@@ -64,4 +64,9 @@
       <initValue>'3691'</initValue>
       <name>FixedOTP</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'573557581'</initValue>
+      <name>phoneNumber</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

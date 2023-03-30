@@ -251,3 +251,12 @@ def static "generalactions.generalStrings.generatRandomEmail"() {
 def static "generalactions.generalStrings.generateRandomPhoneNumber"() {
     (new generalactions.generalStrings()).generateRandomPhoneNumber()
 }
+
+
+def static "generalactions.generalStrings.generatePhoneWithConditions"(
+    	int expectedPhoneSize	
+     , 	int isPhoneKeyReplaced	) {
+    (new generalactions.generalStrings()).generatePhoneWithConditions(
+        	expectedPhoneSize
+         , 	isPhoneKeyReplaced)
+}
