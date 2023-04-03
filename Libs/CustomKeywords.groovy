@@ -44,20 +44,6 @@ def static "cart.cartItems.getSpecifiedIteminThecart"(
 }
 
 
-def static "signup.signupVerifications.verificationMessage"(
-    	Object expectedMessageAr	
-     , 	Object expectedMessageEn	) {
-    (new signup.signupVerifications()).verificationMessage(
-        	expectedMessageAr
-         , 	expectedMessageEn)
-}
-
-
-def static "signup.signupVerifications.verificationElementSignUp"() {
-    (new signup.signupVerifications()).verificationElementSignUp()
-}
-
-
 def static "checkout.Payments.getPaymentMethodsList"() {
     (new checkout.Payments()).getPaymentMethodsList()
 }
@@ -224,6 +210,20 @@ def static "products.productsFromCatalog.checkOnAddToStoreClickable"(
 }
 
 
+def static "signup.Signupemailverifications.verificationMessage"(
+    	Object expectedMessageAr	
+     , 	Object expectedMessageEn	) {
+    (new signup.Signupemailverifications()).verificationMessage(
+        	expectedMessageAr
+         , 	expectedMessageEn)
+}
+
+
+def static "signup.Signupemailverifications.verificationElementSignUp"() {
+    (new signup.Signupemailverifications()).verificationElementSignUp()
+}
+
+
 def static "generalactions.scrolling.scrollingAtTheBottom"() {
     (new generalactions.scrolling()).scrollingAtTheBottom()
 }
@@ -259,4 +259,16 @@ def static "generalactions.generalStrings.generatePhoneWithConditions"(
     (new generalactions.generalStrings()).generatePhoneWithConditions(
         	expectedPhoneSize
          , 	isPhoneKeyReplaced)
+}
+
+
+def static "signup.signupPhoneVerifications.phoneVerificationMessage"(
+    	Object expectedMessage	) {
+    (new signup.signupPhoneVerifications()).phoneVerificationMessage(
+        	expectedMessage)
+}
+
+
+def static "signup.signupPhoneVerifications.verificationElementPhoneSignUp"() {
+    (new signup.signupPhoneVerifications()).verificationElementPhoneSignUp()
 }

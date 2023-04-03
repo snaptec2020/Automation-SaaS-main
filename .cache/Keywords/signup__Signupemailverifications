@@ -1,28 +1,18 @@
 {
-  "keywordFileContentHash": "C8D0F7312B9E1AA7C9DDC6A4ADB14C86",
+  "keywordFileContentHash": "7A7D6293B6B7E19FFC9C5853DD443B47",
   "keywordClasses": [
     {
-      "name": "generalactions.generalStrings",
+      "name": "signup.Signupemailverifications",
       "keywordMethods": [
         {
-          "name": "generatRandomEmail",
-          "parameters": [],
-          "javadoc": ""
-        },
-        {
-          "name": "generateRandomPhoneNumber",
-          "parameters": [],
-          "javadoc": ""
-        },
-        {
-          "name": "generatePhoneWithConditions",
+          "name": "verificationMessage",
           "parameters": [
             {
-              "name": "expectedPhoneSize",
+              "name": "expectedMessageAr",
               "initialExpression": "",
               "type": {
-                "fullClassName": "int",
-                "unresolvedClassName": "int",
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
                 "isArray": false,
                 "isGnericsPlaceHolder": false,
                 "hasImmutableClassName": true,
@@ -31,11 +21,11 @@
               }
             },
             {
-              "name": "isPhoneKeyReplaced",
+              "name": "expectedMessageEn",
               "initialExpression": "",
               "type": {
-                "fullClassName": "int",
-                "unresolvedClassName": "int",
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
                 "isArray": false,
                 "isGnericsPlaceHolder": false,
                 "hasImmutableClassName": true,
@@ -44,6 +34,11 @@
               }
             }
           ],
+          "javadoc": ""
+        },
+        {
+          "name": "verificationElementSignUp",
+          "parameters": [],
           "javadoc": ""
         }
       ]

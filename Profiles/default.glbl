@@ -69,4 +69,14 @@
       <initValue>'573557581'</initValue>
       <name>phoneNumber</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Azeez'</initValue>
+      <name>FirstName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Saleh'</initValue>
+      <name>LastName</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
