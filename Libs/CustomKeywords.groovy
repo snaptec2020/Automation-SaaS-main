@@ -7,67 +7,6 @@ import java.util.List
 
 
 
-def static "generalactions.notificationsObject.verifyNotificationVisble"(
-    	Object arText	
-     , 	Object enText	) {
-    (new generalactions.notificationsObject()).verifyNotificationVisble(
-        	arText
-         , 	enText)
-}
-
-
-def static "generalactions.notificationsObject.verifyNotificationNotVisble"(
-    	Object arText	
-     , 	Object enText	) {
-    (new generalactions.notificationsObject()).verifyNotificationNotVisble(
-        	arText
-         , 	enText)
-}
-
-
-def static "generalactions.notificationsObject.getMessageText"() {
-    (new generalactions.notificationsObject()).getMessageText()
-}
-
-
-def static "cart.cartItems.getProductsInCart"() {
-    (new cart.cartItems()).getProductsInCart()
-}
-
-
-def static "cart.cartItems.getSpecifiedIteminThecart"(
-    	int elementIndex	
-     , 	List items	) {
-    (new cart.cartItems()).getSpecifiedIteminThecart(
-        	elementIndex
-         , 	items)
-}
-
-
-def static "checkout.Payments.getPaymentMethodsList"() {
-    (new checkout.Payments()).getPaymentMethodsList()
-}
-
-
-def static "checkout.Payments.getRandomPaymentMethods"() {
-    (new checkout.Payments()).getRandomPaymentMethods()
-}
-
-
-def static "catalog.catlogComponants.getCategoryElements"() {
-    (new catalog.catlogComponants()).getCategoryElements()
-}
-
-
-def static "catalog.catlogComponants.getSpecifiedCatalogElement"(
-    	int elementIndex	
-     , 	List catalogList	) {
-    (new catalog.catlogComponants()).getSpecifiedCatalogElement(
-        	elementIndex
-         , 	catalogList)
-}
-
-
 def static "dbconnections.executeQueries.getDataFromDBByQuery"(
     	Object mQuery	) {
     (new dbconnections.executeQueries()).getDataFromDBByQuery(
@@ -224,11 +163,6 @@ def static "signup.Signupemailverifications.verificationElementSignUp"() {
 }
 
 
-def static "generalactions.scrolling.scrollingAtTheBottom"() {
-    (new generalactions.scrolling()).scrollingAtTheBottom()
-}
-
-
 def static "cart.removeItem.getProductsInCart"() {
     (new cart.removeItem()).getProductsInCart()
 }
@@ -240,6 +174,72 @@ def static "cart.removeItem.getSpecifiedIteminThecart"(
     (new cart.removeItem()).getSpecifiedIteminThecart(
         	elementIndex
          , 	items)
+}
+
+
+def static "generalactions.notificationsObject.verifyNotificationVisble"(
+    	Object arText	
+     , 	Object enText	) {
+    (new generalactions.notificationsObject()).verifyNotificationVisble(
+        	arText
+         , 	enText)
+}
+
+
+def static "generalactions.notificationsObject.verifyNotificationNotVisble"(
+    	Object arText	
+     , 	Object enText	) {
+    (new generalactions.notificationsObject()).verifyNotificationNotVisble(
+        	arText
+         , 	enText)
+}
+
+
+def static "generalactions.notificationsObject.getMessageText"() {
+    (new generalactions.notificationsObject()).getMessageText()
+}
+
+
+def static "cart.cartItems.getProductsInCart"() {
+    (new cart.cartItems()).getProductsInCart()
+}
+
+
+def static "cart.cartItems.getSpecifiedIteminThecart"(
+    	int elementIndex	
+     , 	List items	) {
+    (new cart.cartItems()).getSpecifiedIteminThecart(
+        	elementIndex
+         , 	items)
+}
+
+
+def static "checkout.Payments.getPaymentMethodsList"() {
+    (new checkout.Payments()).getPaymentMethodsList()
+}
+
+
+def static "checkout.Payments.getRandomPaymentMethods"() {
+    (new checkout.Payments()).getRandomPaymentMethods()
+}
+
+
+def static "catalog.catlogComponants.getCategoryElements"() {
+    (new catalog.catlogComponants()).getCategoryElements()
+}
+
+
+def static "catalog.catlogComponants.getSpecifiedCatalogElement"(
+    	int elementIndex	
+     , 	List catalogList	) {
+    (new catalog.catlogComponants()).getSpecifiedCatalogElement(
+        	elementIndex
+         , 	catalogList)
+}
+
+
+def static "generalactions.scrolling.scrollingAtTheBottom"() {
+    (new generalactions.scrolling()).scrollingAtTheBottom()
 }
 
 
