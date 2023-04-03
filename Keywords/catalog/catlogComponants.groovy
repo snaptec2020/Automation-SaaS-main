@@ -32,9 +32,10 @@ public class catlogComponants {
 	@Keyword
 	public def getSpecifiedCatalogElement(int elementIndex,List catalogList) {
 		//if (elementIndex >=0)
-
+		
 		catalogList.get(elementIndex).click()
-
+		Thread.sleep(2000);
+		WebUI.mouseOver(findTestObject('Headers and Footers/Footer contents/Web footer'), FailureHandling.CONTINUE_ON_FAILURE)
 		/*		else {
 		 WebUI.scrollToPosition(9999999, 9999999)
 		 WebUI.scrollToPosition(9999999, 9999999)

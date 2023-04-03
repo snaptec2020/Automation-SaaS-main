@@ -12,24 +12,17 @@
    <rerunImmediately>false</rerunImmediately>
    <testSuiteGuid>dd1ecf27-34fa-475c-a332-f625b73d7fb4</testSuiteGuid>
    <testCaseLink>
+      <guid>fe41d268-fcd3-40d5-b6f2-4bae6bd1f742</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Switch Language/Validations/SwitchLanguage to English</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
       <guid>b284cf29-f249-492c-a1e8-215c8c0292fc</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Sign in TC/validations/login by Eamil/Success login fucation</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>fa7612fe-1cd3-4d7a-83fc-eaf241011406</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Cart/Validations/Add to wish list</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>5f8c1baf-d29d-4778-9247-b14ac10fc562</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Sign up TC/Validations/Sgin up By email/Success Sign up By email</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>

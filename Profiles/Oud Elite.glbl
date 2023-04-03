@@ -6,7 +6,7 @@
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'https://release-tonez.snaptec.co/'</initValue>
+      <initValue>'https://fe-saas-oudelite.snaptec.co/ar'</initValue>
       <name>URL</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

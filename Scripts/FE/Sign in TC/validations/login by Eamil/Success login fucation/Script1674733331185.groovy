@@ -26,7 +26,7 @@ WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navig
 WebUI.setText(findTestObject('login page/email page/email field'), GlobalVariable.Vaild_email)
 
 //WebUI.click(findTestObject('login page/email page/password field'), FailureHandling.STOP_ON_FAILURE)
-WebUI.setText(findTestObject('login page/email page/password field'), 'kdI8ZSiJDoc7QAd5zRkYUQ==')
+WebUI.setText(findTestObject('login page/email page/password field'), GlobalVariable.ValidPassword)
 
 WebUI.click(findTestObject('login page/email page/login in Button Email page'))
 

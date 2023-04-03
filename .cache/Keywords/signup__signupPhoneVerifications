@@ -1,0 +1,35 @@
+{
+  "keywordFileContentHash": "7D330D1F05D21754520B2DDA363AE483",
+  "keywordClasses": [
+    {
+      "name": "signup.signupPhoneVerifications",
+      "keywordMethods": [
+        {
+          "name": "phoneVerificationMessage",
+          "parameters": [
+            {
+              "name": "expectedMessage",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "verificationElementPhoneSignUp",
+          "parameters": [],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

@@ -47,20 +47,21 @@ if (WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header conten
 WebUI.verifyElementVisible(findTestObject('Mega Menu/Mega menu'), FailureHandling.CONTINUE_ON_FAILURE)
 
 'Verify footer block visible'
-if (WebUI.verifyElementVisible(findTestObject('Headers and Footers/Footer contents/Web footer'), FailureHandling.CONTINUE_ON_FAILURE)) {
+WebUI.verifyElementVisible(findTestObject('Headers and Footers/Footer contents/Web footer'), FailureHandling.CONTINUE_ON_FAILURE)
     'Verify subscribe block visible'
-    for (int j = 1; j <= 3; j++) {
-        for (int i; i <= 7; i++) {
-            WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 30, FailureHandling.CONTINUE_ON_FAILURE)
-        }
-        
-        if (!(WebUI.verifyElementVisible(findTestObject('Subscribe/Subscribe block'), FailureHandling.CONTINUE_ON_FAILURE))) {
-            continue
-        } else {
+   // for (int j = 1; j <= 3; j++) {
+//        for (int i; i <= 7; i++) {
+//            WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 30, FailureHandling.CONTINUE_ON_FAILURE)
+//        }
+	WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+	
+		//CustomKeywords.'generalactions.scrolling.scrollingAtTheBottom'()
+       
+       
             WebUI.verifyElementVisible(findTestObject('Subscribe/Subscribe block'), FailureHandling.CONTINUE_ON_FAILURE)
 
-            break
-        }
-    }
-}
+            
+        
+    
+//}
 

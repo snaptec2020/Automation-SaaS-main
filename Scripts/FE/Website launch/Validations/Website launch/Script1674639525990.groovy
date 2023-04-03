@@ -23,6 +23,3 @@ WebUI.navigateToUrl(GlobalVariable.URL)
 
 WebUI.maximizeWindow()
 
-WebUI.callTestCase(findTestCase('FE/Website launch/Verifications/Verifications after launch (headers and footers)'), [:], 
-    FailureHandling.STOP_ON_FAILURE)
-
