@@ -9,39 +9,52 @@
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>bd6e6170-fe9b-4c66-91cf-613a64f32210</variableId>
+      <variableId>040b956d-8621-40f4-b946-e9802f4d9431</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>32b0905d-b97f-4fb9-af81-bd21cb679132</variableId>
+      <variableId>9047d639-73c5-4837-b73d-84718144254a</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>463e93d4-c668-44a7-b51b-dc55866e9b1f</variableId>
+      <variableId>37653a58-dbc1-482c-b7bc-b16617a177bd</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>ff98539f-b0c9-4447-98fc-e10cc440cbaf</variableId>
    </variableLinks>
    <variable>
-      <defaultValue>'Azeez'</defaultValue>
+      <defaultValue>''</defaultValue>
       <description></description>
-      <id>bd6e6170-fe9b-4c66-91cf-613a64f32210</id>
+      <id>040b956d-8621-40f4-b946-e9802f4d9431</id>
       <masked>false</masked>
-      <name>FirstName</name>
+      <name>firstname</name>
    </variable>
    <variable>
-      <defaultValue>'Saleh'</defaultValue>
+      <defaultValue>''</defaultValue>
       <description></description>
-      <id>32b0905d-b97f-4fb9-af81-bd21cb679132</id>
+      <id>9047d639-73c5-4837-b73d-84718144254a</id>
       <masked>false</masked>
-      <name>SecondName</name>
+      <name>lastname</name>
    </variable>
    <variable>
-      <defaultValue>'542450508\r\n'</defaultValue>
+      <defaultValue>''</defaultValue>
       <description></description>
-      <id>463e93d4-c668-44a7-b51b-dc55866e9b1f</id>
+      <id>37653a58-dbc1-482c-b7bc-b16617a177bd</id>
       <masked>false</masked>
       <name>PhoneNumber</name>
+   </variable>
+   <variable>
+      <defaultValue>'1'</defaultValue>
+      <description></description>
+      <id>ff98539f-b0c9-4447-98fc-e10cc440cbaf</id>
+      <masked>false</masked>
+      <name>isCheck</name>
    </variable>
 </TestCaseEntity>
