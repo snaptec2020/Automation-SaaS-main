@@ -35,9 +35,10 @@ class BeforeTestCases {
 	 */
 	//@BeforeTestSuite
 	//public TestSuiteContext testSuiteContext
-	
+	def testCases = []
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
+		testCases << testCaseContext.testCaseId
 			if(GlobalVariable.testSuiteStatus == 'Not Run') {
 			WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 			//CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
@@ -45,6 +46,7 @@ class BeforeTestCases {
 	}
 	@AfterTestCase
 	def sampleAfterTestCase(TestCaseContext testCaseContext) {
+
 			if(GlobalVariable.testSuiteStatus == 'Not Run') {
 			WebUI.closeBrowser()
 			}
@@ -52,7 +54,6 @@ class BeforeTestCases {
 	
 	@BeforeTestSuite
 	def sampleBeforeTestSuite(TestSuiteContext testSuiteContext) {
-		
 		GlobalVariable.testSuiteStatus = testSuiteContext.testSuiteId
 		//KeywordUtil.logInfo('**************************'+GlobalVariable.testSuiteStatus)
 		//sampleBeforeTestCase(testCaseContext.skipThisTestCase())
@@ -63,10 +64,14 @@ class BeforeTestCases {
 		
 		CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
 		
+		
 	}
 	@AfterTestSuite
 	def sampleAfterTestSuite(TestSuiteContext testSuiteContext) {
-		
+		testCases.each{val->
+			KeywordUtil.logInfo(val)
+			WebUI.callTestCase(findTestCase(val), [:], FailureHandling.STOP_ON_FAILURE)
+		}
 		GlobalVariable.testSuiteStatus = 'Not Run'
 		//KeywordUtil.logInfo('**************************'+GlobalVariable.testSuiteStatus)
 		WebUI.closeBrowser()
