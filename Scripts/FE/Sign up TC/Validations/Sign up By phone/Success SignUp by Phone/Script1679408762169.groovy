@@ -14,20 +14,22 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import com.kms.katalon.entity.global.GlobalVariableEntity as GlobalVariableEntity
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 WebUI.callTestCase(findTestCase('FE/Sign up TC/General Actions Sign up/Navigate to Sign Up Mobile page'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/First name sign up mobile'), 'azeez')
+def phoneNumber = CustomKeywords.'generalactions.generalStrings.generateRandomPhoneNumber'()
 
-WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/Last name sign up Mobile'), 'saleh')
+GlobalVariable.phoneNumber = phoneNumber
 
-WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), '542450508 ')
+WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sign up By phone/SignUp by phone'), [('firstname') : 'Azeez', ('lastname') : 'Saleh'
+        , ('PhoneNumber') : phoneNumber, ('isCheck') : '1'], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Sign up Page/Sgin up By phone/Check box rules'))
+WebUI.callTestCase(findTestCase('FE/OTP/General Actions/Insert fixed OTP'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Sign up Page/Sgin up By phone/Submit Button Sign up mobile page'))
+WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'))
 
-WebUI.verifyElementVisible(findTestObject('Sign up Page/Sgin up By phone/Error Message'))
+
 

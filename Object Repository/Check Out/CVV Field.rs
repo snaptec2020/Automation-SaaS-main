@@ -6,12 +6,11 @@
    <elementGuidId>66f5b257-9119-4617-8c3b-0872b401c662</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[@class='checkout-com-form-container']//iframe[@id='cvv']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@class=&quot;cvv field&quot;]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

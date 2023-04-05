@@ -1,0 +1,48 @@
+{
+  "keywordFileContentHash": "7A7D6293B6B7E19FFC9C5853DD443B47",
+  "keywordClasses": [
+    {
+      "name": "signup.Signupemailverifications",
+      "keywordMethods": [
+        {
+          "name": "verificationMessage",
+          "parameters": [
+            {
+              "name": "expectedMessageAr",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "expectedMessageEn",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "verificationElementSignUp",
+          "parameters": [],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

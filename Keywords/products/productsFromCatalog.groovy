@@ -21,7 +21,7 @@ import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 
-import catalog.catlogComponants as catlogComponants
+import catalog.catlogComponants
 
 
 import java.util.List
@@ -34,6 +34,7 @@ import internal.GlobalVariable
 
 public class productsFromCatalog {
 	TestObject tb=new TestObject();
+
 	Random randomNumberforProduct = new Random()
 	String objText = ""
 	@Keyword
@@ -74,11 +75,13 @@ public class productsFromCatalog {
 	def getSpecifiedinStockProductsFromRandomCategory() {
 		WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
 
-		for (int i = 1; i <= 4; i++) {
-			WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
-		}
+		//		for (int i = 1; i <= 4; i++) {
+		//			WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
+		//		}
+		WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 
-		WebUI.delay(3)
+
+		//WebUI.delay(3)
 
 		//def xPathDef = "(\"//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')]\")["+elementIndex+"]"
 		List prod = getinStockProduct()
@@ -118,11 +121,13 @@ public class productsFromCatalog {
 	def getSpecifiedinStockProductsText() {
 		WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
 
-		for (int i = 1; i <= 4; i++) {
-			WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
-		}
+		//		for (int i = 1; i <= 4; i++) {
+		//			WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
+		//		}
+		//
+		//		WebUI.delay(3)
+		WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 
-		WebUI.delay(3)
 
 		//def xPathDef = "(\"//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')]\")["+elementIndex+"]"
 		List prod = getinStockProduct()
@@ -204,11 +209,12 @@ public class productsFromCatalog {
 		//CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
 		WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
 
-		for (int i = 1; i <= 4; i++) {
-			WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
-		}
-
-		WebUI.delay(3)
+		//		for (int i = 1; i <= 4; i++) {
+		//			WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
+		//		}
+		//
+		//		WebUI.delay(3)
+		WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 
 		//def xPathDef = "(\"//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')]\")["+elementIndex+"]"
 		List prod = getinStockProductFromOnePage()

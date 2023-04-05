@@ -5,81 +5,8 @@
 
 import java.util.List
 
+import com.kms.katalon.core.context.TestSuiteContext
 
-
-def static "generalactions.notificationsObject.verifyNotificationVisble"(
-    	Object arText	
-     , 	Object enText	) {
-    (new generalactions.notificationsObject()).verifyNotificationVisble(
-        	arText
-         , 	enText)
-}
-
-
-def static "generalactions.notificationsObject.verifyNotificationNotVisble"(
-    	Object arText	
-     , 	Object enText	) {
-    (new generalactions.notificationsObject()).verifyNotificationNotVisble(
-        	arText
-         , 	enText)
-}
-
-
-def static "generalactions.notificationsObject.getMessageText"() {
-    (new generalactions.notificationsObject()).getMessageText()
-}
-
-
-def static "cart.cartItems.getProductsInCart"() {
-    (new cart.cartItems()).getProductsInCart()
-}
-
-
-def static "cart.cartItems.getSpecifiedIteminThecart"(
-    	int elementIndex	
-     , 	List items	) {
-    (new cart.cartItems()).getSpecifiedIteminThecart(
-        	elementIndex
-         , 	items)
-}
-
-
-def static "signup.signupVerifications.verificationMessage"(
-    	Object expectedMessageAr	
-     , 	Object expectedMessageEn	) {
-    (new signup.signupVerifications()).verificationMessage(
-        	expectedMessageAr
-         , 	expectedMessageEn)
-}
-
-
-def static "signup.signupVerifications.verificationElementSignUp"() {
-    (new signup.signupVerifications()).verificationElementSignUp()
-}
-
-
-def static "checkout.Payments.getPaymentMethodsList"() {
-    (new checkout.Payments()).getPaymentMethodsList()
-}
-
-
-def static "checkout.Payments.getRandomPaymentMethods"() {
-    (new checkout.Payments()).getRandomPaymentMethods()
-}
-
-
-def static "catalog.catlogComponants.getCategoryElements"() {
-    (new catalog.catlogComponants()).getCategoryElements()
-}
-
-
-def static "catalog.catlogComponants.getSpecifiedCatalogElement"(
-    	int elementIndex	
-     , 	List catalogList	) {
-    (new catalog.catlogComponants()).getSpecifiedCatalogElement(
-        	elementIndex
-         , 	catalogList)
-}
 
 
 def static "dbconnections.executeQueries.getDataFromDBByQuery"(
@@ -224,6 +151,20 @@ def static "products.productsFromCatalog.checkOnAddToStoreClickable"(
 }
 
 
+def static "signup.Signupemailverifications.verificationMessage"(
+    	Object expectedMessageAr	
+     , 	Object expectedMessageEn	) {
+    (new signup.Signupemailverifications()).verificationMessage(
+        	expectedMessageAr
+         , 	expectedMessageEn)
+}
+
+
+def static "signup.Signupemailverifications.verificationElementSignUp"() {
+    (new signup.Signupemailverifications()).verificationElementSignUp()
+}
+
+
 def static "cart.removeItem.getProductsInCart"() {
     (new cart.removeItem()).getProductsInCart()
 }
@@ -238,6 +179,105 @@ def static "cart.removeItem.getSpecifiedIteminThecart"(
 }
 
 
+def static "generalactions.notificationsObject.verifyNotificationVisble"(
+    	Object arText	
+     , 	Object enText	) {
+    (new generalactions.notificationsObject()).verifyNotificationVisble(
+        	arText
+         , 	enText)
+}
+
+
+def static "generalactions.notificationsObject.verifyNotificationNotVisble"(
+    	Object arText	
+     , 	Object enText	) {
+    (new generalactions.notificationsObject()).verifyNotificationNotVisble(
+        	arText
+         , 	enText)
+}
+
+
+def static "generalactions.notificationsObject.getMessageText"() {
+    (new generalactions.notificationsObject()).getMessageText()
+}
+
+
+def static "cart.cartItems.getProductsInCart"() {
+    (new cart.cartItems()).getProductsInCart()
+}
+
+
+def static "cart.cartItems.getSpecifiedIteminThecart"(
+    	int elementIndex	
+     , 	List items	) {
+    (new cart.cartItems()).getSpecifiedIteminThecart(
+        	elementIndex
+         , 	items)
+}
+
+
+def static "checkout.Payments.getPaymentMethodsList"() {
+    (new checkout.Payments()).getPaymentMethodsList()
+}
+
+
+def static "checkout.Payments.getRandomPaymentMethods"() {
+    (new checkout.Payments()).getRandomPaymentMethods()
+}
+
+
+def static "generalactions.reporting.exportKatalonReports"(
+    	TestSuiteContext testSuiteContext	) {
+    (new generalactions.reporting()).exportKatalonReports(
+        	testSuiteContext)
+}
+
+
+def static "catalog.catlogComponants.getCategoryElements"() {
+    (new catalog.catlogComponants()).getCategoryElements()
+}
+
+
+def static "catalog.catlogComponants.getSpecifiedCatalogElement"(
+    	int elementIndex	
+     , 	List catalogList	) {
+    (new catalog.catlogComponants()).getSpecifiedCatalogElement(
+        	elementIndex
+         , 	catalogList)
+}
+
+
+def static "generalactions.scrolling.scrollingAtTheBottom"() {
+    (new generalactions.scrolling()).scrollingAtTheBottom()
+}
+
+
 def static "generalactions.generalStrings.generatRandomEmail"() {
     (new generalactions.generalStrings()).generatRandomEmail()
+}
+
+
+def static "generalactions.generalStrings.generateRandomPhoneNumber"() {
+    (new generalactions.generalStrings()).generateRandomPhoneNumber()
+}
+
+
+def static "generalactions.generalStrings.generatePhoneWithConditions"(
+    	int expectedPhoneSize	
+     , 	int isPhoneKeyReplaced	) {
+    (new generalactions.generalStrings()).generatePhoneWithConditions(
+        	expectedPhoneSize
+         , 	isPhoneKeyReplaced)
+}
+
+
+def static "signup.signupPhoneVerifications.phoneVerificationMessage"(
+    	Object expectedMessage	) {
+    (new signup.signupPhoneVerifications()).phoneVerificationMessage(
+        	expectedMessage)
+}
+
+
+def static "signup.signupPhoneVerifications.verificationElementPhoneSignUp"() {
+    (new signup.signupPhoneVerifications()).verificationElementPhoneSignUp()
 }
