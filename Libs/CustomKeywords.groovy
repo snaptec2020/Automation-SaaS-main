@@ -5,6 +5,8 @@
 
 import java.util.List
 
+import com.kms.katalon.core.context.TestSuiteContext
+
 
 
 def static "dbconnections.executeQueries.getDataFromDBByQuery"(
@@ -221,6 +223,13 @@ def static "checkout.Payments.getPaymentMethodsList"() {
 
 def static "checkout.Payments.getRandomPaymentMethods"() {
     (new checkout.Payments()).getRandomPaymentMethods()
+}
+
+
+def static "generalactions.reporting.exportKatalonReports"(
+    	TestSuiteContext testSuiteContext	) {
+    (new generalactions.reporting()).exportKatalonReports(
+        	testSuiteContext)
 }
 
 

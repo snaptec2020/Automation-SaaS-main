@@ -23,12 +23,16 @@ try {
 	int  scrollingCount=0
 
 	while (true) {
+		//WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 30, FailureHandling.CONTINUE_ON_FAILURE) 
 		WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight);", null);
+		//WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 30, FailureHandling.CONTINUE_ON_FAILURE) 
 		Thread.sleep(2000);
+		
 		long newHeight = ((Number)WebUI.executeJavaScript("return document.body.scrollHeight", null)).longValue();
 		//KeywordUtil.logInfo(lastHeight.toString())
 		//KeywordUtil.logInfo(newHeight.toString())
 		if (newHeight == lastHeight || scrollingCount==10) {
+			//WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/2);", null);
 			break;
 		}
 		lastHeight = newHeight;
