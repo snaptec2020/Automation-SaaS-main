@@ -1,0 +1,14 @@
+{
+  "keywordFileContentHash": "1AA7CCDF761AAF1D0A492287A31D721C",
+  "keywordClasses": [
+    {
+      "name": "KatalonReportListener",
+      "keywordMethods": []
+    },
+    {
+      "name": "KatalonReportListener$1",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

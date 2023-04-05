@@ -10,11 +10,13 @@ import com.eviware.soapui.config.impl.TestSuiteRunTypesImpl
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
-import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testdata.TestData
+import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.entity.testsuite.TestSuiteCollectionEntity
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 
 import internal.GlobalVariable as GlobalVariable
@@ -33,12 +35,16 @@ class BeforeTestCases {
 	 * Executes before every test case starts.
 	 * @param testCaseContext related information of the executed test case.
 	 */
+	
+	//WebUI.click(findTestObject('Multi Sites/Multi site dropdown menu'))
 	//@BeforeTestSuite
 	//public TestSuiteContext testSuiteContext
-	def testCases = []
+	//def testCases = []
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
-		testCases << testCaseContext.testCaseId
+		
+		//testCases << testCaseContext.testCaseId
+		
 			if(GlobalVariable.testSuiteStatus == 'Not Run') {
 			WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 			//CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
@@ -68,10 +74,8 @@ class BeforeTestCases {
 	}
 	@AfterTestSuite
 	def sampleAfterTestSuite(TestSuiteContext testSuiteContext) {
-		testCases.each{val->
-			KeywordUtil.logInfo(val)
-			WebUI.callTestCase(findTestCase(val), [:], FailureHandling.STOP_ON_FAILURE)
-		}
+
+		
 		GlobalVariable.testSuiteStatus = 'Not Run'
 		//KeywordUtil.logInfo('**************************'+GlobalVariable.testSuiteStatus)
 		WebUI.closeBrowser()
