@@ -19,7 +19,7 @@ import org.openqa.selenium.Keys as Keys
 
 
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
+//WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search'))

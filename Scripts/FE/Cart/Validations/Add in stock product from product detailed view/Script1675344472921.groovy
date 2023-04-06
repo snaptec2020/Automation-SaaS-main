@@ -20,19 +20,14 @@ import org.openqa.selenium.Keys as Keys
 
 
 
-try
-{
+
 WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Add in stock products to cart'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
 WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Cart'), 10)
 
 WebUI.click(findTestObject('Object Repository/Products/Add To Cart'))
-}
+
+WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
 
 
-catch (Exception e)
-{
-e.printStackTrace();
-//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}

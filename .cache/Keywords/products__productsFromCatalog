@@ -1,9 +1,13 @@
 {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   "keywordFileContentHash": "87BC4D40D19C15F82DAFD143EA792656",
 =======
   "keywordFileContentHash": "477C8529E88A1EB492D2896CE7BC3D12",
 >>>>>>> Stashed changes
+=======
+  "keywordFileContentHash": "29C06A6C19946967C36FC7862911F74C",
+>>>>>>> main
   "keywordClasses": [
     {
       "name": "products.productsFromCatalog",
@@ -83,6 +87,16 @@
           "javadoc": ""
         },
         {
+          "name": "getSpecifiedinStockProductsFromRandomCategory",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "getSpecifiedinStockProductsText",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
           "name": "getinStockProductFromOnePage",
           "parameters": [],
           "javadoc": ""
@@ -121,6 +135,11 @@
         },
         {
           "name": "getRandominStockProductsFromOnePage",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "getRandominStockProductsFromRandomCategory",
           "parameters": [],
           "javadoc": ""
         },
@@ -228,6 +247,30 @@
                 "isArray": false,
                 "isGnericsPlaceHolder": false,
                 "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "configurableProduct",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "checkOnAddToStoreClickable",
+          "parameters": [
+            {
+              "name": "currentURL",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
                 "genericsTypes": [],
                 "errorOnParsing": false
               }

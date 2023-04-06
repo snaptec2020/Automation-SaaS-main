@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "E7C02F43A59542574651DCBDDB04B296",
+  "keywordFileContentHash": "C8D0F7312B9E1AA7C9DDC6A4ADB14C86",
   "keywordClasses": [
     {
       "name": "generalactions.generalStrings",
@@ -7,6 +7,43 @@
         {
           "name": "generatRandomEmail",
           "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "generateRandomPhoneNumber",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "generatePhoneWithConditions",
+          "parameters": [
+            {
+              "name": "expectedPhoneSize",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "isPhoneKeyReplaced",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
           "javadoc": ""
         }
       ]

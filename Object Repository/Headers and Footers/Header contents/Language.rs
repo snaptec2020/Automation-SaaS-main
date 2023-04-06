@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='language-container']//span[@class='language-trigger']</value>
+         <value>//div[@class='language-container']//*[@class='language-trigger']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -18,7 +18,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>DIV</value>
-      <webElementGuid>0306b76c-d37a-4294-92b2-08b8974a4203</webElementGuid>
+      <webElementGuid>47b1a175-9b61-4109-a907-adeb7a5de2d4</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -26,6 +26,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>xpath1674720503510</value>
-      <webElementGuid>2e3a0903-6616-4aa1-b441-32c08c8e369a</webElementGuid>
+      <webElementGuid>4fa8ad77-ff6c-4e0b-ad09-1509eaa1f249</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

@@ -11,18 +11,13 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'a.aldon@snaptec.co'</initValue>
+      <initValue>'sss@ss.co'</initValue>
       <name>Vaild_email</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'aaa@aaaa.com'</initValue>
       <name>Wrong_email</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>'tonez_ar'</initValue>
-      <name>store</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
@@ -53,5 +48,35 @@
       <description></description>
       <initValue>'Not Run'</initValue>
       <name>testSuiteStatus</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Test'</initValue>
+      <name>textSearch</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Az0785846593'</initValue>
+      <name>ValidPassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'3691'</initValue>
+      <name>FixedOTP</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'573557581'</initValue>
+      <name>phoneNumber</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Azeez'</initValue>
+      <name>FirstName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Saleh'</initValue>
+      <name>LastName</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

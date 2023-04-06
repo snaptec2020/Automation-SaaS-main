@@ -6,12 +6,12 @@
    <elementGuidId>4ffd91e7-8107-47dd-9118-71bae73b6f3b</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//button[contains(text(),'تسجيل الدخول') or normalize-space()='Sign In']
+</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//button[contains(text(),'تسجيل الدخول')]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

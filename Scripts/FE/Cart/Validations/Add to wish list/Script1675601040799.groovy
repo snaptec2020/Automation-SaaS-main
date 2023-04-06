@@ -21,7 +21,7 @@ Random randomNumberforProduct = new Random();
 
 int elementIndex;
 
-try {
+
 	
 	//WebUI.callTestCase(findTestCase('Test Cases/FE/Sign in TC/validations/login by Eamil/Success login fucation'), [:], FailureHandling.STOP_ON_FAILURE);
 	
@@ -33,13 +33,6 @@ try {
 	//WebUI.scrollToElement(findTestObject('Object Repository/Cart/Product in item container'), 0)
 	
 	
-	//WebUI.click(findTestObject('Object Repository/Cart/Add to favorite'))
+	WebUI.click(findTestObject('Object Repository/Cart/Add to favorite'))
 	
-	}
-
-
-catch (Exception e)
-{
-e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}
+	

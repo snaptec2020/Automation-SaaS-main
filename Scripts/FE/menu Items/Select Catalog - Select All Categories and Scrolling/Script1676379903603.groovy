@@ -33,28 +33,35 @@ Catalogs.get(i).click()
 */
 Random randomNumberforProduct = new Random()
 
+Random randomNumber = new Random()
+
 try {
     List Categories = CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
 
-    int elementIndex = 0
-
+    // int elementIndex = 0
+    //int elementIndex= Math.abs((randomNumber.nextInt(Categories.size() - 1)))
     //= Math.abs((randomNumber.nextInt(Categories.size() - 1)))
-    for (def Category : Categories) {
+    for (int elementIndex = 0; elementIndex <= (Categories.size() - 1); elementIndex++) {
+        //elementIndex = elementIndex++
         CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
+		
+		WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 
+        //CustomKeywords.'generalactions.scrolling.scrollingAtTheBottom'()
         //WebUI.delay(5)
-        for (int i = 1; i <= 3; i++) {
-            WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
-        }
-        
-        WebUI.delay(3)
-
-        for (int i = 1; i <= 4; i++) {
-            WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
-        }
-        
-        WebUI.delay(2)
-
+        /*
+		 * for (int i = 1; i <= 3; i++) { WebUI.scrollToElement(findTestObject('Headers
+		 * and Footers/Footer contents/Web footer'), 30,
+		 * FailureHandling.CONTINUE_ON_FAILURE) }
+		 * 
+		 * WebUI.delay(3)
+		 * 
+		 * for (int i = 1; i <= 4; i++) { WebUI.scrollToElement(findTestObject('Headers
+		 * and Footers/Footer contents/Web footer'), 30,
+		 * FailureHandling.CONTINUE_ON_FAILURE) }
+		 * 
+		 * WebUI.delay(2)
+		 */
         /*
 	 * List prod =
 	 * CustomKeywords.'products.productsFromCatalog.getinStockProductFromOnePage'()
@@ -68,12 +75,10 @@ try {
 	 * +prod.get(elementIndexproduct).toString()) if(elementIndexproduct==0) {
 	 * elementIndexproduct=1 }
 	 */
-        CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromOnePage'()
+        CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromOnePage'( //WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
+            //}
+            )
 
-        //WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
-
-        //}
-        elementIndex = (elementIndex + 1)
     }
 }
 catch (Exception e) {

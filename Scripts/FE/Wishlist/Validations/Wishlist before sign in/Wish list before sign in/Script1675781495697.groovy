@@ -20,15 +20,7 @@ import org.openqa.selenium.Keys as Keys
 
 
 
-try
-{
+
 	WebUI.callTestCase(findTestCase('Test Cases/FE/Wishlist/Verifications/Wish list'), [:], FailureHandling.STOP_ON_FAILURE);
 	
-	
-}
 
-catch (Exception e)
-{
-e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}

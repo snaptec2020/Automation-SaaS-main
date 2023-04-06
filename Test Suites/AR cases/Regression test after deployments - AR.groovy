@@ -42,9 +42,10 @@ def setUp() {
 /**
  * Clean test suites environment.
  */
-@TearDown(skipped = false) // Please change skipped to be false to activate this method.
+@TearDown(skipped = true) // Please change skipped to be false to activate this method.
 def tearDown() {
 	// Put your code here.
+
 }
 
 /**

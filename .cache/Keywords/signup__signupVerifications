@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "CBA65970F15932F66D20DBE618FD47A7",
+  "keywordFileContentHash": "4783346AB8F305644A450F323B5B94BC",
   "keywordClasses": [
     {
       "name": "signup.signupVerifications",
@@ -37,22 +37,8 @@
           "javadoc": ""
         },
         {
-          "name": "verificationElement",
-          "parameters": [
-            {
-              "name": "message",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "java.lang.Object",
-                "unresolvedClassName": "java.lang.Object",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": true,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
+          "name": "verificationElementSignUp",
+          "parameters": [],
           "javadoc": ""
         }
       ]

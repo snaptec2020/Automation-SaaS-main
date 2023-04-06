@@ -1,0 +1,16 @@
+{
+  "keywordFileContentHash": "1FB5537A22620E45EDEE48981B715130",
+  "keywordClasses": [
+    {
+      "name": "generalactions.scrolling",
+      "keywordMethods": [
+        {
+          "name": "scrollingAtTheBottom",
+          "parameters": [],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

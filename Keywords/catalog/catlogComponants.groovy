@@ -22,7 +22,7 @@ import internal.GlobalVariable
 
 public class catlogComponants {
 	@Keyword
-	def getCategoryElements() {
+	public def getCategoryElements() {
 		List Catalogs = WebUI.findWebElements(findTestObject('Object Repository/Mega Menu/Catalog list'),30)
 
 
@@ -30,11 +30,12 @@ public class catlogComponants {
 	}
 
 	@Keyword
-	def getSpecifiedCatalogElement(int elementIndex,List catalogList) {
+	public def getSpecifiedCatalogElement(int elementIndex,List catalogList) {
 		//if (elementIndex >=0)
-
+		
 		catalogList.get(elementIndex).click()
-
+		Thread.sleep(2000);
+		WebUI.mouseOver(findTestObject('Headers and Footers/Footer contents/Web footer'), FailureHandling.CONTINUE_ON_FAILURE)
 		/*		else {
 		 WebUI.scrollToPosition(9999999, 9999999)
 		 WebUI.scrollToPosition(9999999, 9999999)
