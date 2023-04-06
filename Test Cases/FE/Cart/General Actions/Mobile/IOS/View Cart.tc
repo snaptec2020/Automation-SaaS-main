@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>this test case to view the cart directly without adding products to cart.</description>
-   <name>View Cart</name>
-   <tag>cart</tag>
-   <comment></comment>
-   <testCaseGuid>b655742c-b1ee-4b2b-a1e5-523045251bc6</testCaseGuid>
-</TestCaseEntity>
