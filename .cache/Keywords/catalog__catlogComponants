@@ -6,7 +6,8 @@
       "keywordMethods": [
         {
           "name": "getCategoryElements",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "getSpecifiedCatalogElement",
@@ -37,10 +38,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

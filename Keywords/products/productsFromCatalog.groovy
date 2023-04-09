@@ -342,26 +342,26 @@ public class productsFromCatalog {
 						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
 						i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]')
 
-						WebUI.click(tb)
+						WebUI.click(tb,FailureHandling.CONTINUE_ON_FAILURE)
 
-						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-								i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[1]')
+						tb.addProperty('xpath', ConditionType.EQUALS, ('((//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+								i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[@class=\'menu__item\']//button[not(@disabled)])[1]')
 
-						WebUI.click(tb)
+						WebUI.click(tb,FailureHandling.CONTINUE_ON_FAILURE)
 
 						break
 					case ~('^styles_checkboxOption.*') :
 						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
 						i) + ']//span[contains(@class,\'styles_checkboxOption\')][1]//input')
 
-						WebUI.check(tb)
+						WebUI.check(tb,FailureHandling.CONTINUE_ON_FAILURE)
 
 						break
 					case ~('^styles_swatchOption.*') :
 						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
 						i) + ']//span[contains(@class,\'styles_swatchOption\')][1]')
 
-						WebUI.check(tb)
+						WebUI.check(tb,FailureHandling.CONTINUE_ON_FAILURE)
 				}
 			}
 		}
@@ -381,6 +381,7 @@ public class productsFromCatalog {
 
 		} else {
 			KeywordUtil.markPassed("Trying to Get Configurable product")
+			WebUI.scrollToElement(findTestObject('Object Repository/Products/Product content'), 0, FailureHandling.STOP_ON_FAILURE)
 			configurableProduct()
 			tb.addProperty('xpath', ConditionType.EQUALS, "//*[@class='product-content__button-wrapper']//button[@class='product-content__cart']")
 			if(WebUI.verifyElementClickable(tb)) {
