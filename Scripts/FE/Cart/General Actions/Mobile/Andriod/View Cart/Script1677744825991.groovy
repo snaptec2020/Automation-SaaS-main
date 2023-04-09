@@ -23,7 +23,7 @@ try
 {
 
 	
-WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Mobile/Mobile'), [:],FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('null'), [:],FailureHandling.STOP_ON_FAILURE)
 
 	
 	

@@ -43,6 +43,10 @@ try {
     //= Math.abs((randomNumber.nextInt(Categories.size() - 1)))
     for (int elementIndex = 0; elementIndex <= (Categories.size() - 1); elementIndex++) {
         //elementIndex = elementIndex++
+		if(elementIndex==0 & GlobalVariable.RunningMode>1) {
+			WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+			CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromOnePage'()
+		}
         CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
 		
 		WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
@@ -75,9 +79,7 @@ try {
 	 * +prod.get(elementIndexproduct).toString()) if(elementIndexproduct==0) {
 	 * elementIndexproduct=1 }
 	 */
-        CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromOnePage'( //WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
-            //}
-            )
+        CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromOnePage'()
 
     }
 }

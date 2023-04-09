@@ -15,28 +15,41 @@
       <guid>42699ced-bf0f-4428-95bf-e22ebc81c153</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Website launch/Mobile/Andriod/Browser/Launch website on Samsung S9</testCaseId>
+      <iterationNameVariable>
+         <defaultValue>findTestData('Mobile/Mobile sizes').getValue(1, 1)</defaultValue>
+         <description></description>
+         <id>92ce61cb-4e2c-4c3d-87dc-03b20d7a54fa</id>
+         <masked>false</masked>
+         <name>deviceName</name>
+      </iterationNameVariable>
+      <testCaseId>Test Cases/FE/Website launch/Validations/Website launch</testCaseId>
       <testDataLink>
-         <combinationType>ONE</combinationType>
+         <combinationType>MANY</combinationType>
          <id>81760384-60bd-4870-ab65-2f79f168cc9f</id>
          <iterationEntity>
-            <iterationType>RANGE</iterationType>
+            <iterationType>ALL</iterationType>
             <value>1-1</value>
          </iterationEntity>
-         <testDataId>Data Files/Andriod sizes</testDataId>
+         <testDataId>Data Files/Mobile/Mobile sizes</testDataId>
       </testDataLink>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
       <variableLink>
-         <testDataLinkId>81760384-60bd-4870-ab65-2f79f168cc9f</testDataLinkId>
-         <type>DATA_COLUMN</type>
-         <value>Width</value>
-         <variableId>67c6da58-ccfa-4552-beed-3a88c9cc73b9</variableId>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>390455f2-fea6-4aff-9668-974f6f6b92e9</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>60901e03-9283-4dcc-bbf4-d2cd15be6b6e</variableId>
       </variableLink>
       <variableLink>
          <testDataLinkId>81760384-60bd-4870-ab65-2f79f168cc9f</testDataLinkId>
          <type>DATA_COLUMN</type>
-         <value>Highet</value>
-         <variableId>edf7ce8a-4b69-4fab-838c-50b30dd343a6</variableId>
+         <value>Type</value>
+         <variableId>92ce61cb-4e2c-4c3d-87dc-03b20d7a54fa</variableId>
       </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

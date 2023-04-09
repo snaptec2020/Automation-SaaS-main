@@ -5,4 +5,43 @@
    <tag></tag>
    <comment></comment>
    <testCaseGuid>0cb88d71-d392-4dc6-b921-c8313a223e43</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>390455f2-fea6-4aff-9668-974f6f6b92e9</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>60901e03-9283-4dcc-bbf4-d2cd15be6b6e</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>92ce61cb-4e2c-4c3d-87dc-03b20d7a54fa</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>findTestData('Mobile/Mobile sizes').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>390455f2-fea6-4aff-9668-974f6f6b92e9</id>
+      <masked>false</masked>
+      <name>width</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Mobile/Mobile sizes').getValue(3, 1)</defaultValue>
+      <description></description>
+      <id>60901e03-9283-4dcc-bbf4-d2cd15be6b6e</id>
+      <masked>false</masked>
+      <name>hieght</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Mobile/Mobile sizes').getValue(1, 1)</defaultValue>
+      <description></description>
+      <id>92ce61cb-4e2c-4c3d-87dc-03b20d7a54fa</id>
+      <masked>false</masked>
+      <name>deviceName</name>
+   </variable>
 </TestCaseEntity>

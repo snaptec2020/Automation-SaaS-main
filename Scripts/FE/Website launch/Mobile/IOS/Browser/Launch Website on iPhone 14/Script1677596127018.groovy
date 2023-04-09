@@ -33,8 +33,9 @@ import com.katalon.cdp.CdpUtils as CdpUtils
 WebUI.openBrowser('')
 WebUI.navigateToUrl(GlobalVariable.URL)
 WebUI.maximizeWindow()
-WebUI.waitForElementPresent(findTestObject('Headers and Footers/Footer contents/Web footer'), 50, FailureHandling.CONTINUE_ON_FAILURE)
-CustomKeywords.'mobileBrowsers.mobileBrowsers.captureFullPageScreenshot'(Width, Highet)
+//WebUI.waitForElementPresent(findTestObject('Headers and Footers/Footer contents/Web footer'), 50, FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.setViewPortSize(404,1097)
+//CustomKeywords.'mobileBrowsers.mobileBrowsers.captureFullPageScreenshot'(Width, Highet)
 
 
 
