@@ -26,12 +26,12 @@ public class catlogComponants {
 		List Catalogs
 		switch(GlobalVariable.RunningMode) {
 			case "1": Catalogs = WebUI.findWebElements(findTestObject('Object Repository/Mega Menu/Catalog list'),30)
-				      break
+				break
 			case "2": //WebUI.waitForElementVisible(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'), 10)
-					  WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
-					  Catalogs= WebUI.findWebElements(findTestObject('Object Repository/Mega Menu/MenuSider on mobile'),30)
-					  WebUI.click(findTestObject('Object Repository/Mega Menu/Close MM Mobile'))
-					  break
+				WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
+				Catalogs= WebUI.findWebElements(findTestObject('Object Repository/Mega Menu/MenuSider on mobile'),30)
+				WebUI.click(findTestObject('Object Repository/Mega Menu/Close MM Mobile'))
+				break
 		}
 
 
@@ -43,8 +43,8 @@ public class catlogComponants {
 		//if (elementIndex >=0)
 		switch(GlobalVariable.RunningMode) {
 			case "2":WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
-					Thread.sleep(1000);
-					 break
+				Thread.sleep(1000);
+				break
 		}
 		catalogList.get(elementIndex).click()
 		Thread.sleep(2000);
