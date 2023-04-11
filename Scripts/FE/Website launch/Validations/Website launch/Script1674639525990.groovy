@@ -34,15 +34,9 @@ switch (GlobalVariable.RunningMode) {
 		Map chromeOptions =[deviceName:deviceName]
 		RunConfiguration.setWebDriverPreferencesProperty('mobileEmulation', chromeOptions)
         WebUI.openBrowser('')
-		//Dictionary
-		
 		//RunConfiguration.setWebDriverPreferencesProperty('moz:firefoxOptions', firefoxOptions)
 		//RunConfiguration.setWebDriverPreferencesProperty('mobileEmulation', chromeOptions)
 		WebUI.navigateToUrl(GlobalVariable.URL)
-		//ChromeDevToolsService cdts = CdpUtils.getService()
-        //WebUI.setViewPortSize(((width) as int), ((hieght) as int))
-		//CustomKeywords.'mobileBrowsers.mobileBrowsers.captureFullPageScreenshot'(width, hieght)
-
         break
 }
 
