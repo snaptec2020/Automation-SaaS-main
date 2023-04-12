@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Website launch</name>
+   <name>Mobile</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>0cb88d71-d392-4dc6-b921-c8313a223e43</testCaseGuid>
+   <testCaseGuid>ae0f702f-ad7b-42f7-9ca6-cd13bf5226b4</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>f74bbf3b-76cf-495a-8e38-08f56521e35c</variableId>
+      <variableId>e3a593f7-c07e-4eca-be15-bc250cc02c93</variableId>
    </variableLinks>
    <variable>
-      <defaultValue>findTestData('Mobile/Mobile sizes').getValue(1, 1)</defaultValue>
+      <defaultValue>0</defaultValue>
       <description></description>
-      <id>f74bbf3b-76cf-495a-8e38-08f56521e35c</id>
+      <id>e3a593f7-c07e-4eca-be15-bc250cc02c93</id>
       <masked>false</masked>
-      <name>deviceName</name>
+      <name>variable</name>
    </variable>
 </TestCaseEntity>

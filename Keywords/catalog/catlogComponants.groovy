@@ -26,7 +26,16 @@ public class catlogComponants {
 	TestObject tb=new TestObject()
 	@Keyword
 	public def getCategoryElements() {
-		List Catalogs = WebUI.findWebElements(findTestObject('Object Repository/Mega Menu/Catalog list'),30)
+		List Catalogs
+		switch(GlobalVariable.RunningMode) {
+			case "1": Catalogs = WebUI.findWebElements(findTestObject('Object Repository/Mega Menu/Catalog list'),30)
+				break
+			case "2": //WebUI.waitForElementVisible(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'), 10)
+				WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
+				Catalogs= WebUI.findWebElements(findTestObject('Object Repository/Mega Menu/MenuSider on mobile'),30)
+				WebUI.click(findTestObject('Object Repository/Mega Menu/Close MM Mobile'))
+				break
+		}
 
 
 		return Catalogs
@@ -34,10 +43,25 @@ public class catlogComponants {
 
 	@Keyword
 	public def getSpecifiedCatalogElement(int elementIndex,List catalogList) {
+
 		elementIndex =elementIndex+1
-		tb.addProperty('xpath', ConditionType.EQUALS, "//a[contains(@class,'styles_megaMenuItem')]["+elementIndex+"]")
+		
+		
 
 		//catalogList.get(elementIndex).click()
+
+
+		//if (elementIndex >=0)
+		switch(GlobalVariable.RunningMode) {
+			case "1": tb.addProperty('xpath', ConditionType.EQUALS, "//a[contains(@class,'styles_megaMenuItem')]["+elementIndex+"]")
+					  break
+			case "2":WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
+					Thread.sleep(1000);
+					tb.addProperty('xpath', ConditionType.EQUALS, "(//button[@class='mega-menu-sidebar__item-title'])["+elementIndex+"]")
+					break
+		}
+/*		catalogList.get(elementIndex).click()
+		Thread.sleep(2000);*/
 		WebUI.waitForElementClickable(tb, 30)
 		WebUI.click(tb,FailureHandling.CONTINUE_ON_FAILURE)
 		WebUI.delay(2)

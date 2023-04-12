@@ -43,6 +43,10 @@ try {
     //= Math.abs((randomNumber.nextInt(Categories.size() - 1)))
     for (int elementIndex = 0; elementIndex <= (Categories.size() - 1); elementIndex++) {
         //elementIndex = elementIndex++
+		if(elementIndex==0 & GlobalVariable.RunningMode>1) {
+			WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+			CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromOnePage'()
+		}
         CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
 		
 		WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
