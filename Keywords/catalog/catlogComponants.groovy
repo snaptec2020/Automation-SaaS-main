@@ -55,7 +55,9 @@ public class catlogComponants {
 		switch(GlobalVariable.RunningMode) {
 			case "1": tb.addProperty('xpath', ConditionType.EQUALS, "//a[contains(@class,'styles_megaMenuItem')]["+elementIndex+"]")
 					  break
-			case "2":WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
+			case "2":WebUI.waitForElementClickable(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'), 0)
+					WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
+					
 					Thread.sleep(1000);
 					tb.addProperty('xpath', ConditionType.EQUALS, "(//button[@class='mega-menu-sidebar__item-title'])["+elementIndex+"]")
 					break
