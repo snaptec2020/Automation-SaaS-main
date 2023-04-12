@@ -21,7 +21,7 @@ WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check ou
 
 WebUI.click(findTestObject('Check Out/Proceed To Checkout Button'))
 //boolean otpRequierd=WebUI.verifyElementVisible(findTestObject('OTP/OTP container'))
-int otpRequierd=WebUI.findWebElements(findTestObject('Sign up Page/Sgin up By phone/insert phone number'),10).size()
+int otpRequierd=WebUI.findWebElements(findTestObject('Sign up Page/Sgin up By phone/insert phone number'),20).size()
 if(otpRequierd!= 0) {
 	WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), CustomKeywords.'generalactions.generalStrings.generateRandomPhoneNumber'())
 	WebUI.click(findTestObject('Check Out/Update added phone number'))
