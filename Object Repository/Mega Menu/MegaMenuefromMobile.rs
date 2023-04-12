@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>MenuSider on mobile</name>
+   <name>MegaMenuefromMobile</name>
    <tag></tag>
-   <elementGuidId>dcd716a5-6caf-4e5a-9b61-131f2be17d21</elementGuidId>
+   <elementGuidId>7cde21ac-3a37-41e6-9023-1e12d02bd548</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//button[@class='button button--transparent p-0 toggle-sidebar-button']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//button[@class='mega-menu-sidebar__item-title']</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
