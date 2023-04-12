@@ -189,13 +189,6 @@
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>7152e68e-50ee-4deb-aa3f-af7828191cc7</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Sign in TC/validations/login by Eamil/Success login fucation</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
       <guid>18a2c1a3-56c3-4228-8e25-f3e44b629b81</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

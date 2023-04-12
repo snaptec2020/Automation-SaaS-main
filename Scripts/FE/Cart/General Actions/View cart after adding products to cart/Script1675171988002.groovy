@@ -30,7 +30,7 @@ WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Validations/Add in stock pro
 
 //WebUI.waitForElementPresent(findTestObject('//div[@class="add-to-cart-modal"]'), 15, FailureHandling.CONTINUE_ON_FAILURE)
 
-//WebUI.verifyElementPresent(findTestObject('Object Repository/Cart/View Cart'), 2, FailureHandling.STOP_ON_FAILURE)
+WebUI.waitForElementPresent(findTestObject('Object Repository/Cart/View Cart'), 10)
 
 //WebUI.verifyElementClickable(findTestObject('Object Repository/Cart/View Cart'), FailureHandling.STOP_ON_FAILURE)
 

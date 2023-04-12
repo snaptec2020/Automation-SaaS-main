@@ -18,7 +18,8 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-if(WebUI.verifyElementVisible(findTestObject('Object Repository/Cart/Cart count'))) {
+int cartContentsCount=WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'),10).size()
+if(cartContentsCount!=0) {
 	WebUI.click(findTestObject('Object Repository/Cart/Cart'), FailureHandling.STOP_ON_FAILURE)
 }else {
 	KeywordUtil.markPassed("Add to cart now")

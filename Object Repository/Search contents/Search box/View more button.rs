@@ -6,12 +6,11 @@
    <elementGuidId>1518dc33-001c-41e1-9008-08284e60a4d4</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[@class='ViewmoreTitle' or @class='view-more-title']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@class=&quot;ViewmoreTitle&quot;]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
