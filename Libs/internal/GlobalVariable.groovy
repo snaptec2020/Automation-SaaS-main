@@ -84,6 +84,16 @@ public class GlobalVariable {
      */
     public static Object LastName
      
+    /**
+     * <p>Profile default : 1 = Web Browser, 2 = Mobile Browser, 3= Mobile App</p>
+     */
+    public static Object RunningMode
+     
+    /**
+     * <p>Profile default : 1=iPhone, 2=Android</p>
+     */
+    public static Object MobileType
+     
 
     static {
         try {
@@ -106,6 +116,8 @@ public class GlobalVariable {
             phoneNumber = selectedVariables['phoneNumber']
             FirstName = selectedVariables['FirstName']
             LastName = selectedVariables['LastName']
+            RunningMode = selectedVariables['RunningMode']
+            MobileType = selectedVariables['MobileType']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)

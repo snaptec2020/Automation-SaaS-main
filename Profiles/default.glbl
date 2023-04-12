@@ -79,4 +79,14 @@
       <initValue>'Saleh'</initValue>
       <name>LastName</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>1 = Web Browser, 2 = Mobile Browser, 3= Mobile App</description>
+      <initValue>'1'</initValue>
+      <name>RunningMode</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>1=iPhone, 2=Android</description>
+      <initValue>'1'</initValue>
+      <name>MobileType</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

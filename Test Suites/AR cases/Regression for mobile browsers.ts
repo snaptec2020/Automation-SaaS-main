@@ -15,28 +15,29 @@
       <guid>42699ced-bf0f-4428-95bf-e22ebc81c153</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Website launch/Mobile/Andriod/Browser/Launch website on Samsung S9</testCaseId>
+      <iterationNameVariable>
+         <defaultValue>findTestData('Mobile/Mobile sizes').getValue(1, 1)</defaultValue>
+         <description></description>
+         <id>92ce61cb-4e2c-4c3d-87dc-03b20d7a54fa</id>
+         <masked>false</masked>
+         <name>deviceName</name>
+      </iterationNameVariable>
+      <testCaseId>Test Cases/FE/Website launch/Validations/Website launch</testCaseId>
       <testDataLink>
-         <combinationType>ONE</combinationType>
+         <combinationType>MANY</combinationType>
          <id>81760384-60bd-4870-ab65-2f79f168cc9f</id>
          <iterationEntity>
-            <iterationType>RANGE</iterationType>
+            <iterationType>ALL</iterationType>
             <value>1-1</value>
          </iterationEntity>
-         <testDataId>Data Files/Andriod sizes</testDataId>
+         <testDataId>Data Files/Mobile/Mobile sizes</testDataId>
       </testDataLink>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
       <variableLink>
          <testDataLinkId>81760384-60bd-4870-ab65-2f79f168cc9f</testDataLinkId>
          <type>DATA_COLUMN</type>
-         <value>Width</value>
-         <variableId>67c6da58-ccfa-4552-beed-3a88c9cc73b9</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId>81760384-60bd-4870-ab65-2f79f168cc9f</testDataLinkId>
-         <type>DATA_COLUMN</type>
-         <value>Highet</value>
-         <variableId>edf7ce8a-4b69-4fab-838c-50b30dd343a6</variableId>
+         <value>Type</value>
+         <variableId>f74bbf3b-76cf-495a-8e38-08f56521e35c</variableId>
       </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

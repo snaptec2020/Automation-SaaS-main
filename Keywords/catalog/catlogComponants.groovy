@@ -23,7 +23,16 @@ import internal.GlobalVariable
 public class catlogComponants {
 	@Keyword
 	public def getCategoryElements() {
-		List Catalogs = WebUI.findWebElements(findTestObject('Object Repository/Mega Menu/Catalog list'),30)
+		List Catalogs
+		switch(GlobalVariable.RunningMode) {
+			case "1": Catalogs = WebUI.findWebElements(findTestObject('Object Repository/Mega Menu/Catalog list'),30)
+				break
+			case "2": //WebUI.waitForElementVisible(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'), 10)
+				WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
+				Catalogs= WebUI.findWebElements(findTestObject('Object Repository/Mega Menu/MenuSider on mobile'),30)
+				WebUI.click(findTestObject('Object Repository/Mega Menu/Close MM Mobile'))
+				break
+		}
 
 
 		return Catalogs
@@ -32,7 +41,11 @@ public class catlogComponants {
 	@Keyword
 	public def getSpecifiedCatalogElement(int elementIndex,List catalogList) {
 		//if (elementIndex >=0)
-		
+		switch(GlobalVariable.RunningMode) {
+			case "2":WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
+				Thread.sleep(1000);
+				break
+		}
 		catalogList.get(elementIndex).click()
 		Thread.sleep(2000);
 		WebUI.mouseOver(findTestObject('Headers and Footers/Footer contents/Web footer'), FailureHandling.CONTINUE_ON_FAILURE)
