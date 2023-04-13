@@ -18,8 +18,8 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.ConditionType as ConditionType
 import com.kms.katalon.core.testobject.TestObject as TestObject
-import com.kms.katalon.core.util.KeywordUtil
-import com.kms.katalon.core.util.internal.JsonUtil
+import com.kms.katalon.core.util.KeywordcustomUtils.Util
+import com.kms.katalon.core.util.internal.JsoncustomUtils.Util
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.common.WebUiCommonHelper as WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -27,24 +27,24 @@ import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable
 
-import org.apache.commons.io.FileUtils
+import org.apache.commons.io.FilecustomUtils.Utils
 import org.openqa.selenium.Keys as Keys
 import org.openqa.selenium.WebElement as WebElement
-import com.kms.katalon.core.util.internal.XMLUtil
+import com.kms.katalon.core.util.internal.XMLcustomUtils.Util
 //TestCaseContext tcx //= new TestCaseContext()
 TestObject tb = new TestObject()
 String projectDir = RunConfiguration.getProjectDir();
 String testSuiteDir = projectDir + "/"+GlobalVariable.testSuiteStatus+".ts"
-KeywordUtil.logInfo(testSuiteDir)
+KeywordcustomUtils.Util.logInfo(testSuiteDir)
 def sitesCount = WebUI.findWebElements(findTestObject('Multi Sites/Multi site dropdown menu'),30).size()
 if(sitesCount!=0) {
 File testSuiteFile = new File(testSuiteDir);
 //List<String> 
-def bindings = new XmlParser().parse(testSuiteFile)//FileUtils.readLines(testSuiteFile, "UTF-8");
-//def tc = XMLUtil.
+def bindings = new XmlParser().parse(testSuiteFile)//FilecustomUtils.Utils.readLines(testSuiteFile, "UTF-8");
+//def tc = XMLcustomUtils.Util.
 /*
  * for (int i = 0; i < 2; i++) {
- * KeywordUtil.logInfo(bindings.testCaseLink[i].testCaseId[i].value.toString())
+ * KeywordcustomUtils.Util.logInfo(bindings.testCaseLink[i].testCaseId[i].value.toString())
  * }
  */
 
@@ -62,12 +62,12 @@ def bindings = new XmlParser().parse(testSuiteFile)//FileUtils.readLines(testSui
 				 for (int i=0;i<=sites.size()-1;i++) {
 					 //tb.addProperty('xpath', ConditionType.EQUALS,findTestObject('Object Repository/Multi Sites/Multi sites Sites context').add+"["+i+"]")
 					 storesToVisit << "//div[@class='dropdown-menu show']//button[contains(@class,'dropdown-item drop-item')][text()='"+sites.get(i).text+"']"
-				 //KeywordUtil.logInfo(sites.get(i).text)
+				 //KeywordcustomUtils.Util.logInfo(sites.get(i).text)
 				 //WebUI.click(findTestObject('Object Repository/Multi Sites/Multi sites Sites context').addProperty('xpath', ConditionType.EQUALS, "["+sites.get(i).text+"]"))
 				 //WebUI.delay(10)
 				 }
 				 storesToVisit.each{val->
-					 KeywordUtil.logInfo(val)
+					 KeywordcustomUtils.Util.logInfo(val)
 					 tb.addProperty('xpath', ConditionType.EQUALS,val)
 					 WebUI.click(tb)
 					 WebUI.delay(10)
@@ -77,17 +77,17 @@ def bindings = new XmlParser().parse(testSuiteFile)//FileUtils.readLines(testSui
 						 FailureHandling.STOP_ON_FAILURE)
 					 
 					 CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
-					// KeywordUtil.logInfo(testCases.size().toString())
+					// KeywordcustomUtils.Util.logInfo(testCases.size().toString())
 					/* bindings.testCaseLink.each { bk->
 						 
-						 KeywordUtil.logInfo("${bk.testCaseId.text()}")
-						 //KeywordUtil.logInfo(it.testCaseId.value.toString())
+						 KeywordcustomUtils.Util.logInfo("${bk.testCaseId.text()}")
+						 //KeywordcustomUtils.Util.logInfo(it.testCaseId.value.toString())
 					 
 						  }*/
 					 bindings.testCaseLink.each{bk->
-						 KeywordUtil.logInfo("${bk.testCaseId.text()}")
+						 KeywordcustomUtils.Util.logInfo("${bk.testCaseId.text()}")
 						  String tescCaseId = "${bk.testCaseId.text()}"
-						  KeywordUtil.logInfo(tescCaseId)
+						  KeywordcustomUtils.Util.logInfo(tescCaseId)
 						  if(tescCaseId!='Test Cases/FE/Multi Sites/Multisites') {
 						 WebUI.callTestCase(findTestCase(tescCaseId), [:], FailureHandling.STOP_ON_FAILURE)
 						  }

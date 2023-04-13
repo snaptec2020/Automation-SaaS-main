@@ -12,7 +12,7 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject
-import com.kms.katalon.core.util.KeywordUtil
+import com.kms.katalon.core.util.KeywordcustomUtils.Util
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
@@ -28,7 +28,7 @@ WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Car
 tb.addProperty('xpath', ConditionType.EQUALS, '//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')]')
 List genralDropDowns = WebUI.findWebElements(tb, 5)
 if (genralDropDowns.size()!=0) {
-	KeywordUtil.markPassed("Maybe it's a configurable product")
+	KeywordcustomUtils.Util.markPassed("Maybe it's a configurable product")
 	CustomKeywords.'products.productsFromCatalog.configurableProduct'()
 }
 

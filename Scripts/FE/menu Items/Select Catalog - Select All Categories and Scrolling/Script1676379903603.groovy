@@ -11,7 +11,7 @@ import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
-import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
+import com.kms.katalon.core.util.KeywordcustomUtils.Util as KeywordcustomUtils.Util
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
@@ -69,13 +69,13 @@ try {
         /*
 	 * List prod =
 	 * CustomKeywords.'products.productsFromCatalog.getinStockProductFromOnePage'()
-	 * //KeywordUtil.markError(prod.get(1)) if(prod.size()==0){
+	 * //KeywordcustomUtils.Util.markError(prod.get(1)) if(prod.size()==0){
 	 * //WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)
-	 * KeywordUtil.markError("No Products in this Page")
+	 * KeywordcustomUtils.Util.markError("No Products in this Page")
 	 * 
 	 * } else{ def elementIndexproduct=
 	 * Math.abs((randomNumberforProduct.nextInt(prod.size())))
-	 * KeywordUtil.logInfo(elementIndexproduct.toString()
+	 * KeywordcustomUtils.Util.logInfo(elementIndexproduct.toString()
 	 * +prod.get(elementIndexproduct).toString()) if(elementIndexproduct==0) {
 	 * elementIndexproduct=1 }
 	 */

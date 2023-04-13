@@ -1,0 +1,16 @@
+{
+  "keywordFileContentHash": "E1D6A0B535DF4650D0AA9FDBC65DF5AD",
+  "keywordClasses": [
+    {
+      "name": "customUtils.general",
+      "keywordMethods": [
+        {
+          "name": "refreshBrowser",
+          "parameters": [],
+          "javadoc": "/*** Refresh browser like F5 */"
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

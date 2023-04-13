@@ -1,0 +1,29 @@
+{
+  "keywordFileContentHash": "6A3CEBBDBDE897AF15952B75E9DFFBED",
+  "keywordClasses": [
+    {
+      "name": "customUtils.Util",
+      "keywordMethods": [
+        {
+          "name": "getElementByXPath",
+          "parameters": [
+            {
+              "name": "xPath",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "javadocParsed": false
+}

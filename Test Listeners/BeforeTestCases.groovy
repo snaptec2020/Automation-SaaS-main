@@ -40,7 +40,7 @@ class BeforeTestCases {
 	//@BeforeTestSuite
 	//public TestSuiteContext testSuiteContext
 	//def testCases = []
-	@BeforeTestCase
+	//@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
 		
 		//testCases << testCaseContext.testCaseId
@@ -50,7 +50,7 @@ class BeforeTestCases {
 			//CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
 			}
 	}
-	@AfterTestCase
+	//@AfterTestCase
 	def sampleAfterTestCase(TestCaseContext testCaseContext) {
 
 			if(GlobalVariable.testSuiteStatus == 'Not Run') {
@@ -58,7 +58,7 @@ class BeforeTestCases {
 			}
 	}
 	
-	@BeforeTestSuite
+	//@BeforeTestSuite
 	def sampleBeforeTestSuite(TestSuiteContext testSuiteContext) {
 		GlobalVariable.testSuiteStatus = testSuiteContext.testSuiteId
 		//KeywordUtil.logInfo('**************************'+GlobalVariable.testSuiteStatus)
@@ -72,7 +72,7 @@ class BeforeTestCases {
 		
 		
 	}
-	@AfterTestSuite
+	//@AfterTestSuite
 	def sampleAfterTestSuite(TestSuiteContext testSuiteContext) {
 
 		

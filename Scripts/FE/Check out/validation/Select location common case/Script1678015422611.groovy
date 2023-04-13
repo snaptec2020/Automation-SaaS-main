@@ -11,7 +11,7 @@ import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
-import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
+import com.kms.katalon.core.util.KeywordcustomUtils.Util as KeywordcustomUtils.Util
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
@@ -24,7 +24,7 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('FE/Check out/validation/Add Location by Map'), [:], FailureHandling.STOP_ON_FAILURE)
 //Country is not available
 //Your address are missing some informations.
-KeywordUtil.logInfo(CustomKeywords.'generalactions.notificationsObject.getMessageText'())
+KeywordcustomUtils.Util.logInfo(CustomKeywords.'generalactions.notificationsObject.getMessageText'())
 switch (CustomKeywords.'generalactions.notificationsObject.getMessageText'()) {
 	case 'عنوانك ينقصه بعض المعلومات.' :
 	case 'Your address are missing some informations.': 
@@ -61,7 +61,7 @@ switch (CustomKeywords.'generalactions.notificationsObject.getMessageText'()) {
 
 
 /*if (CustomKeywords.'generalactions.notificationsObject.verifyNotificationVisble'('عنوانك ينقصه بعض المعلومات.', 'Your address are missing some informations.')) {
-    KeywordUtil.markPassed('Try to get another location')
+    KeywordcustomUtils.Util.markPassed('Try to get another location')
 
     for (def index : (0..2)) {
         tryToGetLocation()

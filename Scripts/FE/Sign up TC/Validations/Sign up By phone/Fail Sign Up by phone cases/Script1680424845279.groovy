@@ -13,7 +13,7 @@ import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
-import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
+import com.kms.katalon.core.util.KeywordcustomUtils.Util as KeywordcustomUtils.Util
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
@@ -44,7 +44,7 @@ for (def rowData : td.allData) {
     //	9, 0)
     phoneSize = findTestData('Signup phone TD').getValue(3, rowNumber).trim().length()
 
-    KeywordUtil.logInfo(findTestData('Signup phone TD').getValue(2, rowNumber).length().toString())
+    KeywordcustomUtils.Util.logInfo(findTestData('Signup phone TD').getValue(2, rowNumber).length().toString())
 
     firstName = findTestData('Signup phone TD').getValue(1, rowNumber)
 
@@ -54,8 +54,8 @@ for (def rowData : td.allData) {
         phoneNumber = CustomKeywords.'generalactions.generalStrings.generatePhoneWithConditions'(9, 1)
     } else {
         phoneNumber = CustomKeywords.'generalactions.generalStrings.generatePhoneWithConditions'(phoneSize, 0)
-        //KeywordUtil.logInfo(rowData.size().toString())
-		//KeywordUtil.logInfo(rowNumber.toString())
+        //KeywordcustomUtils.Util.logInfo(rowData.size().toString())
+		//KeywordcustomUtils.Util.logInfo(rowNumber.toString())
         if (findTestData('Signup phone TD').getValue(3, rowNumber).trim() == 'exist') {
             phoneNumber = GlobalVariable.phoneNumber
         }

@@ -12,7 +12,7 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject
-import com.kms.katalon.core.util.KeywordUtil
+import com.kms.katalon.core.util.KeywordcustomUtils.Util
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
@@ -47,18 +47,18 @@ TestObject tb = new TestObject()
 		/*
 	 * List prod =
 	 * CustomKeywords.'products.productsFromCatalog.getinStockProductFromOnePage'()
-	 * //KeywordUtil.markError(prod.get(1)) if(prod.size()==0){
+	 * //KeywordcustomUtils.Util.markError(prod.get(1)) if(prod.size()==0){
 	 * //WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)
-	 * KeywordUtil.markError("No Products in this Page")
+	 * KeywordcustomUtils.Util.markError("No Products in this Page")
 	 *
 	 * } else{ def elementIndexproduct=
 	 * Math.abs((randomNumberforProduct.nextInt(prod.size())))
-	 * KeywordUtil.logInfo(elementIndexproduct.toString()
+	 * KeywordcustomUtils.Util.logInfo(elementIndexproduct.toString()
 	 * +prod.get(elementIndexproduct).toString()) if(elementIndexproduct==0) {
 	 * elementIndexproduct=1 }
 	 */
 		List OutOfStockProducts = CustomKeywords.'products.productsFromCatalog.getOutOfStockProduct'()
-		KeywordUtil.logInfo("00000000000000000000000000000000000000\t"+OutOfStockProducts.size())
+		KeywordcustomUtils.Util.logInfo("00000000000000000000000000000000000000\t"+OutOfStockProducts.size())
 		if (OutOfStockProducts.size() >= 1 ) {
 			elementIndexProduct = Math.abs((randomNumberforProduct.nextInt(OutOfStockProducts.size() - 1)))	
 			tb.addProperty('xpath', ConditionType.EQUALS, "(//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Sold out') or contains(text(),'مباع بالكامل')])["+elementIndexProduct+"]")
@@ -68,7 +68,7 @@ TestObject tb = new TestObject()
 			break;
 		}
 		
-		KeywordUtil.markPassed("no out of stock product")
+		KeywordcustomUtils.Util.markPassed("no out of stock product")
 	}
 
 

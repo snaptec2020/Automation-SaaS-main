@@ -22,7 +22,7 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import com.github.kklisura.cdt.protocol.commands.Emulation as Emulation
 import com.github.kklisura.cdt.protocol.types.page.CaptureScreenshotFormat as CaptureScreenshotFormat
-import com.katalon.cdp.CdpUtils as CdpUtils
+import com.katalon.cdp.CdpcustomUtils.Utils as CdpcustomUtils.Utils
 
 //WebUI.openBrowser('')
 
@@ -33,7 +33,7 @@ import com.katalon.cdp.CdpUtils as CdpUtils
 WebUI.waitForElementPresent(findTestObject('Headers and Footers/Footer contents/Web footer'), 50, FailureHandling.CONTINUE_ON_FAILURE)
 
 
-ChromeDevToolsService cdts = CdpUtils.getService()
+ChromeDevToolsService cdts = CdpcustomUtils.Utils.getService()
 Page page = cdts.getPage()
 
 

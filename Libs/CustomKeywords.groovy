@@ -5,8 +5,15 @@
 
 import java.util.List
 
+import java.lang.String
+
 import com.kms.katalon.core.context.TestSuiteContext
 
+
+ /*** Refresh browser like F5 */ 
+def static "customUtils.general.refreshBrowser"() {
+    (new customUtils.general()).refreshBrowser()
+}
 
 
 def static "dbconnections.executeQueries.getDataFromDBByQuery"(
@@ -162,6 +169,13 @@ def static "signup.Signupemailverifications.verificationMessage"(
 
 def static "signup.Signupemailverifications.verificationElementSignUp"() {
     (new signup.Signupemailverifications()).verificationElementSignUp()
+}
+
+
+def static "customUtils.Util.getElementByXPath"(
+    	String xPath	) {
+    (new customUtils.Util()).getElementByXPath(
+        	xPath)
 }
 
 
