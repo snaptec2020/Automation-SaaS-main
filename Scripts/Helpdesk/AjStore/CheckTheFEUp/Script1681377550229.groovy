@@ -22,8 +22,8 @@ WebUI.openBrowser('')
 WebUI.maximizeWindow()
 
 WebUI.navigateToUrl('https://www.ajstore.com/')
-
-WebUI.verifyElementClickable(CustomKeywords.'customUtils.Util.getElementByXPath'("//button[contains(@class,'storeSwitcher-trigger-')]"), FailureHandling.CONTINUE_ON_FAILURE)
+//CustomKeywords.'customUtils.Util.getElementByXPath'("//button[contains(@class,'storeSwitcher-trigger-')]")
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Language'), FailureHandling.CONTINUE_ON_FAILURE)
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Page_/img__image-image-2gD image-loaded-SHk image_3b67db'))
 

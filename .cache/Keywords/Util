@@ -1,0 +1,35 @@
+{
+  "keywordFileContentHash": "EC68D65822855A0AC528D92350A95997",
+  "keywordClasses": [
+    {
+      "name": "Util",
+      "keywordMethods": [
+        {
+          "name": "refreshBrowser",
+          "parameters": [],
+          "javadoc": "/*** Refresh browser like F5 */"
+        },
+        {
+          "name": "getElementByXPath",
+          "parameters": [
+            {
+              "name": "xPath",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\n\t * Get Element by XPath\n\t * @param xPath\n\t *         represent a test object xPath\n\t * @return Element\n\t */"
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

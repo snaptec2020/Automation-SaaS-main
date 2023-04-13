@@ -1,0 +1,35 @@
+{
+  "keywordFileContentHash": "E8EB11FD5D6F9D4CD0E57682B9DEFD6B",
+  "keywordClasses": [
+    {
+      "name": "utils.customUtils",
+      "keywordMethods": [
+        {
+          "name": "refreshBrowser",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "getElementByXPath",
+          "parameters": [
+            {
+              "name": "xPath",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}
