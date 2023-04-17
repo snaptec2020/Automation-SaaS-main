@@ -23,6 +23,10 @@ WebUI.maximizeWindow()
 
 WebUI.navigateToUrl('https://www.ajstore.com/')
 
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo'), 10)
+
+
+
 //CustomKeywords.'customUtils.Util.getElementByXPath'("//button[contains(@class,'storeSwitcher-trigger-')]")
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Language'), FailureHandling.CONTINUE_ON_FAILURE)
 
