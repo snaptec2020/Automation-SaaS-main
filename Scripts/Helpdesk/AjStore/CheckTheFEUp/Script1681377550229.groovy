@@ -80,21 +80,22 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Click Logo
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Main root'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Helpdesk/AjStore/Shared/منتجات الموسم'))
 
-WebUI.click(findTestObject('Helpdesk/AjStore/Shared/منتجات الموسم'))
+WebUI.verifyElementVisible(findTestObject('Helpdesk/AjStore/Shared/منتجات الموسم'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div__1_2'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/الاكثر مبيعاً'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div__1_2_3'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/المنتجات الجديده'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div__1_2_3_4'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/اخترنا لك'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div__1_2'))
+WebUI.click(findTestObject('Helpdesk/AjStore/Shared/منتجات الموسم'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div__1_2_3'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Click الاكثر مبيعاً'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div__1_2_3_4'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click المنتجات الجديدة'), FailureHandling.CONTINUE_ON_FAILURE)
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/clickاخترنا لك'), FailureHandling.CONTINUE_ON_FAILURE)
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/تصفح العروض'), FailureHandling.CONTINUE_ON_FAILURE)
 
