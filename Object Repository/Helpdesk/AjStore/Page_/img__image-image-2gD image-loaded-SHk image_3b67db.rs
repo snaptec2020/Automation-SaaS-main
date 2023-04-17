@@ -6,12 +6,12 @@
    <elementGuidId>2bcf02d0-0058-41ac-b055-58d42c2cdcbd</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//img[@loading='eager']</value>
-      </entry>
-      <entry>
          <key>CSS</key>
          <value>img.image-image-2gD.image-loaded-SHk.image-loadedRtl-sS7</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='root']/main/header/div[2]/div/a/div/img[2]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>img</value>
-      <webElementGuid>d7784a5d-a4c6-411f-b9f9-0aaee7bb8a26</webElementGuid>
+      <webElementGuid>6559d3f8-463e-4928-a675-ae2ac72d86d6</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +30,7 @@
       <name>loading</name>
       <type>Main</type>
       <value>lazy</value>
-      <webElementGuid>e1980145-5a3d-4e90-aae1-491367fc50d2</webElementGuid>
+      <webElementGuid>98c96f8b-931a-4363-86d9-181aca047118</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +38,7 @@
       <name>alt</name>
       <type>Main</type>
       <value>Logo</value>
-      <webElementGuid>69422990-0d99-463e-812b-069528fe57ad</webElementGuid>
+      <webElementGuid>b51c1b21-1786-42a5-997a-7720e8c70163</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -46,7 +46,7 @@
       <name>class</name>
       <type>Main</type>
       <value>image-image-2gD image-loaded-SHk image-loadedRtl-sS7</value>
-      <webElementGuid>1da97739-62fd-44f6-a235-66b6c6152d52</webElementGuid>
+      <webElementGuid>3af92529-0dd4-4015-8d86-c3a3ae41dbad</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -54,7 +54,7 @@
       <name>height</name>
       <type>Main</type>
       <value>89</value>
-      <webElementGuid>2d26c2e5-941f-4405-8fe0-c1bc17d5bcd4</webElementGuid>
+      <webElementGuid>2f31bf99-02d4-49f5-8c69-ce19c707bfa1</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -62,7 +62,7 @@
       <name>src</name>
       <type>Main</type>
       <value>/logo-8QT.png</value>
-      <webElementGuid>972a5d8a-aac3-4586-8c80-8546f035e1b7</webElementGuid>
+      <webElementGuid>0843ffdc-394e-435a-8215-71c47d2074e3</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -70,7 +70,7 @@
       <name>width</name>
       <type>Main</type>
       <value>153</value>
-      <webElementGuid>82e1a9d4-d07d-49ed-9b6b-3de8b5808ffc</webElementGuid>
+      <webElementGuid>a67cac06-0eaa-42db-8300-0a12ab88aed8</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -79,7 +79,7 @@
       <type>Main</type>
       <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/header[@class=&quot;header-closed-2dE header-root-3ce&quot;]/div[@class=&quot;middleHeaderBar-root-3ns middleHeaderBar-close-2Ut middleHeaderBar-root-3ns&quot;]/div[@class=&quot;middleHeaderBar-content-_nW&quot;]/a[@class=&quot;middleHeaderBar-logoWrapper-1WY&quot;]/div[@class=&quot;image-root-Qpm
         image-container-_fN&quot;]/img[@class=&quot;image-image-2gD image-loaded-SHk image-loadedRtl-sS7&quot;]</value>
-      <webElementGuid>0ffc2db5-0225-4198-a78c-db75fa608a5c</webElementGuid>
+      <webElementGuid>619e28f8-1bd5-42be-aa3f-5c675e7ed252</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -87,7 +87,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='root']/main/header/div[2]/div/a/div/img[2]</value>
-      <webElementGuid>168f02c4-ad60-4264-97c7-1b80ff05e5d2</webElementGuid>
+      <webElementGuid>65aa2649-a6b3-4daf-a9c6-40c799f5befb</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -95,7 +95,7 @@
       <name>xpath:img</name>
       <type>Main</type>
       <value>(//img[@alt='Logo'])[2]</value>
-      <webElementGuid>55ff2d40-38d9-4202-8453-dd0ae2ea55fe</webElementGuid>
+      <webElementGuid>a99a7242-84c0-48b1-b898-2cf051e38f6d</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -103,7 +103,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//img[2]</value>
-      <webElementGuid>382196dc-e09e-4886-8c8d-0e51392ea6ed</webElementGuid>
+      <webElementGuid>cbb4874b-24fe-4488-91ba-ecbda7a6bc2b</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -111,6 +111,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//img[@alt = 'Logo' and @src = '/logo-8QT.png']</value>
-      <webElementGuid>dc276ecb-13cc-436e-98fb-19db593a8121</webElementGuid>
+      <webElementGuid>6d5facfb-1491-4715-ab11-5e36669456d9</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

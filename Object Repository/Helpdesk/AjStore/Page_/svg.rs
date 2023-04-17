@@ -6,12 +6,12 @@
    <elementGuidId>d397019d-9683-477b-9949-01098a4c7894</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//button[contains(@class,'cartTrigger') and contains (@class, 'clickable-root')]</value>
+         <key>CSS</key>
+         <value>span.accountChip-root-3cE > svg</value>
       </entry>
       <entry>
-         <key>CSS</key>
-         <value>button.cartTrigger-link-1eQ.cartTrigger-trigger-3L_.clickable-root-1G6 > svg</value>
+         <key>XPATH</key>
+         <value>(.//*[normalize-space(text()) and normalize-space(.)='البحث عن منتج'])[1]/following::*[name()='svg'][1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>svg</value>
-      <webElementGuid>35714271-a38d-4c06-b3c7-eecadab35d6b</webElementGuid>
+      <webElementGuid>764e4df9-1992-42fc-b09d-9e78a62fdfc2</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +30,7 @@
       <name>xmlns</name>
       <type>Main</type>
       <value>http://www.w3.org/2000/svg</value>
-      <webElementGuid>e6ff2efc-a293-49f1-ae6d-16718456ffa3</webElementGuid>
+      <webElementGuid>ed7a502b-1da6-405b-969d-633dd87253df</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -38,7 +38,7 @@
       <name>width</name>
       <type>Main</type>
       <value>20</value>
-      <webElementGuid>5f256b1c-da90-4e41-b167-fe8cfb6f641b</webElementGuid>
+      <webElementGuid>6d667571-b0dc-4a86-97c6-77b258e0788c</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -46,7 +46,7 @@
       <name>height</name>
       <type>Main</type>
       <value>20</value>
-      <webElementGuid>78d3c8d4-143e-4926-89c6-ff3aaf622d67</webElementGuid>
+      <webElementGuid>563ea9a3-ff3a-4dc3-a883-f8c9c12501d3</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -54,7 +54,7 @@
       <name>viewBox</name>
       <type>Main</type>
       <value>0 0 24 24</value>
-      <webElementGuid>a23fa7c6-0299-4e5d-9e12-0e4830c8b8df</webElementGuid>
+      <webElementGuid>0a1b4bc1-8029-486d-bb11-23130528be16</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -62,7 +62,7 @@
       <name>fill</name>
       <type>Main</type>
       <value>none</value>
-      <webElementGuid>df4a12be-3eac-4c06-a6b0-3f307c443bbe</webElementGuid>
+      <webElementGuid>ca26ec87-1db1-40fb-a61b-04b4e8b726b0</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -70,7 +70,7 @@
       <name>stroke</name>
       <type>Main</type>
       <value>#101828</value>
-      <webElementGuid>10b22b35-2c73-4f4c-a20b-8e70c7db6552</webElementGuid>
+      <webElementGuid>042efc25-82f5-4aa4-bab1-87b92a6ff2f9</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -78,7 +78,7 @@
       <name>stroke-width</name>
       <type>Main</type>
       <value>2</value>
-      <webElementGuid>2c54829c-7ad0-446f-acbc-f072ee60c754</webElementGuid>
+      <webElementGuid>7a02fe68-b904-4b2b-bf1c-aa9828d99225</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -86,7 +86,7 @@
       <name>stroke-linecap</name>
       <type>Main</type>
       <value>round</value>
-      <webElementGuid>191f262a-de7f-47db-9ff6-aa6b26ffdb11</webElementGuid>
+      <webElementGuid>707b6878-daf8-4e18-b8bf-87a39b9cfe49</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -94,18 +94,50 @@
       <name>stroke-linejoin</name>
       <type>Main</type>
       <value>round</value>
-      <webElementGuid>0949a1f0-fe03-4c40-9b0e-bfcc1f326eea</webElementGuid>
+      <webElementGuid>fc2572d7-e564-4dcc-b7b9-9fa30f04e6bc</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/header[@class=&quot;header-closed-2dE header-root-3ce&quot;]/div[@class=&quot;middleHeaderBar-root-3ns middleHeaderBar-close-2Ut middleHeaderBar-root-3ns&quot;]/div[@class=&quot;middleHeaderBar-content-_nW&quot;]/div[@class=&quot;middleHeaderBar-actionsWrapper-3oH&quot;]/button[@class=&quot;cartTrigger-link-1eQ cartTrigger-trigger-3L_ clickable-root-1G6&quot;]/svg[1]</value>
-      <webElementGuid>f51bd678-a483-4eb4-a8bd-5d11eca7d484</webElementGuid>
+      <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/header[@class=&quot;header-closed-2dE header-root-3ce&quot;]/div[@class=&quot;middleHeaderBar-root-3ns middleHeaderBar-close-2Ut middleHeaderBar-root-3ns&quot;]/div[@class=&quot;middleHeaderBar-content-_nW&quot;]/div[@class=&quot;middleHeaderBar-actionsWrapper-3oH&quot;]/button[@class=&quot;accountTrigger-link-21z clickable-root-1G6&quot;]/span[@class=&quot;accountChip-root-3cE&quot;]/svg[1]</value>
+      <webElementGuid>e7f1274a-a395-4b08-a31d-20d07406f646</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='البحث عن منتج'])[1]/following::*[name()='svg'][1]</value>
+      <webElementGuid>a2feebf7-8366-459f-9c72-1defeafdf315</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='نسائي'])[1]/following::*[name()='svg'][2]</value>
+      <webElementGuid>6306d810-0236-4fae-85a6-56b5f5d28eae</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='الأشمغة'])[1]/preceding::*[name()='svg'][3]</value>
+      <webElementGuid>fd2efa05-14c0-4a4a-a37f-e8d8a4dfd186</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='الغتر'])[1]/preceding::*[name()='svg'][3]</value>
+      <webElementGuid>db6c1177-82ce-4cce-8d14-fee9bd1014eb</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>

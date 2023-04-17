@@ -1,0 +1,160 @@
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.testobject.ConditionType
+import java.awt.Robot as Robot
+import java.awt.event.KeyEvent as KeyEvent
+import org.openqa.selenium.JavascriptExecutor as JavascriptExecutor
+import org.openqa.selenium.WebDriver as WebDriver
+import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
+
+
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('https://www.ajstore.com/')
+WebUI.maximizeWindow()
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Login'))
+
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/Login/LoginTolephone')
+, '581 - 492 - 572')
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Login/acknowledgement'))
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Login/LoginButton'))
+
+
+
+int currentTab = WebUI.getWindowIndex()
+
+//Robot robot = new Robot()
+//robot.keyPress(KeyEvent.VK_CONTROL)
+//robot.keyPress(KeyEvent.VK_T)
+//robot.keyRelease(KeyEvent.VK_CONTROL)
+//robot.keyRelease(KeyEvent.VK_T)
+WebDriver driver = DriverFactory.getWebDriver()
+JavascriptExecutor js = ((driver) as JavascriptExecutor)
+js.executeScript('window.open();')
+
+WebUI.switchToWindowIndex(currentTab + 1)
+
+
+WebUI.navigateToUrl('https://backend.ajstore.com/admin_15cfht')
+
+
+//WebUI.switchToWindowTitle('متجر عجلان واخوانه')
+
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/UserName'), 'snaptecsupport')
+
+	
+//WebUI.setEncryptedText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/Password'), 'h9YfHV16ZyMBoeJlmdP5xA==')
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/Password'), 'Lqd!566562g&')
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/LoginButton'))
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_MageDelight'))
+
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_MageDelight_MobileOTPLogin'))
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_MageDelight_MobileOTPLogin_SMSLog'))
+
+
+
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_SMS Log  Magento Admin/button_Remove'))
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/button_Filters'))
+
+
+
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/transaction_type'), 
+    '')
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/status'), 
+    '')
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/s_id'), 
+    '')
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/recipient_phone'), 
+    '')
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/message_body'), 
+    '')
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/entity_id_to'), 
+    '')
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/entity_id_from'), 
+    '')
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/api_service'), 
+    '')
+
+
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/recipient_phone'), 
+    '966581492572')
+
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/recipient_phone'), 
+    Keys.chord(Keys.ENTER))
+
+
+
+String OTP = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/SmsContentFirstRow'))
+
+println OTP
+
+
+OTP=OTP.replace("كلمة المرور لتسجيل الدخول رمز: ", "")
+println OTP
+
+//WebUI.switchToWindowTitle('SMS Log / Magento Admin')
+//WebUI.switchToWindowTitle('متجر عجلان واخوانه')
+
+WebUI.switchToWindowIndex(currentTab)
+
+
+
+String xPath = "//input[@type='tel' and contains( @aria-label,'Digit 1')]"
+TestObject firstOTPDigit = new TestObject('objectName')
+firstOTPDigit.addProperty('xpath', ConditionType.EQUALS, xPath)
+
+WebUI.sendKeys(firstOTPDigit,OTP)
+
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/Page_/input_tel'), '9')
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div_0057'))
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div_0056'))
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/Page_/input_tel'), '3')
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/img__image-image-2gD image-loaded-SHk image_3b67db'))
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/svg'))
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/Page_/input__phoneInputCustom-input-OnI'), '581 - 492 - 572')
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/input__acpTerms_1'))
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/span_'))
+//
+//
+//WebUI.doubleClick(findTestObject('Object Repository/Helpdesk/AjStore/Page_SMS Log  Magento Admin/div_3726'))
+//
+//WebUI.switchToWindowTitle('متجر عجلان واخوانه')
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/img__image-image-2gD image-loaded-SHk image_3b67db'))
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/span_1'))
+//
+//WebUI.closeBrowser()
+//
