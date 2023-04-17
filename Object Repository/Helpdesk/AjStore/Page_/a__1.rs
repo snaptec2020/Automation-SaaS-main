@@ -6,12 +6,11 @@
    <elementGuidId>60cb6490-e12f-44e1-b0a8-b2702942a50e</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[contains(@class,'middleHeaderBar-content')]//a[text()='شبابي']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id='root']/main/header/div[2]/div/div/a[2]</value>
+         <key>CSS</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +21,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>a</value>
-      <webElementGuid>bd070517-90c7-4f09-85cc-05992faab81f</webElementGuid>
+      <webElementGuid>dbf4986b-02ce-42f6-a230-cf951bff1283</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +29,7 @@
       <name>class</name>
       <type>Main</type>
       <value>middleHeaderBar-link-oy0</value>
-      <webElementGuid>22d0359d-3e10-4d5c-a47d-26a77415b7e6</webElementGuid>
+      <webElementGuid>daf41e88-f8d3-4973-afba-47f6b8bc6455</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +37,7 @@
       <name>href</name>
       <type>Main</type>
       <value>/youth.html</value>
-      <webElementGuid>0b134d43-1cae-47ff-bcb7-b8aa9a779c46</webElementGuid>
+      <webElementGuid>78212e81-7a17-4047-8d53-cfb8eb6ab301</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -46,7 +45,7 @@
       <name>text</name>
       <type>Main</type>
       <value>شبابي</value>
-      <webElementGuid>a7455383-3432-41d2-bda6-63fd46a412f7</webElementGuid>
+      <webElementGuid>3e6f9994-7ba1-4eef-b180-950d4fd33dfa</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -54,7 +53,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/header[@class=&quot;header-closed-2dE header-root-3ce&quot;]/div[@class=&quot;middleHeaderBar-root-3ns middleHeaderBar-close-2Ut middleHeaderBar-root-3ns&quot;]/div[@class=&quot;middleHeaderBar-content-_nW&quot;]/div[@class=&quot;middleHeaderBar-navWrapper-1c-&quot;]/a[@class=&quot;middleHeaderBar-link-oy0&quot;]</value>
-      <webElementGuid>a102b6c1-ebce-4204-bb04-71c870933196</webElementGuid>
+      <webElementGuid>d5d75752-bcbb-4952-b1ee-db0800c7f086</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -62,7 +61,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='root']/main/header/div[2]/div/div/a[2]</value>
-      <webElementGuid>ebc2c059-6a7d-401e-b364-f13be8342814</webElementGuid>
+      <webElementGuid>e32d7f1c-ec6b-4004-a7b7-68ba941d6bb2</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,7 +69,7 @@
       <name>xpath:link</name>
       <type>Main</type>
       <value>//a[contains(text(),'شبابي')]</value>
-      <webElementGuid>d6ccd372-f4f6-44e0-9836-e3ad7acd526c</webElementGuid>
+      <webElementGuid>d6331c81-7ef1-49f4-a6ac-bca11147c1d0</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,7 +77,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='رجالي'])[1]/following::a[1]</value>
-      <webElementGuid>c93efbb6-11dd-4278-9784-a50900482cf4</webElementGuid>
+      <webElementGuid>4bf4b3e7-2210-439d-98bf-b4f405b0ef92</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,7 +85,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='English'])[1]/following::a[2]</value>
-      <webElementGuid>a3ab3727-c37c-48b2-a0cd-a46c9bd3b575</webElementGuid>
+      <webElementGuid>9c0642ad-18fb-45e6-a235-89d40d250ea0</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -94,7 +93,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='أطفال'])[1]/preceding::a[1]</value>
-      <webElementGuid>55d94724-4d69-4b46-aa1e-33f69bebb173</webElementGuid>
+      <webElementGuid>fd9d2753-7db0-4954-99a9-4381ed83f9ca</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -102,7 +101,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='نسائي'])[1]/preceding::a[2]</value>
-      <webElementGuid>d4a20971-4d46-41a7-9578-8673980ebe24</webElementGuid>
+      <webElementGuid>be3b27ec-bcc3-4584-b60c-1fc117693087</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -110,7 +109,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>//*/text()[normalize-space(.)='شبابي']/parent::*</value>
-      <webElementGuid>ca64064b-f0d0-4660-b6d7-b6ba67823701</webElementGuid>
+      <webElementGuid>109d7c9d-e56e-47db-a8fc-a7991de427e7</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -118,7 +117,7 @@
       <name>xpath:href</name>
       <type>Main</type>
       <value>//a[contains(@href, '/youth.html')]</value>
-      <webElementGuid>fc8c7d24-589d-4fde-b66d-434ccd7492aa</webElementGuid>
+      <webElementGuid>48abeea5-70d7-44a1-ab7f-b01fdb3b8188</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -126,7 +125,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//a[2]</value>
-      <webElementGuid>c08b1de1-6c79-43ff-b588-343d6ff00267</webElementGuid>
+      <webElementGuid>7f2f0a8c-03f0-4878-ab2d-e6c13f7919a4</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -134,6 +133,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//a[@href = '/youth.html' and (text() = 'شبابي' or . = 'شبابي')]</value>
-      <webElementGuid>c5a420e7-b233-46b1-8b7f-97d363c50cf1</webElementGuid>
+      <webElementGuid>c5a66daf-7be5-4d06-a5b0-8f2bd315c572</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

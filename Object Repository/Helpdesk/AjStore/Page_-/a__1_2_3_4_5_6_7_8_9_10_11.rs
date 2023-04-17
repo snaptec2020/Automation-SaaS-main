@@ -6,12 +6,11 @@
    <elementGuidId>f4bf9b30-32f2-4a56-8622-727070d8b4b5</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[contains(@class,'megaMenu-wrapper') ]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id='root']/main/header/div[3]/div/nav/div[2]/a</value>
+         <key>CSS</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +21,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>a</value>
-      <webElementGuid>9d71c10e-148d-4a1b-aaf4-08f5eeb6bab9</webElementGuid>
+      <webElementGuid>85f11220-5606-4c03-8ac8-54f793fe9bb1</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +29,7 @@
       <name>class</name>
       <type>Main</type>
       <value>megaMenuItem-megaMenuLink-12G</value>
-      <webElementGuid>46dc069f-4f26-4249-ac69-4fbbfa8ec578</webElementGuid>
+      <webElementGuid>49841769-d5c3-4b84-9555-bace325b69ff</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +37,7 @@
       <name>href</name>
       <type>Main</type>
       <value>/women/sets.html</value>
-      <webElementGuid>7a5446ae-ce27-4cd9-95b4-6d173bbcd64a</webElementGuid>
+      <webElementGuid>2d7b2ee5-643a-47a1-b28c-78040093256c</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -46,7 +45,7 @@
       <name>text</name>
       <type>Main</type>
       <value>الأطقم</value>
-      <webElementGuid>421df4de-b10d-4cd8-8948-ddc95cccb59b</webElementGuid>
+      <webElementGuid>80312fb8-43a7-4939-b033-937afc3d9acb</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -54,7 +53,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/header[@class=&quot;header-closed-2dE header-root-3ce&quot;]/div[@class=&quot;megaMenu-wrapper-2rA&quot;]/div[@class=&quot;megaMenu-container-2FL&quot;]/nav[@class=&quot;megaMenu-megaMenu-2LU&quot;]/div[@class=&quot;megaMenuItem-root-HSc&quot;]/a[@class=&quot;megaMenuItem-megaMenuLink-12G&quot;]</value>
-      <webElementGuid>9c248767-7ddd-4ed8-ad52-b0cf4449da84</webElementGuid>
+      <webElementGuid>58ba3098-9e80-47a4-9dc6-7b16f1d4f546</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -62,7 +61,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='root']/main/header/div[3]/div/nav/div[2]/a</value>
-      <webElementGuid>4fa59d2a-d28a-41e2-b32a-9e4805f9c512</webElementGuid>
+      <webElementGuid>ce5255df-d33a-4f5d-9f91-cf11a1bfac54</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,7 +69,7 @@
       <name>xpath:link</name>
       <type>Main</type>
       <value>//a[contains(text(),'الأطقم')]</value>
-      <webElementGuid>bf1ab1a3-ed76-48d6-9e64-2e0ae9ca84ce</webElementGuid>
+      <webElementGuid>fe159d85-2875-44f0-8190-5de905465e07</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,7 +77,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='بناتي أطفال'])[1]/following::a[1]</value>
-      <webElementGuid>4da1465e-2913-469b-803f-823ad5755932</webElementGuid>
+      <webElementGuid>21cc2354-5400-4f10-86ce-008f175d291a</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,7 +85,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='بناتي وسط'])[1]/following::a[2]</value>
-      <webElementGuid>12702b28-ac68-4488-97d6-6fddcd75799e</webElementGuid>
+      <webElementGuid>d460a68d-9a38-4a56-977f-979de1de3d25</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -94,7 +93,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='بناتي شبابي'])[2]/preceding::a[1]</value>
-      <webElementGuid>9f8d27fa-2214-4083-9977-fc03fb9548a4</webElementGuid>
+      <webElementGuid>011cbb91-c6cf-4b71-87cb-000974a28d9d</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -102,7 +101,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='بناتي أطفال'])[2]/preceding::a[2]</value>
-      <webElementGuid>77aba6ce-36d7-46ea-a7c5-7d3749ee05ad</webElementGuid>
+      <webElementGuid>faa6d0d0-e2a1-45e1-9826-43a0573209ec</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -110,7 +109,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>//*/text()[normalize-space(.)='الأطقم']/parent::*</value>
-      <webElementGuid>4dba7712-e012-4984-8ee2-73e292d80481</webElementGuid>
+      <webElementGuid>40fc022b-8c23-4f61-af13-92fe349e9509</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -118,7 +117,7 @@
       <name>xpath:href</name>
       <type>Main</type>
       <value>//a[contains(@href, '/women/sets.html')]</value>
-      <webElementGuid>b9e7bc9d-b1aa-4109-ba01-a78b45b6ec8f</webElementGuid>
+      <webElementGuid>44485c75-8191-48d3-a4ab-abf12e256400</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -126,7 +125,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[2]/a</value>
-      <webElementGuid>e655c758-dc9b-4387-bc6a-614f1d5fb06c</webElementGuid>
+      <webElementGuid>18c85f53-5fb4-4ae4-b019-a9e0e8dfc026</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -134,6 +133,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//a[@href = '/women/sets.html' and (text() = 'الأطقم' or . = 'الأطقم')]</value>
-      <webElementGuid>cf41c4af-23ff-46f7-9f63-12ee4ab7e1fc</webElementGuid>
+      <webElementGuid>098dc4bb-5117-4d9e-9102-79f0b86c92df</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

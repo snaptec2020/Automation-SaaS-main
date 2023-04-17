@@ -22,20 +22,21 @@ WebUI.openBrowser('')
 WebUI.maximizeWindow()
 
 WebUI.navigateToUrl('https://www.ajstore.com/')
+
 //CustomKeywords.'customUtils.Util.getElementByXPath'("//button[contains(@class,'storeSwitcher-trigger-')]")
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Language'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Page_/img__image-image-2gD image-loaded-SHk image_3b67db'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_/svg'))
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Cart'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_/svg_1'))
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Fav'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_/svg_1_2'))
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Login'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_/svg_1_2_3'))
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Search'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div_'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Web header'), FailureHandling.CONTINUE_ON_FAILURE)
 
 WebUI.verifyElementText(findTestObject('Object Repository/Helpdesk/AjStore/Page_/a_'), 'رجالي')
 
@@ -45,49 +46,43 @@ WebUI.verifyElementText(findTestObject('Object Repository/Helpdesk/AjStore/Page_
 
 WebUI.verifyElementText(findTestObject('Object Repository/Helpdesk/AjStore/Page_/a__1_2_3'), 'نسائي')
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_/a__1_2_3_4'))
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/الأشمغه'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_/a__1_2_3_4_5'))
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/الغتر'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_/a__1_2_3_4_5_6'))
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/الأثواب'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_/a__1_2_3_4_5_6_7'))
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/الملابس الداخلية'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_/a__1_2_3_4_5_6_7_8'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click رجالي'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_/a__1_2_3_4_5_6_7_8_9'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click شبابي'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/a__1'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click أطفال'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_-/a_'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click نسائي'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_-/a__1'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click رجالي'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_-/a__1_2'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click الأشمغه'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_-/a__1_2_3'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click الغتر'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_-/a__1_2_3_4'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click الأثواب'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_-/a__1_2_3_4_5'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click الملابس الداخليه'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_-/a__1_2_3_4_5_6'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/الأشمغة العالمية'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_-/a__1_2_3_4_5_6_7'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/المنتجات الشتوية'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_-/a__1_2_3_4_5_6_7_8'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Click Logo'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_-/a__1_2_3_4_5_6_7_8_9'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Main root'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_-/a__1_2_3_4_5_6_7_8_9_10'))
+WebUI.verifyElementVisible(findTestObject('Helpdesk/AjStore/Shared/منتجات الموسم'))
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Page_-/a__1_2_3_4_5_6_7_8_9_10_11'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_-/img__image-image-2gD image-loaded-SHk image_3b67db'))
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div_0      5354555657795.00 .  0  ()  113.8_ee034d'))
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div__1'))
+WebUI.click(findTestObject('Helpdesk/AjStore/Shared/منتجات الموسم'))
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div__1_2'))
 
@@ -101,15 +96,13 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div__1_2_3'
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div__1_2_3_4'))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div__1'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/تصفح العروض'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Page_/h2_'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Subscribe in footer'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div__1_2_3_4_5'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Footer'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Page_/footer_2022'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Footer payment Logo'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div__footer-paymentsLogo-CLu'))
-
-
+WebUI.closeBrowser()
 

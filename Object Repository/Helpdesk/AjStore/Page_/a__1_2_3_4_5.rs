@@ -6,12 +6,11 @@
    <elementGuidId>f1d0eb50-b566-4c66-8488-14cf62b3e549</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[contains(@class,'megaMenuItem-root')]//a[text()='الغتر']‎</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id='root']/main/header/div[3]/div/nav/div[2]/a</value>
+         <key>CSS</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +21,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>a</value>
-      <webElementGuid>58ace799-7661-42ef-801c-ebf438344445</webElementGuid>
+      <webElementGuid>c61e7e9f-1c31-4afa-a950-57b35f7ca2a0</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +29,7 @@
       <name>class</name>
       <type>Main</type>
       <value>megaMenuItem-megaMenuLink-12G</value>
-      <webElementGuid>aab97cba-118c-4eeb-b583-b55f6b91d52d</webElementGuid>
+      <webElementGuid>2db2d361-5b45-4f2d-9543-1346a560562e</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +37,7 @@
       <name>href</name>
       <type>Main</type>
       <value>/men/ghuta.html</value>
-      <webElementGuid>3d338150-3539-427e-9bbf-c0e8826f3571</webElementGuid>
+      <webElementGuid>38426f1b-7452-47cb-9ada-5ae151c2b43d</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -46,7 +45,7 @@
       <name>text</name>
       <type>Main</type>
       <value>الغتر</value>
-      <webElementGuid>92a05cb9-a6d9-4545-b660-132b18932de4</webElementGuid>
+      <webElementGuid>901a2d43-6f9f-43ee-a605-83bb68b792b4</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -54,7 +53,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/header[@class=&quot;header-closed-2dE header-root-3ce&quot;]/div[@class=&quot;megaMenu-wrapper-2rA&quot;]/div[@class=&quot;megaMenu-container-2FL&quot;]/nav[@class=&quot;megaMenu-megaMenu-2LU&quot;]/div[@class=&quot;megaMenuItem-root-HSc&quot;]/a[@class=&quot;megaMenuItem-megaMenuLink-12G&quot;]</value>
-      <webElementGuid>76ba2638-93a2-4c88-b579-6f006f87d5e2</webElementGuid>
+      <webElementGuid>bd99265b-4c87-4f07-8e0d-e61fa0de7dd4</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -62,7 +61,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='root']/main/header/div[3]/div/nav/div[2]/a</value>
-      <webElementGuid>3331ff7a-4043-40a0-ac64-427158d50f24</webElementGuid>
+      <webElementGuid>a59315db-cbc6-4ac9-a4ff-eae13bfa5ed4</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,7 +69,7 @@
       <name>xpath:link</name>
       <type>Main</type>
       <value>//a[contains(text(),'الغتر')]</value>
-      <webElementGuid>ef261beb-beb5-419a-ac0f-64490c78cbd0</webElementGuid>
+      <webElementGuid>e6f8497a-341d-4e46-bba6-786f7cbb20e9</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,7 +77,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='الأشمغة'])[1]/following::a[1]</value>
-      <webElementGuid>af4abf60-7966-4b36-b823-8ae58127d8b7</webElementGuid>
+      <webElementGuid>9a9a0e07-ae1e-411c-b154-104676b57043</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,7 +85,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='البحث عن منتج'])[1]/following::a[2]</value>
-      <webElementGuid>ccee6749-ba00-4fda-8ec9-44b82280b5da</webElementGuid>
+      <webElementGuid>8fde71f6-8749-4197-830e-c1c40cfccf94</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -94,7 +93,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='الأثواب'])[1]/preceding::a[1]</value>
-      <webElementGuid>79fb9de7-4197-4d2f-bbae-09b8c2d9f415</webElementGuid>
+      <webElementGuid>07b4136b-29fd-441f-9254-bb5279d3ed39</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -102,7 +101,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='الثوب الرسمي'])[1]/preceding::a[2]</value>
-      <webElementGuid>2a79c285-c2bb-4306-b26f-dc817df0ed3f</webElementGuid>
+      <webElementGuid>a41097b2-cd8c-409f-9d01-fe2bee9a2d40</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -110,7 +109,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>//*/text()[normalize-space(.)='الغتر']/parent::*</value>
-      <webElementGuid>d8e356bb-570a-46bb-9b58-39734f5c5c87</webElementGuid>
+      <webElementGuid>d9fa03db-87d2-4491-bb3c-0e78d6df97e0</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -118,7 +117,7 @@
       <name>xpath:href</name>
       <type>Main</type>
       <value>//a[contains(@href, '/men/ghuta.html')]</value>
-      <webElementGuid>40e36c7e-88f9-4471-bbc6-3012b687cfbe</webElementGuid>
+      <webElementGuid>2c7ff7d6-2730-4dd6-a86a-2ab491907a0c</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -126,7 +125,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[2]/a</value>
-      <webElementGuid>88b34ebf-cde5-4abd-a7e1-71061643eac6</webElementGuid>
+      <webElementGuid>405ab93d-2c70-44b7-afc3-1483375f5f04</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -134,6 +133,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//a[@href = '/men/ghuta.html' and (text() = 'الغتر' or . = 'الغتر')]</value>
-      <webElementGuid>b46202cc-289f-4d9a-868b-cce8832deeaf</webElementGuid>
+      <webElementGuid>1a777da2-7d03-4c16-941d-69d81cde1cb5</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

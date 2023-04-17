@@ -6,12 +6,11 @@
    <elementGuidId>d13f07d6-1982-4e1e-b964-4c098a834d6f</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[contains(@class,'megaMenuItem-root')]//a[text()='الأثواب']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id='root']/main/header/div[3]/div/nav/div[3]/a</value>
+         <key>CSS</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +21,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>a</value>
-      <webElementGuid>f1de25a3-2b89-411f-8642-01a96535801e</webElementGuid>
+      <webElementGuid>110ee0d7-19b0-4e66-b9c0-d146d12688e1</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +29,7 @@
       <name>class</name>
       <type>Main</type>
       <value>megaMenuItem-megaMenuLink-12G</value>
-      <webElementGuid>88cc9571-ec42-4189-bd2e-3f5d7254a070</webElementGuid>
+      <webElementGuid>9da56c36-5610-403f-bcfd-3a2376f44c7b</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +37,7 @@
       <name>href</name>
       <type>Main</type>
       <value>/youth/underwear.html</value>
-      <webElementGuid>42a13800-314f-468e-8a50-a031cfe2ab35</webElementGuid>
+      <webElementGuid>cc78085a-7763-4eb9-8abb-07836aacdf01</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -46,7 +45,7 @@
       <name>text</name>
       <type>Main</type>
       <value>الملابس الداخلية</value>
-      <webElementGuid>75002867-d566-410a-9998-367d686fa4cc</webElementGuid>
+      <webElementGuid>61bee8ba-e815-437c-a2d2-d4c7f4922248</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -54,7 +53,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/header[@class=&quot;header-closed-2dE header-root-3ce&quot;]/div[@class=&quot;megaMenu-wrapper-2rA&quot;]/div[@class=&quot;megaMenu-container-2FL&quot;]/nav[@class=&quot;megaMenu-megaMenu-2LU&quot;]/div[@class=&quot;megaMenuItem-root-HSc&quot;]/a[@class=&quot;megaMenuItem-megaMenuLink-12G&quot;]</value>
-      <webElementGuid>41b0c47e-6584-40e5-928c-22f053bacd04</webElementGuid>
+      <webElementGuid>10c5bf50-0820-4e69-bab0-3f169c7b54a7</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -62,7 +61,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='root']/main/header/div[3]/div/nav/div[3]/a</value>
-      <webElementGuid>f3c7d93a-ecae-4fc0-949e-8594d9a93943</webElementGuid>
+      <webElementGuid>5eb70230-1e59-4c07-b3aa-ff377b6d5ed5</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,7 +69,7 @@
       <name>xpath:link</name>
       <type>Main</type>
       <value>//a[contains(text(),'الملابس الداخلية')]</value>
-      <webElementGuid>5472285a-3deb-4133-9316-72e6e217ee72</webElementGuid>
+      <webElementGuid>f90fc64a-9b11-4f22-bb1f-3c8e0535a572</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,7 +77,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='الأثواب'])[1]/following::a[1]</value>
-      <webElementGuid>b0980414-8269-48da-a46e-fd531c8fefc1</webElementGuid>
+      <webElementGuid>19d473b1-98a2-4919-857f-95aca814c992</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,7 +85,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='الأشمغة'])[1]/following::a[2]</value>
-      <webElementGuid>4e929539-6d17-4198-b562-257639838582</webElementGuid>
+      <webElementGuid>2e0c5df5-28ae-43d8-812d-b7831ba88732</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -94,7 +93,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='فانلة'])[1]/preceding::a[1]</value>
-      <webElementGuid>34ee0293-f0e0-4b23-ac25-06b74445d44e</webElementGuid>
+      <webElementGuid>5d1ab866-1131-40b2-9cf1-07a68ec13855</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -102,7 +101,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='سروال'])[1]/preceding::a[2]</value>
-      <webElementGuid>467ef743-96c6-4a6b-a3e4-884d6f1c295f</webElementGuid>
+      <webElementGuid>8f842553-46d9-4235-a6e3-eab661c28218</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -110,7 +109,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>//*/text()[normalize-space(.)='الملابس الداخلية']/parent::*</value>
-      <webElementGuid>93c5f1e8-a360-485e-b807-622db9f6d8f2</webElementGuid>
+      <webElementGuid>1f9974f1-6d9e-4ebb-aa50-3acdc2c1a4e3</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -118,7 +117,7 @@
       <name>xpath:href</name>
       <type>Main</type>
       <value>//a[contains(@href, '/youth/underwear.html')]</value>
-      <webElementGuid>28758cab-59fb-4f4d-8ad7-c3379c00bd45</webElementGuid>
+      <webElementGuid>56e01216-cbbf-4c66-b18e-0dd1712c1ac1</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -126,7 +125,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[3]/a</value>
-      <webElementGuid>f78be569-8400-441e-9166-0a88491d2c7d</webElementGuid>
+      <webElementGuid>3cb76235-8787-4ce0-b007-a9fa6ea6514c</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -134,6 +133,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//a[@href = '/youth/underwear.html' and (text() = 'الملابس الداخلية' or . = 'الملابس الداخلية')]</value>
-      <webElementGuid>a1be8097-4313-4be1-8f1e-5106ca6c3d49</webElementGuid>
+      <webElementGuid>59d51558-56a3-44de-ba89-2c71200a47b6</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

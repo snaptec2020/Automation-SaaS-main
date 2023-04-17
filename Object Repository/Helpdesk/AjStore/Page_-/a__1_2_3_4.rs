@@ -6,12 +6,11 @@
    <elementGuidId>108699fe-8396-4a16-8129-d61a2b406238</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[contains(@class,'middleHeaderBar-content')]//a[text()='أطفال']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id='root']/main/header/div[2]/div/div/a[3]</value>
+         <key>CSS</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +21,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>a</value>
-      <webElementGuid>d9cf7e54-dd23-40a2-8ad0-ec785a42d674</webElementGuid>
+      <webElementGuid>9ad27b56-b1a6-4de9-a8df-bfcb909ea891</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +29,7 @@
       <name>class</name>
       <type>Main</type>
       <value>middleHeaderBar-link-oy0</value>
-      <webElementGuid>b41f2bb7-e9f1-49fe-83a9-c1141098846f</webElementGuid>
+      <webElementGuid>388db00d-4d68-44c2-90aa-239b011b291b</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +37,7 @@
       <name>href</name>
       <type>Main</type>
       <value>/kids.html</value>
-      <webElementGuid>e0683f83-42a4-43e3-a702-6c60092ea778</webElementGuid>
+      <webElementGuid>e798cfc0-964e-4dd1-810b-a638ad51919f</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -46,7 +45,7 @@
       <name>text</name>
       <type>Main</type>
       <value>أطفال</value>
-      <webElementGuid>f1763c85-dccb-4562-a1fb-0b36c9a99a75</webElementGuid>
+      <webElementGuid>c3bfadcf-76d6-4dce-9d31-2f6bc65898df</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -54,7 +53,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/header[@class=&quot;header-closed-2dE header-root-3ce&quot;]/div[@class=&quot;middleHeaderBar-root-3ns middleHeaderBar-close-2Ut middleHeaderBar-root-3ns&quot;]/div[@class=&quot;middleHeaderBar-content-_nW&quot;]/div[@class=&quot;middleHeaderBar-navWrapper-1c-&quot;]/a[@class=&quot;middleHeaderBar-link-oy0&quot;]</value>
-      <webElementGuid>c375a722-2c3f-45c1-aaa9-a9813e54d81c</webElementGuid>
+      <webElementGuid>495f1eff-c17d-41f1-8ccd-86e071c19d15</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -62,7 +61,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='root']/main/header/div[2]/div/div/a[3]</value>
-      <webElementGuid>a7bbf1ec-4609-4ebf-a6c2-812e839a31c5</webElementGuid>
+      <webElementGuid>5f75d330-4478-4500-b103-68f62437d471</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,7 +69,7 @@
       <name>xpath:link</name>
       <type>Main</type>
       <value>//a[contains(text(),'أطفال')]</value>
-      <webElementGuid>dc0e049a-9c64-4a68-9e2e-3f6140e27c89</webElementGuid>
+      <webElementGuid>9f020935-d968-4002-830e-26faf65d125e</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,7 +77,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='شبابي'])[1]/following::a[1]</value>
-      <webElementGuid>69ce3e42-9745-41bb-a416-35c4931a018c</webElementGuid>
+      <webElementGuid>c951ab90-0666-438f-b151-dabb62e3e8f5</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,7 +85,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='رجالي'])[1]/following::a[2]</value>
-      <webElementGuid>928e4358-8131-4277-9827-c256377cf526</webElementGuid>
+      <webElementGuid>93a5b20a-6a43-4ed0-9cb0-a0ae028a7bb7</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -94,7 +93,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='نسائي'])[1]/preceding::a[1]</value>
-      <webElementGuid>7275efe9-c96a-470a-8875-298865dfcac6</webElementGuid>
+      <webElementGuid>92ea9eca-d983-4823-a4d1-587421918972</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -102,7 +101,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='البحث عن منتج'])[1]/preceding::a[3]</value>
-      <webElementGuid>c56bb9eb-fef5-491b-9baf-e441e781d586</webElementGuid>
+      <webElementGuid>e413a273-2130-4d31-a94f-9dd2235ece47</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -110,7 +109,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>//*/text()[normalize-space(.)='أطفال']/parent::*</value>
-      <webElementGuid>91fc846b-cf94-4697-a7f8-97f30fa350bf</webElementGuid>
+      <webElementGuid>d5747bd5-7fa8-4196-869b-9d7aecd7ff5d</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -118,7 +117,7 @@
       <name>xpath:href</name>
       <type>Main</type>
       <value>//a[contains(@href, '/kids.html')]</value>
-      <webElementGuid>2bdd18de-973c-4302-921d-3668184b0594</webElementGuid>
+      <webElementGuid>9b1d680a-2ce3-4c1b-bf31-9c37e646157c</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -126,7 +125,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//a[3]</value>
-      <webElementGuid>203a8356-8adb-45f3-8cc9-89d46d181b77</webElementGuid>
+      <webElementGuid>9f9d28f1-cd50-4688-b07a-11cd9e52e364</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -134,6 +133,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//a[@href = '/kids.html' and (text() = 'أطفال' or . = 'أطفال')]</value>
-      <webElementGuid>4384ed89-48d0-4511-9cc7-1c98764d468a</webElementGuid>
+      <webElementGuid>b861efbd-03a0-409d-815d-37f178fbe7d7</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

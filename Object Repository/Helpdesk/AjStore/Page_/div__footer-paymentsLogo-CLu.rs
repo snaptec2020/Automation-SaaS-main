@@ -6,12 +6,12 @@
    <elementGuidId>c383a98d-c823-45a8-9444-15affe0c6927</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value>div.footer-paymentsLogo-CLu</value>
+         <key>XPATH</key>
+         <value>//div[@class='footer-paymentsLogo-CLu']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id='root']/main/footer/div/div[3]/div</value>
+         <key>CSS</key>
+         <value>div.footer-paymentsLogo-CLu</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>div</value>
-      <webElementGuid>02a88473-59d8-4765-acb9-c10132dd742b</webElementGuid>
+      <webElementGuid>5762c4ad-7f7e-432d-82f1-afc077c5d49e</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +30,7 @@
       <name>class</name>
       <type>Main</type>
       <value>footer-paymentsLogo-CLu</value>
-      <webElementGuid>ca36e935-dc32-40d1-9737-93efad2826bd</webElementGuid>
+      <webElementGuid>863054b3-5083-4150-8525-df7609f9f514</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +38,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/footer[@class=&quot;footer-root-39z&quot;]/div[@class=&quot;footer-main-1kk&quot;]/div[@class=&quot;footer-bottomFooter-2cn&quot;]/div[@class=&quot;footer-paymentsLogo-CLu&quot;]</value>
-      <webElementGuid>cff99296-2255-47a2-a894-127c23499416</webElementGuid>
+      <webElementGuid>2f7c8574-0880-4a00-99eb-03cb2173fe9a</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -46,7 +46,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='root']/main/footer/div/div[3]/div</value>
-      <webElementGuid>cf5746f4-f2cb-4c94-b1db-a00d19e99906</webElementGuid>
+      <webElementGuid>a4a43d26-1fad-48a3-a2bb-33b780ffbd20</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -54,7 +54,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='الاسترجاع و الاستبدال'])[1]/following::div[7]</value>
-      <webElementGuid>12da489b-fd1f-4076-b7fb-bd372c938e23</webElementGuid>
+      <webElementGuid>20897c67-1b78-4cc5-b7d3-f46fc618ffc4</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -62,7 +62,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='سياسة الخصوصية'])[1]/following::div[7]</value>
-      <webElementGuid>3ea743ff-ee1c-427e-bf57-4ff3bcdc6a69</webElementGuid>
+      <webElementGuid>4b16f329-a9ae-4730-8b0e-ae6da4ef8abe</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,7 +70,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Select Store'])[1]/preceding::div[9]</value>
-      <webElementGuid>dd1e016f-a738-4a99-8a75-2df7a7023f77</webElementGuid>
+      <webElementGuid>96ad1883-7824-457c-8f4c-48110d5d2303</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,7 +78,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Select Language'])[1]/preceding::div[12]</value>
-      <webElementGuid>16a26422-390a-4f52-97cc-de6ff8ac8214</webElementGuid>
+      <webElementGuid>d9ac03b1-725c-4f55-a0df-dedc7d48e236</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,6 +86,6 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//footer/div/div[3]/div</value>
-      <webElementGuid>69b63c64-16c6-4f02-a0dd-25ba5fa984a5</webElementGuid>
+      <webElementGuid>35ed296d-0f9a-4fd9-959b-52b937c05412</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

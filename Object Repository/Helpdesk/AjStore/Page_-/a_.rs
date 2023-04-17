@@ -6,12 +6,12 @@
    <elementGuidId>5062fd8e-054f-4084-89d0-a11ff7ec40ce</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value>a.megaMenuItem-megaMenuLink-12G</value>
+         <key>XPATH</key>
+         <value>//div[contains(@class,'megaMenuItem-root')]//a[text()='الأشمغة']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id='root']/main/header/div[3]/div/nav/div/a</value>
+         <key>CSS</key>
+         <value>a.megaMenuItem-megaMenuLink-12G</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>a</value>
-      <webElementGuid>dc001a03-1c13-4763-b62e-4364a02cd988</webElementGuid>
+      <webElementGuid>a49c9191-ee0b-4361-bea0-130fe6f8e38c</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +30,7 @@
       <name>class</name>
       <type>Main</type>
       <value>megaMenuItem-megaMenuLink-12G</value>
-      <webElementGuid>03868e41-9eef-4021-bccc-376c3c7cd5a2</webElementGuid>
+      <webElementGuid>a18def28-1f56-4dce-aba2-3850254545b9</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +38,7 @@
       <name>href</name>
       <type>Main</type>
       <value>/youth/yashmag.html</value>
-      <webElementGuid>0b632f6d-c00b-4ec2-bd54-8310e02aa866</webElementGuid>
+      <webElementGuid>1d775b5d-2275-4826-aed6-4f2850ee7a8b</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -46,7 +46,7 @@
       <name>text</name>
       <type>Main</type>
       <value>الأشمغة</value>
-      <webElementGuid>f65da47d-efa1-4b73-9137-39d706a0df62</webElementGuid>
+      <webElementGuid>834fd5dd-fb48-4622-b0fb-a70ca8085a30</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -54,7 +54,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/header[@class=&quot;header-closed-2dE header-root-3ce&quot;]/div[@class=&quot;megaMenu-wrapper-2rA&quot;]/div[@class=&quot;megaMenu-container-2FL&quot;]/nav[@class=&quot;megaMenu-megaMenu-2LU&quot;]/div[@class=&quot;megaMenuItem-root-HSc&quot;]/a[@class=&quot;megaMenuItem-megaMenuLink-12G&quot;]</value>
-      <webElementGuid>9549dad4-b482-4d31-a110-6e516f553668</webElementGuid>
+      <webElementGuid>7c9ba30a-83a3-4555-a8cc-95255e625738</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -62,7 +62,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='root']/main/header/div[3]/div/nav/div/a</value>
-      <webElementGuid>fe14bc5f-bc3f-4e06-b39d-318d00377d91</webElementGuid>
+      <webElementGuid>aa8d83a4-5be2-41c5-8c3c-863276df7e0a</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,7 +70,7 @@
       <name>xpath:link</name>
       <type>Main</type>
       <value>//a[contains(text(),'الأشمغة')]</value>
-      <webElementGuid>97f983bc-1e06-4487-adb9-113831e335e6</webElementGuid>
+      <webElementGuid>4dda3efd-2189-4bb0-9a69-92ff97a355ef</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,7 +78,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='البحث عن منتج'])[1]/following::a[1]</value>
-      <webElementGuid>aadedc4d-dcc4-4e41-96ec-a1537bb4cfb9</webElementGuid>
+      <webElementGuid>dec8bae6-ee80-4ed2-a290-6f8c2941a4ef</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,7 +86,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='نسائي'])[1]/following::a[2]</value>
-      <webElementGuid>bf4a3c62-efb7-4cb7-8cc9-a908e37eabea</webElementGuid>
+      <webElementGuid>3bd46f2a-cbc6-4500-b1ba-a1910d3eab4e</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -94,7 +94,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='الأثواب'])[1]/preceding::a[1]</value>
-      <webElementGuid>2e79e948-9f51-4cac-809d-7a2ca52723c3</webElementGuid>
+      <webElementGuid>88bdc554-b5af-42bc-aa0d-c9a3e4876d66</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -102,7 +102,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='الملابس الداخلية'])[1]/preceding::a[2]</value>
-      <webElementGuid>bd83f540-00f4-4e9d-8826-15e49ec716ea</webElementGuid>
+      <webElementGuid>fa9421d4-9924-4797-8aa0-b5e5686d9c5a</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -110,7 +110,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>//*/text()[normalize-space(.)='الأشمغة']/parent::*</value>
-      <webElementGuid>cad28e34-5678-407a-93df-79b1115a77d9</webElementGuid>
+      <webElementGuid>785bdff9-dbb6-4764-8cda-07c979300dea</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -118,7 +118,7 @@
       <name>xpath:href</name>
       <type>Main</type>
       <value>//a[contains(@href, '/youth/yashmag.html')]</value>
-      <webElementGuid>20aa464b-e82a-43d9-a26b-9a353ab149a1</webElementGuid>
+      <webElementGuid>490d0bc1-7b6b-4aea-912c-98710761bb5b</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -126,7 +126,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//nav/div/a</value>
-      <webElementGuid>4ca8c18f-4f67-4486-b0f6-baae05dab28c</webElementGuid>
+      <webElementGuid>3e0b07a0-ce45-4933-b737-e05efe36be0c</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -134,6 +134,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//a[@href = '/youth/yashmag.html' and (text() = 'الأشمغة' or . = 'الأشمغة')]</value>
-      <webElementGuid>3c6737fe-f667-4ed8-8fa9-096c0c35e2a8</webElementGuid>
+      <webElementGuid>bf85db26-7f88-4edb-a5a1-9030ac7ade32</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

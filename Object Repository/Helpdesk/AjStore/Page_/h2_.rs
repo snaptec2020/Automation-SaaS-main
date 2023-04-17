@@ -6,12 +6,12 @@
    <elementGuidId>f734c411-e583-43ea-8630-ef064b012eb2</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value>h2.productBlock-heading-9de</value>
+         <key>XPATH</key>
+         <value>//div[contains(@class,'productBlock-containerTitle')]//h2[text()='تصفح العروض']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id='root']/main/div/div[2]/div[5]/div/h2</value>
+         <key>CSS</key>
+         <value>h2.productBlock-heading-9de</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>h2</value>
-      <webElementGuid>ea9e6585-a1b9-45ec-bd94-f8b02a740c8d</webElementGuid>
+      <webElementGuid>d9a2f34e-8c49-4100-b111-c645eef3a296</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +30,7 @@
       <name>class</name>
       <type>Main</type>
       <value>productBlock-heading-9de</value>
-      <webElementGuid>c60c23ce-728e-4d91-a709-6f1e902081d0</webElementGuid>
+      <webElementGuid>99524162-24b7-464d-892e-a8abe44e2901</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +38,7 @@
       <name>text</name>
       <type>Main</type>
       <value>تصفح العروض</value>
-      <webElementGuid>b0ee1ab5-cd96-4813-b626-5aa98782512a</webElementGuid>
+      <webElementGuid>871746ff-3c60-4cd0-a42b-6cadff64d711</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -46,7 +46,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/div[@class=&quot;main-page-279&quot;]/div[@class=&quot;cms-root-2Wa&quot;]/div[@class=&quot;productBlock-root-2Nd&quot;]/div[@class=&quot;productBlock-containerTitle-dw7&quot;]/h2[@class=&quot;productBlock-heading-9de&quot;]</value>
-      <webElementGuid>15eea761-5f33-4e9c-a126-06f7fef5dbcf</webElementGuid>
+      <webElementGuid>2364bc92-9dda-4986-b8cb-39e7377fa4f3</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -54,7 +54,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='root']/main/div/div[2]/div[5]/div/h2</value>
-      <webElementGuid>5ad31261-e97b-48fd-96c1-2bba3e565231</webElementGuid>
+      <webElementGuid>ea51edee-f1d4-464f-92e6-a40bf46e53ba</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -62,7 +62,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='أضف إلى السلة'])[22]/following::h2[1]</value>
-      <webElementGuid>7c7f94f5-83c0-471f-9fe5-b369d372be1b</webElementGuid>
+      <webElementGuid>bcc3dced-3136-4c3a-9c92-67eeeeb8e1c7</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,7 +70,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='.'])[22]/following::h2[1]</value>
-      <webElementGuid>9fb63808-deb7-4424-b761-4da08c85a303</webElementGuid>
+      <webElementGuid>18fb1161-26db-47c3-b952-1f64a683cd02</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,7 +78,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='شماغ بروجيه رجالي احمر شلش فيجن'])[1]/preceding::h2[1]</value>
-      <webElementGuid>1767a5bc-8fbf-435d-ad5a-f0f81a336e76</webElementGuid>
+      <webElementGuid>6cbc5494-89b9-46b3-97e7-3a1816987c71</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,7 +86,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='غير متوفر بالمخزون'])[1]/preceding::h2[2]</value>
-      <webElementGuid>7ce1153b-3f7a-4935-b259-66dd4687948f</webElementGuid>
+      <webElementGuid>57dbcaa3-dab1-465b-952b-d18d6d18c2ac</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -94,7 +94,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>//*/text()[normalize-space(.)='تصفح العروض']/parent::*</value>
-      <webElementGuid>1b6bb240-973a-45d4-9817-5ca4878b28a5</webElementGuid>
+      <webElementGuid>dca8bd8e-794f-40fc-addf-ba30d3295789</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -102,7 +102,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[5]/div/h2</value>
-      <webElementGuid>1db846ef-19fc-4bd6-8e71-8d717cba7318</webElementGuid>
+      <webElementGuid>c5c60726-ed16-406a-8618-a9913488fc23</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -110,6 +110,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//h2[(text() = 'تصفح العروض' or . = 'تصفح العروض')]</value>
-      <webElementGuid>0145bfc3-86c3-4c00-967b-4ec5936893e6</webElementGuid>
+      <webElementGuid>c440d07c-da0e-4ba5-997c-cb9d00c0ee47</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

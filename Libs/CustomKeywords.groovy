@@ -171,7 +171,12 @@ def static "signup.Signupemailverifications.verificationElementSignUp"() {
     (new signup.Signupemailverifications()).verificationElementSignUp()
 }
 
-
+ /**
+	 * Get Element by XPath
+	 * @param xPath
+	 *         represent a test object xPath
+	 * @return Element
+	 */ 
 def static "customUtils.Util.getElementByXPath"(
     	String xPath	) {
     (new customUtils.Util()).getElementByXPath(

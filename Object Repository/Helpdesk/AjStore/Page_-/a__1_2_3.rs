@@ -6,12 +6,11 @@
    <elementGuidId>bb766977-3543-4330-b523-41a43fe3d487</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[contains(@class,'megaMenuItem-root')]//a[text()='الملابس الداخلية']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id='root']/main/header/div[3]/div/nav/div[4]/a</value>
+         <key>CSS</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +21,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>a</value>
-      <webElementGuid>ce50f08c-700a-4c3c-be60-286a212b2677</webElementGuid>
+      <webElementGuid>7cebf7da-24de-4d38-b3b5-ebb88e4d9564</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +29,7 @@
       <name>class</name>
       <type>Main</type>
       <value>megaMenuItem-megaMenuLink-12G</value>
-      <webElementGuid>fc81a014-d5f9-45e7-9040-fcf503961a6e</webElementGuid>
+      <webElementGuid>146e4dd5-5545-4742-8919-be6ec8f416fc</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +37,7 @@
       <name>href</name>
       <type>Main</type>
       <value>/youth/wintercollection.html</value>
-      <webElementGuid>043268f3-3add-4975-8757-be27cf488ece</webElementGuid>
+      <webElementGuid>c03f6fd9-0908-4fe6-b72b-cd3c1470e1b1</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -46,7 +45,7 @@
       <name>text</name>
       <type>Main</type>
       <value>المنتجات الشتوية</value>
-      <webElementGuid>73d4817a-517d-4717-b535-3cfa2ce25f0b</webElementGuid>
+      <webElementGuid>bd59fcc1-6ead-4adb-9c09-53a08fa8ec3d</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -54,7 +53,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/header[@class=&quot;header-closed-2dE header-root-3ce&quot;]/div[@class=&quot;megaMenu-wrapper-2rA&quot;]/div[@class=&quot;megaMenu-container-2FL&quot;]/nav[@class=&quot;megaMenu-megaMenu-2LU&quot;]/div[@class=&quot;megaMenuItem-root-HSc&quot;]/a[@class=&quot;megaMenuItem-megaMenuLink-12G&quot;]</value>
-      <webElementGuid>cb967d0a-ff47-4cc8-8882-8c9fc7c5b22d</webElementGuid>
+      <webElementGuid>1fe762d4-36f9-4eaf-b7f2-10730c66ce47</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -62,7 +61,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='root']/main/header/div[3]/div/nav/div[4]/a</value>
-      <webElementGuid>32566ec5-a56f-46ec-9f14-09dd73e196fb</webElementGuid>
+      <webElementGuid>3762e419-156b-45e2-863b-ad98fccfeac7</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,7 +69,7 @@
       <name>xpath:link</name>
       <type>Main</type>
       <value>//a[contains(text(),'المنتجات الشتوية')]</value>
-      <webElementGuid>4ae0c5f1-dc49-4942-9698-76ce41314b28</webElementGuid>
+      <webElementGuid>0899763b-516c-42f3-b171-371dd2ab1fbb</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,7 +77,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='أطقم'])[1]/following::a[1]</value>
-      <webElementGuid>6409f4b1-695f-4129-a7b5-1dc412132407</webElementGuid>
+      <webElementGuid>ac05197e-7dec-4498-aab1-8ec06a07ea0e</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,7 +85,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='سروال'])[1]/following::a[2]</value>
-      <webElementGuid>ed822b3f-fce7-4c08-b489-14e263fb9153</webElementGuid>
+      <webElementGuid>2696f16e-01a4-40b3-b389-8da27dde6806</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -94,7 +93,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='البيجاما'])[1]/preceding::a[1]</value>
-      <webElementGuid>38d344a1-ff12-4f10-a1d3-3a3db5616520</webElementGuid>
+      <webElementGuid>3b355b11-7c61-41b7-8869-b7e3d00c0863</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -102,7 +101,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='الثوب الرسمي الشتوي'])[1]/preceding::a[2]</value>
-      <webElementGuid>5ec5afa6-417a-44d2-b14c-adb133620671</webElementGuid>
+      <webElementGuid>f03d4670-8e9b-4f26-9384-05b047b02243</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -110,7 +109,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>//*/text()[normalize-space(.)='المنتجات الشتوية']/parent::*</value>
-      <webElementGuid>2bcdbb15-ea52-4da2-afd8-a0d3249ff41b</webElementGuid>
+      <webElementGuid>20b50cd1-70c8-49ad-9691-9b32e9db6a33</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -118,7 +117,7 @@
       <name>xpath:href</name>
       <type>Main</type>
       <value>//a[contains(@href, '/youth/wintercollection.html')]</value>
-      <webElementGuid>d7e8ba57-dbb5-4653-b625-58ab0458a00b</webElementGuid>
+      <webElementGuid>f5eb3890-a6f3-4466-a468-1cb3c025e620</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -126,7 +125,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[4]/a</value>
-      <webElementGuid>c9604f9c-116c-41a4-acf2-1aaef5061bd9</webElementGuid>
+      <webElementGuid>cc1b671a-1332-468a-8998-995289d48142</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -134,6 +133,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//a[@href = '/youth/wintercollection.html' and (text() = 'المنتجات الشتوية' or . = 'المنتجات الشتوية')]</value>
-      <webElementGuid>6791031e-7b57-4883-8194-a305592bba32</webElementGuid>
+      <webElementGuid>be511170-1582-4033-85e4-0268d966c385</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>
