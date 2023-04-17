@@ -129,32 +129,10 @@ firstOTPDigit.addProperty('xpath', ConditionType.EQUALS, xPath)
 
 WebUI.sendKeys(firstOTPDigit,OTP)
 
-//WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/Page_/input_tel'), '9')
-//
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div_0057'))
-//
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/div_0056'))
-//
-//WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/Page_/input_tel'), '3')
-//
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/img__image-image-2gD image-loaded-SHk image_3b67db'))
-//
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/svg'))
-//
-//WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/Page_/input__phoneInputCustom-input-OnI'), '581 - 492 - 572')
-//
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/input__acpTerms_1'))
-//
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/span_'))
-//
-//
-//WebUI.doubleClick(findTestObject('Object Repository/Helpdesk/AjStore/Page_SMS Log  Magento Admin/div_3726'))
-//
-//WebUI.switchToWindowTitle('متجر عجلان واخوانه')
-//
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/img__image-image-2gD image-loaded-SHk image_3b67db'))
-//
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_/span_1'))
-//
-//WebUI.closeBrowser()
-//
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/AccountPage/AccountPageTitle')
+, FailureHandling.STOP_ON_FAILURE)
+
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/AccountPage/SignOut'))
+
+WebUI.closeBrowser()
+
