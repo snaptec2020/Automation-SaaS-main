@@ -45,8 +45,8 @@ public class catlogComponants {
 	public def getSpecifiedCatalogElement(int elementIndex,List catalogList) {
 
 		elementIndex =elementIndex+1
-		
-		
+
+
 
 		//catalogList.get(elementIndex).click()
 
@@ -54,16 +54,16 @@ public class catlogComponants {
 		//if (elementIndex >=0)
 		switch(GlobalVariable.RunningMode) {
 			case "1": tb.addProperty('xpath', ConditionType.EQUALS, "//a[contains(@class,'styles_megaMenuItem')]["+elementIndex+"]")
-					  break
+				break
 			case "2":WebUI.waitForElementClickable(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'), 0)
-					WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
-					
-					Thread.sleep(1000);
-					tb.addProperty('xpath', ConditionType.EQUALS, "(//button[@class='mega-menu-sidebar__item-title'])["+elementIndex+"]")
-					break
+				WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
+
+				Thread.sleep(1000);
+				tb.addProperty('xpath', ConditionType.EQUALS, "(//button[@class='mega-menu-sidebar__item-title'])["+elementIndex+"]")
+				break
 		}
-/*		catalogList.get(elementIndex).click()
-		Thread.sleep(2000);*/
+		/*		catalogList.get(elementIndex).click()
+		 Thread.sleep(2000);*/
 		WebUI.waitForElementClickable(tb, 30)
 		WebUI.click(tb,FailureHandling.CONTINUE_ON_FAILURE)
 		WebUI.delay(2)

@@ -21,14 +21,28 @@ import org.openqa.selenium.Keys as Keyss
 
 //KeywordUtil.logInfo('0000000000000000000000000000000000\t' + GlobalVariable.textSearch)
 
+
 WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
+switch (GlobalVariable.searchMode) {
+    case 'Normal':
+        WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), GlobalVariable.textSearch)
 
-WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), GlobalVariable.textSearch)
+        WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'), 
+            FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'), FailureHandling.CONTINUE_ON_FAILURE)
+        WebUI.click(findTestObject('Object Repository/Search contents/Search button'), FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Search contents/Search button'), FailureHandling.STOP_ON_FAILURE)
+        WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search page/Filter button'))
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search page/Filter button'))
-
+        break
+    case 'Non-Normal':
+        WebUI.setText(findTestObject('Object Repository/Search contents/input'), GlobalVariable.textSearch)
+		
+		WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'),
+			FailureHandling.CONTINUE_ON_FAILURE)
+		WebUI.click(findTestObject('Search contents/Serach Button Icon'))
+		WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search page/Filter button'))
+		
+		break
+}
 

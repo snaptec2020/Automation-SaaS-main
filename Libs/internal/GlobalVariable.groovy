@@ -94,6 +94,11 @@ public class GlobalVariable {
      */
     public static Object MobileType
      
+    /**
+     * <p>Profile default : Modes(Normal, Non-Normal)</p>
+     */
+    public static Object searchMode
+     
 
     static {
         try {
@@ -118,6 +123,7 @@ public class GlobalVariable {
             LastName = selectedVariables['LastName']
             RunningMode = selectedVariables['RunningMode']
             MobileType = selectedVariables['MobileType']
+            searchMode = selectedVariables['searchMode']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)

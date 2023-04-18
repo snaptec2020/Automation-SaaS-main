@@ -189,13 +189,6 @@
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>18a2c1a3-56c3-4228-8e25-f3e44b629b81</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Sign up TC/Validations/Sign up By phone/Fail Sign Up by phone cases</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
       <guid>ca284d8b-dacc-40d9-a1a4-41e629b78e3c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -207,6 +200,13 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/FE/LogOut/Validation/LogOut</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>18a2c1a3-56c3-4228-8e25-f3e44b629b81</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Sign up TC/Validations/Sign up By phone/Fail Sign Up by phone cases</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>

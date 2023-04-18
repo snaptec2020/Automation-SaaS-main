@@ -23,11 +23,28 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
 
+switch (GlobalVariable.searchMode) {
+    case 'Normal':
+        WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), GlobalVariable.textSearch)
 
-WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), GlobalVariable.textSearch )
-	
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'),FailureHandling.STOP_ON_FAILURE);
+        WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'), 
+            FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/View more button'),FailureHandling.STOP_ON_FAILURE);
+        WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/View more button'), FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Search contents/Search box/View more button'), FailureHandling.STOP_ON_FAILURE);
+        WebUI.click(findTestObject('Object Repository/Search contents/Search box/View more button'), FailureHandling.STOP_ON_FAILURE)
+
+        break
+    case 'Non-Normal':
+        WebUI.setText(findTestObject('Object Repository/Search contents/input'), GlobalVariable.textSearch)
+
+        WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'),
+			FailureHandling.CONTINUE_ON_FAILURE)
+		
+		WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/View more button'), FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.click(findTestObject('Object Repository/Search contents/Search box/View more button'), FailureHandling.STOP_ON_FAILURE)
+        //  WebUI.callTestCase(findTestCase('null'), [:], FailureHandling.STOP_ON_FAILURE)
+        break
+}
+

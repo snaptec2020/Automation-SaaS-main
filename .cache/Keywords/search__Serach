@@ -1,0 +1,15 @@
+{
+  "keywordFileContentHash": "B1248A6C39077B2CDE9EDCAF82FE1FFD",
+  "keywordClasses": [
+    {
+      "name": "search.Serach",
+      "keywordMethods": [
+        {
+          "name": "SearchElement",
+          "parameters": []
+        }
+      ]
+    }
+  ],
+  "javadocParsed": false
+}

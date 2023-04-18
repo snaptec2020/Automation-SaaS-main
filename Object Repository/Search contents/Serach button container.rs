@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>View Cart</name>
+   <name>Serach button container</name>
    <tag></tag>
-   <elementGuidId>e3ce235b-9735-4b3e-a9b0-00eb53a6496c</elementGuidId>
+   <elementGuidId>882df894-f8ac-4307-9186-0af68ef653fc</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[@class='d-flex align-items-center']</value>
+         <value>//div[starts-with(@class,'styles_searchButtonContainer')]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

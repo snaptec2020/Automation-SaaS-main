@@ -74,7 +74,7 @@ def bindings = new XmlParser().parse(testSuiteFile)//FileUtils.readLines(testSui
 					 //WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 					 
 					 WebUI.callTestCase(findTestCase('FE/Website launch/Verifications/Verifications after launch (headers and footers)'), [:],
-						 FailureHandling.STOP_ON_FAILURE)
+						 FailureHandling.CONTINUE_ON_FAILURE)
 					 
 					 CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
 					// KeywordUtil.logInfo(testCases.size().toString())
@@ -89,7 +89,7 @@ def bindings = new XmlParser().parse(testSuiteFile)//FileUtils.readLines(testSui
 						  String tescCaseId = "${bk.testCaseId.text()}"
 						  KeywordUtil.logInfo(tescCaseId)
 						  if(tescCaseId!='Test Cases/FE/Multi Sites/Multisites') {
-						 WebUI.callTestCase(findTestCase(tescCaseId), [:], FailureHandling.STOP_ON_FAILURE)
+						 WebUI.callTestCase(findTestCase(tescCaseId), [:], FailureHandling.CONTINUE_ON_FAILURE)
 						  }
 					 }
 					 //CustomKeywords.'generalactions.reporting.exportKatalonReports'(testSuiteContext)

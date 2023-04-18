@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>View Cart</name>
+   <name>Serach Input group</name>
    <tag></tag>
-   <elementGuidId>e3ce235b-9735-4b3e-a9b0-00eb53a6496c</elementGuidId>
+   <elementGuidId>6ad3b978-fd51-4228-923b-947518534615</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[@class='d-flex align-items-center']</value>
+         <value>//div[starts-with(@class,'styles_searchInputGroup')]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
