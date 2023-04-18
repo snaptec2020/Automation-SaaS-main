@@ -20,16 +20,16 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('https://backend.ajstore.com/admin_15cfht/')
+WebUI.navigateToUrl(GlobalVariable.BE_URL)
 WebUI.maximizeWindow()
 
 
 
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/UserName'), 'snaptecsupport')
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/UserName'), GlobalVariable.BE_UserName)
 
 	
 //WebUI.setEncryptedText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/Password'), 'h9YfHV16ZyMBoeJlmdP5xA==')
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/Password'), 'Lqd!566562g&')
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/Password'), GlobalVariable.BE_Password)
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/LoginButton'))
 
