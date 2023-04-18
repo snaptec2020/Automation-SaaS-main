@@ -26,7 +26,7 @@ import com.katalon.cdp.CdpcustomUtils.Utils as CdpcustomUtils.Utils
 
 //WebUI.openBrowser('')
 
-//WebUI.navigateToUrl(GlobalVariable.URL)
+//WebUI.navigateToUrl(GlobalVariable.FE_URL)
 
 //WebUI.maximizeWindow()
 

@@ -17,3 +17,42 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('https://backend.ajstore.com/admin_15cfht/')
+WebUI.maximizeWindow()
+
+
+
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/UserName'), 'snaptecsupport')
+
+	
+//WebUI.setEncryptedText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/Password'), 'h9YfHV16ZyMBoeJlmdP5xA==')
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/Password'), 'Lqd!566562g&')
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/LoginButton'))
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Reports'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Reports_Orders'))
+
+//DateFormat dateFormat = new SimpleDateFormat("MM/dd/yy");
+//GregorianCalendar cal = new GregorianCalendar();
+def now = new Date().format('MM/dd/yyyy')
+
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Reports/Orders_From'),now.toString())
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Reports/Orders_to'),now.toString())
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Reports/Orders_ShowReports'))
+
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/BE/Reports/Empty_grid'))
+
+
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Reports/Orders_From'),'1/1/23')
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Reports/Orders_to'),'1/1/23')
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Reports/Orders_ShowReports'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/BE/Reports/dataInOrderson01012023'))
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Sales'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Sales_orders'))
+

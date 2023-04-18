@@ -31,7 +31,7 @@ import com.katalon.cdp.CdpcustomUtils.Utils as CdpcustomUtils.Utils
 
 
 WebUI.openBrowser('')
-WebUI.navigateToUrl(GlobalVariable.URL)
+WebUI.navigateToUrl(GlobalVariable.FE_URL)
 WebUI.maximizeWindow()
 WebUI.waitForElementPresent(findTestObject('Headers and Footers/Footer contents/Web footer'), 50, FailureHandling.CONTINUE_ON_FAILURE)
 CustomKeywords.'mobileBrowsers.mobileBrowsers.captureFullPageScreenshot'(Width, Highet)

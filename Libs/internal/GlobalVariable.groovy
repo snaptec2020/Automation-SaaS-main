@@ -94,6 +94,31 @@ public class GlobalVariable {
      */
     public static Object MobileType
      
+    /**
+     * <p></p>
+     */
+    public static Object FE_URL
+     
+    /**
+     * <p></p>
+     */
+    public static Object FE_Tel
+     
+    /**
+     * <p></p>
+     */
+    public static Object BE_UserName
+     
+    /**
+     * <p></p>
+     */
+    public static Object BE_Password
+     
+    /**
+     * <p></p>
+     */
+    public static Object BE_URL
+     
 
     static {
         try {
@@ -118,6 +143,11 @@ public class GlobalVariable {
             LastName = selectedVariables['LastName']
             RunningMode = selectedVariables['RunningMode']
             MobileType = selectedVariables['MobileType']
+            FE_URL = selectedVariables['FE_URL']
+            FE_Tel = selectedVariables['FE_Tel']
+            BE_UserName = selectedVariables['BE_UserName']
+            BE_Password = selectedVariables['BE_Password']
+            BE_URL = selectedVariables['BE_URL']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)

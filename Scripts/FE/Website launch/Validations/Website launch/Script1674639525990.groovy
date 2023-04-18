@@ -22,7 +22,7 @@ switch (GlobalVariable.RunningMode) {
     case '1':
         WebUI.openBrowser('')
 
-        WebUI.navigateToUrl(GlobalVariable.URL)
+        WebUI.navigateToUrl(GlobalVariable.FE_URL)
 
         WebUI.maximizeWindow()
 
@@ -33,6 +33,6 @@ switch (GlobalVariable.RunningMode) {
         WebUI.openBrowser('')
 		//RunConfiguration.setWebDriverPreferencesProperty('moz:firefoxOptions', firefoxOptions)
 		//RunConfiguration.setWebDriverPreferencesProperty('mobileEmulation', chromeOptions)
-		WebUI.navigateToUrl(GlobalVariable.URL)
+		WebUI.navigateToUrl(GlobalVariable.FE_URL)
         break
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>AJStore</name>
+   <tag></tag>
+   <defaultProfile>false</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://www.ajstore.com/'</initValue>
+      <name>FE_URL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'581492572'</initValue>
+      <name>FE_Tel</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'snaptecsupport'</initValue>
+      <name>BE_UserName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Lqd!566562g&amp;'</initValue>
+      <name>BE_Password</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://backend.ajstore.com/admin_15cfht/'</initValue>
+      <name>BE_URL</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>
