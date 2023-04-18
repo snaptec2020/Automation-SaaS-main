@@ -3,6 +3,9 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+
+import javax.xml.bind.annotation.XmlElementDecl.GLOBAL
+
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -22,7 +25,19 @@ import org.openqa.selenium.Keys as Keys
 //WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search'))
+if (CustomKeywords.'utility.Utility.checkIfElementExist'('Search contents/Serach button container')==0) {
+	GlobalVariable.searchMode='Normal'
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search'))
+	
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search button'));
+}else {
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search button'));
+	GlobalVariable.searchMode='Non-Normal'
+WebUI.verifyElementVisible(findTestObject('Search contents/Serach button container'))
 
+WebUI.click(findTestObject('Search contents/Serach button container'))
+
+WebUI.verifyElementVisible(findTestObject('Search contents/Serach Input group'))
+
+WebUI.verifyElementVisible(findTestObject('Search contents/Serach Button Icon'))
+}

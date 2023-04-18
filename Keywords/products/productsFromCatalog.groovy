@@ -122,8 +122,8 @@ public class productsFromCatalog {
 	}
 	@Keyword
 	def getSpecifiedinStockProductsText() {
-		
-		
+
+
 		selectCatalogComponents()
 		//WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
 
@@ -416,15 +416,15 @@ public class productsFromCatalog {
 		WebUI.delay(5)
 		checkOnAddToStoreClickable(currentURL)
 	}
-   def selectCatalogComponents() {
-	   List Categories = catalogComp.getCategoryElements()
-	   
-	   
-	   elementIndex= Math.abs((randomNumber.nextInt(Categories.size() - 1)))
-	   
-	   //CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
-	   catalogComp.getSpecifiedCatalogElement(elementIndex, Categories)
-   }
+	def selectCatalogComponents() {
+		List Categories = catalogComp.getCategoryElements()
+
+
+		elementIndex= Math.abs((randomNumber.nextInt(Categories.size() - 1)))
+
+		//CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
+		catalogComp.getSpecifiedCatalogElement(elementIndex, Categories)
+	}
 
 
 }

@@ -1,5 +1,4 @@
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -18,18 +17,36 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
 
+switch (GlobalVariable.searchMode) {
+    case 'Normal':
+        WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), InvalidProduct)
 
+        if (WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'))) {
+            WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), GlobalVariable.textSearch)
+        }
+        
+        WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'))
 
-//WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
+        WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'))
 
-WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), InvalidProduct )
-if (WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'))) {
+        WebUI.click(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'), FailureHandling.STOP_ON_FAILURE)
 
-WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), GlobalVariable.textSearch )
+        break
+    case 'Non-Normal':
+        WebUI.setText(findTestObject('Object Repository/Search contents/input'), InvalidProduct)
+
+        if (WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'))) {
+            WebUI.setText(findTestObject('Object Repository/Search contents/input'), GlobalVariable.textSearch)
+        }
+        
+        WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'))
+
+        WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'))
+
+        WebUI.click(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'), FailureHandling.STOP_ON_FAILURE)
+
+        //  WebUI.callTestCase(findTestCase('null'), [:], FailureHandling.STOP_ON_FAILURE)
+        break
 }
-	
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'));
-
-WebUI.click(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'), FailureHandling.STOP_ON_FAILURE);
