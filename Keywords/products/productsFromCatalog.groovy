@@ -143,7 +143,7 @@ public class productsFromCatalog {
 				elementIndexproduct=1
 			}
 			//KeywordUtil.logInfo("AAAAAAAAAAAAAAAAAAAAAAAAAAAA\t"+elementIndexproduct.toString())
-			tb.addProperty('xpath', ConditionType.EQUALS, "(//button[text() = 'أضف إلى السلة' or text() ='Add to Cart']//parent::div//parent::div[@class='styles_bottomContainer__Fvu6h']//parent::div[@class='styles_productItem__YY5Bs']//p)["+elementIndexproduct+"]")
+			tb.addProperty('xpath', ConditionType.EQUALS, "(//button[contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]")
 
 			objText = WebUI.getText(tb)
 			if(objText.length()<=1) {
@@ -207,7 +207,7 @@ public class productsFromCatalog {
 	@Keyword
 	def getRandominStockProductsFromRandomCategory() {
 		//CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
-		WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
+		//WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
 
 		//		for (int i = 1; i <= 4; i++) {
 		//			WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
@@ -319,52 +319,54 @@ public class productsFromCatalog {
 	@Keyword
 	def configurableProduct() {
 		//TO DO: Search for another key types of configurations
-		tb.addProperty('xpath', ConditionType.EQUALS, '//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')]')
+		tb.addProperty('xpath', ConditionType.EQUALS, "//section[starts-with(@class,'productFullDetail-groupOption-')]//div[starts-with(@class,'option-root-')]")
 
 		List genralDropDowns = WebUI.findWebElements(tb, 30)
 		if (genralDropDowns.size()!=0) {
-
+//    //div[starts-with(@class,'productFullDetail-groupOption-')]//div[starts-with(@class,'option-root-')]
 
 
 			def element
 
 			for (int i = 1; i <= genralDropDowns.size(); i++) {
-				tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-						i) + ']')
+				tb.addProperty('xpath', ConditionType.EQUALS, ("(//section[starts-with(@class,'productFullDetail-groupOption-')]//div[starts-with(@class,'option-root-')])[" +
+						i) + "]//div//button[not( @disabled)]")
+				
+				WebUI.click(tb)
 
-				element = WebUiCommonHelper.findWebElement(tb, 30).findElement(By.xpath(('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-						i) + ']//child::*[contains(@class,\'styles_dropdownOption\') or contains(@class,\'styles_swatchOption\') or contains(@class,\'styles_checkboxOption\')]')).getAttribute(
-						'class')
+//				element = WebUiCommonHelper.findWebElement(tb, 30).findElement(By.xpath(("(//section[starts-with(@class,'productFullDetail-groupOption-')]//div[starts-with(@class,'option-root-')])[" +
+//						i) + ']//child::*[contains(@class,\'styles_dropdownOption\') or contains(@class,\'styles_swatchOption\') or contains(@class,\'styles_checkboxOption\')]')).getAttribute(
+//						'class')
+//
+//
+//				switch (element) {
+//					case ~('^styles_dropdownOption.*') :
+//						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+//						i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]')
 
-
-				switch (element) {
-					case ~('^styles_dropdownOption.*') :
-						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-						i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]')
-
-						WebUI.click(tb)
-
-					/*						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-					 i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[1]')
-					 */
-						tb.addProperty('xpath', ConditionType.EQUALS, ('((//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-								i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[@class=\'menu__item\']//button[not(@disabled)])[1]')
-						WebUI.click(tb)
-
-						break
-					case ~('^styles_checkboxOption.*') :
-						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-						i) + ']//span[contains(@class,\'styles_checkboxOption\')][1]//input')
-
-						WebUI.check(tb)
-
-						break
-					case ~('^styles_swatchOption.*') :
-						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-						i) + ']//span[contains(@class,\'styles_swatchOption\')][1]')
-
-						WebUI.check(tb)
-				}
+//						WebUI.click(tb)
+//
+//					/*						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+//					 i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[1]')
+//					 */
+//						tb.addProperty('xpath', ConditionType.EQUALS, ('((//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+//								i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[@class=\'menu__item\']//button[not(@disabled)])[1]')
+//						WebUI.click(tb)
+//
+//						break
+//					case ~('^styles_checkboxOption.*') :
+//						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+//						i) + ']//span[contains(@class,\'styles_checkboxOption\')][1]//input')
+//
+//						WebUI.check(tb)
+//
+//						break
+//					case ~('^styles_swatchOption.*') :
+//						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+//						i) + ']//span[contains(@class,\'styles_swatchOption\')][1]')
+//
+//						WebUI.check(tb)
+//				}
 			}
 		}
 	}
@@ -384,7 +386,7 @@ public class productsFromCatalog {
 		} else {
 			KeywordUtil.markPassed("Trying to Get Configurable product")
 			configurableProduct()
-			tb.addProperty('xpath', ConditionType.EQUALS, "//*[@class='product-content__button-wrapper']//button[@class='product-content__cart']")
+			tb.addProperty('xpath', ConditionType.EQUALS, "//button//span[text()='أضف إلى السلة']")
 			if(WebUI.verifyElementClickable(tb)) {
 				WebUI.click(tb)
 				WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
@@ -402,7 +404,7 @@ public class productsFromCatalog {
 			elementIndexproduct=1
 		}
 		def currentURL = WebUI.getUrl()
-		tb.addProperty('xpath', ConditionType.EQUALS, "(//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]")
+		tb.addProperty('xpath', ConditionType.EQUALS, "(//button[contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]")
 
 		WebElement element = WebUiCommonHelper.findWebElement(tb,30)
 		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))

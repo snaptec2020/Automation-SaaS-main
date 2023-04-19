@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class=&quot;add-to-cart-modal&quot;]//button[@class='button button--white button--medium']</value>
+         <value>//button[text()='الاستمرار بالتسوق']</value>
       </entry>
       <entry>
          <key>BASIC</key>

@@ -1,13 +1,12 @@
 {
-  "keywordFileContentHash": "ADE5865AA96EEABCBE082B5F3468ADBD",
+  "keywordFileContentHash": "E188C77198EE2C2AF8FF26CC83CBAB21",
   "keywordClasses": [
     {
       "name": "products.productsFromCatalog",
       "keywordMethods": [
         {
           "name": "getProducts",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getSpecifiedProduct",
@@ -38,13 +37,11 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "getinStockProduct",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getSpecifiedinStockProducts",
@@ -75,23 +72,19 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "getSpecifiedinStockProductsFromRandomCategory",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getSpecifiedinStockProductsText",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getinStockProductFromOnePage",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getSpecifiedinStockProductsFromOnePage",
@@ -122,23 +115,19 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "getRandominStockProductsFromOnePage",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getRandominStockProductsFromRandomCategory",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getOutOfStockProduct",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getSpecifiedOutOfStockProduct",
@@ -169,13 +158,11 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "getProductsTRoWishList",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getSpecifiedProductToBVeAddedinwishlist",
@@ -206,13 +193,11 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "getWishListItems",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getSpecifieditemfromWishListItems",
@@ -243,13 +228,11 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "configurableProduct",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "checkOnAddToStoreClickable",
@@ -267,11 +250,10 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }
