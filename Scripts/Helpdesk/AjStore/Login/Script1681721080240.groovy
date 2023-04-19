@@ -43,6 +43,7 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Login/acknowledge
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Login/LoginButton'))
 
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Login/EnterOTP'), FailureHandling.STOP_ON_FAILURE)
 
 
 int currentTab = WebUI.getWindowIndex()
@@ -137,9 +138,14 @@ firstOTPDigit.addProperty('xpath', ConditionType.EQUALS, xPath)
 
 WebUI.sendKeys(firstOTPDigit,OTP)
 
+//WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/AjStore/Login/EnterOTP'), 20, FailureHandling.STOP_ON_FAILURE)
+
+
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/AccountPage/AccountPageTitle'), 20)
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/AccountPage/AccountPageTitle')
 , FailureHandling.STOP_ON_FAILURE)
 
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AjStore/Login/EnterOTP'), 10)
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/AccountPage/SignOut'))
 
 //WebUI.closeBrowser()
