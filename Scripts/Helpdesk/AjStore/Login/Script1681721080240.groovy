@@ -29,7 +29,12 @@ WebUI.openBrowser('')
 WebUI.navigateToUrl(GlobalVariable.FE_URL)
 WebUI.maximizeWindow()
 
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Login'), 20)
+
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Login'))
+
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Login/LoginTolephone'), 20)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Login/LoginTolephone'), 20)
 
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/Login/LoginTolephone')
 , GlobalVariable.FE_Tel)
@@ -109,7 +114,7 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/
 
 
 String OTP = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/SmsContentFirstRow'))
-
+println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 println OTP
 
 
@@ -134,5 +139,5 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Ac
 
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/AccountPage/SignOut'))
 
-WebUI.closeBrowser()
+//WebUI.closeBrowser()
 
