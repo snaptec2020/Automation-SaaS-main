@@ -84,6 +84,7 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Click Logo
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Main root'), FailureHandling.CONTINUE_ON_FAILURE)
 
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/منتجات الموسم'), 10)
 
 WebUI.verifyElementVisible(findTestObject('Helpdesk/AjStore/Shared/منتجات الموسم'), FailureHandling.CONTINUE_ON_FAILURE)
 
