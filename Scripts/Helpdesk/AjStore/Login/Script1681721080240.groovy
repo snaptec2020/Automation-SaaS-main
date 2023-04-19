@@ -145,7 +145,7 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/A
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/AccountPage/AccountPageTitle')
 , FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AjStore/Login/EnterOTP'), 10)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AjStore/Login/EnterOTP'), 2)
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/AccountPage/SignOut'))
 
 //WebUI.closeBrowser()
