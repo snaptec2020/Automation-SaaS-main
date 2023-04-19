@@ -186,6 +186,20 @@ def static "utility.Utility.checkIfElementExist"(
 }
 
 
+def static "utility.Utility.addXpathToTestObject"(
+    	Object xpath	) {
+    (new utility.Utility()).addXpathToTestObject(
+        	xpath)
+}
+
+
+def static "utility.Utility.switchToIframeByXpath"(
+    	Object xpath	) {
+    (new utility.Utility()).switchToIframeByXpath(
+        	xpath)
+}
+
+
 def static "generalactions.notificationsObject.verifyNotificationVisble"(
     	Object arText	
      , 	Object enText	) {
