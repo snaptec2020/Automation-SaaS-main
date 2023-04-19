@@ -35,5 +35,5 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Se
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Bar context'))
 
-WebUI.closeBrowser()
+//WebUI.closeBrowser()
 
