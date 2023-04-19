@@ -21,7 +21,7 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-WebUI.navigateToUrl('https://www.ajstore.com/')
+WebUI.navigateToUrl(GlobalVariable.FE_URL)
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo'), 10)
 

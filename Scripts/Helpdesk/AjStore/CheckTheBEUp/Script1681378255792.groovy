@@ -17,3 +17,31 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+
+
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl(GlobalVariable.BE_URL)
+WebUI.maximizeWindow()
+
+
+
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/UserName'), GlobalVariable.BE_UserName)
+
+	
+//WebUI.setEncryptedText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/Password'), 'h9YfHV16ZyMBoeJlmdP5xA==')
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/Password'), GlobalVariable.BE_Password)
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/LoginButton'))
+
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Dashboard'))
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Sales'))
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Catalog'))
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_MobileApp'))
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Sales'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Sales_orders'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/BE/Sales_Order_page/Sales_order_Grid'))
+
+

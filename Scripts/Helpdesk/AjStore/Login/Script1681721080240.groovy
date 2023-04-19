@@ -26,13 +26,13 @@ import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('https://www.ajstore.com/')
+WebUI.navigateToUrl(GlobalVariable.FE_URL)
 WebUI.maximizeWindow()
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Login'))
 
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/Login/LoginTolephone')
-, '581 - 492 - 572')
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/Login/LoginTolephone')
+, GlobalVariable.FE_Tel)
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Login/acknowledgement'))
 
@@ -54,16 +54,16 @@ js.executeScript('window.open();')
 WebUI.switchToWindowIndex(currentTab + 1)
 
 
-WebUI.navigateToUrl('https://backend.ajstore.com/admin_15cfht')
+WebUI.navigateToUrl(GlobalVariable.BE_URL)
 
 
 //WebUI.switchToWindowTitle('متجر عجلان واخوانه')
 
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/UserName'), 'snaptecsupport')
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/UserName'), GlobalVariable.BE_UserName)
 
 	
 //WebUI.setEncryptedText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/Password'), 'h9YfHV16ZyMBoeJlmdP5xA==')
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/Password'), 'Lqd!566562g&')
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/Password'), GlobalVariable.BE_Password)
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/LoginButton'))
 
