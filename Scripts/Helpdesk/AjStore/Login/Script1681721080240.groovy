@@ -43,6 +43,7 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Login/acknowledge
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Login/LoginButton'))
 
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Login/EnterOTP'), 10)
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Login/EnterOTP'), FailureHandling.STOP_ON_FAILURE)
 
 
