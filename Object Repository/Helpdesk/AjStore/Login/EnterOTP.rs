@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='verificationPage-subTitle-1ME']</value>
+         <value>//div[contains( @class,'verificationPage-subTitle-')]</value>
       </entry>
       <entry>
          <key>BASIC</key>
