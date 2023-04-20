@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[@class=&quot;product-button__content&quot;]/span[contains(text(),'Remove') or contains(text(),'إزالة')]</value>
+         <value>(//span[contains(text(),'Remove') or contains(text(),'إزالة')])[1]</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

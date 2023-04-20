@@ -17,24 +17,4 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-//WebUI.callTestCase(findTestCase('null'), [:], FailureHandling.STOP_ON_FAILURE)
-
-WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
-
-switch (GlobalVariable.searchMode) {
-
-case 'Normal': 
-
-    WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), InvalidProduct)
-
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'))
-	break
- 
-case 'Non-Normal':
-    WebUI.setText(findTestObject('Object Repository/Search contents/input'), InvalidProduct)
-
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'))
-	break
-  //  WebUI.callTestCase(findTestCase('null'), [:], FailureHandling.STOP_ON_FAILURE)
-
-}
+WebUI.click(findTestObject('login page/My account'))

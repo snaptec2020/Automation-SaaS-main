@@ -14,27 +14,19 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import com.kms.katalon.entity.global.GlobalVariableEntity as GlobalVariableEntity
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-//WebUI.callTestCase(findTestCase('null'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate to Sgin in'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('FE/Sign up TC/General Actions Sign up/Navigate to Sign up page'), [:], FailureHandling.STOP_ON_FAILURE)
 
-switch (GlobalVariable.searchMode) {
+switch (GlobalVariable.RunningMode) {
+    case '1':
+    case '2':
+        WebUI.click(findTestObject('login page/email page/Select e-mail Way'))
 
-case 'Normal': 
-
-    WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), InvalidProduct)
-
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'))
-	break
- 
-case 'Non-Normal':
-    WebUI.setText(findTestObject('Object Repository/Search contents/input'), InvalidProduct)
-
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'))
-	break
-  //  WebUI.callTestCase(findTestCase('null'), [:], FailureHandling.STOP_ON_FAILURE)
-
+        break
 }
+

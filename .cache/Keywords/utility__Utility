@@ -1,0 +1,30 @@
+{
+  "keywordFileContentHash": "A90E87DD730D73F20AFD1FBCCFA060C9",
+  "keywordClasses": [
+    {
+      "name": "utility.Utility",
+      "keywordMethods": [
+        {
+          "name": "checkIfElementExist",
+          "parameters": [
+            {
+              "name": "objPath",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

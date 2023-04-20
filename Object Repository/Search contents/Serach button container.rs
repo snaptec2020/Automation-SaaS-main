@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Select e-mail Way</name>
+   <name>Serach button container</name>
    <tag></tag>
-   <elementGuidId>00d67e2c-e87b-48d1-8f49-bac06e75139c</elementGuidId>
+   <elementGuidId>882df894-f8ac-4307-9186-0af68ef653fc</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[starts-with(@class,'styles_tabId__')][text()='عنوان البريد الإلكتروني' or text()='Email address']</value>
+         <value>//div[starts-with(@class,'styles_searchButtonContainer')]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

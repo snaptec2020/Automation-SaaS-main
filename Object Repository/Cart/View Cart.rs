@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class=&quot;add-to-cart-modal&quot;]//button[@class='button button--primary button--medium']</value>
+         <value>//span[@class='d-flex align-items-center']</value>
       </entry>
       <entry>
          <key>BASIC</key>

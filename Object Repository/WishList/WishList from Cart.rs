@@ -6,12 +6,11 @@
    <elementGuidId>79ba6552-67bc-4d66-a323-0520ff53cd6d</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>(//ul[starts-with(@class,'products-container')]//button[starts-with(@class,'button--transparent p-0 ')])[1]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//button[@class='button--transparent p-0  ']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -51,7 +51,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'Test'</initValue>
+      <initValue>'perfume'</initValue>
       <name>textSearch</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -88,5 +88,10 @@
       <description>1=iPhone, 2=Android</description>
       <initValue>'1'</initValue>
       <name>MobileType</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Modes(Normal, Non-Normal)</description>
+      <initValue>'Normal'</initValue>
+      <name>searchMode</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

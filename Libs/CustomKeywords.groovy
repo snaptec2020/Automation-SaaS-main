@@ -179,6 +179,20 @@ def static "cart.removeItem.getSpecifiedIteminThecart"(
 }
 
 
+def static "utility.Utility.checkIfElementExist"(
+    	Object objPath	) {
+    (new utility.Utility()).checkIfElementExist(
+        	objPath)
+}
+
+
+def static "utility.Utility.scrollToVerifyElementVisiblity"(
+    	Object testObjectRelativeId	) {
+    (new utility.Utility()).scrollToVerifyElementVisiblity(
+        	testObjectRelativeId)
+}
+
+
 def static "generalactions.notificationsObject.verifyNotificationVisble"(
     	Object arText	
      , 	Object enText	) {

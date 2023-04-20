@@ -17,6 +17,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+def currentUrl=WebUI.getUrl()
 WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components after click on proceed'), [:], 
     FailureHandling.STOP_ON_FAILURE)
 
@@ -26,3 +27,4 @@ CustomKeywords.'checkout.Payments.getRandomPaymentMethods'()
 
 WebUI.takeFullPageScreenshot('./paymentResult.png')
 
+WebUI.navigateToUrl(currentUrl)

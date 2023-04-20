@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//a[@class='d-lg-flex d-none align-items-center']</value>
+         <value>//*[@class='d-lg-flex d-none align-items-center']</value>
       </entry>
       <entry>
          <key>BASIC</key>

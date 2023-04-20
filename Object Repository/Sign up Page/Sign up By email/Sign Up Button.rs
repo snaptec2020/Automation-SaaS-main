@@ -7,12 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//button[contains(text(),'اشتراك')or normalize-space()='Sign Up']
-</value>
+         <value>//button[starts-with(@class,' styles_buttonPrimary')][contains(text(),'اشتراك')or normalize-space()='Sign Up']</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

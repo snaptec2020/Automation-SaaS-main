@@ -26,12 +26,12 @@ import org.openqa.selenium.Keys as Keys
 	WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Cart is filled'), [:], FailureHandling.STOP_ON_FAILURE)
 	
 	
-	WebUI.scrollToElement(findTestObject('Object Repository/Cart/Product in item container'), 0)
+	//WebUI.scrollToElement(findTestObject('Object Repository/Cart/Product in item container'), 0)
 	
 	
-	WebUI.scrollToPosition(400, 450);
+	//WebUI.scrollToPosition(400, 450);
 	
-
+	//WebUI.scrollToElement(findTestObject('Object Repository/Cart/Remove product from cart'), 0)
 	WebUI.click(findTestObject('Object Repository/Cart/Remove product from cart'))
 	/*List Items = CustomKeywords.'cart.removeItem.getProductsInCart'()
 

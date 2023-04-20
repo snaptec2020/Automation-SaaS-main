@@ -34,9 +34,11 @@ import internal.GlobalVariable
 
 public class productsFromCatalog {
 	TestObject tb=new TestObject();
-
+	Random randomNumber = new Random()
 	Random randomNumberforProduct = new Random()
 	String objText = ""
+	def catalogComp = new catlogComponants()
+	int elementIndex = 0
 	@Keyword
 	def getProducts() {
 		List Products = WebUI.findWebElements(findTestObject('Object Repository/Products/List of products'),30)
@@ -73,7 +75,8 @@ public class productsFromCatalog {
 
 	@Keyword
 	def getSpecifiedinStockProductsFromRandomCategory() {
-		WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
+		//WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
+		selectCatalogComponents()
 
 		//		for (int i = 1; i <= 4; i++) {
 		//			WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
@@ -119,7 +122,10 @@ public class productsFromCatalog {
 	}
 	@Keyword
 	def getSpecifiedinStockProductsText() {
-		WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
+
+
+		selectCatalogComponents()
+		//WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
 
 		//		for (int i = 1; i <= 4; i++) {
 		//			WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
@@ -207,7 +213,8 @@ public class productsFromCatalog {
 	@Keyword
 	def getRandominStockProductsFromRandomCategory() {
 		//CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
-		WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
+		//WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
+		selectCatalogComponents()
 
 		//		for (int i = 1; i <= 4; i++) {
 		//			WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
@@ -341,14 +348,16 @@ public class productsFromCatalog {
 					case ~('^styles_dropdownOption.*') :
 						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
 						i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]')
+					//WebUI.scrollToElement(tb, 10)
 
 						WebUI.click(tb)
 
-/*						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-								i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[1]')
-*/
+
+					/*						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+					 i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[1]')
+					 */
 						tb.addProperty('xpath', ConditionType.EQUALS, ('((//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-							i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[@class=\'menu__item\']//button[not(@disabled)])[1]')
+								i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[@class=\'menu__item\']//button[not(@disabled)])[1]')
 						WebUI.click(tb)
 
 						break
@@ -383,6 +392,7 @@ public class productsFromCatalog {
 
 		} else {
 			KeywordUtil.markPassed("Trying to Get Configurable product")
+			WebUI.scrollToElement(findTestObject('Object Repository/Products/Product content'), 0, FailureHandling.STOP_ON_FAILURE)
 			configurableProduct()
 			tb.addProperty('xpath', ConditionType.EQUALS, "//*[@class='product-content__button-wrapper']//button[@class='product-content__cart']")
 			if(WebUI.verifyElementClickable(tb)) {
@@ -409,7 +419,15 @@ public class productsFromCatalog {
 		WebUI.delay(5)
 		checkOnAddToStoreClickable(currentURL)
 	}
+	def selectCatalogComponents() {
+		List Categories = catalogComp.getCategoryElements()
 
+
+		elementIndex= Math.abs((randomNumber.nextInt(Categories.size() - 1)))
+
+		//CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
+		catalogComp.getSpecifiedCatalogElement(elementIndex, Categories)
+	}
 
 
 }
