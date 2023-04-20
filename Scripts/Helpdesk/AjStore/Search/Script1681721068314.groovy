@@ -32,7 +32,7 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-WebUI.navigateToUrl('https://www.ajstore.com/')
+WebUI.navigateToUrl(GlobalVariable.FE_URL)
 
 List prod = CustomKeywords.'products.productsFromCatalog.getinStockProductFromOnePage'()
 

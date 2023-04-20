@@ -55,4 +55,4 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/BE
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Sales'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Sales_orders'))
-
+WebUI.closeBrowser()

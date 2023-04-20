@@ -108,14 +108,21 @@ WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/a
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Sales_Order_page/Sales_orders_FilterButton'))
 
+WebUI.delay(2)
+
+
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/button_Filters'))
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/recipient_phone'), 2)
 WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/recipient_phone'), 
     '966581492572')
 
 //WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/recipient_phone'), 
 //    Keys.chord(Keys.ENTER))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/button_Filters'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Sales_Order_page/Sales_orders_FilterButton'))
+
+//TestObject FirstRowReceiptPhone = new TestObject()
+//FirstRowReceiptPhone.addProperty("xpath",ConditionType.EQUALS,"//tr[@class='data-row' and @data-repeat-index='0']/td[6]/div")
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/SmsContentFirstRow'), 20)
 String OTP = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/SmsContentFirstRow'))
@@ -128,6 +135,7 @@ println OTP
 
 //WebUI.switchToWindowTitle('SMS Log / Magento Admin')
 //WebUI.switchToWindowTitle('متجر عجلان واخوانه')
+WebUI.delay(2)
 
 WebUI.switchToWindowIndex(currentTab)
 

@@ -45,3 +45,4 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Sale
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/BE/Sales_Order_page/Sales_order_Grid'))
 
 
+WebUI.closeBrowser()
