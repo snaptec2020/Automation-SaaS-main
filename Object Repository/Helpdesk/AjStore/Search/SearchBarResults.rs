@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Logo</name>
+   <name>SearchBarResults</name>
    <tag></tag>
-   <elementGuidId>fa20380f-d1a0-4978-8bb5-c9b574328e53</elementGuidId>
+   <elementGuidId>7f311603-6b49-4a47-b2ce-96be9fe0bd5d</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//img[@loading='eager']</value>
+         <value>//div[contains(@class,'autocomplete-message-' )]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

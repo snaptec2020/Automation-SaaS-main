@@ -149,5 +149,5 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Ac
 WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AjStore/Login/EnterOTP'), 2)
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/AccountPage/SignOut'))
 
-//WebUI.closeBrowser()
+WebUI.closeBrowser()
 

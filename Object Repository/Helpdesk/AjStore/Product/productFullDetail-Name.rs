@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Logo</name>
+   <name>productFullDetail-Name</name>
    <tag></tag>
-   <elementGuidId>fa20380f-d1a0-4978-8bb5-c9b574328e53</elementGuidId>
+   <elementGuidId>57cfb617-ac9a-42d2-a2bc-c0494bbdde8e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//img[@loading='eager']</value>
+         <value>//h1[contains(@class,'productFullDetail-name')]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

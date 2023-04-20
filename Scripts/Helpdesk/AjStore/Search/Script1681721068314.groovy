@@ -23,6 +23,8 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper as WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword as WebUIAbstractKeyword
 import catalog.catlogComponants as catlogComponants
 import java.util.List as List
+import org.codehaus.groovy.runtime.powerassert.AssertionRenderer as AssertionRenderer
+import org.codehaus.groovy.tools.shell.completion.KeywordSyntaxCompletor as KeywordSyntaxCompletor
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 
@@ -68,14 +70,30 @@ if (WebUI.getUrl() == currentURL) {
     }
 }
 
+def ProductName = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/Product/productFullDetail-Name'))
 
-///// Save Data in variable gettext getSKU
+def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/Product/productFullDetail-sku'))
+
+def producURL = WebUI.getUrl()
+println producURL
+
+producURL = producURL.replace(GlobalVariable.FE_URL, '')
+println GlobalVariable.FE_URL
+println producURL
 
 
 
 
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo'), 10)
+
+
+
+
+
+//Search by Name
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo2'))
+
 
 //WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search icon'))
@@ -87,6 +105,88 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Se
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Bar context'))
 
 
-// Do Searcg
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Feild'), ProductName)
 
-//Check on results
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Search/SearchBarResults'), 10)
+
+if (WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/Search/SearchBarResults')).trim().equals('لاتوجد نتائج')) {
+	assert false
+}else if(WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/Search/SearchBarResults')).trim().indexOf(' عنصر') > 0) {
+	assert true
+}else {
+	assert false
+	
+}
+//if (!(WebUI.verifyElementText(findTestObject('Object Repository/Helpdesk/AjStore/Search/SearchBarResults'), '1 عنصر', FailureHandling.CONTINUE_ON_FAILURE))) {
+//    //لاتوجد نتائج 
+//    def resultsInBar = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/Search/SearchBarResults'))
+//
+//    if (resultsInBar.trim().equals('لاتوجد نتائج')) {
+//        assert false
+//    }
+//}
+
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Feild'), Keys.chord(Keys.ENTER))
+
+TestObject searchRestb = new TestObject()
+
+searchRestb.addProperty('xpath', ConditionType.EQUALS, '//h1[contains(@class,\'searchPage-heading-\')]')
+
+WebElement searchRes = WebUiCommonHelper.findWebElement(searchRestb, 30)
+
+if (!(searchRes.getText().equals(('عرض النتائج ل' + ProductName) + ':'))) {
+    assert false
+}
+
+TestObject productInResults = new TestObject()
+
+productInResults.addProperty('xpath', ConditionType.EQUALS, "//a[@href='/" + producURL + "']")
+
+WebUI.waitForElementClickable(productInResults, 10)
+
+
+
+
+//Search by SKU
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo2'))
+
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Feild'), ProductSKU)
+
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Search/SearchBarResults'), 10)
+
+if (WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/Search/SearchBarResults')).trim().equals('لاتوجد نتائج')) {
+	assert false
+}else if(WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/Search/SearchBarResults')).trim().indexOf(' عنصر') > 0) {
+	assert true
+}else {
+	assert false
+	
+}
+//if (!(WebUI.verifyElementText(findTestObject('Object Repository/Helpdesk/AjStore/Search/SearchBarResults'), '1 عنصر', FailureHandling.CONTINUE_ON_FAILURE))) {
+//    //لاتوجد نتائج
+//    def resultsInBar = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/Search/SearchBarResults'))
+//
+//    if (resultsInBar.trim().equals('لاتوجد نتائج')) {
+//        assert false
+//    }
+//}
+
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Feild'), Keys.chord(Keys.ENTER))
+
+searchRestb = new TestObject()
+
+searchRestb.addProperty('xpath', ConditionType.EQUALS, '//h1[contains(@class,\'searchPage-heading-\')]')
+
+searchRes = WebUiCommonHelper.findWebElement(searchRestb, 30)
+
+if (!(searchRes.getText().equals(('عرض النتائج ل' + ProductSKU) + ':'))) {
+    assert false
+}
+
+productInResults = new TestObject()
+
+productInResults.addProperty('xpath', ConditionType.EQUALS, "//a[@href='/" + producURL + "']")
+
+WebUI.waitForElementClickable(productInResults, 10)
+
+WebUI.closeBrowser()
