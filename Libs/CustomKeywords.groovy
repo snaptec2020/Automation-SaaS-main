@@ -186,6 +186,13 @@ def static "utility.Utility.checkIfElementExist"(
 }
 
 
+def static "utility.Utility.scrollToVerifyElementVisiblity"(
+    	Object testObjectRelativeId	) {
+    (new utility.Utility()).scrollToVerifyElementVisiblity(
+        	testObjectRelativeId)
+}
+
+
 def static "generalactions.notificationsObject.verifyNotificationVisble"(
     	Object arText	
      , 	Object enText	) {

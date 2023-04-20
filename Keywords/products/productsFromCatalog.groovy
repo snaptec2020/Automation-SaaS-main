@@ -348,8 +348,10 @@ public class productsFromCatalog {
 					case ~('^styles_dropdownOption.*') :
 						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
 						i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]')
+					//WebUI.scrollToElement(tb, 10)
 
 						WebUI.click(tb)
+
 
 					/*						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
 					 i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[1]')
@@ -390,6 +392,7 @@ public class productsFromCatalog {
 
 		} else {
 			KeywordUtil.markPassed("Trying to Get Configurable product")
+			WebUI.scrollToElement(findTestObject('Object Repository/Products/Product content'), 0, FailureHandling.STOP_ON_FAILURE)
 			configurableProduct()
 			tb.addProperty('xpath', ConditionType.EQUALS, "//*[@class='product-content__button-wrapper']//button[@class='product-content__cart']")
 			if(WebUI.verifyElementClickable(tb)) {

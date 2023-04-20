@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//ul[@class=&quot;products-container&quot;]/li[@class='product']</value>
+         <value>//ul[starts-with(@class,'products-container')]/li[starts-with(@class,'product')]</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -17,40 +17,4 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-
-//Random randomNumberforProduct = new Random();
-
-//int elementIndex;
-
-
-	WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Cart is filled'), [:], FailureHandling.STOP_ON_FAILURE)
-	
-	
-	//WebUI.scrollToElement(findTestObject('Object Repository/Cart/Product in item container'), 0)
-	
-	
-	//WebUI.scrollToPosition(400, 450);
-	
-	//WebUI.scrollToElement(findTestObject('Object Repository/Cart/Remove product from cart'), 0)
-	WebUI.click(findTestObject('Object Repository/Cart/Remove product from cart'))
-	/*List Items = CustomKeywords.'cart.removeItem.getProductsInCart'()
-
-
-	if (Items.size() == 0) {
-		WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)
-	}
-else {
-elementIndex = Math.abs(randomNumberforProduct.nextInt(Items.size() - 1))
-
-CustomKeywords.'cart.removeItem.getSpecifiedIteminThecart'(1, Items)*/
-
-
-
-
-
-
-
-
-
-
-
+WebUI.click(findTestObject('login page/My account'))

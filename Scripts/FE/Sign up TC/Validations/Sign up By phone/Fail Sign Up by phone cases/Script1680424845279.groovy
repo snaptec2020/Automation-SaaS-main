@@ -20,7 +20,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('FE/Sign up TC/General Actions Sign up/Navigate to Sign Up Mobile page'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('FE/Sign up TC/General Actions Sign up/Navigate to Sign up page'), [:], FailureHandling.STOP_ON_FAILURE)
 
 TestData td = findTestData('Signup phone TD')
 
@@ -31,14 +31,17 @@ def messageColumn = 6
 def phoneSize
 
 def firstName = ''
+
 def phoneNumber
+
 def lastname = ''
-def isCheck='1'
+
+def isCheck = '1'
 
 for (def rowData : td.allData) {
     rowNumber = (rowNumber + 1)
-	isCheck='1'
 
+    isCheck = '1'
 
     //CustomKeywords.'generalactions.generalStrings.generatePhoneWithConditions'(
     //	9, 0)
@@ -51,19 +54,19 @@ for (def rowData : td.allData) {
     lastname = findTestData('Signup phone TD').getValue(2, rowNumber)
 
     if (phoneSize == 10) {
-        phoneNumber = CustomKeywords.'generalactions.generalStrings.generatePhoneWithConditions'(9, 1)
+        phoneNumber = CustomKeywords.'generalactions.generalStrings.generatePhoneWithConditions'(9, 1) //KeywordUtil.logInfo(rowData.size().toString())
+        //KeywordUtil.logInfo(rowNumber.toString())
     } else {
         phoneNumber = CustomKeywords.'generalactions.generalStrings.generatePhoneWithConditions'(phoneSize, 0)
-        //KeywordUtil.logInfo(rowData.size().toString())
-		//KeywordUtil.logInfo(rowNumber.toString())
+
         if (findTestData('Signup phone TD').getValue(3, rowNumber).trim() == 'exist') {
             phoneNumber = GlobalVariable.phoneNumber
         }
     }
-	
-	if (td.getValue(4, rowNumber) != 'checked') {
-		isCheck='0'
-	}
+    
+    if (td.getValue(4, rowNumber) != 'checked') {
+        isCheck = '0'
+    }
     
     WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sign up By phone/SignUp by phone'), [('firstname') : firstName
             , ('lastname') : lastname, ('PhoneNumber') : phoneNumber, ('isCheck') : isCheck], FailureHandling.STOP_ON_FAILURE)
@@ -80,15 +83,9 @@ for (def rowData : td.allData) {
         
         CustomKeywords.'signup.signupPhoneVerifications.phoneVerificationMessage'(findTestData('Signup phone TD').getValue(
                 messageColumn, rowNumber))
-    } else {
-
-        
+    } //WebUI.delay(3)
+    else {
         CustomKeywords.'signup.signupPhoneVerifications.verificationElementPhoneSignUp'()
     }
-    
-    //WebUI.delay(3)
 }
-
-//WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sign up By phone/SignUp by phone'), [('firstname') : '', ('lastname') : ''
-     //   , ('PhoneNumber') : '', ('isCheck') : '1'], FailureHandling.STOP_ON_FAILURE)
 
