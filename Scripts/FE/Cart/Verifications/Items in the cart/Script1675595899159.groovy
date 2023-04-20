@@ -30,8 +30,10 @@ int elementIndex;
     if (Items.size() == 0) {
         KeywordUtil.markFailed("there is no products in the cart")    } 
 else {
+//KeywordUtil.logInfo(Items.size().toString())
+if(Items.size()!=1) {
 elementIndex = Math.abs(randomNumberforProduct.nextInt(Items.size() - 1))
-
+}
 CustomKeywords.'cart.cartItems.getSpecifiedIteminThecart'(elementIndex, Items)
     }
 

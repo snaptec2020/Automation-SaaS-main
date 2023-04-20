@@ -33,14 +33,36 @@ import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.util.internal.XMLUtil
 //TestCaseContext tcx //= new TestCaseContext()
 TestObject tb = new TestObject()
+
 String projectDir = RunConfiguration.getProjectDir();
 String testSuiteDir = projectDir + "/"+GlobalVariable.testSuiteStatus+".ts"
 KeywordUtil.logInfo(testSuiteDir)
-def sitesCount = WebUI.findWebElements(findTestObject('Multi Sites/Multi site dropdown menu'),30).size()
+def multiwebsiteDrop=findTestObject('Object Repository/Multi Sites/Multi site dropdown menu')
+def sitesCount = 0
+switch (GlobalVariable.RunningMode) {
+    case '1':
+        multiwebsiteDrop.findProperty('xpath').setValue('//div[@class=\'store-container\']//div[@id=\'storeTriggerDropdownMenuButton\']')
+
+        
+        sitesCount = WebUI.findWebElements(multiwebsiteDrop, 30).size()
+
+        
+        break
+    case '2' :
+        WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
+
+        multiwebsiteDrop.findProperty('xpath').setValue("//div[@class='store-switcher']//div[@id='storeTriggerDropdownMenuButton']")
+
+
+        sitesCount = WebUI.findWebElements(multiwebsiteDrop, 30).size()
+
+
+        WebUI.click(findTestObject('Object Repository/Mega Menu/Close MM Mobile'))
+
+        break
+}
 if(sitesCount!=0) {
-File testSuiteFile = new File(testSuiteDir);
-//List<String> 
-def bindings = new XmlParser().parse(testSuiteFile)//FileUtils.readLines(testSuiteFile, "UTF-8");
+
 //def tc = XMLUtil.
 /*
  * for (int i = 0; i < 2; i++) {
@@ -49,11 +71,13 @@ def bindings = new XmlParser().parse(testSuiteFile)//FileUtils.readLines(testSui
  */
 
 
+				 	  openMultiSiteDrop(multiwebsiteDrop)
 
-		 WebUI.click(findTestObject('Multi Sites/Multi site dropdown menu'))
+
 		 
 		 List sites = WebUI.findWebElements(findTestObject('Object Repository/Multi Sites/Multi sites Sites context'),30)
 		 if(sites.size()!=0) {
+			 
 			 /*
 			  * WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Object
 			  * Repository/Multi Sites/Multi sites Sites context'),30) element.
@@ -66,9 +90,13 @@ def bindings = new XmlParser().parse(testSuiteFile)//FileUtils.readLines(testSui
 				 //WebUI.click(findTestObject('Object Repository/Multi Sites/Multi sites Sites context').addProperty('xpath', ConditionType.EQUALS, "["+sites.get(i).text+"]"))
 				 //WebUI.delay(10)
 				 }
+				 File testSuiteFile = new File(testSuiteDir);
+				 //List<String>
+				 def bindings = new XmlParser().parse(testSuiteFile)//FileUtils.readLines(testSuiteFile, "UTF-8");
 				 storesToVisit.each{val->
 					 KeywordUtil.logInfo(val)
 					 tb.addProperty('xpath', ConditionType.EQUALS,val)
+					 
 					 WebUI.click(tb)
 					 WebUI.delay(10)
 					 //WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
@@ -93,12 +121,28 @@ def bindings = new XmlParser().parse(testSuiteFile)//FileUtils.readLines(testSui
 						  }
 					 }
 					 //CustomKeywords.'generalactions.reporting.exportKatalonReports'(testSuiteContext)
-					 WebUI.click(findTestObject('Multi Sites/Multi site dropdown menu'))
+				 	  openMultiSiteDrop(multiwebsiteDrop)
+					 
 				 }
 			 }
 		 
 	 }
-
+	 def openMultiSiteDrop(def multiwebsiteDrop ) {
+		 
+		 switch (GlobalVariable.RunningMode) {
+			 case '1':
+				 WebUI.click(multiwebsiteDrop)
+		 
+				 break
+			 case '2':
+				 WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
+		 
+				 WebUI.click(multiwebsiteDrop)
+		 
+				 //WebUI.click(findTestObject('Object Repository/Mega Menu/Close MM Mobile'))
+				 break
+		 }
+	 }
 
 
 

@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='cart-items-container']/h3[@class='no-items-message'][contains(text(),'لا توجد عناصر في سلة التسوق.') or contains(text(),'There are no items in your cart.')]</value>
+         <value>//div[starts-with(@class,'cart-items-container')]/h3[@class='no-items-message'][contains(text(),'لا توجد عناصر في سلة التسوق.') or contains(text(),'There are no items in your cart.')]</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
