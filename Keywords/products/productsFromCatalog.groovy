@@ -323,7 +323,7 @@ public class productsFromCatalog {
 
 		List genralDropDowns = WebUI.findWebElements(tb, 30)
 		if (genralDropDowns.size()!=0) {
-//    //div[starts-with(@class,'productFullDetail-groupOption-')]//div[starts-with(@class,'option-root-')]
+			//    //div[starts-with(@class,'productFullDetail-groupOption-')]//div[starts-with(@class,'option-root-')]
 
 
 			def element
@@ -331,42 +331,42 @@ public class productsFromCatalog {
 			for (int i = 1; i <= genralDropDowns.size(); i++) {
 				tb.addProperty('xpath', ConditionType.EQUALS, ("(//section[starts-with(@class,'productFullDetail-groupOption-')]//div[starts-with(@class,'option-root-')])[" +
 						i) + "]//div//button[not( @disabled)]")
-				
+
 				WebUI.click(tb)
 
-//				element = WebUiCommonHelper.findWebElement(tb, 30).findElement(By.xpath(("(//section[starts-with(@class,'productFullDetail-groupOption-')]//div[starts-with(@class,'option-root-')])[" +
-//						i) + ']//child::*[contains(@class,\'styles_dropdownOption\') or contains(@class,\'styles_swatchOption\') or contains(@class,\'styles_checkboxOption\')]')).getAttribute(
-//						'class')
-//
-//
-//				switch (element) {
-//					case ~('^styles_dropdownOption.*') :
-//						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-//						i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]')
+				//				element = WebUiCommonHelper.findWebElement(tb, 30).findElement(By.xpath(("(//section[starts-with(@class,'productFullDetail-groupOption-')]//div[starts-with(@class,'option-root-')])[" +
+				//						i) + ']//child::*[contains(@class,\'styles_dropdownOption\') or contains(@class,\'styles_swatchOption\') or contains(@class,\'styles_checkboxOption\')]')).getAttribute(
+				//						'class')
+				//
+				//
+				//				switch (element) {
+				//					case ~('^styles_dropdownOption.*') :
+				//						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+				//						i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]')
 
-//						WebUI.click(tb)
-//
-//					/*						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-//					 i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[1]')
-//					 */
-//						tb.addProperty('xpath', ConditionType.EQUALS, ('((//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-//								i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[@class=\'menu__item\']//button[not(@disabled)])[1]')
-//						WebUI.click(tb)
-//
-//						break
-//					case ~('^styles_checkboxOption.*') :
-//						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-//						i) + ']//span[contains(@class,\'styles_checkboxOption\')][1]//input')
-//
-//						WebUI.check(tb)
-//
-//						break
-//					case ~('^styles_swatchOption.*') :
-//						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-//						i) + ']//span[contains(@class,\'styles_swatchOption\')][1]')
-//
-//						WebUI.check(tb)
-//				}
+				//						WebUI.click(tb)
+				//
+				//					/*						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+				//					 i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[1]')
+				//					 */
+				//						tb.addProperty('xpath', ConditionType.EQUALS, ('((//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+				//								i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[@class=\'menu__item\']//button[not(@disabled)])[1]')
+				//						WebUI.click(tb)
+				//
+				//						break
+				//					case ~('^styles_checkboxOption.*') :
+				//						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+				//						i) + ']//span[contains(@class,\'styles_checkboxOption\')][1]//input')
+				//
+				//						WebUI.check(tb)
+				//
+				//						break
+				//					case ~('^styles_swatchOption.*') :
+				//						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+				//						i) + ']//span[contains(@class,\'styles_swatchOption\')][1]')
+				//
+				//						WebUI.check(tb)
+				//				}
 			}
 		}
 	}
