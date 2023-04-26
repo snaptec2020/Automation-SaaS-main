@@ -115,7 +115,7 @@ WebUI.delay(2)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/button_Filters'))
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/recipient_phone'), 2)
 WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/recipient_phone'), 
-    '966581492572')
+    GlobalVariable.FE_Tel)
 
 //WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/recipient_phone'), 
 //    Keys.chord(Keys.ENTER))

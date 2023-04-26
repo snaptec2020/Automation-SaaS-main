@@ -68,13 +68,6 @@
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>511a0220-3159-4073-9862-11c7371c9cfe</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/AjStore/AddCouponCode</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
       <guid>7d2c9546-78ca-48c1-85c4-1edf0e3e535c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
