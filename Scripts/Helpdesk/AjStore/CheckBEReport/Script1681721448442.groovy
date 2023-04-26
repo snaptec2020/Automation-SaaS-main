@@ -51,6 +51,10 @@ WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Reports/Orde
 WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Reports/Orders_to'),'1/1/23')
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Reports/Orders_ShowReports'))
 
+//long lastHeight=((Number) WebUI.executeJavaScript("return document.body.scrollHeight", null)).longValue();
+WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight);", null);
+
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/BE/Reports/dataInOrderson01012023'), 10)
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/BE/Reports/dataInOrderson01012023'))
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Sales'))
