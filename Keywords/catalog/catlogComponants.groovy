@@ -18,12 +18,12 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-
 import internal.GlobalVariable
-
+import utility.Utility
 
 public class catlogComponants {
 	TestObject tb=new TestObject()
+	def utilityFunctions = new Utility()
 	@Keyword
 	public def getCategoryElements() {
 		List Catalogs
@@ -53,13 +53,16 @@ public class catlogComponants {
 
 		//if (elementIndex >=0)
 		switch(GlobalVariable.RunningMode) {
-			case "1": tb.addProperty('xpath', ConditionType.EQUALS, "//a[contains(@class,'styles_megaMenuItem')]["+elementIndex+"]")
+			case "1": 
+				tb = utilityFunctions.addXpathToTestObject(findTestObject('Object Repository/Mega Menu/Catalog list').findPropertyValue('xpath') + "["+elementIndex+"]")
+				//tb.addProperty('xpath', ConditionType.EQUALS, "//a[contains(@class,'styles_megaMenuItem')]["+elementIndex+"]")
 				break
 			case "2":WebUI.waitForElementClickable(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'), 0)
 				WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
 
-				Thread.sleep(1000);
-				tb.addProperty('xpath', ConditionType.EQUALS, "(//button[@class='mega-menu-sidebar__item-title'])["+elementIndex+"]")
+				Thread.sleep(1000);								//button[@class='mega-menu-sidebar__item-title']
+				tb = utilityFunctions.addXpathToTestObject("("+findTestObject('Object Repository/Mega Menu/MenuSider on mobile').findPropertyValue('xpath') + ")["+elementIndex+"]")
+				//tb.addProperty('xpath', ConditionType.EQUALS, "(//button[@class='mega-menu-sidebar__item-title'])["+elementIndex+"]")
 				break
 		}
 		/*		catalogList.get(elementIndex).click()

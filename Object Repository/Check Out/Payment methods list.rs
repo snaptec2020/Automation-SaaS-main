@@ -7,13 +7,21 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
+         <value>//div[@class='payment-method-container__list__item']</value>
       </entry>
       <entry>
          <key>XPATH</key>
          <value>//div[@class='payment-method-container__list__item']</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//div[@class='payment-method-container__list__item']</value>
+      <webElementGuid>7faac649-5a60-4c7b-8138-4664dda651fa</webElementGuid>
+   </webElementProperties>
 </WebElementEntity>

@@ -7,12 +7,21 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value>//button[@class='mega-menu-sidebar__item-title']</value>
       </entry>
       <entry>
          <key>XPATH</key>
          <value>//button[@class='mega-menu-sidebar__item-title']</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//button[@class='mega-menu-sidebar__item-title']</value>
+      <webElementGuid>7aa30aa0-bfc9-4d3c-934d-73f2c5136c9d</webElementGuid>
+   </webElementProperties>
 </WebElementEntity>

@@ -5,6 +5,8 @@
 
 import java.util.List
 
+import com.kms.katalon.core.testobject.TestObject
+
 import com.kms.katalon.core.context.TestSuiteContext
 
 
@@ -186,6 +188,33 @@ def static "utility.Utility.checkIfElementExist"(
 }
 
 
+def static "utility.Utility.addXpathToTestObject"(
+    	Object xpath	) {
+    (new utility.Utility()).addXpathToTestObject(
+        	xpath)
+}
+
+
+def static "utility.Utility.switchToIframeByXpath"(
+    	Object xpath	) {
+    (new utility.Utility()).switchToIframeByXpath(
+        	xpath)
+}
+
+
+def static "utility.Utility.findWebElements"(
+    	Object testObject	
+     , 	int timedOut	) {
+    (new utility.Utility()).findWebElements(
+        	testObject
+         , 	timedOut)
+}
+
+
+def static "utility.Utility.clickOnObjectusingJavaScript"(
+    	TestObject testObject	) {
+    (new utility.Utility()).clickOnObjectusingJavaScript(
+        	testObject)
 def static "utility.Utility.scrollToVerifyElementVisiblity"(
     	Object testObjectRelativeId	) {
     (new utility.Utility()).scrollToVerifyElementVisiblity(
