@@ -215,6 +215,10 @@ def static "utility.Utility.clickOnObjectusingJavaScript"(
     	TestObject testObject	) {
     (new utility.Utility()).clickOnObjectusingJavaScript(
         	testObject)
+def static "utility.Utility.scrollToVerifyElementVisiblity"(
+    	Object testObjectRelativeId	) {
+    (new utility.Utility()).scrollToVerifyElementVisiblity(
+        	testObjectRelativeId)
 }
 
 

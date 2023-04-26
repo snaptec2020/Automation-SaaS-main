@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Multi site dropdown menu</name>
+   <name>SignUp Button</name>
    <tag></tag>
-   <elementGuidId>bcf7a9e4-7355-4f1e-9334-baf1f047569d</elementGuidId>
+   <elementGuidId>9cc60b9b-103c-4576-b718-c9064dfc08ad</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='store-container']//div[@id='storeTriggerDropdownMenuButton']</value>
+         <value></value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value>//div
-</value>
+         <value>//div[normalize-space()='اشتراك' or normalize-space()='Sign Up']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -22,8 +21,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//div
-</value>
-      <webElementGuid>68dce8fe-a3e1-454c-a696-4388c255d5fe</webElementGuid>
+      <value>//div[normalize-space()='اشتراك' or normalize-space()='Sign Up']</value>
+      <webElementGuid>8f933210-99bf-4101-80d4-382ceff5ea00</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

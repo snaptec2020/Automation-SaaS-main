@@ -14,43 +14,19 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import com.kms.katalon.entity.global.GlobalVariableEntity as GlobalVariableEntity
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate to Sgin in'), [:], FailureHandling.STOP_ON_FAILURE)
 
-//Random randomNumberforProduct = new Random();
+WebUI.callTestCase(findTestCase('FE/Sign up TC/General Actions Sign up/Navigate to Sign up page'), [:], FailureHandling.STOP_ON_FAILURE)
 
-//int elementIndex;
+switch (GlobalVariable.RunningMode) {
+    case '1':
+    case '2':
+        WebUI.click(findTestObject('login page/email page/Select e-mail Way'))
 
-
-	WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Cart is filled'), [:], FailureHandling.STOP_ON_FAILURE)
-	
-	
-	//WebUI.scrollToElement(findTestObject('Object Repository/Cart/Product in item container'), 0)
-	
-	
-	//WebUI.scrollToPosition(400, 450);
-	
-	//WebUI.scrollToElement(findTestObject('Object Repository/Cart/Remove product from cart'), 0)
-	WebUI.click(findTestObject('Object Repository/Cart/Remove product from cart'))
-	/*List Items = CustomKeywords.'cart.removeItem.getProductsInCart'()
-
-
-	if (Items.size() == 0) {
-		WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)
-	}
-else {
-elementIndex = Math.abs(randomNumberforProduct.nextInt(Items.size() - 1))
-
-CustomKeywords.'cart.removeItem.getSpecifiedIteminThecart'(1, Items)*/
-
-
-
-
-
-
-
-
-
-
+        break
+}
 

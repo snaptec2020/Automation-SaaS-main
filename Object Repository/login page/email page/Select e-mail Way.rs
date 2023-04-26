@@ -7,8 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='styles_tabId__xBeUL styles_tabActive___e_Hb']
-</value>
+         <value>//div[starts-with(@class,'styles_tabId__')][text()='عنوان البريد الإلكتروني' or text()='Email address']</value>
       </entry>
       <entry>
          <key>BASIC</key>
