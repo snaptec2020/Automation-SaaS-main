@@ -29,4 +29,9 @@
       <initValue>'https://backend.ajstore.com/admin_15cfht/'</initValue>
       <name>BE_URL</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'test qa'</initValue>
+      <name>CustomerName</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

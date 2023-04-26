@@ -387,10 +387,9 @@ def orderDetailsText =OrderDetailsElement.getText()
 
 println (orderDetailsText)
 def orderNumber= orderDetailsText.findAll('\\d+').get(0)
-println (orderNumber)
 
 //remove the order
-
+WebUI.delay(2)
 WebUI.switchToWindowIndex(currentTab + 1)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Sales'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Sales_orders'))
@@ -422,7 +421,7 @@ if (searchResultElm.size().equals(1)) {
 		TestObject CustomerNameTO = new TestObject()
 		CustomerNameTO.addProperty('xpath', ConditionType.EQUALS, '//a[@target="_blank"]//span[text()="test qa"]')
 		WebElement CustomerNameElem = WebUiCommonHelper.findWebElement(CustomerNameTO, 30)
-		if(CustomerNameElem.getText().equals("test qa")) {
+		if(CustomerNameElem.getText().equals(GlobalVariable.CustomerName)) {
 			TestObject CancelButtonTO = new TestObject()
 			CancelButtonTO.addProperty('xpath', ConditionType.EQUALS, '//button[@id="order-view-cancel-button"]')
 			WebElement CancelButtonElem = WebUiCommonHelper.findWebElement(CancelButtonTO, 30)
@@ -437,5 +436,7 @@ if (searchResultElm.size().equals(1)) {
 	
 	
 }
+
+WebUI.delay(5)
 WebUI.closeBrowser()
 
