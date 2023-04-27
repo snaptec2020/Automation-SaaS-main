@@ -29,8 +29,11 @@ import java.util.List
 import org.openqa.selenium.By
 import org.openqa.selenium.WebElement
 import internal.GlobalVariable
-
-
+import utility.Utility
+/*------------------------------------------------------------
+ * 
+ * This class to handle the product functionalities like add to cart
+ */
 
 public class productsFromCatalog {
 	TestObject tb=new TestObject();
@@ -38,12 +41,14 @@ public class productsFromCatalog {
 	Random randomNumberforProduct = new Random()
 	String objText = ""
 	def catalogComp = new catlogComponants()
+	def utilityFunctions = new Utility()
 	int elementIndex = 0
+
 	@Keyword
 	def getProducts() {
-		List Products = WebUI.findWebElements(findTestObject('Object Repository/Products/List of products'),30)
+		List Products = utilityFunctions.findWebElements('Object Repository/Products/List of products',30)//WebUI.findWebElements(findTestObject('Object Repository/Products/List of products'),30)
 
-
+		
 		return Products
 	}
 
@@ -59,7 +64,7 @@ public class productsFromCatalog {
 	def getinStockProduct() {
 
 
-		List inStockProducts = WebUI.findWebElements(findTestObject('Object Repository/Products/Product container in page'),30)
+		List inStockProducts = utilityFunctions.findWebElements('Object Repository/Products/Product container in page',30)//WebUI.findWebElements(findTestObject('Object Repository/Products/Product container in page'),30)
 
 
 		return inStockProducts
@@ -99,10 +104,10 @@ public class productsFromCatalog {
 			if(elementIndexproduct==0) {
 				elementIndexproduct=1
 			}
-			tb.addProperty('xpath', ConditionType.EQUALS, "(//button[text() = 'أضف إلى السلة' or text() ='Add to Cart']//parent::div//parent::div[@class='styles_bottomContainer__Fvu6h']//parent::div[@class='styles_productItem__YY5Bs']//p)["+elementIndexproduct+"]")
-
-			WebElement element = WebUiCommonHelper.findWebElement(tb,30)
-			WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
+			//tb.addProperty('xpath', ConditionType.EQUALS, "(//button[text() = 'أضف إلى السلة' or text() ='Add to Cart']//parent::div//parent::div[@class='styles_bottomContainer__Fvu6h']//parent::div[@class='styles_productItem__YY5Bs']//p)["+elementIndexproduct+"]")
+			utilityFunctions.clickOnObjectusingJavaScript(utilityFunctions.addXpathToTestObject("(//button[text() = 'أضف إلى السلة' or text() ='Add to Cart']//parent::div//parent::div[@class='styles_bottomContainer__Fvu6h']//parent::div[@class='styles_productItem__YY5Bs']//p)["+elementIndexproduct+"]"))
+			//WebElement element = WebUiCommonHelper.findWebElement(tb,30)
+			//WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
 
 		}
 
@@ -149,9 +154,9 @@ public class productsFromCatalog {
 				elementIndexproduct=1
 			}
 			//KeywordUtil.logInfo("AAAAAAAAAAAAAAAAAAAAAAAAAAAA\t"+elementIndexproduct.toString())
-			tb.addProperty('xpath', ConditionType.EQUALS, "(//button[text() = 'أضف إلى السلة' or text() ='Add to Cart']//parent::div//parent::div[@class='styles_bottomContainer__Fvu6h']//parent::div[@class='styles_productItem__YY5Bs']//p)["+elementIndexproduct+"]")
-
-			objText = WebUI.getText(tb)
+			//tb.addProperty('xpath', ConditionType.EQUALS, "(//button[text() = 'أضف إلى السلة' or text() ='Add to Cart']//parent::div//parent::div[@class='styles_bottomContainer__Fvu6h']//parent::div[@class='styles_productItem__YY5Bs']//p)["+elementIndexproduct+"]")
+			
+			objText = WebUI.getText(utilityFunctions.addXpathToTestObject("(//button[text() = 'أضف إلى السلة' or text() ='Add to Cart']//parent::div//parent::div[@class='styles_bottomContainer__Fvu6h']//parent::div[@class='styles_productItem__YY5Bs']//p)["+elementIndexproduct+"]"))
 			if(objText.length()<=1) {
 				//KeywordUtil.logInfo("BBBBBBBBBBBBBBBBBBBBBBBBBB\t"+objText)
 				getSpecifiedinStockProductsText()
@@ -172,13 +177,14 @@ public class productsFromCatalog {
 
 	@Keyword
 	def getSpecifiedinStockProductsFromOnePage(int elementIndex,List productList ) {
-		tb.addProperty('xpath', ConditionType.EQUALS, "//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')]["+elementIndex+"]")
-
+		//tb.addProperty('xpath', ConditionType.EQUALS, "//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')]["+elementIndex+"]")
+		tb = utilityFunctions.addXpathToTestObject("//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')]["+elementIndex+"]")
 		//def product = productList.get(elementIndex).cl
 		//KeywordUtil.logInfo("***************************\t"+product.toString())
 		WebUI.waitForElementClickable(tb, 0)
-		WebElement element = WebUiCommonHelper.findWebElement(tb,30)
-		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
+		utilityFunctions.clickOnObjectusingJavaScript(tb)
+		//WebElement element = WebUiCommonHelper.findWebElement(tb,30)
+		//WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
 		//productList.get(elementIndex).click()
 	}
 
@@ -326,9 +332,10 @@ public class productsFromCatalog {
 	@Keyword
 	def configurableProduct() {
 		//TO DO: Search for another key types of configurations
-		tb.addProperty('xpath', ConditionType.EQUALS, '//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')]')
+		//tb.addProperty('xpath', ConditionType.EQUALS, '//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')]')
+		 
 
-		List genralDropDowns = WebUI.findWebElements(tb, 30)
+		List genralDropDowns = WebUI.findWebElements(utilityFunctions.addXpathToTestObject('//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')]'), 30)
 		if (genralDropDowns.size()!=0) {
 
 
@@ -394,7 +401,8 @@ public class productsFromCatalog {
 			KeywordUtil.markPassed("Trying to Get Configurable product")
 			WebUI.scrollToElement(findTestObject('Object Repository/Products/Product content'), 0, FailureHandling.STOP_ON_FAILURE)
 			configurableProduct()
-			tb.addProperty('xpath', ConditionType.EQUALS, "//*[@class='product-content__button-wrapper']//button[@class='product-content__cart']")
+			tb = utilityFunctions.addXpathToTestObject("//*[@class='product-content__button-wrapper']//button[@class='product-content__cart']")
+			//tb.addProperty('xpath', ConditionType.EQUALS, "//*[@class='product-content__button-wrapper']//button[@class='product-content__cart']")
 			if(WebUI.verifyElementClickable(tb)) {
 				WebUI.click(tb)
 				WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
@@ -412,10 +420,11 @@ public class productsFromCatalog {
 			elementIndexproduct=1
 		}
 		def currentURL = WebUI.getUrl()
-		tb.addProperty('xpath', ConditionType.EQUALS, "(//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]")
-
-		WebElement element = WebUiCommonHelper.findWebElement(tb,30)
-		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
+		//tb.addProperty('xpath', ConditionType.EQUALS, "(//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]")
+		
+		utilityFunctions.clickOnObjectusingJavaScript(utilityFunctions.addXpathToTestObject("(//div[starts-with(@class,'styles_productItem__')]//button[starts-with(@class,'styles_atcButton__')][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]"))
+		//WebElement element = WebUiCommonHelper.findWebElement(tb,30)
+		//WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
 		WebUI.delay(5)
 		checkOnAddToStoreClickable(currentURL)
 	}

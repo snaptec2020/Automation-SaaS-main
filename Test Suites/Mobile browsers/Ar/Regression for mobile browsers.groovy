@@ -15,6 +15,7 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.entity.global.GlobalVariableEntity
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 
 import internal.GlobalVariable as GlobalVariable
@@ -23,7 +24,8 @@ import com.kms.katalon.core.annotation.SetUp
 import com.kms.katalon.core.annotation.SetupTestCase
 import com.kms.katalon.core.annotation.TearDown
 import com.kms.katalon.core.annotation.TearDownTestCase
-
+import com.kms.katalon.core.annotation.BeforeTestSuite
+import internal.GlobalVariable as GlobalVariable
 /**
  * Some methods below are samples for using SetUp/TearDown in a test suite.
  */
@@ -31,6 +33,7 @@ import com.kms.katalon.core.annotation.TearDownTestCase
 /**
  * Setup test suite environment.
  */
+
 @SetUp(skipped = true) // Please change skipped to be false to activate this method.
 def setUp() {
 	// Put your code here.
