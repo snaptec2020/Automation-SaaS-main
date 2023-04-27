@@ -114,3 +114,5 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Cart/Add to cart'
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Cart/view cart'))
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Cart/view cart'))
+
+WebUI.closeBrowser()

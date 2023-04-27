@@ -11,7 +11,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'581492572'</initValue>
+      <initValue>'566640965'</initValue>
       <name>FE_Tel</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -31,7 +31,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'test qa'</initValue>
+      <initValue>'Dev Testing'</initValue>
       <name>CustomerName</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -399,7 +399,7 @@ if (searchResultElm.size().equals(1)) {
     if (OrderHeaderText.equals('#' + orderNumber)) {
         TestObject CustomerNameTO = new TestObject()
 
-        CustomerNameTO.addProperty('xpath', ConditionType.EQUALS, '//a[@target="_blank"]//span[text()="test qa"]')
+        CustomerNameTO.addProperty('xpath', ConditionType.EQUALS, '//a[@target="_blank"]//span[text()="' + GlobalVariable.CustomerName + '"]')
 
         WebElement CustomerNameElem = WebUiCommonHelper.findWebElement(CustomerNameTO, 30)
 
