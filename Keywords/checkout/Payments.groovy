@@ -60,7 +60,7 @@ public class Payments {
 	}
 	def placeOrder()
 	{
-		
+
 		tb.addProperty('xpath', ConditionType.EQUALS, "//div[contains(@class,'payment-method v2')]/following-sibling::div")
 		def nonVisa = WebUiCommonHelper.findWebElement(tb,30).getAttribute("class")
 		//KeywordUtil.logInfo(nonVisa.toString())
@@ -90,8 +90,8 @@ public class Payments {
 			WebUI.sendKeys(tb, '0226')
 			WebUI.switchToDefaultContent()
 			//WebUI.sendKeys(findTestObject('Object Repository/Check Out/Expire Data Card Field'), '0226')
-			
-			
+
+
 			//WebElement element = WebUiCommonHelper.findWebElement(tb,30)
 			//WebUI.executeJavaScript("arguments[0].value='4440000009900010'", Arrays.asList(element))
 			//WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/Card Number Field'), 10)

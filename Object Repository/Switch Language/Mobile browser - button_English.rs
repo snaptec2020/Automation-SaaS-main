@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>button_English</name>
+   <name>Mobile browser - button_English</name>
    <tag></tag>
-   <elementGuidId>12e3f057-590f-4b7c-a008-4edf13ac328f</elementGuidId>
+   <elementGuidId>77e8016f-69b8-495c-8dfc-cb3f45259872</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='language-container']//button[@class='language-trigger']</value>
+         <value>//div[@class='language-switcher']//button[@class='language-trigger']</value>
       </entry>
       <entry>
          <key>CSS</key>
@@ -21,7 +21,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>button</value>
-      <webElementGuid>e483589f-c209-4a5c-aa7b-e646c6005f3a</webElementGuid>
+      <webElementGuid>35c44430-ebbd-4455-a099-8ebab13947fd</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -29,7 +29,7 @@
       <name>class</name>
       <type>Main</type>
       <value>dropdown-item drop-item </value>
-      <webElementGuid>5f6a284c-aafe-4003-8a90-e2036467d491</webElementGuid>
+      <webElementGuid>7cf77948-54ae-459d-8583-3a44300dc3ed</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -37,7 +37,7 @@
       <name>text</name>
       <type>Main</type>
       <value>English</value>
-      <webElementGuid>877d8468-d737-48d4-9019-a8ffdf37d50e</webElementGuid>
+      <webElementGuid>48ccfd6c-8b8f-447e-80b6-7fdf12246d59</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -45,7 +45,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;__next&quot;)/div[@class=&quot;styles_headerContainer__SUhQl&quot;]/div[@class=&quot;header&quot;]/div[@class=&quot;topbar&quot;]/div[@class=&quot;topbar-content&quot;]/div[@class=&quot;desktop-content&quot;]/div[@class=&quot;right-content&quot;]/div[@class=&quot;language-container&quot;]/div[@class=&quot;dropdown language-trigger show&quot;]/div[@class=&quot;dropdown-menu show&quot;]/button[@class=&quot;dropdown-item drop-item&quot;]</value>
-      <webElementGuid>c366bcbc-2062-4fbf-9ff9-9cb61d50a159</webElementGuid>
+      <webElementGuid>8eb5e04d-2413-4db6-b578-4f56470075be</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -53,7 +53,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='__next']/div[4]/div/div/div/div/div/div[2]/div/div[2]/button[2]</value>
-      <webElementGuid>81cf1639-771a-4bd2-9ea3-6f9604b236ae</webElementGuid>
+      <webElementGuid>c84e93e7-14d0-48e2-ba46-4b4985b43c68</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -61,7 +61,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Arabic'])[4]/following::button[1]</value>
-      <webElementGuid>ba046409-ace0-447b-9f4d-1f1c270fd7b9</webElementGuid>
+      <webElementGuid>ac8098af-fde7-4292-87f4-98a3851f4aeb</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -69,7 +69,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Arabic'])[3]/following::button[2]</value>
-      <webElementGuid>e90a6606-32ad-4d52-b180-8b0d5abf1bac</webElementGuid>
+      <webElementGuid>951dd995-1785-4104-8a8f-763aad5d3734</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -77,7 +77,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='بحث'])[1]/preceding::button[1]</value>
-      <webElementGuid>5749ebae-a76a-4c85-875c-aa9c9ac19213</webElementGuid>
+      <webElementGuid>13c492cc-5b5f-4413-8f7d-39774d3b2d6d</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -85,7 +85,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[@class='language-container']//span[@class='top-bar__item'][normalize-space()='English']</value>
-      <webElementGuid>cc7494c6-f5d9-4602-94b3-f37f1ad897e0</webElementGuid>
+      <webElementGuid>198b50dc-8eb0-4f7f-89fb-59024d9f13fc</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -93,6 +93,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//div[@class='dropdown-menu show']//button[contains(@class,'dropdown-item drop-item')][normalize-space()='English']</value>
-      <webElementGuid>82d2bc01-0778-4830-a39e-1d9595441ce9</webElementGuid>
+      <webElementGuid>0c4bde37-1f29-4777-8179-165afa684414</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

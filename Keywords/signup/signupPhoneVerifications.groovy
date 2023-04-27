@@ -32,11 +32,11 @@ public class signupPhoneVerifications {
 		signUpObj.addProperty('xpath', ConditionType.EQUALS, "//p[contains(@class,'error-message')]")
 		if(WebUI.getText(signUpObj)==expectedMessage) {
 			KeywordUtil.markPassed("this\t"+expectedMessage+"\t=\t"+WebUI.getText(signUpObj))
-			
+
 		}else {
 			KeywordUtil.markFailed("this\t"+expectedMessage+"\t!=\t"+WebUI.getText(signUpObj))
 		}
-		
+
 		//WebUI.verifyElementVisible(findTestObject('Sign up Page/Sign up By email/Error message by email'))
 		//WebUI.verifyElementVisible(signUpObj)
 	}

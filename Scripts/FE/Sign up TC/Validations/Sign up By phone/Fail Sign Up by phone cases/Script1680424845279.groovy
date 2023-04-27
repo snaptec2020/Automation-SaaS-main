@@ -54,8 +54,9 @@ for (def rowData : td.allData) {
     lastname = findTestData('Signup phone TD').getValue(2, rowNumber)
 
     if (phoneSize == 10) {
-        phoneNumber = CustomKeywords.'generalactions.generalStrings.generatePhoneWithConditions'(9, 1) //KeywordUtil.logInfo(rowData.size().toString())
-        //KeywordUtil.logInfo(rowNumber.toString())
+        phoneNumber = CustomKeywords.'generalactions.generalStrings.generatePhoneWithConditions'(9, 1 //KeywordUtil.logInfo(rowData.size().toString())
+            //KeywordUtil.logInfo(rowNumber.toString())
+            )
     } else {
         phoneNumber = CustomKeywords.'generalactions.generalStrings.generatePhoneWithConditions'(phoneSize, 0)
 
@@ -82,9 +83,9 @@ for (def rowData : td.allData) {
         }
         
         CustomKeywords.'signup.signupPhoneVerifications.phoneVerificationMessage'(findTestData('Signup phone TD').getValue(
-                messageColumn, rowNumber))
-    } //WebUI.delay(3)
-    else {
+                messageColumn, rowNumber) //WebUI.delay(3)
+            )
+    } else {
         CustomKeywords.'signup.signupPhoneVerifications.verificationElementPhoneSignUp'()
     }
 }

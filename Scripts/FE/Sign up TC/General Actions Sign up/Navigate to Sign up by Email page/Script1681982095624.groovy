@@ -18,7 +18,7 @@ import com.kms.katalon.entity.global.GlobalVariableEntity as GlobalVariableEntit
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate to Sgin in'), [:], FailureHandling.STOP_ON_FAILURE)
+//WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate to Sgin in'), [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('FE/Sign up TC/General Actions Sign up/Navigate to Sign up page'), [:], FailureHandling.STOP_ON_FAILURE)
 
