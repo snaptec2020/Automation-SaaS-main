@@ -47,6 +47,13 @@
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
+      <guid>41271c9d-4976-48c4-bc64-9578294791ef</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Helpdesk/AjStore/CheckPaymentCredit</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
       <guid>76fdb4be-601a-40dd-82eb-a16e05d532ab</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

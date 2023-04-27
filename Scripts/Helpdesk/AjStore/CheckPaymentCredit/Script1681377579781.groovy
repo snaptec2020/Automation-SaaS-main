@@ -272,8 +272,9 @@ if (totalValue < 99) {
 
     numberOfItemsElement.sendKeys(neededQty.toString())
 
-    numberOfItemsElement.sendKeys(Keys.chord(Keys.ENTER) //   
-        ) //remove and select another product (need to remove and seach again)
+    numberOfItemsElement.sendKeys(Keys.chord(Keys.ENTER //   
+            ) //remove and select another product (need to remove and seach again)
+        )
 } else if (totalValue > 2500) {
 }
 
@@ -338,77 +339,87 @@ if (Paymentlist.size() != 4) {
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/PaymentMethod_4_Text'))
 }
 
-
 //Order with Credit 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/PaymentMethod_3_Text'))
+
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/FinishPayment'))
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/credit/MainForm'),10)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/credit/MainForm'), 10)
+
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/credit/MainForm'))
+
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/credit/CardNumberInputFrame'))
 
-
-
 WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AjStore/credit/CardNumberInputFrame'), 10)
+
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/credit/CardNumberInput'))
+
 WebUI.switchToDefaultContent()
 
 WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AjStore/credit/CardExpiryFrame'), 10)
+
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/credit/CardExpiryInput'))
+
 WebUI.switchToDefaultContent()
 
 WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AjStore/credit/CardCVVFrame'), 10)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/credit/CardCVVInput'))
-WebUI.switchToDefaultContent()
 
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/credit/CardCVVInput'))
+
+WebUI.switchToDefaultContent()
 
 WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AjStore/credit/CardNumberInputFrame'), 10)
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/credit/CardNumberInput'), "4201322031914739")
+
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/credit/CardNumberInput'), '4201322031914739')
+
 WebUI.switchToDefaultContent()
 
 WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AjStore/credit/CardExpiryFrame'), 10)
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/credit/CardExpiryInput'), "1227")
+
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/credit/CardExpiryInput'), '1227')
+
 WebUI.switchToDefaultContent()
 
 WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AjStore/credit/CardCVVFrame'), 10)
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/credit/CardCVVInput'), "274")
+
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/credit/CardCVVInput'), '274')
+
 WebUI.switchToDefaultContent()
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/credit/CreditSubmit'))
 
-
-
-
 WebUI.waitForPageLoad(10)
+
 WebUI.delay(20)
-WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/AjStore/credit/MainOTPFrame'),30)
+
+WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/AjStore/credit/MainOTPFrame'), 30)
+
 String url = WebUI.getUrl()
 
 WebUI.verifyMatch(url, 'https://api.checkout.com/.*', true)
+
 WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AjStore/credit/MainOTPFrame'), 10)
+
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/credit/CheckoutOTP'))
+
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/credit/CheckoutConfirm'))
 
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/credit/CheckoutOTP'), '0000')
 
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/credit/CheckoutOTP'), "0000")
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/credit/CheckoutConfirm'))
 
-
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/credit/WrongOTPErrorText'))
-
-
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/credit/CheckoutCancel'))
 
 //WebUI.waitForAlert(3)
 //WebUI.acceptAlert()
 ////////////////////////////////////////////////////////////////////////
-if(WebUI.verifyAlertPresent(5)) {
-	WebUI.delay(2)
-	WebUI.acceptAlert()
+if (WebUI.verifyAlertPresent(5)) {
+    WebUI.delay(2)
+
+    WebUI.acceptAlert()
 }
-
-
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/ErrorAfterPayment_Tamara'), 20)
 
@@ -422,7 +433,7 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Ch
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/ErrorAfterPayment_Tamara'))
 
-WebElement orderDetailsElement = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/ErrorAfterPayment_Text_OrderDetails'),
+WebElement orderDetailsElement = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/ErrorAfterPayment_Text_OrderDetails'), 
     10)
 
 def orderDetailsText = orderDetailsElement.getText()
@@ -454,7 +465,7 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Sales_Order_pa
 
 TestObject searchResultTO = new TestObject()
 
-searchResultTO.addProperty('xpath', ConditionType.EQUALS, ('//div[@class="data-grid-cell-content" and text()="' + orderNumber) +
+searchResultTO.addProperty('xpath', ConditionType.EQUALS, ('//div[@class="data-grid-cell-content" and text()="' + orderNumber) + 
     '"]')
 
 List searchResultElm = WebUiCommonHelper.findWebElements(searchResultTO, 10)
@@ -475,7 +486,7 @@ if (searchResultElm.size().equals(1)) {
 
         TestObject CustomerNameTO = new TestObject()
 
-        CustomerNameTO.addProperty('xpath', ConditionType.EQUALS, ('//a[@target="_blank"]//span[text()="' + GlobalVariable.CustomerName) +
+        CustomerNameTO.addProperty('xpath', ConditionType.EQUALS, ('//a[@target="_blank"]//span[text()="' + GlobalVariable.CustomerName) + 
             '"]')
 
         WebElement CustomerNameElem = WebUiCommonHelper.findWebElement(CustomerNameTO, 30)
@@ -489,7 +500,3 @@ if (searchResultElm.size().equals(1)) {
 WebUI.delay(5)
 
 WebUI.closeBrowser()
-
-
-
-
