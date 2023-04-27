@@ -56,6 +56,8 @@ public class Utility {
 	def clickOnObjectusingJavaScript(TestObject testObject) {
 		WebElement element = WebUiCommonHelper.findWebElement(testObject,30)
 		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
+	}
+	@Keyword
 	def scrollToVerifyElementVisiblity(def testObjectRelativeId) {
 		try {
 
