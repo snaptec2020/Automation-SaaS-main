@@ -90,3 +90,5 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Se
 // Do Searcg
 
 //Check on results
+
+WebUI.closeBrowser()
