@@ -373,7 +373,8 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Ta
 
 TestObject TabbyRequiredPaymentTO = new TestObject()
 
-TabbyRequiredPaymentTO.addProperty('xpath', ConditionType.EQUALS, '//div[@data-test="order.amount"]')
+//TabbyRequiredPaymentTO.addProperty('xpath', ConditionType.EQUALS, '//div[@data-test="order.amount"]')
+TabbyRequiredPaymentTO.addProperty('xpath', ConditionType.EQUALS, '//div[text()="قيمة الطلب"]//following-sibling::div')
 
 WebElement TabbyRequiredPaymentElement = WebUI.findWebElement(TabbyRequiredPaymentTO, 10)
 
