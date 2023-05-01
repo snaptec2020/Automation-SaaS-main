@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='cart-items-container__header']</value>
+         <value>//div[@class='cart-items-container__header' or starts-with(@class,'styles_cartItemsContainer__')]</value>
       </entry>
       <entry>
          <key>BASIC</key>

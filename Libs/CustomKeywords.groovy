@@ -317,6 +317,22 @@ def static "generalactions.generalStrings.generatePhoneWithConditions"(
 }
 
 
+def static "generalactions.generalStrings.getRandomNumberBetweenOnetoTarget"(
+    	int targetNumber	) {
+    (new generalactions.generalStrings()).getRandomNumberBetweenOnetoTarget(
+        	targetNumber)
+}
+
+
+def static "generalactions.generalStrings.getRandomNumberBetweenAnytoAny"(
+    	int targetNumber	
+     , 	int firstNumber	) {
+    (new generalactions.generalStrings()).getRandomNumberBetweenAnytoAny(
+        	targetNumber
+         , 	firstNumber)
+}
+
+
 def static "signup.signupPhoneVerifications.phoneVerificationMessage"(
     	Object expectedMessage	) {
     (new signup.signupPhoneVerifications()).phoneVerificationMessage(

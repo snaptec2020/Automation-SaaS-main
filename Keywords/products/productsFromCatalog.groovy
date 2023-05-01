@@ -48,7 +48,7 @@ public class productsFromCatalog {
 	def getProducts() {
 		List Products = utilityFunctions.findWebElements('Object Repository/Products/List of products',30)//WebUI.findWebElements(findTestObject('Object Repository/Products/List of products'),30)
 
-		
+
 		return Products
 	}
 
@@ -155,7 +155,7 @@ public class productsFromCatalog {
 			}
 			//KeywordUtil.logInfo("AAAAAAAAAAAAAAAAAAAAAAAAAAAA\t"+elementIndexproduct.toString())
 			//tb.addProperty('xpath', ConditionType.EQUALS, "(//button[text() = 'أضف إلى السلة' or text() ='Add to Cart']//parent::div//parent::div[@class='styles_bottomContainer__Fvu6h']//parent::div[@class='styles_productItem__YY5Bs']//p)["+elementIndexproduct+"]")
-			
+
 			objText = WebUI.getText(utilityFunctions.addXpathToTestObject("(//button[text() = 'أضف إلى السلة' or text() ='Add to Cart']//parent::div//parent::div[@class='styles_bottomContainer__Fvu6h']//parent::div[@class='styles_productItem__YY5Bs']//p)["+elementIndexproduct+"]"))
 			if(objText.length()<=1) {
 				//KeywordUtil.logInfo("BBBBBBBBBBBBBBBBBBBBBBBBBB\t"+objText)
@@ -283,7 +283,7 @@ public class productsFromCatalog {
 
 
 
-		List OutOfStockProducts = WebUI.findWebElements(findTestObject('Object Repository/Products/Out of Stock products'),30)
+		List OutOfStockProducts = WebUI.findWebElements(findTestObject('Object Repository/Products/Out of Stock products'),10)
 		return OutOfStockProducts;
 	}
 
@@ -333,7 +333,7 @@ public class productsFromCatalog {
 	def configurableProduct() {
 		//TO DO: Search for another key types of configurations
 		//tb.addProperty('xpath', ConditionType.EQUALS, '//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')]')
-		 
+
 
 		List genralDropDowns = WebUI.findWebElements(utilityFunctions.addXpathToTestObject('//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')]'), 30)
 		if (genralDropDowns.size()!=0) {
@@ -421,7 +421,7 @@ public class productsFromCatalog {
 		}
 		def currentURL = WebUI.getUrl()
 		//tb.addProperty('xpath', ConditionType.EQUALS, "(//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]")
-		
+
 		utilityFunctions.clickOnObjectusingJavaScript(utilityFunctions.addXpathToTestObject("(//div[starts-with(@class,'styles_productItem__')]//button[starts-with(@class,'styles_atcButton__')][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]"))
 		//WebElement element = WebUiCommonHelper.findWebElement(tb,30)
 		//WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
