@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "EBA3706F96BC3BDB9E25FD71583834BD",
+  "keywordFileContentHash": "192A4E5C97035FAEE061E27E2F95C768",
   "keywordClasses": [
     {
       "name": "products.productsFromCatalog",
@@ -90,6 +90,11 @@
         },
         {
           "name": "getinStockProductFromOnePage",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "OpenRandomProduct",
           "parameters": [],
           "javadoc": ""
         },

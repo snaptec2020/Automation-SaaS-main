@@ -180,59 +180,33 @@ while (removeProductFromCartElements.size() != 0) {
     }
 }
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo2'))
 
-List prod = CustomKeywords.'products.productsFromCatalog.getinStockProductFromOnePage'()
 
-Random randomNumberforProduct = new Random()
 
-def elementIndexproduct = Math.abs(randomNumberforProduct.nextInt(prod.size()))
+//Open Random Product
+CustomKeywords.'products.productsFromCatalog.OpenRandomProduct'()
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo'), 10)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Cart/Add to cart'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Cart/Add to cart'))
 
-def currentURL = WebUI.getUrl()
-
-TestObject tb = new TestObject()
-
-tb.addProperty('xpath', ConditionType.EQUALS, ('(//button[contains(text(),\'Add to Cart\') or contains(text(),\'أضف إلى السلة\')])[' + 
-    elementIndexproduct) + ']')
-
-WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
-
-WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
-
-if (WebUI.getUrl() == currentURL) {
-    WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
-} else {
-    KeywordUtil.markPassed('Trying to Get Configurable product')
-
-    tb.addProperty('xpath', ConditionType.EQUALS, '//section[starts-with(@class,\'productFullDetail-groupOption-\')]//div[starts-with(@class,\'option-root-\')]')
-
-    List genralDropDowns = WebUI.findWebElements(tb, 30)
-
-    if (genralDropDowns.size() != 0) {
-        for (int i = 1; i <= genralDropDowns.size(); i++) {
-            tb.addProperty('xpath', ConditionType.EQUALS, ('(//section[starts-with(@class,\'productFullDetail-groupOption-\')]//div[starts-with(@class,\'option-root-\')])[' + 
-                i) + ']//div//button[not( @disabled)]')
-
-            WebUI.click(tb)
-        }
-    }
+// Check if qty accepted
+def trials=1
+TestObject errorQTY_TO = new TestObject()
+errorQTY_TO.addProperty("xpath",ConditionType.EQUALS,'//*[contains(text(),"Could not add the product" ) and contains(text(), "The requested qty is not available" )]')
+List<WebElement> errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
+while (errorQTY_Element.size()>0 && trials<10) {
+	//Open Random Product
+	trials = trials+1
+	CustomKeywords.'products.productsFromCatalog.OpenRandomProduct'()
+	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo'), 10)
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Cart/Add to cart'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Cart/Add to cart'))
+	errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
+	if(trials>=10) {
+		assert false,"Could not find available products"
+	}
 }
 
-///// Save Data in variable gettext getSKU
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo'), 10)
-
-//WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search icon'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search icon'))
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Feild'))
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Bar context'))
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Cart/Add to cart'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Cart/Add to cart'))
 
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Cart/view cart'))
 
@@ -411,14 +385,20 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/credit/CheckoutCo
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/credit/WrongOTPErrorText'))
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/credit/CheckoutCancel'))
-
+//WebUI.delay(3)
 //WebUI.waitForAlert(3)
 //WebUI.acceptAlert()
 ////////////////////////////////////////////////////////////////////////
-if (WebUI.verifyAlertPresent(5)) {
+if (WebUI.verifyAlertPresent(5,FailureHandling.OPTIONAL)) {
     WebUI.delay(2)
-
-    WebUI.acceptAlert()
+	if (WebUI.verifyAlertPresent(5,FailureHandling.OPTIONAL)) {
+		WebUI.acceptAlert()
+	}else {
+		WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/credit/CheckoutCancel'))
+		if (WebUI.verifyAlertPresent(5,FailureHandling.OPTIONAL)) {
+			WebUI.acceptAlert()
+		}
+	}
 }
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/ErrorAfterPayment_Tamara'), 20)

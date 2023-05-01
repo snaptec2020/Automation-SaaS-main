@@ -163,6 +163,47 @@ public class productsFromCatalog {
 		List listOfInStockProducts = WebUI.findWebElements(findTestObject('Object Repository/Products/Add to cart enabled button'),30)
 		return listOfInStockProducts
 	}
+	
+	@Keyword
+	def OpenRandomProduct(){
+		WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo2'))
+		
+		List prod = getinStockProductFromOnePage()
+		
+		Random randomNumberforProduct = new Random()
+		
+		def elementIndexproduct = Math.abs(randomNumberforProduct.nextInt(prod.size()))
+		
+		def currentURL = WebUI.getUrl()
+		
+		TestObject tb = new TestObject()
+		
+		tb.addProperty('xpath', ConditionType.EQUALS, ('(//button[contains(text(),\'Add to Cart\') or contains(text(),\'أضف إلى السلة\')])[' +
+			elementIndexproduct) + ']')
+		
+		WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
+		
+		WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
+		
+		if (WebUI.getUrl() == currentURL) {
+			WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
+		} else {
+			KeywordUtil.markPassed('Trying to Get Configurable product')
+		
+			tb.addProperty('xpath', ConditionType.EQUALS, '//section[starts-with(@class,\'productFullDetail-groupOption-\')]//div[starts-with(@class,\'option-root-\')]')
+		
+			List genralDropDowns = WebUI.findWebElements(tb, 30)
+		
+			if (genralDropDowns.size() != 0) {
+				for (int i = 1; i <= genralDropDowns.size(); i++) {
+					tb.addProperty('xpath', ConditionType.EQUALS, ('(//section[starts-with(@class,\'productFullDetail-groupOption-\')]//div[starts-with(@class,\'option-root-\')])[' +
+						i) + ']//div//button[not( @disabled)]')
+		
+					WebUI.click(tb)
+				}
+			}
+		}
+	}
 
 	@Keyword
 	def getSpecifiedinStockProductsFromOnePage(int elementIndex,List productList ) {

@@ -85,6 +85,11 @@ def static "products.productsFromCatalog.getinStockProductFromOnePage"() {
 }
 
 
+def static "products.productsFromCatalog.OpenRandomProduct"() {
+    (new products.productsFromCatalog()).OpenRandomProduct()
+}
+
+
 def static "products.productsFromCatalog.getSpecifiedinStockProductsFromOnePage"(
     	int elementIndex	
      , 	List productList	) {

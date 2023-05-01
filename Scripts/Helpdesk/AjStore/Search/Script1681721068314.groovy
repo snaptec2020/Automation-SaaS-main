@@ -22,7 +22,9 @@ import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webui.common.WebUiCommonHelper as WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword as WebUIAbstractKeyword
 import catalog.catlogComponants as catlogComponants
-import java.util.List as List
+import java.util.List
+
+import org.eclipse.persistence.jpa.jpql.parser.ConditionalTermBNF
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 
@@ -32,52 +34,25 @@ WebUI.maximizeWindow()
 
 WebUI.navigateToUrl(GlobalVariable.FE_URL)
 
-List prod = CustomKeywords.'products.productsFromCatalog.getinStockProductFromOnePage'()
-
-Random randomNumberforProduct = new Random()
-
-def elementIndexproduct = Math.abs(randomNumberforProduct.nextInt(prod.size()))
-
-def currentURL = WebUI.getUrl()
-
-TestObject tb = new TestObject()
-
-tb.addProperty('xpath', ConditionType.EQUALS, ('(//button[contains(text(),\'Add to Cart\') or contains(text(),\'أضف إلى السلة\')])[' + 
-    elementIndexproduct) + ']')
-
-WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
-
-WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
-
-if (WebUI.getUrl() == currentURL) {
-    WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
-} else {
-    KeywordUtil.markPassed('Trying to Get Configurable product')
-
-    tb.addProperty('xpath', ConditionType.EQUALS, '//section[starts-with(@class,\'productFullDetail-groupOption-\')]//div[starts-with(@class,\'option-root-\')]')
-
-    List genralDropDowns = WebUI.findWebElements(tb, 30)
-
-    if (genralDropDowns.size() != 0) {
-        for (int i = 1; i <= genralDropDowns.size(); i++) {
-            tb.addProperty('xpath', ConditionType.EQUALS, ('(//section[starts-with(@class,\'productFullDetail-groupOption-\')]//div[starts-with(@class,\'option-root-\')])[' + 
-                i) + ']//div//button[not( @disabled)]')
-
-            WebUI.click(tb)
-        }
-    }
-}
+//Open Random Product
+CustomKeywords.'products.productsFromCatalog.OpenRandomProduct'()
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo'), 10)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Cart/Add to cart'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Cart/Add to cart'))
 
 
 ///// Save Data in variable gettext getSKU
 
-
-
+def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/Product/productFullDetail-Name'))
+def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/Product/productFullDetail-sku'))
+def ProductURL = WebUI.getUrl().replace(GlobalVariable.FE_URL, "")
 
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo'), 10)
 
-//WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
+
+// Search By Title
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo2'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search icon'))
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search icon'))
@@ -85,10 +60,34 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search ico
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Feild'))
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Bar context'))
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Bar context'), ProductTitle)
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Bar context'), Keys.chord(Keys.ENTER))
+
+TestObject Productlink_TO=new TestObject()
+Productlink_TO.addProperty("xpath",ConditionType.EQUALS,'//a[@href="/' + ProductURL + '"]//h2[text()="' + ProductTitle + '"]')
+//WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
+WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
 
 
-// Do Searcg
+// Search By SKU
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo2'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search icon'))
 
-//Check on results
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search icon'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Feild'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Bar context'))
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Bar context'), ProductSKU)
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Bar context'), Keys.chord(Keys.ENTER))
+
+Productlink_TO=new TestObject()
+Productlink_TO.addProperty("xpath",ConditionType.EQUALS,'//a[@href="/' + ProductURL + '"]//h2[text()="' + ProductTitle + '"]')
+//WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
+WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
+
+
 
 WebUI.closeBrowser()
