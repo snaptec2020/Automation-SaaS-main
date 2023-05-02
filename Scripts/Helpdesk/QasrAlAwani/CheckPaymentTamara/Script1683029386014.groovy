@@ -323,10 +323,18 @@ if (Paymentlist.size() != 3) {
 
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/PaymentMethod_3_Text'))
 }
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentCity'))
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentCity'), "الرياض")
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentCity'),Keys.chord(Keys.ENTER))
 
 
 //Order with Tamara
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/PaymentMethod_2_Text'))
+WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/Step_1_Login'), 5)
+
+//WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/FinishPayment'), 10)
+//WebUI.scrollToPosition(0, element.getLocation().getY())
+
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/FinishPayment'))
 
