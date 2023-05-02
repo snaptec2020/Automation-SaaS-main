@@ -23,24 +23,24 @@ WebUI.maximizeWindow()
 
 WebUI.navigateToUrl(GlobalVariable.FE_URL)
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo'), 10)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo'), 10)
 
 
 
 //CustomKeywords.'customUtils.Util.getElementByXPath'("//button[contains(@class,'storeSwitcher-trigger-')]")
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Language'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Language'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Cart'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Cart'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Fav'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Fav'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Login'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Login'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Search'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Search'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Web header'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Web header'), FailureHandling.CONTINUE_ON_FAILURE)
 
 WebUI.verifyElementText(findTestObject('Object Repository/Helpdesk/AjStore/Page_/a_'), 'رجالي')
 
@@ -50,65 +50,65 @@ WebUI.verifyElementText(findTestObject('Object Repository/Helpdesk/AjStore/Page_
 
 WebUI.verifyElementText(findTestObject('Object Repository/Helpdesk/AjStore/Page_/a__1_2_3'), 'نسائي')
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/الأشمغه'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/الأشمغه'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/الغتر'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/الغتر'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/الأثواب'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/الأثواب'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/الملابس الداخلية'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/الملابس الداخلية'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click رجالي'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/click رجالي'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click شبابي'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/click شبابي'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click أطفال'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/click أطفال'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click نسائي'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/click نسائي'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click رجالي'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/click رجالي'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click الأشمغه'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/click الأشمغه'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click الغتر'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/click الغتر'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click الأثواب'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/click الأثواب'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click الملابس الداخليه'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/click الملابس الداخليه'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/الأشمغة العالمية'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/الأشمغة العالمية'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/المنتجات الشتوية'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/المنتجات الشتوية'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Click Logo'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Click Logo'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Main root'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Main root'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/منتجات الموسم'), 10)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/منتجات الموسم'), 10)
 
-WebUI.verifyElementVisible(findTestObject('Helpdesk/AjStore/Shared/منتجات الموسم'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject('Helpdesk/AjStore/FE/Shared/منتجات الموسم'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/الاكثر مبيعاً'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/الاكثر مبيعاً'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/المنتجات الجديده'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/المنتجات الجديده'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/اخترنا لك'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/اخترنا لك'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Helpdesk/AjStore/Shared/منتجات الموسم'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Helpdesk/AjStore/FE/Shared/منتجات الموسم'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Click الاكثر مبيعاً'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Click الاكثر مبيعاً'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/click المنتجات الجديدة'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/click المنتجات الجديدة'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/clickاخترنا لك'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/clickاخترنا لك'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/تصفح العروض'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/تصفح العروض'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Subscribe in footer'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Subscribe in footer'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Footer'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Footer'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Footer payment Logo'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Footer payment Logo'), FailureHandling.CONTINUE_ON_FAILURE)
 
 WebUI.closeBrowser()
 

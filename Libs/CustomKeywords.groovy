@@ -85,8 +85,13 @@ def static "products.productsFromCatalog.getinStockProductFromOnePage"() {
 }
 
 
-def static "products.productsFromCatalog.OpenRandomProduct"() {
-    (new products.productsFromCatalog()).OpenRandomProduct()
+def static "products.productsFromCatalog.OpenRandomProductAJStore"() {
+    (new products.productsFromCatalog()).OpenRandomProductAJStore()
+}
+
+
+def static "products.productsFromCatalog.OpenRandomProductQasr"() {
+    (new products.productsFromCatalog()).OpenRandomProductQasr()
 }
 
 

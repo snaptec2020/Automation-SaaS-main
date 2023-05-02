@@ -71,7 +71,7 @@
       <guid>7d2c9546-78ca-48c1-85c4-1edf0e3e535c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/AjStore/Search</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/QasrAlAwani/Search</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>

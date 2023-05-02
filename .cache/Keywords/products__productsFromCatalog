@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "192A4E5C97035FAEE061E27E2F95C768",
+  "keywordFileContentHash": "B6D953BBD95F01A23C4EF943836B6B8C",
   "keywordClasses": [
     {
       "name": "products.productsFromCatalog",
@@ -94,7 +94,12 @@
           "javadoc": ""
         },
         {
-          "name": "OpenRandomProduct",
+          "name": "OpenRandomProductAJStore",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "OpenRandomProductQasr",
           "parameters": [],
           "javadoc": ""
         },

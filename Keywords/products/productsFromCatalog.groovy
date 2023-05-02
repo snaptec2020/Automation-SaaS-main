@@ -165,10 +165,11 @@ public class productsFromCatalog {
 	}
 	
 	@Keyword
-	def OpenRandomProduct(){
-		WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo2'))
+	def OpenRandomProductAJStore(){
 		
-		List prod = getinStockProductFromOnePage()
+		
+//		List prod = getinStockProductFromOnePage()
+		List prod = WebUI.findWebElements(findTestObject('Object Repository/Products/Add to cart enabled button'),30)
 		
 		Random randomNumberforProduct = new Random()
 		
@@ -184,7 +185,6 @@ public class productsFromCatalog {
 		WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
 		
 		WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
-		
 		if (WebUI.getUrl() == currentURL) {
 			WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
 		} else {
@@ -203,6 +203,33 @@ public class productsFromCatalog {
 				}
 			}
 		}
+
+
+	}
+	
+	
+	@Keyword
+	def OpenRandomProductQasr(){
+		
+		
+//		List prod = getinStockProductFromOnePage()
+		TestObject items = new TestObject()
+		items.addProperty("xpath",ConditionType.EQUALS,'//a[contains(@class,"item-nameProduct-")]')
+		List prod = WebUI.findWebElements(items,30)
+		
+		Random randomNumberforProduct = new Random()
+		
+		def elementIndexproduct = Math.abs(randomNumberforProduct.nextInt(prod.size() - 1)) + 1 
+		
+		TestObject tb = new TestObject()
+		
+		tb.addProperty('xpath', ConditionType.EQUALS, ('('+ items.findPropertyValue("xpath") + ')[' +
+			elementIndexproduct) + ']')
+		
+		WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
+		
+		WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
+
 	}
 
 	@Keyword

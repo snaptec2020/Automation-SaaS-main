@@ -29,22 +29,22 @@ WebUI.openBrowser('')
 WebUI.navigateToUrl(GlobalVariable.FE_URL)
 WebUI.maximizeWindow()
 
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Login'), 20)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Login'), 20)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Login'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Login'))
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Login/LoginTolephone'), 20)
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Login/LoginTolephone'), 20)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/LoginTolephone'), 20)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/LoginTolephone'), 20)
 
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/Login/LoginTolephone')
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/LoginTolephone')
 , GlobalVariable.FE_Tel)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Login/acknowledgement'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/acknowledgement'))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Login/LoginButton'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/LoginButton'))
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Login/EnterOTP'), 10)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Login/EnterOTP'), FailureHandling.STOP_ON_FAILURE)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/EnterOTP'), 10)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/EnterOTP'), FailureHandling.STOP_ON_FAILURE)
 
 
 int currentTab = WebUI.getWindowIndex()
@@ -147,15 +147,15 @@ firstOTPDigit.addProperty('xpath', ConditionType.EQUALS, xPath)
 
 WebUI.sendKeys(firstOTPDigit,OTP)
 
-//WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/AjStore/Login/EnterOTP'), 20, FailureHandling.STOP_ON_FAILURE)
+//WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/EnterOTP'), 20, FailureHandling.STOP_ON_FAILURE)
 
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/AccountPage/AccountPageTitle'), 20)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/AccountPage/AccountPageTitle')
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/AccountPage/AccountPageTitle'), 20)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/AccountPage/AccountPageTitle')
 , FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AjStore/Login/EnterOTP'), 2)
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/AccountPage/SignOut'))
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/EnterOTP'), 2)
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/AccountPage/SignOut'))
 
 WebUI.closeBrowser()
 

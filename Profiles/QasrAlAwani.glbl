@@ -11,7 +11,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'581492572'</initValue>
+      <initValue>'566640965'</initValue>
       <name>FE_Tel</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -28,5 +28,10 @@
       <description></description>
       <initValue>'https://prod-alawani.snaptec.co/admin_15cfht/'</initValue>
       <name>BE_URL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Dev Testing'</initValue>
+      <name>CustomerName</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

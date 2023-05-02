@@ -49,7 +49,7 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-WebUI.navigateToUrl('https://www.ajstore.com/')
+WebUI.navigateToUrl(GlobalVariable.FE_URL)
 
 List prod = CustomKeywords.'products.productsFromCatalog.getinStockProductFromOnePage'()
 
@@ -87,6 +87,11 @@ if (WebUI.getUrl() == currentURL) {
 	}
 }
 
+def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/FE/Product/productFullDetail-Name'))
+def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/FE/Product/productFullDetail-sku'))
+def ProductURL = WebUI.getUrl().replace(GlobalVariable.FE_URL, "")
+def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/FE/Product/Product_Price'))
+
 
 ///// Save Data in variable gettext getSKU
 
@@ -94,25 +99,38 @@ if (WebUI.getUrl() == currentURL) {
 
 
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo'), 10)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo'), 10)
 
 //WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search icon'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search icon'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Feild'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search Feild'))
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Search/Search Bar context'))
-
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Cart/Add to cart'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search Bar context'))
 
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Cart/Add to cart'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Cart/view cart'))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Cart/view cart'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
+
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/view cart'))
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/view cart'))
+
+
+
+Productlink_TO=new TestObject()
+Productlink_TO.addProperty("xpath",ConditionType.EQUALS,'//a[@href="/' + ProductURL + '" and contains(text(),"' + ProductTitle + '")]')
+//WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
+WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
+
+def ProductPrice_TO=new TestObject()
+ProductPrice_TO.addProperty("xpath",ConditionType.EQUALS,Productlink_TO.findPropertyValue("xpath") + '//../..//div[contains(@class,"product-subTotal-")]//div//span[1]')
+WebUI.verifyElementVisible(ProductPrice_TO, FailureHandling.STOP_ON_FAILURE)
+
 
 WebUI.closeBrowser()

@@ -39,23 +39,23 @@ WebUI.navigateToUrl(GlobalVariable.FE_URL)
 
 WebUI.maximizeWindow()
 
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Login'), 20)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Login'), 20)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Login'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Login'))
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Login/LoginTolephone'), 20)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/LoginTolephone'), 20)
 
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Login/LoginTolephone'), 20)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/LoginTolephone'), 20)
 
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/Login/LoginTolephone'), GlobalVariable.FE_Tel)
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/LoginTolephone'), GlobalVariable.FE_Tel)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Login/acknowledgement'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/acknowledgement'))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Login/LoginButton'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/LoginButton'))
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Login/EnterOTP'), 10)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/EnterOTP'), 10)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Login/EnterOTP'), FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/EnterOTP'), FailureHandling.STOP_ON_FAILURE)
 
 int currentTab = WebUI.getWindowIndex()
 
@@ -149,18 +149,18 @@ firstOTPDigit.addProperty('xpath', ConditionType.EQUALS, xPath)
 
 WebUI.sendKeys(firstOTPDigit, OTP)
 
-//WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/AjStore/Login/EnterOTP'), 20, FailureHandling.STOP_ON_FAILURE)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/AccountPage/AccountPageTitle'), 20)
+//WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/EnterOTP'), 20, FailureHandling.STOP_ON_FAILURE)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/AccountPage/AccountPageTitle'), 20)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/AccountPage/AccountPageTitle'), FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/AccountPage/AccountPageTitle'), FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AjStore/Login/EnterOTP'), 2)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/EnterOTP'), 2)
 
 /////////////////////////
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo2'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo2'))
 
 ///Clear Cart
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Cart'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Cart'))
 
 TestObject removeProductFromCart = new TestObject()
 
@@ -181,10 +181,11 @@ while (removeProductFromCartElements.size() != 0) {
 }
 
 //Open Random Product
-CustomKeywords.'products.productsFromCatalog.OpenRandomProduct'()
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo'), 10)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Cart/Add to cart'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Cart/Add to cart'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo2'))
+CustomKeywords.'products.productsFromCatalog.OpenRandomProductAJStore'()
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo'), 10)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
 
 // Check if qty accepted
 def trials=1
@@ -194,19 +195,20 @@ List<WebElement> errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_T
 while (errorQTY_Element.size()>0 && trials<10) {
 	//Open Random Product
 	trials = trials+1
-	CustomKeywords.'products.productsFromCatalog.OpenRandomProduct'()
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Shared/Logo'), 10)
-	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Cart/Add to cart'))
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Cart/Add to cart'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo2'))
+	CustomKeywords.'products.productsFromCatalog.OpenRandomProductAJStore'()
+	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo'), 10)
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
 	errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
 	if(trials>=10) {
 		assert false,"Could not find available products"
 	}
 }
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Cart/view cart'))
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/view cart'))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Cart/view cart'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/view cart'))
 
 //Check Total Paid for Tabby and Tamara
 TestObject totalPaidTO = new TestObject()
@@ -248,28 +250,28 @@ if (totalValue < 99) {
 }
 
 
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Cart/PriceSummaryButton'),10)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Cart/PriceSummaryButton'))
-if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/MapOnCheckout'),FailureHandling.OPTIONAL)) {
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Cart/PriceSummaryButton'))
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/PriceSummaryButton'),10)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/PriceSummaryButton'))
+if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/MapOnCheckout'),FailureHandling.OPTIONAL)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/PriceSummaryButton'))
 }
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/MapOnCheckout'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/MapOnCheckout'))
 
-//WebUI.verifyElementNotVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/MapErrorCannotLoad'))
+//WebUI.verifyElementNotVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/MapErrorCannotLoad'))
 //Steps
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/Step_4_PaymentMethods'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/Step_4_PaymentMethods'))
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/Step_3_ShipmentMethod'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/Step_3_ShipmentMethod'))
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/Step_2_ShipmentLocation'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/Step_2_ShipmentLocation'))
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/Step_1_Login'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/Step_1_Login'))
 
 //Shipment Methods
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/ShipmentMethodsList'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/ShipmentMethodsList'))
 
-def ShipmentMethodsList = findTestObject('Object Repository/Helpdesk/AjStore/Checkout/ShipmentMethodsList')
+def ShipmentMethodsList = findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/ShipmentMethodsList')
 
 def ULXPath = ShipmentMethodsList.findPropertyValue('xpath')
 
@@ -284,13 +286,13 @@ List Shipmentlist = WebUiCommonHelper.findWebElements(temp, 30)
 if (Shipmentlist.size() != 1) {
     assert false
 } else {
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/ShpmentMethod_1'))
+    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/ShpmentMethod_1'))
 
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/ShipmentMethod_1_FastShipmentText_1'))
+    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/ShipmentMethod_1_FastShipmentText_1'))
 
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/ShipmentMethod_1_FastShipmentText_2'))
+    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/ShipmentMethod_1_FastShipmentText_2'))
 
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/ShipmentMethod_1_FastShipmentText_3'))
+    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/ShipmentMethod_1_FastShipmentText_3'))
 }
 
 //We should check if shipment fee is 0 when total paid is more than x and 20 if less than x
@@ -304,19 +306,19 @@ List Paymentlist = WebUiCommonHelper.findWebElements(paymentPath, 30)
 if (Paymentlist.size() != 4) {
     assert false
 } else {
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/PaymentMethod_1_Text'))
+    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/PaymentMethod_1_Text'))
 
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/PaymentMethod_2_Text'))
+    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/PaymentMethod_2_Text'))
 
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/PaymentMethod_3_Text'))
+    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/PaymentMethod_3_Text'))
 
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/PaymentMethod_4_Text'))
+    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/PaymentMethod_4_Text'))
 }
 
 //Order with COD
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/PaymentMethod_4_Text'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/PaymentMethod_4_Text'))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/FinishPayment'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/FinishPayment'))
 
 TestObject OrderDetails = new TestObject()
 
