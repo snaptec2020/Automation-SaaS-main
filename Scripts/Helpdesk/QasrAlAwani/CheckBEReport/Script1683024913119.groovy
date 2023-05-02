@@ -59,4 +59,6 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/BE/Re
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/BE/Menu/Menu_Sales'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/BE/Menu/Menu_Sales_orders'))
+
+
 WebUI.closeBrowser()
