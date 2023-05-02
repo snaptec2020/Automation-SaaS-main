@@ -31,7 +31,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'Dev Testing'</initValue>
+      <initValue>'dev test'</initValue>
       <name>CustomerName</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

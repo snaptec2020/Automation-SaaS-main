@@ -6,11 +6,11 @@
    <elementGuidId>43b24155-9075-44a1-89af-37391b7f60b8</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[contains(@class,&quot;checkoutPage-paymentMethod-&quot;)]/div[not(@*)]//div[contains(@class,&quot;paymentMethod-item-&quot;)]//div//div//p[text()=&quot;تمارا: قسم فاتورتك على 3 دفعات بدون فوائد&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[contains(@class,&quot;checkoutPage-paymentMethod-&quot;)]/div[not(@*)]//div[contains(@class,&quot;paymentMethod-item-&quot;)]//p[text()=&quot;تمارا: قسم فاتورتك على 3 دفعات بدون فوائد&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

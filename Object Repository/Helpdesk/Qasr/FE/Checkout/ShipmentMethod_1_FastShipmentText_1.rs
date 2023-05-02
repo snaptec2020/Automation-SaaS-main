@@ -6,11 +6,11 @@
    <elementGuidId>7c10ff4e-81c4-4d93-880e-423d93a76ca3</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//ul[contains(@class,&quot;shippingMethod-shippingMethodBody-&quot;)]//li[contains(@class,&quot;shippingMethod-shippingMethodItem-uU0 shippingMethod-active-&quot;)]//span[contains(@class,&quot;shippingMethod-leftColumn-&quot;)]//span//h4[text()=&quot;الشحن السريع&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//ul[contains(@class,&quot;shippingMethod-shippingMethodBody-&quot;)]//li[contains(@class,&quot;shippingMethod-shippingMethodItem-uU0 shippingMethod-active-&quot;)]//span[contains(@class,&quot;shippingMethod-leftColumn-&quot;)]//span//h4[text()=&quot;الشحن&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

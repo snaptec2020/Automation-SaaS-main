@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>LoginTolephone</name>
+   <name>Web header</name>
    <tag></tag>
-   <elementGuidId>a5dd23c6-4f4b-4044-b403-2c9abedf05be</elementGuidId>
+   <elementGuidId>1580037a-11cc-4a79-bec7-e9e4bb500dd8</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@type = 'tel' and @placeholder = '500 - 000 - 000']</value>
+         <value>//div[contains (@class,'middleHeaderBar-actionsWrapper')] </value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>LoginTolephone</name>
+   <name>المنتجات الشتوية</name>
    <tag></tag>
-   <elementGuidId>a5dd23c6-4f4b-4044-b403-2c9abedf05be</elementGuidId>
+   <elementGuidId>56b9142a-cc85-4d96-9e07-4c66792571e3</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@type = 'tel' and @placeholder = '500 - 000 - 000']</value>
+         <value>//div[contains(@class,'megaMenuItem-root')]//a[text()='المنتجات الشتوية']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

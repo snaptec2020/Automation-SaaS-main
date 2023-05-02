@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>LoginTolephone</name>
+   <name>click المنتجات الجديدة</name>
    <tag></tag>
-   <elementGuidId>a5dd23c6-4f4b-4044-b403-2c9abedf05be</elementGuidId>
+   <elementGuidId>dcc00c4a-ef62-44e7-bb76-994ccc20e085</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@type = 'tel' and @placeholder = '500 - 000 - 000']</value>
+         <value>//div[contains(@class,'tabProductBlock-headerTitle')][contains(text(),'المنتجات الجديدة')or normalize-space()='New products']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

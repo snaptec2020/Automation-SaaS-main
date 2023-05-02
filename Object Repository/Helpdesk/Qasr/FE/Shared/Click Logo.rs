@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>LoginTolephone</name>
+   <name>Click Logo</name>
    <tag></tag>
-   <elementGuidId>a5dd23c6-4f4b-4044-b403-2c9abedf05be</elementGuidId>
+   <elementGuidId>9671636d-9ff8-4b48-b1b2-d050c5c90ccf</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@type = 'tel' and @placeholder = '500 - 000 - 000']</value>
+         <value>//div[contains(@class,'middleHeaderBar')]//img[2]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

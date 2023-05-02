@@ -252,6 +252,7 @@ if (totalValue < 99) {
             ) //remove and select another product (need to remove and seach again)
         )
 } else if (totalValue > 2500) {
+	// To-Do Remove and add another product with less amount
 }
 
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/PriceSummaryButton'),10)
