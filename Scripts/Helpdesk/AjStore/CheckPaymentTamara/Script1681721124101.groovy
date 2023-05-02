@@ -247,7 +247,12 @@ if (totalValue < 99) {
 } else if (totalValue > 2500) {
 }
 
+
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/Cart/PriceSummaryButton'),10)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Cart/PriceSummaryButton'))
+if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/MapOnCheckout'),FailureHandling.OPTIONAL)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Cart/PriceSummaryButton'))
+}
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Checkout/MapOnCheckout'))
 

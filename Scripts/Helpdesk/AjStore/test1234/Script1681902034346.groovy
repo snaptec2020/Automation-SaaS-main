@@ -23,6 +23,13 @@ WebUI.maximizeWindow()
 
 WebUI.navigateToUrl(GlobalVariable.FE_URL)
 
+CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromRandomCategory'()
+
+WebUI.openBrowser('')
+
+WebUI.maximizeWindow()
+
+WebUI.navigateToUrl(GlobalVariable.FE_URL)
 
 CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromRandomCategory'()
 
