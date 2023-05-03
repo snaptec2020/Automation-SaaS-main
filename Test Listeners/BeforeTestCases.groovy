@@ -66,8 +66,8 @@ class BeforeTestCases {
 		//sampleBeforeTestCase(testCaseContext.skipThisTestCase())
 		WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 		getTestSuitLanguage(testSuiteContext.testSuiteId)
-		WebUI.callTestCase(findTestCase('FE/Website launch/Verifications/Verifications after launch (headers and footers)'), [:],
-			FailureHandling.STOP_ON_FAILURE)
+		//WebUI.callTestCase(findTestCase('FE/Website launch/Verifications/Verifications after launch (headers and footers)'), [:],
+			//FailureHandling.STOP_ON_FAILURE)
 		
 		CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
 		

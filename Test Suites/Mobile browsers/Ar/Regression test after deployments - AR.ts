@@ -12,6 +12,13 @@
    <rerunImmediately>false</rerunImmediately>
    <testSuiteGuid>4cbc6113-2fc3-4ac6-9d41-88b40b4abbba</testSuiteGuid>
    <testCaseLink>
+      <guid>1f03c533-bb70-47c5-9240-8bf2791555d8</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Website launch/Verifications/Verifications after launch (headers and footers)</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
       <guid>e5c791a1-0b9e-40c3-8ac6-9ea687726471</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
