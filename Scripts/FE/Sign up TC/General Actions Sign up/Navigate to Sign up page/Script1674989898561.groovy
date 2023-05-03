@@ -14,7 +14,24 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import com.kms.katalon.entity.global.GlobalVariableEntity as GlobalVariableEntity
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-// this case for verifications after switch language
+WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate to Sgin in'), [:], FailureHandling.STOP_ON_FAILURE)
+
+switch (GlobalVariable.RunningMode) {
+    case '1':
+        WebUI.click(findTestObject('login page/email page/Sign up Button'))
+
+       // WebUI.click(findTestObject('login page/email page/Select e-mail Way'))
+
+        break
+    case '2':
+        WebUI.click(findTestObject('Sign up Page/Mobile Web/SignUp Button'))
+
+        //WebUI.click(findTestObject('login page/email page/Select e-mail Way'))
+
+        break
+}
+

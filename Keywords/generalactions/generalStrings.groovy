@@ -91,5 +91,13 @@ public class generalStrings {
 		}
 		return replacedPhoneKey+randomNumber
 	}
+	@Keyword
+	int getRandomNumberBetweenOnetoTarget(int targetNumber) {
+		return Math.abs(random.nextInt(targetNumber))+1
+	}
+	@Keyword
+	int getRandomNumberBetweenAnytoAny(int upperLimit, int lowerLimit) {
+		return Math.abs(random.nextInt((upperLimit+1)-lowerLimit))+lowerLimit
+	}
 }
 

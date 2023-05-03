@@ -17,7 +17,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys
-import org.openqa.selenium.WebElement as Keys
+//import org.openqa.selenium.WebElement as Keys
 
 //WebUI.sendKeys(findTestObject('Sign up Page/Sgin up By phone/Last name sign up Mobile'), Keys.chord(Keys.CONTROL, ‘a’))
 //WebUI.sendKeys(findTestObject('Sign up Page/Sgin up By phone/First name sign up mobile'), Keys.chord(Keys.BACK_SPACE))

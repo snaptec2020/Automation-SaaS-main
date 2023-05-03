@@ -61,12 +61,13 @@ class BeforeTestCases {
 	@BeforeTestSuite
 	def sampleBeforeTestSuite(TestSuiteContext testSuiteContext) {
 		GlobalVariable.testSuiteStatus = testSuiteContext.testSuiteId
+		setRunningMode(testSuiteContext.testSuiteId)
 		//KeywordUtil.logInfo('**************************'+GlobalVariable.testSuiteStatus)
 		//sampleBeforeTestCase(testCaseContext.skipThisTestCase())
 		WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
-		
-		WebUI.callTestCase(findTestCase('FE/Website launch/Verifications/Verifications after launch (headers and footers)'), [:],
-			FailureHandling.STOP_ON_FAILURE)
+		getTestSuitLanguage(testSuiteContext.testSuiteId)
+		//WebUI.callTestCase(findTestCase('FE/Website launch/Verifications/Verifications after launch (headers and footers)'), [:],
+			//FailureHandling.STOP_ON_FAILURE)
 		
 		CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
 		
@@ -82,5 +83,22 @@ class BeforeTestCases {
 		//sampleBeforeTestCase(testCaseContext.skipThisTestCase())
 		//WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 		
+	}
+	def setRunningMode(def testSuitPath) {
+		def runningFolder = testSuitPath =~'^.*?/(.*?)/.*'
+		switch(runningFolder[0][1].toString()) {
+			case 'Web Browsers': GlobalVariable.RunningMode='1'
+				 break
+			case 'Mobile browsers': GlobalVariable.RunningMode='2'
+				 break
+			case 'Mobile Apps': GlobalVariable.RunningMode='3'
+				 break
+		}
+	}
+	def getTestSuitLanguage(def testSuitPath) {
+		def runningFolder = testSuitPath =~'^.*?/.*?/(.*?)/'
+		if(runningFolder[0][1].toString().equalsIgnoreCase('En')) {
+			WebUI.callTestCase(findTestCase('FE/Switch Language/Validations/SwitchLanguage to English'), [:], FailureHandling.STOP_ON_FAILURE)
+		}
 	}
 }

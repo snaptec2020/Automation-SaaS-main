@@ -11,7 +11,6 @@
       </entry>
       <entry>
          <key>CSS</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +21,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>p</value>
-      <webElementGuid>7c6e5d2d-eb13-4287-b8ae-3879484318bd</webElementGuid>
+      <webElementGuid>e683ff46-ea45-4c0b-a24a-bdc7d4223e1f</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +29,7 @@
       <name>class</name>
       <type>Main</type>
       <value>private-account-menu__sidebarTitle</value>
-      <webElementGuid>82a1283e-3a95-4494-a465-bcba97fc532b</webElementGuid>
+      <webElementGuid>a31a1ada-68c1-4893-99e2-1308b4ee2aab</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +37,7 @@
       <name>text</name>
       <type>Main</type>
       <value>Sign Out</value>
-      <webElementGuid>486cf88c-b871-4406-b318-517b895dde12</webElementGuid>
+      <webElementGuid>10ab6abe-706f-4e22-9adb-4c523d36114e</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -46,7 +45,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;__next&quot;)/div[@class=&quot;main-page-content&quot;]/div[@class=&quot;main-page&quot;]/div[@class=&quot;styles_privateAccountPageContainer__EgAXB&quot;]/div[@class=&quot;styles_privateAccountMenuContainer__Zffje&quot;]/div[@class=&quot;private-account-menu&quot;]/button[@class=&quot;private-account-menu__itemV4&quot;]/div[@class=&quot;private-account-menu__titleV4&quot;]/div[1]/p[@class=&quot;private-account-menu__sidebarTitle&quot;]</value>
-      <webElementGuid>310b62f1-d8d5-4f8f-9cbf-c5a1ac5f7889</webElementGuid>
+      <webElementGuid>80590c7a-c9a8-4610-ab17-c0aa77863a3f</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -54,7 +53,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='__next']/div[5]/div/div/div/div/button[9]/div/div/p</value>
-      <webElementGuid>94819460-e064-4fef-9bcc-e72ced8e93d7</webElementGuid>
+      <webElementGuid>7fa00621-61b4-4fb7-8980-8688777ed54d</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -62,7 +61,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Account menu'])[1]/following::p[17]</value>
-      <webElementGuid>436fe389-e356-40c1-a87e-91f0fccb3d60</webElementGuid>
+      <webElementGuid>4d4d043c-e723-44d2-9207-69e429c6b52c</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,7 +69,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Search'])[1]/following::p[25]</value>
-      <webElementGuid>42d379f7-0047-4cac-a55d-3a16825b700d</webElementGuid>
+      <webElementGuid>05268822-f152-4425-b0f4-985781272311</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,7 +77,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Azeez Saleh'])[1]/preceding::p[2]</value>
-      <webElementGuid>26bc5174-acb5-4ff6-ab4b-95e9c1151991</webElementGuid>
+      <webElementGuid>b9f605de-7d2f-46f1-8a46-95e373a9d455</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,7 +85,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='a.aldon@snaptec.co'])[1]/preceding::p[2]</value>
-      <webElementGuid>166f4fcd-2750-4fa5-bab2-e4fd463df469</webElementGuid>
+      <webElementGuid>2ab24e31-c37a-4f20-8382-26e3fa96216a</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -94,7 +93,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>//*/text()[normalize-space(.)='Sign Out']/parent::*</value>
-      <webElementGuid>2f5712f4-196c-4582-a61d-284c842fec68</webElementGuid>
+      <webElementGuid>873bf490-a51e-4832-b790-aeecd845dfec</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -102,7 +101,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//button[9]/div/div/p</value>
-      <webElementGuid>ae6bc52f-58da-4b5c-9c59-417e8b90dba1</webElementGuid>
+      <webElementGuid>06d80dfa-95dd-4c2c-9daa-7dbcdaf2a1c4</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -110,6 +109,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//p[(text() = 'Sign Out' or . = 'Sign Out')]</value>
-      <webElementGuid>d2f2311b-44a9-4746-9266-6e13fc95df62</webElementGuid>
+      <webElementGuid>b9d35943-183d-41d2-af09-4f459cdea370</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

@@ -19,5 +19,8 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.click(findTestObject('login page/My account'))
 
-WebUI.click(findTestObject('logOut/p_Sign Out'))
+//CustomKeywords.'generalactions.scrolling.scrollToClick'('login page/My account')
+CustomKeywords.'generalactions.scrolling.scrollToClick'('logOut/p_Sign Out')
+
+WebUI.delay(2)
 

@@ -5,6 +5,8 @@
 
 import java.util.List
 
+import com.kms.katalon.core.testobject.TestObject
+
 import com.kms.katalon.core.context.TestSuiteContext
 
 
@@ -186,10 +188,33 @@ def static "utility.Utility.checkIfElementExist"(
 }
 
 
-def static "utility.Utility.scrollToVerifyElementVisiblity"(
-    	Object testObjectRelativeId	) {
-    (new utility.Utility()).scrollToVerifyElementVisiblity(
-        	testObjectRelativeId)
+def static "utility.Utility.addXpathToTestObject"(
+    	Object xpath	) {
+    (new utility.Utility()).addXpathToTestObject(
+        	xpath)
+}
+
+
+def static "utility.Utility.switchToIframeByXpath"(
+    	Object xpath	) {
+    (new utility.Utility()).switchToIframeByXpath(
+        	xpath)
+}
+
+
+def static "utility.Utility.findWebElements"(
+    	Object testObject	
+     , 	int timedOut	) {
+    (new utility.Utility()).findWebElements(
+        	testObject
+         , 	timedOut)
+}
+
+
+def static "utility.Utility.clickOnObjectusingJavaScript"(
+    	TestObject testObject	) {
+    (new utility.Utility()).clickOnObjectusingJavaScript(
+        	testObject)
 }
 
 
@@ -266,6 +291,27 @@ def static "generalactions.scrolling.scrollingAtTheBottom"() {
 }
 
 
+def static "generalactions.scrolling.scrollToVerifyElementVisiblity"(
+    	Object testObjectRelativeId	) {
+    (new generalactions.scrolling()).scrollToVerifyElementVisiblity(
+        	testObjectRelativeId)
+}
+
+
+def static "generalactions.scrolling.scrollToClick"(
+    	Object testObjectRelativeId	) {
+    (new generalactions.scrolling()).scrollToClick(
+        	testObjectRelativeId)
+}
+
+
+def static "generalactions.scrolling.javaScriptToScrollToElement"(
+    	Object testObjectRelativeId	) {
+    (new generalactions.scrolling()).javaScriptToScrollToElement(
+        	testObjectRelativeId)
+}
+
+
 def static "generalactions.generalStrings.generatRandomEmail"() {
     (new generalactions.generalStrings()).generatRandomEmail()
 }
@@ -282,6 +328,22 @@ def static "generalactions.generalStrings.generatePhoneWithConditions"(
     (new generalactions.generalStrings()).generatePhoneWithConditions(
         	expectedPhoneSize
          , 	isPhoneKeyReplaced)
+}
+
+
+def static "generalactions.generalStrings.getRandomNumberBetweenOnetoTarget"(
+    	int targetNumber	) {
+    (new generalactions.generalStrings()).getRandomNumberBetweenOnetoTarget(
+        	targetNumber)
+}
+
+
+def static "generalactions.generalStrings.getRandomNumberBetweenAnytoAny"(
+    	int upperLimit	
+     , 	int lowerLimit	) {
+    (new generalactions.generalStrings()).getRandomNumberBetweenAnytoAny(
+        	upperLimit
+         , 	lowerLimit)
 }
 
 
