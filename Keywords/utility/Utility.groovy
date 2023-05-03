@@ -57,33 +57,6 @@ public class Utility {
 		WebElement element = WebUiCommonHelper.findWebElement(testObject,30)
 		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
 	}
-	@Keyword
-	def scrollToVerifyElementVisiblity(def testObjectRelativeId) {
-		try {
-
-	for(int i=4;i<=0;i--) {
-		
-		if (WebUI.verifyElementVisible(findTestObject(testObjectRelativeId),FailureHandling.CONTINUE_ON_FAILURE)) {
-			//WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/2);", null);
-			
-			break;
-		}
-		KeywordUtil.markPassed("try to scroll again")
-		//WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 30, FailureHandling.CONTINUE_ON_FAILURE) 
-		WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/"+i.toString()+");", null);
-		//WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 30, FailureHandling.CONTINUE_ON_FAILURE) 
-		Thread.sleep(1000);
-		
-		//KeywordUtil.logInfo(lastHeight.toString())
-		//KeywordUtil.logInfo(newHeight.toString())
-		
-		
-	}
-} catch (InterruptedException e) {
-	e.printStackTrace();
-	}
-		
-	}
 }
 
 

@@ -22,7 +22,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 
 import catalog.catlogComponants
-
+import generalactions.generalStrings
 
 import java.util.List
 
@@ -43,6 +43,7 @@ public class productsFromCatalog {
 	def catalogComp = new catlogComponants()
 	def utilityFunctions = new Utility()
 	int elementIndex = 0
+	def genaralActions= new generalStrings()
 
 	@Keyword
 	def getProducts() {
@@ -99,7 +100,7 @@ public class productsFromCatalog {
 			getSpecifiedinStockProductsFromRandomCategory()
 
 		} else{
-			def elementIndexproduct= Math.abs((randomNumberforProduct.nextInt(prod.size())))
+			def elementIndexproduct= genaralActions.getRandomNumberBetweenOnetoTarget(prod.size())//Math.abs((randomNumberforProduct.nextInt(prod.size())))
 			//KeywordUtil.logInfo(elementIndexproduct.toString() +prod.get(elementIndexproduct).toString())
 			if(elementIndexproduct==0) {
 				elementIndexproduct=1
@@ -148,7 +149,7 @@ public class productsFromCatalog {
 			getSpecifiedinStockProductsText()
 
 		} else{
-			def elementIndexproduct= Math.abs((randomNumberforProduct.nextInt(prod.size())))
+			def elementIndexproduct= genaralActions.getRandomNumberBetweenOnetoTarget(prod.size())//Math.abs((randomNumberforProduct.nextInt(prod.size())))
 			//KeywordUtil.logInfo(elementIndexproduct.toString() +prod.get(elementIndexproduct).toString())
 			if(elementIndexproduct==0) {
 				elementIndexproduct=1
@@ -237,7 +238,7 @@ public class productsFromCatalog {
 			getRandominStockProductsFromRandomCategory()
 
 		} else{
-			def elementIndexproduct= Math.abs((randomNumberforProduct.nextInt(prod.size())))
+			def elementIndexproduct= genaralActions.getRandomNumberBetweenOnetoTarget(prod.size())//Math.abs((randomNumberforProduct.nextInt(prod.size())))
 			//KeywordUtil.logInfo(elementIndexproduct.toString() +prod.get(elementIndexproduct).toString())
 			if(elementIndexproduct==0) {
 				elementIndexproduct=1
@@ -414,7 +415,7 @@ public class productsFromCatalog {
 
 	}
 	def addProductToCart(int sizeForRandom) {
-		def elementIndexproduct= Math.abs((randomNumberforProduct.nextInt(sizeForRandom)))
+		def elementIndexproduct= genaralActions.getRandomNumberBetweenOnetoTarget(sizeForRandom)//Math.abs((randomNumberforProduct.nextInt(sizeForRandom)))
 		//KeywordUtil.logInfo(elementIndexproduct.toString() +prod.get(elementIndexproduct).toString())
 		if(elementIndexproduct==0) {
 			elementIndexproduct=1
@@ -432,7 +433,7 @@ public class productsFromCatalog {
 		List Categories = catalogComp.getCategoryElements()
 
 
-		elementIndex= Math.abs((randomNumber.nextInt(Categories.size() - 1)))
+		elementIndex= genaralActions.getRandomNumberBetweenOnetoTarget(Categories.size() - 1)//Math.abs((randomNumber.nextInt(Categories.size() - 1)))
 
 		//CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
 		catalogComp.getSpecifiedCatalogElement(elementIndex, Categories)

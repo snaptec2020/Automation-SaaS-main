@@ -93,11 +93,11 @@ public class generalStrings {
 	}
 	@Keyword
 	int getRandomNumberBetweenOnetoTarget(int targetNumber) {
-		return Math.abs(random.nextInt()% targetNumber+1)
+		return Math.abs(random.nextInt(targetNumber))+1
 	}
 	@Keyword
-	int getRandomNumberBetweenAnytoAny(int targetNumber, int firstNumber) {
-		return Math.abs(random.nextInt()% targetNumber+firstNumber)
+	int getRandomNumberBetweenAnytoAny(int upperLimit, int lowerLimit) {
+		return Math.abs(random.nextInt((upperLimit+1)-lowerLimit))+lowerLimit
 	}
 }
 

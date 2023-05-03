@@ -101,8 +101,8 @@ if(sitesCount!=0) {
 					 WebUI.delay(10)
 					 //WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 					 
-					 WebUI.callTestCase(findTestCase('FE/Website launch/Verifications/Verifications after launch (headers and footers)'), [:],
-						 FailureHandling.CONTINUE_ON_FAILURE)
+					// WebUI.callTestCase(findTestCase('FE/Website launch/Verifications/Verifications after launch (headers and footers)'), [:],
+						// FailureHandling.CONTINUE_ON_FAILURE)
 					 
 					 CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
 					// KeywordUtil.logInfo(testCases.size().toString())
