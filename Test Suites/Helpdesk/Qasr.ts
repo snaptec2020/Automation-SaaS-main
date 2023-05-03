@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>AJStore</name>
+   <name>Qasr</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
@@ -10,75 +10,75 @@
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <rerunImmediately>false</rerunImmediately>
-   <testSuiteGuid>0181846e-4133-48f3-bd58-9de9b827c6da</testSuiteGuid>
+   <testSuiteGuid>c6ea15ab-a53d-4ad7-b6f0-5184a7c4f541</testSuiteGuid>
    <testCaseLink>
-      <guid>736af3ae-cd9a-49e9-869b-d6a86d2b622b</guid>
+      <guid>b9bda79e-1e2d-462b-9aeb-6d7deeb5c4a0</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/AjStore/AddToCart</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/QasrAlAwani/AddToCart</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>5c8abd04-d1cb-49a9-98aa-bed0e7618504</guid>
+      <guid>9748d9dc-071d-47e1-9e25-da9c6902400b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/AjStore/CheckBEReport</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/QasrAlAwani/CheckBEReport</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>57c469b2-9652-4053-849d-5180add45a20</guid>
+      <guid>940a4292-959b-4275-b0c2-b40b8be3996e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/AjStore/CheckPaymentCOD</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/QasrAlAwani/CheckPaymentCOD</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>a520f71c-d001-4417-b34b-b540d066c9eb</guid>
+      <guid>bf9280c0-db57-4a44-ba4d-39438311acc9</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/AjStore/CheckPaymentTabby</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/QasrAlAwani/CheckPaymentCredit</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>5c174287-4de2-4b83-b1e1-a06580be96b5</guid>
+      <guid>08ab181c-5656-4674-a310-6d4be5994966</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/AjStore/CheckPaymentTamara</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/QasrAlAwani/CheckPaymentTabby</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>41271c9d-4976-48c4-bc64-9578294791ef</guid>
+      <guid>68a62fdf-e1ea-4a8f-8192-65600961dba2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/AjStore/CheckPaymentCredit</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/QasrAlAwani/CheckPaymentTamara</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>76fdb4be-601a-40dd-82eb-a16e05d532ab</guid>
+      <guid>b7761eae-5008-4121-90eb-3b7758538b62</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/AjStore/CheckTheBEUp</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/QasrAlAwani/CheckTheBEUp</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>a4a57ff8-902e-4cf5-b18e-27977fab889b</guid>
+      <guid>19cd3fce-7bf9-41c8-9be7-3af3bf2e85d6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/AjStore/CheckTheFEUp</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/QasrAlAwani/Login</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>72d1358f-a528-403b-8f96-29c950ae985c</guid>
+      <guid>2415ce16-5c61-46a4-9ba2-9295fb2f3871</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/AjStore/Login</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/QasrAlAwani/Search</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>c467614a-51ca-406d-bae4-ae1dec9f1b1d</guid>
+      <guid>3e5cb8e3-68a0-4a74-9683-416b8190043e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/AjStore/Search</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/QasrAlAwani/CheckTheFEUp</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>

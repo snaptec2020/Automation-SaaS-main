@@ -6,11 +6,11 @@
    <elementGuidId>ab034784-0425-4136-8eb6-fb5822e0f73f</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//button[@type='button'  and text()='تسجيل الخروج' and contains(@class,'privateAccountMenu-signOutButton-')]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div/div//div//div[contains(@class,&quot;privateAccountMenu-root-&quot;)]//button[text()=&quot;تسجيل الخروج&quot; and contains(@class,&quot;privateAccountMenu-signOutButton-&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

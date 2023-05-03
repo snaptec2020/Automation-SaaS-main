@@ -391,7 +391,7 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Ta
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Tabby/ReturnDialog_ReturnToStoreBtn'))
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ErrorAfterPayment_Tamara'), 20)
+WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ErrorAfterPayment_Tamara'), 20)
 
 url = WebUI.getUrl()
 
@@ -452,7 +452,7 @@ if (searchResultElm.size().equals(1)) {
     def OrderHeaderText = OrderHeaderElem.getText()
 
     if (OrderHeaderText.equals('#' + orderNumber)) {
-        WebUI.verifyElementText(findTestObject('Object Repository/Helpdesk/Qasr/BE/Sales_Order_page/OrderStatus'), 'Canceled')
+		WebUI.verifyElementText(findTestObject('Object Repository/Helpdesk/Qasr/BE/Sales_Order_page/OrderStatus'), 'Canceled')
 
         TestObject CustomerNameTO = new TestObject()
 
