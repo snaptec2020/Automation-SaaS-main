@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>WishList from Cart</name>
+   <name>image</name>
    <tag></tag>
-   <elementGuidId>79ba6552-67bc-4d66-a323-0520ff53cd6d</elementGuidId>
+   <elementGuidId>aa5de520-24c3-43dc-9973-a954fea5ac43</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>(//ul[starts-with(@class,'styles_productsContainer_')]//button[starts-with(@class,'button--transparent p-0')])[1]</value>
+         <value>//div[@id='logo']//img</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

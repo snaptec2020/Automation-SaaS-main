@@ -36,8 +36,8 @@ if (CustomKeywords.'utility.Utility.checkIfElementExist'('Search contents/Serach
 WebUI.verifyElementVisible(findTestObject('Search contents/Serach button container'))
 
 WebUI.click(findTestObject('Search contents/Serach button container'))
+WebUI.delay(2)
+WebUI.verifyElementVisible(findTestObject('Search contents/Serach Input group'),FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Search contents/Serach Input group'))
-
-WebUI.verifyElementVisible(findTestObject('Search contents/Serach Button Icon'))
+WebUI.verifyElementVisible(findTestObject('Search contents/Serach Button Icon'),FailureHandling.CONTINUE_ON_FAILURE)
 }

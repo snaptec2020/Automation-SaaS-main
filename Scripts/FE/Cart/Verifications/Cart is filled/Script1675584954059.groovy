@@ -20,18 +20,20 @@ import org.openqa.selenium.Keys as Keys
 
 int cartContentsCount=WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'),10).size()
 if(cartContentsCount!=0) {
-	WebUI.click(findTestObject('Object Repository/Cart/Cart'), FailureHandling.STOP_ON_FAILURE)
+	WebUI.click(findTestObject('Object Repository/Cart/Cart'), FailureHandling.CONTINUE_ON_FAILURE)
 }else {
 	KeywordUtil.markPassed("Add to cart now")
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/General Actions/View cart after adding products to cart'), [:], FailureHandling.STOP_ON_FAILURE);
+WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/General Actions/View cart after adding products to cart'), [:], FailureHandling.CONTINUE_ON_FAILURE);
 }
 
 
 //WebUI.delay(10)
 
 //WebUI.scrollToElement(findTestObject('Object Repository/Cart/Filled cart'), 5, FailureHandling.STOP_ON_FAILURE)
+//li[contains(@class,'styles_product')]
+WebUI.verifyNotEqual(CustomKeywords.'utility.Utility.checkIfElementExist'('Object Repository/Cart/Items in cart'), 0, FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementPresent(findTestObject('Object Repository/Cart/Filled cart'), 10)	
+//WebUI.verifyElementPresent(findTestObject('Object Repository/Cart/Filled cart'), 10)	
 
 

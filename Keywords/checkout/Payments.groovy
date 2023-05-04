@@ -54,7 +54,7 @@ public class Payments {
 			if(elementsIndexPayments==0) {
 				elementsIndexPayments=1
 			}
-															//div[@class='payment-method-container__list__item']
+			//div[@class='payment-method-container__list__item']
 			//tb.addProperty('xpath', ConditionType.EQUALS, "//div[@class='payment-method-container__list__item']["+elementsIndexPayments+"]")
 			//utilityFunctions.addXpathToTestObject(findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + "["+elementsIndexPayments+"]")
 			WebUI.click(utilityFunctions.addXpathToTestObject(findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + "["+elementsIndexPayments+"]"))
@@ -65,7 +65,7 @@ public class Payments {
 	{
 
 		//tb.addProperty('xpath', ConditionType.EQUALS, "//div[contains(@class,'payment-method v2')]/following-sibling::div")
-		
+
 		def nonVisa = WebUiCommonHelper.findWebElement(utilityFunctions.addXpathToTestObject("//div[contains(@class,'payment-method v2')]/following-sibling::div"),30).getAttribute("class")
 		//KeywordUtil.logInfo(nonVisa.toString())
 		//int visa = WebUI.findWebElements(findTestObject('Object Repository/Check Out/Check Out insert Card'),30).size()
