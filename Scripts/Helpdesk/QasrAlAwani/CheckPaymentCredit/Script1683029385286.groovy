@@ -267,6 +267,35 @@ if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/F
 	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PriceSummaryButton'))
 }
 
+
+
+
+
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ReturnPolicyCheckbox'),10)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ReturnPolicyText'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ReturnPolicyContentLink'))
+
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ReturnPolicyContentLink'))
+//int PolicyNewTab = WebUI.getWindowIndex()
+//println PolicyNewTab
+WebUI.delay(2)
+WebUI.switchToWindowIndex(currentTab+2)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/ReturnPolicyPage/Title'),3)
+int PolicyTab = WebUI.getWindowIndex()
+String Policyurl = WebUI.getUrl()
+WebUI.verifyMatch(Policyurl, GlobalVariable.FE_URL+"exchange-and-return", true)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/ReturnPolicyPage/Title'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/ReturnPolicyPage/Paragraph_1'))
+WebUI.switchToWindowIndex(currentTab)
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ReturnPolicyCheckbox'))
+
+
+
+
+
+
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/Step_4_PaymentMethods'))
 
 //WebUI.verifyElementNotVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/MapErrorCannotLoad'))
@@ -295,6 +324,7 @@ temp.addProperty('xpath', ConditionType.EQUALS, LiXPath)
 List Shipmentlist = WebUiCommonHelper.findWebElements(temp, 30)
 
 if (Shipmentlist.size() != 1) {
+	println (Paymentlist.size())
     assert false
 } else {
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShpmentMethod_1'))

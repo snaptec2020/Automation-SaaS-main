@@ -305,6 +305,7 @@ paymentPath.addProperty('xpath', ConditionType.EQUALS, '//div[contains(@class,"c
 List Paymentlist = WebUiCommonHelper.findWebElements(paymentPath, 30)
 
 if (Paymentlist.size() != 4) {
+	println (Paymentlist.size())
     assert false
 } else {
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/PaymentMethod_1_Text'))

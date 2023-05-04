@@ -285,6 +285,7 @@ temp.addProperty('xpath', ConditionType.EQUALS, LiXPath)
 List Shipmentlist = WebUiCommonHelper.findWebElements(temp, 30)
 
 if (Shipmentlist.size() != 1) {
+	println (Paymentlist.size())
     assert false
 } else {
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/ShpmentMethod_1'))
