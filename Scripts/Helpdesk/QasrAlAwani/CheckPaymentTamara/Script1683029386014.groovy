@@ -324,7 +324,7 @@ temp.addProperty('xpath', ConditionType.EQUALS, LiXPath)
 List Shipmentlist = WebUiCommonHelper.findWebElements(temp, 30)
 
 if (Shipmentlist.size() != 1) {
-	println (Paymentlist.size())
+	println (Shipmentlist.size())
     assert false
 } else {
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShpmentMethod_1'))
@@ -345,6 +345,7 @@ paymentPath.addProperty('xpath', ConditionType.EQUALS, '//div[contains(@class,"c
 List Paymentlist = WebUiCommonHelper.findWebElements(paymentPath, 30)
 
 if (Paymentlist.size() != 3) {
+	println (Paymentlist.size())
     assert false
 } else {
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/PaymentMethod_1_Text'))
