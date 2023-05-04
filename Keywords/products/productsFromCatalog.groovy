@@ -231,6 +231,37 @@ public class productsFromCatalog {
 		WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
 
 	}
+	
+	@Keyword
+	def OpenRandomProductOrange(){
+		
+		
+		boolean found=false
+
+		while(!found) {
+			WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Logo'))
+			TestObject items = new TestObject()
+			items.addProperty("xpath",ConditionType.EQUALS,'//a[contains(@class,"baseProduct-productName-")]')
+			List prod = WebUI.findWebElements(items,30)
+			
+			Random randomNumberforProduct = new Random()
+			
+			def elementIndexproduct = Math.abs(randomNumberforProduct.nextInt(prod.size() - 1)) + 1
+			
+			TestObject tb = new TestObject()
+			
+			tb.addProperty('xpath', ConditionType.EQUALS, ('('+ items.findPropertyValue("xpath") + ')[' +
+				elementIndexproduct) + ']')
+			
+			WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
+			
+			WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
+			
+			if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Cart/Add to cart - Active'),FailureHandling.OPTIONAL)) {
+				found =true
+			}
+		}
+	}
 
 	@Keyword
 	def getSpecifiedinStockProductsFromOnePage(int elementIndex,List productList ) {

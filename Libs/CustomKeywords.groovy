@@ -95,6 +95,11 @@ def static "products.productsFromCatalog.OpenRandomProductQasr"() {
 }
 
 
+def static "products.productsFromCatalog.OpenRandomProductOrange"() {
+    (new products.productsFromCatalog()).OpenRandomProductOrange()
+}
+
+
 def static "products.productsFromCatalog.getSpecifiedinStockProductsFromOnePage"(
     	int elementIndex	
      , 	List productList	) {
