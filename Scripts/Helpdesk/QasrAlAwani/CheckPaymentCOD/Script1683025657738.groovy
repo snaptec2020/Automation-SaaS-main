@@ -282,7 +282,7 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ReturnPo
 //println PolicyNewTab
 WebUI.delay(2)
 WebUI.switchToWindowIndex(currentTab+2)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/ReturnPolicyPage/Title'),3)
+WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/ReturnPolicyPage/Title'),3)
 int PolicyTab = WebUI.getWindowIndex()
 String Policyurl = WebUI.getUrl()
 WebUI.verifyMatch(Policyurl, GlobalVariable.FE_URL+"exchange-and-return", true)
