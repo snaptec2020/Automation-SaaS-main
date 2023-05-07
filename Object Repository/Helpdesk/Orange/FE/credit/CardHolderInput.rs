@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>FinishPayment</name>
+   <name>CardHolderInput</name>
    <tag></tag>
-   <elementGuidId>7368d2b3-59e2-412e-97d7-93aa870d9f31</elementGuidId>
+   <elementGuidId>16cd3a24-b2fa-45f4-bb78-993c6018d5d4</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button[contains(@class,&quot;review-placeOrderButton-&quot;) and text()=&quot;إنشاء الطلب&quot;]</value>
+         <value>//input[@name=&quot;card.holder&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

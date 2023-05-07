@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>FinishPayment</name>
+   <name>deliveryTime-topHeader-text_1</name>
    <tag></tag>
-   <elementGuidId>7368d2b3-59e2-412e-97d7-93aa870d9f31</elementGuidId>
+   <elementGuidId>6b1090b9-de79-4355-958c-0f0ec66464db</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button[contains(@class,&quot;review-placeOrderButton-&quot;) and text()=&quot;إنشاء الطلب&quot;]</value>
+         <value>//div[contains(@class,&quot;deliveryTime-root-&quot;)]//div[contains(@class,&quot;deliveryTime-topHeader-&quot;)]//h4[text()=&quot;وقت التوصيل&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

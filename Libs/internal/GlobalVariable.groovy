@@ -124,6 +124,21 @@ public class GlobalVariable {
      */
     public static Object CustomerName
      
+    /**
+     * <p></p>
+     */
+    public static Object Latitude
+     
+    /**
+     * <p></p>
+     */
+    public static Object Longtitude
+     
+    /**
+     * <p></p>
+     */
+    public static Object CustomerEmail
+     
 
     static {
         try {
@@ -154,6 +169,9 @@ public class GlobalVariable {
             BE_Password = selectedVariables['BE_Password']
             BE_URL = selectedVariables['BE_URL']
             CustomerName = selectedVariables['CustomerName']
+            Latitude = selectedVariables['Latitude']
+            Longtitude = selectedVariables['Longtitude']
+            CustomerEmail = selectedVariables['CustomerEmail']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)

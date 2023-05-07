@@ -11,7 +11,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'566640965'</initValue>
+      <initValue>'581492572'</initValue>
       <name>FE_Tel</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -31,7 +31,22 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'dev dev'</initValue>
+      <initValue>'testing dev'</initValue>
       <name>CustomerName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>24.667691448256562</initValue>
+      <name>Latitude</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>46.696164402225314</initValue>
+      <name>Longtitude</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'mahmoud@snaptec.co'</initValue>
+      <name>CustomerEmail</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

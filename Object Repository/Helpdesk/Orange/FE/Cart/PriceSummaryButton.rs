@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//button[contains(@class,&quot;priceSummary-buttonCheckout-&quot;) and contains (@class,&quot;button-root_highPriority-qp_ button-root-&quot;) and contains(@class,&quot;clickable-root-&quot;)]</value>
+         <value>//button[contains(@class,&quot;priceSummary-buttonCheckout-&quot;)]</value>
       </entry>
       <entry>
          <key>BASIC</key>

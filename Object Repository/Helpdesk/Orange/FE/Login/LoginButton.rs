@@ -6,11 +6,11 @@
    <elementGuidId>d936edfc-e790-418d-987e-98c3ae47999e</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//button[@type='submit']//child::span[text()=&quot;ارسل رمز التحقق&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//span[text()=&quot;ارسل رمز التحقق&quot;]//parent::button[@type=&quot;submit&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

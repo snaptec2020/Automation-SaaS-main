@@ -6,11 +6,11 @@
    <elementGuidId>41be6836-fe5d-4a0a-b3e7-3516b2b65c16</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@id=&quot;checkout-frames-card-number&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//input[@name=&quot;card.number&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

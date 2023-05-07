@@ -6,11 +6,11 @@
    <elementGuidId>8aef596c-6e66-4f3b-be37-0aafff2c29bf</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@id=&quot;checkout-frames-expiry-date&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//input[@data-action=&quot;blur-card-expiry&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

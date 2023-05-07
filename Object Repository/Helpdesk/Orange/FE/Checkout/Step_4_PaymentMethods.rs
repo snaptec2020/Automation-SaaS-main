@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,&quot;checkoutPage-title-&quot;) and text()=&quot;3. طريقة الدفع&quot;]</value>
+         <value>//div[contains(@class,&quot;checkoutPage-title-&quot;) and text()=&quot;3. طرق الدفع&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>

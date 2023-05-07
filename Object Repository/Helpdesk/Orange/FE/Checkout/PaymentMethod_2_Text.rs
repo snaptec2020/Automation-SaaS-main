@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,&quot;checkoutPage-paymentMethod-&quot;)]/div[not(@*)]//div[contains(@class,&quot;paymentMethod-item-&quot;)]//p[text()=&quot;تمارا: قسم فاتورتك على 3 دفعات بدون فوائد&quot;]</value>
+         <value>//div[contains(@class,&quot;checkoutPage-paymentMethod-&quot;)]//div[not(@*)]//div[contains(@class,&quot;paymentMethod-item-&quot;)]//div[contains(@class,&quot;paymentMethod-text-&quot;)]//div[text()=&quot;فيزا&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>

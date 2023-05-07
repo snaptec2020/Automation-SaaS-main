@@ -6,11 +6,11 @@
    <elementGuidId>b783899a-e47d-4097-afb5-d66e01821029</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//ul[contains(@class,&quot;shippingMethod-shippingMethodBody-&quot;)]//li[contains(@class,&quot;shippingMethod-shippingMethodItem-uU0 shippingMethod-active-&quot;)]//span[contains(@class,&quot;shippingMethod-leftColumn-&quot;)]//span//h4[text()=&quot;الشحن&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//ul[contains(@class,&quot;shippingMethod-shippingMethodBody-&quot;)]//li[contains(@class,&quot;shippingMethod-shippingMethodItem-uU0 shippingMethod-active-&quot;)]//span[contains(@class,&quot;shippingMethod-leftColumn-&quot;)]//span//h4[text()=&quot;توصيل شركة أورانج - مجاناً&quot; or text()=&quot; 20 ريال للطلبات أقل من 50 ريال&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
