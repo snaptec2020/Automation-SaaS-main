@@ -417,91 +417,134 @@ if (Paymentlist.size() != 4) {
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/PaymentMethod_4_Text'))
 }
 
-//Order with COD
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/PaymentMethod_4_Text'))
+//Order with Tamara
 
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/FinishPayment'))
-
-TestObject OrderDetails = new TestObject()
-
-OrderDetails.addProperty('xpath', ConditionType.EQUALS, '//h4[contains(@class,"confirmPayment-orderNumber-")]')
-
-WebElement OrderDetailsElement = WebUiCommonHelper.findWebElement(OrderDetails, 30)
-
-def orderDetailsText = OrderDetailsElement.getText()
-
-println(orderDetailsText)
-
-def orderNumber = orderDetailsText.findAll('\\d+').get(0)
-
-//remove the order
-WebUI.delay(2)
-
-WebUI.switchToWindowIndex(currentTab + 1)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/Menu/Menu_Sales'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/Menu/Menu_Sales_orders'))
-
-if (WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/BE/Sales_Order_page/FilterClear'), FailureHandling.OPTIONAL)) {
-    WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/Sales_Order_page/FilterClear'))
+TestObject tabbyObj = new TestObject()
+tabbyObj.addProperty("xpath",ConditionType.EQUALS,'//*[contains(text(),"tamara")]')
+if(WebUI.verifyElementPresent(tabbyObj,5, FailureHandling.OPTIONAL)) {
+	assert false
 }
-
-WebUI.delay(2)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/Sales_Order_page/button_Filters'))
-
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Orange/BE/Sales_Order_page/Filter_ID_FROM'), 2)
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/Orange/BE/Sales_Order_page/Filter_increment_id'), orderNumber)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/Sales_Order_page/Sales_orders_FilterButton'))
-
-TestObject searchResultTO = new TestObject()
-
-searchResultTO.addProperty('xpath', ConditionType.EQUALS, ('//div[@class="data-grid-cell-content" and text()="' + orderNumber) + 
-    '"]')
-
-List<WebElement> searchResultElm = WebUiCommonHelper.findWebElements(searchResultTO, 10)
-
-if (searchResultElm.size().equals(1)) {
-    searchResultElm.get(0).click()
-
-    TestObject OrderHeaderTO = new TestObject()
-
-    OrderHeaderTO.addProperty('xpath', ConditionType.EQUALS, '//div[@class="page-header-hgroup col-l-8 col-m-6"]//div[@class="page-title-wrapper"]//h1[@class="page-title"]')
-
-    WebElement OrderHeaderElem = WebUiCommonHelper.findWebElement(OrderHeaderTO, 30)
-
-    def OrderHeaderText = OrderHeaderElem.getText()
-
-    if (OrderHeaderText.equals('#' + orderNumber)) {
-        TestObject CustomerNameTO = new TestObject()
-
-        CustomerNameTO.addProperty('xpath', ConditionType.EQUALS, '//a[text()="' + GlobalVariable.CustomerEmail + '" or href="' +GlobalVariable.CustomerEmail + '"]')
-
-        WebElement CustomerNameElem = WebUiCommonHelper.findWebElement(CustomerNameTO, 30)
-
-        if (CustomerNameElem.getText().equals(GlobalVariable.CustomerEmail)) {
-            TestObject CancelButtonTO = new TestObject()
-
-            CancelButtonTO.addProperty('xpath', ConditionType.EQUALS, '//button[@id="order-view-cancel-button"]')
-
-            WebElement CancelButtonElem = WebUiCommonHelper.findWebElement(CancelButtonTO, 30)
-
-            CancelButtonElem.click()
-
-            TestObject CancelButtonOKTO = new TestObject()
-
-            CancelButtonOKTO.addProperty('xpath', ConditionType.EQUALS, '//button[@class="action-primary action-accept"]')
-
-            WebElement CancelButtonOKElem = WebUiCommonHelper.findWebElement(CancelButtonOKTO, 30)
-
-            CancelButtonOKElem.click()
-        }
-    }
-}
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/PaymentMethod_2_Text'))
+//WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/Step_1_Login'), 5)
+//
+////WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/FinishPayment'), 10)
+////WebUI.scrollToPosition(0, element.getLocation().getY())
+//
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/FinishPayment'))
+//
+//WebUI.waitForPageLoad(20)
+//
+//WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Tamara/TamaraProceed'), 20)
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Tamara/TamaraProceed'))
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Tamara/PrependPhone'))
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Tamara/PhoneLogin'))
+//
+//String url = WebUI.getUrl()
+//
+//WebUI.verifyMatch(url, 'https://checkout.tamara.co/.*', true)
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Tamara/TamaraProceed'))
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Tamara/EnterOTPText_1'))
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Tamara/EnterOTPText_2'))
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Tamara/OTPFirstDigit'))
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Tamara/TamaraProceedButtonPage2'))
+//
+//WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Tamara/TamaraCancel'))
+//
+////WebUI.verifyElementNotClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Tamara/TamaraProceedButtonPage2'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Tamara/TamaraCancel'))
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Tamara/CancleDialogText_1'))
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Tamara/CancleDialogReturnBtn'))
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Tamara/CancleDialogContinueBtn'))
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Tamara/CancleDialogReturnBtn'))
+//
+//WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ErrorAfterPayment_Tamara'), 20)
+//
+//url = WebUI.getUrl()
+//
+//WebUI.verifyMatch(url, GlobalVariable.FE_URL + '.*', true)
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ErrorAfterPayment_Text_ThankYou'))
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ErrorAfterPayment_Text_OrderDetails'))
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ErrorAfterPayment_Tamara'))
+//
+//WebElement orderDetailsElement = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ErrorAfterPayment_Text_OrderDetails'), 
+//    10)
+//
+//def orderDetailsText = orderDetailsElement.getText()
+//
+//def orderNumber = orderDetailsText.findAll('\\d+').get(0)
+//
+////Check the order
+//WebUI.delay(2)
+//
+//WebUI.switchToWindowIndex(currentTab + 1)
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/BE/Menu/Menu_Sales'))
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/BE/Menu/Menu_Sales_orders'))
+//
+//if (WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/BE/Sales_Order_page/FilterClear'), FailureHandling.OPTIONAL)) {
+//    WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/BE/Sales_Order_page/FilterClear'))
+//}
+//
+//WebUI.delay(2)
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/BE/Sales_Order_page/button_Filters'))
+//
+//WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/BE/Sales_Order_page/Filter_ID_FROM'), 2)
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/Qasr/BE/Sales_Order_page/Filter_increment_id'), orderNumber)
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/BE/Sales_Order_page/Sales_orders_FilterButton'))
+//
+//TestObject searchResultTO = new TestObject()
+//
+//searchResultTO.addProperty('xpath', ConditionType.EQUALS, ('//div[@class="data-grid-cell-content" and text()="' + orderNumber) + 
+//    '"]')
+//
+//List searchResultElm = WebUiCommonHelper.findWebElements(searchResultTO, 10)
+//
+//if (searchResultElm.size().equals(1)) {
+//    searchResultElm.get(0).click()
+//
+//    TestObject OrderHeaderTO = new TestObject()
+//
+//    OrderHeaderTO.addProperty('xpath', ConditionType.EQUALS, '//div[@class="page-header-hgroup col-l-8 col-m-6"]//div[@class="page-title-wrapper"]//h1[@class="page-title"]')
+//
+//    WebElement OrderHeaderElem = WebUiCommonHelper.findWebElement(OrderHeaderTO, 30)
+//
+//    def OrderHeaderText = OrderHeaderElem.getText()
+//
+//    if (OrderHeaderText.equals('#' + orderNumber)) {
+//        WebUI.verifyElementText(findTestObject('Object Repository/Helpdesk/Qasr/BE/Sales_Order_page/OrderStatus'), 'Canceled')
+//
+//        TestObject CustomerNameTO = new TestObject()
+//
+//        CustomerNameTO.addProperty('xpath', ConditionType.EQUALS, ('//a[@target="_blank"]//span[text()="' + GlobalVariable.CustomerName) + 
+//            '"]')
+//
+//        WebElement CustomerNameElem = WebUiCommonHelper.findWebElement(CustomerNameTO, 30)
+//
+//        if (!(CustomerNameElem.getText().equals(GlobalVariable.CustomerName))) {
+//            assert false
+//        }
+//    }
+//}
 
 WebUI.delay(5)
 

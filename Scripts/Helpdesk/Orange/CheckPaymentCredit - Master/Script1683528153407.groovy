@@ -1,3 +1,38 @@
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
+import com.kms.katalon.core.testobject.ConditionType as ConditionType
+import java.awt.Robot as Robot
+import java.awt.event.KeyEvent as KeyEvent
+import org.openqa.selenium.JavascriptExecutor as JavascriptExecutor
+import org.openqa.selenium.WebDriver as WebDriver
+import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.annotation.Keyword as Keyword
+import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
+import com.kms.katalon.core.webui.common.WebUiCommonHelper as WebUiCommonHelper
+import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword as WebUIAbstractKeyword
+import catalog.catlogComponants as catlogComponants
+import java.util.List as List
+import java.util.concurrent.ConcurrentHashMap.KeySetView as KeySetView
+import org.eclipse.jdt.internal.compiler.ast.ForeachStatement as ForeachStatement
+import org.openqa.selenium.By as By
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.chrome.ChromeOptions as WebElement
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -31,7 +66,6 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper as WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword as WebUIAbstractKeyword
 import catalog.catlogComponants
 import groovy.inspect.swingui.BytecodeCollector
-
 import java.util.List as List
 import java.util.concurrent.ConcurrentHashMap.KeySetView as KeySetView
 import org.eclipse.jdt.internal.compiler.ast.ForeachStatement as ForeachStatement
@@ -417,25 +451,130 @@ if (Paymentlist.size() != 4) {
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/PaymentMethod_4_Text'))
 }
 
-//Order with COD
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/PaymentMethod_4_Text'))
+
+//Order with Credit - Master
+WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/PaymentMethod_2_Text'))
+WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/Step_1_Login'), 5)
+
+//WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/FinishPayment'), 10)
+//WebUI.scrollToPosition(0, element.getLocation().getY())
 
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/FinishPayment'))
 
-TestObject OrderDetails = new TestObject()
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/MainForm'), 10)
 
-OrderDetails.addProperty('xpath', ConditionType.EQUALS, '//h4[contains(@class,"confirmPayment-orderNumber-")]')
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/MainForm'))
 
-WebElement OrderDetailsElement = WebUiCommonHelper.findWebElement(OrderDetails, 30)
+WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardNumberInputFrame'), 10)
 
-def orderDetailsText = OrderDetailsElement.getText()
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardNumberInputFrame'))
 
-println(orderDetailsText)
+//WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardNumberInputFrame'), 10)
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardNumberInput'))
+
+WebUI.switchToDefaultContent()
+
+//WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardExpiryFrame'), 10)
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardExpiryInput'))
+
+//WebUI.switchToDefaultContent()
+
+WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardCVVFrame'), 10)
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardCVVInput'))
+
+WebUI.switchToDefaultContent()
+
+//WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardCVVFrame'), 10)
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardHolderInput'))
+
+WebUI.switchToDefaultContent()
+
+WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardNumberInputFrame'), 10)
+
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardNumberInput'), '4201322031914739')
+
+WebUI.switchToDefaultContent()
+
+//WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardExpiryFrame'), 10)
+
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardExpiryInput'), '1227')
+
+//WebUI.switchToDefaultContent()
+
+WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardCVVFrame'), 10)
+
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardCVVInput'), '274')
+
+WebUI.switchToDefaultContent()
+
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardHolderInput'), 'MAMDUH ALSHDAIFAT')
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CreditSubmit'))
+
+WebUI.waitForPageLoad(10)
+
+WebUI.delay(20)
+
+
+
+// I have no Master Card
+
+//String url = WebUI.getUrl()
+//
+//WebUI.verifyMatch(url, 'https://3dverify2.stcpay.com.sa/.*', true)
+//
+//
+//
+////WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/MainOTPFrame'), 10)
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CheckoutOTP'))
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CheckoutConfirm'))
+//
+//WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CheckoutOTP'), '0000')
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CheckoutConfirm'))
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/WrongOTPErrorText'))
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CheckoutCancel'))
+//
+//////////////////////////////////////////////////////////////////////////
+//if (WebUI.verifyAlertPresent(5,FailureHandling.OPTIONAL)) {
+//    WebUI.delay(2)
+//	if (WebUI.verifyAlertPresent(5,FailureHandling.OPTIONAL)) {
+//		WebUI.acceptAlert()
+//	}else {
+//		WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CheckoutCancel'))
+//		if (WebUI.verifyAlertPresent(5,FailureHandling.OPTIONAL)) {
+//			WebUI.acceptAlert()
+//		}
+//	}
+//}
+
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/ErrorAfterPayment_Tamara'), 20)
+
+url = WebUI.getUrl()
+
+WebUI.verifyMatch(url, GlobalVariable.FE_URL + '.*', true)
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/ErrorAfterPayment_Text_OrderDetails'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/ErrorAfterPayment_Tamara'))
+
+WebElement orderDetailsElement = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/ErrorAfterPayment_Text_OrderDetails'), 
+    10)
+
+def orderDetailsText = orderDetailsElement.getText()
 
 def orderNumber = orderDetailsText.findAll('\\d+').get(0)
 
-//remove the order
+//Check the order
 WebUI.delay(2)
 
 WebUI.switchToWindowIndex(currentTab + 1)
@@ -463,7 +602,7 @@ TestObject searchResultTO = new TestObject()
 searchResultTO.addProperty('xpath', ConditionType.EQUALS, ('//div[@class="data-grid-cell-content" and text()="' + orderNumber) + 
     '"]')
 
-List<WebElement> searchResultElm = WebUiCommonHelper.findWebElements(searchResultTO, 10)
+List searchResultElm = WebUiCommonHelper.findWebElements(searchResultTO, 10)
 
 if (searchResultElm.size().equals(1)) {
     searchResultElm.get(0).click()
@@ -477,28 +616,16 @@ if (searchResultElm.size().equals(1)) {
     def OrderHeaderText = OrderHeaderElem.getText()
 
     if (OrderHeaderText.equals('#' + orderNumber)) {
+        WebUI.verifyElementText(findTestObject('Object Repository/Helpdesk/Orange/BE/Sales_Order_page/OrderStatus'), 'Canceled')
+
         TestObject CustomerNameTO = new TestObject()
 
         CustomerNameTO.addProperty('xpath', ConditionType.EQUALS, '//a[text()="' + GlobalVariable.CustomerEmail + '" or href="' +GlobalVariable.CustomerEmail + '"]')
 
         WebElement CustomerNameElem = WebUiCommonHelper.findWebElement(CustomerNameTO, 30)
 
-        if (CustomerNameElem.getText().equals(GlobalVariable.CustomerEmail)) {
-            TestObject CancelButtonTO = new TestObject()
-
-            CancelButtonTO.addProperty('xpath', ConditionType.EQUALS, '//button[@id="order-view-cancel-button"]')
-
-            WebElement CancelButtonElem = WebUiCommonHelper.findWebElement(CancelButtonTO, 30)
-
-            CancelButtonElem.click()
-
-            TestObject CancelButtonOKTO = new TestObject()
-
-            CancelButtonOKTO.addProperty('xpath', ConditionType.EQUALS, '//button[@class="action-primary action-accept"]')
-
-            WebElement CancelButtonOKElem = WebUiCommonHelper.findWebElement(CancelButtonOKTO, 30)
-
-            CancelButtonOKElem.click()
+        if (!CustomerNameElem.getText().equals(GlobalVariable.CustomerEmail)) {
+          assert false
         }
     }
 }

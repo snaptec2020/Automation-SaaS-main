@@ -1,3 +1,38 @@
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
+import com.kms.katalon.core.testobject.ConditionType as ConditionType
+import java.awt.Robot as Robot
+import java.awt.event.KeyEvent as KeyEvent
+import org.openqa.selenium.JavascriptExecutor as JavascriptExecutor
+import org.openqa.selenium.WebDriver as WebDriver
+import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.annotation.Keyword as Keyword
+import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
+import com.kms.katalon.core.webui.common.WebUiCommonHelper as WebUiCommonHelper
+import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword as WebUIAbstractKeyword
+import catalog.catlogComponants as catlogComponants
+import java.util.List as List
+import java.util.concurrent.ConcurrentHashMap.KeySetView as KeySetView
+import org.eclipse.jdt.internal.compiler.ast.ForeachStatement as ForeachStatement
+import org.openqa.selenium.By as By
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.chrome.ChromeOptions as WebElement
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -31,7 +66,6 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper as WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword as WebUIAbstractKeyword
 import catalog.catlogComponants
 import groovy.inspect.swingui.BytecodeCollector
-
 import java.util.List as List
 import java.util.concurrent.ConcurrentHashMap.KeySetView as KeySetView
 import org.eclipse.jdt.internal.compiler.ast.ForeachStatement as ForeachStatement
@@ -369,140 +403,117 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/deliveryDays-headerList'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/deliveryTime-headerList'))
 
+//TodayDate = new Date().format( 'ddMMyyyy' )
+//def date = new Date()
+//def sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
 
+def DaysMap=[
+	1:"الأحد",
+	2:"الاثنين",
+	3:"الثلاثاء",
+	4:"الأربعاء",
+	5:"الخميس",
+	6:"الجمعة",
+	7:"السبت"]
+Date date = new Date()
+int NowTimeHour = new Date().format( 'kk' ).toInteger()
+int disabledPeriods=0
+switch(NowTimeHour) {            
+         case 23..24: 
+            disabledPeriods = 8
+            break; 
+         case 21..23: 
+            disabledPeriods = 7
+            break; 
+         case 19..21: 
+            disabledPeriods = 6
+            break; 
+         case 17..19: 
+            disabledPeriods = 5
+            break; 
+         case 15..17: 
+            disabledPeriods = 4
+            break; 
+         case 13..15: 
+            disabledPeriods = 3
+            break; 
+         case 11..13: 
+            disabledPeriods = 2
+            break; 
+         case 9..11: 
+            disabledPeriods = 1
+            break; 
+		default:
+			disabledPeriods = 0
+			break;
+      }
+
+println NowTimeHour
+println disabledPeriods
 
 TestObject availableDates = new TestObject()
 availableDates.addProperty("xpath",ConditionType.EQUALS,findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/deliveryDays-headerList').getSelectorCollection().get(SelectorMethod.XPATH) + "//li")
 List<WebElement> availableDatesElements = WebUiCommonHelper.findWebElements(availableDates, 30)
 WebUI.verifyEqual(availableDatesElements.size(), 7)
 
-//availableDatesElements.get(0).click()
+for(int i=0;i<7;i++) {
+	if(!i.equals(0)) {
+		WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/ShipmentMethodsList'), 5)
+		availableDatesElements.get(i).click()
+		}
+	Calendar calendar = Calendar.getInstance()
+	calendar.setTime(date)
+	int day = calendar.get(Calendar.DAY_OF_WEEK)
+	String LoopDateString =date.format( 'yyyy/MM/dd' )
+	String LoopDay=DaysMap[day]
+	TestObject LoopDateTO = new TestObject()
+	LoopDateTO.addProperty("xpath",
+		ConditionType.EQUALS,
+		findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/deliveryDays-headerList').getSelectorCollection().get(SelectorMethod.XPATH) + "//li[" + (i+1).toString() + "]//h6")
+	List<WebElement> LoopDateElement = WebUiCommonHelper.findWebElements(LoopDateTO, 30)
+	
+	WebUI.verifyEqual(LoopDateElement.get(0).getText() , LoopDay)
+	WebUI.verifyEqual(LoopDateElement.get(1).getText() , LoopDateString)
+	
+	TestObject availableTime = new TestObject()
+	availableTime.addProperty("xpath",ConditionType.EQUALS,findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/deliveryTime-headerList').getSelectorCollection().get(SelectorMethod.XPATH) + '//li[contains(@class,"deliveryTime-item-")]')
+	List<WebElement> availableTimesElements = WebUiCommonHelper.findWebElements(availableTime, 30)
+	if(LoopDay.equals("الجمعة")) {
+		WebUI.verifyEqual(availableTimesElements.size(),5)
+	}else {
+		WebUI.verifyEqual(availableTimesElements.size(),8)
+	}
+	
+	int jj=-1
+	for(int j=0;j<8;j++) {
+		
+		if(LoopDay.equals("الجمعة") & j<=2) {
+			continue;
+		}else {
+			jj+=1
+		}
+		TestObject LoopedTimePeriodTO=new TestObject()
+		LoopedTimePeriodTO.addProperty("xpath",ConditionType.EQUALS,
+			findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/deliveryTime-headerList').getSelectorCollection().get(SelectorMethod.XPATH) + "//li[" + (jj+1).toString() + "]"
+			)
+		println findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/deliveryTime-headerList').getSelectorCollection().get(SelectorMethod.XPATH) + "//li[" + (jj+1).toString() + "]"
+		WebElement LoopedTimePeriodElement = WebUiCommonHelper.findWebElement(LoopedTimePeriodTO, 5)
 
-TestObject availableTime = new TestObject()
-availableTime.addProperty("xpath",ConditionType.EQUALS,findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/deliveryTime-headerList').getSelectorCollection().get(SelectorMethod.XPATH) + '//li[contains(@class,"deliveryTime-item-")]')
-List<WebElement> availableTimesElements = WebUiCommonHelper.findWebElements(availableTime, 30)
-WebUI.verifyEqual(availableTimesElements.size(), 8)
-
-TestObject availableActiveTime = new TestObject()
-availableActiveTime.addProperty("xpath",ConditionType.EQUALS,findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/deliveryTime-headerList').getSelectorCollection().get(SelectorMethod.XPATH) + '//li[contains(@class,"deliveryTime-item-") and not(contains(@class,"deliveryTime-disableBtn-"))]')
-List<WebElement> availableActiveTimesElements = WebUiCommonHelper.findWebElements(availableActiveTime, 30)
-
-
-
-WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/ShpmentMethod_1'), 10)
-TestObject firstActiveTime = new TestObject()
-firstActiveTime.addProperty("xpath",ConditionType.EQUALS,'(' + findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/deliveryTime-headerList').getSelectorCollection().get(SelectorMethod.XPATH) + '//li[contains(@class,"deliveryTime-item-") and not(contains(@class,"deliveryTime-disableBtn-"))])[1]')
-WebElement firstAvailableActiveTimesElements = WebUiCommonHelper.findWebElement(firstActiveTime, 30)
-WebUI.waitForElementClickable(firstActiveTime, 10)
-firstAvailableActiveTimesElements.click()
-
-
-//PaymentMethods
-TestObject paymentPath = new TestObject()
-
-paymentPath.addProperty('xpath', ConditionType.EQUALS, '//div[contains(@class,"checkoutPage-paymentMethod-")]/div[not(@*)]//div[contains(@class,"paymentMethod-item-")]')
-
-List Paymentlist = WebUiCommonHelper.findWebElements(paymentPath, 30)
-
-if (Paymentlist.size() != 4) {
- 	println (Paymentlist.size())
-   assert false
-} else {
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/PaymentMethod_1_Text'))
-
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/PaymentMethod_2_Text'))
-
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/PaymentMethod_3_Text'))
-
-	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/PaymentMethod_4_Text'))
-}
-
-//Order with COD
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/PaymentMethod_4_Text'))
-
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/FinishPayment'))
-
-TestObject OrderDetails = new TestObject()
-
-OrderDetails.addProperty('xpath', ConditionType.EQUALS, '//h4[contains(@class,"confirmPayment-orderNumber-")]')
-
-WebElement OrderDetailsElement = WebUiCommonHelper.findWebElement(OrderDetails, 30)
-
-def orderDetailsText = OrderDetailsElement.getText()
-
-println(orderDetailsText)
-
-def orderNumber = orderDetailsText.findAll('\\d+').get(0)
-
-//remove the order
-WebUI.delay(2)
-
-WebUI.switchToWindowIndex(currentTab + 1)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/Menu/Menu_Sales'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/Menu/Menu_Sales_orders'))
-
-if (WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/BE/Sales_Order_page/FilterClear'), FailureHandling.OPTIONAL)) {
-    WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/Sales_Order_page/FilterClear'))
-}
-
-WebUI.delay(2)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/Sales_Order_page/button_Filters'))
-
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Orange/BE/Sales_Order_page/Filter_ID_FROM'), 2)
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/Orange/BE/Sales_Order_page/Filter_increment_id'), orderNumber)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/Sales_Order_page/Sales_orders_FilterButton'))
-
-TestObject searchResultTO = new TestObject()
-
-searchResultTO.addProperty('xpath', ConditionType.EQUALS, ('//div[@class="data-grid-cell-content" and text()="' + orderNumber) + 
-    '"]')
-
-List<WebElement> searchResultElm = WebUiCommonHelper.findWebElements(searchResultTO, 10)
-
-if (searchResultElm.size().equals(1)) {
-    searchResultElm.get(0).click()
-
-    TestObject OrderHeaderTO = new TestObject()
-
-    OrderHeaderTO.addProperty('xpath', ConditionType.EQUALS, '//div[@class="page-header-hgroup col-l-8 col-m-6"]//div[@class="page-title-wrapper"]//h1[@class="page-title"]')
-
-    WebElement OrderHeaderElem = WebUiCommonHelper.findWebElement(OrderHeaderTO, 30)
-
-    def OrderHeaderText = OrderHeaderElem.getText()
-
-    if (OrderHeaderText.equals('#' + orderNumber)) {
-        TestObject CustomerNameTO = new TestObject()
-
-        CustomerNameTO.addProperty('xpath', ConditionType.EQUALS, '//a[text()="' + GlobalVariable.CustomerEmail + '" or href="' +GlobalVariable.CustomerEmail + '"]')
-
-        WebElement CustomerNameElem = WebUiCommonHelper.findWebElement(CustomerNameTO, 30)
-
-        if (CustomerNameElem.getText().equals(GlobalVariable.CustomerEmail)) {
-            TestObject CancelButtonTO = new TestObject()
-
-            CancelButtonTO.addProperty('xpath', ConditionType.EQUALS, '//button[@id="order-view-cancel-button"]')
-
-            WebElement CancelButtonElem = WebUiCommonHelper.findWebElement(CancelButtonTO, 30)
-
-            CancelButtonElem.click()
-
-            TestObject CancelButtonOKTO = new TestObject()
-
-            CancelButtonOKTO.addProperty('xpath', ConditionType.EQUALS, '//button[@class="action-primary action-accept"]')
-
-            WebElement CancelButtonOKElem = WebUiCommonHelper.findWebElement(CancelButtonOKTO, 30)
-
-            CancelButtonOKElem.click()
-        }
-    }
+		if(i.equals(0)) {
+			if((j+1)<=disabledPeriods) {
+				WebUI.verifyMatch(WebUI.getAttribute(LoopedTimePeriodTO, "class"), '.*deliveryTime-disableBtn-.*', true)
+//				WebUI.verifyElementNotClickable(LoopedTimePeriodTO)
+			}else {
+				WebUI.verifyElementClickable(LoopedTimePeriodTO)
+			}
+		}else {
+			WebUI.verifyElementClickable(LoopedTimePeriodTO)
+		}
+	}	
+	date=date.next()
 }
 
 WebUI.delay(5)
 
 WebUI.closeBrowser()
+

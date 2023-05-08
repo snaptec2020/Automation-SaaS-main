@@ -622,7 +622,7 @@ if (searchResultElm.size().equals(1)) {
 
         TestObject CustomerNameTO = new TestObject()
 
-        CustomerNameTO.addProperty('xpath', ConditionType.EQUALS, '//a[text()="' + GlobalVariable.CustomerEmail + '"]')
+        CustomerNameTO.addProperty('xpath', ConditionType.EQUALS, '//a[text()="' + GlobalVariable.CustomerEmail + '" or href="' +GlobalVariable.CustomerEmail + '"]')
 
         WebElement CustomerNameElem = WebUiCommonHelper.findWebElement(CustomerNameTO, 30)
 
