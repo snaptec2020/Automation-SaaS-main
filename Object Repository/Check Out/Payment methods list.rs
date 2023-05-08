@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//div[@class='payment-method-container__list__item']</value>
+         <value>//div[@class='payment-method-container__list__item']//div</value>
       </entry>
       <entry>
          <key>XPATH</key>
@@ -21,7 +21,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//div[@class='payment-method-container__list__item']</value>
-      <webElementGuid>7faac649-5a60-4c7b-8138-4664dda651fa</webElementGuid>
+      <value>//div[@class='payment-method-container__list__item']//div</value>
+      <webElementGuid>1d81c00e-cd1e-42c6-b6a7-19b013f4583f</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

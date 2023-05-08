@@ -17,26 +17,19 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+def currentUrl=WebUI.getUrl()
+WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components after click on proceed'), [:], 
+    FailureHandling.STOP_ON_FAILURE)
+List PaymentMethods =CustomKeywords.'checkout.Payments.getPaymentMethodsList'()
+for(int i=1;i<=PaymentMethods.size();i++) {
+if(i!=1) {	
+WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components after click on proceed'), [:],
+		FailureHandling.STOP_ON_FAILURE)
+}
+WebUI.callTestCase(findTestCase('FE/Check out/validation/Select location common case'), [:], FailureHandling.STOP_ON_FAILURE)
 
-	if(GlobalVariable.testSuiteStatus == 'Not Run') {
-		WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/login by Eamil/Success login fucation'), [:], FailureHandling.STOP_ON_FAILURE)
-		
-	}	
+CustomKeywords.'checkout.Payments.paymentMethodToPayBySelectedMethod'(i)
+WebUI.takeFullPageScreenshot('./paymentResult.png')
 
-//WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog - Select All Categories and Scrolling'), [:], FailureHandling.STOP_ON_FAILURE)
-	int cartContentsCount=WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'),10).size()
-	if(cartContentsCount==0) {
-		CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromRandomCategory'()
-	}
-
-
-WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
-
-WebUI.verifyElementVisible(findTestObject('Check Out/Apply Discount Button'))
-
-WebUI.verifyElementVisible(findTestObject('Check Out/Cart Calculation'))
-
-WebUI.verifyElementVisible(findTestObject('Check Out/Proceed To Checkout Button'))
-
-WebUI.verifyElementVisible(findTestObject('Check Out/Shopping Cart head'))
-
+WebUI.navigateToUrl(currentUrl)
+}

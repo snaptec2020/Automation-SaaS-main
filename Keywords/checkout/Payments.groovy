@@ -25,6 +25,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
+import generalactions.generalStrings
 import internal.GlobalVariable
 import utility.Utility
 
@@ -32,6 +33,7 @@ public class Payments {
 	TestObject tb=new TestObject();
 	Random randomNumberforProduct = new Random()
 	def utilityFunctions = new Utility()
+	def generalStrings = new generalStrings()
 	@Keyword
 	def getPaymentMethodsList() {
 		List Paymentlist = WebUI.findWebElements(findTestObject('Object Repository/Check Out/Payment methods list'),0)
@@ -49,7 +51,7 @@ public class Payments {
 			KeywordUtil.markPassed("No Payments Methods in this Page")
 
 		} else{
-			def elementsIndexPayments=Math.abs((randomNumberforProduct.nextInt(PaymentMethods.size())))
+			def elementsIndexPayments=generalStrings.getRandomNumberBetweenOnetoTarget(PaymentMethods.size())//Math.abs((randomNumberforProduct.nextInt(PaymentMethods.size())))
 			//KeywordUtil.logInfo(elementIndexproduct.toString() +prod.get(elementIndexproduct).toString())
 			if(elementsIndexPayments==0) {
 				elementsIndexPayments=1
@@ -57,9 +59,24 @@ public class Payments {
 			//div[@class='payment-method-container__list__item']
 			//tb.addProperty('xpath', ConditionType.EQUALS, "//div[@class='payment-method-container__list__item']["+elementsIndexPayments+"]")
 			//utilityFunctions.addXpathToTestObject(findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + "["+elementsIndexPayments+"]")
-			WebUI.click(utilityFunctions.addXpathToTestObject(findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + "["+elementsIndexPayments+"]"))
+			WebUI.click(utilityFunctions.addXpathToTestObject("("+findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + ")["+elementsIndexPayments+"]"))
 			placeOrder()
 		}
+	}
+
+	@Keyword
+	def paymentMethodToPayBySelectedMethod(int elementsIndexPayments) {
+
+		//KeywordUtil.markError(prod.get(1))
+		if(elementsIndexPayments==0) {
+			elementsIndexPayments=1
+		}
+		//div[@class='payment-method-container__list__item']
+		//tb.addProperty('xpath', ConditionType.EQUALS, "//div[@class='payment-method-container__list__item']["+elementsIndexPayments+"]")
+		//utilityFunctions.addXpathToTestObject(findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + "["+elementsIndexPayments+"]")
+		WebUI.click(utilityFunctions.addXpathToTestObject("("+findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + ")["+elementsIndexPayments+"]"))
+		//WebUI.click(utilityFunctions.addXpathToTestObject(findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + "["+elementsIndexPayments.toString()+"]"))
+		placeOrder()
 	}
 	def placeOrder()
 	{
