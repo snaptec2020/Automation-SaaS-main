@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>CheckPaymentCredit - Visa</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>3c22fa1d-4498-45a8-a159-a941f7b54e30</testCaseGuid>
-</TestCaseEntity>

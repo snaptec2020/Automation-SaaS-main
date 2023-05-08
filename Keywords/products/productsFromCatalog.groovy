@@ -163,42 +163,42 @@ public class productsFromCatalog {
 		List listOfInStockProducts = WebUI.findWebElements(findTestObject('Object Repository/Products/Add to cart enabled button'),30)
 		return listOfInStockProducts
 	}
-	
+
 	@Keyword
 	def OpenRandomProductAJStore(){
-		
-		
-//		List prod = getinStockProductFromOnePage()
+
+
+		//		List prod = getinStockProductFromOnePage()
 		List prod = WebUI.findWebElements(findTestObject('Object Repository/Products/Add to cart enabled button'),30)
-		
+
 		Random randomNumberforProduct = new Random()
-		
+
 		def elementIndexproduct = Math.abs(randomNumberforProduct.nextInt(prod.size()))
-		
+
 		def currentURL = WebUI.getUrl()
-		
+
 		TestObject tb = new TestObject()
-		
+
 		tb.addProperty('xpath', ConditionType.EQUALS, ('(//button[contains(text(),\'Add to Cart\') or contains(text(),\'أضف إلى السلة\')])[' +
-			elementIndexproduct) + ']')
-		
+				elementIndexproduct) + ']')
+
 		WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
-		
+
 		WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
 		if (WebUI.getUrl() == currentURL) {
 			WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
 		} else {
 			KeywordUtil.markPassed('Trying to Get Configurable product')
-		
+
 			tb.addProperty('xpath', ConditionType.EQUALS, '//section[starts-with(@class,\'productFullDetail-groupOption-\')]//div[starts-with(@class,\'option-root-\')]')
-		
+
 			List genralDropDowns = WebUI.findWebElements(tb, 30)
-		
+
 			if (genralDropDowns.size() != 0) {
 				for (int i = 1; i <= genralDropDowns.size(); i++) {
 					tb.addProperty('xpath', ConditionType.EQUALS, ('(//section[starts-with(@class,\'productFullDetail-groupOption-\')]//div[starts-with(@class,\'option-root-\')])[' +
-						i) + ']//div//button[not( @disabled)]')
-		
+							i) + ']//div//button[not( @disabled)]')
+
 					WebUI.click(tb)
 				}
 			}
@@ -206,36 +206,36 @@ public class productsFromCatalog {
 
 
 	}
-	
-	
+
+
 	@Keyword
 	def OpenRandomProductQasr(){
-		
-		
-//		List prod = getinStockProductFromOnePage()
+
+
+		//		List prod = getinStockProductFromOnePage()
 		TestObject items = new TestObject()
 		items.addProperty("xpath",ConditionType.EQUALS,'//a[contains(@class,"item-nameProduct-")]')
 		List prod = WebUI.findWebElements(items,30)
-		
+
 		Random randomNumberforProduct = new Random()
-		
-		def elementIndexproduct = Math.abs(randomNumberforProduct.nextInt(prod.size() - 1)) + 1 
-		
+
+		def elementIndexproduct = Math.abs(randomNumberforProduct.nextInt(prod.size() - 1)) + 1
+
 		TestObject tb = new TestObject()
-		
+
 		tb.addProperty('xpath', ConditionType.EQUALS, ('('+ items.findPropertyValue("xpath") + ')[' +
-			elementIndexproduct) + ']')
-		
+				elementIndexproduct) + ']')
+
 		WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
-		
+
 		WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
 
 	}
-	
+
 	@Keyword
 	def OpenRandomProductOrange(){
-		
-		
+
+
 		boolean found=false
 
 		while(!found) {
@@ -243,20 +243,20 @@ public class productsFromCatalog {
 			TestObject items = new TestObject()
 			items.addProperty("xpath",ConditionType.EQUALS,'//a[contains(@class,"baseProduct-productName-")]')
 			List prod = WebUI.findWebElements(items,30)
-			
+
 			Random randomNumberforProduct = new Random()
-			
+
 			def elementIndexproduct = Math.abs(randomNumberforProduct.nextInt(prod.size() - 1)) + 1
-			
+
 			TestObject tb = new TestObject()
-			
+
 			tb.addProperty('xpath', ConditionType.EQUALS, ('('+ items.findPropertyValue("xpath") + ')[' +
-				elementIndexproduct) + ']')
-			
+					elementIndexproduct) + ']')
+
 			WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
-			
+
 			WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
-			
+
 			if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Cart/Add to cart - Active'),FailureHandling.OPTIONAL)) {
 				found =true
 			}
