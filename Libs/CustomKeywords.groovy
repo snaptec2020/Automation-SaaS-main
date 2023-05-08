@@ -255,6 +255,16 @@ def static "cart.cartItems.getSpecifiedIteminThecart"(
 }
 
 
+def static "cart.cartItems.getSumOfProductsPriceInCart"() {
+    (new cart.cartItems()).getSumOfProductsPriceInCart()
+}
+
+
+def static "cart.cartItems.getCartSubtotal"() {
+    (new cart.cartItems()).getCartSubtotal()
+}
+
+
 def static "checkout.Payments.getPaymentMethodsList"() {
     (new checkout.Payments()).getPaymentMethodsList()
 }
@@ -262,6 +272,13 @@ def static "checkout.Payments.getPaymentMethodsList"() {
 
 def static "checkout.Payments.getRandomPaymentMethods"() {
     (new checkout.Payments()).getRandomPaymentMethods()
+}
+
+
+def static "checkout.Payments.paymentMethodToPayBySelectedMethod"(
+    	int elementsIndexPayments	) {
+    (new checkout.Payments()).paymentMethodToPayBySelectedMethod(
+        	elementsIndexPayments)
 }
 
 

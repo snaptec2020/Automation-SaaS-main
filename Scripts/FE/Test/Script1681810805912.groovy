@@ -3,7 +3,8 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
-import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.checkpoint.Checkpoint
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.main.CustomKeywordDelegatingMetaClass as CustomKeywordDelegatingMetaClass
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -19,7 +20,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-def x = findTestObject('Object Repository/Mega Menu/Catalog list').findPropertyValue('xpath') + '[3]'
+//def x = findTestObject('Object Repository/Mega Menu/Catalog list').findPropertyValue('xpath') + '[3]'
 
 //def xpathval = x.findPropertyValue('xpath') + '[3]'
 
@@ -29,7 +30,25 @@ def x = findTestObject('Object Repository/Mega Menu/Catalog list').findPropertyV
 
 //x.addProperty("xpath", ConditionType.EQUALS, xpathval,true)
 //("", ConditionType.EQUALS, "[2]",true)
-WebUI.click(CustomKeywords.'utility.Utility.addXpathToTestObject'(findTestObject('Object Repository/Mega Menu/Catalog list').findPropertyValue('xpath') + '[3]'))
-WebUI.delay(5)
+/*
+ * double sumOfOrder def numOfElementsInCard =
+ * CustomKeywords.'utility.Utility.checkIfElementExist'('Object
+ * Repository/Cart/Product price') if(numOfElementsInCard!=0) { for(int
+ * i=1;i<=numOfElementsInCard;i++) { productPrice =
+ * WebUI.getText(CustomKeywords.'utility.Utility.addXpathToTestObject'("("+
+ * findTestObject('Object Repository/Cart/Product
+ * price').findPropertyValue('xpath') + ")["+i+"]")) as double sumOfOrder
+ * =sumOfOrder + productPrice
+ * KeywordUtil.logInfo(WebUI.getText(CustomKeywords.'utility.Utility.
+ * addXpathToTestObject'("("+findTestObject('Object Repository/Cart/Product
+ * price').findPropertyValue('xpath') + ")["+i+"]")))
+ * KeywordUtil.logInfo(sumOfOrder.round(2).toString()) } }
+ */
+//WebUI.click(CustomKeywords.'utility.Utility.addXpathToTestObject'(findTestObject('Object Repository/Mega Menu/Catalog list').findPropertyValue('xpath') + '[3]'))
+//WebUI.delay(5)
 
+KeywordUtil.logInfo(CustomKeywords.'cart.cartItems.getSumOfProductsPriceInCart'().toString())
 
+def totalPrice = WebUI.getText(findTestObject('Object Repository/Cart/Cart Subtotal (Inc VAT)')) =~/\d+\.\d+/
+KeywordUtil.logInfo(totalPrice[0].toString())
+WebUI.verifyEqual(CustomKeywords.'cart.cartItems.getCartSubtotal'(), CustomKeywords.'cart.cartItems.getSumOfProductsPriceInCart'())

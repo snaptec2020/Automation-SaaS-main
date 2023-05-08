@@ -81,7 +81,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>1 = Web Browser, 2 = Mobile Browser, 3= Mobile App</description>
-      <initValue>'2'</initValue>
+      <initValue>'1'</initValue>
       <name>RunningMode</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

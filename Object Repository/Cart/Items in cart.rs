@@ -6,11 +6,11 @@
    <elementGuidId>1f3e2d17-9a7d-4219-a1c3-31f2fc166f92</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//ul[starts-with(@class,'products-container')]/li[starts-with(@class,'product')]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//li[contains(@class,'styles_product')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
