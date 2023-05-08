@@ -76,6 +76,7 @@ import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.html5.Location
 import org.openqa.selenium.html5.LocationContext
+import org.openqa.selenium.remote.RemoteWebDriver
 import org.openqa.selenium.remote.server.handler.GetCurrentUrl as WebElement
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -116,9 +117,10 @@ prefs.put("profile.default_content_setting_values.geolocation", 1) // 1:allow 2:
 ChromeOptions options = new ChromeOptions()
 options.setExperimentalOption("prefs", prefs)
 ChromeDriver drivertest = new ChromeDriver()
-((LocationContext)drivertest).setLocation(new Location(GlobalVariable.Latitude,GlobalVariable.Longtitude , 0))
+((LocationContext)drivertest).setLocation(new Location(GlobalVariable.Latitude,GlobalVariable.Longtitude , 1))
 
 DriverFactory.changeWebDriver(drivertest)
+
 WebUI.navigateToUrl(GlobalVariable.FE_URL)
 
 WebUI.maximizeWindow()
@@ -313,7 +315,7 @@ TestObject totalPaidTO = new TestObject()
 
 totalPaidTO.addProperty('xpath', ConditionType.EQUALS, '//span[text()="المجموع الكلي (شامل الضريبة)"]//following-sibling::span//div/span')
 
-List totalPaidElements = WebUI.findWebElements(totalPaidTO, 10)
+List<WebElement> totalPaidElements = WebUI.findWebElements(totalPaidTO, 10)
 
 def totalText = ''
 
