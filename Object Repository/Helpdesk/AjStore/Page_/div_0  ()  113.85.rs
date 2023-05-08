@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>div_0  ()  113.85</name>
+   <tag></tag>
+   <elementGuidId>628b30e9-015a-4b96-857c-d99344fe9c99</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>div.slick-slide.slick-active.slick-current > div > div.productBlock-customItemNoSize-cyc.item-root-1Qt > div.item-container-FZs</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='react-tabs-9']/div/div/div/div/div/div/div/div[13]/div/div/div</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>7a6d3d73-da1f-4669-8e29-512c0e329b14</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>item-container-FZs</value>
+      <webElementGuid>735c1759-579c-4cdb-9b6e-955fa2a51aa6</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>0شماغ العجلان (البلاتيني) رجالي أحمر113.85 ر.سأضف إلى السلة</value>
+      <webElementGuid>d7bac9be-5cf4-4b08-8a45-f65e90a965be</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;react-tabs-9&quot;)/div[@class=&quot;tabProductBlock-tabItem-14y&quot;]/div[@class=&quot;productBlock-root-2Nd&quot;]/div[@class=&quot;sc-gtsrHT gfuSqG productBlock-wrapper-3JW&quot;]/div[@class=&quot;productBlock-slider-tok&quot;]/div[@class=&quot;slick-slider slick-initialized&quot;]/div[@class=&quot;slick-list&quot;]/div[@class=&quot;slick-track&quot;]/div[@class=&quot;slick-slide slick-active slick-current&quot;]/div[1]/div[@class=&quot;productBlock-customItemNoSize-cyc item-root-1Qt&quot;]/div[@class=&quot;item-container-FZs&quot;]</value>
+      <webElementGuid>26137e46-b73c-406d-ae97-eebfd5e118ab</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='react-tabs-9']/div/div/div/div/div/div/div/div[13]/div/div/div</value>
+      <webElementGuid>47534ee3-5bda-487f-8b04-5d93ac469f9f</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='أضف إلى السلة'])[12]/following::div[5]</value>
+      <webElementGuid>5fb65ab4-3da4-49a9-b38a-0a0faadcff99</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='.'])[12]/following::div[6]</value>
+      <webElementGuid>d810074e-9c54-4dc2-ab81-5550f353cf8c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[13]/div/div/div</value>
+      <webElementGuid>c2ef9d5e-3481-4c65-a71b-769198ea1da1</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = '0شماغ العجلان (البلاتيني) رجالي أحمر113.85 ر.سأضف إلى السلة' or . = '0شماغ العجلان (البلاتيني) رجالي أحمر113.85 ر.سأضف إلى السلة')]</value>
+      <webElementGuid>527cb8b7-51ba-4bfc-9461-f47ad137c9bd</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

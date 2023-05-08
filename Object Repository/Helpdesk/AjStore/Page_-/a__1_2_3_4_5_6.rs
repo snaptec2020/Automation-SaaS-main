@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>a__1_2_3_4_5_6</name>
+   <tag></tag>
+   <elementGuidId>a83c95b7-d565-4e33-a358-d6a5b97806f6</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='root']/main/header/div[3]/div/nav/div[2]/a</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>a</value>
+      <webElementGuid>e72ef075-d1e0-4bd4-a156-4315571060b8</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>megaMenuItem-megaMenuLink-12G</value>
+      <webElementGuid>237d453f-61c1-4d4a-9db4-2e3bf5160a53</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>href</name>
+      <type>Main</type>
+      <value>/kids/thobe.html</value>
+      <webElementGuid>3d7247b6-87b9-4c89-8a16-f4091f7d8d15</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>الأثواب الرسمية</value>
+      <webElementGuid>2de233f7-6338-4d23-ad0a-c4abb44d9c03</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/header[@class=&quot;header-closed-2dE header-root-3ce&quot;]/div[@class=&quot;megaMenu-wrapper-2rA&quot;]/div[@class=&quot;megaMenu-container-2FL&quot;]/nav[@class=&quot;megaMenu-megaMenu-2LU&quot;]/div[@class=&quot;megaMenuItem-root-HSc&quot;]/a[@class=&quot;megaMenuItem-megaMenuLink-12G&quot;]</value>
+      <webElementGuid>e2f4d1f0-9c37-47d6-b7a8-01ee6dd2f0d3</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/main/header/div[3]/div/nav/div[2]/a</value>
+      <webElementGuid>a2fdc4d9-020e-45e6-8166-5379a116cb86</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:link</name>
+      <type>Main</type>
+      <value>//a[contains(text(),'الأثواب الرسمية')]</value>
+      <webElementGuid>a8ed92bc-2ced-4976-ac82-4d2ebfdd9ed2</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='الأشمغة'])[1]/following::a[1]</value>
+      <webElementGuid>06490c3e-6b42-40f6-8c68-f881b3a2ef43</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='البحث عن منتج'])[1]/following::a[2]</value>
+      <webElementGuid>d0a93a0b-f10d-4315-81ce-e76b680989f4</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='وسط'])[1]/preceding::a[1]</value>
+      <webElementGuid>b54f713a-51eb-4067-a747-aefac220456e</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='أطفال'])[2]/preceding::a[2]</value>
+      <webElementGuid>71711247-036e-4d6d-bc7e-194ed146cbda</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='الأثواب الرسمية']/parent::*</value>
+      <webElementGuid>2afc1d23-9fdd-4458-9c6e-f0245fb44f6f</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:href</name>
+      <type>Main</type>
+      <value>//a[contains(@href, '/kids/thobe.html')]</value>
+      <webElementGuid>a1495e38-6e1d-4bda-9735-1a11ae9fbe33</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[2]/a</value>
+      <webElementGuid>e32d54dc-a14f-464c-99e0-ec40c6b94b2f</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//a[@href = '/kids/thobe.html' and (text() = 'الأثواب الرسمية' or . = 'الأثواب الرسمية')]</value>
+      <webElementGuid>47dbbc0b-5e53-4360-a906-80b552de4735</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

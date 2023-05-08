@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>div_</name>
+   <tag></tag>
+   <elementGuidId>00b1b475-d0cc-4eeb-8bd1-3d179a6e7030</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>div.middleHeaderBar-navWrapper-1c-</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[contains (@class,'middleHeaderBar-actionsWrapper')] </value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>dc6bdbd2-326d-43a0-a444-394fce651d56</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>middleHeaderBar-navWrapper-1c-</value>
+      <webElementGuid>bc974175-9bec-4a67-9eab-8510a7806fcb</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>رجاليشبابيأطفالنسائي</value>
+      <webElementGuid>f492fba1-61b4-4511-accc-1168bbe95304</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/header[@class=&quot;header-closed-2dE header-root-3ce&quot;]/div[@class=&quot;middleHeaderBar-root-3ns middleHeaderBar-close-2Ut middleHeaderBar-root-3ns&quot;]/div[@class=&quot;middleHeaderBar-content-_nW&quot;]/div[@class=&quot;middleHeaderBar-navWrapper-1c-&quot;]</value>
+      <webElementGuid>4edee67a-694c-4b00-8648-a23b34e1ea36</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/main/header/div[2]/div/div</value>
+      <webElementGuid>7a7bd753-92c8-42c3-9966-309489b2fc86</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='English'])[1]/following::div[3]</value>
+      <webElementGuid>bbaddb18-933d-4916-b209-6b0890500622</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='العربية'])[2]/following::div[3]</value>
+      <webElementGuid>6f54ef02-4f76-415e-b87e-961d868f19b8</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//header/div[2]/div/div</value>
+      <webElementGuid>b648b390-9422-494a-94f7-9c97511aa7ba</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = 'رجاليشبابيأطفالنسائي' or . = 'رجاليشبابيأطفالنسائي')]</value>
+      <webElementGuid>10e21bdf-c0d8-4325-b079-6564d94b4e02</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

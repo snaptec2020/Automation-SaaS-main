@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>div_0057</name>
+   <tag></tag>
+   <elementGuidId>f8e56c8f-ad94-45bc-946e-66a1445351e4</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>div.verificationPage-miniTitle-_s4</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='root']/main/div/div/div/div[3]/div</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>3ba36636-2f17-4019-b756-5c99b20bd119</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>verificationPage-miniTitle-_s4</value>
+      <webElementGuid>3932c3c7-9ac8-4852-9e43-a5c5dadc0eaa</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>00:57ارسال كود التحقق بعد </value>
+      <webElementGuid>6f874485-dd13-4a20-bb7c-e4c63743a871</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/div[@class=&quot;main-page-279&quot;]/div[@class=&quot;verificationPage-container-3LA&quot;]/div[@class=&quot;verificationPage-root-2pJ verificationPage-verify-3VW&quot;]/div[3]/div[@class=&quot;verificationPage-miniTitle-_s4&quot;]</value>
+      <webElementGuid>6ecec945-bb62-42d2-ab1a-f0edcab54900</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/main/div/div/div/div[3]/div</value>
+      <webElementGuid>bae104a4-ec02-4ece-a67f-eb248f444f32</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='OTP is expried.'])[1]/following::div[2]</value>
+      <webElementGuid>b9e8d79b-0f2d-4aba-9d92-17bb0e12e7ed</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='تابعنا عبر'])[1]/preceding::div[2]</value>
+      <webElementGuid>9bb8109d-28d4-4502-ae45-5e2dc7f29aff</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='عجلان وإخوانه'])[1]/preceding::div[10]</value>
+      <webElementGuid>dbd669aa-2adb-4cb4-a503-cbe4b0db50af</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='ارسال كود التحقق بعد']/parent::*</value>
+      <webElementGuid>42a671bb-71de-41e5-8c40-fed988c6f2c1</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div/div/div/div[3]/div</value>
+      <webElementGuid>b3d75b79-003a-4d17-a686-52c57f686002</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = '00:57ارسال كود التحقق بعد ' or . = '00:57ارسال كود التحقق بعد ')]</value>
+      <webElementGuid>6d351807-0367-4018-8a29-6d7b74ca399f</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

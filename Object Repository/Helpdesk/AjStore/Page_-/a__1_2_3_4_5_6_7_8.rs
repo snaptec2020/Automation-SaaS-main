@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>a__1_2_3_4_5_6_7_8</name>
+   <tag></tag>
+   <elementGuidId>263ab865-0045-4c76-864f-16e48eef1b03</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='root']/main/header/div[3]/div/nav/div[4]/a</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>a</value>
+      <webElementGuid>968902c3-428b-4756-a2fb-dc0fcaaf6c73</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>megaMenuItem-megaMenuLink-12G</value>
+      <webElementGuid>393fee83-a7e1-45cc-8298-6f1df1cd6137</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>href</name>
+      <type>Main</type>
+      <value>/kids/winter-collection.html</value>
+      <webElementGuid>200a3372-e25e-45b2-83e6-00c815a076b4</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>المنتجات الشتوية</value>
+      <webElementGuid>7788f5b4-95fe-43a1-8eff-3d0aa04dd50d</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/header[@class=&quot;header-closed-2dE header-root-3ce&quot;]/div[@class=&quot;megaMenu-wrapper-2rA&quot;]/div[@class=&quot;megaMenu-container-2FL&quot;]/nav[@class=&quot;megaMenu-megaMenu-2LU&quot;]/div[@class=&quot;megaMenuItem-root-HSc&quot;]/a[@class=&quot;megaMenuItem-megaMenuLink-12G&quot;]</value>
+      <webElementGuid>22528db8-33bf-4e42-8230-b78bbeb4d738</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/main/header/div[3]/div/nav/div[4]/a</value>
+      <webElementGuid>03ca8837-c2e0-4d12-8c26-b4c1a765baa5</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:link</name>
+      <type>Main</type>
+      <value>//a[contains(text(),'المنتجات الشتوية')]</value>
+      <webElementGuid>d0733c41-7a15-4d63-a077-8c2a53964c51</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='فانلة'])[1]/following::a[1]</value>
+      <webElementGuid>070c8a22-558d-4074-9e4c-1838329d6527</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='الملابس الداخلية'])[1]/following::a[2]</value>
+      <webElementGuid>39b7759f-35ed-4da8-bf8b-a2766c3c3d7e</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='البيجاما'])[1]/preceding::a[1]</value>
+      <webElementGuid>e2b40c43-2c16-4204-9cc0-906303f00262</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='وسط'])[2]/preceding::a[2]</value>
+      <webElementGuid>ed7c8819-8cb5-44d6-8f3e-6b925a724b97</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='المنتجات الشتوية']/parent::*</value>
+      <webElementGuid>604484c7-4d75-44e0-998d-7952c9e8e268</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:href</name>
+      <type>Main</type>
+      <value>//a[contains(@href, '/kids/winter-collection.html')]</value>
+      <webElementGuid>10174dc6-2672-4002-8a4a-e3bec7d3956d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[4]/a</value>
+      <webElementGuid>0f5cf674-8f32-46eb-ae23-c3ab310ef639</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//a[@href = '/kids/winter-collection.html' and (text() = 'المنتجات الشتوية' or . = 'المنتجات الشتوية')]</value>
+      <webElementGuid>cb795934-d2de-47be-8986-69af7ecb6899</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

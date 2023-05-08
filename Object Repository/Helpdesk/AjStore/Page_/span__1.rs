@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>span__1</name>
+   <tag></tag>
+   <elementGuidId>c3f9d185-807e-418e-a695-906fc6a867dc</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>button.action-login.action-primary > span</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//form[@id='login-form']/fieldset/div[3]/div/button/span</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>span</value>
+      <webElementGuid>c62d7536-f54f-408c-9859-4b199b775747</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>دخول</value>
+      <webElementGuid>a5641eca-adc7-4cef-af44-6bbab9270f90</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;login-form&quot;)/fieldset[@class=&quot;admin__fieldset&quot;]/div[@class=&quot;form-actions&quot;]/div[@class=&quot;actions&quot;]/button[@class=&quot;action-login action-primary&quot;]/span[1]</value>
+      <webElementGuid>85e48412-856f-47c0-81a2-28e99d56efeb</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//form[@id='login-form']/fieldset/div[3]/div/button/span</value>
+      <webElementGuid>77c8fb2a-73f6-4352-8884-84d7dc696664</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='كلمة المرور'])[1]/following::span[1]</value>
+      <webElementGuid>6c693745-6519-4771-945f-4aae70591f57</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='اسم المستخدم'])[1]/following::span[2]</value>
+      <webElementGuid>dcbc3140-3b19-4625-9065-ca51523cc4e0</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='هل نسيت كلمة المرور؟'])[1]/preceding::span[1]</value>
+      <webElementGuid>9d4e84b5-3921-41c6-b20e-12339df12ad5</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='دخول']/parent::*</value>
+      <webElementGuid>ffdd3010-3eff-4031-b556-ecc432c3c71a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//button/span</value>
+      <webElementGuid>76798a1a-f38c-42b4-a9f3-0378d428fbc0</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//span[(text() = 'دخول' or . = 'دخول')]</value>
+      <webElementGuid>9ec7e0cc-7601-4954-8039-eec2ce397fed</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
