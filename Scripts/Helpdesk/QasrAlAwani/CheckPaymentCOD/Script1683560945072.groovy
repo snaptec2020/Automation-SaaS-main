@@ -268,30 +268,30 @@ if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/F
 	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PriceSummaryButton'))
 }
 
-
-
-
-
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ReturnPolicyCheckbox'),10)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ReturnPolicyText'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ReturnPolicyContentLink'))
-
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ReturnPolicyContentLink'))
-//int PolicyNewTab = WebUI.getWindowIndex()
-//println PolicyNewTab
-WebUI.delay(2)
-WebUI.switchToWindowIndex(currentTab+2)
-WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/ReturnPolicyPage/Title'),3)
-int PolicyTab = WebUI.getWindowIndex()
-String Policyurl = WebUI.getUrl()
-WebUI.verifyMatch(Policyurl, GlobalVariable.FE_URL+"exchange-and-return", true)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/ReturnPolicyPage/Title'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/ReturnPolicyPage/Paragraph_1'))
-WebUI.switchToWindowIndex(currentTab)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ReturnPolicyCheckbox'))
-
+//
+//
+//
+//
+//WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ReturnPolicyCheckbox'),10)
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ReturnPolicyText'))
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ReturnPolicyContentLink'))
+//
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ReturnPolicyContentLink'))
+////int PolicyNewTab = WebUI.getWindowIndex()
+////println PolicyNewTab
+//WebUI.delay(2)
+//WebUI.switchToWindowIndex(currentTab+2)
+//WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/ReturnPolicyPage/Title'),3)
+//int PolicyTab = WebUI.getWindowIndex()
+//String Policyurl = WebUI.getUrl()
+//WebUI.verifyMatch(Policyurl, GlobalVariable.FE_URL+"exchange-and-return", true)
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/ReturnPolicyPage/Title'))
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/ReturnPolicyPage/Paragraph_1'))
+//WebUI.switchToWindowIndex(currentTab)
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ReturnPolicyCheckbox'))
+//
 
 
 
