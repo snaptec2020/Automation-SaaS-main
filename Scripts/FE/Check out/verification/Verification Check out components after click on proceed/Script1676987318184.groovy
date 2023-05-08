@@ -18,8 +18,10 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components'), [:], FailureHandling.STOP_ON_FAILURE)
-
+def SumOfProductsPriceInCart = CustomKeywords.'cart.cartItems.getSumOfProductsPriceInCart'()
+WebUI.verifyEqual(CustomKeywords.'cart.cartItems.getCartSubtotal'(), SumOfProductsPriceInCart) // before proceed
 WebUI.click(findTestObject('Check Out/Proceed To Checkout Button'))
+
 //boolean otpRequierd=WebUI.verifyElementVisible(findTestObject('OTP/OTP container'))
 int otpRequierd=WebUI.findWebElements(findTestObject('Sign up Page/Sgin up By phone/insert phone number'),20).size()
 if(otpRequierd!= 0) {
@@ -27,6 +29,7 @@ if(otpRequierd!= 0) {
 	WebUI.click(findTestObject('Check Out/Update added phone number'))
 	WebUI.callTestCase(findTestCase('FE/OTP/General Actions/Insert fixed OTP'), [:], FailureHandling.STOP_ON_FAILURE)
 }
+//WebUI.verifyEqual(CustomKeywords.'cart.cartItems.getCartSubtotal'(), SumOfProductsPriceInCart) // after proceed
 
 WebUI.verifyElementVisible(findTestObject('Check Out/checkout user details 1'))
 

@@ -10,30 +10,26 @@ import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
-import com.kms.katalon.core.testobject.TestObject
-import com.kms.katalon.core.util.KeywordUtil
+import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-int cartContentsCount=WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'),10).size()
-if(cartContentsCount!=0) {
-	WebUI.click(findTestObject('Object Repository/Cart/Cart'), FailureHandling.CONTINUE_ON_FAILURE)
-}else {
-	KeywordUtil.markPassed("Add to cart now")
-
-WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/General Actions/View cart after adding products to cart'), [:], FailureHandling.CONTINUE_ON_FAILURE);
+def currentUrl=WebUI.getUrl()
+WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components after click on proceed'), [:], 
+    FailureHandling.STOP_ON_FAILURE)
+List PaymentMethods =CustomKeywords.'checkout.Payments.getPaymentMethodsList'()
+for(int i=1;i<=PaymentMethods.size();i++) {
+if(i!=1) {	
+WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components after click on proceed'), [:],
+		FailureHandling.STOP_ON_FAILURE)
 }
+WebUI.callTestCase(findTestCase('FE/Check out/validation/Select location common case'), [:], FailureHandling.STOP_ON_FAILURE)
 
+CustomKeywords.'checkout.Payments.paymentMethodToPayBySelectedMethod'(i)
+WebUI.takeFullPageScreenshot('./paymentResult.png')
 
-//WebUI.delay(10)
-
-//WebUI.scrollToElement(findTestObject('Object Repository/Cart/Filled cart'), 5, FailureHandling.STOP_ON_FAILURE)
-//li[contains(@class,'styles_product')]
-WebUI.verifyNotEqual(CustomKeywords.'utility.Utility.checkIfElementExist'('Object Repository/Cart/Items in cart'), 0, FailureHandling.CONTINUE_ON_FAILURE)
-
-//WebUI.verifyElementPresent(findTestObject('Object Repository/Cart/Filled cart'), 10)	
-
-
+WebUI.navigateToUrl(currentUrl)
+}

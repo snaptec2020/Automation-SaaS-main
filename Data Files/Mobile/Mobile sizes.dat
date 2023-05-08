@@ -8,23 +8,22 @@
    <dataFileGUID>0fc8b850-bb06-4562-b352-bab446b95a38</dataFileGUID>
    <dataSourceUrl></dataSourceUrl>
    <driver>InternalData</driver>
-   <data>iPhone+4 null null</data>
    <data>iPhone+6%2F7%2F8+Plus 375 2436</data>
    <data>iPad+Mini 320 658</data>
    <internalDataColumns>
       <columnIndex>0</columnIndex>
       <name>Type</name>
-      <size>3</size>
+      <size>2</size>
    </internalDataColumns>
    <internalDataColumns>
       <columnIndex>1</columnIndex>
       <name>Width</name>
-      <size>3</size>
+      <size>2</size>
    </internalDataColumns>
    <internalDataColumns>
       <columnIndex>2</columnIndex>
       <name>Highet</name>
-      <size>3</size>
+      <size>2</size>
    </internalDataColumns>
    <isInternalPath>false</isInternalPath>
    <query></query>

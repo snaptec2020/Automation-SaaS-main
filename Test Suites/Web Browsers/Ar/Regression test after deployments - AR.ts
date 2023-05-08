@@ -224,6 +224,13 @@
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
+      <guid>2be1f58c-17ca-45c8-acad-b7daaf20119a</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/LogOut/Validation/LogOut</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
       <guid>b83b1eca-376e-44c3-8b81-4d8db2f9420b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

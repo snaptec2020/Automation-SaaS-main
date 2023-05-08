@@ -24,7 +24,11 @@ import org.openqa.selenium.Keys as Keys
 	}	
 
 //WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog - Select All Categories and Scrolling'), [:], FailureHandling.STOP_ON_FAILURE)
-CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromRandomCategory'()
+	int cartContentsCount=WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'),10).size()
+	if(cartContentsCount==0) {
+		CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromRandomCategory'()
+	}
+
 
 WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
 

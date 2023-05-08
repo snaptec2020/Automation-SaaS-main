@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteCollectionEntity>
    <description></description>
-   <name>For mobile browser</name>
+   <name>Checkout Payment for all methods</name>
    <tag></tag>
    <delayBetweenInstances>0</delayBetweenInstances>
    <executionMode>SEQUENTIAL</executionMode>
@@ -15,7 +15,7 @@
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Mobile browsers/Ar/Regression test after deployments - AR</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Web Browsers/Ar/Checkout All methods</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -25,7 +25,7 @@
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Mobile browsers/Ar/Regression test after deployments - AR</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Web Browsers/Ar/Checkout All methods</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -35,17 +35,17 @@
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Web Browsers/Ar/Regression test after deployments - AR</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Mobile browsers/Ar/Checkout All methods</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>Bed Quartar -Releaes KSA </profileName>
+            <profileName>Release NT</profileName>
             <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>Safari</runConfigurationId>
+            <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Mobile browsers/Ar/Regression test after deployments - AR</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Mobile browsers/Ar/Checkout All methods</testSuiteEntity>
       </TestSuiteRunConfiguration>
    </testSuiteRunConfigurations>
 </TestSuiteCollectionEntity>
