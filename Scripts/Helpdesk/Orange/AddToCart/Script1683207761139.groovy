@@ -49,7 +49,7 @@ import org.openqa.selenium.WebElement
 import org.testng.TestRunner as WebElement
 
 WebUI.openBrowser('')
-
+ 
 WebUI.maximizeWindow()
 
 WebUI.navigateToUrl(GlobalVariable.FE_URL)
