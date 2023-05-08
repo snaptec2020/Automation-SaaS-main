@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>h2_</name>
+   <tag></tag>
+   <elementGuidId>f734c411-e583-43ea-8630-ef064b012eb2</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[contains(@class,'productBlock-containerTitle')]//h2[text()='تصفح العروض']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>h2.productBlock-heading-9de</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>h2</value>
+      <webElementGuid>d9a2f34e-8c49-4100-b111-c645eef3a296</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>productBlock-heading-9de</value>
+      <webElementGuid>99524162-24b7-464d-892e-a8abe44e2901</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>تصفح العروض</value>
+      <webElementGuid>871746ff-3c60-4cd0-a42b-6cadff64d711</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/div[@class=&quot;main-page-279&quot;]/div[@class=&quot;cms-root-2Wa&quot;]/div[@class=&quot;productBlock-root-2Nd&quot;]/div[@class=&quot;productBlock-containerTitle-dw7&quot;]/h2[@class=&quot;productBlock-heading-9de&quot;]</value>
+      <webElementGuid>2364bc92-9dda-4986-b8cb-39e7377fa4f3</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/main/div/div[2]/div[5]/div/h2</value>
+      <webElementGuid>ea51edee-f1d4-464f-92e6-a40bf46e53ba</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='أضف إلى السلة'])[22]/following::h2[1]</value>
+      <webElementGuid>bcc3dced-3136-4c3a-9c92-67eeeeb8e1c7</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='.'])[22]/following::h2[1]</value>
+      <webElementGuid>18fb1161-26db-47c3-b952-1f64a683cd02</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='شماغ بروجيه رجالي احمر شلش فيجن'])[1]/preceding::h2[1]</value>
+      <webElementGuid>6cbc5494-89b9-46b3-97e7-3a1816987c71</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='غير متوفر بالمخزون'])[1]/preceding::h2[2]</value>
+      <webElementGuid>57dbcaa3-dab1-465b-952b-d18d6d18c2ac</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='تصفح العروض']/parent::*</value>
+      <webElementGuid>dca8bd8e-794f-40fc-addf-ba30d3295789</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[5]/div/h2</value>
+      <webElementGuid>c5c60726-ed16-406a-8618-a9913488fc23</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//h2[(text() = 'تصفح العروض' or . = 'تصفح العروض')]</value>
+      <webElementGuid>c440d07c-da0e-4ba5-997c-cb9d00c0ee47</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
