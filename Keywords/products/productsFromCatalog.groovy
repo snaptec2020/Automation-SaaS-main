@@ -239,51 +239,51 @@ public class productsFromCatalog {
 
 	@Keyword
 	def OpenRandomProductAlAseel(){
-		
-//		int spotY =WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10).getLocation().getY()
-//		WebUI.scrollToPosition(0,spotY)
-//		WebUI.scrollToElement(null, 10)
-//		WebUI.scrollToPosition(0, findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection').get)(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10)
 
-		
-//		try {
-//			long lastHeight=((Number) WebUI.executeJavaScript("return document.body.scrollHeight", null)).longValue();
-//		  
-//			while (true) {
-//			  WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight);", null);
-//			  Thread.sleep(2000);
-//			  long newHeight = ((Number)WebUI.executeJavaScript("return document.body.scrollHeight", null)).longValue();
-//			  if (newHeight == lastHeight) {
-//				break;
-//			  }
-//			  lastHeight = newHeight;
-//			}
-//		  } catch (InterruptedException e) {
-//		   e.printStackTrace();
-//		  }
-		
-//		scrollToVerifyElementVisiblity(findTestObject("Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection"))
-//		WebElement el= WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10) 
-//		WebUI.executeJavaScript("arguments[0].scrollIntoView(true);", Arrays.asList(el));
-		
-		
-//		WebDriver driver = DriverFactory.getWebDriver()
-//		WebElement elem = driver.findElement(By.xpath('//p[@class="b-title h2"]'))
-//		WebUI.executeJavaScript('arguments[0].scrollIntoView(true)', Arrays.asList(elem))
-		
-//		WebElement elem = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10)
-//		WebUI.executeJavaScript('arguments[0].scrollIntoView()', Arrays.asList(elem))
-		
-//		Actions act = new Actions(driver)
-//		act.moveToElement(elem).build().perform()
-		
-		
-//		scrollToVerifyElementVisiblityAlAseel(findTestObject("Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection"))
+		//		int spotY =WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10).getLocation().getY()
+		//		WebUI.scrollToPosition(0,spotY)
+		//		WebUI.scrollToElement(null, 10)
+		//		WebUI.scrollToPosition(0, findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection').get)(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10)
+
+
+		//		try {
+		//			long lastHeight=((Number) WebUI.executeJavaScript("return document.body.scrollHeight", null)).longValue();
+		//
+		//			while (true) {
+		//			  WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight);", null);
+		//			  Thread.sleep(2000);
+		//			  long newHeight = ((Number)WebUI.executeJavaScript("return document.body.scrollHeight", null)).longValue();
+		//			  if (newHeight == lastHeight) {
+		//				break;
+		//			  }
+		//			  lastHeight = newHeight;
+		//			}
+		//		  } catch (InterruptedException e) {
+		//		   e.printStackTrace();
+		//		  }
+
+		//		scrollToVerifyElementVisiblity(findTestObject("Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection"))
+		//		WebElement el= WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10)
+		//		WebUI.executeJavaScript("arguments[0].scrollIntoView(true);", Arrays.asList(el));
+
+
+		//		WebDriver driver = DriverFactory.getWebDriver()
+		//		WebElement elem = driver.findElement(By.xpath('//p[@class="b-title h2"]'))
+		//		WebUI.executeJavaScript('arguments[0].scrollIntoView(true)', Arrays.asList(elem))
+
+		//		WebElement elem = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10)
+		//		WebUI.executeJavaScript('arguments[0].scrollIntoView()', Arrays.asList(elem))
+
+		//		Actions act = new Actions(driver)
+		//		act.moveToElement(elem).build().perform()
+
+
+		//		scrollToVerifyElementVisiblityAlAseel(findTestObject("Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection"))
 		if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'),10,FailureHandling.OPTIONAL)){
 			WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'),FailureHandling.OPTIONAL)
 		}
-		
-//		((JavascriptExecutor) DriverFactory.getWebDriver()).executeScript("arguments[0].scrollIntoView();", )
+
+		//		((JavascriptExecutor) DriverFactory.getWebDriver()).executeScript("arguments[0].scrollIntoView();", )
 		WebUI.executeJavaScript("arguments[0].scrollIntoView();", WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10))
 		TestObject items = new TestObject()
 		items.addProperty("xpath",ConditionType.EQUALS,"//button[contains(@title,'Add to Cart') or contains(@title,'إضافة إلى السلة')]")
@@ -300,11 +300,11 @@ public class productsFromCatalog {
 
 		WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
 		String currentURL = WebUI.getUrl()
-		
+
 		WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
-		
+
 		WebUI.waitForPageLoad(20)
-		
+
 		if (WebUI.getUrl().equals(currentURL)) {
 			WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'), FailureHandling.CONTINUE_ON_FAILURE)
 		} else {
@@ -323,10 +323,10 @@ public class productsFromCatalog {
 					SubElem.get(0).click()
 				}
 			}
-			
+
 		}
 	}
-	
+
 	@Keyword
 	def scrollToVerifyElementVisiblity(TestObject testObjectRelativeId) {
 		try {
@@ -343,7 +343,7 @@ public class productsFromCatalog {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Keyword
 	def scrollToVerifyElementVisiblityAlAseel(TestObject testObjectRelativeId) {
 		try {
@@ -363,8 +363,8 @@ public class productsFromCatalog {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+
 	@Keyword
 	def OpenRandomProductOrange(){
 
@@ -395,8 +395,12 @@ public class productsFromCatalog {
 			}
 		}
 	}
-	
-	
+
+	@Keyword
+	def ScrollToElement(TestObject tb) {
+		List<WebElement> element = WebUiCommonHelper.findWebElements(tb, 30)
+		WebUI.executeJavaScript('arguments[0].click()', element)
+	}
 
 	@Keyword
 	def getSpecifiedinStockProductsFromOnePage(int elementIndex,List productList ) {

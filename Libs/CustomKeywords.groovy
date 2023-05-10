@@ -121,6 +121,13 @@ def static "products.productsFromCatalog.OpenRandomProductOrange"() {
 }
 
 
+def static "products.productsFromCatalog.ScrollToElement"(
+    	TestObject tb	) {
+    (new products.productsFromCatalog()).ScrollToElement(
+        	tb)
+}
+
+
 def static "products.productsFromCatalog.getSpecifiedinStockProductsFromOnePage"(
     	int elementIndex	
      , 	List productList	) {

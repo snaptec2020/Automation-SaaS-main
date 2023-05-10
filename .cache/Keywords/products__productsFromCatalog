@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "2851AF9FD0D9B5325C0326F31F74E296",
+  "keywordFileContentHash": "11FBD6D643C2DB3D45B6C92065BBE748",
   "keywordClasses": [
     {
       "name": "products.productsFromCatalog",
@@ -137,6 +137,24 @@
         {
           "name": "OpenRandomProductOrange",
           "parameters": []
+        },
+        {
+          "name": "ScrollToElement",
+          "parameters": [
+            {
+              "name": "tb",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
         },
         {
           "name": "getSpecifiedinStockProductsFromOnePage",
