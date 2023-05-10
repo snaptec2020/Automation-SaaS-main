@@ -127,6 +127,16 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
+    public static Object BEBasicAuthUser
+     
+    /**
+     * <p></p>
+     */
+    public static Object BEBasicAuthPassword
+     
+    /**
+     * <p></p>
+     */
     public static Object Latitude
      
     /**
@@ -169,6 +179,8 @@ public class GlobalVariable {
             BE_Password = selectedVariables['BE_Password']
             BE_URL = selectedVariables['BE_URL']
             CustomerName = selectedVariables['CustomerName']
+            BEBasicAuthUser = selectedVariables['BEBasicAuthUser']
+            BEBasicAuthPassword = selectedVariables['BEBasicAuthPassword']
             Latitude = selectedVariables['Latitude']
             Longtitude = selectedVariables['Longtitude']
             CustomerEmail = selectedVariables['CustomerEmail']

@@ -16,6 +16,7 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
+import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
@@ -23,11 +24,15 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import catalog.catlogComponants
 
-
+import java.awt.Robot
 import java.util.List
 
 import org.openqa.selenium.By
+import org.openqa.selenium.JavascriptExecutor
+import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
+import org.openqa.selenium.interactions.Actions
+
 import internal.GlobalVariable
 
 
@@ -179,8 +184,8 @@ public class productsFromCatalog {
 
 		TestObject tb = new TestObject()
 
-		tb.addProperty('xpath', ConditionType.EQUALS, ('(//button[contains(text(),\'Add to Cart\') or contains(text(),\'أضف إلى السلة\')])[' +
-				elementIndexproduct) + ']')
+		tb.addProperty('xpath', ConditionType.EQUALS, '(//button[contains(text(),\'Add to Cart\') or contains(text(),\'أضف إلى السلة\')])[' +
+				elementIndexproduct + ']')
 
 		WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
 
@@ -233,6 +238,131 @@ public class productsFromCatalog {
 	}
 
 	@Keyword
+	def OpenRandomProductAlAseel(){
+		
+//		int spotY =WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10).getLocation().getY()
+//		WebUI.scrollToPosition(0,spotY)
+//		WebUI.scrollToElement(null, 10)
+//		WebUI.scrollToPosition(0, findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection').get)(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10)
+
+		
+//		try {
+//			long lastHeight=((Number) WebUI.executeJavaScript("return document.body.scrollHeight", null)).longValue();
+//		  
+//			while (true) {
+//			  WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight);", null);
+//			  Thread.sleep(2000);
+//			  long newHeight = ((Number)WebUI.executeJavaScript("return document.body.scrollHeight", null)).longValue();
+//			  if (newHeight == lastHeight) {
+//				break;
+//			  }
+//			  lastHeight = newHeight;
+//			}
+//		  } catch (InterruptedException e) {
+//		   e.printStackTrace();
+//		  }
+		
+//		scrollToVerifyElementVisiblity(findTestObject("Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection"))
+//		WebElement el= WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10) 
+//		WebUI.executeJavaScript("arguments[0].scrollIntoView(true);", Arrays.asList(el));
+		
+		
+//		WebDriver driver = DriverFactory.getWebDriver()
+//		WebElement elem = driver.findElement(By.xpath('//p[@class="b-title h2"]'))
+//		WebUI.executeJavaScript('arguments[0].scrollIntoView(true)', Arrays.asList(elem))
+		
+//		WebElement elem = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10)
+//		WebUI.executeJavaScript('arguments[0].scrollIntoView()', Arrays.asList(elem))
+		
+//		Actions act = new Actions(driver)
+//		act.moveToElement(elem).build().perform()
+		
+		
+//		scrollToVerifyElementVisiblityAlAseel(findTestObject("Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection"))
+		
+		
+		
+		((JavascriptExecutor) DriverFactory.getWebDriver()).executeScript("arguments[0].scrollIntoView();", WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10))
+		
+		TestObject items = new TestObject()
+		items.addProperty("xpath",ConditionType.EQUALS,"//button[contains(@title,'Add to Cart') or contains(@title,'إضافة إلى السلة')]")
+		List prod = WebUI.findWebElements(items,30)
+
+		Random randomNumberforProduct = new Random()
+
+		def elementIndexproduct = Math.abs(randomNumberforProduct.nextInt(prod.size() - 1)) + 1
+
+		TestObject tb = new TestObject()
+
+		tb.addProperty('xpath', ConditionType.EQUALS, ('('+ items.findPropertyValue("xpath") + ')[' +
+				elementIndexproduct) + ']')
+
+		WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
+		String currentURL = WebUI.getUrl()
+		
+		WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
+		
+		if (WebUI.getUrl().equals(currentURL)) {
+			WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'), FailureHandling.CONTINUE_ON_FAILURE)
+		} else {
+			KeywordUtil.markPassed('Trying to Get Configurable product')
+			TestObject Maintb = new TestObject()
+			Maintb.addProperty('xpath', ConditionType.EQUALS, '//div[starts-with(@class,"product-options-wrapper")]//div[starts-with(@class,"swatch-attribute") and @aria-required="true"]')
+
+			List genralDropDowns = WebUI.findWebElements(Maintb, 30)
+
+			if (genralDropDowns.size() != 0) {
+				for (int i = 1; i <= genralDropDowns.size(); i++) {
+					TestObject Subtb = new TestObject()
+					Subtb.addProperty('xpath', ConditionType.EQUALS, ('(//div[starts-with(@class,"product-options-wrapper")]//div[starts-with(@class,"swatch-attribute") and @aria-required="true"])[' +
+							i) + "]//div[not( @disabled)]")
+					List<WebElement> SubElem=WebUiCommonHelper.findWebElements(Subtb, 30)
+					SubElem.get(0).click()
+				}
+			}
+			
+		}
+	}
+	
+	@Keyword
+	def scrollToVerifyElementVisiblity(TestObject testObjectRelativeId) {
+		try {
+			for(int i=4;i<=0;i--) {
+				if (WebUI.verifyElementVisible(testObjectRelativeId,FailureHandling.CONTINUE_ON_FAILURE)) {
+					//WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/2);", null);
+					break;
+				}
+				KeywordUtil.markPassed("try to scroll again")
+				WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/"+i.toString()+");", null);
+				Thread.sleep(1000);
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Keyword
+	def scrollToVerifyElementVisiblityAlAseel(TestObject testObjectRelativeId) {
+		try {
+			Robot robot = new Robot()
+			int trial=0
+			while(trial<10) {
+				Thread.sleep(1000)
+				trial+=1
+				robot.mouseWheel(5)
+				if (WebUI.verifyElementVisible(testObjectRelativeId,FailureHandling.CONTINUE_ON_FAILURE)) {
+					//WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/2);", null);
+					robot.mouseWheel(5)
+					break;
+				}
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Keyword
 	def OpenRandomProductOrange(){
 
 
@@ -262,6 +392,8 @@ public class productsFromCatalog {
 			}
 		}
 	}
+	
+	
 
 	@Keyword
 	def getSpecifiedinStockProductsFromOnePage(int elementIndex,List productList ) {

@@ -5,6 +5,8 @@
 
 import java.util.List
 
+import com.kms.katalon.core.testobject.TestObject
+
 import java.lang.String
 
 import com.kms.katalon.core.context.TestSuiteContext
@@ -92,6 +94,25 @@ def static "products.productsFromCatalog.OpenRandomProductAJStore"() {
 
 def static "products.productsFromCatalog.OpenRandomProductQasr"() {
     (new products.productsFromCatalog()).OpenRandomProductQasr()
+}
+
+
+def static "products.productsFromCatalog.OpenRandomProductAlAseel"() {
+    (new products.productsFromCatalog()).OpenRandomProductAlAseel()
+}
+
+
+def static "products.productsFromCatalog.scrollToVerifyElementVisiblity"(
+    	TestObject testObjectRelativeId	) {
+    (new products.productsFromCatalog()).scrollToVerifyElementVisiblity(
+        	testObjectRelativeId)
+}
+
+
+def static "products.productsFromCatalog.scrollToVerifyElementVisiblityAlAseel"(
+    	TestObject testObjectRelativeId	) {
+    (new products.productsFromCatalog()).scrollToVerifyElementVisiblityAlAseel(
+        	testObjectRelativeId)
 }
 
 
