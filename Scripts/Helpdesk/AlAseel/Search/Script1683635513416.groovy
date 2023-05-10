@@ -66,7 +66,7 @@ WebUI.focus(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search 
 WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), ProductTitle)
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
 
-String SearchResultsxpath='//strong//a[@href="' + ProductURL + '" and contains(normalize-space(text()),"' + ProductTitle + '")]'
+String SearchResultsxpath='//strong//a[@href="' + ProductURL + '" and contains(normalize-space(text()),normalize-space("' + ProductTitle + '"))]'
 TestObject Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)
 WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
