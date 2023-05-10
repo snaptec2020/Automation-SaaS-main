@@ -279,11 +279,12 @@ public class productsFromCatalog {
 		
 		
 //		scrollToVerifyElementVisiblityAlAseel(findTestObject("Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection"))
+		if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'),10,FailureHandling.OPTIONAL)){
+			WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'),FailureHandling.OPTIONAL)
+		}
 		
-		
-		
-		((JavascriptExecutor) DriverFactory.getWebDriver()).executeScript("arguments[0].scrollIntoView();", WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10))
-		
+//		((JavascriptExecutor) DriverFactory.getWebDriver()).executeScript("arguments[0].scrollIntoView();", )
+		WebUI.executeJavaScript("arguments[0].scrollIntoView();", WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10))
 		TestObject items = new TestObject()
 		items.addProperty("xpath",ConditionType.EQUALS,"//button[contains(@title,'Add to Cart') or contains(@title,'إضافة إلى السلة')]")
 		List prod = WebUI.findWebElements(items,30)
@@ -302,13 +303,15 @@ public class productsFromCatalog {
 		
 		WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
 		
+		WebUI.waitForPageLoad(20)
+		
 		if (WebUI.getUrl().equals(currentURL)) {
 			WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'), FailureHandling.CONTINUE_ON_FAILURE)
 		} else {
 			KeywordUtil.markPassed('Trying to Get Configurable product')
 			TestObject Maintb = new TestObject()
 			Maintb.addProperty('xpath', ConditionType.EQUALS, '//div[starts-with(@class,"product-options-wrapper")]//div[starts-with(@class,"swatch-attribute") and @aria-required="true"]')
-
+			WebUI.waitForElementVisible(Maintb, 10,FailureHandling.OPTIONAL)
 			List genralDropDowns = WebUI.findWebElements(Maintb, 30)
 
 			if (genralDropDowns.size() != 0) {

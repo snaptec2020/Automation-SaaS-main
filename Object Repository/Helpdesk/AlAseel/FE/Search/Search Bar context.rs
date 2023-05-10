@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@placeholder='Search for a product' or @placeholder='البحث عن المنتج']</value>
+         <value>//input[@id='search' or @placeholder='ابحث فى المتجر بالكامل هنا...']</value>
       </entry>
       <entry>
          <key>BASIC</key>

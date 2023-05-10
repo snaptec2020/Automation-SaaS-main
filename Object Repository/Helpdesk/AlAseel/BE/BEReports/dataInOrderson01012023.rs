@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//tbody//tr[@title='#']//td[contains(@class,'col-orders col-orders_count col-number') and contains(text(), '825')]</value>
+         <value>//tbody//tr[@title='#']//td[contains(@class,'col-orders col-orders_count col-number') and contains(text(), '108')]</value>
       </entry>
       <entry>
          <key>BASIC</key>

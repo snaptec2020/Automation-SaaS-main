@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div//following::strong[text()=&quot;رمز المنتج&quot;]</value>
+         <value>//div[@class=&quot;product attribute sku&quot;]//strong[text()=&quot;رمز المنتج&quot;]//following::div[@itemprop=&quot;sku&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>

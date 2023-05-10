@@ -19,7 +19,8 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.kms.katalon.core.annotation.Keyword as Keyword
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
-import com.kms.katalon.core.webui.common.WebUiCommonHelper as WebUiCommonHelper
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
+import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword as WebUIAbstractKeyword
 import catalog.catlogComponants as catlogComponants
 import java.util.List
@@ -48,55 +49,47 @@ CustomKeywords.'products.productsFromCatalog.OpenRandomProductAlAseel'()
 
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Product/productFullDetail-Name'))
 def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Product/productFullDetail-sku'))
-def ProductURL = WebUI.getUrl().replace(GlobalVariable.FE_URL, "")
-def ProductPrice = Math.round(WebUI.getText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Product/Product_Price')).replace("ر.س", "").replace("٫", ".").toFloat())
+def ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")
+def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Product/Product_Price')).replace("ر.س", "").replace("٫", ".")
 
+println ProductTitle
+println ProductSKU
+println ProductURL
 println ProductPrice
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'), 10)
-
-
-
 // Search By Title
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search icon'))
-
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search icon'))
-
-//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Feild'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'),FailureHandling.OPTIONAL)
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'))
+WebUI.focus(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'))
 WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), ProductTitle)
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
 
-
-
-
+String SearchResultsxpath='//strong//a[@href="' + ProductURL + '" and text()="' + ProductTitle + '"]'
 TestObject Productlink_TO=new TestObject()
-Productlink_TO.addProperty("xpath",ConditionType.EQUALS,'//a[@href="/' + ProductURL + '"]//h2[text()="' + ProductTitle + '"]')
-//WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
+Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)
+WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
+WebUI.executeJavaScript("arguments[0].scrollIntoView();", Arrays.asList(Productlink_Element))
+
 WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
+WebUI.delay(2)
 
 
 // Search By SKU
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search icon'))
-
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search icon'))
-
-//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Feild'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'),FailureHandling.OPTIONAL)
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'))
 WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), ProductSKU)
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
 
 Productlink_TO=new TestObject()
-Productlink_TO.addProperty("xpath",ConditionType.EQUALS,'//a[@href="/' + ProductURL + '"]//h2[contains(text(),"' + ProductTitle + '")]')
-//WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
+Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)
+WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
+WebUI.executeJavaScript("arguments[0].scrollIntoView();", Arrays.asList(Productlink_Element))
 WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
 
-
+WebUI.delay(2)
 
 WebUI.closeBrowser()
