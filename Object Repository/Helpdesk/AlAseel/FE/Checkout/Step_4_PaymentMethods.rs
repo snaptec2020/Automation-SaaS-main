@@ -6,11 +6,11 @@
    <elementGuidId>007d2599-53d1-4e8d-849b-0761bba75727</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[contains(@class,&quot;checkoutPage-title-&quot;) and text()=&quot;3. طريقة الدفع&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//li[@class=&quot;aw-onestep-groups_item payment-dupli&quot;]//div[@class=&quot;group-title&quot;]/h2/span[text()=&quot;طريقة الدفع&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

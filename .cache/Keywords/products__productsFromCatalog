@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "11FBD6D643C2DB3D45B6C92065BBE748",
+  "keywordFileContentHash": "CEF1C1D83D4F54B6BDE9E0BFA2213E33",
   "keywordClasses": [
     {
       "name": "products.productsFromCatalog",
@@ -150,6 +150,68 @@
                 "isArray": false,
                 "isGnericsPlaceHolder": false,
                 "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "clickJS",
+          "parameters": [
+            {
+              "name": "to",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "timeout",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "clickJS",
+          "parameters": [
+            {
+              "name": "element",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "org.openqa.selenium.WebElement",
+                "unresolvedClassName": "WebElement",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "timeout",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
                 "genericsTypes": [],
                 "errorOnParsing": false
               }

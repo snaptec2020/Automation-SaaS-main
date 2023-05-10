@@ -49,4 +49,24 @@
       <initValue>'mahmoud@snaptec.co'</initValue>
       <name>CustomerEmail</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'4201322031914739'</initValue>
+      <name>MadaCardNum</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'1227'</initValue>
+      <name>MadaExpiryDate</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'274'</initValue>
+      <name>MadaCVV</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'MAMDUH ALSHDAIFAT'</initValue>
+      <name>MadaCardHoldName</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

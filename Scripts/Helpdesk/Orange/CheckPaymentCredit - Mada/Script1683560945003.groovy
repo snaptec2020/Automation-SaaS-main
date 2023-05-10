@@ -496,23 +496,23 @@ WebUI.switchToDefaultContent()
 
 WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardNumberInputFrame'), 10)
 
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardNumberInput'), '4201322031914739')
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardNumberInput'), GlobalVariable.MadaCardNum)
 
 WebUI.switchToDefaultContent()
 
 //WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardExpiryFrame'), 10)
 
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardExpiryInput'), '1227')
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardExpiryInput'), GlobalVariable.MadaExpiryDate)
 
 //WebUI.switchToDefaultContent()
 
 WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardCVVFrame'), 10)
 
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardCVVInput'), '274')
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardCVVInput'), GlobalVariable.MadaCVV)
 
 WebUI.switchToDefaultContent()
 
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardHolderInput'), 'MAMDUH ALSHDAIFAT')
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CardHolderInput'), GlobalVariable.MadaCardHoldName)
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/CreditSubmit'))
 

@@ -127,6 +127,21 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
+    public static Object MadaCardNum
+     
+    /**
+     * <p></p>
+     */
+    public static Object MadaExpiryDate
+     
+    /**
+     * <p></p>
+     */
+    public static Object MadaCVV
+     
+    /**
+     * <p></p>
+     */
     public static Object BEBasicAuthUser
      
     /**
@@ -148,6 +163,11 @@ public class GlobalVariable {
      * <p></p>
      */
     public static Object CustomerEmail
+     
+    /**
+     * <p></p>
+     */
+    public static Object MadaCardHoldName
      
 
     static {
@@ -179,11 +199,15 @@ public class GlobalVariable {
             BE_Password = selectedVariables['BE_Password']
             BE_URL = selectedVariables['BE_URL']
             CustomerName = selectedVariables['CustomerName']
+            MadaCardNum = selectedVariables['MadaCardNum']
+            MadaExpiryDate = selectedVariables['MadaExpiryDate']
+            MadaCVV = selectedVariables['MadaCVV']
             BEBasicAuthUser = selectedVariables['BEBasicAuthUser']
             BEBasicAuthPassword = selectedVariables['BEBasicAuthPassword']
             Latitude = selectedVariables['Latitude']
             Longtitude = selectedVariables['Longtitude']
             CustomerEmail = selectedVariables['CustomerEmail']
+            MadaCardHoldName = selectedVariables['MadaCardHoldName']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)

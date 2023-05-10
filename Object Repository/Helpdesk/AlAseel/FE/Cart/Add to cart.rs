@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//button[contains(@class,'productFullDetail') and contains (@class, 'clickable-root')]</value>
+         <value>//span[text()=&quot;إضافة إلى السلة&quot;]//parent::button[@id=&quot;product-addtocart-button&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>

@@ -60,12 +60,13 @@ println ProductPrice
 // Search By Title
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'),FailureHandling.OPTIONAL)
 
+WebUI.waitForPageLoad(10)
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'))
 WebUI.focus(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'))
 WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), ProductTitle)
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
 
-String SearchResultsxpath='//strong//a[@href="' + ProductURL + '" and text()="' + ProductTitle + '"]'
+String SearchResultsxpath='//strong//a[@href="' + ProductURL + '" and contains(text(),"' + ProductTitle + '")]'
 TestObject Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)
 WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
@@ -85,7 +86,7 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Sear
 
 Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)
-WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
+Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
 WebUI.executeJavaScript("arguments[0].scrollIntoView();", Arrays.asList(Productlink_Element))
 WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)

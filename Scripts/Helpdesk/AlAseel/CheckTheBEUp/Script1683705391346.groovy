@@ -28,8 +28,12 @@ WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Login/UserNa
 	
 //WebUI.setEncryptedText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Login/Password'), 'h9YfHV16ZyMBoeJlmdP5xA==')
 WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Login/Password'), GlobalVariable.BE_Password)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Login/LoginButton'))
+WebUI.waitForPageLoad(10)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Login/LoginButton'),FailureHandling.CONTINUE_ON_FAILURE)
+if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Shared/SomethingWentWrong'), 10,FailureHandling.OPTIONAL) & WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Shared/SomethingWentWrongOK'), 10,FailureHandling.OPTIONAL) ) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Shared/SomethingWentWrongOK'))
+}
+WebUI.waitForPageLoad(20)
 
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Menu/Menu_Dashboard'))
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Menu/Menu_Sales'))

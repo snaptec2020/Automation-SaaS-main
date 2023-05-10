@@ -6,11 +6,11 @@
    <elementGuidId>ab795b02-9252-4a24-bd7f-db54f678f1c6</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//iframe[@id=&quot;cardNumber&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//iframe[@id=&quot;cardNumber&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

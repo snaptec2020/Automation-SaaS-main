@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>PaymentMethod_1_Text</name>
+   <name>OutSideCart</name>
    <tag></tag>
-   <elementGuidId>978cbdaa-3b49-43b8-8da2-bd9c7815ffd9</elementGuidId>
+   <elementGuidId>bb4a4774-fd17-4072-9151-e77c9a5cc8ab</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@data-role=&quot;payment-methods-load&quot;]/div[contains(@data-bind,&quot;css: {'_active'&quot;)]/div/label/span[text()=&quot;قسم فاتورتك على (3 (دفعات بدون فوائد&quot;]</value>
+         <value>//div[@id=&quot;cdz-sidebar-backface&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

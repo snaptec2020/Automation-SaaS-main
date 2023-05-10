@@ -44,4 +44,19 @@
       <initValue>'Xu72B8QrnXm8'</initValue>
       <name>BEBasicAuthPassword</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'4201322031914739'</initValue>
+      <name>MadaCardNum</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'1227'</initValue>
+      <name>MadaExpiryDate</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'274'</initValue>
+      <name>MadaCVV</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

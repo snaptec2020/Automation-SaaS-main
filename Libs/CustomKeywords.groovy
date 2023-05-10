@@ -7,6 +7,8 @@ import java.util.List
 
 import com.kms.katalon.core.testobject.TestObject
 
+import org.openqa.selenium.WebElement
+
 import java.lang.String
 
 import com.kms.katalon.core.context.TestSuiteContext
@@ -125,6 +127,24 @@ def static "products.productsFromCatalog.ScrollToElement"(
     	TestObject tb	) {
     (new products.productsFromCatalog()).ScrollToElement(
         	tb)
+}
+
+
+def static "products.productsFromCatalog.clickJS"(
+    	TestObject to	
+     , 	int timeout	) {
+    (new products.productsFromCatalog()).clickJS(
+        	to
+         , 	timeout)
+}
+
+
+def static "products.productsFromCatalog.clickJS"(
+    	WebElement element	
+     , 	int timeout	) {
+    (new products.productsFromCatalog()).clickJS(
+        	element
+         , 	timeout)
 }
 
 

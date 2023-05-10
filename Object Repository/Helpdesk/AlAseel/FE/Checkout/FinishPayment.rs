@@ -6,11 +6,11 @@
    <elementGuidId>eedaac4d-381a-4493-a564-00392f3921ad</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//button[contains(@class,&quot;review-placeOrderButton-&quot;) and text()=&quot;اتمام عملية الشراء&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@class=&quot;aw-onestep-sidebar-wrapper&quot;]//div[@class=&quot;primary&quot;]/button[@class=&quot;action primary checkout&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

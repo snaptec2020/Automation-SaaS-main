@@ -6,11 +6,11 @@
    <elementGuidId>2f7b9cbc-72c2-4b2d-83bc-4b3d81a6e865</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[contains(@class,&quot;styles-orderIcon-&quot;) and contains(@class,&quot;styles-orderErrorIconShow-&quot;)]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[contains(@class,&quot;styles-orderIcon-&quot;) and contains(@class,&quot;styles-orderErrorIconShow-&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

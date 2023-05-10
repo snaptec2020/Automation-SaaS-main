@@ -6,11 +6,11 @@
    <elementGuidId>bfd0ac7f-1b17-4b57-bed1-1df83ec4ecd5</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//form[@id=&quot;payment-form&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//form[@id=&quot;checkoutcom_card_payment_frm&quot;]/div</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

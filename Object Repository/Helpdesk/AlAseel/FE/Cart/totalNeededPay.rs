@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>PaymentMethod_1_Text</name>
+   <name>totalNeededPay</name>
    <tag></tag>
-   <elementGuidId>978cbdaa-3b49-43b8-8da2-bd9c7815ffd9</elementGuidId>
+   <elementGuidId>aa0f7448-ba35-4a55-82ee-825ed9f1fd19</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@data-role=&quot;payment-methods-load&quot;]/div[contains(@data-bind,&quot;css: {'_active'&quot;)]/div/label/span[text()=&quot;قسم فاتورتك على (3 (دفعات بدون فوائد&quot;]</value>
+         <value>//td[@class=&quot;amount&quot;]/span[@class=&quot;price&quot; and contains(@data-th,&quot;اجمالي الأصناف قبل الضريبة&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

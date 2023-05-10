@@ -352,19 +352,19 @@ WebUI.switchToDefaultContent()
 
 WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AjStore/FE/credit/CardNumberInputFrame'), 10)
 
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/FE/credit/CardNumberInput'), '4201322031914739')
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/FE/credit/CardNumberInput'), GlobalVariable.MadaCardNum)
 
 WebUI.switchToDefaultContent()
 
 WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AjStore/FE/credit/CardExpiryFrame'), 10)
 
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/FE/credit/CardExpiryInput'), '1227')
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/FE/credit/CardExpiryInput'), GlobalVariable.MadaExpiryDate)
 
 WebUI.switchToDefaultContent()
 
 WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AjStore/FE/credit/CardCVVFrame'), 10)
 
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/FE/credit/CardCVVInput'), '274')
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/FE/credit/CardCVVInput'), GlobalVariable.MadaCVV)
 
 WebUI.switchToDefaultContent()
 

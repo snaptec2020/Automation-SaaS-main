@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>PaymentMethod_1_Text</name>
+   <name>IncreaseQtyBtn</name>
    <tag></tag>
-   <elementGuidId>978cbdaa-3b49-43b8-8da2-bd9c7815ffd9</elementGuidId>
+   <elementGuidId>ce6c2cd7-0cbe-4d3a-b19d-454e26dc88cf</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@data-role=&quot;payment-methods-load&quot;]/div[contains(@data-bind,&quot;css: {'_active'&quot;)]/div/label/span[text()=&quot;قسم فاتورتك على (3 (دفعات بدون فوائد&quot;]</value>
+         <value>//div[@class=&quot;qty_control&quot;]/button[contains(@id,&quot;-upt&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

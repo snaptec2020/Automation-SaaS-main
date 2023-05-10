@@ -279,16 +279,33 @@ public class productsFromCatalog {
 
 
 		//		scrollToVerifyElementVisiblityAlAseel(findTestObject("Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection"))
-		if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'),10,FailureHandling.OPTIONAL)){
+		if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'),5,FailureHandling.OPTIONAL)){
 			WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'),FailureHandling.OPTIONAL)
 		}
 
 		//		((JavascriptExecutor) DriverFactory.getWebDriver()).executeScript("arguments[0].scrollIntoView();", )
-		WebUI.executeJavaScript("arguments[0].scrollIntoView();", WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10))
+		WebUI.waitForPageLoad(20)
+		WebUI.executeJavaScript("arguments[0].scrollIntoView(true);", WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10))
+		WebUI.delay(2)
+		
+		
+		List<WebElement> productsCategoriesList = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsCategoriesSection'), 5)
+		for(int i=1;i<=productsCategoriesList.size();i++) {
+			TestObject randomNumberCatProductTO = new TestObject()
+			.addProperty('xpath', ConditionType.EQUALS, '('
+				+ findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsCategoriesSection').findPropertyValue("xpath")
+				+ ')[' + i.toString() + ']/a')
+			WebElement randomNumberCatProductElm = WebUiCommonHelper.findWebElement(randomNumberCatProductTO, 5)
+			clickJS(randomNumberCatProductElm,3)
+			WebUI.delay(1)
+		}
+		
+		
 		TestObject items = new TestObject()
 		items.addProperty("xpath",ConditionType.EQUALS,"//button[contains(@title,'Add to Cart') or contains(@title,'إضافة إلى السلة')]")
-		List prod = WebUI.findWebElements(items,30)
-
+		WebUI.waitForElementVisible(items, 10)
+		List<WebElement> prod = WebUI.findWebElements(items,3)
+		
 		Random randomNumberforProduct = new Random()
 
 		def elementIndexproduct = Math.abs(randomNumberforProduct.nextInt(prod.size() - 1)) + 1
@@ -298,29 +315,30 @@ public class productsFromCatalog {
 		tb.addProperty('xpath', ConditionType.EQUALS, ('('+ items.findPropertyValue("xpath") + ')[' +
 				elementIndexproduct) + ']')
 
-		WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
+		WebElement element = WebUiCommonHelper.findWebElement(tb, 5)
 		String currentURL = WebUI.getUrl()
-
-		WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
-
-		WebUI.waitForPageLoad(20)
-
+		clickJS(element, 5)
+		WebUI.delay(2)
+		WebUI.waitForPageLoad(20,FailureHandling.OPTIONAL)
 		if (WebUI.getUrl().equals(currentURL)) {
 			WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'), FailureHandling.CONTINUE_ON_FAILURE)
 		} else {
-			KeywordUtil.markPassed('Trying to Get Configurable product')
+//			KeywordUtil.markPassed('Trying to Get Configurable product')
+			String MainXPath = '//div[starts-with(@class,"product-options-wrapper")]//div[starts-with(@class,"swatch-attribute") and @aria-required="true"]'
 			TestObject Maintb = new TestObject()
-			Maintb.addProperty('xpath', ConditionType.EQUALS, '//div[starts-with(@class,"product-options-wrapper")]//div[starts-with(@class,"swatch-attribute") and @aria-required="true"]')
+			Maintb.addProperty('xpath', ConditionType.EQUALS, MainXPath)
 			WebUI.waitForElementVisible(Maintb, 10,FailureHandling.OPTIONAL)
 			List genralDropDowns = WebUI.findWebElements(Maintb, 30)
 
 			if (genralDropDowns.size() != 0) {
 				for (int i = 1; i <= genralDropDowns.size(); i++) {
+					String SubxPath= '(' + MainXPath + ')' +'[' + i + ']//div[not( @disabled)]'
 					TestObject Subtb = new TestObject()
-					Subtb.addProperty('xpath', ConditionType.EQUALS, ('(//div[starts-with(@class,"product-options-wrapper")]//div[starts-with(@class,"swatch-attribute") and @aria-required="true"])[' +
-							i) + "]//div[not( @disabled)]")
+					Subtb.addProperty('xpath', ConditionType.EQUALS, SubxPath)
+					WebUI.waitForElementVisible(Subtb, 10)
 					List<WebElement> SubElem=WebUiCommonHelper.findWebElements(Subtb, 30)
-					SubElem.get(0).click()
+//					SubElem.get(0).click()
+					clickJS(SubElem.get(0), 5)
 				}
 			}
 
@@ -402,6 +420,17 @@ public class productsFromCatalog {
 		WebUI.executeJavaScript('arguments[0].click()', element)
 	}
 
+	@Keyword
+	def clickJS(TestObject to, int timeout){
+		WebElement element = WebUiCommonHelper.findWebElement(to, timeout)
+		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
+	}
+	
+	@Keyword
+	def clickJS(WebElement element, int timeout){
+		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
+	}
+	
 	@Keyword
 	def getSpecifiedinStockProductsFromOnePage(int elementIndex,List productList ) {
 		tb.addProperty('xpath', ConditionType.EQUALS, "//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')]["+elementIndex+"]")

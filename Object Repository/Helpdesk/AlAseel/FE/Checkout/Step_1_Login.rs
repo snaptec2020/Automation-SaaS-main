@@ -6,11 +6,11 @@
    <elementGuidId>c4d54b1f-f091-489d-95c3-eac70e71b19c</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[contains(@class,&quot;checkoutPage-title-&quot;) and text()=&quot;1. تسجيل الدخول&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//li[@class=&quot;aw-onestep-groups_item sign-in&quot;]//div[@class=&quot;group-title&quot;]/h2/span[text()=&quot;تسجيل الدخول&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>PaymentMethod_1_Text</name>
+   <name>ConfirmDelete</name>
    <tag></tag>
-   <elementGuidId>978cbdaa-3b49-43b8-8da2-bd9c7815ffd9</elementGuidId>
+   <elementGuidId>3ede165e-2b27-4143-97e3-3f81a47f62eb</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@data-role=&quot;payment-methods-load&quot;]/div[contains(@data-bind,&quot;css: {'_active'&quot;)]/div/label/span[text()=&quot;قسم فاتورتك على (3 (دفعات بدون فوائد&quot;]</value>
+         <value>//span[text()=&quot;موافق&quot;]//parent::button[@class=&quot;action-primary action-accept&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

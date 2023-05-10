@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//button[contains(@class,'cartTrigger') and contains (@class, 'clickable-root')]</value>
+         <value>//span[text()=&quot;سلة التسوق&quot;]//parent::a[@class=&quot;action showcart cdz-top-link&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>
