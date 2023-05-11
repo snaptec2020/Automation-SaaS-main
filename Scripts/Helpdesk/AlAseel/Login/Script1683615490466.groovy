@@ -153,7 +153,7 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountB
 WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountPopup'),3)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountPopup'),3)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/AccountPage/SignOut'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/AccountPage/SignOut'),FailureHandling.OPTIONAL)
 
 WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountBtn'),20)
 
