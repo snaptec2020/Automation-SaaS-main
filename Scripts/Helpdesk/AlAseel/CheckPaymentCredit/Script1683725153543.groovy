@@ -206,21 +206,21 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel
 	def trials=1
 	TestObject errorQTY_TO = new TestObject()
 	errorQTY_TO.addProperty("xpath",ConditionType.EQUALS,'//div[@class="page messages"]//div[@class="message message-error error"]/div[text()="الكمية المطلوبة غير متوفرة"]')
-	List<WebElement> errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
-	while (errorQTY_Element.size()>0 && trials<10) {
+//	List<WebElement> errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
+	while (!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'), FailureHandling.OPTIONAL) && trials<10) {
 		//Open Random Product
 		trials = trials+1
 		CustomKeywords.'products.productsFromCatalog.OpenRandomProductAlAseel'()
 		WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
 		WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
-		errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
+//		errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
 		if(trials>=10) {
 			assert false,"Could not find available products"
 		}
+		WebUI.delay(5)
 	}
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'), FailureHandling.CONTINUE_ON_FAILURE)
 }
-
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'),10)
