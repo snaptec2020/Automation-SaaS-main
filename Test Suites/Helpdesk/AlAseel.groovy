@@ -33,19 +33,19 @@ import com.kms.katalon.core.annotation.TearDownTestCase
 /**
  * Setup test suite environment.
  */
-@SetUp(skipped = false) // Please change skipped to be false to activate this method.
+@SetUp(skipped = true) // Please change skipped to be false to activate this method.
 def setUp() {
 	// Put your code here.
-	WebUI.disableSmartWait()
+//	WebUI.disableSmartWait()
 }
 
 /**
  * Clean test suites environment.
  */
-@TearDown(skipped = false) // Please change skipped to be false to activate this method.
+@TearDown(skipped = true) // Please change skipped to be false to activate this method.
 def tearDown() {
 	// Put your code here.
-	WebUI.enableSmartWait()
+//	WebUI.enableSmartWait()
 }
 
 /**
@@ -54,7 +54,7 @@ def tearDown() {
 @SetupTestCase(skipped = true) // Please change skipped to be false to activate this method.
 def setupTestCase() {
 	// Put your code here.
-	DriverFactory.getWebDriver().manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS)
+//	DriverFactory.getWebDriver().manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS)
 }
 
 /**
@@ -63,7 +63,7 @@ def setupTestCase() {
 @TearDownTestCase(skipped = true) // Please change skipped to be false to activate this method.
 def tearDownTestCase() {
 	// Put your code here.
-	DriverFactory.getWebDriver().manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS)
+//	DriverFactory.getWebDriver().manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS)
 }
 
 /**
