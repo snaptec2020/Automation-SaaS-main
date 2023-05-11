@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,&quot;checkoutPage-paymentMethod-&quot;)]/div[not(@*)]//div[contains(@class,&quot;paymentMethod-item-&quot;)]//p[text()=&quot;تابي - قسمها على 4 دفعات&quot;]</value>
+         <value>//div[@data-role=&quot;payment-methods-load&quot;]/div[contains(@data-bind,&quot;css: {'_active'&quot;)]/div/label/span[text()=&quot;قسم فاتورتك على (3 (دفعات بدون فوائد&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

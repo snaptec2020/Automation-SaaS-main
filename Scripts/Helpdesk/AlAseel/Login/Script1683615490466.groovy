@@ -28,17 +28,9 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
 
-WebUI.openBrowser('')
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlAseel/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.maximizeWindow()
-WebUI.navigateToUrl(GlobalVariable.FE_URL,FailureHandling.OPTIONAL)
 
-if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpIFrame'), 5)) {
-	//Close the MailChimp ifram
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpClose'),5)
-	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpClose'),5)
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpClose'))
-}
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Login'))
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/LoginPopup'),5)

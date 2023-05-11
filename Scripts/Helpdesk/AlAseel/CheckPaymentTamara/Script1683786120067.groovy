@@ -41,7 +41,6 @@ import org.openqa.selenium.remote.server.handler.GetCurrentUrl as WebElement
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlAseel/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 
-
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Login'))
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/LoginPopup'),5)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/PhoneLoginTab'),10)
@@ -290,99 +289,70 @@ if (Paymentlist.size() != 2) {
 
 
 
-//Order with Credit 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/PaymentMethod_2_Text'))
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/MainForm'), 10)
+//Order with Tamara
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/PaymentMethod_1_Text'))
+//WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/Step_1_Login'), 5)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/MainForm'))
-
-WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CardNumberInputFrame'), 10)
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CardNumberInput'))
-
-WebUI.switchToDefaultContent()
-
-WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CardExpiryFrame'), 10)
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CardExpiryInput'))
-
-WebUI.switchToDefaultContent()
-
-WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CardCVVFrame'), 10)
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CardCVVInput'))
-
-WebUI.switchToDefaultContent()
-
-WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CardNumberInputFrame'), 10)
-
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CardNumberInput'), GlobalVariable.MadaCardNum)
-
-WebUI.switchToDefaultContent()
-
-WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CardExpiryFrame'), 10)
-
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CardExpiryInput'), GlobalVariable.MadaExpiryDate)
-
-WebUI.switchToDefaultContent()
-
-WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CardCVVFrame'), 10)
-
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CardCVVInput'), GlobalVariable.MadaCVV)
-
-WebUI.switchToDefaultContent()
+//WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/FinishPayment'), 10)
+//WebUI.scrollToPosition(0, element.getLocation().getY())
 
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/FinishPayment'))
 
-WebUI.waitForPageLoad(10)
+WebUI.waitForPageLoad(20)
 
-WebUI.delay(20)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/TamaraProceed'), 20)
 
-WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/MainOTPFrame'), 30)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/TamaraProceed'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/PrependPhone'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/PhoneLogin'))
 
 String url = WebUI.getUrl()
 
-WebUI.verifyMatch(url, 'https://api.checkout.com/.*', true)
+WebUI.verifyMatch(url, 'https://checkout.tamara.co/.*', true)
 
-WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/MainOTPFrame'), 10)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/TamaraProceed'))
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CheckoutOTP'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/EnterOTPText_1'))
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CheckoutConfirm'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/EnterOTPText_2'))
 
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CheckoutOTP'), '0000')
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/OTPFirstDigit'))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CheckoutConfirm'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/TamaraProceedButtonPage2'))
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/WrongOTPErrorText'))
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/TamaraCancel'))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CheckoutCancel'))
-//WebUI.delay(3)
-//WebUI.waitForAlert(3)
-//WebUI.acceptAlert()
-////////////////////////////////////////////////////////////////////////
-if (WebUI.verifyAlertPresent(5,FailureHandling.OPTIONAL)) {
-    WebUI.delay(2)
-	if (WebUI.verifyAlertPresent(5,FailureHandling.OPTIONAL)) {
-		WebUI.acceptAlert()
-	}else {
-		WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CheckoutCancel'))
-		if (WebUI.verifyAlertPresent(5,FailureHandling.OPTIONAL)) {
-			WebUI.acceptAlert()
-		}
-	}
-}
+//WebUI.verifyElementNotClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/TamaraProceedButtonPage2'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/TamaraCancel'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/CancleDialogText_1'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/CancleDialogReturnBtn'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/CancleDialogContinueBtn'))
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/CancleDialogReturnBtn'))
+
 
 WebUI.delay(5)
 WebUI.waitForPageLoad(10)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CreditPaymentError'), 20)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/credit/CreditPaymentError'))
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/TamaraPaymentError'), 20)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Tamara/TamaraPaymentError'))
 
 url = WebUI.getUrl()
 
 WebUI.verifyMatch(url, GlobalVariable.FE_URL + '.*', true)
+
+
+//WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/ErrorAfterPayment_Tamara'), 20)
+//
+//url = WebUI.getUrl()
+//
+//WebUI.verifyMatch(url, GlobalVariable.FE_URL + '.*', true)
 //
 //WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/ErrorAfterPayment_Text_ThankYou'))
 //
@@ -396,7 +366,7 @@ WebUI.verifyMatch(url, GlobalVariable.FE_URL + '.*', true)
 //def orderDetailsText = orderDetailsElement.getText()
 //
 //def orderNumber = orderDetailsText.findAll('\\d+').get(0)
-
+//
 ////Check the order
 //WebUI.delay(2)
 //

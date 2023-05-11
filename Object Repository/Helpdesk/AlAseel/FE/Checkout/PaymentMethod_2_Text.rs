@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@data-role=&quot;payment-methods-load&quot;]/div[contains(@data-bind,&quot;css: {'_active'&quot;)]/div/label/span[text()=&quot;الدفع عن طريق مدى / البطاقة الائتمانية&quot;]</value>
+         <value>//div[@data-role=&quot;payment-methods-load&quot;]/div[contains(@data-bind,&quot;_active&quot;)]/div/label/span[text()=&quot;الدفع عن طريق مدى / البطاقة الائتمانية&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

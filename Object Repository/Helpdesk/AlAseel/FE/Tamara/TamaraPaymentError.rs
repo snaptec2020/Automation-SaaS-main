@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>PaymentMethod_1_Text</name>
+   <name>TamaraPaymentError</name>
    <tag></tag>
-   <elementGuidId>978cbdaa-3b49-43b8-8da2-bd9c7815ffd9</elementGuidId>
+   <elementGuidId>bf7ab4c1-1238-47d8-8240-643516b41025</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@data-role=&quot;payment-methods-load&quot;]/div[contains(@data-bind,&quot;_active&quot;)]/div/label/span[text()=&quot;قسم فاتورتك على (3 (دفعات بدون فوائد&quot;]</value>
+         <value>//div[@data-ui-id=&quot;checkout-cart-validationmessages-message-error&quot; and text()=&quot;تم إلغاء طلبك.&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>

@@ -29,17 +29,9 @@ import org.eclipse.persistence.jpa.jpql.parser.ConditionalTermBNF
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 
-WebUI.openBrowser('')
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlAseel/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.maximizeWindow()
-WebUI.navigateToUrl(GlobalVariable.FE_URL,FailureHandling.OPTIONAL)
 
-if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpIFrame'), 5)) {
-	//Close the MailChimp ifram
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpClose'),5)
-	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpClose'),5)
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpClose'))
-}
 
 
 //Open Random Product
