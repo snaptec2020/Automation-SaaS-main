@@ -4,11 +4,11 @@
    <name>AJStore</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <mailRecipient></mailRecipient>
-   <numberOfRerun>0</numberOfRerun>
+   <mailRecipient>mahmoud@snaptec.co;</mailRecipient>
+   <numberOfRerun>2</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
-   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <rerunFailedTestCasesOnly>true</rerunFailedTestCasesOnly>
    <rerunImmediately>false</rerunImmediately>
    <testSuiteGuid>985e3ff8-d13f-4142-9c54-ef21c14b8d94</testSuiteGuid>
    <testCaseLink>

@@ -4,11 +4,11 @@
    <name>Orange</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <mailRecipient></mailRecipient>
-   <numberOfRerun>0</numberOfRerun>
+   <mailRecipient>mahmoud@snaptec.co;</mailRecipient>
+   <numberOfRerun>2</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
-   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <rerunFailedTestCasesOnly>true</rerunFailedTestCasesOnly>
    <rerunImmediately>false</rerunImmediately>
    <testSuiteGuid>d9a03b15-3b4d-48cd-a81d-c2f66d843e9b</testSuiteGuid>
    <testCaseLink>
