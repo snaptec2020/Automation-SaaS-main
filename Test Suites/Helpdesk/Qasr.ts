@@ -4,7 +4,7 @@
    <name>Qasr</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <mailRecipient>mahmoud@snaptec.co;</mailRecipient>
+   <mailRecipient>mahmoud@snaptec.co;m.aldawi@snaptec.co;tam.nguyen@snaptec.co;o.omar@snaptec.co;</mailRecipient>
    <numberOfRerun>2</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
