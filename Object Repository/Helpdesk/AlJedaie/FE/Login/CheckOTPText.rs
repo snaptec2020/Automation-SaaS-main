@@ -6,11 +6,11 @@
    <elementGuidId>33b112f5-bac7-47b3-8c90-257f3e093e45</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id=&quot;cdz-popup-area&quot;]//div//div[@class=&quot;cdz-popup popup-account-popup opened&quot;]//div[@class=&quot;cdz-popup-inner&quot;]//div//div//div//div//div//div//div//form[@id=&quot;login-form&quot;]//fieldset//span[text()=&quot;الرجاء إدخال رمز التحقق هنا&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[text()=&quot;سوف تحصل على رمز التحقق المكون&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

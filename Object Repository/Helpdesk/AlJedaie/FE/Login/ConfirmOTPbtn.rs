@@ -6,11 +6,11 @@
    <elementGuidId>01e3ca39-aa60-476a-9db7-3b3c80a67d62</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id=&quot;cdz-popup-area&quot;]//div//div[@class=&quot;cdz-popup popup-account-popup opened&quot;]//div[@class=&quot;cdz-popup-inner&quot;]//div//div//div//div//div//div//div//form[@id=&quot;login-form&quot;]//fieldset//button[text()=&quot;تحقق من OTP&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//button[text()=&quot;التحقق من الرمز&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

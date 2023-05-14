@@ -6,11 +6,11 @@
    <elementGuidId>6c5f9fa6-b198-439a-af39-951ed73c0438</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//span[text()=&quot;عميل جديد \ دخول&quot;]//parent::a</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//a[text()=&quot;تسجيل الدخول&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

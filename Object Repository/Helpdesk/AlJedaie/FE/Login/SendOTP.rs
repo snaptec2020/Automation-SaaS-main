@@ -6,11 +6,11 @@
    <elementGuidId>e6a31abc-4083-4ec2-892b-a9117899ec23</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id=&quot;cdz-popup-area&quot;]//div//div[@class=&quot;cdz-popup popup-account-popup opened&quot;]//div[@class=&quot;cdz-popup-inner&quot;]//div//div//div//div//div//div//div//form[@id=&quot;login-form&quot;]//fieldset//button[@type='button' and text()='ارسال رمز التاكيد']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//input[@id=&quot;input-otp-1&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

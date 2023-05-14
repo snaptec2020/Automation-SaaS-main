@@ -166,7 +166,7 @@ TestObject removeProductFromCart = new TestObject()
 
 removeProductFromCart.addProperty('xpath', ConditionType.EQUALS, '//button[contains(@class,"product-button")]//span//div/img[@alt="Remove" and @loading="lazy"]')
 
-List removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
+List<WebElement> removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
 
 while (removeProductFromCartElements.size() != 0) {
     if (removeProductFromCartElements.size().equals(1)) {

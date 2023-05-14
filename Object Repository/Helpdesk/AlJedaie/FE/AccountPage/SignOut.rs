@@ -6,11 +6,11 @@
    <elementGuidId>32ee74aa-4edf-4771-831e-29efca3cdc20</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@class=&quot;cdz-popup popup-account-popup opened&quot;]//a[text()=&quot;تسجيل الخروج&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//a[text()=&quot;تسجيل خروج&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -6,11 +6,11 @@
    <elementGuidId>1083c68c-b31c-4458-ace4-5e5c72b7cc59</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@type = 'checkbox'  and @name = 'acpTerms' and starts-with(@class,'checkbox-input')]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//label[@for=&quot;read_accept_privacy_policy&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -6,11 +6,11 @@
    <elementGuidId>f45f91e5-4842-4d06-a560-34db3b0ec4fb</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//h1//span[text()=&quot;حسابي&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@class=&quot;page-title-wrapper&quot;]/div/span/span[text()=&quot;حسابي&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
