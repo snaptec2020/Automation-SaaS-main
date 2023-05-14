@@ -403,7 +403,9 @@ TestObject firstActiveTime = new TestObject()
 firstActiveTime.addProperty("xpath",ConditionType.EQUALS,'(' + findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/deliveryTime-headerList').getSelectorCollection().get(SelectorMethod.XPATH) + '//li[contains(@class,"deliveryTime-item-") and not(contains(@class,"deliveryTime-disableBtn-"))])[1]')
 WebElement firstAvailableActiveTimesElements = WebUiCommonHelper.findWebElement(firstActiveTime, 30)
 WebUI.waitForElementClickable(firstActiveTime, 10)
-firstAvailableActiveTimesElements.click()
+//firstAvailableActiveTimesElements.click()
+CustomKeywords.'products.productsFromCatalog.clickJS'(firstAvailableActiveTimesElements, 3)
+
 
 
 //PaymentMethods
