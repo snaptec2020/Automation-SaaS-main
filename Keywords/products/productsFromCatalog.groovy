@@ -344,6 +344,91 @@ public class productsFromCatalog {
 
 		}
 	}
+	
+	
+	@Keyword
+	def OpenRandomProductAlJedaie(){
+		if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'),5,FailureHandling.OPTIONAL)){
+			WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'),FailureHandling.OPTIONAL)
+		}
+		
+		WebUI.waitForPageLoad(20)
+		WebUI.delay(2)
+		List<WebElement> productsCategoriesList = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/ProductsSection'), 5)
+		Random randomCategory = new Random()
+		//print "cat: "
+		//println(productsCategoriesList.size())
+		int randomCategorySelected = randomCategory.nextInt(productsCategoriesList.size()) + 1
+		TestObject randomNumberCatProductTO = new TestObject()
+		.addProperty('xpath', ConditionType.EQUALS, '('
+			+ findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/ProductsSection').findPropertyValue("xpath")
+			+ ')[' + randomCategorySelected.toString() + ']')
+		WebElement randomNumberCatProductElm = WebUiCommonHelper.findWebElement(randomNumberCatProductTO, 5)
+		//print "select cat: "
+		//println randomCategorySelected
+		WebUI.click(randomNumberCatProductTO)
+		//println "inside the cat"
+		WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/FooterAlJedaei'), 10)
+		WebUI.delay(5)
+		//println "scrolled to end"
+		TestObject items = new TestObject()
+		items.addProperty("xpath",ConditionType.EQUALS,'//ol[@class="products  list items product-items row row-col-lg-3"]/li/div/a')
+		WebUI.waitForElementVisible(items, 10)
+		List<WebElement> prod = WebUI.findWebElements(items,3)
+		
+		Random randomNumberforProduct = new Random()
+		int elementIndexproduct = Math.abs(randomNumberforProduct.nextInt(prod.size() - 1)) + 1
+		TestObject tb = new TestObject()
+
+		tb.addProperty('xpath', ConditionType.EQUALS, ('('+ items.findPropertyValue("xpath") + ')[' +
+				elementIndexproduct) + ']')
+		String currentURL = WebUI.getUrl()
+		WebUI.click(tb)
+		WebUI.delay(2)
+		WebUI.waitForPageLoad(20,FailureHandling.OPTIONAL)
+		
+		//println("Opened Product")
+		if (WebUI.getUrl().equals(currentURL)) {
+			WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/ContinueShoping'), FailureHandling.CONTINUE_ON_FAILURE)
+		} else {
+//			KeywordUtil.markPassed('Trying to Get Configurable product')
+			String MainXPath = '//div[starts-with(@class,"product-options-wrapper")]/div[@class="fieldset"]'
+			TestObject Maintb = new TestObject()
+			Maintb.addProperty('xpath', ConditionType.EQUALS, MainXPath)
+			WebUI.waitForElementVisible(Maintb, 10,FailureHandling.OPTIONAL)
+			List<WebElement> genralDropDowns = WebUI.findWebElements(Maintb, 5)
+			//print "Number of options:"
+			//println(genralDropDowns.size())
+			if (genralDropDowns.size() != 0) {
+				for (int i = 1; i <= genralDropDowns.size(); i++) {
+					String SubColorxPath= '(' + MainXPath + ')' +'[' + i + ']//div[contains(@class,"swatch-attribute-options")]/div'
+					TestObject SubColortb = new TestObject()
+					SubColortb.addProperty('xpath', ConditionType.EQUALS, SubColorxPath)
+					//WebUI.waitForElementVisible(SubColortb, 10)
+					List<WebElement> SubColorElem=WebUiCommonHelper.findWebElements(SubColortb, 5)
+					//print "Number of colors:"
+					//println(SubColorElem.size())
+					if(SubColorElem.size()>0) {
+						clickJS(SubColorElem.get(0), 5)
+					}
+					
+					
+					String SubxPath= '(' + MainXPath + ')' +'[' + i + ']//select'
+					TestObject Subtb = new TestObject()
+					Subtb.addProperty('xpath', ConditionType.EQUALS, SubxPath)
+//					WebUI.waitForElementVisible(Subtb, 10)
+					List<WebElement> SubElem=WebUiCommonHelper.findWebElements(Subtb, 5)
+					//println(SubElem.size())
+					if(SubElem.size()>0) {
+						WebUI.selectOptionByIndex(Subtb, 1)
+					}
+					
+					
+				}
+			}
+
+		}
+	}
 
 	@Keyword
 	def scrollToVerifyElementVisiblity(TestObject testObjectRelativeId) {
@@ -418,6 +503,11 @@ public class productsFromCatalog {
 	def ScrollToElement(TestObject tb) {
 		List<WebElement> element = WebUiCommonHelper.findWebElements(tb, 30)
 		WebUI.executeJavaScript('arguments[0].click()', element)
+	}
+	
+	@Keyword
+	def ScrollToElement(WebElement element) {
+		WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
 	}
 
 	@Keyword

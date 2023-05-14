@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "CEF1C1D83D4F54B6BDE9E0BFA2213E33",
+  "keywordFileContentHash": "8AC66A59D964F4CDC8F5BE2DFEA393B0",
   "keywordClasses": [
     {
       "name": "products.productsFromCatalog",
@@ -109,6 +109,11 @@
           "javadoc": ""
         },
         {
+          "name": "OpenRandomProductAlJedaie",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
           "name": "scrollToVerifyElementVisiblity",
           "parameters": [
             {
@@ -160,6 +165,25 @@
               "type": {
                 "fullClassName": "com.kms.katalon.core.testobject.TestObject",
                 "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "ScrollToElement",
+          "parameters": [
+            {
+              "name": "element",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "org.openqa.selenium.WebElement",
+                "unresolvedClassName": "WebElement",
                 "isArray": false,
                 "isGnericsPlaceHolder": false,
                 "hasImmutableClassName": false,

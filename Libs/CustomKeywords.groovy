@@ -104,6 +104,11 @@ def static "products.productsFromCatalog.OpenRandomProductAlAseel"() {
 }
 
 
+def static "products.productsFromCatalog.OpenRandomProductAlJedaie"() {
+    (new products.productsFromCatalog()).OpenRandomProductAlJedaie()
+}
+
+
 def static "products.productsFromCatalog.scrollToVerifyElementVisiblity"(
     	TestObject testObjectRelativeId	) {
     (new products.productsFromCatalog()).scrollToVerifyElementVisiblity(
@@ -127,6 +132,13 @@ def static "products.productsFromCatalog.ScrollToElement"(
     	TestObject tb	) {
     (new products.productsFromCatalog()).ScrollToElement(
         	tb)
+}
+
+
+def static "products.productsFromCatalog.ScrollToElement"(
+    	WebElement element	) {
+    (new products.productsFromCatalog()).ScrollToElement(
+        	element)
 }
 
 

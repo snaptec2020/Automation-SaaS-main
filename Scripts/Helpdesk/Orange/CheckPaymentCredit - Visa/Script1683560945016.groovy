@@ -263,13 +263,15 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/
 	
 	while (removeProductFromCartElements.size() != 0) {
 		if (removeProductFromCartElements.size().equals(1)) {
-			removeProductFromCartElements.get(0).click()
-	
+//			removeProductFromCartElements.get(0).click()
+			CustomKeywords.'products.productsFromCatalog.clickJS'(removeProductFromCartElements.get(0), 0)
 			removeProductFromCartElements.remove(0)
 		} else {
-			removeProductFromCartElements.get(0).click()
+//			removeProductFromCartElements.get(0).click()
+			CustomKeywords.'products.productsFromCatalog.clickJS'(removeProductFromCartElements.get(0), 0)
 			removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
 		}
+		WebUI.delay(1)
 	}
 }else {
 	//Close the Mini Cart
@@ -356,7 +358,12 @@ if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange
 }
 
 
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/DeliverHere'),5)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/DeliverHere'),5)
+CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/DeliverHere'), 5)
+
 //Steps
+
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/Step_4_PaymentMethods'))
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/Step_3_ShipmentMethod'))
@@ -459,7 +466,8 @@ WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/Orange/FE/Check
 //WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/FinishPayment'), 10)
 //WebUI.scrollToPosition(0, element.getLocation().getY())
 
-
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/FinishPayment'),5)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/FinishPayment'),5)
 WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/FinishPayment'))
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/credit/MainForm'), 10)
