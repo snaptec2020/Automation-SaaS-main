@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Add to cart</name>
+   <name>WarningPromptTitle</name>
    <tag></tag>
-   <elementGuidId>1826ccbb-6e7c-4448-81a2-3a0c59992c97</elementGuidId>
+   <elementGuidId>22701096-e17b-4c4c-a627-253b1706916d</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button[@id=&quot;product-addtocart-button&quot; and @title=&quot;أضف إلى السلة&quot; ]</value>
+         <value>//div[@data-role=&quot;focusable-scope&quot; ]//h1[contains(text(),&quot;تنبيه&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

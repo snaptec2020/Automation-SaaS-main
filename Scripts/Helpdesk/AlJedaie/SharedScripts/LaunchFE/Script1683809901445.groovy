@@ -21,10 +21,19 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.disableSmartWait()
 
+
+
+
+
+WebUI.disableSmartWait()
 WebUI.openBrowser('')
-//DriverFactory.getWebDriver().manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS)
+//DriverFactory.getWebDriver().manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS)
+
+
+
+
+
 
 WebUI.maximizeWindow()
 WebUI.navigateToUrl(GlobalVariable.FE_URL,FailureHandling.OPTIONAL)

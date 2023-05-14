@@ -6,11 +6,11 @@
    <elementGuidId>a65bcb95-4b07-4e48-a248-c3269b0d29bb</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//span[@data-ui-id=&quot;page-title-wrapper&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@class=&quot;product-info-main&quot;]//h1[@class=&quot;product-name&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

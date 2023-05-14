@@ -53,12 +53,18 @@ WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/Laun
 
 //Open Random Product
 CustomKeywords.'products.productsFromCatalog.OpenRandomProductAlJedaie'()
+def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/productFullDetail-Name'))
+def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/productFullDetail-sku'))
+def ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")
+def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/Product_Price'))
 
 
-assert false
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/Add to cart'))
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/Add to cart'),5)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/Add to cart'),5)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/Add to cart'))
+
+
+
 
 if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/ContinueShoping'), FailureHandling.OPTIONAL)) {
 	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/ContinueShoping'),5)
@@ -67,13 +73,21 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedai
 }else {
 	// Check if qty accepted
 	def trials=1
-	TestObject errorQTY_TO = new TestObject()
-	errorQTY_TO.addProperty("xpath",ConditionType.EQUALS,'//div[@class="page messages"]//div[@class="message message-error error"]/div[text()="الكمية المطلوبة غير متوفرة"]')
+//	TestObject errorQTY_TO = new TestObject()
+//	errorQTY_TO.addProperty("xpath",ConditionType.EQUALS,'//div[@class="page messages"]//div[@class="message message-error error"]/div[text()="الكمية المطلوبة غير متوفرة"]')
 //	List<WebElement> errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
 	while (!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/ContinueShoping'), FailureHandling.OPTIONAL) && trials<10) {
-		//Open Random Product
+		//Open another Random Product
+		if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/WarningPromptOK'), FailureHandling.OPTIONAL)) {
+			WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/WarningPromptOK'))
+		}
 		trials = trials+1
 		CustomKeywords.'products.productsFromCatalog.OpenRandomProductAlJedaie'()
+		ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/productFullDetail-Name'))
+		ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/productFullDetail-sku'))
+		ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")
+		ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/Product_Price'))
+		
 		WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/Add to cart'))
 		WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/Add to cart'))
 //		errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
@@ -82,15 +96,11 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedai
 		}
 		WebUI.delay(5)
 	}
+
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/ContinueShoping'), FailureHandling.CONTINUE_ON_FAILURE)
 }
 
 
-
-def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/productFullDetail-Name'))
-def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/productFullDetail-sku'))
-def ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")
-def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/Product_Price'))
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Cart'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Cart'),10)
@@ -99,7 +109,8 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/ViewCartMainPageBtn'),10)
 CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/ViewCartMainPageBtn'),10)
 
-String SearchResultsxpath='//strong//a[@href="' + ProductURL + '" and contains(normalize-space(text()),normalize-space("' + ProductTitle + '"))]'
+String SearchResultsxpath='//table[@id="shopping-cart-table"]//strong/a[@href="' + ProductURL + '" and contains(normalize-space(text()),normalize-space("' + ProductTitle + '"))]'
+println SearchResultsxpath
 TestObject Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)
 WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
@@ -110,5 +121,5 @@ def ProductPrice_TO=new TestObject()
 ProductPrice_TO.addProperty("xpath",ConditionType.EQUALS,Productlink_TO.findPropertyValue("xpath") + '/../../../../td/span/span/span[@class="price" and contains(text(),"' + ProductPrice + '")]')
 WebUI.verifyElementVisible(ProductPrice_TO, FailureHandling.STOP_ON_FAILURE)
 
-
+WebUI.delay(5)
 WebUI.closeBrowser()

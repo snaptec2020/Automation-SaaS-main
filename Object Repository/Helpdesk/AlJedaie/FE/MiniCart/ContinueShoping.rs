@@ -6,11 +6,11 @@
    <elementGuidId>b6cdb0e7-df10-498d-baf7-b53cfc74c845</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//aside[contains(@class,&quot;inner-scroll _show&quot;)]//button[@title=&quot;استمر بالتسوق&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@class=&quot;minicart-wrapper active&quot;]//a[text()=&quot;الاستمرار بالتسوق&quot; ]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

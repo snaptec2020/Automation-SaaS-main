@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Add to cart</name>
+   <name>WarningPromptOK</name>
    <tag></tag>
-   <elementGuidId>1826ccbb-6e7c-4448-81a2-3a0c59992c97</elementGuidId>
+   <elementGuidId>5d0e3622-10e3-4381-b904-33e088af69ea</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button[@id=&quot;product-addtocart-button&quot; and @title=&quot;أضف إلى السلة&quot; ]</value>
+         <value>//span[text()=&quot;نعم&quot;]//parent::button[@class=&quot;action-primary action-accept&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
