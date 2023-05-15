@@ -58,7 +58,7 @@ WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/Clea
 if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'),5,FailureHandling.OPTIONAL)){
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'),FailureHandling.OPTIONAL)
 }
-
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'))
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
 /////////////////////////
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/productFullDetail-Name'))
@@ -143,28 +143,115 @@ if (Paymentlist.size() != 2) {
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_2_Text'))
 }
 
-//Order with COD
-//WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_4_Text'),5)
+
+//Order with Credit 
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_2_Text'))
+
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/MainForm'), 10)
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/MainForm'))
+
+WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardNumberInputFrame'), 10)
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardNumberInput'))
+
+WebUI.switchToDefaultContent()
+
+WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardExpiryFrame'), 10)
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardExpiryInput'))
+
+WebUI.switchToDefaultContent()
+
+WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardCVVFrame'), 10)
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardCVVInput'))
+
+WebUI.switchToDefaultContent()
+
+WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardNumberInputFrame'), 10)
+
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardNumberInput'), GlobalVariable.MadaCardNum)
+
+WebUI.switchToDefaultContent()
+
+WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardExpiryFrame'), 10)
+
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardExpiryInput'), GlobalVariable.MadaExpiryDate)
+
+WebUI.switchToDefaultContent()
+
+WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardCVVFrame'), 10)
+
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardCVVInput'), GlobalVariable.MadaCVV)
+
+WebUI.switchToDefaultContent()
 
 
-//To-Do to be remove
-//WebUI.click()
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/FinishPayment'))
+
+WebUI.waitForPageLoad(10)
+
+WebUI.delay(20)
+
+WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/MainOTPFrame'), 30)
+
+String url = WebUI.getUrl()
+
+WebUI.verifyMatch(url, 'https://api.checkout.com/.*', true)
+
+WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/MainOTPFrame'), 10)
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CheckoutOTP'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CheckoutConfirm'))
+
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CheckoutOTP'), '0000')
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CheckoutConfirm'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/WrongOTPErrorText'))
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CheckoutCancel'))
+//WebUI.delay(3)
+//WebUI.waitForAlert(3)
+//WebUI.acceptAlert()
+////////////////////////////////////////////////////////////////////////
+if (WebUI.verifyAlertPresent(5,FailureHandling.OPTIONAL)) {
+    WebUI.delay(2)
+	if (WebUI.verifyAlertPresent(5,FailureHandling.OPTIONAL)) {
+		WebUI.acceptAlert()
+	}else {
+		WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CheckoutCancel'))
+		if (WebUI.verifyAlertPresent(5,FailureHandling.OPTIONAL)) {
+			WebUI.acceptAlert()
+		}
+	}
+}
+
+WebUI.delay(5)
+WebUI.waitForPageLoad(10)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CreditPaymentError'), 20)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CreditPaymentError'))
+
+url = WebUI.getUrl()
+
+WebUI.verifyMatch(url, GlobalVariable.FE_URL + '.*', true)
 //
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/FinishPayment'))
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/ErrorAfterPayment_Text_ThankYou'))
 //
-//TestObject OrderDetails = new TestObject()
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/ErrorAfterPayment_Text_OrderDetails'))
 //
-//OrderDetails.addProperty('xpath', ConditionType.EQUALS, '//h4[contains(@class,"styles-orderNumber-")]')
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/ErrorAfterPayment_Tamara'))
 //
-//WebElement OrderDetailsElement = WebUiCommonHelper.findWebElement(OrderDetails, 30)
+//WebElement orderDetailsElement = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/ErrorAfterPayment_Text_OrderDetails'), 
+//    10)
 //
-//def orderDetailsText = OrderDetailsElement.getText()
-//
-//println(orderDetailsText)
+//def orderDetailsText = orderDetailsElement.getText()
 //
 //def orderNumber = orderDetailsText.findAll('\\d+').get(0)
-//
-////remove the order
+
+////Check the order
 //WebUI.delay(2)
 //
 //WebUI.switchToWindowIndex(currentTab + 1)
@@ -206,28 +293,17 @@ if (Paymentlist.size() != 2) {
 //    def OrderHeaderText = OrderHeaderElem.getText()
 //
 //    if (OrderHeaderText.equals('#' + orderNumber)) {
+//        WebUI.verifyElementText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Sales_Order_page/OrderStatus'), 'Canceled')
+//
 //        TestObject CustomerNameTO = new TestObject()
 //
-//        CustomerNameTO.addProperty('xpath', ConditionType.EQUALS, '//a[@target="_blank"]//span[text()="' + GlobalVariable.CustomerName + '"]')
+//        CustomerNameTO.addProperty('xpath', ConditionType.EQUALS, ('//a[@target="_blank"]//span[text()="' + GlobalVariable.CustomerName) + 
+//            '"]')
 //
 //        WebElement CustomerNameElem = WebUiCommonHelper.findWebElement(CustomerNameTO, 30)
 //
-//        if (CustomerNameElem.getText().equals(GlobalVariable.CustomerName)) {
-//            TestObject CancelButtonTO = new TestObject()
-//
-//            CancelButtonTO.addProperty('xpath', ConditionType.EQUALS, '//button[@id="order-view-cancel-button"]')
-//
-//            WebElement CancelButtonElem = WebUiCommonHelper.findWebElement(CancelButtonTO, 30)
-//
-//            CancelButtonElem.click()
-//
-//            TestObject CancelButtonOKTO = new TestObject()
-//
-//            CancelButtonOKTO.addProperty('xpath', ConditionType.EQUALS, '//button[@class="action-primary action-accept"]')
-//
-//            WebElement CancelButtonOKElem = WebUiCommonHelper.findWebElement(CancelButtonOKTO, 30)
-//
-//            CancelButtonOKElem.click()
+//        if (!(CustomerNameElem.getText().equals(GlobalVariable.CustomerName))) {
+//            assert false
 //        }
 //    }
 //}

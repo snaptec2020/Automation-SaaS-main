@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>RefreshCart</name>
+   <name>LoadingImg</name>
    <tag></tag>
-   <elementGuidId>2054572d-b8d9-47e8-a419-cd898cccd71c</elementGuidId>
+   <elementGuidId>dc7735a0-762c-4e1d-b714-885531ab660d</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button[@name=&quot;update_cart_action&quot; and @title=&quot;تحديث سلة التسوق&quot;]</value>
+         <value>//div[@data-role=&quot;loader&quot; and @class=&quot;loading-mask&quot; and not(@style=&quot;display: none;&quot;)]/div[@class=&quot;loader&quot;]/img[@alt=&quot;Loading...&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

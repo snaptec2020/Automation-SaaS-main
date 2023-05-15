@@ -1,5 +1,6 @@
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
@@ -27,20 +28,12 @@ import org.openqa.selenium.interactions.Actions
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
-
-WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
-
-
-
 WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/AccountIcon'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Login'))
+CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Login'),3)
 
 
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/LoginPopup'),5)
-//WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/PhoneLoginTab'),10)
-//WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/PhoneLoginTab'),10)
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/PhoneLoginTab'))
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/LoginTolephone'), 20)
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/LoginTolephone'), GlobalVariable.FE_Tel)
@@ -50,8 +43,6 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/acknowl
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/LoginButton'))
 
 WebUI.delay(2)
-//WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/SendOTP'), 5)
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/SendOTP'))
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/CheckOTPText'),5)
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/CheckOTPText'))
 
@@ -71,7 +62,8 @@ JavascriptExecutor js = ((driver) as JavascriptExecutor)
 js.executeScript('window.open();')
 
 WebUI.switchToWindowIndex(currentTab + 1)
-WebUI.navigateToUrl(GlobalVariable.BE_URL)
+
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/LaunchBE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Login/UserName'), GlobalVariable.BE_UserName)
 
@@ -79,10 +71,10 @@ WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Login/UserN
 WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Login/Password'), GlobalVariable.BE_Password)
 WebUI.waitForPageLoad(10)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Login/LoginButton'),FailureHandling.CONTINUE_ON_FAILURE)
-if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Shared/SomethingWentWrong'), 10,FailureHandling.OPTIONAL) & WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Shared/SomethingWentWrongOK'), 10,FailureHandling.OPTIONAL) ) {
+if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Shared/SomethingWentWrong'), 5,FailureHandling.OPTIONAL) & WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Shared/SomethingWentWrongOK'), 10,FailureHandling.OPTIONAL) ) {
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Shared/SomethingWentWrongOK'))
 }
-WebUI.waitForPageLoad(20)
+//WebUI.waitForPageLoad(20)
 
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Menu/Menu_MageDelight'),20)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Menu/Menu_MageDelight'))
@@ -110,7 +102,7 @@ WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Sales_Order_page/Sales_orders_FilterButton'))
 
-WebUI.delay(2)
+WebUI.delay(1)
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/button_Filters'))
 
@@ -121,7 +113,7 @@ WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/
 //    Keys.chord(Keys.ENTER))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Sales_Order_page/Sales_orders_FilterButton'))
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/SmsViewFirstRow'), 20)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/SmsViewFirstRow'), 10)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/SmsViewFirstRow'))
 
 String OTP = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/SMSContentField'))
@@ -152,28 +144,6 @@ WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedai
 CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/LoginButton'),3)
 
 WebUI.waitForPageLoad(20)
-WebUI.delay(10)
-
-WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/AccountIcon'))
-WebUI.verifyElementNotVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Login'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/MyAccount'))
-
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/AccountPage/AccountPageTitle'), 20)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/AccountPage/AccountPageTitle'), FailureHandling.STOP_ON_FAILURE)
 
 
-
-
-/////////////////////////
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'))
-WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/AccountIcon'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/AccountPage/SignOut'),FailureHandling.OPTIONAL)
-
-WebUI.waitForPageLoad(10)
-
-WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/AccountIcon'))
-WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/AccountPage/SignOut'),10)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Login'),10)
-
-WebUI.closeBrowser()
 

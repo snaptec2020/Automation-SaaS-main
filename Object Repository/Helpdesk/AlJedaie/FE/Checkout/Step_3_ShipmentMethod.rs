@@ -6,11 +6,11 @@
    <elementGuidId>65bce3d0-109c-4f2d-923d-9cb68dc386a3</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//span[contains(@class,&quot;shippingMethod-titleModal-&quot;) and text()=&quot;طريقة الشحن&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//li[@class=&quot;aw-onestep-groups_item shipping-dupli&quot;]//div[@class=&quot;group-title&quot;]/h2/span[text()=&quot;2. عنوان وطريقة الشحن&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

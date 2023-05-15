@@ -58,7 +58,7 @@ WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/Clea
 if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'),5,FailureHandling.OPTIONAL)){
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'),FailureHandling.OPTIONAL)
 }
-
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'))
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
 /////////////////////////
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/productFullDetail-Name'))
@@ -143,28 +143,87 @@ if (Paymentlist.size() != 2) {
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_2_Text'))
 }
 
-//Order with COD
-//WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_4_Text'),5)
 
 
-//To-Do to be remove
-//WebUI.click()
+
+//Order with Tamara
+WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/Step_4_PaymentMethods'), 5)
+CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_1_Text'))
+//WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/FinishPayment'), 10)
+//WebUI.scrollToPosition(0, element.getLocation().getY())
+
+
+WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/Step_1_Login'), 5)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/FinishPayment'))
+
+WebUI.waitForPageLoad(20)
+
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/TamaraProceed'), 20)
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/TamaraProceed'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/PrependPhone'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/PhoneLogin'))
+
+String url = WebUI.getUrl()
+
+WebUI.verifyMatch(url, 'https://checkout.tamara.co/.*', true)
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/TamaraProceed'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/EnterOTPText_1'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/EnterOTPText_2'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/OTPFirstDigit'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/TamaraProceedButtonPage2'))
+
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/TamaraCancel'))
+
+//WebUI.verifyElementNotClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/TamaraProceedButtonPage2'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/TamaraCancel'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/CancleDialogText_1'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/CancleDialogReturnBtn'))
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/CancleDialogContinueBtn'))
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/CancleDialogReturnBtn'))
+
+
+WebUI.delay(5)
+WebUI.waitForPageLoad(10)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/TamaraPaymentError'), 20)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Tamara/TamaraPaymentError'))
+
+url = WebUI.getUrl()
+
+WebUI.verifyMatch(url, GlobalVariable.FE_URL + '.*', true)
+
+
+//WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/ErrorAfterPayment_Tamara'), 20)
 //
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/FinishPayment'))
+//url = WebUI.getUrl()
 //
-//TestObject OrderDetails = new TestObject()
+//WebUI.verifyMatch(url, GlobalVariable.FE_URL + '.*', true)
 //
-//OrderDetails.addProperty('xpath', ConditionType.EQUALS, '//h4[contains(@class,"styles-orderNumber-")]')
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/ErrorAfterPayment_Text_ThankYou'))
 //
-//WebElement OrderDetailsElement = WebUiCommonHelper.findWebElement(OrderDetails, 30)
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/ErrorAfterPayment_Text_OrderDetails'))
 //
-//def orderDetailsText = OrderDetailsElement.getText()
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/ErrorAfterPayment_Tamara'))
 //
-//println(orderDetailsText)
+//WebElement orderDetailsElement = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/ErrorAfterPayment_Text_OrderDetails'), 
+//    10)
+//
+//def orderDetailsText = orderDetailsElement.getText()
 //
 //def orderNumber = orderDetailsText.findAll('\\d+').get(0)
 //
-////remove the order
+////Check the order
 //WebUI.delay(2)
 //
 //WebUI.switchToWindowIndex(currentTab + 1)
@@ -206,28 +265,17 @@ if (Paymentlist.size() != 2) {
 //    def OrderHeaderText = OrderHeaderElem.getText()
 //
 //    if (OrderHeaderText.equals('#' + orderNumber)) {
+//        WebUI.verifyElementText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Sales_Order_page/OrderStatus'), 'Canceled')
+//
 //        TestObject CustomerNameTO = new TestObject()
 //
-//        CustomerNameTO.addProperty('xpath', ConditionType.EQUALS, '//a[@target="_blank"]//span[text()="' + GlobalVariable.CustomerName + '"]')
+//        CustomerNameTO.addProperty('xpath', ConditionType.EQUALS, ('//a[@target="_blank"]//span[text()="' + GlobalVariable.CustomerName) + 
+//            '"]')
 //
 //        WebElement CustomerNameElem = WebUiCommonHelper.findWebElement(CustomerNameTO, 30)
 //
-//        if (CustomerNameElem.getText().equals(GlobalVariable.CustomerName)) {
-//            TestObject CancelButtonTO = new TestObject()
-//
-//            CancelButtonTO.addProperty('xpath', ConditionType.EQUALS, '//button[@id="order-view-cancel-button"]')
-//
-//            WebElement CancelButtonElem = WebUiCommonHelper.findWebElement(CancelButtonTO, 30)
-//
-//            CancelButtonElem.click()
-//
-//            TestObject CancelButtonOKTO = new TestObject()
-//
-//            CancelButtonOKTO.addProperty('xpath', ConditionType.EQUALS, '//button[@class="action-primary action-accept"]')
-//
-//            WebElement CancelButtonOKElem = WebUiCommonHelper.findWebElement(CancelButtonOKTO, 30)
-//
-//            CancelButtonOKElem.click()
+//        if (!(CustomerNameElem.getText().equals(GlobalVariable.CustomerName))) {
+//            assert false
 //        }
 //    }
 //}

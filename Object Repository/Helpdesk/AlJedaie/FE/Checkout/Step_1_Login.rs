@@ -6,11 +6,11 @@
    <elementGuidId>4e3c302a-4aa7-449a-8b6f-1c6fa667e589</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//li[@class=&quot;aw-onestep-groups_item sign-in&quot;]//div[@class=&quot;group-title&quot;]/h2/span[text()=&quot;تسجيل الدخول&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//li[@class=&quot;aw-onestep-groups_item sign-in&quot;]//div[@class=&quot;group-title&quot;]/h2/span[text()=&quot;1. تسجيل الدخول&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

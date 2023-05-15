@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>RefreshCart</name>
+   <name>CloseMiniCart</name>
    <tag></tag>
-   <elementGuidId>2054572d-b8d9-47e8-a419-cd898cccd71c</elementGuidId>
+   <elementGuidId>131770fd-0e1f-4d83-b7c1-0e569373ffba</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button[@name=&quot;update_cart_action&quot; and @title=&quot;تحديث سلة التسوق&quot;]</value>
+         <value>//button[@id=&quot;close-minicart&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
