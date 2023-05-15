@@ -145,7 +145,8 @@ if (Paymentlist.size() != 2) {
 
 
 //Order with Credit 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_2_Text'))
+WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/Step_4_PaymentMethods'), 5)
+CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_2_Text'),3)
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/MainForm'), 10)
 
@@ -155,38 +156,37 @@ WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credi
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardNumberInput'))
 
-WebUI.switchToDefaultContent()
-
-WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardExpiryFrame'), 10)
+//WebUI.switchToDefaultContent()
+//
+//WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardExpiryFrame'), 10)
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardExpiryInput'))
 
-WebUI.switchToDefaultContent()
-
-WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardCVVFrame'), 10)
+//WebUI.switchToDefaultContent()
+//
+//WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardCVVFrame'), 10)
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardCVVInput'))
 
-WebUI.switchToDefaultContent()
-
-WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardNumberInputFrame'), 10)
+//WebUI.switchToDefaultContent()
+//
+//WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardNumberInputFrame'), 10)
 
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardNumberInput'), GlobalVariable.MadaCardNum)
 
-WebUI.switchToDefaultContent()
-
-WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardExpiryFrame'), 10)
+//WebUI.switchToDefaultContent()
+//
+//WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardExpiryFrame'), 10)
 
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardExpiryInput'), GlobalVariable.MadaExpiryDate)
 
-WebUI.switchToDefaultContent()
-
-WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardCVVFrame'), 10)
+//WebUI.switchToDefaultContent()
+//
+//WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardCVVFrame'), 10)
 
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/CardCVVInput'), GlobalVariable.MadaCVV)
 
 WebUI.switchToDefaultContent()
-
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/FinishPayment'))
 
@@ -198,7 +198,16 @@ WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/
 
 String url = WebUI.getUrl()
 
-WebUI.verifyMatch(url, 'https://api.checkout.com/.*', true)
+if (!WebUI.verifyMatch(url, 'https://api.checkout.com/.*', true,FailureHandling.OPTIONAL)) {
+	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/FinishPayment'), 2)
+	WebUI.waitForPageLoad(10)
+	WebUI.delay(20)
+	WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/MainOTPFrame'), 30)
+	url = WebUI.getUrl()
+	WebUI.verifyMatch(url, 'https://api.checkout.com/.*', true)
+}
+
+
 
 WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/MainOTPFrame'), 10)
 

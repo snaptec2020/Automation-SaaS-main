@@ -94,5 +94,7 @@ if (WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlJeda
 		}
 	}
 }else {
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/CloseMiniCart'), FailureHandling.CONTINUE_ON_FAILURE)
+	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/CloseMiniCart'),10)
+	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/CloseMiniCart'),5)
+	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/CloseMiniCart'), 3)
 }

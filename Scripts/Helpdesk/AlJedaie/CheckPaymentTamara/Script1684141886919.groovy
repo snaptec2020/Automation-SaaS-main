@@ -105,7 +105,7 @@ if (totalValue < 99) {
 	// To-Do Remove and add another product with less amount
 }
 
-WebUI.delay(3)
+WebUI.delay(5)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/PriceSummaryButton'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/PriceSummaryButton'),10)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/PriceSummaryButton'))
@@ -143,15 +143,11 @@ if (Paymentlist.size() != 2) {
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_2_Text'))
 }
 
-
-
-
 //Order with Tamara
 WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/Step_4_PaymentMethods'), 5)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_1_Text'))
+CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_1_Text'),3)
 //WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/FinishPayment'), 10)
 //WebUI.scrollToPosition(0, element.getLocation().getY())
-
 
 WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/Step_1_Login'), 5)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/FinishPayment'))

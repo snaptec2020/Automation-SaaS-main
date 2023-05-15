@@ -40,7 +40,7 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/Logi
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/acknowledgement'))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/LoginButton'))
+CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/LoginButton'),3)
 
 WebUI.delay(2)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/CheckOTPText'),5)
