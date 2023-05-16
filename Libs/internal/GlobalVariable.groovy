@@ -169,6 +169,16 @@ public class GlobalVariable {
      */
     public static Object MadaCardHoldName
      
+    /**
+     * <p></p>
+     */
+    public static Object FE_EmailLogin
+     
+    /**
+     * <p></p>
+     */
+    public static Object FE_EmailPassword
+     
 
     static {
         try {
@@ -208,6 +218,8 @@ public class GlobalVariable {
             Longtitude = selectedVariables['Longtitude']
             CustomerEmail = selectedVariables['CustomerEmail']
             MadaCardHoldName = selectedVariables['MadaCardHoldName']
+            FE_EmailLogin = selectedVariables['FE_EmailLogin']
+            FE_EmailPassword = selectedVariables['FE_EmailPassword']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)
