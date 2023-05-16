@@ -331,6 +331,7 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/DeliverHere'),5)
 CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/DeliverHere'), 5)
 
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/Step_3_ShipmentMethod'), 3)
 //Steps
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/Step_4_PaymentMethods'))
 
@@ -434,7 +435,8 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/Paymen
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/FinishPayment'),5)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/FinishPayment'),5)
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/FinishPayment'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/FinishPayment'))
+CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/FinishPayment'), 3)
 
 TestObject OrderDetails = new TestObject()
 
