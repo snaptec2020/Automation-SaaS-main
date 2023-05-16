@@ -10,8 +10,8 @@
       <name>FE_URL</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
-      <initValue>'581492572'</initValue>
+      <description>581492572</description>
+      <initValue>'566640965'</initValue>
       <name>FE_Tel</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -30,8 +30,8 @@
       <name>BE_URL</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
-      <initValue>'testing dev'</initValue>
+      <description>testing dev</description>
+      <initValue>'dev dev'</initValue>
       <name>CustomerName</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -45,8 +45,8 @@
       <name>Longtitude</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
-      <initValue>'mahmoud@snaptec.co'</initValue>
+      <description>mahmoud@snaptec.co</description>
+      <initValue>'xhmed@snaptec.co'</initValue>
       <name>CustomerEmail</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

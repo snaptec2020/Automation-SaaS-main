@@ -100,7 +100,7 @@ public class GlobalVariable {
     public static Object FE_URL
      
     /**
-     * <p></p>
+     * <p>Profile Orange : 581492572</p>
      */
     public static Object FE_Tel
      
@@ -120,7 +120,7 @@ public class GlobalVariable {
     public static Object BE_URL
      
     /**
-     * <p></p>
+     * <p>Profile Orange : testing dev</p>
      */
     public static Object CustomerName
      
@@ -160,7 +160,7 @@ public class GlobalVariable {
     public static Object Longtitude
      
     /**
-     * <p></p>
+     * <p>Profile Orange : mahmoud@snaptec.co</p>
      */
     public static Object CustomerEmail
      

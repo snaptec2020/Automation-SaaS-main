@@ -22,27 +22,27 @@ import internal.GlobalVariable
 
 public class removeItem {
 
-		@Keyword
-			def getProductsInCart() {
-				List RemoveCartItems = WebUI.findWebElements(findTestObject('Object Repository/Cart/Remove product from cart'),30)
-		
-		
-				return RemoveCartItems;
-			}
-		
-			@Keyword
-			def getSpecifiedIteminThecart(int elementIndex,List items) {
-		
-		
-				items.get(elementIndex).click()
-			}
-		}
-		
-	
-	
-	
-	
-	
-	
-	
+	@Keyword
+	def getProductsInCart() {
+		List RemoveCartItems = WebUI.findWebElements(findTestObject('Object Repository/Cart/Remove product from cart'),30)
+
+
+		return RemoveCartItems;
+	}
+
+	@Keyword
+	def getSpecifiedIteminThecart(int elementIndex,List items) {
+
+
+		items.get(elementIndex).click()
+	}
+}
+
+
+
+
+
+
+
+
 
