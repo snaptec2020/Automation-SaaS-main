@@ -26,7 +26,7 @@ import org.openqa.selenium.Keys as Keys
 
 
 
-WebUI.disableSmartWait()
+//WebUI.disableSmartWait()
 WebUI.openBrowser('')
 //DriverFactory.getWebDriver().manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS)
 
@@ -37,12 +37,12 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 WebUI.navigateToUrl(GlobalVariable.FE_URL,FailureHandling.OPTIONAL)
-if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/MailChimpIFrame'), 5)) {
-	//Close the MailChimp ifram
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/MailChimpClose'),5)
-	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/MailChimpClose'),5)
-	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/MailChimpClose'))
-}
+//if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/MailChimpIFrame'), 5, FailureHandling.OPTIONAL)) {
+//	//Close the MailChimp ifram
+//	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/MailChimpClose'),5)
+//	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/MailChimpClose'),5)
+//	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/MailChimpClose'))
+//}
 
 if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/AllowCookie'), 5)) {
 	//Close the MailChimp ifram
