@@ -81,15 +81,15 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBeautySecrets/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBeautySecrets/KSA/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 CustomKeywords.'products.productsFromCatalog.OpenRandomProductTheBeautySecrets'()
 
 /////////////////////////
-def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Product/productFullDetail-Name'))
-def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Product/productFullDetail-sku'))
+def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/productFullDetail-Name'))
+def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/productFullDetail-sku'))
 def ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")
-def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Product/Product_Price'))
+def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/Product_Price'))
 
 println ProductTitle
 println ProductSKU
@@ -97,14 +97,14 @@ println ProductURL
 println ProductPrice
 
 // Search By Title
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/Logo'),FailureHandling.OPTIONAL)
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Logo'),FailureHandling.OPTIONAL)
 WebUI.waitForPageLoad(10)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Search/Search icon'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Search/Search Bar context'))
-WebUI.focus(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Search/Search Bar context'))
-WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Search/Search Bar context'), ProductTitle)
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Search/Search icon'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Search/Search Bar context'))
+WebUI.focus(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Search/Search Bar context'))
+WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Search/Search Bar context'), ProductTitle)
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
 
 String SearchResultsxpath='//div[@class="products wrapper grid products-grid"]//a[@href="' + ProductURL + '" and contains(normalize-space(text()),normalize-space("' + ProductTitle + '"))]'
 println SearchResultsxpath
@@ -123,11 +123,11 @@ WebUI.delay(2)
 
 
 // Search By SKU
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/Logo'),FailureHandling.OPTIONAL)
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Search/Search icon'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Search/Search Bar context'))
-WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Search/Search Bar context'), ProductSKU)
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Logo'),FailureHandling.OPTIONAL)
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Search/Search icon'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Search/Search Bar context'))
+WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Search/Search Bar context'), ProductSKU)
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
 
 Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)

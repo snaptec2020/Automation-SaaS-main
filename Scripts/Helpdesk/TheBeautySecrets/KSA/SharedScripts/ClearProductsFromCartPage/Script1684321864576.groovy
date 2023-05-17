@@ -69,15 +69,15 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/Cart'),10)
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/Cart'),5)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/Cart'), 10)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Cart'),10)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Cart'),5)
+CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Cart'), 10)
 
 
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/ViewCartMainPageBtn'),5)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/ViewCartMainPageBtn'),5)
 
-if (WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/ViewCartMainPageBtn'), 2,FailureHandling.OPTIONAL)) {
-	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/ViewCartMainPageBtn'),10)
+if (WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/ViewCartMainPageBtn'), 2,FailureHandling.OPTIONAL)) {
+	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/ViewCartMainPageBtn'),10)
 	
 	TestObject removeProductFromCart = new TestObject()
 	removeProductFromCart.addProperty('xpath', ConditionType.EQUALS, '//td[@class="col item"]//a[@title="إزالة منتج"]')
@@ -94,7 +94,7 @@ if (WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBea
 		}
 	}
 }else {
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/MiniCart/CloseMiniCart'),10)
-	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/MiniCart/CloseMiniCart'),5)
-	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/MiniCart/CloseMiniCart'), 3)
+	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/MiniCart/CloseMiniCart'),10)
+	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/MiniCart/CloseMiniCart'),5)
+	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/MiniCart/CloseMiniCart'), 3)
 }

@@ -29,29 +29,29 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
 
-WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBeautySecrets/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBeautySecrets/KSA/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 
-WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBeautySecrets/SharedScripts/Login'), [:],	FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBeautySecrets/KSA/SharedScripts/Login'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/Login'),5)
-WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/AccountIcon'))
-WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/Login'),5)
+WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Login'),5)
+WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/AccountIcon'))
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Login'),5)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Login/MyAccount'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Login/MyAccount'))
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/AccountPage/AccountPageTitle'), 10)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/AccountPage/AccountPageTitle'), FailureHandling.STOP_ON_FAILURE)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/AccountPage/AccountPageTitle'), 10)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/AccountPage/AccountPageTitle'), FailureHandling.STOP_ON_FAILURE)
 /////////////////////////
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/Logo'))
-WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/AccountIcon'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/AccountPage/SignOut'),FailureHandling.OPTIONAL)
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Logo'))
+WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/AccountIcon'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/AccountPage/SignOut'),FailureHandling.OPTIONAL)
 
 WebUI.waitForPageLoad(10)
 
-WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/AccountIcon'))
-WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/AccountPage/SignOut'),5)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/Login'),10)
+WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/AccountIcon'))
+WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/AccountPage/SignOut'),5)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Login'),10)
 
 WebUI.closeBrowser()
 

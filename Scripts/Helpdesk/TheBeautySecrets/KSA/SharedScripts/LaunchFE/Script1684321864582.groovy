@@ -37,16 +37,16 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 WebUI.navigateToUrl(GlobalVariable.FE_URL,FailureHandling.OPTIONAL)
-//if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/MailChimpIFrame'), 5, FailureHandling.OPTIONAL)) {
+//if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/MailChimpIFrame'), 5, FailureHandling.OPTIONAL)) {
 //	//Close the MailChimp ifram
-//	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/MailChimpClose'),5)
-//	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/MailChimpClose'),5)
-//	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/MailChimpClose'))
+//	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/MailChimpClose'),5)
+//	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/MailChimpClose'),5)
+//	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/MailChimpClose'))
 //}
 
-if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/AllowCookie'), 5)) {
+if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/AllowCookie'), 5)) {
 	//Close the MailChimp ifram
-	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/AllowCookie'),5)
-	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/AllowCookie'))
+	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/AllowCookie'),5)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/AllowCookie'))
 }
 

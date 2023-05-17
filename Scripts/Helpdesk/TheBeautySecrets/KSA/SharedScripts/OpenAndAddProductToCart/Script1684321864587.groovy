@@ -69,51 +69,51 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 //Open Random Product
 CustomKeywords.'products.productsFromCatalog.OpenRandomProductTheBeautySecrets'()
-def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Product/productFullDetail-Name'))
-def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Product/productFullDetail-sku'))
+def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/productFullDetail-Name'))
+def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/productFullDetail-sku'))
 def ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")
-def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Product/Product_Price'),FailureHandling.OPTIONAL)
+def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/Product_Price'),FailureHandling.OPTIONAL)
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/Add to cart'),5)
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/Add to cart'),5)
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/Add to cart'))
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/Add to cart'),5)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/Add to cart'),5)
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/Add to cart'))
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/MiniCart/CloseMiniCart'), 5)
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/MiniCart/CloseMiniCart'),5)
-if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/MiniCart/CloseMiniCart'), FailureHandling.OPTIONAL)) {
-	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/MiniCart/CloseMiniCart'))
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/MiniCart/CloseMiniCart'), 5)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/MiniCart/CloseMiniCart'),5)
+if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/MiniCart/CloseMiniCart'), FailureHandling.OPTIONAL)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/MiniCart/CloseMiniCart'))
 }else {
 	// Check if qty accepted
 	def trials=1
-	while (!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/MiniCart/CloseMiniCart'), FailureHandling.OPTIONAL) && trials<10) {
+	while (!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/MiniCart/CloseMiniCart'), FailureHandling.OPTIONAL) && trials<10) {
 		//Open another Random Product
-		if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Product/WarningPromptOK'), FailureHandling.OPTIONAL)) {
-			WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Product/WarningPromptOK'))
+		if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/WarningPromptOK'), FailureHandling.OPTIONAL)) {
+			WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/WarningPromptOK'))
 		}
 		trials = trials+1
 		
-		if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/Logo'),5,FailureHandling.OPTIONAL)){
-			WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/Logo'),FailureHandling.OPTIONAL)
+		if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Logo'),5,FailureHandling.OPTIONAL)){
+			WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Logo'),FailureHandling.OPTIONAL)
 		}
 		WebUI.waitForPageLoad(20)
 		WebUI.delay(2)
 		
 		CustomKeywords.'products.productsFromCatalog.OpenRandomProductTheBeautySecrets'()
-		ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Product/productFullDetail-Name'))
-		ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Product/productFullDetail-sku'))
+		ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/productFullDetail-Name'))
+		ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/productFullDetail-sku'))
 		ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")
-		ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Product/Product_Price'),FailureHandling.OPTIONAL)
+		ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/Product_Price'),FailureHandling.OPTIONAL)
 		
-		WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/Add to cart'))
-		WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/Add to cart'))
+		WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/Add to cart'))
+		WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/Add to cart'))
 
 		if(trials>=10) {
 			assert false,"Could not find available products"
 		}
-		WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/MiniCart/CloseMiniCart'), 5)
-		WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/MiniCart/CloseMiniCart'),5)
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/MiniCart/CloseMiniCart'), 5)
+		WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/MiniCart/CloseMiniCart'),5)
 	}
 
-	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/MiniCart/CloseMiniCart'), FailureHandling.CONTINUE_ON_FAILURE)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/MiniCart/CloseMiniCart'), FailureHandling.CONTINUE_ON_FAILURE)
 }
 

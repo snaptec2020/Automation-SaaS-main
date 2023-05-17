@@ -49,34 +49,34 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBeautySecrets/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBeautySecrets/KSA/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBeautySecrets/SharedScripts/Login'), [:],	FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBeautySecrets/KSA/SharedScripts/Login'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBeautySecrets/SharedScripts/ClearProductsFromCartPage'), [:],	FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBeautySecrets/KSA/SharedScripts/ClearProductsFromCartPage'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/Logo'),5,FailureHandling.OPTIONAL)){
-	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/Logo'),FailureHandling.OPTIONAL)
+if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Logo'),5,FailureHandling.OPTIONAL)){
+	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Logo'),FailureHandling.OPTIONAL)
 }
 
-WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBeautySecrets/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBeautySecrets/KSA/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
 /////////////////////////
-def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Product/productFullDetail-Name'))
-def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Product/productFullDetail-sku'))
+def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/productFullDetail-Name'))
+def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/productFullDetail-sku'))
 def ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")
-def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Product/Product_Price'))
+def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/Product_Price'))
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/Cart'),10)
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/Cart'),10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/Cart'), 10)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/ViewCartMainPageBtn'),10)
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/ViewCartMainPageBtn'),10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/ViewCartMainPageBtn'),10)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Cart'),10)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Cart'),10)
+CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Cart'), 10)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/ViewCartMainPageBtn'),10)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/ViewCartMainPageBtn'),10)
+CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/ViewCartMainPageBtn'),10)
 
 
 //Check Total Paid for Tabby and Tamara
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/totalNeededPay'), 10)
-String totalText=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/totalNeededPay'))
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/totalNeededPay'), 10)
+String totalText=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/totalNeededPay'))
 println(totalText)
 totalText =totalText.replace(" ", "").replace("٫", ".").replace("ر.س", "")
 Float totalValue = totalText.toFloat()
@@ -85,33 +85,33 @@ println(totalValue)
 if (totalValue < 99) {
     //increase the products
     int neededQty = ((Math.ceil(99 / totalValue)) as int)
-	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/QtyDropdown'), 5)
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/QtyDropdownList'),2)
-//	WebUI.selectOptionByIndex(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/QtyDropdownList'),neededQty)
+	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/QtyDropdown'), 5)
+	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/QtyDropdownList'),2)
+//	WebUI.selectOptionByIndex(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/QtyDropdownList'),neededQty)
 	TestObject Option = new TestObject()
-	Option.addProperty("xpath",ConditionType.EQUALS,findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/QtyDropdownList').findPropertyValue("xpath") + '/li[@data-value="' + neededQty.toString() + '"]')
+	Option.addProperty("xpath",ConditionType.EQUALS,findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/QtyDropdownList').findPropertyValue("xpath") + '/li[@data-value="' + neededQty.toString() + '"]')
 	if(WebUI.verifyElementPresent(Option, 3)) {
 		CustomKeywords.'products.productsFromCatalog.clickJS'(Option,10)
 	}else {
-		Option.addProperty("xpath",ConditionType.EQUALS,findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/QtyDropdownList').findPropertyValue("xpath") + '/li[@data-value="22"]')
+		Option.addProperty("xpath",ConditionType.EQUALS,findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/QtyDropdownList').findPropertyValue("xpath") + '/li[@data-value="22"]')
 		if(WebUI.verifyElementPresent(Option, 3)) {
 			CustomKeywords.'products.productsFromCatalog.clickJS'(Option,10)
 		}
 	}
-	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/RefreshCart'))
-	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/RefreshCart'))
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/RefreshCart'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/RefreshCart'))
     //remove and select another product (need to remove and seach again)
 } else if (totalValue > 2500) {
 	// To-Do Remove and add another product with less amount
 }
 
 WebUI.delay(3)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/PriceSummaryButton'),10)
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/PriceSummaryButton'),10)
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/PriceSummaryButton'))
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/PriceSummaryButton'),10)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/PriceSummaryButton'),10)
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/PriceSummaryButton'))
 
-if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Checkout/Step_4_PaymentMethods'),FailureHandling.OPTIONAL)) {
-	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Cart/PriceSummaryButton'))
+if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/Step_4_PaymentMethods'),FailureHandling.OPTIONAL)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/PriceSummaryButton'))
 }
 
 
@@ -119,12 +119,12 @@ if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBea
 
 //Steps
 WebUI.waitForPageLoad(20)
-WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Shared/LoadingImg'), 10)
-//WebUI.verifyElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Checkout/MapErrorCannotLoad'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Checkout/Step_4_PaymentMethods'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Checkout/Step_3_ShipmentMethod'))
-//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Checkout/Step_2_ShipmentLocation'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Checkout/Step_1_Login'))
+WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/LoadingImg'), 10)
+//WebUI.verifyElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/MapErrorCannotLoad'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/Step_4_PaymentMethods'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/Step_3_ShipmentMethod'))
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/Step_2_ShipmentLocation'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/Step_1_Login'))
 
 //We should check if shipment fee is 0 when total paid is more than x and 20 if less than x
 //PaymentMethods
@@ -138,19 +138,19 @@ if (Paymentlist.size() != 2) {
    assert false
 } else {
 	// Tamara
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Checkout/PaymentMethod_1_Text'))
+    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/PaymentMethod_1_Text'))
 	// Credit
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Checkout/PaymentMethod_2_Text'))
+    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/PaymentMethod_2_Text'))
 }
 
 //Order with COD
-//WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Checkout/PaymentMethod_4_Text'),5)
+//WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/PaymentMethod_4_Text'),5)
 
 
 //To-Do to be remove
 //WebUI.click()
 //
-//WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/FE/Checkout/FinishPayment'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/FinishPayment'))
 //
 //TestObject OrderDetails = new TestObject()
 //
@@ -169,23 +169,23 @@ if (Paymentlist.size() != 2) {
 //
 //WebUI.switchToWindowIndex(currentTab + 1)
 //
-//WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/BE/Menu/Menu_Sales'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Menu/Menu_Sales'))
 //
-//WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/BE/Menu/Menu_Sales_orders'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Menu/Menu_Sales_orders'))
 //
-//if (WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/BE/Sales_Order_page/FilterClear'), FailureHandling.OPTIONAL)) {
-//    WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/BE/Sales_Order_page/FilterClear'))
+//if (WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Sales_Order_page/FilterClear'), FailureHandling.OPTIONAL)) {
+//    WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Sales_Order_page/FilterClear'))
 //}
 //
 //WebUI.delay(2)
 //
-//WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/BE/Sales_Order_page/button_Filters'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Sales_Order_page/button_Filters'))
 //
-//WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/BE/Sales_Order_page/Filter_ID_FROM'), 2)
+//WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Sales_Order_page/Filter_ID_FROM'), 2)
 //
-//WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/BE/Sales_Order_page/Filter_increment_id'), orderNumber)
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Sales_Order_page/Filter_increment_id'), orderNumber)
 //
-//WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/BE/Sales_Order_page/Sales_orders_FilterButton'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Sales_Order_page/Sales_orders_FilterButton'))
 //
 //TestObject searchResultTO = new TestObject()
 //
