@@ -73,7 +73,7 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodySh
 WebUI.mouseOverOffset(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart'),10,10)
 CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ViewCartMainPageBtn'),10)
 
-String SearchResultsxpath='//a[@href="' + ProductURL + '" and text()="' + ProductTitle + '"]'
+String SearchResultsxpath='//table[@id="shopping-cart-table"]//a[@href="' + ProductURL + '" and text()="' + ProductTitle + '"]'
 println SearchResultsxpath
 TestObject Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)
