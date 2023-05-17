@@ -44,7 +44,7 @@ WebUI.navigateToUrl(GlobalVariable.FE_URL,FailureHandling.OPTIONAL)
 //	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/MailChimpClose'))
 //}
 
-if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/AllowCookie'), 5)) {
+if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/AllowCookie'), 5, FailureHandling.OPTIONAL)) {
 	//Close the MailChimp ifram
 	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/AllowCookie'),5)
 	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/AllowCookie'))
