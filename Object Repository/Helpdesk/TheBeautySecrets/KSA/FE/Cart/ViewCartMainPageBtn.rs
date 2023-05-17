@@ -6,11 +6,11 @@
    <elementGuidId>24005fc7-bd8a-479d-8032-311c8cc7f8bd</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//span[text()=&quot;اذهب إلى عربة التسوق&quot;]//parent::a[@class=&quot;action btn btn-default btn-full margin-bottom15 viewcart&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@class=&quot;minicart-wrapper active&quot;]//span[text()=&quot;اذهب إلى عربة التسوق&quot;]//parent::a[@class=&quot;action btn btn-default btn-full margin-bottom15 viewcart&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

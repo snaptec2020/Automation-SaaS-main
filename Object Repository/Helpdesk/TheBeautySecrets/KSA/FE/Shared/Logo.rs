@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//a[contains(@class,&quot;logo&quot;) and @title]</value>
+         <value>//div[@class=&quot;middle-header-content&quot;]//a[contains(@class,&quot;logo&quot;) and @title]</value>
       </entry>
       <entry>
          <key>BASIC</key>

@@ -71,7 +71,8 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Cart'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Cart'),5)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Cart'), 10)
+//CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Cart'), 10)
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Cart'))
 
 
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/ViewCartMainPageBtn'),5)
@@ -80,7 +81,7 @@ if (WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBea
 	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/ViewCartMainPageBtn'),10)
 	
 	TestObject removeProductFromCart = new TestObject()
-	removeProductFromCart.addProperty('xpath', ConditionType.EQUALS, '//td[@class="col item"]//a[@title="إزالة منتج"]')
+	removeProductFromCart.addProperty('xpath', ConditionType.EQUALS, '//td[@class="col item"]//a[@title="إزالة سلعة"]')
 	WebUI.waitForElementVisible(removeProductFromCart, 10)
 	List<WebElement> removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 5)
 	

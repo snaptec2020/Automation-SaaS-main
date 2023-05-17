@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>LoginTolephone</name>
+   <name>MoreDetailsPlus</name>
    <tag></tag>
-   <elementGuidId>bfe3a490-3642-4d1d-9de6-c3c9c6d94c96</elementGuidId>
+   <elementGuidId>f4c7b56a-6609-469d-b3d3-3924b20bb544</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@type =&quot;number&quot; and @id=&quot;login-phone&quot;]</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[text()=&quot;المزيد من التفاصيل&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -6,11 +6,11 @@
    <elementGuidId>1b3eab99-921d-429b-b147-2a34fb41e716</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//span[text()=&quot;رمز المنتج: &quot;]//following::span</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@class=&quot;product info detailed &quot;]//div[@class=&quot;product attribute sku&quot;]/strong[text()=&quot;كود المنتج&quot;]/following-sibling::span</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

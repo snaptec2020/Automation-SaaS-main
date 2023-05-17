@@ -6,11 +6,11 @@
    <elementGuidId>15a31437-5093-4325-a882-4c5d5f1c8d75</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@class=&quot;product-info-main&quot;]//h1[@class=&quot;product-name&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[contains(@class,&quot;product-detail-infomation&quot;)]//h1[@class=&quot;product-name&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

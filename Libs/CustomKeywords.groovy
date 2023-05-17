@@ -114,6 +114,11 @@ def static "products.productsFromCatalog.OpenRandomProductTBS"() {
 }
 
 
+def static "products.productsFromCatalog.OpenRandomProductTheBeautySecrets"() {
+    (new products.productsFromCatalog()).OpenRandomProductTheBeautySecrets()
+}
+
+
 def static "products.productsFromCatalog.scrollToVerifyElementVisiblity"(
     	TestObject testObjectRelativeId	) {
     (new products.productsFromCatalog()).scrollToVerifyElementVisiblity(

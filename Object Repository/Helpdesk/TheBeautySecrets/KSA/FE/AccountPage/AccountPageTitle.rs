@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class=&quot;page-title-wrapper&quot;]/div/span/span[text()=&quot;حسابي&quot;]</value>
+         <value>//div[@class=&quot;block account-nav&quot;]/div/h3[text()=&quot;تفاصيل الحساب&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>

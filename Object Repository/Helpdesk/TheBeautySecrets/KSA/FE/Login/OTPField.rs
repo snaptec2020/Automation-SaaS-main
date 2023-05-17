@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id=&quot;input-otp-1&quot;]</value>
+         <value>//fieldset[@class=&quot;fieldset login&quot;]//div[@class=&quot;passcode-wrapper&quot;]//input[@id=&quot;input-otp-1&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>

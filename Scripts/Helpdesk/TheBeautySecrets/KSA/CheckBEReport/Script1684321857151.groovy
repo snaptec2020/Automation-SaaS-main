@@ -25,48 +25,48 @@ WebUI.maximizeWindow()
 
 WebUI.navigateToUrl(GlobalVariable.BE_URL)
 
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Login/UserName'), GlobalVariable.BE_UserName)
+WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Login/UserName'), GlobalVariable.BE_UserName)
 
 	
-//WebUI.setEncryptedText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Login/Password'), 'h9YfHV16ZyMBoeJlmdP5xA==')
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Login/Password'), GlobalVariable.BE_Password)
+//WebUI.setEncryptedText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Login/Password'), 'h9YfHV16ZyMBoeJlmdP5xA==')
+WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Login/Password'), GlobalVariable.BE_Password)
 WebUI.waitForPageLoad(10)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Login/LoginButton'),FailureHandling.CONTINUE_ON_FAILURE)
-if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Shared/SomethingWentWrong'), 10,FailureHandling.OPTIONAL) & WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Shared/SomethingWentWrongOK'), 10,FailureHandling.OPTIONAL) ) {
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Shared/SomethingWentWrongOK'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Login/LoginButton'),FailureHandling.CONTINUE_ON_FAILURE)
+if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Shared/SomethingWentWrong'), 10,FailureHandling.OPTIONAL) & WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Shared/SomethingWentWrongOK'), 10,FailureHandling.OPTIONAL) ) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Shared/SomethingWentWrongOK'))
 }
 WebUI.waitForPageLoad(20)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Menu/Menu_Reports'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Menu/Menu_Reports_Orders'),5)
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Menu/Menu_Reports_Orders'),5)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Menu/Menu_Reports_Orders'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Menu/Menu_Reports'))
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Menu/Menu_Reports_Orders'),5)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Menu/Menu_Reports_Orders'),5)
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Menu/Menu_Reports_Orders'))
 
 //DateFormat dateFormat = new SimpleDateFormat("MM/dd/yy");
 //GregorianCalendar cal = new GregorianCalendar();
 def now = new Date().format('MM/dd/yyyy')
 
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/BEReports/Orders_From'),now.toString())
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/BEReports/Orders_to'),now.toString())
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/BEReports/Orders_ShowReports'))
+WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/BEReports/Orders_From'),now.toString())
+WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/BEReports/Orders_to'),now.toString())
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/BEReports/Orders_ShowReports'))
 
-//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/BEReports/Empty_grid'))
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/BEReports/Empty_grid'))
 
 
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/BEReports/Orders_From'),'1/1/23')
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/BEReports/Orders_to'),'1/1/23')
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/BEReports/Orders_ShowReports'))
+WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/BEReports/Orders_From'),'1/1/23')
+WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/BEReports/Orders_to'),'1/1/23')
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/BEReports/Orders_ShowReports'))
 
 //long lastHeight=((Number) WebUI.executeJavaScript("return document.body.scrollHeight", null)).longValue();
 WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight);", null);
 
-//WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/BEReports/dataInOrderson01012023'), 10)
-//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/BEReports/dataInOrderson01012023'))
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/BEReports/dataInOrderson01012023'), 10)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/BEReports/dataInOrderson01012023'))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Menu/Menu_Sales'))
-WebUI.executeJavaScript("arguments[0].scrollIntoView();", WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Menu/Menu_Sales_orders'), 10))
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Menu/Menu_Sales'))
+WebUI.executeJavaScript("arguments[0].scrollIntoView();", WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Menu/Menu_Sales_orders'), 10))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Menu/Menu_Sales_orders'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Menu/Menu_Sales_orders'))
 
 WebUI.delay(2)
 WebUI.closeBrowser()

@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//select[@name=&quot;phone_code&quot;][2]</value>
+         <value>//fieldset[@class=&quot;fieldset login&quot;]//span[text()=&quot;+966&quot;]//following::a[@class=&quot;select-list-link&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>

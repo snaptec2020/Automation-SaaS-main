@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>LoginTolephone</name>
+   <name>OldPrice</name>
    <tag></tag>
-   <elementGuidId>bfe3a490-3642-4d1d-9de6-c3c9c6d94c96</elementGuidId>
+   <elementGuidId>bfbe4967-c025-49c8-a5ee-037086f7345b</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@type =&quot;number&quot; and @id=&quot;login-phone&quot;]</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@class=&quot;product-info-price&quot;]//span[@class=&quot;old-price&quot;]//span[@class=&quot;price&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -6,11 +6,11 @@
    <elementGuidId>4ff82aea-47ad-419e-b229-3416b1657d5b</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//button[@id=&quot;close-minicart&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@class=&quot;minicart-wrapper active&quot;]//button[@id=&quot;close-minicart&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

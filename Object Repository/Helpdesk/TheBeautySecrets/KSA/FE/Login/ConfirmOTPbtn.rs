@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//button[text()=&quot;التحقق من الرمز&quot;]</value>
+         <value>//button[text()=&quot;التحقق من الرمز&quot; and not(@style=&quot;display: none;&quot;)]</value>
       </entry>
       <entry>
          <key>BASIC</key>

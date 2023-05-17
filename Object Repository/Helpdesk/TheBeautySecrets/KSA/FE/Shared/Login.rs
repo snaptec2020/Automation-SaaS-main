@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//a[text()=&quot;تسجيل الدخول&quot;]</value>
+         <value>//div[@class=&quot;table-icon-menu pull-right&quot;]//a[text()=&quot;تسجيل دخول&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>

@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "6643E5890A70DD5D99E911267CF123E2",
+  "keywordFileContentHash": "96DD7A61FBC6D54464AC11A306244060",
   "keywordClasses": [
     {
       "name": "products.productsFromCatalog",
@@ -115,6 +115,11 @@
         },
         {
           "name": "OpenRandomProductTBS",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "OpenRandomProductTheBeautySecrets",
           "parameters": [],
           "javadoc": ""
         },

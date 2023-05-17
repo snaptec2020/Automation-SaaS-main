@@ -53,5 +53,6 @@ WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/
 WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/AccountPage/SignOut'),5)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Login'),10)
 
+WebUI.delay(3)
 WebUI.closeBrowser()
 
