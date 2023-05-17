@@ -19,11 +19,15 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.kms.katalon.core.testobject.ConditionType
 import java.awt.Robot as Robot
-import java.awt.event.KeyEvent as KeyEvent
+import java.awt.event.KeyEvent
+
+import org.openqa.selenium.By
 import org.openqa.selenium.JavascriptExecutor as JavascriptExecutor
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.interactions.Actions
+import org.openqa.selenium.support.ui.ExpectedConditions
+import org.openqa.selenium.support.ui.Wait
 
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
@@ -42,6 +46,13 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Login/E
 	
 //WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Login/LoginButton'))
 CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Login/LoginButton'), 5)
+
+//Wait wait
+//String expectedValue = "أهلا " + GlobalVariable.CustomerName
+//WebElement elm = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/WelcomeCustomer'), 20)
+//String actualValue = elm.getText().toLowerCase()
+//wait.until(ExpectedConditions.textToBePresentInElement(elm, actualValue));
+
 WebUI.waitForPageLoad(20)
 
 

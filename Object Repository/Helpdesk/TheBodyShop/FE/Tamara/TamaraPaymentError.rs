@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>PaymentMethod_1_Text</name>
+   <name>TamaraPaymentError</name>
    <tag></tag>
-   <elementGuidId>e40e5892-05ee-47c9-a388-c61756297e84</elementGuidId>
+   <elementGuidId>4de7bf7e-ec91-45d3-beb7-3239451a9165</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class=&quot;payment-method&quot; or @class=&quot;payment-method _active&quot;]/div/label/span[text()=&quot;قسمها على 3 دفعات بدون رسوم مع تمارا&quot;]</value>
+         <value>//div[@data-bind=&quot;html: message.text&quot; and text()=&quot;تم إلغاء طلبك.&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>

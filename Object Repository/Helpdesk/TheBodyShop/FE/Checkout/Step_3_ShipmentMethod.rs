@@ -6,11 +6,11 @@
    <elementGuidId>ecf5a718-75e3-41fe-9d6a-4ac579f8589c</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@class=&quot;step-title step_2 show-desktop&quot; and text()=&quot;الشحن&quot;]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//span[contains(@class,&quot;shippingMethod-titleModal-&quot;) and text()=&quot;طريقة الشحن&quot;]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

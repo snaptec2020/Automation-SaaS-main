@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>PaymentMethod_1_Text</name>
+   <name>ProductQty</name>
    <tag></tag>
-   <elementGuidId>e40e5892-05ee-47c9-a388-c61756297e84</elementGuidId>
+   <elementGuidId>02cbe7e5-5b75-4b56-8968-756bd7e3102e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class=&quot;payment-method&quot; or @class=&quot;payment-method _active&quot;]/div/label/span[text()=&quot;قسمها على 3 دفعات بدون رسوم مع تمارا&quot;]</value>
+         <value>//input[@type=&quot;number&quot; and @title=&quot;الكمية&quot;][1]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

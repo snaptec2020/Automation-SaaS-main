@@ -6,11 +6,11 @@
    <elementGuidId>a63e0d89-d35a-46b5-bd42-0c292939f9be</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//button[@id=&quot;onestepcheckout-button-place-order&quot; and @title=&quot;إنشاء الطلب&quot;]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//button[contains(@class,&quot;review-placeOrderButton-&quot;) and text()=&quot;اتمام عملية الشراء&quot;]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

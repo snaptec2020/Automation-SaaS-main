@@ -428,7 +428,7 @@ public class productsFromCatalog {
 //		println "Main Cat: "
 //		println  productsCategoriesList.size()
 		Random randomCategory = new Random()
-		int randomCategorySelected = randomCategory.nextInt(productsCategoriesList.size()) + 1
+		int randomCategorySelected = randomCategory.nextInt(productsCategoriesList.size()-1) + 1
 		TestObject randomNumberCatProductTO = new TestObject()
 				.addProperty('xpath', ConditionType.EQUALS, '('
 				+ findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Categories').findPropertyValue("xpath")

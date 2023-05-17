@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>PaymentMethod_1_Text</name>
+   <name>CreditPaymentError</name>
    <tag></tag>
-   <elementGuidId>e40e5892-05ee-47c9-a388-c61756297e84</elementGuidId>
+   <elementGuidId>b27d56aa-0f41-486f-b56a-7c06d05be248</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class=&quot;payment-method&quot; or @class=&quot;payment-method _active&quot;]/div/label/span[text()=&quot;قسمها على 3 دفعات بدون رسوم مع تمارا&quot;]</value>
+         <value>//div[@class=&quot;message message-error error&quot;]/div[text()=&quot;3DS has expired or authentication failed, please try again&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>

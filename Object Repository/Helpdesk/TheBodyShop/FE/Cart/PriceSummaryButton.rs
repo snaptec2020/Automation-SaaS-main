@@ -6,11 +6,11 @@
    <elementGuidId>31381ce5-95b7-4513-955f-0af98514cd3a</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//span[text()=&quot;اتمام الدفع&quot;]//parent::button[@class=&quot;action primary checkout&quot;  and @data-role=&quot;proceed-to-checkout&quot;]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//button[contains(@class,&quot;priceSummary-buttonCheckout-&quot;) and contains (@class,&quot;button-root_highPriority-qp_ button-root-&quot;) and contains(@class,&quot;clickable-root-&quot;)]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -6,11 +6,11 @@
    <elementGuidId>06a31872-0183-47a8-94f4-da5f3507ccc4</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@class=&quot;step-title step_1&quot; and text()=&quot;التسجيل&quot;]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[contains(@class,&quot;checkoutPage-title-&quot;) and text()=&quot;1. تسجيل الدخول&quot;]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

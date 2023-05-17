@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>PaymentMethod_1_Text</name>
+   <name>ClickHereToContinueShopping</name>
    <tag></tag>
-   <elementGuidId>e40e5892-05ee-47c9-a388-c61756297e84</elementGuidId>
+   <elementGuidId>a6e1ad68-6aa4-4643-9778-2ce9132834cd</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class=&quot;payment-method&quot; or @class=&quot;payment-method _active&quot;]/div/label/span[text()=&quot;قسمها على 3 دفعات بدون رسوم مع تمارا&quot;]</value>
+         <value>//p[contains(text(),&quot;لمواصلة التسوق.&quot;)]/a[text()=&quot;اضفط هنا&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
