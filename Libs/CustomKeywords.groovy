@@ -119,6 +119,11 @@ def static "products.productsFromCatalog.OpenRandomProductTheBeautySecrets"() {
 }
 
 
+def static "products.productsFromCatalog.OpenRandomProductAlShamasy"() {
+    (new products.productsFromCatalog()).OpenRandomProductAlShamasy()
+}
+
+
 def static "products.productsFromCatalog.decodeEncodedValue"(
     	String encoded	) {
     (new products.productsFromCatalog()).decodeEncodedValue(

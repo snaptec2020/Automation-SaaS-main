@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>dataInOrderson01012023</name>
+   <name>CloseSideCart</name>
    <tag></tag>
-   <elementGuidId>ca19497f-f3df-43c7-98f0-6cb6e3867191</elementGuidId>
+   <elementGuidId>68da497a-fb17-40de-8eb5-bd0b7c29638f</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//tbody//tr[@title='#']//td[contains(@class,'col-orders col-orders_count col-number') and contains(text(), '79')]</value>
+         <value>//div[@class=&quot;ui-dialog ui-widget ui-widget-content ui-corner-all ui-front mage-dropdown-dialog&quot; and not(@style=&quot;display: none;&quot;)]//button[@id=&quot;btn-minicart-close&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

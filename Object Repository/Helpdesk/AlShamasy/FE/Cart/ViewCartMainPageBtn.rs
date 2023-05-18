@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//span[text()=&quot;اذهب إلى عربة التسوق&quot;]//parent::a[@class=&quot;action btn btn-default btn-full margin-bottom15 viewcart&quot;]</value>
+         <value>//div[@class=&quot;ui-dialog ui-widget ui-widget-content ui-corner-all ui-front mage-dropdown-dialog&quot; and not(@style=&quot;display: none;&quot;)]//a[@class=&quot;action viewcart&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

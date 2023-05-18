@@ -1,8 +1,3 @@
-import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
-import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -16,6 +11,25 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import com.kms.katalon.core.testobject.ConditionType as ConditionType
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.annotation.Keyword as Keyword
+import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
+import com.kms.katalon.core.webui.driver.DriverFactory
+import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword as WebUIAbstractKeyword
+import catalog.catlogComponants as catlogComponants
+import java.util.List
+
+import org.eclipse.persistence.jpa.jpql.parser.ConditionalTermBNF
+import org.openqa.selenium.By as By
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.interactions.Actions
+
 import com.kms.katalon.core.model.FailureHandling
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
@@ -67,10 +81,9 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-//Open Random Product
-CustomKeywords.'products.productsFromCatalog.OpenRandomProductAlShamasy'()
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlShamasy/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-//WebUI.navigateToUrl("https://www.alshamasy.com/ar/76/010-046/3tr+bc-blue-1.html")
+CustomKeywords.'products.productsFromCatalog.OpenRandomProductAlShamasy'()
 
 /////////////////////////
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/productFullDetail-Name'))
@@ -83,46 +96,46 @@ println ProductSKU
 println ProductURL
 println ProductPrice
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/Add to cart'),5)
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/Add to cart'),5)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/Add to cart'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/MiniCart/CloseMiniCart'), 5)
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/MiniCart/CloseMiniCart'),5)
-if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/MiniCart/CloseMiniCart'), FailureHandling.OPTIONAL)) {
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/MiniCart/CloseMiniCart'))
-}else {
-	// Check if qty accepted
-	def trials=1
-	while (!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/MiniCart/CloseMiniCart'), FailureHandling.OPTIONAL) && trials<10) {
-		//Open another Random Product
-		trials = trials+1
-		
-		if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Logo'),5,FailureHandling.OPTIONAL)){
-			WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Logo'),FailureHandling.OPTIONAL)
-		}
-		WebUI.waitForPageLoad(20)
-		WebUI.delay(2)
-		
-		CustomKeywords.'products.productsFromCatalog.OpenRandomProductAlShamasy'()
-		ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/productFullDetail-Name'))
-		ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/productFullDetail-sku')).replace(" ", "")
-		ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")
-		ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/Product_Price')).replace("ر.س", "").replace(" ", "")
-		println ProductTitle
-		println ProductSKU
-		println ProductURL
-		println ProductPrice
-		
-		WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/Add to cart'))
-		WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/Add to cart'))
+// Search By Title
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Logo'),FailureHandling.OPTIONAL)
+WebUI.waitForPageLoad(10)
 
-		if(trials>=10) {
-			assert false,"Could not find available products"
-		}
-		WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/MiniCart/CloseMiniCart'), 5)
-		WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/MiniCart/CloseMiniCart'),5)
-	}
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Search/Search icon'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Search/Search Bar context'))
+WebUI.focus(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Search/Search Bar context'))
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Search/Search Bar context'), ProductTitle)
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
 
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/MiniCart/CloseMiniCart'), FailureHandling.CONTINUE_ON_FAILURE)
-}
+String SearchResultsxpath='//div[@class="product details product-item-details"]//a[@href="' + ProductURL + '" and contains(normalize-space(text()),normalize-space("' + ProductTitle + '"))]'
+println SearchResultsxpath
+TestObject Productlink_TO=new TestObject()
+Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)
+WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
+WebUI.executeJavaScript("arguments[0].scrollIntoView();", Arrays.asList(Productlink_Element))
+//Actions actions = new Actions(DriverFactory.getWebDriver());
+//actions.moveToElement(Productlink_Element)
+//JavascriptExecutor jse2 = (JavascriptExecutor)driver;
+//jse2.executeScript("arguments[0].scrollIntoView()", myelement);
 
+WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
+WebUI.delay(2)
+
+
+// Search By SKU
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Logo'),FailureHandling.OPTIONAL)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Search/Search icon'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Search/Search Bar context'))
+WebUI.setText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Search/Search Bar context'), ProductSKU)
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
+
+Productlink_TO=new TestObject()
+Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)
+Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
+WebUI.executeJavaScript("arguments[0].scrollIntoView();", Arrays.asList(Productlink_Element))
+WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
+
+WebUI.delay(2)
+
+WebUI.closeBrowser()

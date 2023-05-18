@@ -540,6 +540,56 @@ public class productsFromCatalog {
 	}
 	
 	@Keyword
+	def OpenRandomProductAlShamasy(){
+		List<WebElement> productsCategoriesList = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Categories'), 5)
+		println "Main Cat: "
+		println  productsCategoriesList.size()
+		Random randomCategory = new Random()
+		int randomCategorySelected = randomCategory.nextInt(productsCategoriesList.size()-1) + 1
+		//		randomCategorySelected =2
+		TestObject randomNumberCatProductTO = new TestObject()
+				.addProperty('xpath', ConditionType.EQUALS, '('
+				+ findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Categories').findPropertyValue("xpath")
+				+ ')[' + randomCategorySelected.toString() + ']')
+		WebElement randomNumberCatProductElm = WebUiCommonHelper.findWebElement(randomNumberCatProductTO, 5)
+		clickJS(randomNumberCatProductTO, 3)
+
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/ProductsScrollerMainItem'), 10)
+		List<WebElement> prod = WebUI.findWebElements(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/ProductsScrollerMainItem'),3)
+		println "Products: "
+		println  prod.size()
+		if(prod.size()>0) {
+			Random randomNumberforProduct = new Random()
+			int elementIndexproduct = Math.abs(randomNumberforProduct.nextInt(prod.size() ))
+			String currentURL = WebUI.getUrl()
+			WebElement selectedProduct = prod.get(elementIndexproduct)
+			WebElement LinkSelectedElement = selectedProduct.findElement(By.xpath('.//a[@class="product-item-link"]'))
+			clickJS(LinkSelectedElement, 5)
+			//			WebUI.navigateToUrl("https://www.thebodyshop.com.sa/east/ar/fragrance/view-all-fragrance/black-musk-eau-de-toilette-p-p053023")
+			WebUI.delay(2)
+			//TBES does not have configurable products
+			//			String MainXPath = '//div[@id="product-options-wrapper"]/div[@class="fieldset"]/div[@class="attr-mask require"]'
+			//			TestObject Maintb = new TestObject()
+			//			Maintb.addProperty('xpath', ConditionType.EQUALS, MainXPath)
+			//			WebUI.waitForElementVisible(Maintb, 5,FailureHandling.OPTIONAL)
+			//			List<WebElement> genralDropDowns = WebUI.findWebElements(Maintb, 5)
+			//			if (genralDropDowns.size() != 0) {
+			//				for (int i = 1; i <= genralDropDowns.size(); i++) {
+			//					String SubOption= '(' + MainXPath + ')' +'[' + i + ']/div/div[@option-id]'
+			//					TestObject SubOptiontb = new TestObject()
+			//					SubOptiontb.addProperty('xpath', ConditionType.EQUALS, SubOption)
+			//					List<WebElement> SubOptionElm=WebUiCommonHelper.findWebElements(SubOptiontb, 5)
+			//					if(SubOptionElm.size()>0) {
+			//						clickJS(SubOptionElm.get(0), 5)
+			//					}
+			//				}
+			//			}
+		}else {
+			OpenRandomProductTBS()
+		}
+
+	}
+	@Keyword
 	String decodeEncodedValue(String encoded) {
 		return URLDecoder.decode(encoded, StandardCharsets.UTF_8.toString())
 	}

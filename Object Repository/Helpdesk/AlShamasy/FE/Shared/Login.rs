@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[text()=&quot;تسجيل الدخول&quot;]</value>
+         <value>//div[@class=&quot;actions-header&quot;]//a[text()=&quot;دخول&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

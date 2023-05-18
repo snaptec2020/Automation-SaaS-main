@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,&quot;top-custom-link padding-right&quot;)]</value>
+         <value>//div[@class=&quot;top-search fixed-click-show-destop&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

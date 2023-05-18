@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class=&quot;page-title-wrapper&quot;]/div/span/span[text()=&quot;حسابي&quot;]</value>
+         <value>//div[@class=&quot;page-title-wrapper&quot;]//span[text()=&quot;حسابي&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

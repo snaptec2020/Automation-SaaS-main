@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[text()=&quot;تسجيل خروج&quot;]</value>
+         <value>//div[@class=&quot;actions-header&quot;]//a[contains(text(),&quot;تسجيل خروج&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

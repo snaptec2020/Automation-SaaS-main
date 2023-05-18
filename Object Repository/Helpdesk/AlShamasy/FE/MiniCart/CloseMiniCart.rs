@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button[@id=&quot;close-minicart&quot;]</value>
+         <value>//div[@id=&quot;mb-ajaxsuite-popup-wrapper&quot;]/../..//span[text()=&quot;إغلاق&quot;]/parent::button[@class=&quot;action-close&quot; and @data-role=&quot;closeBtn&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

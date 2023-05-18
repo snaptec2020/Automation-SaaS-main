@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//span[text()=&quot;رمز المنتج: &quot;]//following::span</value>
+         <value>//div[@class=&quot;product-info product-info-main&quot;]//div[@itemprop=&quot;sku&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

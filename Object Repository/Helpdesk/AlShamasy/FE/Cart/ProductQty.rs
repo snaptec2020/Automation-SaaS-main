@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Logo</name>
+   <name>ProductQty</name>
    <tag></tag>
-   <elementGuidId>20b45a29-8b3d-4992-a474-6cde7e038d95</elementGuidId>
+   <elementGuidId>4a5d6769-0256-4a64-8d44-147c42c9684f</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//td[@class=&quot;col qty&quot;]//input[@title=&quot;الكمية&quot;]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@class=&quot;for-full-withmenu&quot;]/div[@class=&quot;col-logo&quot;]//a[contains(@class,&quot;logo&quot;) and @title]</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

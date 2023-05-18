@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class=&quot;total&quot;]/span/span[@class=&quot;total-price&quot;]</value>
+         <value>//div[@class=&quot;product-info product-info-main&quot;]//span[@class=&quot;price&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

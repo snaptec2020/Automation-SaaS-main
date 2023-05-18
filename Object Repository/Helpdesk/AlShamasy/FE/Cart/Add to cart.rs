@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button[@id=&quot;product-addtocart-button&quot; and @title=&quot;أضف إلى السلة&quot; ]</value>
+         <value>//button[@id=&quot;product-addtocart-button&quot; and @title=&quot;أضف إلى سلة التسوق&quot; ]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

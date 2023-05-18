@@ -6,11 +6,11 @@
    <elementGuidId>f9d79d47-9567-4130-b78e-ee42a47e2246</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//td[@class=&quot;col subtotal&quot;]//span[@class=&quot;price&quot;]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//td[@class=&quot;amount&quot;]/span[@class=&quot;price&quot; and @data-th=&quot;المجموع الفرعي&quot;]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

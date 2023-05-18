@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@type = 'number' and @placeholder = '000 - 000 - 000' and not(contains(@class,&quot;hide&quot;))]</value>
+         <value>//input[@name=&quot;login[username]&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

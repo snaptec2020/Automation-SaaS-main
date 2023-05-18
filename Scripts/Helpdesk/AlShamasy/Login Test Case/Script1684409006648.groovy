@@ -34,23 +34,18 @@ WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlShamasy/SharedScripts/Lau
 
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlShamasy/SharedScripts/Login'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Login'),5)
-WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/AccountIcon'))
-WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Login'),5)
+WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Login'),3)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Login'),3)
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/MyAccount'))
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/AccountPage/AccountPageTitle'), 10)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/AccountPage/AccountPageTitle'), 3)
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/AccountPage/AccountPageTitle'), FailureHandling.STOP_ON_FAILURE)
 /////////////////////////
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Logo'))
-WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/AccountIcon'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/AccountPage/SignOut'),FailureHandling.OPTIONAL)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/AccountPage/SignOut'))
 
-WebUI.waitForPageLoad(10)
-
-WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/AccountIcon'))
-WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/AccountPage/SignOut'),5)
+WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/AccountPage/SignOut'),3)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Login'),10)
 
 WebUI.closeBrowser()
