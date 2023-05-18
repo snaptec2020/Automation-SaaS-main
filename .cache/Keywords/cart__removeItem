@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "4D1DEB4F78937F0522F1A9EF45ADF9BE",
+  "keywordFileContentHash": "27845A4FF2C1408954C3E24CB2FA4667",
   "keywordClasses": [
     {
       "name": "cart.removeItem",
@@ -39,6 +39,11 @@
               }
             }
           ],
+          "javadoc": ""
+        },
+        {
+          "name": "clearCart",
+          "parameters": [],
           "javadoc": ""
         }
       ]

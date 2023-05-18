@@ -1,13 +1,12 @@
 {
-  "keywordFileContentHash": "231A1D7F78868C7E90B4DA20B6043131",
+  "keywordFileContentHash": "8EC7366B1884E9C806BA29551F1101E0",
   "keywordClasses": [
     {
       "name": "cart.cartItems",
       "keywordMethods": [
         {
           "name": "getProductsInCart",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getSpecifiedIteminThecart",
@@ -38,11 +37,18 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
+        },
+        {
+          "name": "getSumOfProductsPriceInCart",
+          "parameters": []
+        },
+        {
+          "name": "getCartSubtotal",
+          "parameters": []
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

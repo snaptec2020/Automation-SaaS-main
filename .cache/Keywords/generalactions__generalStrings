@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "C8D0F7312B9E1AA7C9DDC6A4ADB14C86",
+  "keywordFileContentHash": "4E749B40F0AD2CDC2BDEE305A5FFCBB1",
   "keywordClasses": [
     {
       "name": "generalactions.generalStrings",
@@ -32,6 +32,57 @@
             },
             {
               "name": "isPhoneKeyReplaced",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "getRandomNumberBetweenOnetoTarget",
+          "parameters": [
+            {
+              "name": "targetNumber",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "getRandomNumberBetweenAnytoAny",
+          "parameters": [
+            {
+              "name": "upperLimit",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "lowerLimit",
               "initialExpression": "",
               "type": {
                 "fullClassName": "int",

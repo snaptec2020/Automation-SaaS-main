@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "BEF85864EBC14CDDF94848FD58D33C6D",
+  "keywordFileContentHash": "D815C3E61C2B968E04284308593E1AFB",
   "keywordClasses": [
     {
       "name": "products.productsFromCatalog",
@@ -126,8 +126,51 @@
           "javadoc": ""
         },
         {
+          "name": "getSpecifiedinStockProductsFromRandomCategoryInTarget",
+          "parameters": [
+            {
+              "name": "inTarget",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "boolean",
+                "unresolvedClassName": "boolean",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
           "name": "getRandominStockProductsFromOnePage",
           "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "getSpecifiedinStockProductsFromRandomCategoryInTarget",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "getRandominStockProductsFromRandomCategoryInTarget",
+          "parameters": [
+            {
+              "name": "isInTarget",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "boolean",
+                "unresolvedClassName": "boolean",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
           "javadoc": ""
         },
         {

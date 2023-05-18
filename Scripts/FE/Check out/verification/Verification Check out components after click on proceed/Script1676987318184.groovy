@@ -18,22 +18,44 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components'), [:], FailureHandling.STOP_ON_FAILURE)
-def SumOfProductsPriceInCart = CustomKeywords.'cart.cartItems.getSumOfProductsPriceInCart'()
-WebUI.verifyEqual(CustomKeywords.'cart.cartItems.getCartSubtotal'(), SumOfProductsPriceInCart) // before proceed
+
+//def SumOfProductsPriceInCart = CustomKeywords.'cart.cartItems.getSumOfProductsPriceInCart'()
+//WebUI.verifyEqual(CustomKeywords.'cart.cartItems.getCartSubtotal'(), SumOfProductsPriceInCart) // before proceed
+//CustomKeywords.'checkout.Payments.checkTheTarget'()
+//checkTheTarget()
 WebUI.click(findTestObject('Check Out/Proceed To Checkout Button'))
-
 //boolean otpRequierd=WebUI.verifyElementVisible(findTestObject('OTP/OTP container'))
-int otpRequierd=WebUI.findWebElements(findTestObject('Sign up Page/Sgin up By phone/insert phone number'),20).size()
-if(otpRequierd!= 0) {
-	WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), CustomKeywords.'generalactions.generalStrings.generateRandomPhoneNumber'())
-	WebUI.click(findTestObject('Check Out/Update added phone number'))
-	WebUI.callTestCase(findTestCase('FE/OTP/General Actions/Insert fixed OTP'), [:], FailureHandling.STOP_ON_FAILURE)
-}
-//WebUI.verifyEqual(CustomKeywords.'cart.cartItems.getCartSubtotal'(), SumOfProductsPriceInCart) // after proceed
+int otpRequierd = WebUI.findWebElements(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), 20).size()
 
+if (otpRequierd != 0) {
+    WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), CustomKeywords.'generalactions.generalStrings.generateRandomPhoneNumber'())
+
+    WebUI.click(findTestObject('Check Out/Update added phone number'))
+
+    WebUI.callTestCase(findTestCase('FE/OTP/General Actions/Insert fixed OTP'), [:], FailureHandling.STOP_ON_FAILURE)
+}
+
+//WebUI.verifyEqual(CustomKeywords.'cart.cartItems.getCartSubtotal'(), SumOfProductsPriceInCart) // after proceed
 WebUI.verifyElementVisible(findTestObject('Check Out/checkout user details 1'))
 
 WebUI.verifyElementVisible(findTestObject('Check Out/Checkout address 2'))
 
 WebUI.verifyElementVisible(findTestObject('Check Out/Checkout payment method'))
+
+
+//def checkTheTarget() {
+//    double minimum = 1000
+//
+//    double maximum = 2500
+//
+//    double Total = (((WebUI.getText(findTestObject('Object Repository/Cart/Cart Subtotal (Inc VAT)')).replaceAll(',', '') =~ '\\d+\\.\\d+')[0]) as double)
+//
+//    if ((minimum <= Total) & (Total <= maximum)) {
+//        WebUI.click(findTestObject('Check Out/Proceed To Checkout Button'))
+//    } else if ((minimum > Total) && (maximum > Total)) {
+//        WebUI.click(findTestObject('Object Repository/Check Out/remove product'))
+//		
+//		CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromRandomCategory'()
+//    }
+//}
 

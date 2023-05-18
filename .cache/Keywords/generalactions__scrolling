@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "1FB5537A22620E45EDEE48981B715130",
+  "keywordFileContentHash": "0A50F2CC6ACD2EBC0AA9C1E419DE19EB",
   "keywordClasses": [
     {
       "name": "generalactions.scrolling",
@@ -7,6 +7,63 @@
         {
           "name": "scrollingAtTheBottom",
           "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "scrollToVerifyElementVisiblity",
+          "parameters": [
+            {
+              "name": "testObjectRelativeId",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "scrollToClick",
+          "parameters": [
+            {
+              "name": "testObjectRelativeId",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "javaScriptToScrollToElement",
+          "parameters": [
+            {
+              "name": "testObjectRelativeId",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
           "javadoc": ""
         }
       ]

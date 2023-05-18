@@ -94,4 +94,14 @@
       <initValue>'Normal'</initValue>
       <name>searchMode</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Tabby and Tamara Target</description>
+      <initValue>1000</initValue>
+      <name>minimum</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Tabby and Tamara Target</description>
+      <initValue>2500</initValue>
+      <name>maximum</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

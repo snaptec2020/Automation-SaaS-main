@@ -26,6 +26,7 @@ import generalactions.generalStrings
 
 import java.util.List
 
+import org.checkerframework.checker.guieffect.qual.UIType
 import org.openqa.selenium.By
 import org.openqa.selenium.WebElement
 import internal.GlobalVariable
@@ -41,7 +42,7 @@ public class productsFromCatalog {
 	Random randomNumberforProduct = new Random()
 	String objText = ""
 	def catalogComp = new catlogComponants()
-	def utilityFunctions = new Utility()
+	public def utilityFunctions = new Utility()
 	int elementIndex = 0
 	def genaralActions= new generalStrings()
 
@@ -190,6 +191,38 @@ public class productsFromCatalog {
 	}
 
 	@Keyword
+	def getSpecifiedinStockProductsFromRandomCategoryInTarget(boolean inTarget) {
+		if(inTarget) {
+			boolean found=false
+			while(!found) {
+				selectCatalogComponents()
+				//WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+				List prod = getinStockProduct()
+				if(prod.size()==0){
+					getSpecifiedinStockProductsFromRandomCategoryInTarget(inTarget)
+				} else{
+					def elementIndexproduct= genaralActions.getRandomNumberBetweenOnetoTarget(prod.size())//Math.abs((randomNumberforProduct.nextInt(prod.size())))
+					if(elementIndexproduct==0) {
+						elementIndexproduct=1
+					}
+					def SelectedProductXPath="(//div[starts-with(@class,'styles_productItem__')]//button[starts-with(@class,'styles_atcButton__')][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]"
+					TestObject priceOfSelectedPrudct=new TestObject()
+					String priceOfSelectedPrudctXPath=SelectedProductXPath + "/../../../div[contains(@class,'styles_informationContainer')]//span[@dir='rtl']/span/span[2]"
+					priceOfSelectedPrudct.addProperty("xpath",ConditionType.EQUALS,priceOfSelectedPrudctXPath)
+					WebElement priceOfSelectedPrudctElm = WebUiCommonHelper.findWebElement(priceOfSelectedPrudct, 5)
+					float priceOfSelectedPrudctAmount= priceOfSelectedPrudctElm.getText().toFloat()
+					if (priceOfSelectedPrudctAmount>1000 & priceOfSelectedPrudctAmount<2500) {
+						found=true
+						utilityFunctions.clickOnObjectusingJavaScript(utilityFunctions.addXpathToTestObject(SelectedProductXPath))
+					}
+				}
+			}
+		}else {
+			getSpecifiedinStockProductsFromRandomCategory()
+		}
+	}
+
+	@Keyword
 	def getRandominStockProductsFromOnePage() {
 		//def xPathDef = "(\"//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')]\")["+elementIndex+"]"
 		List prod = getinStockProductFromOnePage()
@@ -216,6 +249,59 @@ public class productsFromCatalog {
 		}
 	}
 
+	@Keyword
+	def getSpecifiedinStockProductsFromRandomCategoryInTarget() {
+		float minimum = 1000
+		float maximum=2500
+		selectCatalogComponents()
+		WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+		List<WebElement> prod = utilityFunctions.findWebElements('Object Repository/Products/Product container in page in target',30)
+		/*	if (prod.size()==0) {
+		 getSpecifiedinStockProductsFromRandomCategoryInTarget()
+		 }*/
+		boolean found=false
+		prod.any ({
+			WebElement currentPrice= it.findElements(By.xpath("./div[contains(@class,'styles_informationContainer')]/div[contains(@class,'styles_priceContainer')]/span/span/span/span/span[1]")).get(0)
+			float priceOfSelectedPrudctAmount= currentPrice.getText().replaceAll(",", "").replaceAll(" ", "").toFloat()
+			if(priceOfSelectedPrudctAmount>=minimum & priceOfSelectedPrudctAmount<=maximum) {
+				found=true
+				WebElement currentAddToCartBtn=it.findElements(By.xpath("./div/div/button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to cart')]")).get(0)
+				def currentURL = WebUI.getUrl()
+				WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(currentAddToCartBtn))
+				//utilityFunctions.clickOnObjectusingJavaScript(currentAddToCartBtn)
+				WebUI.delay(5)
+				checkOnAddToStoreClickable(currentURL)
+				return true
+			}else if (priceOfSelectedPrudctAmount < minimum) {
+				found=true
+				WebElement currentAddToCartBtn=it.findElements(By.xpath("./div/div/button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to cart')]")).get(0)
+				def currentURL = WebUI.getUrl()
+				WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(currentAddToCartBtn))
+				WebUI.delay(5)
+				checkOnAddToStoreClickable(currentURL)
+				WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
+				float Total = (((WebUI.getText(findTestObject('Object Repository/Cart/Cart Subtotal (Inc VAT)')).replaceAll(',', '') =~ '\\d+\\.\\d+')[0]) as float)
+				int neededQty=Math.ceil(minimum/Total)
+				for (int i=1; i< neededQty ; i++) {
+					WebUI.waitForElementClickable(findTestObject('Object Repository/Cart/item plus'), 5)
+					WebUI.click(findTestObject('Object Repository/Cart/item plus'))
+					WebUI.delay(1)
+				}
+				return true
+			}
+		})
+		if(!found) {
+			getSpecifiedinStockProductsFromRandomCategoryInTarget()
+		}
+	}
+	@Keyword
+	def getRandominStockProductsFromRandomCategoryInTarget(boolean isInTarget) {
+		if (isInTarget) {
+
+		}else {
+			getRandominStockProductsFromRandomCategory()
+		}
+	}
 
 	@Keyword
 	def getRandominStockProductsFromRandomCategory() {
@@ -248,6 +334,7 @@ public class productsFromCatalog {
 			//WebElement element = WebUiCommonHelper.findWebElement(tb,30)
 			//WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
 			//Updated By Ahmed 14 Mar, 2023
+
 			addProductToCart(prod.size())
 			//checkOnAddToStoreClickable()
 			/*if(WebUI.verifyElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)) {
