@@ -6,11 +6,11 @@
    <elementGuidId>df1041c7-81a9-41db-ace4-c98f7e6f218e</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//span[text()=&quot;الإنتقال إلى الدفع&quot;]//parent::button[@title=&quot;الإنتقال إلى الدفع&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//span[text()=&quot;الانتقال إلى الدفع&quot;]//parent::button[@title=&quot;الانتقال إلى الدفع&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -6,11 +6,11 @@
    <elementGuidId>dada9f32-f3ac-40da-b710-64d349e5cdce</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@class=&quot;minicart-wrapper active&quot;]//a[text()=&quot;الاستمرار بالتسوق&quot; ]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@class=&quot;popup__main popup--result&quot;]/button[@title=&quot;Close (Esc)&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

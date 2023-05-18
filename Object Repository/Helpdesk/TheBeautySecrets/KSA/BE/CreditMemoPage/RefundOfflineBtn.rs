@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>FinishPayment</name>
+   <name>RefundOfflineBtn</name>
    <tag></tag>
-   <elementGuidId>424fcb02-162d-4972-9ad7-6a3d4c6f1917</elementGuidId>
+   <elementGuidId>0e284f22-bbb9-42f8-9646-09e55817aeb8</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class=&quot;aw-onestep-sidebar-wrapper&quot;]//span[text()=&quot;الدفع الآمن&quot;]/parent::button[@class=&quot;action primary checkout&quot;]</value>
+         <value>//span[text()=&quot;Refund Offline&quot;]/parent::button</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

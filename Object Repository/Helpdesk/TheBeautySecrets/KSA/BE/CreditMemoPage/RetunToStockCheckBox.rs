@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>FinishPayment</name>
+   <name>RetunToStockCheckBox</name>
    <tag></tag>
-   <elementGuidId>424fcb02-162d-4972-9ad7-6a3d4c6f1917</elementGuidId>
+   <elementGuidId>03341259-6fde-4bf8-8be0-16d8698cb488</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class=&quot;aw-onestep-sidebar-wrapper&quot;]//span[text()=&quot;الدفع الآمن&quot;]/parent::button[@class=&quot;action primary checkout&quot;]</value>
+         <value>//td[@class=&quot;col-return-to-stock&quot;]/input[@class=&quot;admin__control-checkbox&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

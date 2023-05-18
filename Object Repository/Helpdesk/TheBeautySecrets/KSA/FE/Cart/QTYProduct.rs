@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>FinishPayment</name>
+   <name>QTYProduct</name>
    <tag></tag>
-   <elementGuidId>424fcb02-162d-4972-9ad7-6a3d4c6f1917</elementGuidId>
+   <elementGuidId>e73255b6-f65b-488e-8902-554d082136af</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class=&quot;aw-onestep-sidebar-wrapper&quot;]//span[text()=&quot;الدفع الآمن&quot;]/parent::button[@class=&quot;action primary checkout&quot;]</value>
+         <value>//input[@title=&quot;الكمية&quot; and contains(@id,&quot;cart-&quot;) and contains(@id,&quot;-qty&quot;) ]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

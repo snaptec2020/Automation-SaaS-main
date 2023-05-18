@@ -6,11 +6,11 @@
    <elementGuidId>502e2b3c-7991-4003-b02c-3779b060c09a</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//li[@class=&quot;aw-onestep-groups_item payment-methods&quot;]//div[@class=&quot;group-title&quot;]/h2/span[text()=&quot;3. طريقة الدفع&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//li[@class=&quot;aw-onestep-groups_item payment-dupli&quot;]//div[@class=&quot;group-title&quot;]/h2/span[text()=&quot;طريقة الدفع&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

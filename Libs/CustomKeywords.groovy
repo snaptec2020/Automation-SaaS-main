@@ -5,11 +5,11 @@
 
 import java.util.List
 
+import java.lang.String
+
 import com.kms.katalon.core.testobject.TestObject
 
 import org.openqa.selenium.WebElement
-
-import java.lang.String
 
 import com.kms.katalon.core.context.TestSuiteContext
 
@@ -116,6 +116,20 @@ def static "products.productsFromCatalog.OpenRandomProductTBS"() {
 
 def static "products.productsFromCatalog.OpenRandomProductTheBeautySecrets"() {
     (new products.productsFromCatalog()).OpenRandomProductTheBeautySecrets()
+}
+
+
+def static "products.productsFromCatalog.decodeEncodedValue"(
+    	String encoded	) {
+    (new products.productsFromCatalog()).decodeEncodedValue(
+        	encoded)
+}
+
+
+def static "products.productsFromCatalog.encodeValue"(
+    	String value	) {
+    (new products.productsFromCatalog()).encodeValue(
+        	value)
 }
 
 

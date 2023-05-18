@@ -25,6 +25,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import catalog.catlogComponants
 
 import java.awt.Robot
+import java.nio.charset.StandardCharsets
 import java.util.List
 
 import org.openqa.selenium.By
@@ -470,7 +471,7 @@ public class productsFromCatalog {
 		}
 
 	}
-	
+
 	@Keyword
 	def OpenRandomProductTheBeautySecrets(){
 		List<WebElement> productsCategoriesList = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Categories'), 5)
@@ -478,7 +479,7 @@ public class productsFromCatalog {
 		println  productsCategoriesList.size()
 		Random randomCategory = new Random()
 		int randomCategorySelected = randomCategory.nextInt(productsCategoriesList.size()-1) + 1
-//		randomCategorySelected =2
+		//		randomCategorySelected =2
 		TestObject randomNumberCatProductTO = new TestObject()
 				.addProperty('xpath', ConditionType.EQUALS, '('
 				+ findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Categories').findPropertyValue("xpath")
@@ -486,7 +487,7 @@ public class productsFromCatalog {
 		WebElement randomNumberCatProductElm = WebUiCommonHelper.findWebElement(randomNumberCatProductTO, 5)
 		clickJS(randomNumberCatProductTO, 3)
 
-				
+
 		List<WebElement> productsCategoriesListL2 = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/CategoriesL2'), 5)
 		println "Sub Cat: "
 		println  productsCategoriesListL2.size()
@@ -516,28 +517,38 @@ public class productsFromCatalog {
 			//			WebUI.navigateToUrl("https://www.thebodyshop.com.sa/east/ar/fragrance/view-all-fragrance/black-musk-eau-de-toilette-p-p053023")
 			WebUI.delay(2)
 			//TBES does not have configurable products
-//			String MainXPath = '//div[@id="product-options-wrapper"]/div[@class="fieldset"]/div[@class="attr-mask require"]'
-//			TestObject Maintb = new TestObject()
-//			Maintb.addProperty('xpath', ConditionType.EQUALS, MainXPath)
-//			WebUI.waitForElementVisible(Maintb, 5,FailureHandling.OPTIONAL)
-//			List<WebElement> genralDropDowns = WebUI.findWebElements(Maintb, 5)
-//			if (genralDropDowns.size() != 0) {
-//				for (int i = 1; i <= genralDropDowns.size(); i++) {
-//					String SubOption= '(' + MainXPath + ')' +'[' + i + ']/div/div[@option-id]'
-//					TestObject SubOptiontb = new TestObject()
-//					SubOptiontb.addProperty('xpath', ConditionType.EQUALS, SubOption)
-//					List<WebElement> SubOptionElm=WebUiCommonHelper.findWebElements(SubOptiontb, 5)
-//					if(SubOptionElm.size()>0) {
-//						clickJS(SubOptionElm.get(0), 5)
-//					}
-//				}
-//			}
+			//			String MainXPath = '//div[@id="product-options-wrapper"]/div[@class="fieldset"]/div[@class="attr-mask require"]'
+			//			TestObject Maintb = new TestObject()
+			//			Maintb.addProperty('xpath', ConditionType.EQUALS, MainXPath)
+			//			WebUI.waitForElementVisible(Maintb, 5,FailureHandling.OPTIONAL)
+			//			List<WebElement> genralDropDowns = WebUI.findWebElements(Maintb, 5)
+			//			if (genralDropDowns.size() != 0) {
+			//				for (int i = 1; i <= genralDropDowns.size(); i++) {
+			//					String SubOption= '(' + MainXPath + ')' +'[' + i + ']/div/div[@option-id]'
+			//					TestObject SubOptiontb = new TestObject()
+			//					SubOptiontb.addProperty('xpath', ConditionType.EQUALS, SubOption)
+			//					List<WebElement> SubOptionElm=WebUiCommonHelper.findWebElements(SubOptiontb, 5)
+			//					if(SubOptionElm.size()>0) {
+			//						clickJS(SubOptionElm.get(0), 5)
+			//					}
+			//				}
+			//			}
 		}else {
 			OpenRandomProductTBS()
 		}
 
 	}
 	
+	@Keyword
+	String decodeEncodedValue(String encoded) {
+		return URLDecoder.decode(encoded, StandardCharsets.UTF_8.toString())
+	}
+	
+	@Keyword
+	String encodeValue(String value) {
+		return URLEncoder.encode(value, StandardCharsets.UTF_8.toString())
+	}
+
 	@Keyword
 	def scrollToVerifyElementVisiblity(TestObject testObjectRelativeId) {
 		try {

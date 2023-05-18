@@ -58,13 +58,25 @@ WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBeautySecrets/KSA/Shared
 if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Logo'),5,FailureHandling.OPTIONAL)){
 	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Logo'),FailureHandling.OPTIONAL)
 }
-//WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Logo'))
+
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBeautySecrets/KSA/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
 /////////////////////////
-def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/productFullDetail-Name'))
-def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/productFullDetail-sku'))
-def ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")
-def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/Product_Price'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/MoreDetailsPlus'))
+def ProductTitle = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/productFullDetail-Name'), 5).getText().split("\n")[0]
+def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/productFullDetail-sku')).replace(":", "").replace(" ", "")
+def ProductURL = CustomKeywords.'products.productsFromCatalog.decodeEncodedValue'(WebUI.getUrl()) //.replace(GlobalVariable.FE_URL, "")
+def ProductPrice = ""
+
+if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/SpecialPrice'), 2,FailureHandling.OPTIONAL)) {
+	ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/SpecialPrice')).replace("٫", ".").replace("ر.س.", "")
+}else {
+	ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/Product_Price')).replace("٫", ".").replace("ر.س.", "")
+}
+
+println ProductTitle
+println ProductSKU
+println ProductPrice
+println ProductURL
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Cart'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Cart'),10)
@@ -78,26 +90,18 @@ CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Rep
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/totalNeededPay'), 10)
 String totalText=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/totalNeededPay'))
 println(totalText)
-totalText =totalText.replace(" ", "").replace("٫", ".").replace("ر.س", "")
+totalText =totalText.replace(" ر.س.", "").replace(" ", "").replace("٫", ".")
+println(totalText)
 Float totalValue = totalText.toFloat()
 println(totalValue)
 
-if (totalValue < 99) {
+if (totalValue < 100) {
     //increase the products
-    int neededQty = ((Math.ceil(99 / totalValue)) as int)
-	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/QtyDropdown'), 5)
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/QtyDropdownList'),2)
-//	WebUI.selectOptionByIndex(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/QtyDropdownList'),neededQty)
-	TestObject Option = new TestObject()
-	Option.addProperty("xpath",ConditionType.EQUALS,findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/QtyDropdownList').findPropertyValue("xpath") + '/li[@data-value="' + neededQty.toString() + '"]')
-	if(WebUI.verifyElementPresent(Option, 3)) {
-		CustomKeywords.'products.productsFromCatalog.clickJS'(Option,10)
-	}else {
-		Option.addProperty("xpath",ConditionType.EQUALS,findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/QtyDropdownList').findPropertyValue("xpath") + '/li[@data-value="22"]')
-		if(WebUI.verifyElementPresent(Option, 3)) {
-			CustomKeywords.'products.productsFromCatalog.clickJS'(Option,10)
-		}
-	}
+    int neededQty = ((Math.ceil(100 / totalValue)) as int)
+	WebUI.focus(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/QTYProduct'))
+	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/QTYProduct'), Keys.chord(Keys.BACK_SPACE))
+	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/QTYProduct'), Keys.chord(Keys.DELETE))
+	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/QTYProduct'), neededQty.toString())
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/RefreshCart'))
 	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/RefreshCart'))
     //remove and select another product (need to remove and seach again)
@@ -137,12 +141,11 @@ if (Paymentlist.size() != 2) {
  	println (Paymentlist.size())
    assert false
 } else {
-	// Tamara
+	// COD
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/PaymentMethod_1_Text'))
 	// Credit
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/PaymentMethod_2_Text'))
 }
-
 
 //Order with Credit 
 WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/Step_4_PaymentMethods'), 5)

@@ -6,11 +6,11 @@
    <elementGuidId>5c15ddca-0e85-4617-b689-090214eef0a5</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@data-role=&quot;payment-methods-load&quot;]/div[contains(@data-bind,&quot;_active&quot;)]/div/label/span[text()=&quot;قسم فاتورتك على (3 (دفعات بدون فوائد&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@data-role=&quot;payment-methods-load&quot;]/div[contains(@data-bind,&quot;_active&quot;)]/div/label/span[text()=&quot;الدفع عند الاستلام&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
