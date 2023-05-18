@@ -123,7 +123,7 @@ if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBea
 
 //Steps
 WebUI.waitForPageLoad(20)
-WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/LoadingImg'), 10)
+WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/LoadingImg'), 5)
 //WebUI.verifyElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/MapErrorCannotLoad'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/Step_4_PaymentMethods'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/Step_3_ShipmentMethod'))
@@ -191,11 +191,14 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/F
 
 WebUI.switchToDefaultContent()
 
+WebUI.delay(2)
+WebUI.focus(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/QtyProductCheckout'))
+WebUI.delay(3)
+WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/LoadingImg'), 10)
 WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/FinishPayment'))
-
-WebUI.waitForPageLoad(10)
-
-WebUI.delay(20)
+WebUI.delay(10)
+WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/LoadingImg'), 3)
+WebUI.waitForPageLoad(20)
 
 WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/credit/MainOTPFrame'), 30)
 
@@ -203,8 +206,9 @@ String url = WebUI.getUrl()
 
 if (!WebUI.verifyMatch(url, 'https://api.checkout.com/.*', true,FailureHandling.OPTIONAL)) {
 	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/FinishPayment'), 2)
-	WebUI.waitForPageLoad(10)
-	WebUI.delay(20)
+	WebUI.delay(10)
+	WebUI.waitForPageLoad(20)
+	WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/LoadingImg'), 3)
 	WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/credit/MainOTPFrame'), 30)
 	url = WebUI.getUrl()
 	WebUI.verifyMatch(url, 'https://api.checkout.com/.*', true)

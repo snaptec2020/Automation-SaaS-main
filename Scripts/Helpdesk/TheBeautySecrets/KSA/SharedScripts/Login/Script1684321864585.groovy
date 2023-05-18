@@ -70,12 +70,12 @@ WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE
 WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Login/Password'), GlobalVariable.BE_Password)
 WebUI.waitForPageLoad(10)
 WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Login/LoginButton'),FailureHandling.CONTINUE_ON_FAILURE)
-if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Shared/SomethingWentWrong'), 5,FailureHandling.OPTIONAL) & WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Shared/SomethingWentWrongOK'), 10,FailureHandling.OPTIONAL) ) {
+if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Shared/SomethingWentWrong'), 3,FailureHandling.OPTIONAL) & WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Shared/SomethingWentWrongOK'), 10,FailureHandling.OPTIONAL) ) {
 	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Shared/SomethingWentWrongOK'))
 }
 //WebUI.waitForPageLoad(20)
 
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Menu/Menu_MageDelight'),20)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Menu/Menu_MageDelight'),10)
 WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Menu/Menu_MageDelight'))
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Menu/Menu_MageDelight_MobileOTPLogin'))
