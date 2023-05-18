@@ -28,7 +28,7 @@ import org.openqa.selenium.Keys as Keys
 
 //WebUI.disableSmartWait()
 WebUI.openBrowser('')
-//DriverFactory.getWebDriver().manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS)
+//DriverFactory.getWebDriver().manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS)
 
 
 
