@@ -37,8 +37,26 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/Ema
 
 //WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/acknowledgement'))
 
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/LoginButton'),3)
-
-
-
+int trials=0
+int trialCount = 20
+while(true & trials<trialCount) {
+	trials++
+	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/LoginButton'),3)
+//	WebUI.waitForPageLoad(10)
+//	WebUI.delay(1)
+	if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/CaptachIFrame'),FailureHandling.OPTIONAL)) {
+		WebUI.clickOffset(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/MainBody'), 0, 0)
+//		WebUI.clickOffset(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/LoginButton'), 0, 0)
+//		WebUI.delay(3)
+//		CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/LoginButton'),3)
+	}else {
+		break
+	}
+	
+	if(trials.equals(trialCount)) {
+		assert false,"Could not login due to captcha"
+		break
+	}
+	
+}
 
