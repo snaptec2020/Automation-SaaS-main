@@ -29,26 +29,21 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
 //WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/AccountIcon'))
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Login'),3)
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/LoginTolephone'), 5)
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/LoginTolephone'), GlobalVariable.FE_EmailLogin)
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/EmailLoginPassword'), GlobalVariable.FE_EmailPassword)
-
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/acknowledgement'))
 
 int trials=0
 int trialCount = 50
 while(true & trials<trialCount) {
 	trials++
-//	WebUI.delay(20)
+	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Login'),3)
+	
+	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/LoginTolephone'), 5)
+	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/LoginTolephone'), GlobalVariable.FE_EmailLogin)
+	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/EmailLoginPassword'), GlobalVariable.FE_EmailPassword)
+	
 	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/LoginButton'),3)
-//	WebUI.waitForPageLoad(10)
 	if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/CaptachIFrame'),FailureHandling.OPTIONAL)) {
-		WebUI.clickOffset(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/MainBody'), 10, 10)
-//		WebUI.clickOffset(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/LoginButton'), 0, 0)
-//		WebUI.delay(3)
-//		CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/LoginButton'),3)
+		WebUI.back()
 	}else {
 		break
 	}

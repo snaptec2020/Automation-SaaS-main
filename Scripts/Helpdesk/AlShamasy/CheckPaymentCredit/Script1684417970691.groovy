@@ -119,7 +119,7 @@ if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlSham
 
 //Steps
 WebUI.waitForPageLoad(20)
-WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/LoadingImg'), 10)
+WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/LoadingImg'), 5)
 //WebUI.verifyElementNotVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/MapErrorCannotLoad'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/Step_4_PaymentMethods'))
 //WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/Step_3_ShipmentMethod'))
@@ -141,9 +141,9 @@ if (Paymentlist.size() != 1) {
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/PaymentMethod_1_Text'))
 }
 
-WebElement expandAddress = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/AddNewAddress'), 5)
+List<WebElement> expandAddress = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/AddNewAddress'), 5)
 
-if(expandAddress.getAttribute("aria-expanded").equals("true")) {
+if( WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactPhoneCountryField'),FailureHandling.OPTIONAL)  ) {
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactPhoneCountryField'))
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactPhoneCountryField-966'))
 	WebUI.setText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactPhoneTelField'), GlobalVariable.FE_Tel)

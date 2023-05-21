@@ -6,10 +6,14 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
 import java.util.concurrent.TimeUnit
 
-import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.google.gson.Gson
+import com.kms.katalon.core.checkpoint.Checkpoint
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
-import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.model.FailureHandling
+import com.kms.katalon.core.network.ProxyInformation
+import com.kms.katalon.core.network.ProxyOption
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
@@ -23,6 +27,27 @@ import org.openqa.selenium.Keys as Keys
 
 
 
+
+//ProxyInformation proxyInfo = RunConfiguration.getProxyInformation()
+////ProxyInformation proxy = RunConfiguration.getProxyInformation()
+//def proxy_ip = "65.160.224.144"
+//def proxy_port = "80"
+//proxyInfo.setProxyServerAddress(proxy_ip)
+//proxyInfo.setProxyServerPort(proxy_port)
+//
+//// use the proxyInfo variable for what ever
+//println proxyInfo
+
+
+//ProxyInformation proxy = RunConfiguration.getProxyInformation()
+//println(proxy)
+//
+//// Switch proxy
+//proxy.setProxyOption(ProxyOption.MANUAL_CONFIG.name())
+//proxy.setProxyServerAddress("65.108.90.92")
+//proxy.setProxyServerPort(8080)
+//Map<String, Object> generalProperties = RunConfiguration.getExecutionGeneralProperties();
+//generalProperties.put(RunConfiguration.PROXY_PROPERTY, new Gson().toJson(proxy));
 
 
 
