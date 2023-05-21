@@ -62,9 +62,9 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search 
 
 
 
-
+String SearchResults='//a[@href="/' + ProductURL + '"]//h2[contains(text(),"' + ProductTitle + '")]'
 TestObject Productlink_TO=new TestObject()
-Productlink_TO.addProperty("xpath",ConditionType.EQUALS,'//a[@href="/' + ProductURL + '"]//h2[text()="' + ProductTitle + '"]')
+Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResults)
 //WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
 WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
@@ -83,7 +83,7 @@ WebUI.setText(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search B
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
 
 Productlink_TO=new TestObject()
-Productlink_TO.addProperty("xpath",ConditionType.EQUALS,'//a[@href="/' + ProductURL + '"]//h2[contains(text(),"' + ProductTitle + '")]')
+Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResults)
 //WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
 WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)

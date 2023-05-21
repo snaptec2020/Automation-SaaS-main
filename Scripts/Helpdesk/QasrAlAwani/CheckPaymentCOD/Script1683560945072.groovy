@@ -31,8 +31,8 @@ import java.util.List as List
 import java.util.concurrent.ConcurrentHashMap.KeySetView as KeySetView
 import org.eclipse.jdt.internal.compiler.ast.ForeachStatement as ForeachStatement
 import org.openqa.selenium.By as By
-import org.openqa.selenium.WebElement
-import org.openqa.selenium.remote.server.handler.GetCurrentUrl as WebElement
+import org.openqa.selenium.WebElement as WebElement
+import org.openqa.selenium.remote.server.handler.GetCurrentUrl 
 
 WebUI.openBrowser('')
 
@@ -243,10 +243,10 @@ if (totalValue < 99) {
 
     TestObject numberOfItems = new TestObject()
 
-    numberOfItems.addProperty('xpath', ConditionType.EQUALS, '//input[@aria-label="كمية المنتج"]')
+    numberOfItems.addProperty('xpath', ConditionType.EQUALS, '//input[@name="quantity"]')
 
     WebElement numberOfItemsElement = WebUiCommonHelper.findWebElement(numberOfItems, 10)
-
+	
     numberOfItemsElement.sendKeys(Keys.chord(Keys.BACK_SPACE))
 
     numberOfItemsElement.sendKeys(Keys.chord(Keys.DELETE))
