@@ -38,7 +38,7 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/Ema
 //WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Login/acknowledgement'))
 
 int trials=0
-int trialCount = 50
+int trialCount = 20
 while(true & trials<trialCount) {
 	trials++
 //	WebUI.delay(20)

@@ -5,7 +5,7 @@
    <tag></tag>
    <delayBetweenInstances>0</delayBetweenInstances>
    <executionMode>PARALLEL</executionMode>
-   <maxConcurrentInstances>10</maxConcurrentInstances>
+   <maxConcurrentInstances>5</maxConcurrentInstances>
    <testSuiteRunConfigurations>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -76,6 +76,16 @@
          </configuration>
          <runEnabled>true</runEnabled>
          <testSuiteEntity>Test Suites/Helpdesk/TheBeautySecrets-KSA</testSuiteEntity>
+      </TestSuiteRunConfiguration>
+      <TestSuiteRunConfiguration>
+         <configuration>
+            <groupName>Web Desktop</groupName>
+            <profileName>default</profileName>
+            <requireConfigurationData>false</requireConfigurationData>
+            <runConfigurationId>Chrome</runConfigurationId>
+         </configuration>
+         <runEnabled>true</runEnabled>
+         <testSuiteEntity>Test Suites/Helpdesk/AlShamasy</testSuiteEntity>
       </TestSuiteRunConfiguration>
    </testSuiteRunConfigurations>
 </TestSuiteCollectionEntity>
