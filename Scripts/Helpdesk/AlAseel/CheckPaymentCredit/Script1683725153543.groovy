@@ -230,6 +230,7 @@ WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel
 CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ViewCartMainPageBtn'),10)
 
 //Check Total Paid for Tabby and Tamara
+WebUI.delay(2)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/totalNeededPay'), 10)
 String totalText=WebUI.getText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/totalNeededPay'))
 println(totalText)
