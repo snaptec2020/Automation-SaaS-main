@@ -189,6 +189,38 @@ def static "products.productsFromCatalog.clickJS"(
 }
 
 
+def static "products.productsFromCatalog.checkUsingJS"(
+    	TestObject to3	
+     , 	int timeout3	) {
+    (new products.productsFromCatalog()).checkUsingJS(
+        	to3
+         , 	timeout3)
+}
+
+
+def static "products.productsFromCatalog.uncheckUsingJS"(
+    	TestObject to3	
+     , 	int timeout3	) {
+    (new products.productsFromCatalog()).uncheckUsingJS(
+        	to3
+         , 	timeout3)
+}
+
+
+def static "products.productsFromCatalog.checkUsingJS"(
+    	WebElement element	) {
+    (new products.productsFromCatalog()).checkUsingJS(
+        	element)
+}
+
+
+def static "products.productsFromCatalog.uncheckUsingJS"(
+    	WebElement element	) {
+    (new products.productsFromCatalog()).uncheckUsingJS(
+        	element)
+}
+
+
 def static "products.productsFromCatalog.getSpecifiedinStockProductsFromOnePage"(
     	int elementIndex	
      , 	List productList	) {

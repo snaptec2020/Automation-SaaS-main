@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>CardCVVFrame</name>
+   <name>ContactCitySelect</name>
    <tag></tag>
-   <elementGuidId>61de55bd-bb72-4ac9-bfa4-b8e7651233a4</elementGuidId>
+   <elementGuidId>14f9b557-a88a-4ff6-8a7a-999ceea34c79</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//iframe[@id=&quot;cvv&quot;]</value>
+         <value>//span[@title=&quot;City&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

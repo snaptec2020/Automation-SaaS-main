@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>CardCVVFrame</name>
+   <name>ContactSaveAddressCheckbox</name>
    <tag></tag>
-   <elementGuidId>61de55bd-bb72-4ac9-bfa4-b8e7651233a4</elementGuidId>
+   <elementGuidId>0f353325-cf7c-4faa-8d5f-03169cf7f802</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//iframe[@id=&quot;cvv&quot;]</value>
+         <value>//input[@id=&quot;shipping-save-in-address-book&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

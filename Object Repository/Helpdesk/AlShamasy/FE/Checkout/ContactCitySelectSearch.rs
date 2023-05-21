@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>CardCVVFrame</name>
+   <name>ContactCitySelectSearch</name>
    <tag></tag>
-   <elementGuidId>61de55bd-bb72-4ac9-bfa4-b8e7651233a4</elementGuidId>
+   <elementGuidId>727ef178-999e-406d-ae75-a7734aa88b48</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//iframe[@id=&quot;cvv&quot;]</value>
+         <value>//span[@class=&quot;select2-search select2-search--dropdown&quot;]/input[@type=&quot;search&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

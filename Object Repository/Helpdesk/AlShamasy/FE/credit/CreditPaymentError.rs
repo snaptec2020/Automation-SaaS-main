@@ -6,11 +6,11 @@
    <elementGuidId>384ab9bc-dd77-4f99-beb6-d74e3f161e32</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@data-ui-id=&quot;checkout-cart-validationmessages-message-error&quot; and text()=&quot;عملية الدفع غير صحيحة، الرجاء المحاولة مرة أخرى&quot;]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@data-ui-id=&quot;checkout-cart-validationmessages-message-error&quot; and text()=&quot;The transaction could not be processed.&quot;]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

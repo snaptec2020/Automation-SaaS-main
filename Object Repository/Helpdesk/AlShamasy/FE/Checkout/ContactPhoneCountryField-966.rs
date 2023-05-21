@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>CardCVVFrame</name>
+   <name>ContactPhoneCountryField-966</name>
    <tag></tag>
-   <elementGuidId>61de55bd-bb72-4ac9-bfa4-b8e7651233a4</elementGuidId>
+   <elementGuidId>6c132ef7-175b-4eca-91d5-cfd2de76d531</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//iframe[@id=&quot;cvv&quot;]</value>
+         <value>//option[@value=&quot;+966&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

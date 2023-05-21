@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "A75FBC34ECF78391FC0945B7B43FB218",
+  "keywordFileContentHash": "FE5A4F9A9E9EF04CD96B7EAE3226D107",
   "keywordClasses": [
     {
       "name": "products.productsFromCatalog",
@@ -304,6 +304,108 @@
                 "isArray": false,
                 "isGnericsPlaceHolder": false,
                 "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "checkUsingJS",
+          "parameters": [
+            {
+              "name": "to3",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "timeout3",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "uncheckUsingJS",
+          "parameters": [
+            {
+              "name": "to3",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "timeout3",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "checkUsingJS",
+          "parameters": [
+            {
+              "name": "element",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "org.openqa.selenium.WebElement",
+                "unresolvedClassName": "WebElement",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "uncheckUsingJS",
+          "parameters": [
+            {
+              "name": "element",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "org.openqa.selenium.WebElement",
+                "unresolvedClassName": "WebElement",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
                 "genericsTypes": [],
                 "errorOnParsing": false
               }

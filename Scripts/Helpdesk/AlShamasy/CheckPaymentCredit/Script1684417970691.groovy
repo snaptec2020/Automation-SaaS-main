@@ -44,7 +44,9 @@ import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webui.common.WebUiCommonHelper as WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword as WebUIAbstractKeyword
 import catalog.catlogComponants as catlogComponants
-import java.util.List as List
+import java.util.List
+import java.util.concurrent.ConcurrentHashMap.KeySetView
+
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -78,7 +80,13 @@ CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Rep
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/totalNeededPay'), 10)
 String totalText=WebUI.getText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/totalNeededPay'))
 println(totalText)
-totalText =totalText.replace(" ", "").replace("٫", ".").replace("ر.س", "")
+totalText =totalText.replace(" ", "").replace(",", "").replace("٫", ".").replace("ر.س", "")
+//.replace("٫", ".")
+println(totalText)
+if(totalText.findAll("\\.").size()>1) {
+	totalText=totalText.replaceAll(".*(\\.).*\\.", "")
+}
+println(totalText)
 Float totalValue = totalText.toFloat()
 println(totalValue)
 
@@ -133,9 +141,36 @@ if (Paymentlist.size() != 1) {
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/PaymentMethod_1_Text'))
 }
 
+WebElement expandAddress = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/AddNewAddress'), 5)
+
+if(expandAddress.getAttribute("aria-expanded").equals("true")) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactPhoneCountryField'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactPhoneCountryField-966'))
+	WebUI.setText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactPhoneTelField'), GlobalVariable.FE_Tel)
+	try {
+		WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactCitySelect'))
+		WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactCitySelectSearch'), "الرياض")
+		WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactCitySelectSearch'), Keys.chord(Keys.ENTER))
+	}catch(Exception e) {
+		WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactCitySelect'))
+		WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactCitySelectSearch'), "الرياض")
+		WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactCitySelectSearch'), Keys.chord(Keys.ENTER))
+	}
+	
+	WebUI.setText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactAddressField'), "Snaptec Address")
+	WebUI.setText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactneighbourhoodField'), "Snaptec neighbourhood")
+	WebUI.setText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactStreetField'), "Snaptec Street")
+	
+	WebUI.setText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactHomePhoneField'), GlobalVariable.FE_Tel)
+	
+	CustomKeywords.'products.productsFromCatalog.uncheckUsingJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactSaveAddressCheckbox'), 3)
+}
+
+
+
 //Order with Credit 
 WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/Step_4_PaymentMethods'), 5)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/PaymentMethod_2_Text'),3)
+CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/PaymentMethod_1_Text'),3)
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/MainForm'), 10)
 
@@ -145,40 +180,41 @@ WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/cred
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/CardNumberInput'))
 
-//WebUI.switchToDefaultContent()
-//
-//WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/CardExpiryFrame'), 10)
+WebUI.switchToDefaultContent()
+
+WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/CardExpiryFrame'), 10)
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/CardExpiryInput'))
 
-//WebUI.switchToDefaultContent()
-//
-//WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/CardCVVFrame'), 10)
+WebUI.switchToDefaultContent()
+
+WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/CardCVVFrame'), 10)
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/CardCVVInput'))
 
-//WebUI.switchToDefaultContent()
-//
-//WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/CardNumberInputFrame'), 10)
+WebUI.switchToDefaultContent()
+
+WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/CardNumberInputFrame'), 10)
 
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/CardNumberInput'), GlobalVariable.MadaCardNum)
 
-//WebUI.switchToDefaultContent()
-//
-//WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/CardExpiryFrame'), 10)
+WebUI.switchToDefaultContent()
+
+WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/CardExpiryFrame'), 10)
 
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/CardExpiryInput'), GlobalVariable.MadaExpiryDate)
 
-//WebUI.switchToDefaultContent()
-//
-//WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/CardCVVFrame'), 10)
+WebUI.switchToDefaultContent()
+
+WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/CardCVVFrame'), 10)
 
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/CardCVVInput'), GlobalVariable.MadaCVV)
 
+
 WebUI.switchToDefaultContent()
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/FinishPayment'))
-
+WebUI.delay(3)
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/FinishPayment'))
+CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/FinishPayment'), 5)
 WebUI.waitForPageLoad(10)
 
 WebUI.delay(20)

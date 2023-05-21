@@ -538,7 +538,7 @@ public class productsFromCatalog {
 		}
 
 	}
-	
+
 	@Keyword
 	def OpenRandomProductAlShamasy(){
 		List<WebElement> productsCategoriesList = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Categories'), 5)
@@ -593,7 +593,7 @@ public class productsFromCatalog {
 	String decodeEncodedValue(String encoded) {
 		return URLDecoder.decode(encoded, StandardCharsets.UTF_8.toString())
 	}
-	
+
 	@Keyword
 	String encodeValue(String value) {
 		return URLEncoder.encode(value, StandardCharsets.UTF_8.toString())
@@ -721,6 +721,28 @@ public class productsFromCatalog {
 		}
 	}
 
+	@Keyword
+	def checkUsingJS(TestObject to3, int timeout3) {
+		List<WebElement> element = WebUiCommonHelper.findWebElements(to3, timeout3)
+		WebUI.executeJavaScript("arguments[0].checked = true", element)
+		}
+		
+	@Keyword
+	def uncheckUsingJS(TestObject to3, int timeout3) {
+		List<WebElement> element = WebUiCommonHelper.findWebElements(to3, timeout3)
+		WebUI.executeJavaScript("arguments[0].checked = false", element)
+	}
+	@Keyword
+	def checkUsingJS(WebElement element) {
+		WebUI.executeJavaScript("arguments[0].checked = true", element)
+	}
+		
+	@Keyword
+	def uncheckUsingJS(WebElement element) {
+		WebUI.executeJavaScript("arguments[0].checked = false", element)
+	}
+	
+	
 	@Keyword
 	def getSpecifiedinStockProductsFromOnePage(int elementIndex,List productList ) {
 		tb.addProperty('xpath', ConditionType.EQUALS, "//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')]["+elementIndex+"]")

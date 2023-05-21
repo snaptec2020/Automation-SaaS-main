@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>CardCVVFrame</name>
+   <name>ContactPhoneCountryField</name>
    <tag></tag>
-   <elementGuidId>61de55bd-bb72-4ac9-bfa4-b8e7651233a4</elementGuidId>
+   <elementGuidId>b1b69f5d-8014-4573-8463-c410c5468452</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//iframe[@id=&quot;cvv&quot;]</value>
+         <value>//div[@class=&quot;field-row field-row-phone osc-fluid&quot;]//select</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

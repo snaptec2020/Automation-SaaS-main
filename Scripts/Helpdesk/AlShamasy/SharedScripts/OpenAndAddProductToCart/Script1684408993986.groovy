@@ -69,7 +69,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 //Open Random Product
 CustomKeywords.'products.productsFromCatalog.OpenRandomProductAlShamasy'()
-
+//WebUI.navigateToUrl("https://www.alshamasy.com/ar/64/tm0da020tm0-lt%20toff.html")
 //WebUI.navigateToUrl("https://www.alshamasy.com/ar/76/010-046/3tr+bc-blue-1.html")
 
 /////////////////////////
@@ -85,7 +85,7 @@ println ProductPrice
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/Add to cart'),5)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/Add to cart'),5)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/Add to cart'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/Add to cart'), FailureHandling.OPTIONAL)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/MiniCart/CloseMiniCart'), 5)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/MiniCart/CloseMiniCart'),5)
 if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/MiniCart/CloseMiniCart'), FailureHandling.OPTIONAL)) {

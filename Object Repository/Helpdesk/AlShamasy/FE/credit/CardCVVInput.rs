@@ -6,11 +6,11 @@
    <elementGuidId>630063be-21d6-4322-932a-6fe13ee23ffb</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-      </entry>
-      <entry>
          <key>XPATH</key>
          <value>//input[@id=&quot;checkout-frames-cvv&quot;]</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
