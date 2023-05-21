@@ -33,6 +33,11 @@ import org.eclipse.jdt.internal.compiler.ast.ForeachStatement as ForeachStatemen
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 
+
+//DesiredCapabilities capabilities = new DesiredCapabilities();
+//HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+//browserstackOptions.put("gpsLocation", "24.70437792668048,46.67946359838521");
+
 WebUI.openBrowser('')
 
 WebUI.navigateToUrl(GlobalVariable.FE_URL)

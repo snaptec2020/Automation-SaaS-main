@@ -142,6 +142,16 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
+    public static Object Latitude
+     
+    /**
+     * <p></p>
+     */
+    public static Object Longtitude
+     
+    /**
+     * <p></p>
+     */
     public static Object BEBasicAuthUser
      
     /**
@@ -158,16 +168,6 @@ public class GlobalVariable {
      * <p></p>
      */
     public static Object FE_EmailPassword
-     
-    /**
-     * <p></p>
-     */
-    public static Object Latitude
-     
-    /**
-     * <p></p>
-     */
-    public static Object Longtitude
      
     /**
      * <p>Profile Orange : mahmoud@snaptec.co</p>
@@ -212,12 +212,12 @@ public class GlobalVariable {
             MadaCardNum = selectedVariables['MadaCardNum']
             MadaExpiryDate = selectedVariables['MadaExpiryDate']
             MadaCVV = selectedVariables['MadaCVV']
+            Latitude = selectedVariables['Latitude']
+            Longtitude = selectedVariables['Longtitude']
             BEBasicAuthUser = selectedVariables['BEBasicAuthUser']
             BEBasicAuthPassword = selectedVariables['BEBasicAuthPassword']
             FE_EmailLogin = selectedVariables['FE_EmailLogin']
             FE_EmailPassword = selectedVariables['FE_EmailPassword']
-            Latitude = selectedVariables['Latitude']
-            Longtitude = selectedVariables['Longtitude']
             CustomerEmail = selectedVariables['CustomerEmail']
             MadaCardHoldName = selectedVariables['MadaCardHoldName']
             
