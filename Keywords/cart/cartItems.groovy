@@ -23,7 +23,7 @@ import internal.GlobalVariable
 import utility.Utility
 
 public class cartItems {
-def utility = new Utility()
+	def utility = new Utility()
 	@Keyword
 	def getProductsInCart() {
 		List CartItems = WebUI.findWebElements(findTestObject('Object Repository/Cart/Items in cart'),30)
@@ -41,23 +41,36 @@ def utility = new Utility()
 	@Keyword
 	def getSumOfProductsPriceInCart() {
 		double sumOfOrder
-		def numOfElementsInCard = utility.checkIfElementExist('Object Repository/Cart/Product price')
+		def numOfElementsInCard = utility.checkIfElementExist(findTestObject('Object Repository/Cart/Product price'))
 		if(numOfElementsInCard!=0) {
 			for(int i=1;i<=numOfElementsInCard;i++) {
 				double productPrice = WebUI.getText(utility.addXpathToTestObject("("+findTestObject('Object Repository/Cart/Product price').findPropertyValue('xpath') + ")["+i+"]")).replaceAll(",", "") as double
 				sumOfOrder =sumOfOrder + productPrice
 				//KeywordUtil.logInfo(WebUI.getText(CustomKeywords.'utility.Utility.addXpathToTestObject'("("+findTestObject('Object Repository/Cart/Product price').findPropertyValue('xpath') + ")["+i+"]")))
-				//KeywordUtil.logInfo(sumOfOrder.round(2).toString())
-		}
-		return sumOfOrder.round(2)
+				KeywordUtil.logInfo(sumOfOrder.round(2).toString())
+			}
+			return sumOfOrder.round(2)
 		} else {
 			return 0
 		}
-		
 	}
 	@Keyword
-	def getCartSubtotal() {
-		def totalPrice = WebUI.getText(findTestObject('Object Repository/Cart/Cart Subtotal (Inc VAT)')).replaceAll(",", "") =~/\d+\.\d+/
-		return totalPrice[0]
+	float getCartSubtotal() {
+		if (WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Empty cart'), 5, FailureHandling.CONTINUE_ON_FAILURE)) {
+			return 0
+		}else {
+			def  totalPrice = WebUI.getText(findTestObject('Object Repository/Cart/Cart Subtotal (Inc VAT)')).replaceAll(",", "") =~/\d+\.\d+/
+			return totalPrice[0] as float
+		}
 	}
+	//	@Keyword
+	//	def checkTheTarget() {
+	//		double minimum=1000
+	//		double maximum=2500
+	//		double Total =(WebUI.getText(findTestObject('Object Repository/Cart/Cart Subtotal (Inc VAT)')).replaceAll(",", "") =~/\d+\.\d+/)[0] as double
+	//		if (minimum >= Total && Total >= maximum) {
+	//			plac
+	//
+	//		}
+	//	}
 }

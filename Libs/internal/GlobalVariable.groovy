@@ -99,6 +99,16 @@ public class GlobalVariable {
      */
     public static Object searchMode
      
+    /**
+     * <p>Profile default : Tabby and Tamara Target</p>
+     */
+    public static Object minimum
+     
+    /**
+     * <p>Profile default : Tabby and Tamara Target</p>
+     */
+    public static Object maximum
+     
 
     static {
         try {
@@ -124,6 +134,8 @@ public class GlobalVariable {
             RunningMode = selectedVariables['RunningMode']
             MobileType = selectedVariables['MobileType']
             searchMode = selectedVariables['searchMode']
+            minimum = selectedVariables['minimum']
+            maximum = selectedVariables['maximum']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)

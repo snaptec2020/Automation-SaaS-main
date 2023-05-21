@@ -24,13 +24,15 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('FE/Check out/validation/Add Location by Map'), [:], FailureHandling.STOP_ON_FAILURE)
 //Country is not available
 //Your address are missing some informations.
-KeywordUtil.logInfo(CustomKeywords.'generalactions.notificationsObject.getMessageText'())
-switch (CustomKeywords.'generalactions.notificationsObject.getMessageText'()) {
+def locationSuccessMessage=CustomKeywords.'generalactions.notificationsObject.getMessageText'()
+KeywordUtil.logInfo(locationSuccessMessage)
+switch (locationSuccessMessage) {
 	case 'عنوانك ينقصه بعض المعلومات.' :
 	case 'Your address are missing some informations.': 
 		for (int i=1 ; i<=3; i++) {
 			tryToGetLocation()
-			switch (CustomKeywords.'generalactions.notificationsObject.getMessageText'()) {
+			locationSuccessMessage=CustomKeywords.'generalactions.notificationsObject.getMessageText'()
+			switch (locationSuccessMessage) {
 				case 'Save Shipping Address successfully':
 				case 'حفظ عنوان الشحن بنجاح':
 				break;

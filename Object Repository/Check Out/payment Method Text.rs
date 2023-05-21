@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Cash on delivery context</name>
+   <name>payment Method Text</name>
    <tag></tag>
-   <elementGuidId>b395ddcb-3adb-44fe-add9-2127770a4fc6</elementGuidId>
+   <elementGuidId>68f6cb6d-24da-40e9-b314-cc16d2a64a0b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='payment-method-introduce__description']
-</value>
+         <value>//div[starts-with(@class,'payment-method-introduce__description')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

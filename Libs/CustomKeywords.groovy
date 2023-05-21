@@ -7,6 +7,8 @@ import java.util.List
 
 import com.kms.katalon.core.testobject.TestObject
 
+import org.openqa.selenium.WebElement
+
 import com.kms.katalon.core.context.TestSuiteContext
 
 
@@ -89,8 +91,27 @@ def static "products.productsFromCatalog.getSpecifiedinStockProductsFromOnePage"
 }
 
 
+def static "products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategoryInTarget"(
+    	boolean inTarget	) {
+    (new products.productsFromCatalog()).getSpecifiedinStockProductsFromRandomCategoryInTarget(
+        	inTarget)
+}
+
+
 def static "products.productsFromCatalog.getRandominStockProductsFromOnePage"() {
     (new products.productsFromCatalog()).getRandominStockProductsFromOnePage()
+}
+
+
+def static "products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategoryInTarget"() {
+    (new products.productsFromCatalog()).getSpecifiedinStockProductsFromRandomCategoryInTarget()
+}
+
+
+def static "products.productsFromCatalog.getRandominStockProductsFromRandomCategoryInTarget"(
+    	boolean isInTarget	) {
+    (new products.productsFromCatalog()).getRandominStockProductsFromRandomCategoryInTarget(
+        	isInTarget)
 }
 
 
@@ -181,6 +202,11 @@ def static "cart.removeItem.getSpecifiedIteminThecart"(
 }
 
 
+def static "cart.removeItem.clearCart"() {
+    (new cart.removeItem()).clearCart()
+}
+
+
 def static "utility.Utility.checkIfElementExist"(
     	Object objPath	) {
     (new utility.Utility()).checkIfElementExist(
@@ -215,6 +241,13 @@ def static "utility.Utility.clickOnObjectusingJavaScript"(
     	TestObject testObject	) {
     (new utility.Utility()).clickOnObjectusingJavaScript(
         	testObject)
+}
+
+
+def static "utility.Utility.clickOnObjectusingJavaScript"(
+    	WebElement element	) {
+    (new utility.Utility()).clickOnObjectusingJavaScript(
+        	element)
 }
 
 

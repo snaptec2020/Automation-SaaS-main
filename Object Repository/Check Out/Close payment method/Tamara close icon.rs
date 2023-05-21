@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Cash on delivery context</name>
+   <name>Tamara close icon</name>
    <tag></tag>
-   <elementGuidId>b395ddcb-3adb-44fe-add9-2127770a4fc6</elementGuidId>
+   <elementGuidId>e93aecf2-613a-49db-b16d-6e46b4e275a7</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//button[starts-with(@class,'login-cancel-button')]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@class='payment-method-introduce__description']
-</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

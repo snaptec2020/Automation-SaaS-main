@@ -57,6 +57,11 @@ public class Utility {
 		WebElement element = WebUiCommonHelper.findWebElement(testObject,30)
 		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
 	}
+	@Keyword
+	def clickOnObjectusingJavaScript(WebElement element) {
+		//WebElement element = WebUiCommonHelper.findWebElement(testObject,30)
+		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
+	}
 }
 
 

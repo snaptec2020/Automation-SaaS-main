@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Cash on delivery context</name>
+   <name>Cancel Telr</name>
    <tag></tag>
-   <elementGuidId>b395ddcb-3adb-44fe-add9-2127770a4fc6</elementGuidId>
+   <elementGuidId>01990689-9cce-4b90-ae6b-2419aaa376ed</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//button[@class='btn btn-danger']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@class='payment-method-introduce__description']
-</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

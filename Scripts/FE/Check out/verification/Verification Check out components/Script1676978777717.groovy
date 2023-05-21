@@ -17,20 +17,27 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+if (GlobalVariable.testSuiteStatus == 'Not Run') {
+    WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/login by Eamil/Success login fucation'), [:], FailureHandling.STOP_ON_FAILURE)
+}
+WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
 
-	if(GlobalVariable.testSuiteStatus == 'Not Run') {
-		WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/login by Eamil/Success login fucation'), [:], FailureHandling.STOP_ON_FAILURE)
-		
-	}	
-
+//CustomKeywords.'cart.removeItem.clearCart'()
 //WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog - Select All Categories and Scrolling'), [:], FailureHandling.STOP_ON_FAILURE)
-	int cartContentsCount=WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'),10).size()
-	if(cartContentsCount==0) {
-		CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromRandomCategory'()
-	}
+float cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()//WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'), 10).size()
 
+
+if (cartSubTotal == 0 || !(cartSubTotal>=GlobalVariable.minimum && cartSubTotal<=GlobalVariable.maximum)) {
+    //CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromRandomCategory'()
+	if(cartSubTotal != 0) {
+	CustomKeywords.'cart.removeItem.clearCart'()
+	}
+    CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategoryInTarget'()
+}
 
 WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
+
+
 
 WebUI.verifyElementVisible(findTestObject('Check Out/Apply Discount Button'))
 

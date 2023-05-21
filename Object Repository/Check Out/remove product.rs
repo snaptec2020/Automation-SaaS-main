@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Cash on delivery context</name>
+   <name>remove product</name>
    <tag></tag>
-   <elementGuidId>b395ddcb-3adb-44fe-add9-2127770a4fc6</elementGuidId>
+   <elementGuidId>2a9394f4-0283-4dfa-8db4-0be648f8647e</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//img[@alt='remove icon']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@class='payment-method-introduce__description']
-</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

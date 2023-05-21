@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Cash on delivery context</name>
+   <name>item plus</name>
    <tag></tag>
-   <elementGuidId>b395ddcb-3adb-44fe-add9-2127770a4fc6</elementGuidId>
+   <elementGuidId>fa39b537-b4d3-463d-913d-3b46b1b7eaa4</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//img[@alt='icon-plus']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@class='payment-method-introduce__description']
-</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Cash on delivery context</name>
+   <name>COD Success</name>
    <tag></tag>
-   <elementGuidId>b395ddcb-3adb-44fe-add9-2127770a4fc6</elementGuidId>
+   <elementGuidId>e0400ed1-ccfe-4f30-97b1-6b971eb44a81</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='payment-method-introduce__description']
-</value>
+         <value>//div[@class='order-status__content__image']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
