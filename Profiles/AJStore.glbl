@@ -51,12 +51,12 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'24.70437792668048'</initValue>
+      <initValue>24.70437792668048</initValue>
       <name>Latitude</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'46.67946359838521'</initValue>
+      <initValue>46.67946359838521</initValue>
       <name>Longtitude</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

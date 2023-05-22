@@ -1,4 +1,11 @@
-import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.chrome.ChromeDriver
+import org.openqa.selenium.chrome.ChromeOptions
+import org.openqa.selenium.html5.Location
+import org.openqa.selenium.html5.LocationContext
+
+import com.kms.katalon.core.checkpoint.Checkpoint
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
@@ -31,180 +38,16 @@ import java.util.List as List
 import java.util.concurrent.ConcurrentHashMap.KeySetView as KeySetView
 import org.eclipse.jdt.internal.compiler.ast.ForeachStatement as ForeachStatement
 import org.openqa.selenium.By as By
-import org.openqa.selenium.WebElement as WebElement
+import org.openqa.selenium.remote.DesiredCapabilities 
 
-WebUI.openBrowser('')
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AjStore/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.navigateToUrl(GlobalVariable.FE_URL)
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AjStore/SharedScripts/Login'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.maximizeWindow()
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AjStore/SharedScripts/ClearProductsFromCartPage'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Login'), 20)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Login'))
-
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/LoginTolephone'), 20)
-
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/LoginTolephone'), 20)
-
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/LoginTolephone'), GlobalVariable.FE_Tel)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/acknowledgement'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/LoginButton'))
-
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/EnterOTP'), 10)
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/EnterOTP'), FailureHandling.STOP_ON_FAILURE)
-
-int currentTab = WebUI.getWindowIndex()
-
-//Robot robot = new Robot()
-//robot.keyPress(KeyEvent.VK_CONTROL)
-//robot.keyPress(KeyEvent.VK_T)
-//robot.keyRelease(KeyEvent.VK_CONTROL)
-//robot.keyRelease(KeyEvent.VK_T)
-WebDriver driver = DriverFactory.getWebDriver()
-
-JavascriptExecutor js = ((driver) as JavascriptExecutor)
-
-js.executeScript('window.open();')
-
-WebUI.switchToWindowIndex(currentTab + 1)
-
-WebUI.navigateToUrl(GlobalVariable.BE_URL)
-
-//WebUI.switchToWindowTitle('متجر عجلان واخوانه')
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/UserName'), GlobalVariable.BE_UserName)
-
-//WebUI.setEncryptedText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/Password'), 'h9YfHV16ZyMBoeJlmdP5xA==')
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/Password'), GlobalVariable.BE_Password)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Login/LoginButton'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_MageDelight'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_MageDelight_MobileOTPLogin'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_MageDelight_MobileOTPLogin_SMSLog'))
-
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_SMS Log  Magento Admin/button_Remove'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/button_Filters'))
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/transaction_type'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/status'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/s_id'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/recipient_phone'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/message_body'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/entity_id_to'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/entity_id_from'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/api_service'), '')
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Sales_Order_page/Sales_orders_FilterButton'))
-
-WebUI.delay(2)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/button_Filters'))
-
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/recipient_phone'), 2)
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/recipient_phone'), GlobalVariable.FE_Tel)
-
-//WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/recipient_phone'), 
-//    Keys.chord(Keys.ENTER))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Sales_Order_page/Sales_orders_FilterButton'))
-
-//TestObject FirstRowReceiptPhone = new TestObject()
-//FirstRowReceiptPhone.addProperty("xpath",ConditionType.EQUALS,"//tr[@class='data-row' and @data-repeat-index='0']/td[6]/div")
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/SmsContentFirstRow'), 20)
-
-String OTP = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/SmsContentFirstRow'))
-
-println('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
-
-println(OTP)
-
-OTP = OTP.replace('كلمة المرور لتسجيل الدخول رمز: ', '')
-
-println(OTP)
-
-//WebUI.switchToWindowTitle('SMS Log / Magento Admin')
-//WebUI.switchToWindowTitle('متجر عجلان واخوانه')
-WebUI.delay(2)
-
-WebUI.switchToWindowIndex(currentTab)
-
-String xPath = '//input[@type=\'tel\' and contains( @aria-label,\'Digit 1\')]'
-
-TestObject firstOTPDigit = new TestObject('objectName')
-
-firstOTPDigit.addProperty('xpath', ConditionType.EQUALS, xPath)
-
-WebUI.sendKeys(firstOTPDigit, OTP)
-
-//WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/EnterOTP'), 20, FailureHandling.STOP_ON_FAILURE)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/AccountPage/AccountPageTitle'), 20)
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/AccountPage/AccountPageTitle'), FailureHandling.STOP_ON_FAILURE)
-
-WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AjStore/FE/Login/EnterOTP'), 2)
-
-/////////////////////////
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo2'))
-
-///Clear Cart
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Cart'))
-
-TestObject removeProductFromCart = new TestObject()
-
-removeProductFromCart.addProperty('xpath', ConditionType.EQUALS, '//button[contains(@class,"product-button")]//span//div/img[@alt="Remove" and @loading="lazy"]')
-
-List<WebElement> removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
-
-while (removeProductFromCartElements.size() != 0) {
-    if (removeProductFromCartElements.size().equals(1)) {
-        removeProductFromCartElements.get(0).click()
-
-        removeProductFromCartElements.remove(0)
-    } else {
-        removeProductFromCartElements.get(0).click()
-
-        removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
-    }
-}
-
-//Open Random Product
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo2'))
-CustomKeywords.'products.productsFromCatalog.OpenRandomProductAJStore'()
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo'), 10)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
-
-// Check if qty accepted
-def trials=1
-TestObject errorQTY_TO = new TestObject()
-errorQTY_TO.addProperty("xpath",ConditionType.EQUALS,'//*[contains(text(),"Could not add the product" ) and contains(text(), "The requested qty is not available" )]')
-List<WebElement> errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
-while (errorQTY_Element.size()>0 && trials<10) {
-	//Open Random Product
-	trials = trials+1
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo2'))
-	CustomKeywords.'products.productsFromCatalog.OpenRandomProductAJStore'()
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo'), 10)
-	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
-	errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
-	if(trials>=10) {
-		assert false,"Could not find available products"
-	}
-}
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AjStore/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/view cart'))
 
@@ -215,7 +58,7 @@ TestObject totalPaidTO = new TestObject()
 
 totalPaidTO.addProperty('xpath', ConditionType.EQUALS, '//span[text()="المجموع الكلي (شامل الضريبة)"]//following-sibling::span//div/span')
 
-List totalPaidElements = WebUI.findWebElements(totalPaidTO, 10)
+List<WebElement> totalPaidElements = WebUI.findWebElements(totalPaidTO, 10)
 
 def totalText = ''
 
@@ -244,12 +87,11 @@ if (totalValue < 99) {
 
     numberOfItemsElement.sendKeys(neededQty.toString())
 
-    numberOfItemsElement.sendKeys(Keys.chord(Keys.ENTER) //   
-        ) //remove and select another product (need to remove and seach again)
+    numberOfItemsElement.sendKeys(Keys.chord(Keys.ENTER)) //   
+    //remove and select another product (need to remove and seach again)
 } else if (totalValue > 2500) {
 	// To-Do Remove and add another product with less amount
 }
-
 
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/PriceSummaryButton'),10)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/PriceSummaryButton'))
@@ -263,6 +105,10 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE
 //Steps
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/Step_4_PaymentMethods'))
 
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/Step_3_ShipmentMethod'),10)
+
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/Step_3_ShipmentMethod'))
+
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/Step_3_ShipmentMethod'))
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/Step_2_ShipmentLocation'))
@@ -270,6 +116,7 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/Step_1_Login'))
 
 //Shipment Methods
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/ShipmentMethodsList'),10)
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/ShipmentMethodsList'))
 
 def ShipmentMethodsList = findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/ShipmentMethodsList')
@@ -396,11 +243,14 @@ def orderNumber = orderDetailsText.findAll('\\d+').get(0)
 
 //Check the order
 WebUI.delay(2)
+int currentTab = WebUI.getWindowIndex()
 
 WebUI.switchToWindowIndex(currentTab + 1)
 
+WebUI.switchToWindowIndex(currentTab + 1)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Sales'), 5)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Sales'))
-
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Sales_orders'), 5)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Sales_orders'))
 
 if (WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/BE/Sales_Order_page/FilterClear'), FailureHandling.OPTIONAL)) {

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Search icon</name>
+   <name>SomethingWentWrong</name>
    <tag></tag>
-   <elementGuidId>a5edad72-aa32-4061-bcc9-03371546719c</elementGuidId>
+   <elementGuidId>a2948c68-600b-4215-9f1c-ae1491d0ae25</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,'searchBar-root')]</value>
+         <value>//div[text()=&quot;Something went wrong.&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>

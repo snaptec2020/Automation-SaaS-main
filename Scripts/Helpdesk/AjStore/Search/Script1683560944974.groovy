@@ -28,25 +28,17 @@ import org.eclipse.persistence.jpa.jpql.parser.ConditionalTermBNF
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 
-WebUI.openBrowser('')
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AjStore/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.maximizeWindow()
 
-WebUI.navigateToUrl(GlobalVariable.FE_URL)
-
-//Open Random Product
 CustomKeywords.'products.productsFromCatalog.OpenRandomProductAJStore'()
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo'), 10)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
 
 
-///// Save Data in variable gettext getSKU
 
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/FE/Product/productFullDetail-Name'))
 def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/FE/Product/productFullDetail-sku'))
 def ProductURL = WebUI.getUrl().replace(GlobalVariable.FE_URL, "")
-
+def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/FE/Product/Product_Price'))
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo'), 10)
 
@@ -55,8 +47,12 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/F
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo2'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
 
+CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'), 5)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
-
+if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search Feild'),FailureHandling.OPTIONAL)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
+}
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search Feild'))
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search Bar context'))

@@ -45,47 +45,12 @@ import java.util.List as List
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 
-WebUI.openBrowser('')
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AjStore/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.maximizeWindow()
 
-WebUI.navigateToUrl(GlobalVariable.FE_URL)
+CustomKeywords.'products.productsFromCatalog.OpenRandomProductAJStore'()
 
-List prod = CustomKeywords.'products.productsFromCatalog.getinStockProductFromOnePage'()
 
-Random randomNumberforProduct = new Random()
-
-def elementIndexproduct = Math.abs(randomNumberforProduct.nextInt(prod.size()))
-
-def currentURL = WebUI.getUrl()
-
-TestObject tb = new TestObject()
-
-tb.addProperty('xpath', ConditionType.EQUALS, ('(//button[contains(text(),\'Add to Cart\') or contains(text(),\'أضف إلى السلة\')])[' +
-	elementIndexproduct) + ']')
-
-WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
-
-WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
-
-if (WebUI.getUrl() == currentURL) {
-	WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
-} else {
-	KeywordUtil.markPassed('Trying to Get Configurable product')
-
-	tb.addProperty('xpath', ConditionType.EQUALS, '//section[starts-with(@class,\'productFullDetail-groupOption-\')]//div[starts-with(@class,\'option-root-\')]')
-
-	List genralDropDowns = WebUI.findWebElements(tb, 30)
-
-	if (genralDropDowns.size() != 0) {
-		for (int i = 1; i <= genralDropDowns.size(); i++) {
-			tb.addProperty('xpath', ConditionType.EQUALS, ('(//section[starts-with(@class,\'productFullDetail-groupOption-\')]//div[starts-with(@class,\'option-root-\')])[' +
-				i) + ']//div//button[not( @disabled)]')
-
-			WebUI.click(tb)
-		}
-	}
-}
 
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/FE/Product/productFullDetail-Name'))
 def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/FE/Product/productFullDetail-sku'))
