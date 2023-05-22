@@ -56,7 +56,7 @@ WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlShamasy/SharedScripts/Ope
 
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/productFullDetail-Name'))
 def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/productFullDetail-sku')).replace(" ", "")
-def ProductURL = CustomKeywords.'products.productsFromCatalog.decodeEncodedValue'(WebUI.getUrl())  //.replace(GlobalVariable.FE_URL, "")
+def ProductURL = CustomKeywords.'helpdesk.HelpdeskUtil.decodeEncodedValue'(WebUI.getUrl())  //.replace(GlobalVariable.FE_URL, "")
 def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/Product_Price')).replace("ر.س", "").replace(" ", "")
 
 println ProductTitle
@@ -66,11 +66,11 @@ println ProductPrice
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Cart'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Cart'),10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Cart'), 10)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Cart'), 10)
 WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/ViewCartMainPageBtn'))
 //WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/ViewCartMainPageBtn'),10)
 //WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/ViewCartMainPageBtn'),10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/ViewCartMainPageBtn'),10)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/ViewCartMainPageBtn'),10)
 
 //String SearchResultsxpath='//table[@id="shopping-cart-table"]//strong/a[@href="' + ProductURL + '" and contains(normalize-space(text()),normalize-space("' + ProductTitle.replace(".", "٫") + '"))]'
 String SearchResultsxpath='//table[@id="shopping-cart-table"]//strong/a[@href="' + ProductURL + '"]'

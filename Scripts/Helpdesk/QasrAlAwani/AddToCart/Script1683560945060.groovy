@@ -45,15 +45,12 @@ import java.util.List as List
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 
-WebUI.openBrowser('')
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.maximizeWindow()
-
-WebUI.navigateToUrl(GlobalVariable.FE_URL)
 
 //Open Random Product
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
-CustomKeywords.'products.productsFromCatalog.OpenRandomProductQasr'()
+CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductQasr'()
 
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/Qasr/FE/Product/productFullDetail-Name'))
 def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/Qasr/FE/Product/productFullDetail-sku'))

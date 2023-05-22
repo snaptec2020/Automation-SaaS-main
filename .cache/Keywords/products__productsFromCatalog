@@ -1,13 +1,12 @@
 {
-  "keywordFileContentHash": "FE5A4F9A9E9EF04CD96B7EAE3226D107",
+  "keywordFileContentHash": "F39C06574174E0B485EFFA30271218F5",
   "keywordClasses": [
     {
       "name": "products.productsFromCatalog",
       "keywordMethods": [
         {
           "name": "getProducts",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getSpecifiedProduct",
@@ -38,13 +37,11 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "getinStockProduct",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getSpecifiedinStockProducts",
@@ -75,343 +72,19 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "getSpecifiedinStockProductsFromRandomCategory",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getSpecifiedinStockProductsText",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getinStockProductFromOnePage",
-          "parameters": [],
-          "javadoc": ""
-        },
-        {
-          "name": "OpenRandomProductAJStore",
-          "parameters": [],
-          "javadoc": ""
-        },
-        {
-          "name": "OpenRandomProductQasr",
-          "parameters": [],
-          "javadoc": ""
-        },
-        {
-          "name": "OpenRandomProductAlAseel",
-          "parameters": [],
-          "javadoc": ""
-        },
-        {
-          "name": "OpenRandomProductAlJedaie",
-          "parameters": [],
-          "javadoc": ""
-        },
-        {
-          "name": "OpenRandomProductTBS",
-          "parameters": [],
-          "javadoc": ""
-        },
-        {
-          "name": "OpenRandomProductTheBeautySecrets",
-          "parameters": [],
-          "javadoc": ""
-        },
-        {
-          "name": "OpenRandomProductAlShamasy",
-          "parameters": [],
-          "javadoc": ""
-        },
-        {
-          "name": "decodeEncodedValue",
-          "parameters": [
-            {
-              "name": "encoded",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "java.lang.String",
-                "unresolvedClassName": "String",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": ""
-        },
-        {
-          "name": "encodeValue",
-          "parameters": [
-            {
-              "name": "value",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "java.lang.String",
-                "unresolvedClassName": "String",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": ""
-        },
-        {
-          "name": "scrollToVerifyElementVisiblity",
-          "parameters": [
-            {
-              "name": "testObjectRelativeId",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
-                "unresolvedClassName": "TestObject",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": ""
-        },
-        {
-          "name": "scrollToVerifyElementVisiblityAlAseel",
-          "parameters": [
-            {
-              "name": "testObjectRelativeId",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
-                "unresolvedClassName": "TestObject",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": ""
-        },
-        {
-          "name": "OpenRandomProductOrange",
-          "parameters": [],
-          "javadoc": ""
-        },
-        {
-          "name": "ScrollToElement",
-          "parameters": [
-            {
-              "name": "tb",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
-                "unresolvedClassName": "TestObject",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": ""
-        },
-        {
-          "name": "ScrollToElement",
-          "parameters": [
-            {
-              "name": "element",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "org.openqa.selenium.WebElement",
-                "unresolvedClassName": "WebElement",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": ""
-        },
-        {
-          "name": "clickJS",
-          "parameters": [
-            {
-              "name": "to",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
-                "unresolvedClassName": "TestObject",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            },
-            {
-              "name": "timeout",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "int",
-                "unresolvedClassName": "int",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": true,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": ""
-        },
-        {
-          "name": "clickJS",
-          "parameters": [
-            {
-              "name": "element",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "org.openqa.selenium.WebElement",
-                "unresolvedClassName": "WebElement",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            },
-            {
-              "name": "timeout",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "int",
-                "unresolvedClassName": "int",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": true,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": ""
-        },
-        {
-          "name": "checkUsingJS",
-          "parameters": [
-            {
-              "name": "to3",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
-                "unresolvedClassName": "TestObject",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            },
-            {
-              "name": "timeout3",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "int",
-                "unresolvedClassName": "int",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": true,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": ""
-        },
-        {
-          "name": "uncheckUsingJS",
-          "parameters": [
-            {
-              "name": "to3",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
-                "unresolvedClassName": "TestObject",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            },
-            {
-              "name": "timeout3",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "int",
-                "unresolvedClassName": "int",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": true,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": ""
-        },
-        {
-          "name": "checkUsingJS",
-          "parameters": [
-            {
-              "name": "element",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "org.openqa.selenium.WebElement",
-                "unresolvedClassName": "WebElement",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": ""
-        },
-        {
-          "name": "uncheckUsingJS",
-          "parameters": [
-            {
-              "name": "element",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "org.openqa.selenium.WebElement",
-                "unresolvedClassName": "WebElement",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getSpecifiedinStockProductsFromOnePage",
@@ -442,23 +115,19 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "getRandominStockProductsFromOnePage",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getRandominStockProductsFromRandomCategory",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getOutOfStockProduct",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getSpecifiedOutOfStockProduct",
@@ -489,13 +158,11 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "getProductsTRoWishList",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getSpecifiedProductToBVeAddedinwishlist",
@@ -526,13 +193,11 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "getWishListItems",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getSpecifieditemfromWishListItems",
@@ -563,13 +228,11 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "configurableProduct",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "checkOnAddToStoreClickable",
@@ -587,11 +250,10 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

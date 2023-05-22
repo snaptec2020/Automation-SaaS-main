@@ -28,15 +28,11 @@ import org.eclipse.persistence.jpa.jpql.parser.ConditionalTermBNF
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 
-WebUI.openBrowser('')
-
-WebUI.maximizeWindow()
-
-WebUI.navigateToUrl(GlobalVariable.FE_URL)
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 //Open Random Product
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
-CustomKeywords.'products.productsFromCatalog.OpenRandomProductQasr'()
+CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductQasr'()
 
 ///// Save Data in variable gettext getSKU
 

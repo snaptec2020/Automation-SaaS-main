@@ -57,7 +57,7 @@ WebUI.navigateToUrl(GlobalVariable.FE_URL)
 //Open Random Product
 WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Logo'))
 
-CustomKeywords.'products.productsFromCatalog.OpenRandomProductOrange'()
+CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductOrange'()
 
 ///// Save Data in variable gettext getSKU
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/Orange/FE/Product/productFullDetail-Name'))

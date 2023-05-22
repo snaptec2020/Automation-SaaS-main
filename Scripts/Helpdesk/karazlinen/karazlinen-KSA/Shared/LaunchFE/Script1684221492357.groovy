@@ -35,7 +35,7 @@ WebUI.maximizeWindow()
 WebUI.navigateToUrl(GlobalVariable.FE_URL,FailureHandling.OPTIONAL)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/AllowNotificationsDialog'), 10)
 if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/AllowNotificationsDialogBtn'))) {
-	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/AllowNotificationsDialogBtn'), 2)
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/AllowNotificationsDialogBtn'), 2)
 }
 //if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/MailChimpIFrame'), 5)) {
 //	//Close the MailChimp ifram

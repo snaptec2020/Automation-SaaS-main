@@ -75,7 +75,7 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodySh
 
 if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'),FailureHandling.OPTIONAL)) {
 	WebUI.mouseOverOffset(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart'),10,10)
-	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ViewCartMainPageBtn'),10)
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ViewCartMainPageBtn'),10)
 	TestObject removeProductFromCart = new TestObject()
 	removeProductFromCart.addProperty('xpath', ConditionType.EQUALS, '//td[@class="col item"]//a[@title="أزل المنتج"]')
 	WebUI.waitForElementVisible(removeProductFromCart, 10)
@@ -83,10 +83,10 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBody
 	
 	while (removeProductFromCartElements.size() != 0) {
 		if (removeProductFromCartElements.size().equals(1)) {
-			CustomKeywords.'products.productsFromCatalog.clickJS'(removeProductFromCart, 10)
+			CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCart, 10)
 			removeProductFromCartElements.remove(0)
 		} else {
-			CustomKeywords.'products.productsFromCatalog.clickJS'(removeProductFromCart, 10)
+			CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCart, 10)
 			removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
 		}
 	}
@@ -95,13 +95,13 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBody
 //
 //WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart'),10)
 //WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart'),5)
-//CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart'), 10)
+//CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart'), 10)
 //
 //
 //WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ViewCartMainPageBtn'),5)
 //
 //if (WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ViewCartMainPageBtn'), 2,FailureHandling.OPTIONAL)) {
-//	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ViewCartMainPageBtn'),10)
+//	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ViewCartMainPageBtn'),10)
 //	
 //	TestObject removeProductFromCart = new TestObject()
 //	removeProductFromCart.addProperty('xpath', ConditionType.EQUALS, '//td[@class="col item"]//a[@title="إزالة منتج"]')
@@ -110,15 +110,15 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBody
 //	
 //	while (removeProductFromCartElements.size() != 0) {
 //		if (removeProductFromCartElements.size().equals(1)) {
-//			CustomKeywords.'products.productsFromCatalog.clickJS'(removeProductFromCart, 10)
+//			CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCart, 10)
 //			removeProductFromCartElements.remove(0)
 //		} else {
-//			CustomKeywords.'products.productsFromCatalog.clickJS'(removeProductFromCart, 10)
+//			CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCart, 10)
 //			removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
 //		}
 //	}
 //}else {
 //	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/MiniCart/CloseMiniCart'),10)
 //	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/MiniCart/CloseMiniCart'),5)
-//	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/MiniCart/CloseMiniCart'), 3)
+//	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/MiniCart/CloseMiniCart'), 3)
 //}

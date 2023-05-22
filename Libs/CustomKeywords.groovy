@@ -89,138 +89,6 @@ def static "products.productsFromCatalog.getinStockProductFromOnePage"() {
 }
 
 
-def static "products.productsFromCatalog.OpenRandomProductAJStore"() {
-    (new products.productsFromCatalog()).OpenRandomProductAJStore()
-}
-
-
-def static "products.productsFromCatalog.OpenRandomProductQasr"() {
-    (new products.productsFromCatalog()).OpenRandomProductQasr()
-}
-
-
-def static "products.productsFromCatalog.OpenRandomProductAlAseel"() {
-    (new products.productsFromCatalog()).OpenRandomProductAlAseel()
-}
-
-
-def static "products.productsFromCatalog.OpenRandomProductAlJedaie"() {
-    (new products.productsFromCatalog()).OpenRandomProductAlJedaie()
-}
-
-
-def static "products.productsFromCatalog.OpenRandomProductTBS"() {
-    (new products.productsFromCatalog()).OpenRandomProductTBS()
-}
-
-
-def static "products.productsFromCatalog.OpenRandomProductTheBeautySecrets"() {
-    (new products.productsFromCatalog()).OpenRandomProductTheBeautySecrets()
-}
-
-
-def static "products.productsFromCatalog.OpenRandomProductAlShamasy"() {
-    (new products.productsFromCatalog()).OpenRandomProductAlShamasy()
-}
-
-
-def static "products.productsFromCatalog.decodeEncodedValue"(
-    	String encoded	) {
-    (new products.productsFromCatalog()).decodeEncodedValue(
-        	encoded)
-}
-
-
-def static "products.productsFromCatalog.encodeValue"(
-    	String value	) {
-    (new products.productsFromCatalog()).encodeValue(
-        	value)
-}
-
-
-def static "products.productsFromCatalog.scrollToVerifyElementVisiblity"(
-    	TestObject testObjectRelativeId	) {
-    (new products.productsFromCatalog()).scrollToVerifyElementVisiblity(
-        	testObjectRelativeId)
-}
-
-
-def static "products.productsFromCatalog.scrollToVerifyElementVisiblityAlAseel"(
-    	TestObject testObjectRelativeId	) {
-    (new products.productsFromCatalog()).scrollToVerifyElementVisiblityAlAseel(
-        	testObjectRelativeId)
-}
-
-
-def static "products.productsFromCatalog.OpenRandomProductOrange"() {
-    (new products.productsFromCatalog()).OpenRandomProductOrange()
-}
-
-
-def static "products.productsFromCatalog.ScrollToElement"(
-    	TestObject tb	) {
-    (new products.productsFromCatalog()).ScrollToElement(
-        	tb)
-}
-
-
-def static "products.productsFromCatalog.ScrollToElement"(
-    	WebElement element	) {
-    (new products.productsFromCatalog()).ScrollToElement(
-        	element)
-}
-
-
-def static "products.productsFromCatalog.clickJS"(
-    	TestObject to	
-     , 	int timeout	) {
-    (new products.productsFromCatalog()).clickJS(
-        	to
-         , 	timeout)
-}
-
-
-def static "products.productsFromCatalog.clickJS"(
-    	WebElement element	
-     , 	int timeout	) {
-    (new products.productsFromCatalog()).clickJS(
-        	element
-         , 	timeout)
-}
-
-
-def static "products.productsFromCatalog.checkUsingJS"(
-    	TestObject to3	
-     , 	int timeout3	) {
-    (new products.productsFromCatalog()).checkUsingJS(
-        	to3
-         , 	timeout3)
-}
-
-
-def static "products.productsFromCatalog.uncheckUsingJS"(
-    	TestObject to3	
-     , 	int timeout3	) {
-    (new products.productsFromCatalog()).uncheckUsingJS(
-        	to3
-         , 	timeout3)
-}
-
-
-def static "products.productsFromCatalog.checkUsingJS"(
-    	WebElement element	) {
-    (new products.productsFromCatalog()).checkUsingJS(
-        	element)
-}
-
-
-def static "products.productsFromCatalog.uncheckUsingJS"(
-    	WebElement element	) {
-    (new products.productsFromCatalog()).uncheckUsingJS(
-        	element)
-}
-
-
 def static "products.productsFromCatalog.getSpecifiedinStockProductsFromOnePage"(
     	int elementIndex	
      , 	List productList	) {
@@ -317,6 +185,131 @@ def static "customUtils.Util.getElementByXPath"(
     	String xPath	) {
     (new customUtils.Util()).getElementByXPath(
         	xPath)
+}
+
+
+def static "helpdesk.HelpdeskUtil.OpenRandomProductAJStore"() {
+    (new helpdesk.HelpdeskUtil()).OpenRandomProductAJStore()
+}
+
+
+def static "helpdesk.HelpdeskUtil.OpenRandomProductQasr"() {
+    (new helpdesk.HelpdeskUtil()).OpenRandomProductQasr()
+}
+
+
+def static "helpdesk.HelpdeskUtil.OpenRandomProductAlAseel"() {
+    (new helpdesk.HelpdeskUtil()).OpenRandomProductAlAseel()
+}
+
+
+def static "helpdesk.HelpdeskUtil.OpenRandomProductAlJedaie"() {
+    (new helpdesk.HelpdeskUtil()).OpenRandomProductAlJedaie()
+}
+
+
+def static "helpdesk.HelpdeskUtil.OpenRandomProductTBS"() {
+    (new helpdesk.HelpdeskUtil()).OpenRandomProductTBS()
+}
+
+
+def static "helpdesk.HelpdeskUtil.OpenRandomProductTheBeautySecrets"() {
+    (new helpdesk.HelpdeskUtil()).OpenRandomProductTheBeautySecrets()
+}
+
+
+def static "helpdesk.HelpdeskUtil.OpenRandomProductAlShamasy"() {
+    (new helpdesk.HelpdeskUtil()).OpenRandomProductAlShamasy()
+}
+
+
+def static "helpdesk.HelpdeskUtil.decodeEncodedValue"(
+    	String encoded	) {
+    (new helpdesk.HelpdeskUtil()).decodeEncodedValue(
+        	encoded)
+}
+
+
+def static "helpdesk.HelpdeskUtil.encodeValue"(
+    	String value	) {
+    (new helpdesk.HelpdeskUtil()).encodeValue(
+        	value)
+}
+
+
+def static "helpdesk.HelpdeskUtil.scrollToVerifyElementVisiblity"(
+    	TestObject testObjectRelativeId	) {
+    (new helpdesk.HelpdeskUtil()).scrollToVerifyElementVisiblity(
+        	testObjectRelativeId)
+}
+
+
+def static "helpdesk.HelpdeskUtil.OpenRandomProductOrange"() {
+    (new helpdesk.HelpdeskUtil()).OpenRandomProductOrange()
+}
+
+
+def static "helpdesk.HelpdeskUtil.ScrollToElement"(
+    	TestObject tb	) {
+    (new helpdesk.HelpdeskUtil()).ScrollToElement(
+        	tb)
+}
+
+
+def static "helpdesk.HelpdeskUtil.ScrollToElement"(
+    	WebElement element	) {
+    (new helpdesk.HelpdeskUtil()).ScrollToElement(
+        	element)
+}
+
+
+def static "helpdesk.HelpdeskUtil.clickJS"(
+    	TestObject to	
+     , 	int timeout	) {
+    (new helpdesk.HelpdeskUtil()).clickJS(
+        	to
+         , 	timeout)
+}
+
+
+def static "helpdesk.HelpdeskUtil.clickJS"(
+    	WebElement element	
+     , 	int timeout	) {
+    (new helpdesk.HelpdeskUtil()).clickJS(
+        	element
+         , 	timeout)
+}
+
+
+def static "helpdesk.HelpdeskUtil.checkUsingJS"(
+    	TestObject to3	
+     , 	int timeout3	) {
+    (new helpdesk.HelpdeskUtil()).checkUsingJS(
+        	to3
+         , 	timeout3)
+}
+
+
+def static "helpdesk.HelpdeskUtil.uncheckUsingJS"(
+    	TestObject to3	
+     , 	int timeout3	) {
+    (new helpdesk.HelpdeskUtil()).uncheckUsingJS(
+        	to3
+         , 	timeout3)
+}
+
+
+def static "helpdesk.HelpdeskUtil.checkUsingJS"(
+    	WebElement element	) {
+    (new helpdesk.HelpdeskUtil()).checkUsingJS(
+        	element)
+}
+
+
+def static "helpdesk.HelpdeskUtil.uncheckUsingJS"(
+    	WebElement element	) {
+    (new helpdesk.HelpdeskUtil()).uncheckUsingJS(
+        	element)
 }
 
 

@@ -161,7 +161,7 @@ WebUI.waitForPageLoad(20)
 ///Clear Cart
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'),10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'), 10)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'), 10)
 
 TestObject removeProductFromCart = new TestObject()
 removeProductFromCart.addProperty('xpath', ConditionType.EQUALS, '//div[@class="md-sidenav-right cdz-sidebar" and @style="top: 0px;"]//ol[@id="mini-cart"]//span[text()="ازالة"]//parent::a[@class="action delete" and @title="أزل المنتج"]')
@@ -170,7 +170,7 @@ List<WebElement> removeProductFromCartElements = WebUiCommonHelper.findWebElemen
 
 while (removeProductFromCartElements.size() != 0) {
     if (removeProductFromCartElements.size().equals(1)) {
-		CustomKeywords.'products.productsFromCatalog.clickJS'(removeProductFromCartElements.get(0), 10)
+		CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCartElements.get(0), 10)
 //        removeProductFromCartElements.get(0).click()
 		WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'),3,FailureHandling.OPTIONAL)
 		if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'),FailureHandling.OPTIONAL)) {
@@ -179,7 +179,7 @@ while (removeProductFromCartElements.size() != 0) {
 		}
         removeProductFromCartElements.remove(0)
     } else {
-		CustomKeywords.'products.productsFromCatalog.clickJS'(removeProductFromCartElements.get(0), 10)
+		CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCartElements.get(0), 10)
 //        removeProductFromCartElements.get(0).click()
 			WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'),3,FailureHandling.OPTIONAL)
 			if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'),FailureHandling.OPTIONAL)) {
@@ -191,7 +191,7 @@ while (removeProductFromCartElements.size() != 0) {
 }
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/OutSideCart'))
 //Open Random Product
-CustomKeywords.'products.productsFromCatalog.OpenRandomProductAlAseel'()
+CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlAseel'()
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
@@ -209,7 +209,7 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel
 	while (!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'), FailureHandling.OPTIONAL) && trials<10) {
 		//Open Random Product
 		trials = trials+1
-		CustomKeywords.'products.productsFromCatalog.OpenRandomProductAlAseel'()
+		CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlAseel'()
 		WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
 		WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
 //		errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
@@ -224,10 +224,10 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'),10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'), 10)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'), 10)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ViewCartMainPageBtn'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ViewCartMainPageBtn'),10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ViewCartMainPageBtn'),10)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ViewCartMainPageBtn'),10)
 
 //Check Total Paid for Tabby and Tamara
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/totalNeededPay'), 10)

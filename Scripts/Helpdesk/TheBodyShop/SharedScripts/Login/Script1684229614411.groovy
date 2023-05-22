@@ -45,7 +45,7 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Login/E
 	, GlobalVariable.FE_EmailPassword)
 	
 //WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Login/LoginButton'))
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Login/LoginButton'), 5)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Login/LoginButton'), 5)
 
 //Wait wait
 //String expectedValue = "أهلا " + GlobalVariable.CustomerName

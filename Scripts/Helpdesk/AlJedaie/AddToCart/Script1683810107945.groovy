@@ -60,10 +60,10 @@ def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJe
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Cart'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Cart'),10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Cart'), 10)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Cart'), 10)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/ViewCartMainPageBtn'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/ViewCartMainPageBtn'),10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/ViewCartMainPageBtn'),10)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/ViewCartMainPageBtn'),10)
 
 String SearchResultsxpath='//table[@id="shopping-cart-table"]//strong/a[@href="' + ProductURL + '" and contains(normalize-space(text()),normalize-space("' + ProductTitle + '"))]'
 println SearchResultsxpath

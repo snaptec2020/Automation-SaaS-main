@@ -68,7 +68,7 @@ import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 //Open Random Product
-CustomKeywords.'products.productsFromCatalog.OpenRandomProductAlJedaie'()
+CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlJedaie'()
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/productFullDetail-Name'))
 def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/productFullDetail-sku'))
 def ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")
@@ -98,7 +98,7 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedai
 		WebUI.waitForPageLoad(20)
 		WebUI.delay(2)
 		
-		CustomKeywords.'products.productsFromCatalog.OpenRandomProductAlJedaie'()
+		CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlJedaie'()
 		ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/productFullDetail-Name'))
 		ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/productFullDetail-sku'))
 		ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")

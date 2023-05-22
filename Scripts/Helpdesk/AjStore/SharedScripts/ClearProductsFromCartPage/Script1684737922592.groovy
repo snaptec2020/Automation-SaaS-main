@@ -54,10 +54,10 @@ List removeProductFromCartElements = WebUiCommonHelper.findWebElements(removePro
 
 while (removeProductFromCartElements.size() != 0) {
 	if (removeProductFromCartElements.size().equals(1)) {
-		CustomKeywords.'products.productsFromCatalog.clickJS'(removeProductFromCartElements.get(0), 3)
+		CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCartElements.get(0), 3)
 		removeProductFromCartElements.remove(0)
 	} else {
-		CustomKeywords.'products.productsFromCatalog.clickJS'(removeProductFromCartElements.get(0), 3)
+		CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCartElements.get(0), 3)
 		removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
 	}
 }

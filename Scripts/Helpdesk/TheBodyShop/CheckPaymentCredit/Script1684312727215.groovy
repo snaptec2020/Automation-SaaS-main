@@ -79,7 +79,7 @@ println ProductPrice
 WebUI.scrollToPosition(0,0)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'),10)
 WebUI.mouseOverOffset(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart'),10,10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ViewCartMainPageBtn'),10)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ViewCartMainPageBtn'),10)
 
 
 //Check Total Paid for Tabby and Tamara
@@ -148,7 +148,7 @@ if (Paymentlist.size() != 3) {
 
 //Order with Credit 
 WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/Step_4_PaymentMethods'), 5)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/PaymentMethod_2_Text'),3)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/PaymentMethod_2_Text'),3)
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/credit/CardNumberInputFrame'), 10)
 
@@ -203,7 +203,7 @@ WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/TheBodySh
 String url = WebUI.getUrl()
 
 if (!WebUI.verifyMatch(url, 'https://api.checkout.com/.*', true,FailureHandling.OPTIONAL)) {
-	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/FinishPayment'), 2)
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/FinishPayment'), 2)
 	WebUI.waitForPageLoad(10)
 	WebUI.delay(20)
 	WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/credit/MainOTPFrame'), 30)

@@ -252,6 +252,7 @@ if (WebUI.verifyAlertPresent(5,FailureHandling.OPTIONAL)) {
 	}
 }
 
+WebUI.delay(5)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/ErrorAfterPayment_Tamara'), 20)
 
 url = WebUI.getUrl()

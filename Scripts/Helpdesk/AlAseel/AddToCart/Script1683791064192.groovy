@@ -52,7 +52,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlAseel/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 //Open Random Product
-CustomKeywords.'products.productsFromCatalog.OpenRandomProductAlAseel'()
+CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlAseel'()
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
@@ -70,7 +70,7 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel
 	while (!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'), FailureHandling.OPTIONAL) && trials<10) {
 		//Open Random Product
 		trials = trials+1
-		CustomKeywords.'products.productsFromCatalog.OpenRandomProductAlAseel'()
+		CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlAseel'()
 		WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
 		WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
 //		errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
@@ -91,10 +91,10 @@ def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlAs
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'),10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'), 10)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'), 10)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ViewCartMainPageBtn'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ViewCartMainPageBtn'),10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ViewCartMainPageBtn'),10)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ViewCartMainPageBtn'),10)
 
 String SearchResultsxpath='//strong//a[@href="' + ProductURL + '" and contains(normalize-space(text()),normalize-space("' + ProductTitle + '"))]'
 TestObject Productlink_TO=new TestObject()

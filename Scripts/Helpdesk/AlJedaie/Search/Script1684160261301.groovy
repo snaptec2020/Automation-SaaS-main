@@ -83,7 +83,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-CustomKeywords.'products.productsFromCatalog.OpenRandomProductAlJedaie'()
+CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlJedaie'()
 
 /////////////////////////
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/productFullDetail-Name'))

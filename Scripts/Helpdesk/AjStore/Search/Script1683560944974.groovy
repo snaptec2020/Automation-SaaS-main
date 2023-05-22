@@ -31,7 +31,7 @@ import org.openqa.selenium.WebElement as WebElement
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AjStore/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 
-CustomKeywords.'products.productsFromCatalog.OpenRandomProductAJStore'()
+CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAJStore'()
 
 
 
@@ -47,7 +47,7 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/F
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo2'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
 
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'), 5)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'), 5)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
 if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search Feild'),FailureHandling.OPTIONAL)) {
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))

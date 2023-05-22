@@ -24,11 +24,11 @@ import org.openqa.selenium.Keys as Keys
 WebUI.disableSmartWait()
 
 WebUI.openBrowser('')
-DriverFactory.getWebDriver().manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS)
+DriverFactory.getWebDriver().manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS)
 
 WebUI.maximizeWindow()
 WebUI.navigateToUrl(GlobalVariable.FE_URL,FailureHandling.OPTIONAL)
-if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpIFrame'), 5)) {
+if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpClose'))) {
 	//Close the MailChimp ifram
 	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpClose'),5)
 	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpClose'),5)

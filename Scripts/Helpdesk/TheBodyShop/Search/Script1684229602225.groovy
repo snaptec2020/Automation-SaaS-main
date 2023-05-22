@@ -31,7 +31,7 @@ import org.openqa.selenium.WebElement as WebElement
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBodyShop/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 WebUI.scrollToPosition(0,0)
-CustomKeywords.'products.productsFromCatalog.OpenRandomProductTBS'()
+CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductTBS'()
 
 /////////////////////////
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/productFullDetail-Name'))

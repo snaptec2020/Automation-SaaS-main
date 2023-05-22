@@ -35,7 +35,7 @@ WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlAseel/SharedScripts/Launc
 
 
 //Open Random Product
-CustomKeywords.'products.productsFromCatalog.OpenRandomProductAlAseel'()
+CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlAseel'()
 
 ///// Save Data in variable gettext getSKU
 

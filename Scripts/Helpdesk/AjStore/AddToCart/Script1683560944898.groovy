@@ -48,8 +48,7 @@ import org.openqa.selenium.WebElement as WebElement
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AjStore/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 
-CustomKeywords.'products.productsFromCatalog.OpenRandomProductAJStore'()
-
+CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAJStore'()
 
 
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjStore/FE/Product/productFullDetail-Name'))

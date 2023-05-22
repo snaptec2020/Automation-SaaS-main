@@ -70,10 +70,10 @@ def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlSh
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Cart'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Cart'),10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Cart'), 10)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Cart'), 10)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/ViewCartMainPageBtn'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/ViewCartMainPageBtn'),10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/ViewCartMainPageBtn'),10)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/ViewCartMainPageBtn'),10)
 
 
 //Check Total Paid for Tabby and Tamara
@@ -163,14 +163,14 @@ if( WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlSham
 	
 	WebUI.setText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactHomePhoneField'), GlobalVariable.FE_Tel)
 	
-	CustomKeywords.'products.productsFromCatalog.uncheckUsingJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactSaveAddressCheckbox'), 3)
+	CustomKeywords.'helpdesk.HelpdeskUtil.uncheckUsingJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/ContactSaveAddressCheckbox'), 3)
 }
 
 
 
 //Order with Credit 
 WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/Step_4_PaymentMethods'), 5)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/PaymentMethod_1_Text'),3)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/PaymentMethod_1_Text'),3)
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/MainForm'), 10)
 
@@ -214,7 +214,7 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/Ca
 WebUI.switchToDefaultContent()
 WebUI.delay(3)
 //WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/FinishPayment'))
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/FinishPayment'), 5)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/FinishPayment'), 5)
 WebUI.waitForPageLoad(10)
 
 WebUI.delay(20)
@@ -224,7 +224,7 @@ WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/AlShamasy
 String url = WebUI.getUrl()
 
 if (!WebUI.verifyMatch(url, 'https://api.checkout.com/.*', true,FailureHandling.OPTIONAL)) {
-	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/FinishPayment'), 2)
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Checkout/FinishPayment'), 2)
 	WebUI.waitForPageLoad(10)
 	WebUI.delay(20)
 	WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/credit/MainOTPFrame'), 30)

@@ -41,7 +41,7 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.remote.DesiredCapabilities
 
 //Open Random Product
-CustomKeywords.'products.productsFromCatalog.OpenRandomProductAJStore'()
+CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAJStore'()
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo'), 10)
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
@@ -55,7 +55,7 @@ while (errorQTY_Element.size()>0 && trials<10) {
 	//Open Random Product
 	trials = trials+1
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo2'))
-	CustomKeywords.'products.productsFromCatalog.OpenRandomProductAJStore'()
+	CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAJStore'()
 	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo'), 10)
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))

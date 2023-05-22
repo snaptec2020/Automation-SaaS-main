@@ -68,7 +68,7 @@ import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 //Open Random Product
-CustomKeywords.'products.productsFromCatalog.OpenRandomProductTBS'()
+CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductTBS'()
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/productFullDetail-Name'))
 def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/productFullDetail-sku'))
 def ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")
@@ -85,7 +85,7 @@ if (counter.size()>0) {
 
 println noOfItemsBefore
 
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/AddToCartFromProduct'), 2)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/AddToCartFromProduct'), 2)
 
 WebUI.scrollToPosition(0,0)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'),10)
@@ -102,7 +102,7 @@ println noOfItemsAfter
 //WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/MiniCartDialog'),10)
 //WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ViewCartMainPageBtn'),10)
 //WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ViewCartMainPageBtn'),10)
-//CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ViewCartMainPageBtn'),10)
+//CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ViewCartMainPageBtn'),10)
 
 if(noOfItemsAfter!=noOfItemsBefore+1) {
 	// Check if qty accepted
@@ -117,7 +117,7 @@ if(noOfItemsAfter!=noOfItemsBefore+1) {
 		WebUI.waitForPageLoad(20)
 		WebUI.delay(2)
 		
-		CustomKeywords.'products.productsFromCatalog.OpenRandomProductTBS'()
+		CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductTBS'()
 		ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/productFullDetail-Name'))
 		ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/productFullDetail-sku'))
 		ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")
@@ -132,7 +132,7 @@ if(noOfItemsAfter!=noOfItemsBefore+1) {
 			noOfItemsBefor=counter.get(0).findElement(By.xpath("./span[@class='counter-number']")).getText().toInteger()
 		}
 		println noOfItemsBefore
-		CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/AddToCartFromProduct'), 2)
+		CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/AddToCartFromProduct'), 2)
 		WebUI.scrollToPosition(0,0)
 		WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'),10)
 		counter = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'), 5)

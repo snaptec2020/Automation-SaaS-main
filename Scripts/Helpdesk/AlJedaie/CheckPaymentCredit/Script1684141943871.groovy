@@ -68,10 +68,10 @@ def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJe
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Cart'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Cart'),10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Cart'), 10)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Cart'), 10)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/ViewCartMainPageBtn'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/ViewCartMainPageBtn'),10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/ViewCartMainPageBtn'),10)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/ViewCartMainPageBtn'),10)
 
 
 //Check Total Paid for Tabby and Tamara
@@ -85,17 +85,17 @@ println(totalValue)
 if (totalValue < 99) {
     //increase the products
     int neededQty = ((Math.ceil(99 / totalValue)) as int)
-	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/QtyDropdown'), 5)
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/QtyDropdown'), 5)
 	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/QtyDropdownList'),2)
 //	WebUI.selectOptionByIndex(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/QtyDropdownList'),neededQty)
 	TestObject Option = new TestObject()
 	Option.addProperty("xpath",ConditionType.EQUALS,findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/QtyDropdownList').findPropertyValue("xpath") + '/li[@data-value="' + neededQty.toString() + '"]')
 	if(WebUI.verifyElementPresent(Option, 3)) {
-		CustomKeywords.'products.productsFromCatalog.clickJS'(Option,10)
+		CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(Option,10)
 	}else {
 		Option.addProperty("xpath",ConditionType.EQUALS,findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/QtyDropdownList').findPropertyValue("xpath") + '/li[@data-value="22"]')
 		if(WebUI.verifyElementPresent(Option, 3)) {
-			CustomKeywords.'products.productsFromCatalog.clickJS'(Option,10)
+			CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(Option,10)
 		}
 	}
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/RefreshCart'))
@@ -146,7 +146,7 @@ if (Paymentlist.size() != 2) {
 
 //Order with Credit 
 WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/Step_4_PaymentMethods'), 5)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_2_Text'),3)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_2_Text'),3)
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/MainForm'), 10)
 
@@ -199,7 +199,7 @@ WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/
 String url = WebUI.getUrl()
 
 if (!WebUI.verifyMatch(url, 'https://api.checkout.com/.*', true,FailureHandling.OPTIONAL)) {
-	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/FinishPayment'), 2)
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/FinishPayment'), 2)
 	WebUI.waitForPageLoad(10)
 	WebUI.delay(20)
 	WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/credit/MainOTPFrame'), 30)

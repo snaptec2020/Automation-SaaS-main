@@ -68,10 +68,10 @@ def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJe
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Cart'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Cart'),10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Cart'), 10)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Cart'), 10)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/ViewCartMainPageBtn'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/ViewCartMainPageBtn'),10)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/ViewCartMainPageBtn'),10)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/ViewCartMainPageBtn'),10)
 
 
 //Check Total Paid for Tabby and Tamara
@@ -85,17 +85,17 @@ println(totalValue)
 if (totalValue < 99) {
     //increase the products
     int neededQty = ((Math.ceil(99 / totalValue)) as int)
-	CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/QtyDropdown'), 5)
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/QtyDropdown'), 5)
 	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/QtyDropdownList'),2)
 //	WebUI.selectOptionByIndex(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/QtyDropdownList'),neededQty)
 	TestObject Option = new TestObject()
 	Option.addProperty("xpath",ConditionType.EQUALS,findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/QtyDropdownList').findPropertyValue("xpath") + '/li[@data-value="' + neededQty.toString() + '"]')
 	if(WebUI.verifyElementPresent(Option, 3)) {
-		CustomKeywords.'products.productsFromCatalog.clickJS'(Option,10)
+		CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(Option,10)
 	}else {
 		Option.addProperty("xpath",ConditionType.EQUALS,findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/QtyDropdownList').findPropertyValue("xpath") + '/li[@data-value="22"]')
 		if(WebUI.verifyElementPresent(Option, 3)) {
-			CustomKeywords.'products.productsFromCatalog.clickJS'(Option,10)
+			CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(Option,10)
 		}
 	}
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/RefreshCart'))

@@ -264,11 +264,11 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/
 	while (removeProductFromCartElements.size() != 0) {
 		if (removeProductFromCartElements.size().equals(1)) {
 //			removeProductFromCartElements.get(0).click()
-			CustomKeywords.'products.productsFromCatalog.clickJS'(removeProductFromCartElements.get(0), 0)
+			CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCartElements.get(0), 0)
 			removeProductFromCartElements.remove(0)
 		} else {
 //			removeProductFromCartElements.get(0).click()
-			CustomKeywords.'products.productsFromCatalog.clickJS'(removeProductFromCartElements.get(0), 0)
+			CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCartElements.get(0), 0)
 			removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
 		}
 		WebUI.delay(1)
@@ -281,7 +281,7 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/
 
 //Open Random Product
 WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Logo'))
-CustomKeywords.'products.productsFromCatalog.OpenRandomProductOrange'()
+CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductOrange'()
 
 ///// Save Data in variable gettext getSKU
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/Orange/FE/Product/productFullDetail-Name'))
@@ -360,7 +360,7 @@ if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/DeliverHere'),5)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/DeliverHere'),5)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/DeliverHere'), 5)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/DeliverHere'), 5)
 
 //Steps
 
@@ -436,7 +436,7 @@ firstActiveTime.addProperty("xpath",ConditionType.EQUALS,'(' + findTestObject('O
 WebElement firstAvailableActiveTimesElements = WebUiCommonHelper.findWebElement(firstActiveTime, 30)
 WebUI.waitForElementClickable(firstActiveTime, 10)
 //firstAvailableActiveTimesElements.click()
-CustomKeywords.'products.productsFromCatalog.clickJS'(firstAvailableActiveTimesElements, 3)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(firstAvailableActiveTimesElements, 3)
 
 
 

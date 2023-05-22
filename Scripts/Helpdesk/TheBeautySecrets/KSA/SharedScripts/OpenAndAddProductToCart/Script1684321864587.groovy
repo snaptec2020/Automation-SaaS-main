@@ -68,7 +68,7 @@ import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 //Open Random Product
-CustomKeywords.'products.productsFromCatalog.OpenRandomProductTheBeautySecrets'()
+CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductTheBeautySecrets'()
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/MoreDetailsPlus'))
 def ProductTitle = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/productFullDetail-Name'), 5).getText().split("\n")[0]
@@ -84,7 +84,7 @@ if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeau
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/Add to cart'),5)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/Add to cart'),5)
 //WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/Add to cart'))
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/Add to cart'), 0)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/Add to cart'), 0)
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/MiniCart/ContinueShoping'), 5)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/MiniCart/ContinueShoping'),5)
@@ -96,7 +96,7 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeau
 	while (!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/MiniCart/ContinueShoping'), FailureHandling.OPTIONAL) && trials<10) {
 		//Open another Random Product
 		trials = trials+1
-		CustomKeywords.'products.productsFromCatalog.OpenRandomProductTheBeautySecrets'()
+		CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductTheBeautySecrets'()
 		WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/MoreDetailsPlus'))
 		ProductTitle = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/productFullDetail-Name'), 5).getText().split("\n")[0]
 		ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Product/productFullDetail-sku')).replace(":", "").replace(" ", "")
@@ -110,7 +110,7 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeau
 		
 		WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/Add to cart'))
 //		WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/Add to cart'))
-		CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/Add to cart'), 0)
+		CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/Add to cart'), 0)
 		
 		if(trials>=10) {
 			assert false,"Could not find available products"

@@ -29,7 +29,7 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
 WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/AccountIcon'))
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Login'),3)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Login'),3)
 
 
 
@@ -40,7 +40,7 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/Logi
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/acknowledgement'))
 
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/LoginButton'),3)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/LoginButton'),3)
 
 WebUI.delay(2)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/CheckOTPText'),5)
@@ -131,7 +131,7 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/OTPF
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/ConfirmOTPbtn'), 3)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/ConfirmOTPbtn'), 3)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/ConfirmOTPbtn'),3)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/ConfirmOTPbtn'),3)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/OTPConfirmed'), 5)
 
 //WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/OTPField'),2)
@@ -141,7 +141,7 @@ if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJeda
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/LoginButton'), 3)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/LoginButton'), 3)
-CustomKeywords.'products.productsFromCatalog.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/LoginButton'),3)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/LoginButton'),3)
 
 WebUI.waitForPageLoad(20)
 
