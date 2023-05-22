@@ -100,7 +100,11 @@ public class GlobalVariable {
     public static Object FE_URL
      
     /**
-     * <p>Profile Orange : 581492572</p>
+     * <p>Profile Orange : 581492572
+Profile Orange - Copy : 581492572
+Profile Orange - Copy (1) : 581492572
+Profile Orange - Copy (2) : 581492572
+Profile Orange - Copy (3) : 581492572</p>
      */
     public static Object FE_Tel
      
@@ -120,7 +124,11 @@ public class GlobalVariable {
     public static Object BE_URL
      
     /**
-     * <p>Profile Orange : testing dev</p>
+     * <p>Profile Orange : testing dev
+Profile Orange - Copy : testing dev
+Profile Orange - Copy (1) : testing dev
+Profile Orange - Copy (2) : testing dev
+Profile Orange - Copy (3) : testing dev</p>
      */
     public static Object CustomerName
      
@@ -170,7 +178,11 @@ public class GlobalVariable {
     public static Object FE_EmailPassword
      
     /**
-     * <p>Profile Orange : mahmoud@snaptec.co</p>
+     * <p>Profile Orange : mahmoud@snaptec.co
+Profile Orange - Copy : mahmoud@snaptec.co
+Profile Orange - Copy (1) : mahmoud@snaptec.co
+Profile Orange - Copy (2) : mahmoud@snaptec.co
+Profile Orange - Copy (3) : mahmoud@snaptec.co</p>
      */
     public static Object CustomerEmail
      
