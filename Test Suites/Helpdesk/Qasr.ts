@@ -64,7 +64,7 @@
       <guid>19cd3fce-7bf9-41c8-9be7-3af3bf2e85d6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/QasrAlAwani/Login</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/QasrAlAwani/Login Test Case</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>

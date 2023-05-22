@@ -34,29 +34,39 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 import org.openqa.selenium.remote.server.handler.GetCurrentUrl 
 
+
+
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Login'), 20)
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Login'))
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountry'),20)
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountry'))
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountryDropDownKSA'),10)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountryDropDownKSA'))
-
-
-
-
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/LoginTolephone'), 20)
-
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/LoginTolephone'), 20)
-
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/LoginTolephone'), GlobalVariable.FE_Tel)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/acknowledgement'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/LoginButton'))
-
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/EnterOTP'), 10)
+int trial=1
+int trials=5
+while(trial<=trials) {
+	trial++
+	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountry'),20)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountry'))
+	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountryDropDownKSA'),10)
+	
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountryDropDownKSA'))
+	
+	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/LoginTolephone'), 20)
+	
+	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/LoginTolephone'), 20)
+	
+	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/LoginTolephone'), GlobalVariable.FE_Tel)
+	
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/acknowledgement'))
+	
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/LoginButton'))
+	
+	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/EnterOTP'), 10)
+	if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/InvalidTokenErr'),5, FailureHandling.OPTIONAL)) {
+		WebUI.refresh()
+	}else if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/EnterOTP'), FailureHandling.OPTIONAL)) {
+		break
+	}
+}
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/EnterOTP'), FailureHandling.STOP_ON_FAILURE)
 
