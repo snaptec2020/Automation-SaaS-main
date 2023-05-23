@@ -19,7 +19,8 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.entity.testsuite.TestSuiteCollectionEntity
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 
-import internal.GlobalVariable as GlobalVariable
+import internal.GlobalVariable
+import sun.security.util.KeyUtil
 
 import com.kms.katalon.core.annotation.BeforeTestCase
 import com.kms.katalon.core.annotation.BeforeTestSuite
@@ -28,6 +29,7 @@ import com.kms.katalon.core.annotation.AfterTestCase
 import com.kms.katalon.core.annotation.AfterTestSuite
 import com.kms.katalon.core.context.TestCaseContext
 import com.kms.katalon.core.context.TestSuiteContext
+import com.kms.katalon.core.logging.KeywordLogger
 import com.kms.katalon.core.main.TestSuiteExecutor
 
 class BeforeTestCases {
@@ -42,7 +44,7 @@ class BeforeTestCases {
 	//def testCases = []
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
-		if(testCaseContext.getTestCaseId().indexOf("/Helpdesk/")) {
+		if(testCaseContext.getTestCaseId().indexOf("/Helpdesk/")>0) {
 			return
 		}
 		//testCases << testCaseContext.testCaseId
@@ -54,7 +56,7 @@ class BeforeTestCases {
 	}
 	@AfterTestCase
 	def sampleAfterTestCase(TestCaseContext testCaseContext) {
-		if(testCaseContext.getTestCaseId().indexOf("/Helpdesk/")) {
+		if(testCaseContext.getTestCaseId().indexOf("/Helpdesk/")>0) {
 			return
 		}
 		
@@ -66,7 +68,7 @@ class BeforeTestCases {
 	
 	@BeforeTestSuite
 	def sampleBeforeTestSuite(TestSuiteContext testSuiteContext) {
-		if(testSuiteContext.getTestSuiteId().indexOf("/Helpdesk/")) {
+		if(testSuiteContext.getTestSuiteId().indexOf("/Helpdesk/")>0) {
 			return
 		}
 
@@ -85,7 +87,7 @@ class BeforeTestCases {
 	}
 	@AfterTestSuite
 	def sampleAfterTestSuite(TestSuiteContext testSuiteContext) {
-		if(testSuiteContext.getTestSuiteId().indexOf("/Helpdesk/")) {
+		if(testSuiteContext.getTestSuiteId().indexOf("/Helpdesk/")>0) {
 			return
 		}
 
