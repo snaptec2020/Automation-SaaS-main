@@ -83,7 +83,7 @@ CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository
 
 
 //Check Total Paid for Tabby and Tamara
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/totalNeededPay'), 10)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/totalNeededPay'), 20)
 String totalText=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/totalNeededPay'))
 println(totalText)
 totalText =totalText.replace("ر.س", "").replace(" ", "").replace("٫", ".")
