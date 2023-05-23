@@ -42,7 +42,9 @@ class BeforeTestCases {
 	//def testCases = []
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
-		
+		if(testCaseContext.getTestCaseId().indexOf("/Helpdesk/")) {
+			return
+		}
 		//testCases << testCaseContext.testCaseId
 		
 			if(GlobalVariable.testSuiteStatus == 'Not Run') {
@@ -52,7 +54,11 @@ class BeforeTestCases {
 	}
 	@AfterTestCase
 	def sampleAfterTestCase(TestCaseContext testCaseContext) {
-
+		if(testCaseContext.getTestCaseId().indexOf("/Helpdesk/")) {
+			return
+		}
+		
+		
 			if(GlobalVariable.testSuiteStatus == 'Not Run') {
 			WebUI.closeBrowser()
 			}
@@ -60,7 +66,11 @@ class BeforeTestCases {
 	
 	@BeforeTestSuite
 	def sampleBeforeTestSuite(TestSuiteContext testSuiteContext) {
-		GlobalVariable.testSuiteStatus = testSuiteContext.testSuiteId
+		if(testSuiteContext.getTestSuiteId().indexOf("/Helpdesk/")) {
+			return
+		}
+
+				GlobalVariable.testSuiteStatus = testSuiteContext.testSuiteId
 		setRunningMode(testSuiteContext.testSuiteId)
 		//KeywordUtil.logInfo('**************************'+GlobalVariable.testSuiteStatus)
 		//sampleBeforeTestCase(testCaseContext.skipThisTestCase())
@@ -75,6 +85,9 @@ class BeforeTestCases {
 	}
 	@AfterTestSuite
 	def sampleAfterTestSuite(TestSuiteContext testSuiteContext) {
+		if(testSuiteContext.getTestSuiteId().indexOf("/Helpdesk/")) {
+			return
+		}
 
 		
 		GlobalVariable.testSuiteStatus = 'Not Run'
