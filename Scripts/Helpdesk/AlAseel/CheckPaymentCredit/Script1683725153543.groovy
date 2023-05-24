@@ -38,189 +38,19 @@ import org.openqa.selenium.remote.server.handler.GetCurrentUrl as WebElement
 
 
 
+
+
+
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlAseel/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
-
-
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Login'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/LoginPopup'),5)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/PhoneLoginTab'),10)
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/PhoneLoginTab'),10)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/PhoneLoginTab'))
-
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/LoginTolephone'), 20)
-
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/LoginTolephone'), GlobalVariable.FE_Tel)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/LoginButton'))
-
-WebUI.delay(2)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/SendOTP'), 5)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/SendOTP'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/CheckOTPText'),5)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/CheckOTPText'))
-
-
-
-int currentTab = WebUI.getWindowIndex()
-
-//Robot robot = new Robot()
-//robot.keyPress(KeyEvent.VK_CONTROL)
-//robot.keyPress(KeyEvent.VK_T)
-//robot.keyRelease(KeyEvent.VK_CONTROL)
-//robot.keyRelease(KeyEvent.VK_T)
-WebDriver driver = DriverFactory.getWebDriver()
-
-JavascriptExecutor js = ((driver) as JavascriptExecutor)
-
-js.executeScript('window.open();')
-
-WebUI.switchToWindowIndex(currentTab + 1)
-WebUI.authenticate(GlobalVariable.BE_URL, GlobalVariable.BEBasicAuthUser, GlobalVariable.BEBasicAuthPassword, 20, FailureHandling.OPTIONAL)
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Login/UserName'), GlobalVariable.BE_UserName)
-
-//WebUI.setEncryptedText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Login/Password'), 'h9YfHV16ZyMBoeJlmdP5xA==')
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Login/Password'), GlobalVariable.BE_Password)
-WebUI.waitForPageLoad(10)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Login/LoginButton'),FailureHandling.CONTINUE_ON_FAILURE)
-if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Shared/SomethingWentWrong'), 10,FailureHandling.OPTIONAL) & WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Shared/SomethingWentWrongOK'), 10,FailureHandling.OPTIONAL) ) {
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Shared/SomethingWentWrongOK'),FailureHandling.OPTIONAL)
-}
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Menu/Menu_MageDelight'),20)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Menu/Menu_MageDelight'))
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Menu/Menu_MageDelight_MobileOTPLogin'),5)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Menu/Menu_MageDelight_MobileOTPLogin'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Menu/Menu_MageDelight_MobileOTPLogin_SMSLog'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/BE/SmsLogPage/button_Filters'))
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/SmsLogPage/transaction_type'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/SmsLogPage/status'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/SmsLogPage/s_id'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/SmsLogPage/recipient_phone'), '')
-
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/SmsLogPage/entity_id_to'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/SmsLogPage/entity_id_from'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/SmsLogPage/api_service'), '')
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Sales_Order_page/Sales_orders_FilterButton'))
-
-WebUI.delay(2)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/BE/SmsLogPage/button_Filters'))
-
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/BE/SmsLogPage/recipient_phone'), 2)
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/SmsLogPage/recipient_phone'), GlobalVariable.FE_Tel)
-
-//    Keys.chord(Keys.ENTER))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Sales_Order_page/Sales_orders_FilterButton'))
-
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/BE/SmsLogPage/SmsViewFirstRow'), 20)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/BE/SmsLogPage/SmsViewFirstRow'))
-
-String OTP = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/SmsLogPage/SMSContentField'))
-println('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
-
-println(OTP)
-OTP=OTP.findAll('\\d+').get(0)
-println(OTP)
-
-WebUI.delay(2)
-
-WebUI.switchToWindowIndex(currentTab)
-
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/OTPField'), OTP)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/ConfirmOTPbtn'))
-WebUI.waitForPageLoad(30)
-WebUI.delay(3)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/AccountPage/AccountPageTitle'), 20)
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/AccountPage/AccountPageTitle'), FailureHandling.STOP_ON_FAILURE)
-
-WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/ConfirmOTPbtn'), 2)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountBtn'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountBtn'))
-
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountPopup'),5)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountPopup'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/CloseAccountPopup'))
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlAseel/SharedScripts/Login'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 /////////////////////////
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'),FailureHandling.OPTIONAL)
 WebUI.waitForPageLoad(20)
 
-///Clear Cart
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'),10)
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'),10)
-CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'), 10)
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlAseel/SharedScripts/ClearProductsFromCartPage'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-TestObject removeProductFromCart = new TestObject()
-removeProductFromCart.addProperty('xpath', ConditionType.EQUALS, '//div[@class="md-sidenav-right cdz-sidebar" and @style="top: 0px;"]//ol[@id="mini-cart"]//span[text()="ازالة"]//parent::a[@class="action delete" and @title="أزل المنتج"]')
-WebUI.waitForElementVisible(removeProductFromCart, 10)
-List<WebElement> removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
-
-while (removeProductFromCartElements.size() != 0) {
-    if (removeProductFromCartElements.size().equals(1)) {
-		CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCartElements.get(0), 10)
-//        removeProductFromCartElements.get(0).click()
-		WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'),3,FailureHandling.OPTIONAL)
-		if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'),FailureHandling.OPTIONAL)) {
-			WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'))
-			WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'), 3)
-		}
-        removeProductFromCartElements.remove(0)
-    } else {
-		CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCartElements.get(0), 10)
-//        removeProductFromCartElements.get(0).click()
-			WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'),3,FailureHandling.OPTIONAL)
-			if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'),FailureHandling.OPTIONAL)) {
-				WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'))
-				WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'), 3)
-		}
-        removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
-    }
-}
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/OutSideCart'))
-//Open Random Product
-CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlAseel'()
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
-
-if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'), FailureHandling.OPTIONAL)) {
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'),5)
-	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'),5)
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'))
-}else {
-	// Check if qty accepted
-	def trials=1
-	TestObject errorQTY_TO = new TestObject()
-	errorQTY_TO.addProperty("xpath",ConditionType.EQUALS,'//div[@class="page messages"]//div[@class="message message-error error"]/div[text()="الكمية المطلوبة غير متوفرة"]')
-//	List<WebElement> errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
-	while (!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'), FailureHandling.OPTIONAL) && trials<10) {
-		//Open Random Product
-		trials = trials+1
-		CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlAseel'()
-		WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
-		WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
-//		errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
-		if(trials>=10) {
-			assert false,"Could not find available products"
-		}
-		WebUI.delay(5)
-	}
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'), FailureHandling.CONTINUE_ON_FAILURE)
-}
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlAseel/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Cart'),10)
@@ -230,7 +60,6 @@ WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel
 CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ViewCartMainPageBtn'),10)
 
 //Check Total Paid for Tabby and Tamara
-WebUI.delay(2)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/totalNeededPay'), 10)
 String totalText=WebUI.getText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/totalNeededPay'))
 println(totalText)
@@ -239,8 +68,8 @@ Float totalValue = totalText.toFloat()
 println(totalValue)
 
 if (totalValue < 99) {
-    //increase the products
-    int neededQty = ((Math.ceil(99 / totalValue)) as int)
+	//increase the products
+	int neededQty = ((Math.ceil(99 / totalValue)) as int)
 	//WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/OutSideCart'))
 	for(int increase = 1 ; increase<neededQty ; increase++) {
 		WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/IncreaseQtyBtn'),5)
@@ -249,7 +78,7 @@ if (totalValue < 99) {
 	}
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/RefreshCart'))
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/RefreshCart'))
-    //remove and select another product (need to remove and seach again)
+	//remove and select another product (need to remove and seach again)
 } else if (totalValue > 2500) {
 	// To-Do Remove and add another product with less amount
 }
@@ -262,8 +91,6 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/PriceSumm
 if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/Step_4_PaymentMethods'),FailureHandling.OPTIONAL)) {
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/PriceSummaryButton'))
 }
-WebUI.delay(5)
-WebUI.waitForPageLoad(10)
 
 //Steps
 //WebUI.verifyElementNotVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/MapErrorCannotLoad'))
@@ -276,17 +103,18 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE
 //PaymentMethods
 TestObject paymentPath = new TestObject()
 paymentPath.addProperty('xpath', ConditionType.EQUALS, '//div[@data-role="payment-methods-load"]/div[contains(@data-bind,"_active")]')
+WebUI.delay(3)
 WebUI.waitForElementVisible(paymentPath,10)
 List Paymentlist = WebUiCommonHelper.findWebElements(paymentPath, 30)
 
 if (Paymentlist.size() != 2) {
- 	println (Paymentlist.size())
+	 println (Paymentlist.size())
    assert false
 } else {
 	// Tamara
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/PaymentMethod_1_Text'))
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/PaymentMethod_1_Text'))
 	// Credit
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/PaymentMethod_2_Text'))
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/PaymentMethod_2_Text'))
 }
 
 

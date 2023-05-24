@@ -57,7 +57,7 @@
       <guid>6042cc71-e824-4e36-8ff2-ff70daf71a93</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/AlAseel/Login</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/AlAseel/Login Test Case</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>

@@ -51,38 +51,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlAseel/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-//Open Random Product
-CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlAseel'()
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
-
-if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'), FailureHandling.OPTIONAL)) {
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'),5)
-	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'),5)
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'))
-}else {
-	// Check if qty accepted
-	def trials=1
-	TestObject errorQTY_TO = new TestObject()
-	errorQTY_TO.addProperty("xpath",ConditionType.EQUALS,'//div[@class="page messages"]//div[@class="message message-error error"]/div[text()="الكمية المطلوبة غير متوفرة"]')
-//	List<WebElement> errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
-	while (!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'), FailureHandling.OPTIONAL) && trials<10) {
-		//Open Random Product
-		trials = trials+1
-		CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlAseel'()
-		WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
-		WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
-//		errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
-		if(trials>=10) {
-			assert false,"Could not find available products"
-		}
-		WebUI.delay(5)
-	}
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'), FailureHandling.CONTINUE_ON_FAILURE)
-}
-
-
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlAseel/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Product/productFullDetail-Name'))
 def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Product/productFullDetail-sku'))
