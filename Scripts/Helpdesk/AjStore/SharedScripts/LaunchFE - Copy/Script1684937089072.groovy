@@ -41,11 +41,18 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.remote.DesiredCapabilities
 
 
+Map chromeOptions =new HashMap<String, Object>()
 Map prefs = new HashMap<String, Object>()
 
-
-prefs.put("profile.default_content_setting_values.geolocation", 1) // 1:allow 2:block
-RunConfiguration.setWebDriverPreferencesProperty('prefs', prefs)
+if(deviceName.equals("desktop")) {
+	prefs.put("profile.default_content_setting_values.geolocation", 1) // 1:allow 2:block
+	RunConfiguration.setWebDriverPreferencesProperty('prefs', prefs)
+}else {
+	chromeOptions.put("deviceName", "iPhone 6/7/8 Plus")
+	prefs.put("profile.default_content_setting_values.geolocation", 1) // 1:allow 2:block
+	RunConfiguration.setWebDriverPreferencesProperty('mobileEmulation', chromeOptions)
+	RunConfiguration.setWebDriverPreferencesProperty('prefs', prefs)
+}
 
 // Only Chrome for now
 ChromeOptions options = new ChromeOptions()

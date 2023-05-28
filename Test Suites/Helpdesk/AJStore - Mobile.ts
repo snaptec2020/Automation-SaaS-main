@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>AJStore</name>
+   <name>AJStore - Mobile</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient>mahmoud@snaptec.co;tam.nguyen@snaptec.co;o.omar@snaptec.co;m.aldawi@snaptec.co;</mailRecipient>
-   <numberOfRerun>0</numberOfRerun>
+   <numberOfRerun>2</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>true</rerunFailedTestCasesOnly>
    <rerunImmediately>false</rerunImmediately>
-   <testSuiteGuid>985e3ff8-d13f-4142-9c54-ef21c14b8d94</testSuiteGuid>
-   <testCaseLink>
-      <guid>5c8abd04-d1cb-49a9-98aa-bed0e7618504</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
-      <testCaseId>Test Cases/Helpdesk/AjStore/CheckBEReport</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
+   <testSuiteGuid>7597e31b-e14f-48fd-80c4-21b35b749921</testSuiteGuid>
    <testCaseLink>
       <guid>736af3ae-cd9a-49e9-869b-d6a86d2b622b</guid>
       <isReuseDriver>false</isReuseDriver>
@@ -32,6 +25,13 @@
          </iterationEntity>
          <testDataId>Data Files/Mobile/Mobile sizes</testDataId>
       </testDataLink>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>5c8abd04-d1cb-49a9-98aa-bed0e7618504</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Helpdesk/AjStore/CheckBEReport</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
@@ -79,9 +79,31 @@
    <testCaseLink>
       <guid>72d1358f-a528-403b-8f96-29c950ae985c</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Helpdesk/AjStore/Login</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>14fdb0ef-5dff-433e-aa30-fb43869b55ff</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Helpdesk/AjStore/SharedScripts/LaunchFE</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>253f1189-8961-44f4-83db-e6700091fc5a</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/Mobile/Mobile sizes</testDataId>
+      </testDataLink>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId>253f1189-8961-44f4-83db-e6700091fc5a</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Type</value>
+         <variableId>8e2cd02a-61f0-4c53-8ddb-11d790512153</variableId>
+      </variableLink>
    </testCaseLink>
    <testCaseLink>
       <guid>c467614a-51ca-406d-bae4-ae1dec9f1b1d</guid>

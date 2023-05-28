@@ -5,4 +5,17 @@
    <tag></tag>
    <comment></comment>
    <testCaseGuid>e1a2bc58-a9e7-4127-8276-1b760d437215</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>8e2cd02a-61f0-4c53-8ddb-11d790512153</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'desktop'</defaultValue>
+      <description></description>
+      <id>8e2cd02a-61f0-4c53-8ddb-11d790512153</id>
+      <masked>false</masked>
+      <name>deviceName</name>
+   </variable>
 </TestCaseEntity>

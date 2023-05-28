@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>MobileView</name>
+   <name>LaunchFE - Copy</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>a05368ec-9d2f-442f-93f8-c785cf66b19d</testCaseGuid>
+   <testCaseGuid>32a0f9be-0db0-4aa7-9b9f-94b00cbb2462</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>63fd331d-54d7-4cc5-bddb-4b2519c860ea</variableId>
+      <variableId>fbd6cbfc-f21a-4529-b438-9bf6a9975c1f</variableId>
    </variableLinks>
    <variable>
-      <defaultValue>''</defaultValue>
+      <defaultValue>'desktop'</defaultValue>
       <description></description>
-      <id>63fd331d-54d7-4cc5-bddb-4b2519c860ea</id>
+      <id>fbd6cbfc-f21a-4529-b438-9bf6a9975c1f</id>
       <masked>false</masked>
-      <name>testCaseID</name>
+      <name>deviceName</name>
    </variable>
 </TestCaseEntity>
