@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "CBFCD49A9AF3AD527194519EB6111343",
+  "keywordFileContentHash": "29876A675FD6E288995F6078BCC2F3C9",
   "keywordClasses": [
     {
       "name": "utility.Utility",
@@ -20,8 +20,7 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "addXpathToTestObject",
@@ -39,8 +38,7 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "switchToIframeByXpath",
@@ -58,8 +56,7 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "findWebElements",
@@ -90,8 +87,7 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "clickOnObjectusingJavaScript",
@@ -109,8 +105,7 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "clickOnObjectusingJavaScript",
@@ -128,11 +123,10 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

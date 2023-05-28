@@ -41,6 +41,12 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.remote.DesiredCapabilities
 
 
+
+
+//Map chromeOptions =new HashMap<String, Object>()
+//chromeOptions.put("deviceName", "iPhone 6/7/8 Plus")
+//RunConfiguration.setWebDriverPreferencesProperty('mobileEmulation', chromeOptions)
+
 Map prefs = new HashMap<String, Object>()
 
 

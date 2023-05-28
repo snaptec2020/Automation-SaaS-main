@@ -46,16 +46,20 @@ public class HelpdeskUtil {
 		def elementIndexproduct = Math.abs(randomNumberforProduct.nextInt(prod.size()))
 
 		def currentURL = WebUI.getUrl()
-
+		
 		TestObject tb = new TestObject()
 
 		tb.addProperty('xpath', ConditionType.EQUALS, '(//button[contains(text(),\'Add to Cart\') or contains(text(),\'أضف إلى السلة\')])[' +
 				elementIndexproduct + ']')
+		
+		//WebUI.waitForElementClickable(tb, 5)
+//		WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
+		ScrollToElement(tb)
+		clickJS(tb,5)
 
-		WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
-
-		WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
+//		WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
 		if (WebUI.getUrl() == currentURL) {
+			ScrollToElement(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Continue Shopping'))
 			WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
 		} else {
 			KeywordUtil.markPassed('Trying to Get Configurable product')
@@ -63,13 +67,14 @@ public class HelpdeskUtil {
 			tb.addProperty('xpath', ConditionType.EQUALS, '//section[starts-with(@class,\'productFullDetail-groupOption-\')]//div[starts-with(@class,\'option-root-\')]')
 
 			List genralDropDowns = WebUI.findWebElements(tb, 30)
-
+			println "1111"
 			if (genralDropDowns.size() != 0) {
 				for (int i = 1; i <= genralDropDowns.size(); i++) {
+					println i
 					tb.addProperty('xpath', ConditionType.EQUALS, ('(//section[starts-with(@class,\'productFullDetail-groupOption-\')]//div[starts-with(@class,\'option-root-\')])[' +
 							i) + ']//div//button[not( @disabled)]')
-
-					WebUI.click(tb)
+					ScrollToElement(tb)
+					clickJS(tb,2)
 				}
 			}
 		}
@@ -513,12 +518,12 @@ public class HelpdeskUtil {
 	@Keyword
 	def ScrollToElement(TestObject tb) {
 		List<WebElement> element = WebUiCommonHelper.findWebElements(tb, 30)
-		WebUI.executeJavaScript('arguments[0].click()', element)
+		WebUI.executeJavaScript('arguments[0].scrollIntoView()', element)
 	}
 
 	@Keyword
 	def ScrollToElement(WebElement element) {
-		WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
+		WebUI.executeJavaScript('arguments[0].scrollIntoView()', Arrays.asList(element))
 	}
 
 	@Keyword
@@ -532,7 +537,7 @@ public class HelpdeskUtil {
 				WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element.get(0)))
 				break;
 			}
-			catch(org.openqa.selenium.StaleElementReferenceException ex)
+			catch(Exception ex)
 			{
 				println ex.getMessage()
 				WebUI.delay(1)

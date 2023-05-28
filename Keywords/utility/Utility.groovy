@@ -62,6 +62,18 @@ public class Utility {
 		//WebElement element = WebUiCommonHelper.findWebElement(testObject,30)
 		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
 	}
+	
+	def javaScriptToScrollToElement(def testObjectRelativeId) {
+		WebElement element = WebUiCommonHelper.findWebElement(findTestObject(testObjectRelativeId),30)
+		WebUI.executeJavaScript("arguments[0].scrollIntoView()", Arrays.asList(element))
+		WebUI.delay(2)
+	}
+	
+	def javaScriptToScrollToElement(WebElement element) {
+		WebUI.executeJavaScript("arguments[0].scrollIntoView()", Arrays.asList(element))
+		WebUI.delay(2)
+	}
+	
 }
 
 
