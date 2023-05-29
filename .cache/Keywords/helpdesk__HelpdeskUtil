@@ -1,36 +1,43 @@
 {
-  "keywordFileContentHash": "A9AF3FBBC10E51CD285CB0DB51C562B0",
+  "keywordFileContentHash": "ACC9248402A1BC5468B018A04C8BFED5",
   "keywordClasses": [
     {
       "name": "helpdesk.HelpdeskUtil",
       "keywordMethods": [
         {
           "name": "OpenRandomProductAJStore",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "OpenRandomProductQasr",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "OpenRandomProductAlAseel",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "OpenRandomProductAlJedaie",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "OpenRandomProductTBS",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "OpenRandomProductTheBeautySecrets",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "OpenRandomProductAlShamasy",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "decodeEncodedValue",
@@ -48,7 +55,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "encodeValue",
@@ -66,7 +74,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "scrollToVerifyElementVisiblity",
@@ -84,11 +93,13 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "OpenRandomProductOrange",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "ScrollToElement",
@@ -106,7 +117,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "ScrollToElement",
@@ -124,7 +136,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "clickJS",
@@ -155,7 +168,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "clickJS",
@@ -186,7 +200,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "checkUsingJS",
@@ -217,7 +232,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "uncheckUsingJS",
@@ -248,7 +264,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "checkUsingJS",
@@ -266,7 +283,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "uncheckUsingJS",
@@ -284,10 +302,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

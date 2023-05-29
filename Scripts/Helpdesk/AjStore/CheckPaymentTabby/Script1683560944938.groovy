@@ -94,6 +94,8 @@ if (totalValue < 99) {
 }
 
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/PriceSummaryButton'),10)
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/PriceSummaryButton'))
+WebUI.delay(1)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/PriceSummaryButton'))
 if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/MapOnCheckout'),FailureHandling.OPTIONAL)) {
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/PriceSummaryButton'))
@@ -165,6 +167,7 @@ if (Paymentlist.size() != 4) {
 }
 
 //Order with Tabby
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/PaymentMethod_1_Text'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/PaymentMethod_1_Text'))
 
 TestObject newTotalPaidTO = new TestObject()
@@ -181,17 +184,17 @@ newTotalPaidElements.each({
 
 println(newTotalText)
 
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/FinishPayment'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/FinishPayment'))
 
 WebUI.waitForPageLoad(20)
-WebUI.delay(1)
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Tabby/OTPFirstDigit_Tabby'), 20)
+WebUI.delay(2)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Tabby/OTPFirstDigit_Tabby'),10)
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Tabby/OTPFirstDigit_Tabby'), 10)
 
 String url = WebUI.getUrl()
 
 WebUI.verifyMatch(url, 'https://checkout.tabby.ai/.*', true)
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Tabby/BackToStore'))
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Tabby/OTPFirstDigit_Tabby'))
 
@@ -210,9 +213,12 @@ println(TabbyRequiredPaymentValue)
 
 WebUI.verifyEqual(TabbyRequiredPaymentValue, newTotalText)
 
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Tabby/BackToStore'), 10)
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Tabby/BackToStore'), 5)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Tabby/BackToStore'))
+}else {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Tabby/BackToStore-Mobile'))
+}
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Tabby/BackToStore'))
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Tabby/ReturnDialog_Text'))
 

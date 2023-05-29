@@ -517,13 +517,16 @@ public class HelpdeskUtil {
 
 	@Keyword
 	def ScrollToElement(TestObject tb) {
-		List<WebElement> element = WebUiCommonHelper.findWebElements(tb, 30)
-		WebUI.executeJavaScript('arguments[0].scrollIntoView()', element)
+		List<WebElement> element = WebUiCommonHelper.findWebElements(tb, 10)
+//		WebUI.executeJavaScript('arguments[0].scrollIntoView();window.scrollBy(0, -10);', element)
+		WebUI.executeJavaScript("arguments[0].scrollIntoView({ block: 'center' });", element)
+		WebUI.delay(1)
 	}
 
 	@Keyword
 	def ScrollToElement(WebElement element) {
-		WebUI.executeJavaScript('arguments[0].scrollIntoView()', Arrays.asList(element))
+		WebUI.executeJavaScript("arguments[0].scrollIntoView({ block: 'center' });", Arrays.asList(element))
+		WebUI.delay(1)
 	}
 
 	@Keyword
