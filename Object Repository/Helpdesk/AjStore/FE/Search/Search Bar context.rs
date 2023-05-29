@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@placeholder='Search for a product' or @placeholder='البحث عن منتج']</value>
+         <value>//input[@placeholder='Search for a product' or @placeholder='البحث عن منتج' or @placeholder='البحث عن المنتج']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

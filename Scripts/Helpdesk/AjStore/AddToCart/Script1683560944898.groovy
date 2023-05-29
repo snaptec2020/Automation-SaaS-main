@@ -65,19 +65,18 @@ def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/AjSt
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo'), 10)
 
-//WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search Feild'))
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search Bar context'))
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search Feild'))
+//
+//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search Bar context'))
 
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
 
-
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
 
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/view cart'))

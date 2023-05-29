@@ -43,7 +43,7 @@ public class HelpdeskUtil {
 
 		Random randomNumberforProduct = new Random()
 
-		def elementIndexproduct = Math.abs(randomNumberforProduct.nextInt(prod.size()))
+		def elementIndexproduct = (Math.abs(randomNumberforProduct.nextInt(prod.size()))) +1
 
 		def currentURL = WebUI.getUrl()
 

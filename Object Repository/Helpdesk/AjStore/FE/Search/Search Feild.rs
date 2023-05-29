@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[contains(@class,'searchBar-inputFloatingSearchBar' )]</value>
+         <value>//input[contains(@class,'searchBar-inputFloatingSearchBar' ) or contains(@class,'searchBar-inputSearchBar' ) ]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
