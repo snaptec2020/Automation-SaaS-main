@@ -47,11 +47,16 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/F
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo2'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
 
-CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'), 5)
+WebUI.delay(2)
+//CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'), 5)
+//WebUI.delay(1)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
-if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search Feild'),FailureHandling.OPTIONAL)) {
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
-	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
+WebUI.delay(1)
+
+if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search Feild'),FailureHandling.OPTIONAL)) {
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'), 5)
+//	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
+//	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search icon'))
 }
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Search/Search Feild'))
 
