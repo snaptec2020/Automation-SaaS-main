@@ -44,6 +44,8 @@ import org.openqa.selenium.remote.DesiredCapabilities
 CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAJStore'()
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo'), 10)
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
+
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
 
 // Check if qty accepted
@@ -58,6 +60,7 @@ while (errorQTY_Element.size()>0 && trials<10) {
 	CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAJStore'()
 	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Logo'), 10)
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
+	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Cart/Add to cart'))
 	errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
 	if(trials>=10) {
