@@ -28,9 +28,10 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 WebUI.navigateToUrl(GlobalVariable.FE_URL,FailureHandling.OPTIONAL)
-if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpClose'))) {
+if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpClose'),20,FailureHandling.OPTIONAL)) {
 	//Close the MailChimp ifram
 	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpClose'),5)
 	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpClose'),5)
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpClose'))
+//	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpClose'))
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MailChimpClose'), 5)
 }

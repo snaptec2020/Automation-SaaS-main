@@ -6,12 +6,11 @@
    <elementGuidId>3a15737d-d4d7-4a61-bfed-f417917646ed</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@data-dojo-attach-point=&quot;modalClose&quot;]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[@data-dojo-attach-point=&quot;modalClose&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

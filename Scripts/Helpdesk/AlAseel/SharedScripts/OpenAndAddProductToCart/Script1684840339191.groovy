@@ -41,6 +41,7 @@ import org.openqa.selenium.remote.server.handler.GetCurrentUrl as WebElement
 CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlAseel'()
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
 
 if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/MiniCart/ContinueShoping'), FailureHandling.OPTIONAL)) {
@@ -58,6 +59,7 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel
 		trials = trials+1
 		CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlAseel'()
 		WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
+		CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
 		WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/Add to cart'))
 //		errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
 		if(trials>=10) {
