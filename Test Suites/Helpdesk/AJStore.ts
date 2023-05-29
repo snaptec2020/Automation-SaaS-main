@@ -61,13 +61,6 @@
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>a4a57ff8-902e-4cf5-b18e-27977fab889b</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/AjStore/CheckTheFEUp</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
       <guid>72d1358f-a528-403b-8f96-29c950ae985c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
