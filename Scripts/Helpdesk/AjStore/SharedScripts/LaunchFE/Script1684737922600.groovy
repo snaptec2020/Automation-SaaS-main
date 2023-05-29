@@ -40,17 +40,37 @@ import org.eclipse.jdt.internal.compiler.ast.ForeachStatement as ForeachStatemen
 import org.openqa.selenium.By as By
 import org.openqa.selenium.remote.DesiredCapabilities
 
+
+//Map chromeOptions =new HashMap<String, Object>()
+//chromeOptions.put("deviceName", "iPhone 6/7/8 Plus")
+//RunConfiguration.setWebDriverPreferencesProperty('mobileEmulation', chromeOptions)
+
+Map prefs = new HashMap<String, Object>()
+
+
+prefs.put("profile.default_content_setting_values.geolocation", 1) // 1:allow 2:block
+RunConfiguration.setWebDriverPreferencesProperty('prefs', prefs)
+
+// Only Chrome for now
+ChromeOptions options = new ChromeOptions()
+((Map)RunConfiguration.getDriverPreferencesProperties().get("WebUI")).each {
+	println it.getKey()
+	println it.getValue()
+	options.setExperimentalOption(it.getKey(), it.getValue())
+}
+
 WebUI.openBrowser('')
 WebUI.closeBrowser()
 
+//DesiredCapabilities capabilities = new DesiredCapabilities();
+//capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+//DesiredCapabilities capabilities = new DesiredCapabilities();
+//capabilities.setPlatform(Platform.ANDROID)
+//capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
-// Only Chrome for now
-Map prefs = new HashMap<String, Object>()
-prefs.put("profile.default_content_setting_values.geolocation", 1) // 1:allow 2:block
-ChromeOptions options = new ChromeOptions()
-options.setExperimentalOption("prefs", prefs)
-ChromeDriver drivertest = new ChromeDriver()
+ChromeDriver drivertest = new ChromeDriver(options)
 ((LocationContext)drivertest).setLocation(new Location(GlobalVariable.Latitude,GlobalVariable.Longtitude , 0))
+
 
 DriverFactory.changeWebDriver(drivertest)
 
@@ -59,8 +79,8 @@ DriverFactory.changeWebDriver(drivertest)
 //browserstackOptions.put("gpsLocation", "24.70437792668048,46.67946359838521");
 //RunConfiguration.setWebDriverPreferencesProperty("args",browserstackOptions)
 
-//WebUI.openBrowser('')
-
 WebUI.navigateToUrl(GlobalVariable.FE_URL)
 
 WebUI.maximizeWindow()
+
+
