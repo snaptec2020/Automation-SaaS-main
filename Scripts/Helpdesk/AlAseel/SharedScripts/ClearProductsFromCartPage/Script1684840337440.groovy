@@ -54,6 +54,7 @@ while (removeProductFromCartElements.size() != 0) {
 		WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'),3,FailureHandling.OPTIONAL)
 		if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'),FailureHandling.OPTIONAL)) {
 			WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'))
+			WebUI.delay(2)
 			WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'), 3)
 		}
 		removeProductFromCartElements.remove(0)
@@ -63,10 +64,12 @@ while (removeProductFromCartElements.size() != 0) {
 			WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'),3,FailureHandling.OPTIONAL)
 			if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'),FailureHandling.OPTIONAL)) {
 				WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'))
+				WebUI.delay(2)
 				WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/ConfirmDelete'), 3)
 		}
 		removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
 	}
-	WebUI.delay(2)
+	
 }
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/OutSideCart'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/OutSideCart'))
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/OutSideCart'), 3)
