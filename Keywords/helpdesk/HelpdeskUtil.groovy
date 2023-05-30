@@ -221,14 +221,19 @@ public class HelpdeskUtil {
 		List<WebElement> productsCategoriesList = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/ProductsSection'), 5)
 		Random randomCategory = new Random()
 		int randomCategorySelected = randomCategory.nextInt(productsCategoriesList.size()) + 1
+		String randomNumberCatProductXPath='('+ findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/ProductsSection').findPropertyValue("xpath")	+ ')[' + randomCategorySelected.toString() + ']'
 		TestObject randomNumberCatProductTO = new TestObject()
-				.addProperty('xpath', ConditionType.EQUALS, '('
-				+ findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/ProductsSection').findPropertyValue("xpath")
-				+ ')[' + randomCategorySelected.toString() + ']')
+		randomNumberCatProductTO.addProperty('xpath', ConditionType.EQUALS, randomNumberCatProductXPath)
 		WebElement randomNumberCatProductElm = WebUiCommonHelper.findWebElement(randomNumberCatProductTO, 5)
-		//print "select cat: "
-		//println randomCategorySelected
-		WebUI.click(randomNumberCatProductTO)
+		print "select cat: "
+		println randomCategorySelected
+		println randomNumberCatProductXPath
+		ScrollToElement(randomNumberCatProductTO)
+		WebUI.waitForElementClickable(randomNumberCatProductTO, 5)
+		WebUI.doubleClick(randomNumberCatProductTO)
+//		WebUI.click(randomNumberCatProductTO)
+//		WebUI.clickImage(randomNumberCatProductTO, FailureHandling.STOP_ON_FAILURE)
+//		clickJS(randomNumberCatProductElm, 5)
 		//println "inside the cat"
 		WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/FooterAlJedaei'), 15)
 		WebUI.delay(5)
@@ -245,7 +250,7 @@ public class HelpdeskUtil {
 		tb.addProperty('xpath', ConditionType.EQUALS, ('('+ items.findPropertyValue("xpath") + ')[' +
 				elementIndexproduct) + ']')
 		String currentURL = WebUI.getUrl()
-		WebUI.click(tb)
+		WebUI.doubleClick(tb)
 		WebUI.delay(2)
 		WebUI.waitForPageLoad(20,FailureHandling.OPTIONAL)
 
@@ -271,6 +276,7 @@ public class HelpdeskUtil {
 					//print "Number of colors:"
 					//println(SubColorElem.size())
 					if(SubColorElem.size()>0) {
+						ScrollToElement(SubColorElem.get(0))
 						clickJS(SubColorElem.get(0), 5)
 					}
 
@@ -282,6 +288,7 @@ public class HelpdeskUtil {
 					List<WebElement> SubElem=WebUiCommonHelper.findWebElements(Subtb, 5)
 					//println(SubElem.size())
 					if(SubElem.size()>0) {
+						ScrollToElement(Subtb)
 						WebUI.selectOptionByIndex(Subtb, 1)
 					}
 

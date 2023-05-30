@@ -6,12 +6,11 @@
    <elementGuidId>fe489e78-d720-4d8d-8346-8bc30583236f</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value></value>
+         <key>BASIC</key>
+         <value>//div[@id=&quot;category-products-collection&quot;]//div[@class=&quot;product-top&quot;]/a[contains(@class,&quot;product photo product-item-photo&quot;)]</value>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value>//div[@id=&quot;category-products-collection&quot;]//div[@class=&quot;product-top&quot;]/a[@class=&quot;product photo product-item-photo&quot;]</value>
+         <key>XPATH</key>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -21,7 +20,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//div[@id=&quot;category-products-collection&quot;]//div[@class=&quot;product-top&quot;]/a[@class=&quot;product photo product-item-photo&quot;]</value>
-      <webElementGuid>22ef19fd-b0c8-422c-ad3d-b462472b045e</webElementGuid>
+      <value>//div[@id=&quot;category-products-collection&quot;]//div[@class=&quot;product-top&quot;]/a[contains(@class,&quot;product photo product-item-photo&quot;)]</value>
+      <webElementGuid>0ea65e8d-492e-4b52-a18f-4499e8236032</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

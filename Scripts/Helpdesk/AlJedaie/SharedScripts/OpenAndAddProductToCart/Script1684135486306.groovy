@@ -81,7 +81,8 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/Add to c
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/CloseMiniCart'), 5)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/CloseMiniCart'),5)
 if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/CloseMiniCart'), FailureHandling.OPTIONAL)) {
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/CloseMiniCart'))
+	//WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/CloseMiniCart'))
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/CloseMiniCart'), 10)
 }else {
 	// Check if qty accepted
 	def trials=1
@@ -114,6 +115,7 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedai
 		WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/CloseMiniCart'),5)
 	}
 
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/CloseMiniCart'), FailureHandling.CONTINUE_ON_FAILURE)
+//	WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/CloseMiniCart'), FailureHandling.CONTINUE_ON_FAILURE)
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/MiniCart/CloseMiniCart'), 3)
 }
 
