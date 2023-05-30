@@ -107,7 +107,7 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE
 //PaymentMethods
 TestObject paymentPath = new TestObject()
 paymentPath.addProperty('xpath', ConditionType.EQUALS, '//div[@data-role="payment-methods-load"]/div[contains(@data-bind,"_active")]')
-WebUI.delay(3)
+WebUI.delay(5)
 WebUI.waitForElementVisible(paymentPath,10)
 List Paymentlist = WebUiCommonHelper.findWebElements(paymentPath, 30)
 
