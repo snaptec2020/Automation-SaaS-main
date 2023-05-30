@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>TamaraCancel</name>
+   <name>Account_Nav-Mobile</name>
    <tag></tag>
-   <elementGuidId>1ef10e48-3d7b-4c9c-896d-354164e827bd</elementGuidId>
+   <elementGuidId>334af7bf-5f61-42d9-aea3-b9268b0d87ba</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class=&quot;tamara-cancel-button-template&quot;]/button[1]</value>
+         <value>//div[contains(@class,&quot;title account-nav-title&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

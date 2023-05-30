@@ -39,24 +39,38 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/F
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/AccountPage/AccountPageTitle'), FailureHandling.STOP_ON_FAILURE)
 
 WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/ConfirmOTPbtn'), 2)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountBtn'))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountBtn'))
+if(!WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MobileBottomMenu'), 3)) {
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountBtn'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountBtn'))
+	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountPopup'),5)
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountPopup'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/CloseAccountPopup'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountBtn'))
+	WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountPopup'),3)
+	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountPopup'),3)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/AccountPage/SignOut'),FailureHandling.OPTIONAL)
+	WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountBtn'),20)
+}else {
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Account_Nav-Mobile'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Account_Nav-Mobile'))
+	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Account_Nav_List-Mobile'),5)
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Account_Nav_List-Mobile'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Account_Nav-Mobile'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Login-Mobile'))
+	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/AccountPage/AccountPageTitle'), 20)
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/AccountPage/AccountPageTitle'), FailureHandling.STOP_ON_FAILURE)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Toggle_Nav_Left-Mobile'))
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Toggle_Nav_Left_AccountTab-Mobile'),3)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Toggle_Nav_Left_AccountTab_Signout-Mobile'))
+	WebUI.delay(5)
+	WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AlAseel/FE/AccountPage/AccountPageTitle'),5, FailureHandling.STOP_ON_FAILURE)
+}
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountPopup'),5)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountPopup'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/CloseAccountPopup'))
 
 /////////////////////////
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountBtn'))
-
-WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountPopup'),3)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountPopup'),3)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/AccountPage/SignOut'),FailureHandling.OPTIONAL)
-
-WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountBtn'),20)
-
+//WebUI.delay(5)
 WebUI.closeBrowser()
 

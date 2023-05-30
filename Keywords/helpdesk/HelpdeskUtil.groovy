@@ -153,7 +153,8 @@ public class HelpdeskUtil {
 
 		//		((JavascriptExecutor) DriverFactory.getWebDriver()).executeScript("arguments[0].scrollIntoView();", )
 		WebUI.waitForPageLoad(20)
-		WebUI.executeJavaScript("arguments[0].scrollIntoView(true);", WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10))
+		ScrollToElement(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'))
+//		WebUI.executeJavaScript("arguments[0].scrollIntoView(true);", WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10))
 		WebUI.delay(2)
 
 
@@ -206,6 +207,7 @@ public class HelpdeskUtil {
 					WebUI.waitForElementVisible(Subtb, 10)
 					List<WebElement> SubElem=WebUiCommonHelper.findWebElements(Subtb, 30)
 					//					SubElem.get(0).click()
+					ScrollToElement(SubElem.get(0))
 					clickJS(SubElem.get(0), 5)
 				}
 			}

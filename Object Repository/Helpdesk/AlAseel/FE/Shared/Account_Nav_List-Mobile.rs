@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Search icon</name>
+   <name>Account_Nav_List-Mobile</name>
    <tag></tag>
-   <elementGuidId>e0e2b992-ebd5-4b9f-be93-992dfd8c8b09</elementGuidId>
+   <elementGuidId>6057c704-73fb-4710-9c7c-7227f4df8b0a</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[contains(@class,'searchBar-root')]</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@class=&quot;content account-nav-content active&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>TamaraCancel</name>
+   <name>Toggle_Nav_Left_AccountTab-Mobile</name>
    <tag></tag>
-   <elementGuidId>1ef10e48-3d7b-4c9c-896d-354164e827bd</elementGuidId>
+   <elementGuidId>bc226069-ad11-4328-96d1-7521a6b2ba04</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class=&quot;tamara-cancel-button-template&quot;]/button[1]</value>
+         <value>//a[@class=&quot;nav-sections-item-switch&quot; and text()=&quot;الحساب&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

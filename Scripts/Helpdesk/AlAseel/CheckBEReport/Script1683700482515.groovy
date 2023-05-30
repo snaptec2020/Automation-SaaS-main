@@ -19,10 +19,7 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 
-WebUI.openBrowser('')
-WebUI.maximizeWindow()
-
-WebUI.authenticate(GlobalVariable.BE_URL, GlobalVariable.BEBasicAuthUser, GlobalVariable.BEBasicAuthPassword, 20, FailureHandling.OPTIONAL)
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlAseel/SharedScripts/LaunchBE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 
 WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Login/UserName'), GlobalVariable.BE_UserName)

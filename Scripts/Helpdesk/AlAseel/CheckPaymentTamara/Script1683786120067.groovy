@@ -39,6 +39,8 @@ import org.openqa.selenium.remote.server.handler.GetCurrentUrl as WebElement
 
 
 
+
+
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlAseel/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlAseel/SharedScripts/Login'), [:],	FailureHandling.STOP_ON_FAILURE)
 
@@ -71,10 +73,12 @@ if (totalValue < 99) {
 	//WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/OutSideCart'))
 	for(int increase = 1 ; increase<neededQty ; increase++) {
 		WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/IncreaseQtyBtn'),5)
+		CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/IncreaseQtyBtn'))
 		WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/IncreaseQtyBtn'))
 		WebUI.delay(2)
 	}
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/RefreshCart'))
+	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/RefreshCart'))
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/RefreshCart'))
 	//remove and select another product (need to remove and seach again)
 } else if (totalValue > 2500) {
@@ -84,15 +88,20 @@ if (totalValue < 99) {
 WebUI.delay(3)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/PriceSummaryButton'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/PriceSummaryButton'),10)
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/PriceSummaryButton'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/PriceSummaryButton'))
 
-if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/Step_4_PaymentMethods'),FailureHandling.OPTIONAL)) {
+if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/Step_1_Login'),FailureHandling.OPTIONAL)) {
+	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/PriceSummaryButton'))
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/PriceSummaryButton'))
 }
 
 //Steps
 //WebUI.verifyElementNotVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/MapErrorCannotLoad'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/Step_4_PaymentMethods'))
+//Based on Mobile or not
+if(WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MobileBottomMenu'), 3)) {
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/Step_4_PaymentMethods'))
+}
 //WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/Step_3_ShipmentMethod'))
 //WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/Step_2_ShipmentLocation'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/Step_1_Login'))
@@ -118,13 +127,14 @@ if (Paymentlist.size() != 2) {
 
 
 //Order with Tamara
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/PaymentMethod_1_Text'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/PaymentMethod_1_Text'))
 //WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/Step_1_Login'), 5)
 
 //WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/FinishPayment'), 10)
 //WebUI.scrollToPosition(0, element.getLocation().getY())
 
-
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/FinishPayment'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/FinishPayment'))
 
 WebUI.waitForPageLoad(20)

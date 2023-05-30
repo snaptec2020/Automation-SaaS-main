@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>TamaraCancel</name>
+   <name>MobileBottomMenu</name>
    <tag></tag>
-   <elementGuidId>1ef10e48-3d7b-4c9c-896d-354164e827bd</elementGuidId>
+   <elementGuidId>677a7a35-4163-4f2a-97e5-2e10c9711e2d</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class=&quot;tamara-cancel-button-template&quot;]/button[1]</value>
+         <value>//div[@id=&quot;mb-bottom-toolbar&quot;]/div[@class=&quot;mb-toolbar-inner row&quot;]//div[@class=&quot;owl-carousel owl-rtl owl-loaded&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

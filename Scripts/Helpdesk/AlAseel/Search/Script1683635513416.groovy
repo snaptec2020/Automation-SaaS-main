@@ -53,17 +53,29 @@ println ProductPrice
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'),FailureHandling.OPTIONAL)
 
 WebUI.waitForPageLoad(10)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'))
-WebUI.focus(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'))
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), ProductTitle)
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
+
+
+
+if(!WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MobileBottomMenu'), 3)) {
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'))
+	WebUI.focus(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'))
+	WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), ProductTitle)
+	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
+}else {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search icon-Mobile'))
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'))
+	WebUI.focus(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'))
+	WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), ProductTitle)
+	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
+}
+
+
 
 String SearchResultsxpath='//strong//a[@href="' + ProductURL + '" and contains(normalize-space(text()),normalize-space("' + ProductTitle + '"))]'
 TestObject Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)
 WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
-WebUI.executeJavaScript("arguments[0].scrollIntoView();", Arrays.asList(Productlink_Element))
-
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(Productlink_Element)
 WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
 WebUI.delay(2)
@@ -72,17 +84,27 @@ WebUI.delay(2)
 // Search By SKU
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Logo'),FailureHandling.OPTIONAL)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'))
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), ProductSKU)
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
+if(!WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/MobileBottomMenu'), 3)) {
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'))
+	WebUI.focus(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'))
+	WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), ProductSKU)
+	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
+}else {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search icon-Mobile'))
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'))
+	WebUI.focus(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'))
+	WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), ProductSKU)
+	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
+}
+
 
 Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)
 Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
-WebUI.executeJavaScript("arguments[0].scrollIntoView();", Arrays.asList(Productlink_Element))
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(Productlink_Element)
 WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.delay(2)
+WebUI.delay(5)
 
 WebUI.closeBrowser()
