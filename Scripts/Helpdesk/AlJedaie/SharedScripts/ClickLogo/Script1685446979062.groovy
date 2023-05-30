@@ -21,6 +21,7 @@ boolean isMobile=false
 
 if(!WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Toggle_Nav_Left-Mobile'),3)) {
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'))
-}else {
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo-Mobile'))
+}else if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo-Mobile'),5)) {
+		WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo-Mobile'))
 }
+	

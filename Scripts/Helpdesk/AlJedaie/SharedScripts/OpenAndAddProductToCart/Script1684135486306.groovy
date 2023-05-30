@@ -93,9 +93,8 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedai
 		}
 		trials = trials+1
 		
-		if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'),5,FailureHandling.OPTIONAL)){
-			WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'),FailureHandling.OPTIONAL)
-		}
+		WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/ClickLogo'), [:],	FailureHandling.STOP_ON_FAILURE)
+
 		WebUI.waitForPageLoad(20)
 		WebUI.delay(2)
 		
