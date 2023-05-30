@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>PhoneLoginTab</name>
+   <name>PhoneLoginTab-Mobile</name>
    <tag></tag>
-   <elementGuidId>5c00bf8b-2933-4cee-afb9-4f1e028eba55</elementGuidId>
+   <elementGuidId>8d5a0b52-bd38-4ccf-ad86-d3ca17f30b7e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class=&quot;cdz-popup-inner&quot;]//div//div//div//div//div//div//div//form[@id=&quot;login-form&quot;]//fieldset//div//label//span//a[text()=&quot;هاتف&quot;]</value>
+         <value>//*[@id=&quot;login-form&quot;]/fieldset/div[@class=&quot;field note&quot;]/../div/label/span/a[text()=&quot;هاتف&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -67,5 +67,6 @@ while (removeProductFromCartElements.size() != 0) {
 		}
 		removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
 	}
+	WebUI.delay(2)
 }
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Cart/OutSideCart'))

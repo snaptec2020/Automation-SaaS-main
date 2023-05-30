@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>PhoneLoginTab</name>
+   <name>ConfirmOTPbtn-Mobile</name>
    <tag></tag>
-   <elementGuidId>5c00bf8b-2933-4cee-afb9-4f1e028eba55</elementGuidId>
+   <elementGuidId>4011ad91-883a-4be4-9207-9c247c294898</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class=&quot;cdz-popup-inner&quot;]//div//div//div//div//div//div//div//form[@id=&quot;login-form&quot;]//fieldset//div//label//span//a[text()=&quot;هاتف&quot;]</value>
+         <value>//div[@class=&quot;block block-customer-login&quot;]//form[@id=&quot;login-form&quot;]//fieldset//button[text()=&quot;تحقق من OTP&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

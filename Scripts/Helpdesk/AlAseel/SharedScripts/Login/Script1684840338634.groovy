@@ -37,22 +37,44 @@ import org.openqa.selenium.remote.server.handler.GetCurrentUrl as WebElement
 
 
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Login'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/LoginPopup'),5)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/PhoneLoginTab'),10)
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/PhoneLoginTab'),10)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/PhoneLoginTab'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Login'))
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Login'), 5)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Login'))
+}else {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Login-Mobile'))
+}
+
+//WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/LoginPopup'),5)
+
+
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/PhoneLoginTab'),10)) {
+	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/PhoneLoginTab'),10)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/PhoneLoginTab'))
+}else {
+	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/PhoneLoginTab-Mobile'),10)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/PhoneLoginTab-Mobile'))
+}
+
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/LoginTolephone'), 20)
 
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/LoginTolephone'), GlobalVariable.FE_Tel)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/LoginButton'))
+//WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/LoginTolephone'), Keys.chord(Keys.ENTER))
+//CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/LoginButton'), 3)
 
 WebUI.delay(2)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/SendOTP'), 5)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/SendOTP'))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/CheckOTPText'),5)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/CheckOTPText'))
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/LoginButton'), 5)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/LoginButton'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/SendOTP'))
+	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/CheckOTPText'),5)
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/CheckOTPText'))
+}else {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/LoginButton-Mobile'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/SendOTP-Mobile'))
+	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/CheckOTPText-Mobile'),5)
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/CheckOTPText-Mobile'))
+}
+
 
 
 
@@ -132,9 +154,15 @@ WebUI.delay(2)
 
 WebUI.switchToWindowIndex(currentTab)
 
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/OTPField'), OTP)
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/OTPField'), 3)) {
+	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/OTPField'), OTP)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/ConfirmOTPbtn'))
+}else {
+	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/OTPField-Mobile'), OTP)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/ConfirmOTPbtn-Mobile'))
+}
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/ConfirmOTPbtn'))
+
 WebUI.waitForPageLoad(30)
 WebUI.delay(3)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/AccountPage/AccountPageTitle'), 20)
@@ -142,10 +170,11 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/F
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/AccountPage/AccountPageTitle'), FailureHandling.STOP_ON_FAILURE)
 
 WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/ConfirmOTPbtn'), 2)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountBtn'))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountBtn'))
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountBtn'), 5)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountBtn'))
+	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountPopup'),5)
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountPopup'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/CloseAccountPopup'))
+}
 
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountPopup'),5)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/AccountPopup'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/CloseAccountPopup'))
