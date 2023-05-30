@@ -6,11 +6,11 @@
    <elementGuidId>31369c52-4bcc-4e4f-affc-63c0c0e9dfdf</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//button[contains(@class,&quot;login-cancel-button&quot;)]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@class=&quot;tamara-cancel-button-template&quot;]/button[1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

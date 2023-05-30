@@ -55,10 +55,9 @@ WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/Logi
 
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/ClearProductsFromCartPage'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'),5,FailureHandling.OPTIONAL)){
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'),FailureHandling.OPTIONAL)
-}
-//WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'))
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/ClickLogo'), [:],	FailureHandling.STOP_ON_FAILURE)
+
+
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
 /////////////////////////
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/productFullDetail-Name'))
@@ -108,6 +107,7 @@ if (totalValue < 99) {
 WebUI.delay(3)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/PriceSummaryButton'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/PriceSummaryButton'),10)
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/PriceSummaryButton'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/PriceSummaryButton'))
 
 if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/Step_4_PaymentMethods'),FailureHandling.OPTIONAL)) {
@@ -121,6 +121,7 @@ if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJeda
 WebUI.waitForPageLoad(20)
 WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/LoadingImg'), 10)
 //WebUI.verifyElementNotVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/MapErrorCannotLoad'))
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/Step_4_PaymentMethods'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/Step_4_PaymentMethods'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/Step_3_ShipmentMethod'))
 //WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/Step_2_ShipmentLocation'))
@@ -138,8 +139,10 @@ if (Paymentlist.size() != 2) {
    assert false
 } else {
 	// Tamara
+	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_1_Text'))
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_1_Text'))
 	// Credit
+	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_2_Text'))
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_2_Text'))
 }
 
