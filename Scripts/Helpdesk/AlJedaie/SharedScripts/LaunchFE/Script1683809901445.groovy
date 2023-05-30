@@ -39,9 +39,16 @@ WebUI.maximizeWindow()
 WebUI.navigateToUrl(GlobalVariable.FE_URL,FailureHandling.OPTIONAL)
 if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/MailChimpIFrame'), 5, FailureHandling.OPTIONAL)) {
 	//Close the MailChimp ifram
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/MailChimpClose'),5)
-	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/MailChimpClose'),5)
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/MailChimpClose'))
+	if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/MailChimpClose'),5)) {
+		WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/MailChimpClose'),5)
+		WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/MailChimpClose'))
+	}else {
+		WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/MailChimpIFrame-Mobile'), 3)
+		WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/MailChimpClose-Mobile'),5)
+		WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/MailChimpClose-Mobile'))
+		WebUI.switchToDefaultContent()
+	}
+	
 }
 
 if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/AllowCookie'), 5, FailureHandling.OPTIONAL)) {

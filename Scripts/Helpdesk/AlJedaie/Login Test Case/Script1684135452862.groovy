@@ -28,27 +28,37 @@ import org.openqa.selenium.interactions.Actions
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
+boolean isMobile=false
+
 
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Toggle_Nav_Left-Mobile'),3)) {
+	isMobile=true
+}
 
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/Login'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Login'),5)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/AccountIcon'))
 WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/AccountIcon'))
 WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Login'),5)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/MyAccount'))
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/MyAccount'),3)
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Login/MyAccount'))
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/AccountPage/AccountPageTitle'), 10)
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/AccountPage/AccountPageTitle'), FailureHandling.STOP_ON_FAILURE)
 /////////////////////////
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'))
-WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/AccountIcon'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/AccountPage/SignOut'),FailureHandling.OPTIONAL)
 
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/ClickLogo'), [:],	FailureHandling.STOP_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/AccountIcon'))
+WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/AccountIcon'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/AccountPage/SignOut'),FailureHandling.OPTIONAL)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/AccountPage/SignOut'),3)
 WebUI.waitForPageLoad(10)
 
+WebUI.delay(5)
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/AccountIcon'))
 WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/AccountIcon'))
 WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/AccountPage/SignOut'),5)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Login'),10)
