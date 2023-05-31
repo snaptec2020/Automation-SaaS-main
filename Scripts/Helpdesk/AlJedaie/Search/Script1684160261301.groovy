@@ -111,7 +111,8 @@ WebUI.focus(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Search/Search
 WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Search/Search Bar context'), ProductTitle)
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
 
-String SearchResultsxpath='//div[@class="products wrapper grid products-grid"]//a[@href="' + ProductURL + '" and contains(normalize-space(text()),normalize-space("' + ProductTitle + '"))]'
+//String SearchResultsxpath='//div[@class="products wrapper grid products-grid"]//a[@href="' + ProductURL + '" and contains(normalize-space(text()),normalize-space("' + ProductTitle + '"))]'
+String SearchResultsxpath='//div[@class="products wrapper grid products-grid"]//h5/a[@href="' + ProductURL + '"]'
 println SearchResultsxpath
 TestObject Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)
