@@ -97,10 +97,15 @@ println ProductURL
 println ProductPrice
 
 // Search By Title
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'),FailureHandling.OPTIONAL)
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/ClickLogo'), [:],	FailureHandling.STOP_ON_FAILURE)
 WebUI.waitForPageLoad(10)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Search/Search icon'))
+if(!WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Toggle_Nav_Left-Mobile'),3)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Search/Search icon'))
+}else {
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Search/Search icon-Mobile'), 0)
+}
+	
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Search/Search Bar context'))
 WebUI.focus(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Search/Search Bar context'))
 WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Search/Search Bar context'), ProductTitle)
@@ -111,11 +116,7 @@ println SearchResultsxpath
 TestObject Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)
 WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
-WebUI.executeJavaScript("arguments[0].scrollIntoView();", Arrays.asList(Productlink_Element))
-//Actions actions = new Actions(DriverFactory.getWebDriver());
-//actions.moveToElement(Productlink_Element)
-//JavascriptExecutor jse2 = (JavascriptExecutor)driver;
-//jse2.executeScript("arguments[0].scrollIntoView()", myelement);
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(Productlink_Element)
 
 WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
@@ -123,8 +124,15 @@ WebUI.delay(2)
 
 
 // Search By SKU
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Logo'),FailureHandling.OPTIONAL)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Search/Search icon'))
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/ClickLogo'), [:],	FailureHandling.STOP_ON_FAILURE)
+WebUI.waitForPageLoad(10)
+
+if(!WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Toggle_Nav_Left-Mobile'),3)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Search/Search icon'))
+}else {
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Search/Search icon-Mobile'), 0)
+}
+
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Search/Search Bar context'))
 WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Search/Search Bar context'), ProductSKU)
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
@@ -132,7 +140,7 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Search/Sea
 Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)
 Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
-WebUI.executeJavaScript("arguments[0].scrollIntoView();", Arrays.asList(Productlink_Element))
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(Productlink_Element)
 WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
 
