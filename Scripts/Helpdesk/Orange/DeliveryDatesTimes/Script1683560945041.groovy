@@ -105,185 +105,26 @@ import org.openqa.selenium.WebElement
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
-// Only Chrome for now
-
-WebUI.openBrowser('')
-WebUI.closeBrowser()
+boolean isMobile=false
 
 
-// Only Chrome for now
-Map prefs = new HashMap<String, Object>()
-prefs.put("profile.default_content_setting_values.geolocation", 1) // 1:allow 2:block
-ChromeOptions options = new ChromeOptions()
-options.setExperimentalOption("prefs", prefs)
-ChromeDriver drivertest = new ChromeDriver()
-((LocationContext)drivertest).setLocation(new Location(GlobalVariable.Latitude,GlobalVariable.Longtitude , 1))
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/Orange/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/BottomMenu-Mobile'), 10)) {
+	isMobile=true
+}else {
+	isMobile=false
+}
 
-DriverFactory.changeWebDriver(drivertest)
-
-WebUI.navigateToUrl(GlobalVariable.FE_URL)
-
-WebUI.maximizeWindow()
-
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Login'), 20)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Login'))
-
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Login/LoginTolephone'), 20)
-
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Orange/FE/Login/LoginTolephone'), 20)
-
-WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Orange/FE/Login/LoginTolephone'), GlobalVariable.FE_Tel)
-
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Orange/FE/Login/LoginButton'), 10)
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Login/LoginButton'))
-
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Login/EnterOTP'), 10)
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Login/EnterOTP'), FailureHandling.STOP_ON_FAILURE)
-
-int currentTab = WebUI.getWindowIndex()
-
-//Robot robot = new Robot()
-//robot.keyPress(KeyEvent.VK_CONTROL)
-//robot.keyPress(KeyEvent.VK_T)
-//robot.keyRelease(KeyEvent.VK_CONTROL)
-//robot.keyRelease(KeyEvent.VK_T)
-WebDriver driver = DriverFactory.getWebDriver()
-
-JavascriptExecutor js = ((driver) as JavascriptExecutor)
-
-js.executeScript('window.open();')
-
-WebUI.switchToWindowIndex(currentTab + 1)
-
-WebUI.navigateToUrl(GlobalVariable.BE_URL)
-
-//WebUI.switchToWindowTitle('متجر عجلان واخوانه')
-WebUI.setText(findTestObject('Object Repository/Helpdesk/Orange/BE/Login/UserName'), GlobalVariable.BE_UserName)
-
-//WebUI.setEncryptedText(findTestObject('Object Repository/Helpdesk/Orange/BE/Login/Password'), 'h9YfHV16ZyMBoeJlmdP5xA==')
-WebUI.setText(findTestObject('Object Repository/Helpdesk/Orange/BE/Login/Password'), GlobalVariable.BE_Password)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/Login/LoginButton'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/Menu/Menu_MageDelight'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/Menu/Menu_MageDelight_MobileOTPLogin'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/Menu/Menu_MageDelight_MobileOTPLogin_SMSLog'))
-
-//WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/Page_SMS Log  Magento Admin/button_Remove'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/SmsLogPage/button_Filters'))
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/Orange/BE/SmsLogPage/transaction_type'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/Orange/BE/SmsLogPage/status'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/Orange/BE/SmsLogPage/s_id'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/Orange/BE/SmsLogPage/recipient_phone'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/Orange/BE/SmsLogPage/message_body'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/Orange/BE/SmsLogPage/entity_id_to'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/Orange/BE/SmsLogPage/entity_id_from'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/Orange/BE/SmsLogPage/api_service'), '')
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/Sales_Order_page/Sales_orders_FilterButton'))
-
-WebUI.delay(2)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/SmsLogPage/button_Filters'))
-
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Orange/BE/SmsLogPage/recipient_phone'), 2)
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/Orange/BE/SmsLogPage/recipient_phone'), GlobalVariable.FE_Tel)
-
-//WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Orange/BE/SmsLogPage/recipient_phone'), 
-//    Keys.chord(Keys.ENTER))
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/BE/Sales_Order_page/Sales_orders_FilterButton'))
-
-//TestObject FirstRowReceiptPhone = new TestObject()
-//FirstRowReceiptPhone.addProperty("xpath",ConditionType.EQUALS,"//tr[@class='data-row' and @data-repeat-index='0']/td[6]/div")
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/BE/SmsLogPage/SmsContentFirstRow'), 20)
-
-String OTP = WebUI.getText(findTestObject('Object Repository/Helpdesk/Orange/BE/SmsLogPage/SmsContentFirstRow'))
-
-println('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
-
-println(OTP)
-
-OTP = OTP.replace('كلمة المرور لتسجيل الدخول رمز: ', '')
-
-println(OTP)
-
-//WebUI.switchToWindowTitle('SMS Log / Magento Admin')
-//WebUI.switchToWindowTitle('متجر عجلان واخوانه')
-WebUI.delay(2)
-
-WebUI.switchToWindowIndex(currentTab)
-
-String xPath = '//input[@type=\'tel\' and contains( @aria-label,\'Digit 1\')]'
-
-TestObject firstOTPDigit = new TestObject('objectName')
-
-firstOTPDigit.addProperty('xpath', ConditionType.EQUALS, xPath)
-
-WebUI.sendKeys(firstOTPDigit, OTP)
-
-WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/Orange/FE/Login/EnterOTP'), 5, FailureHandling.STOP_ON_FAILURE)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/AccountPage/AccountPageTitle'), 20)
-
-//WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/AccountPage/AccountPageTitle'), FailureHandling.STOP_ON_FAILURE)
-WebElement AccountPageTitle = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/Orange/FE/AccountPage/AccountPageTitle'), 10)
-WebUI.verifyEqual(AccountPageTitle.getText(), GlobalVariable.CustomerName)
-WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Orange/FE/Login/EnterOTP'), 2)
-
-
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Orange/FE/AccountPage/SignOut'))
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/Orange/SharedScripts/Login'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 /////////////////////////
 WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Logo'))
 
-
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Orange/FE/Cart/view cart'),10)
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Cart/view cart'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/MiniCart/MiniCartFrame'))
-
-if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/MiniCart/MiniCartShowCartButton'),FailureHandling.OPTIONAL)) {
-	///Clear Cart
-	WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/MiniCart/MiniCartShowCartButton'))
-	
-	TestObject removeProductFromCart = new TestObject()
-	
-	removeProductFromCart.addProperty('xpath', ConditionType.EQUALS, '//span[text()="إزالة بند"]//parent::button[contains(@class,"product-button-")]')
-	
-	List<WebElement> removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
-	
-	while (removeProductFromCartElements.size() != 0) {
-		if (removeProductFromCartElements.size().equals(1)) {
-//			removeProductFromCartElements.get(0).click()
-			CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCartElements.get(0), 0)
-			removeProductFromCartElements.remove(0)
-		} else {
-//			removeProductFromCartElements.get(0).click()
-			CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCartElements.get(0), 0)
-			removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
-		}
-		WebUI.delay(1)
-	}
-}else {
-	//Close the Mini Cart
-	WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Cart/view cart'))
-}
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/Orange/SharedScripts/ClearProductsFromCartPage'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 
 //Open Random Product
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Logo'))
-CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductOrange'()
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/Orange/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 ///// Save Data in variable gettext getSKU
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/Orange/FE/Product/productFullDetail-Name'))
@@ -300,6 +141,7 @@ if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/Orange/
 //WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Logo'), 10)
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Cart/Add to cart - Active'))
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Orange/FE/Cart/Add to cart - Active'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Cart/Add to cart - Active'))
 
 
@@ -308,9 +150,12 @@ WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Orange/F
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Cart/view cart'))
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/MiniCart/MiniCartFrame'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/MiniCart/MiniCartShowCartButton'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/MiniCart/MiniCartShowCartButton'))
+if(!isMobile) {
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/MiniCart/MiniCartFrame'))
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/MiniCart/MiniCartShowCartButton'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/MiniCart/MiniCartShowCartButton'))
+}
+
 
 //Check Total Paid for Tabby and Tamara
 TestObject totalPaidTO = new TestObject()
@@ -353,7 +198,7 @@ if (totalValue < 99) {
 }
 
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Orange/FE/Cart/PriceSummaryButton'),10)
-
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Orange/FE/Cart/PriceSummaryButton'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Cart/PriceSummaryButton'))
 if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/Step_4_PaymentMethods'),FailureHandling.OPTIONAL)) {
 	WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Cart/PriceSummaryButton'))
@@ -362,6 +207,7 @@ if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/DeliverHere'),5)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/DeliverHere'),5)
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/DeliverHere'))
 CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/DeliverHere'), 5)
 
 //Steps
@@ -467,9 +313,13 @@ WebUI.verifyEqual(availableDatesElements.size(), 7)
 
 for(int i=0;i<7;i++) {
 	if(!i.equals(0)) {
-		WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/ShipmentMethodsList'), 5)
-		availableDatesElements.get(i).click()
-		}
+//		WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/ShipmentMethodsList'), 5)
+//		CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Orange/FE/Checkout/ShipmentMethodsList'))
+		CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(availableDatesElements.get(i))
+//		availableDatesElements.get(i).click()
+		CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(availableDatesElements.get(i), 0)
+	}
+	WebUI.delay(3)
 	Calendar calendar = Calendar.getInstance()
 	calendar.setTime(date)
 	int day = calendar.get(Calendar.DAY_OF_WEEK)

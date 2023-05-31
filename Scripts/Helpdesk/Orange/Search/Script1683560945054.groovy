@@ -28,15 +28,19 @@ import org.eclipse.persistence.jpa.jpql.parser.ConditionalTermBNF
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 
-WebUI.openBrowser('')
 
-WebUI.maximizeWindow()
+boolean isMobile=false
 
-WebUI.navigateToUrl(GlobalVariable.FE_URL)
 
-//Open Random Product
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Logo'))
-CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductOrange'()
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/Orange/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/BottomMenu-Mobile'), 10)) {
+	isMobile=true
+}else {
+	isMobile=false
+}
+
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/Orange/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
+
 
 ///// Save Data in variable gettext getSKU
 
@@ -57,7 +61,10 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE
 
 // Search By Title
 WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Logo'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Search/Search icon'))
+
+if(!isMobile) {
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Search/Search icon'))
+}
 
 //WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Search/Search icon'))
 
@@ -83,8 +90,9 @@ WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
 
 // Search By SKU
 WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Logo'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Search/Search icon'))
-
+if(!isMobile) {
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Search/Search icon'))
+}
 //WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Search/Search icon'))
 
 //WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Search/Search Feild'))

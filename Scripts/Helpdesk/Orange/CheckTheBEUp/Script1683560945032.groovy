@@ -21,7 +21,7 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl(GlobalVariable.BE_URL)
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/Orange/SharedScripts/LaunchBE'), [:],	FailureHandling.STOP_ON_FAILURE)
 WebUI.maximizeWindow()
 
 

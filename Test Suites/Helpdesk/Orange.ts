@@ -26,13 +26,6 @@
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>5fb2f7cc-7d5d-4035-94db-fc2a4ac2298f</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/Orange/CheckPaymentApplePay</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
       <guid>da0adfad-325e-4361-96c6-3ac51c584678</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -92,14 +85,7 @@
       <guid>9180eb93-1c24-41b0-b249-968fb45a6538</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/Orange/Login</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>a61cd098-cb0c-4c7d-b050-6deffa927df1</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/Orange/MobileView</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/Orange/Login Test Case</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>

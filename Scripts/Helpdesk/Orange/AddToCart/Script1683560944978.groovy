@@ -48,16 +48,19 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement
 import org.testng.TestRunner as WebElement
 
-WebUI.openBrowser('')
- 
-WebUI.maximizeWindow()
 
-WebUI.navigateToUrl(GlobalVariable.FE_URL)
+boolean isMobile=false
 
-//Open Random Product
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Logo'))
 
-CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductOrange'()
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/Orange/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/BottomMenu-Mobile'), 10)) {
+	isMobile=true
+}else {
+	isMobile=false
+}
+
+/////////////////////////
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/Orange/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 ///// Save Data in variable gettext getSKU
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/Orange/FE/Product/productFullDetail-Name'))
@@ -82,9 +85,12 @@ WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Orange/F
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Cart/view cart'))
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/MiniCart/MiniCartFrame'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/MiniCart/MiniCartShowCartButton'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/MiniCart/MiniCartShowCartButton'))
+
+if(!isMobile) {
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/MiniCart/MiniCartFrame'))
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/MiniCart/MiniCartShowCartButton'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/MiniCart/MiniCartShowCartButton'))
+}
 
 //TestObject Productlink_TO=new TestObject()
 TestObject Productlink = new TestObject()

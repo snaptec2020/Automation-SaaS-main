@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//span[text()=&quot;سلة التسوق&quot;]//parent::button</value>
+         <value>//button[contains(@class,&quot;cartTrigger-ButtonShoppingWrapper-&quot;) and contains(@class,&quot;cartTrigger-trigger-&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

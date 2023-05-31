@@ -514,7 +514,7 @@ public class HelpdeskUtil {
 
 			WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
 
-			WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
+			clickJS(element, 5)
 
 			if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Orange/FE/Cart/Add to cart - Active'),FailureHandling.OPTIONAL)) {
 				found =true
