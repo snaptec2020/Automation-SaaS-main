@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>BackToStore</name>
+   <name>BottomMenu-Mobile</name>
    <tag></tag>
-   <elementGuidId>cd1a9626-0a45-4fd6-84d8-a336be32068e</elementGuidId>
+   <elementGuidId>052d45db-59ab-4b24-95a6-6290edc67bea</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//*[@data-test=&quot;backToStore&quot; or text()=&quot;العودة إلى المتجر&quot;]</value>
+         <value>//div[@class=&quot;bottomTab-bottomTab-22L&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

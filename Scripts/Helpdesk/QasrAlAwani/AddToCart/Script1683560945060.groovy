@@ -45,12 +45,19 @@ import java.util.List as List
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 
-WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
+boolean isMobile=false
+
+
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/BottomMenu-Mobile'), 10)) {
+	isMobile=true
+}else {
+	isMobile=false
+}
 
 //Open Random Product
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
-CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductQasr'()
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/Qasr/FE/Product/productFullDetail-Name'))
 def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/Qasr/FE/Product/productFullDetail-sku'))
@@ -69,17 +76,9 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/S
 //
 //WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/Qasr/FE/Search Bar context'))
 
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/Add to cart'))
-
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/Add to cart'))
-
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
-
-
 
 Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,'//a[@href="/' + ProductURL + '" and contains(text(),"' + ProductTitle + '")]')

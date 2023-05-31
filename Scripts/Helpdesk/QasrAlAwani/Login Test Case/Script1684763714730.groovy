@@ -23,18 +23,38 @@ import org.openqa.selenium.JavascriptExecutor as JavascriptExecutor
 import org.openqa.selenium.WebDriver as WebDriver
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
-WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
+boolean isMobile=false
+
+
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/BottomMenu-Mobile'), 10)) {
+	isMobile=true
+}else {
+	isMobile=false
+}
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/Login'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 
 WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/EnterOTP'), 2)
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/AccountPage/SignOut'))
 
 /////////////////////////
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Login'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/AccountPage/SignOut'))
+if(!isMobile) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/AccountPage/SignOut'))
+}else {
+//	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/AccountPage/SignOut-Mobile'))
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Qasr/FE/AccountPage/SignOut-Mobile'), 2)
+}
+
+
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/AppDownload_close'), 5)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/AppDownload_close'))
+}
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Login'))
+
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountry'),20)
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountry'))
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountryDropDownKSA'),10)

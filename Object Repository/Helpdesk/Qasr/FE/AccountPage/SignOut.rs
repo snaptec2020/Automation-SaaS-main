@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div/div//div//div[contains(@class,&quot;privateAccountMenu-root-&quot;)]//button[text()=&quot;تسجيل الخروج&quot; and contains(@class,&quot;privateAccountMenu-signOutButton-&quot;)]</value>
+         <value>//div/div//div//div[contains(@class,&quot;privateAccountMenu-root&quot;)]//button[text()=&quot;تسجيل الخروج&quot; and contains(@class,&quot;privateAccountMenu-signOutButton-&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

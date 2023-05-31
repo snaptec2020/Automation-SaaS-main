@@ -28,11 +28,20 @@ import org.eclipse.persistence.jpa.jpql.parser.ConditionalTermBNF
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 
+
+boolean isMobile=false
+
+
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/BottomMenu-Mobile'), 10)) {
+	isMobile=true
+}else {
+	isMobile=false
+}
 
 //Open Random Product
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
-CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductQasr'()
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
+
 
 ///// Save Data in variable gettext getSKU
 
@@ -46,7 +55,9 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/S
 
 // Search By Title
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search icon'))
+if(isMobile) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search icon'))
+}
 
 //WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search icon'))
 
@@ -62,14 +73,16 @@ String SearchResults='//a[@href="/' + ProductURL + '"]//h2[contains(text(),"' + 
 TestObject Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResults)
 //WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(Productlink_TO)
 WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
 
 
 // Search By SKU
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search icon'))
-
+if(isMobile) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search icon'))
+}
 //WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search icon'))
 
 //WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search Feild'))
@@ -81,6 +94,7 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search 
 Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResults)
 //WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(Productlink_TO)
 WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
 

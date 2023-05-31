@@ -95,6 +95,7 @@ if (totalValue < 99) {
 	// To-Do Remove and add another product with less amount
 }
 
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PriceSummaryButton'))
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PriceSummaryButton'),10)
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PriceSummaryButton'))
@@ -163,6 +164,7 @@ if (Shipmentlist.size() != 1) {
 	println (Shipmentlist.size())
     assert false
 } else {
+	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShpmentMethod_1'))
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShpmentMethod_1'))
 
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentMethod_1_FastShipmentText_1'))
@@ -190,6 +192,12 @@ if (Paymentlist.size() != 3) {
 
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/PaymentMethod_3_Text'))
 }
+
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentCity'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentCity'))
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentCity'), "الرياض")
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentCity'),Keys.chord(Keys.ENTER))
+
 
 //Order with COD
 WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/PaymentMethod_4_Text'),5)

@@ -32,7 +32,7 @@ import java.util.concurrent.ConcurrentHashMap.KeySetView as KeySetView
 import org.eclipse.jdt.internal.compiler.ast.ForeachStatement as ForeachStatement
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
-import org.openqa.selenium.remote.server.handler.GetCurrentUrl 
+import org.openqa.selenium.remote.server.handler.GetCurrentUrl
 
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
@@ -64,37 +64,38 @@ List<WebElement> totalPaidElements = WebUI.findWebElements(totalPaidTO, 10)
 
 def totalText = ''
 
-totalPaidElements.each({ 
-        totalText += it.getText()
-    })
+totalPaidElements.each({
+		totalText += it.getText()
+	})
 
 //println(totalValue)
 def totalValue = totalText.toDouble()
 
 if (totalValue < 99) {
-    //increase the products
-    def neededQty = ((Math.ceil(99 / totalValue)) as int)
+	//increase the products
+	def neededQty = ((Math.ceil(99 / totalValue)) as int)
 
-    TestObject numberOfItems = new TestObject()
+	TestObject numberOfItems = new TestObject()
 
-    numberOfItems.addProperty('xpath', ConditionType.EQUALS, '//input[@name="quantity"]')
+	numberOfItems.addProperty('xpath', ConditionType.EQUALS, '//input[@name="quantity"]')
 
-    WebElement numberOfItemsElement = WebUiCommonHelper.findWebElement(numberOfItems, 10)
+	WebElement numberOfItemsElement = WebUiCommonHelper.findWebElement(numberOfItems, 10)
 	
-    numberOfItemsElement.sendKeys(Keys.chord(Keys.BACK_SPACE))
+	numberOfItemsElement.sendKeys(Keys.chord(Keys.BACK_SPACE))
 
-    numberOfItemsElement.sendKeys(Keys.chord(Keys.DELETE))
+	numberOfItemsElement.sendKeys(Keys.chord(Keys.DELETE))
 
-    println(neededQty.toString())
+	println(neededQty.toString())
 
-    numberOfItemsElement.sendKeys(neededQty.toString())
+	numberOfItemsElement.sendKeys(neededQty.toString())
 
-    numberOfItemsElement.sendKeys(Keys.chord(Keys.ENTER)) //   
-    //remove and select another product (need to remove and seach again)
+	numberOfItemsElement.sendKeys(Keys.chord(Keys.ENTER)) //
+	//remove and select another product (need to remove and seach again)
 } else if (totalValue > 2500) {
 	// To-Do Remove and add another product with less amount
 }
 
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PriceSummaryButton'))
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PriceSummaryButton'),10)
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PriceSummaryButton'))
@@ -161,15 +162,16 @@ List Shipmentlist = WebUiCommonHelper.findWebElements(temp, 30)
 
 if (Shipmentlist.size() != 1) {
 	println (Shipmentlist.size())
-    assert false
+	assert false
 } else {
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShpmentMethod_1'))
+	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShpmentMethod_1'))
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShpmentMethod_1'))
 
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentMethod_1_FastShipmentText_1'))
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentMethod_1_FastShipmentText_1'))
 
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentMethod_1_FastShipmentText_2'))
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentMethod_1_FastShipmentText_2'))
 
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentMethod_1_FastShipmentText_3'))
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentMethod_1_FastShipmentText_3'))
 }
 
 //We should check if shipment fee is 0 when total paid is more than x and 20 if less than x
@@ -181,22 +183,26 @@ paymentPath.addProperty('xpath', ConditionType.EQUALS, '//div[contains(@class,"c
 List Paymentlist = WebUiCommonHelper.findWebElements(paymentPath, 30)
 
 if (Paymentlist.size() != 3) {
- 	println (Paymentlist.size())
+	 println (Paymentlist.size())
    assert false
 } else {
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/PaymentMethod_1_Text'))
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/PaymentMethod_1_Text'))
 
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/PaymentMethod_2_Text'))
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/PaymentMethod_2_Text'))
 
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/PaymentMethod_3_Text'))
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/PaymentMethod_3_Text'))
 }
 
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentCity'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentCity'))
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentCity'), "الرياض")
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/ShipmentCity'),Keys.chord(Keys.ENTER))
 
 
+
+
 //Order with Tabby
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/PaymentMethod_1_Text'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/PaymentMethod_1_Text'))
 WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/Step_1_Login'), 5)
 
@@ -217,7 +223,7 @@ newTotalPaidElements.each({
     })
 
 println(newTotalText)
-
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/FinishPayment'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Checkout/FinishPayment'))
 
 WebUI.waitForPageLoad(20)

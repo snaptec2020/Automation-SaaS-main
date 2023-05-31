@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>BackToStore</name>
+   <name>AppDownload_close</name>
    <tag></tag>
-   <elementGuidId>cd1a9626-0a45-4fd6-84d8-a336be32068e</elementGuidId>
+   <elementGuidId>000e5027-91c0-47a2-ab5b-fc8c460a3715</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//*[@data-test=&quot;backToStore&quot; or text()=&quot;العودة إلى المتجر&quot;]</value>
+         <value>//button[@class=&quot;smartBanner-closeButton-1-W&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

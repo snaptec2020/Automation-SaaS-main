@@ -45,12 +45,12 @@ List<WebElement> removeProductFromCartElements = WebUiCommonHelper.findWebElemen
 
 while (removeProductFromCartElements.size() != 0) {
 	if (removeProductFromCartElements.size().equals(1)) {
+		CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(removeProductFromCartElements.get(0))
 		removeProductFromCartElements.get(0).click()
-
 		removeProductFromCartElements.remove(0)
 	} else {
+		CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(removeProductFromCartElements.get(0))
 		removeProductFromCartElements.get(0).click()
-
 		removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
 	}
 }

@@ -100,9 +100,8 @@ public class HelpdeskUtil {
 				elementIndexproduct) + ']')
 
 		WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
-
-		WebUI.executeJavaScript('arguments[0].click()', Arrays.asList(element))
-
+		ScrollToElement(tb)
+		clickJS(tb, 5)
 	}
 
 	@Keyword
