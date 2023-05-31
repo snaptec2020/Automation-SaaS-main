@@ -42,7 +42,18 @@ WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/Orange/SharedScripts/Login'
 
 /////////////////////////
 WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Logo'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Login'))
+
+if(!isMobile) {
+	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Login'), 20)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Login'))
+	
+}else {
+	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Login-Mobile'), 20)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/Shared/Login-Mobile'))
+	
+}
+
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Orange/FE/AccountPage/SignOut'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/Orange/FE/AccountPage/SignOut'))
 
 WebUI.delay(2)
