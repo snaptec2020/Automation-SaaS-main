@@ -347,6 +347,15 @@ public class HelpdeskUtil {
 
 	@Keyword
 	def OpenRandomProductTheBeautySecrets(){
+		boolean isMobile=false
+		if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/RightNav-Mobile'), 3)) {
+			isMobile=true
+		}else {
+			isMobile=false
+		}
+		if(isMobile) {
+			WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/RightNav-Mobile'))
+		}
 		List<WebElement> productsCategoriesList = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Categories'), 5)
 		println "Main Cat: "
 		println  productsCategoriesList.size()
@@ -358,6 +367,7 @@ public class HelpdeskUtil {
 				+ findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/Categories').findPropertyValue("xpath")
 				+ ')[' + randomCategorySelected.toString() + ']')
 		WebElement randomNumberCatProductElm = WebUiCommonHelper.findWebElement(randomNumberCatProductTO, 5)
+		ScrollToElement(randomNumberCatProductTO)
 		clickJS(randomNumberCatProductTO, 3)
 
 
@@ -372,7 +382,7 @@ public class HelpdeskUtil {
 			TestObject randomNumberCatProductTOL2 = new TestObject()
 			randomNumberCatProductTOL2.addProperty('xpath', ConditionType.EQUALS, randomNumberCatProductTOXPathL2)
 			WebElement randomNumberCatProductElmL2 = WebUiCommonHelper.findWebElement(randomNumberCatProductTOL2, 5)
-			WebUI.executeJavaScript("arguments[0].scrollIntoView(true);", Arrays.asList(randomNumberCatProductElmL2))
+			ScrollToElement(randomNumberCatProductElmL2)
 			clickJS(randomNumberCatProductTOL2, 3)
 		}
 
@@ -386,6 +396,7 @@ public class HelpdeskUtil {
 			String currentURL = WebUI.getUrl()
 			WebElement selectedProduct = prod.get(elementIndexproduct)
 			WebElement LinkSelectedElement = selectedProduct.findElement(By.xpath('.//a[@class="product-item-link"]'))
+			ScrollToElement(LinkSelectedElement)
 			clickJS(LinkSelectedElement, 5)
 			//			WebUI.navigateToUrl("https://www.thebodyshop.com.sa/east/ar/fragrance/view-all-fragrance/black-musk-eau-de-toilette-p-p053023")
 			WebUI.delay(2)

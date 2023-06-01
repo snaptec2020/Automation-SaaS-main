@@ -22,7 +22,7 @@ WebUI.openBrowser('')
 WebUI.maximizeWindow()
 
 
-WebUI.navigateToUrl(GlobalVariable.BE_URL)
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBeautySecrets/KSA/SharedScripts/LaunchBE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/BE/Login/UserName'), GlobalVariable.BE_UserName)
 	

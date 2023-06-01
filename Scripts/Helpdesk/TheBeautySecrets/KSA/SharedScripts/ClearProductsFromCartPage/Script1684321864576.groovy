@@ -87,9 +87,11 @@ if (WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBea
 	
 	while (removeProductFromCartElements.size() != 0) {
 		if (removeProductFromCartElements.size().equals(1)) {
+			CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(removeProductFromCart)
 			CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCart, 10)
 			removeProductFromCartElements.remove(0)
 		} else {
+			CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(removeProductFromCart)
 			CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCart, 10)
 			removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
 		}

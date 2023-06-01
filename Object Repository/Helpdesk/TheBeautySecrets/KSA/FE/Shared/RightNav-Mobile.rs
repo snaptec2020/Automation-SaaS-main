@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>PaymentMethod_3_Text</name>
+   <name>RightNav-Mobile</name>
    <tag></tag>
-   <elementGuidId>fc5664b3-c002-431f-89bc-c4ab672b6783</elementGuidId>
+   <elementGuidId>94802b0d-f7db-495d-bc98-1dc642881f3d</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@data-role=&quot;payment-methods-load&quot;]/div[contains(@data-bind,&quot;_active&quot;)]/div/label/span[text()=&quot;قسم فاتورتك على 3 دفعات بدون فوائد ورسوم خفية&quot;]</value>
+         <value>//button[contains(@class,&quot;action nav-toggle hidden-lg&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
