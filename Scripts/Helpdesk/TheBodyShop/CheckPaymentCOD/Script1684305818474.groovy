@@ -159,6 +159,7 @@ TestObject paymentPath = new TestObject()
 paymentPath.addProperty('xpath', ConditionType.EQUALS, '//div[@class="payment-method" or @class="payment-method _active"]')
 WebUI.waitForElementVisible(paymentPath,10)
 List Paymentlist = WebUiCommonHelper.findWebElements(paymentPath, 30)
+WebUI.delay(5)
 
 if (Paymentlist.size() != 3) {
  	println (Paymentlist.size())
