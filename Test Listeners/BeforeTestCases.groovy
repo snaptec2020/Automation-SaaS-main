@@ -7,7 +7,8 @@ import org.eclipse.persistence.jpa.jpql.parser.BooleanExpressionBNF
 
 import com.eviware.soapui.config.TestSuiteRunTypes
 import com.eviware.soapui.config.impl.TestSuiteRunTypesImpl
-import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.checkpoint.Checkpoint
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData
@@ -44,7 +45,17 @@ class BeforeTestCases {
 	//def testCases = []
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
+		if(GlobalVariable.RunningMode.equals("2") & !testCaseContext.getTestCaseId().contains('RunOnAllMobileWebBrowsers')) {
+			testCaseContext.skipThisTestCase()
+		}else if(GlobalVariable.RunningMode.equals("1") & testCaseContext.getTestCaseId().contains('RunOnAllMobileWebBrowsers')) {
+			testCaseContext.skipThisTestCase()
+		}
+		
 		if(testCaseContext.getTestCaseId().indexOf("/Helpdesk/")>0) {
+//			List<String> productList =findTestData("Data Files/Mobile/Mobile sizes").getAllData()
+//			Map chromeOptions =new HashMap<String, Object>()
+//			chromeOptions.put("deviceName", productList.get(0).get(0))
+//			RunConfiguration.setWebDriverPreferencesProperty('mobileEmulation', chromeOptions)
 			return
 		}
 		//testCases << testCaseContext.testCaseId
@@ -72,7 +83,7 @@ class BeforeTestCases {
 			return
 		}
 
-				GlobalVariable.testSuiteStatus = testSuiteContext.testSuiteId
+		GlobalVariable.testSuiteStatus = testSuiteContext.testSuiteId
 		setRunningMode(testSuiteContext.testSuiteId)
 		//KeywordUtil.logInfo('**************************'+GlobalVariable.testSuiteStatus)
 		//sampleBeforeTestCase(testCaseContext.skipThisTestCase())

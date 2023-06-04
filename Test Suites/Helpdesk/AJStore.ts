@@ -12,13 +12,6 @@
    <rerunImmediately>false</rerunImmediately>
    <testSuiteGuid>985e3ff8-d13f-4142-9c54-ef21c14b8d94</testSuiteGuid>
    <testCaseLink>
-      <guid>736af3ae-cd9a-49e9-869b-d6a86d2b622b</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/AjStore/AddToCart</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
       <guid>5c8abd04-d1cb-49a9-98aa-bed0e7618504</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -72,6 +65,20 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Helpdesk/AjStore/Search</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>736af3ae-cd9a-49e9-869b-d6a86d2b622b</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Helpdesk/AjStore/AddToCart</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>d22e67a4-5e5b-4449-8b04-2791c81c75d9</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Shared/RunOnAllMobileWebBrowsers</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>
