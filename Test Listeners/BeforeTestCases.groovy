@@ -50,9 +50,15 @@ class BeforeTestCases {
 				WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 			}else {
 				if(GlobalVariable.RunningMode.equals("2")) {
+					int SelectedMobile = GlobalVariable.MobileType.toString().toInteger()
+					if (SelectedMobile.equals(0)){
+						SelectedMobile=0
+					}else {
+						SelectedMobile=SelectedMobile-1
+					}
 					List<List<String>> productList =findTestData("Data Files/Mobile/Mobile sizes").getAllData()
 					Map chromeOptions =new HashMap<String, Object>()
-					chromeOptions.put("deviceName", productList.get(GlobalVariable.MobileType.toString().toInteger()-1).get(0))
+					chromeOptions.put("deviceName", productList.get(SelectedMobile).get(0))
 					RunConfiguration.setWebDriverPreferencesProperty('mobileEmulation', chromeOptions)
 				}
 			}

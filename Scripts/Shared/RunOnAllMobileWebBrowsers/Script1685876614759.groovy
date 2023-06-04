@@ -43,7 +43,14 @@ def ReRunSuiteOnMobileVersions() {
 	GPathResult testList = new XmlSlurper().parseText(xmlText)
 	List<List<String>> productList =findTestData("Data Files/Mobile/Mobile sizes").getAllData()
 	Map chromeOptions =new HashMap<String, Object>()
-	for(int i=0;i<productList.size();i++) {
+	int start=0
+	int end=productList.size()-1
+	if(!GlobalVariable.MobileType.toString().toInteger().equals(0)) {
+		start=GlobalVariable.MobileType.toString().toInteger()-1
+		end=GlobalVariable.MobileType.toString().toInteger()-1
+	}
+	
+	for(int i=start;i<=end;i++) {
 		chromeOptions.put("deviceName", productList.get(i).get(0))
 		RunConfiguration.setWebDriverPreferencesProperty('mobileEmulation', chromeOptions)
 		testList.testCaseLink.each {

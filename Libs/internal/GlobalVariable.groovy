@@ -90,7 +90,7 @@ public class GlobalVariable {
     public static Object RunningMode
      
     /**
-     * <p>Profile default : 1=iPhone, 2=Android</p>
+     * <p>Profile default : 0=All, 1=iPhone, 2=Android</p>
      */
     public static Object MobileType
      
