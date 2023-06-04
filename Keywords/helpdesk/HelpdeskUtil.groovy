@@ -445,6 +445,17 @@ public class HelpdeskUtil {
 
 	@Keyword
 	def OpenRandomProductAlShamasy(){
+		boolean isMobile=false
+		if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/RightNav-Mobile'), 3)) {
+			isMobile=true
+		}else {
+			isMobile=false
+		}
+		
+		if(isMobile) {
+			ScrollToElement(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/RightNav-Mobile'))
+			clickJS(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/RightNav-Mobile'), 5)
+		}
 		List<WebElement> productsCategoriesList = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Categories'), 5)
 		println "Main Cat: "
 		println  productsCategoriesList.size()
@@ -456,6 +467,7 @@ public class HelpdeskUtil {
 				+ findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/Categories').findPropertyValue("xpath")
 				+ ')[' + randomCategorySelected.toString() + ']')
 		WebElement randomNumberCatProductElm = WebUiCommonHelper.findWebElement(randomNumberCatProductTO, 5)
+		ScrollToElement(randomNumberCatProductTO)
 		clickJS(randomNumberCatProductTO, 3)
 
 		WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/ProductsScrollerMainItem'), 10)
@@ -468,6 +480,7 @@ public class HelpdeskUtil {
 			String currentURL = WebUI.getUrl()
 			WebElement selectedProduct = prod.get(elementIndexproduct)
 			WebElement LinkSelectedElement = selectedProduct.findElement(By.xpath('.//a[@class="product-item-link"]'))
+			ScrollToElement(LinkSelectedElement)
 			clickJS(LinkSelectedElement, 5)
 			//			WebUI.navigateToUrl("https://www.thebodyshop.com.sa/east/ar/fragrance/view-all-fragrance/black-musk-eau-de-toilette-p-p053023")
 			WebUI.delay(2)
@@ -489,7 +502,7 @@ public class HelpdeskUtil {
 			//				}
 			//			}
 		}else {
-			OpenRandomProductTBS()
+			OpenRandomProductAlShamasy()
 		}
 
 	}

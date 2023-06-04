@@ -73,9 +73,12 @@ CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlShamasy'()
 //WebUI.navigateToUrl("https://www.alshamasy.com/ar/76/010-046/3tr+bc-blue-1.html")
 
 /////////////////////////
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/productFullDetail-Name'))
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/productFullDetail-Name'))
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/productFullDetail-sku'))
 def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/productFullDetail-sku')).replace(" ", "")
 def ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/Product_Price'))
 def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/Product_Price')).replace("ر.س", "").replace(" ", "")
 
 println ProductTitle
@@ -85,6 +88,7 @@ println ProductPrice
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/Add to cart'),5)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/Add to cart'),5)
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/Add to cart'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/Add to cart'), FailureHandling.OPTIONAL)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/MiniCart/CloseMiniCart'), 5)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/MiniCart/CloseMiniCart'),5)
@@ -104,9 +108,12 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShama
 		WebUI.delay(2)
 		
 		CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlShamasy'()
+		CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/productFullDetail-Name'))
 		ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/productFullDetail-Name'))
+		CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/productFullDetail-sku'))
 		ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/productFullDetail-sku')).replace(" ", "")
 		ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")
+		CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/Product_Price'))
 		ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Product/Product_Price')).replace("ر.س", "").replace(" ", "")
 		println ProductTitle
 		println ProductSKU
@@ -114,6 +121,7 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShama
 		println ProductPrice
 		
 		WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/Add to cart'))
+		CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/Add to cart'))
 		WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Cart/Add to cart'))
 
 		if(trials>=10) {

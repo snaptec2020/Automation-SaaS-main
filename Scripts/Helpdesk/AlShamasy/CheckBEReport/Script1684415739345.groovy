@@ -40,8 +40,9 @@ WebUI.waitForPageLoad(20)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/BE/Menu/Menu_Reports'))
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlShamasy/BE/Menu/Menu_Reports_Orders'),5)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlShamasy/BE/Menu/Menu_Reports_Orders'),5)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/BE/Menu/Menu_Reports_Orders'))
-
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlShamasy/BE/Menu/Menu_Reports_Orders'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AlShamasy/BE/Menu/Menu_Reports_Orders'))
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlShamasy/BE/Menu/Menu_Reports_Orders'), 0)
 //DateFormat dateFormat = new SimpleDateFormat("MM/dd/yy");
 //GregorianCalendar cal = new GregorianCalendar();
 def now = new Date().format('MM/dd/yyyy')
