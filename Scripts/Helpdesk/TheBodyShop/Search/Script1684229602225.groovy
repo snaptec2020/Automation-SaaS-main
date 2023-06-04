@@ -28,15 +28,36 @@ import org.eclipse.persistence.jpa.jpql.parser.ConditionalTermBNF
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 
+
+boolean isMobile=false
+
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBodyShop/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/RightNav-Mobile'), 3)) {
+	isMobile=true
+}else {
+	isMobile=false
+}
 
 WebUI.scrollToPosition(0,0)
-CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductTBS'()
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBodyShop/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
 
+
+String productFullDetailName = ""
+String SearchIcon=""
+if(!isMobile) {
+	productFullDetailName='Object Repository/Helpdesk/TheBodyShop/FE/Product/productFullDetail-Name'
+	SearchIcon='Object Repository/Helpdesk/TheBodyShop/FE/Search/Search icon'
+}else {
+	productFullDetailName='Object Repository/Helpdesk/TheBodyShop/FE/Product/productFullDetail-Name-Mobile'
+	SearchIcon='Object Repository/Helpdesk/TheBodyShop/FE/Search/Search icon-Mobile'
+}
 /////////////////////////
-def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/productFullDetail-Name'))
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject(productFullDetailName))
+def ProductTitle = WebUI.getText(findTestObject(productFullDetailName))
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/productFullDetail-sku'))
 def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/productFullDetail-sku')).findAll('\\(.*\\)').get(0).replace("#", "").replace("(", "").replace(")", "")
 def ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/Product_Price'))
 def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/Product_Price')).replace("SAR", "").replace("ر.س", "").replace(" ", "")
 
 println ProductTitle
@@ -44,16 +65,12 @@ println ProductSKU
 println ProductURL
 println ProductPrice
 
-WebUI.scrollToPosition(0,0)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Logo'), 10)
-
-
 // Search By Title
 WebUI.scrollToPosition(0,0)
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Logo'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Search/Search icon'))
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBodyShop/SharedScripts/ClickLogo'), [:],	FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject(SearchIcon))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Search/Search icon'))
+WebUI.click(findTestObject(SearchIcon))
 
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Search/Search Bar context'))
@@ -62,20 +79,23 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Search/
 
 
 
-String SearchXPath='//a[@href="' + ProductURL + '" and text()="' + ProductTitle + '"]'
+String SearchXPath='//h3//a[@href="' + ProductURL + '" and text()="' + ProductTitle + '"]'
+println SearchXPath
 TestObject Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchXPath)
 //WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(Productlink_TO)
 WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
 
 
 // Search By SKU
 WebUI.scrollToPosition(0,0)
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Logo'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Search/Search icon'))
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBodyShop/SharedScripts/ClickLogo'), [:],	FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject(SearchIcon))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Search/Search icon'))
+//WebUI.click(findTestObject(SearchIcon))
+WebUI.click(findTestObject(SearchIcon))
 
 //WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Search/Search Feild'))
 
@@ -86,9 +106,10 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Search/
 Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchXPath)
 //WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(Productlink_TO)
 WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
 
 
-
+WebUI.delay(5)
 WebUI.closeBrowser()

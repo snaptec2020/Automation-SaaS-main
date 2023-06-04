@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button[contains(@class,&quot;login-cancel-button&quot;)]</value>
+         <value>//div[@class=&quot;tamara-cancel-button-template&quot;]/button[1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

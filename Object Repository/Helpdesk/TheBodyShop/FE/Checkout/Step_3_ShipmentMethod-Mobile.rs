@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>ProductsScrollerMainItem</name>
+   <name>Step_3_ShipmentMethod-Mobile</name>
    <tag></tag>
-   <elementGuidId>d84d4e3d-d574-4f42-8794-31b97e553796</elementGuidId>
+   <elementGuidId>4dc20612-97d3-4b9c-a45d-7adc1c791d15</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button[@title=&quot;أضف الي السلة&quot;]//ancestor::div[contains(@class,&quot;owl-item&quot;)]</value>
+         <value>//div[@class=&quot;checkout-shipping-container&quot;]/div/div[@class=&quot;step-title step_2 show-mobile&quot; and text()=&quot;عنوان وتكاليف الشحن&quot; ]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

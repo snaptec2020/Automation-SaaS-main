@@ -70,11 +70,26 @@ import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 
-WebUI.scrollToPosition(0,0)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'),10)
+boolean isMobile=false
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/RightNav-Mobile'), 3)) {
+	isMobile=true
+}else {
+	isMobile=false
+}
 
-if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'),FailureHandling.OPTIONAL)) {
-	WebUI.mouseOverOffset(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart'),10,10)
+WebUI.scrollToPosition(0,0)
+String CartCounter = ""
+String CartIcon=""
+if(!isMobile) {
+	CartCounter='Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'
+	CartIcon='Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart'
+}else {
+	CartCounter='Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter-Mobile'
+	CartIcon='Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart-Mobile'
+}
+if(WebUI.waitForElementVisible(findTestObject(CartCounter),20)) {
+	WebUI.click(findTestObject(CartIcon))
+	WebUI.mouseOverOffset(findTestObject(CartIcon),10,10)
 	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ViewCartMainPageBtn'),10)
 	TestObject removeProductFromCart = new TestObject()
 	removeProductFromCart.addProperty('xpath', ConditionType.EQUALS, '//td[@class="col item"]//a[@title="أزل المنتج"]')
@@ -83,10 +98,12 @@ if(WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBody
 	
 	while (removeProductFromCartElements.size() != 0) {
 		if (removeProductFromCartElements.size().equals(1)) {
-			CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCart, 10)
+			CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(removeProductFromCartElements.get(0))
+			CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCartElements.get(0), 10)
 			removeProductFromCartElements.remove(0)
 		} else {
-			CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCart, 10)
+			CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(removeProductFromCartElements.get(0))
+			CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(removeProductFromCartElements.get(0), 10)
 			removeProductFromCartElements = WebUiCommonHelper.findWebElements(removeProductFromCart, 10)
 		}
 	}

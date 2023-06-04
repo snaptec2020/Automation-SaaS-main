@@ -67,6 +67,23 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
+boolean isMobile=false
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/RightNav-Mobile'), 3)) {
+	isMobile=true
+}else {
+	isMobile=false
+}
+
+String CartCounter = ""
+String CartIcon=""
+if(!isMobile) {
+	CartCounter='Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'
+	CartIcon='Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart'
+}else {
+	CartCounter='Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter-Mobile'
+	CartIcon='Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart-Mobile'
+}
+
 //Open Random Product
 CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductTBS'()
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/productFullDetail-Name'))
@@ -77,7 +94,7 @@ def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheB
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/AddToCartFromProduct'),5)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/AddToCartFromProduct'),5)
 
-List<WebElement> counter = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'), 5)
+List<WebElement> counter = WebUiCommonHelper.findWebElements(findTestObject(CartCounter), 5)
 int noOfItemsBefore = 0
 if (counter.size()>0) {
 	noOfItemsBefor=counter.get(0).findElement(By.xpath("./span[@class='counter-number']")).getText().toInteger()
@@ -88,16 +105,16 @@ println noOfItemsBefore
 CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/AddToCartFromProduct'), 2)
 
 WebUI.scrollToPosition(0,0)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'),10)
+WebUI.waitForElementVisible(findTestObject(CartCounter),10)
 
-counter = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'), 5)
+counter = WebUiCommonHelper.findWebElements(findTestObject(CartCounter), 5)
 int noOfItemsAfter = 0
 if (counter.size()>0) {
 	noOfItemsAfter=counter.get(0).findElement(By.xpath("./span[@class='counter-number']")).getText().toInteger()
 }
 println noOfItemsAfter
 
-//WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart'))
+//WebUI.mouseOver(findTestObject(CartIcon))
 //WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/MiniCartDialog'))
 //WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/MiniCartDialog'),10)
 //WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ViewCartMainPageBtn'),10)
@@ -126,7 +143,7 @@ if(noOfItemsAfter!=noOfItemsBefore+1) {
 		WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/AddToCartFromProduct'),5)
 		WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/AddToCartFromProduct'),5)
 		
-		counter = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'), 5)
+		counter = WebUiCommonHelper.findWebElements(findTestObject(CartCounter), 5)
 		noOfItemsBefore = 0
 		if (counter.size()>0) {
 			noOfItemsBefor=counter.get(0).findElement(By.xpath("./span[@class='counter-number']")).getText().toInteger()
@@ -134,8 +151,8 @@ if(noOfItemsAfter!=noOfItemsBefore+1) {
 		println noOfItemsBefore
 		CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/AddToCartFromProduct'), 2)
 		WebUI.scrollToPosition(0,0)
-		WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'),10)
-		counter = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'), 5)
+		WebUI.waitForElementVisible(findTestObject(CartCounter),10)
+		counter = WebUiCommonHelper.findWebElements(findTestObject(CartCounter), 5)
 		noOfItemsAfter = 0
 		if (counter.size()>0) {
 			noOfItemsAfter=counter.get(0).findElement(By.xpath("./span[@class='counter-number']")).getText().toInteger()

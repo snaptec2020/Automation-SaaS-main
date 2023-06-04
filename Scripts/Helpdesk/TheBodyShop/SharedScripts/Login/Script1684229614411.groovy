@@ -32,10 +32,23 @@ import org.openqa.selenium.support.ui.Wait
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
+boolean isMobile=false
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/RightNav-Mobile'), 3)) {
+	isMobile=true
+}else {
+	isMobile=false
+}
 
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Login'), 20)
+if(!isMobile) {
+	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Login'), 20)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Login'))
+}else {
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/RightNav-Mobile'), 5)
+	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Login-Mobile'), 20)
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Login-Mobile'),3)
+	
+}
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Login'))
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Login/LoginTolephone'), 20)
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Login/LoginTolephone')

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>ProductsScrollerMainItem</name>
+   <name>Logo-Mobile</name>
    <tag></tag>
-   <elementGuidId>d84d4e3d-d574-4f42-8794-31b97e553796</elementGuidId>
+   <elementGuidId>02ad363d-e588-4b5e-8d0b-b6537717a55b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button[@title=&quot;أضف الي السلة&quot;]//ancestor::div[contains(@class,&quot;owl-item&quot;)]</value>
+         <value>//div[@class=&quot;mobile-menu-header&quot;]//a[@class=&quot;logo&quot; and @title=&quot;ذى بودى شوب&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

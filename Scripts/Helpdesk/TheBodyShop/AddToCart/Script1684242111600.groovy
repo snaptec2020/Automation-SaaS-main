@@ -53,14 +53,41 @@ import org.openqa.selenium.interactions.Actions
 
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
+boolean isMobile=false
+
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBodyShop/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/RightNav-Mobile'), 3)) {
+	isMobile=true
+}else {
+	isMobile=false
+}
+
+String CartCounter = ""
+String CartIcon=""
+if(!isMobile) {
+	CartCounter='Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'
+	CartIcon='Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart'
+}else {
+	CartCounter='Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter-Mobile'
+	CartIcon='Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart-Mobile'
+}
 
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBodyShop/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
 
+
+String productFullDetailName = ""
+if(!isMobile) {
+	productFullDetailName='Object Repository/Helpdesk/TheBodyShop/FE/Product/productFullDetail-Name'
+}else {
+	productFullDetailName='Object Repository/Helpdesk/TheBodyShop/FE/Product/productFullDetail-Name-Mobile'
+}
 /////////////////////////
-def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/productFullDetail-Name'))
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject(productFullDetailName))
+def ProductTitle = WebUI.getText(findTestObject(productFullDetailName))
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/productFullDetail-sku'))
 def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/productFullDetail-sku')).findAll('\\(.*\\)').get(0).replace("#", "").replace("(", "").replace(")", "")
 def ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/Product_Price'))
 def ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/Product_Price')).replace("SAR", "").replace("ر.س", "").replace(" ", "")
 
 println ProductTitle
@@ -69,8 +96,8 @@ println ProductURL
 println ProductPrice
 
 WebUI.scrollToPosition(0,0)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'),10)
-WebUI.mouseOverOffset(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart'),10,10)
+WebUI.waitForElementVisible(findTestObject(CartCounter),10)
+WebUI.mouseOverOffset(findTestObject(CartIcon),10,10)
 CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ViewCartMainPageBtn'),10)
 
 String SearchResultsxpath='//table[@id="shopping-cart-table"]//a[@href="' + ProductURL + '" and text()="' + ProductTitle + '"]'
@@ -78,6 +105,7 @@ println SearchResultsxpath
 TestObject Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)
 WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(Productlink_TO)
 WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
 

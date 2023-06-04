@@ -29,7 +29,20 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
 
+
+boolean isMobile=false
+
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBodyShop/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
+
+String LoginIcon=""
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/RightNav-Mobile'), 3)) {
+	isMobile=true
+	LoginIcon='Object Repository/Helpdesk/TheBodyShop/FE/Shared/Login-Mobile'
+}else {
+	isMobile=false
+	LoginIcon='Object Repository/Helpdesk/TheBodyShop/FE/Shared/Login'
+}
+
 
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBodyShop/SharedScripts/Login'), [:],	FailureHandling.STOP_ON_FAILURE)
 
@@ -44,18 +57,29 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodySho
 
 /////////////////////////
 WebUI.scrollToPosition(0,0)
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Logo'))
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBodyShop/SharedScripts/ClickLogo'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Login'))
+if(isMobile) {
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/RightNav-Mobile'), 5)
+	WebUI.click(findTestObject(LoginIcon))
+}else {
+	WebUI.click(findTestObject(LoginIcon))
+	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Login/AccountIcon'), 5)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Login/AccountIcon'))
+}
 WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/AccountPage/SignOut'),FailureHandling.OPTIONAL)
 
 WebUI.waitForPageLoad(40)
 
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Login'), 40)
+WebUI.waitForElementClickable(findTestObject(LoginIcon), 40)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Login'))
+if(isMobile) {
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/RightNav-Mobile'), 5)
+}
+WebUI.click(findTestObject(LoginIcon))
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Login/LoginTolephone'), 20)
 
+WebUI.delay(5)
 WebUI.closeBrowser()
 

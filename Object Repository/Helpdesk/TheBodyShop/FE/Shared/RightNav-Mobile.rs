@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>ProductsScrollerMainItem</name>
+   <name>RightNav-Mobile</name>
    <tag></tag>
-   <elementGuidId>d84d4e3d-d574-4f42-8794-31b97e553796</elementGuidId>
+   <elementGuidId>63097ebb-3716-419e-9e59-a2377a370b3a</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button[@title=&quot;أضف الي السلة&quot;]//ancestor::div[contains(@class,&quot;owl-item&quot;)]</value>
+         <value>//span[@data-action=&quot;toggle-nav&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

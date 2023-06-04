@@ -53,15 +53,19 @@ import org.openqa.selenium.JavascriptExecutor
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBodyShop/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
 
+boolean isMobile=false
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBodyShop/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/RightNav-Mobile'), 3)) {
+	isMobile=true
+}else {
+	isMobile=false
+}
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBodyShop/SharedScripts/Login'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBodyShop/SharedScripts/ClearProductsFromCartPage'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Logo'),5,FailureHandling.OPTIONAL)){
-	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Logo'),FailureHandling.OPTIONAL)
-}
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBodyShop/SharedScripts/ClickLogo'), [:],	FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/TheBodyShop/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
 
@@ -77,13 +81,25 @@ println ProductURL
 println ProductPrice
 
 WebUI.scrollToPosition(0,0)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'),10)
-WebUI.mouseOverOffset(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart'),10,10)
+String CartCounter = ""
+String CartIcon=""
+if(!isMobile) {
+	CartCounter='Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter'
+	CartIcon='Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart'
+}else {
+	CartCounter='Object Repository/Helpdesk/TheBodyShop/FE/Cart/CartCounter-Mobile'
+	CartIcon='Object Repository/Helpdesk/TheBodyShop/FE/Shared/Cart-Mobile'
+}
+
+WebUI.waitForElementVisible(findTestObject(CartCounter),10)
+WebUI.click(findTestObject(CartIcon))
+WebUI.mouseOverOffset(findTestObject(CartIcon),10,10)
 CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ViewCartMainPageBtn'),10)
 
 
 //Check Total Paid for Tabby and Tamara
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/totalNeededPay'), 10)
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/totalNeededPay'), 20)
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/totalNeededPay'))
 String totalText=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/totalNeededPay'))
 println(totalText)
 totalText =totalText.replace("ر.س", "").replace(" ", "").replace("٫", ".")
@@ -93,6 +109,7 @@ println(totalValue)
 if (totalValue < 99) {
     //increase the products
     int neededQty = ((Math.ceil(99 / totalValue)) as int)
+	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ProductQty'))
 	WebUI.focus(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ProductQty'))
 	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ProductQty'),Keys.chord(Keys.BACK_SPACE))
 	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ProductQty'),Keys.chord(Keys.DELETE))
@@ -100,6 +117,7 @@ if (totalValue < 99) {
 	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/ProductQty'),Keys.chord(Keys.ENTER))
 	WebUI.delay(3)
 	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/totalNeededPay'), 20)
+	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/totalNeededPay'))
     //remove and select another product (need to remove and seach again)
 } else if (totalValue > 2500) {
 	// To-Do Remove and add another product with less amount
@@ -108,6 +126,7 @@ if (totalValue < 99) {
 WebUI.delay(3)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/PriceSummaryButton'),10)
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/PriceSummaryButton'),10)
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/PriceSummaryButton'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Cart/PriceSummaryButton'))
 
 if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/Step_4_PaymentMethods'),FailureHandling.OPTIONAL)) {
@@ -116,14 +135,22 @@ if(!WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBod
 
 
 
-
+String ShipmentMethod=""
+if(!isMobile) {
+	ShipmentMethod='Object Repository/Helpdesk/TheBodyShop/FE/Checkout/Step_3_ShipmentMethod'
+}else {
+	ShipmentMethod='Object Repository/Helpdesk/TheBodyShop/FE/Checkout/Step_3_ShipmentMethod-Mobile'
+}
 //Steps
 WebUI.waitForPageLoad(20)
 WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/LoadingImg'), 20)
 //WebUI.verifyElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/MapErrorCannotLoad'))
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/Step_4_PaymentMethods'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/Step_4_PaymentMethods'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/Step_3_ShipmentMethod'))
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject(ShipmentMethod))
+WebUI.verifyElementVisible(findTestObject(ShipmentMethod))
 //WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/Step_2_ShipmentLocation'))
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/Step_1_Login'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/Step_1_Login'))
 
 //We should check if shipment fee is 0 when total paid is more than x and 20 if less than x
@@ -146,8 +173,9 @@ if (Paymentlist.size() != 3) {
 }
 
 
+
 //Order with Credit 
-WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/Step_4_PaymentMethods'), 5)
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/Step_4_PaymentMethods'))
 CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/PaymentMethod_2_Text'),3)
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/credit/CardNumberInputFrame'), 10)
@@ -192,6 +220,7 @@ WebUI.switchToDefaultContent()
 
 WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/LoadingImg'), 20)
 WebUI.delay(2)
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/FinishPayment'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/FinishPayment'))
 
 WebUI.waitForPageLoad(10)

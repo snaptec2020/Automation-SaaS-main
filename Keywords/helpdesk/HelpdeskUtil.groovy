@@ -300,18 +300,36 @@ public class HelpdeskUtil {
 
 	@Keyword
 	def OpenRandomProductTBS(){
-		List<WebElement> productsCategoriesList = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Categories'), 5)
+		
+		boolean isMobile=false
+		if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/RightNav-Mobile'), 3)) {
+			isMobile=true
+		}else {
+			isMobile=false
+		}
+		
+		String Categories=""
+		if(!isMobile) {
+			Categories='Object Repository/Helpdesk/TheBodyShop/FE/Shared/Categories'
+		}else {
+			clickJS(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/RightNav-Mobile'), 5)
+			Categories='Object Repository/Helpdesk/TheBodyShop/FE/Shared/Categories-Mobile'
+		}
+		
+		
+		List<WebElement> productsCategoriesList = WebUiCommonHelper.findWebElements(findTestObject(Categories), 5)
 		//		println "Main Cat: "
 		//		println  productsCategoriesList.size()
 		Random randomCategory = new Random()
-		int randomCategorySelected = randomCategory.nextInt(productsCategoriesList.size()-1) + 1
+		int randomCategorySelected = randomCategory.nextInt(productsCategoriesList.size()-3) + 1
 		TestObject randomNumberCatProductTO = new TestObject()
 				.addProperty('xpath', ConditionType.EQUALS, '('
-				+ findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/Categories').findPropertyValue("xpath")
+				+ findTestObject(Categories).findPropertyValue("xpath")
 				+ ')[' + randomCategorySelected.toString() + ']')
 		WebElement randomNumberCatProductElm = WebUiCommonHelper.findWebElement(randomNumberCatProductTO, 5)
+		ScrollToElement(randomNumberCatProductTO)
 		clickJS(randomNumberCatProductTO, 3)
-
+		
 		WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/ProductsScrollerMainItem'), 10)
 		List<WebElement> prod = WebUI.findWebElements(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/ProductsScrollerMainItem'),3)
 		if(prod.size()>0) {
@@ -320,6 +338,7 @@ public class HelpdeskUtil {
 			String currentURL = WebUI.getUrl()
 			WebElement selectedProduct = prod.get(elementIndexproduct)
 			WebElement LinkSelectedElement = selectedProduct.findElement(By.xpath('.//a[contains(@class,"product-item-link")]'))
+			ScrollToElement(LinkSelectedElement)
 			clickJS(LinkSelectedElement, 5)
 			//			WebUI.navigateToUrl("https://www.thebodyshop.com.sa/east/ar/fragrance/view-all-fragrance/black-musk-eau-de-toilette-p-p053023")
 			WebUI.delay(2)
@@ -335,6 +354,7 @@ public class HelpdeskUtil {
 					SubOptiontb.addProperty('xpath', ConditionType.EQUALS, SubOption)
 					List<WebElement> SubOptionElm=WebUiCommonHelper.findWebElements(SubOptiontb, 5)
 					if(SubOptionElm.size()>0) {
+						ScrollToElement(SubOptionElm.get(0))
 						clickJS(SubOptionElm.get(0), 5)
 					}
 				}
