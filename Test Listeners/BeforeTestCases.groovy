@@ -38,45 +38,44 @@ class BeforeTestCases {
 	 * Executes before every test case starts.
 	 * @param testCaseContext related information of the executed test case.
 	 */
-	
+
 	//WebUI.click(findTestObject('Multi Sites/Multi site dropdown menu'))
 	//@BeforeTestSuite
 	//public TestSuiteContext testSuiteContext
 	//def testCases = []
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
-		if(GlobalVariable.RunningMode.equals("2") & !testCaseContext.getTestCaseId().contains('RunOnAllMobileWebBrowsers')) {
-			testCaseContext.skipThisTestCase()
-		}else if(GlobalVariable.RunningMode.equals("1") & testCaseContext.getTestCaseId().contains('RunOnAllMobileWebBrowsers')) {
-			testCaseContext.skipThisTestCase()
-		}
-		
-		if(testCaseContext.getTestCaseId().indexOf("/Helpdesk/")>0) {
-//			List<String> productList =findTestData("Data Files/Mobile/Mobile sizes").getAllData()
-//			Map chromeOptions =new HashMap<String, Object>()
-//			chromeOptions.put("deviceName", productList.get(0).get(0))
-//			RunConfiguration.setWebDriverPreferencesProperty('mobileEmulation', chromeOptions)
-			return
-		}
-		//testCases << testCaseContext.testCaseId
-		
-			if(GlobalVariable.testSuiteStatus == 'Not Run') {
-			WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
-			//CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
+		if(GlobalVariable.testSuiteStatus == 'Not Run') {
+			if(testCaseContext.getTestCaseId().indexOf("/Helpdesk/")<=0) {
+				WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
+			}else {
+				if(GlobalVariable.RunningMode.equals("2")) {
+					List<List<String>> productList =findTestData("Data Files/Mobile/Mobile sizes").getAllData()
+					Map chromeOptions =new HashMap<String, Object>()
+					chromeOptions.put("deviceName", productList.get(GlobalVariable.MobileType.toString().toInteger()-1).get(0))
+					RunConfiguration.setWebDriverPreferencesProperty('mobileEmulation', chromeOptions)
+				}
 			}
+		}else {
+			if(GlobalVariable.RunningMode.equals("2") & !testCaseContext.getTestCaseId().contains('RunOnAllMobileWebBrowsers')) {
+				testCaseContext.skipThisTestCase()
+			}else if(GlobalVariable.RunningMode.equals("1") & testCaseContext.getTestCaseId().contains('RunOnAllMobileWebBrowsers')) {
+				testCaseContext.skipThisTestCase()
+			}
+		}
 	}
 	@AfterTestCase
 	def sampleAfterTestCase(TestCaseContext testCaseContext) {
 		if(testCaseContext.getTestCaseId().indexOf("/Helpdesk/")>0) {
 			return
 		}
-		
-		
-			if(GlobalVariable.testSuiteStatus == 'Not Run') {
+
+
+		if(GlobalVariable.testSuiteStatus == 'Not Run') {
 			WebUI.closeBrowser()
-			}
+		}
 	}
-	
+
 	@BeforeTestSuite
 	def sampleBeforeTestSuite(TestSuiteContext testSuiteContext) {
 		if(testSuiteContext.getTestSuiteId().indexOf("/Helpdesk/")>0) {
@@ -90,11 +89,11 @@ class BeforeTestCases {
 		WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 		getTestSuitLanguage(testSuiteContext.testSuiteId)
 		//WebUI.callTestCase(findTestCase('FE/Website launch/Verifications/Verifications after launch (headers and footers)'), [:],
-			//FailureHandling.STOP_ON_FAILURE)
-		
+		//FailureHandling.STOP_ON_FAILURE)
+
 		CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
-		
-		
+
+
 	}
 	@AfterTestSuite
 	def sampleAfterTestSuite(TestSuiteContext testSuiteContext) {
@@ -102,23 +101,23 @@ class BeforeTestCases {
 			return
 		}
 
-		
+
 		GlobalVariable.testSuiteStatus = 'Not Run'
 		//KeywordUtil.logInfo('**************************'+GlobalVariable.testSuiteStatus)
 		WebUI.closeBrowser()
 		//sampleBeforeTestCase(testCaseContext.skipThisTestCase())
 		//WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
-		
+
 	}
 	def setRunningMode(def testSuitPath) {
 		def runningFolder = testSuitPath =~'^.*?/(.*?)/.*'
 		switch(runningFolder[0][1].toString()) {
 			case 'Web Browsers': GlobalVariable.RunningMode='1'
-				 break
+				break
 			case 'Mobile browsers': GlobalVariable.RunningMode='2'
-				 break
+				break
 			case 'Mobile Apps': GlobalVariable.RunningMode='3'
-				 break
+				break
 		}
 	}
 	def getTestSuitLanguage(def testSuitPath) {
