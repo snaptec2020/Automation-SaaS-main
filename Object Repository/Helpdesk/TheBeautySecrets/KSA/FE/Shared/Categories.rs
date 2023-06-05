@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Categories</name>
+   <tag></tag>
+   <elementGuidId>9189cc7f-4312-4729-9a12-9bc41c2fefc0</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//div[@id=&quot;main-Menucontent&quot;]//a[contains(@class,&quot;level0&quot;)]</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id=&quot;main-Menucontent&quot;]//a[contains(@class,&quot;level0&quot;)]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//div[@id=&quot;main-Menucontent&quot;]//a[contains(@class,&quot;level0&quot;)]</value>
+      <webElementGuid>e8c111e2-d25d-4577-85d8-e6ed2daf5a13</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>a__1_2_3_4_5_6_7_8</name>
+   <tag></tag>
+   <elementGuidId>62d31a17-7ddb-4215-be34-797b74c48092</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='root']/main/header/div[3]/div/nav/div[5]/a</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>a</value>
+      <webElementGuid>a5672dab-ed37-4e9b-82b5-31e2f6e509b9</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>megaMenuItem-megaMenuLink-12G</value>
+      <webElementGuid>920629cf-bb64-4d69-aff8-b452408e7fe5</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>href</name>
+      <type>Main</type>
+      <value>/men/brands.html</value>
+      <webElementGuid>d2c315e9-b417-4d8f-9e36-0cd4065c8997</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>الأشمغة العالمية</value>
+      <webElementGuid>bf9ff6bc-6333-41da-94f7-e5a31144dd2d</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/header[@class=&quot;header-closed-2dE header-root-3ce&quot;]/div[@class=&quot;megaMenu-wrapper-2rA&quot;]/div[@class=&quot;megaMenu-container-2FL&quot;]/nav[@class=&quot;megaMenu-megaMenu-2LU&quot;]/div[@class=&quot;megaMenuItem-root-HSc&quot;]/a[@class=&quot;megaMenuItem-megaMenuLink-12G&quot;]</value>
+      <webElementGuid>50dd997c-d898-4b79-bc55-c621835c0e16</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/main/header/div[3]/div/nav/div[5]/a</value>
+      <webElementGuid>01dca1f3-a76a-42c2-a954-72b9faeae104</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:link</name>
+      <type>Main</type>
+      <value>//a[contains(text(),'الأشمغة العالمية')]</value>
+      <webElementGuid>de8badb2-20c6-41ad-818c-ff0e16361d51</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='كلاسيون'])[1]/following::a[1]</value>
+      <webElementGuid>7fd75962-ae75-4db9-bc0d-a96aee628b45</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='سروال'])[1]/following::a[2]</value>
+      <webElementGuid>b1a43270-cd0c-45a0-9d0d-1a359521511e</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='المنتجات الشتوية'])[1]/preceding::a[1]</value>
+      <webElementGuid>d1fa9d2c-e124-4e46-99f2-3fbf06a38308</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='البيجاما'])[1]/preceding::a[2]</value>
+      <webElementGuid>aafa0f69-8940-4344-978c-dd6614b582b9</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='الأشمغة العالمية']/parent::*</value>
+      <webElementGuid>8722a969-9ad5-4ccf-8227-ee0f5591809b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:href</name>
+      <type>Main</type>
+      <value>//a[contains(@href, '/men/brands.html')]</value>
+      <webElementGuid>d31b0216-b30e-4243-bf85-0adbd5d27dba</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[5]/a</value>
+      <webElementGuid>d075c19a-c724-4b90-9391-a1d406296cdb</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//a[@href = '/men/brands.html' and (text() = 'الأشمغة العالمية' or . = 'الأشمغة العالمية')]</value>
+      <webElementGuid>f54f47dc-cf89-4344-844f-1e855e06f8f7</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

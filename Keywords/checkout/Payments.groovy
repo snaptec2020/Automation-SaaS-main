@@ -6,8 +6,6 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
-import javax.xml.bind.annotation.XmlElementDecl.GLOBAL
-
 import org.openqa.selenium.WebElement
 
 import com.kms.katalon.core.annotation.Keyword
@@ -15,7 +13,6 @@ import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling
-import com.kms.katalon.core.model.RunningMode
 import com.kms.katalon.core.testcase.TestCase
 import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
@@ -80,11 +77,10 @@ public class Payments {
 		//utilityFunctions.addXpathToTestObject(findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + "["+elementsIndexPayments+"]")
 		//checkTheTarget()
 		KeywordUtil.logInfo("######################Try to click ##########")
-		//		if (WebUI.verifyElementClickable(utilityFunctions.addXpathToTestObject("("+findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + ")["+elementsIndexPayments+"]"), FailureHandling.CONTINUE_ON_FAILURE))  {
-		//			WebUI.click(utilityFunctions.addXpathToTestObject("("+findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + ")["+elementsIndexPayments+"]"))
-		//
-		//		}
-		utilityFunctions.clickOnObjectusingJavaScript(utilityFunctions.addXpathToTestObject("("+findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + ")["+elementsIndexPayments+"]"))
+		if (WebUI.waitForElementClickable(utilityFunctions.addXpathToTestObject("("+findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + ")["+elementsIndexPayments+"]"), 10 ,FailureHandling.CONTINUE_ON_FAILURE))  {
+			WebUI.click(utilityFunctions.addXpathToTestObject("("+findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + ")["+elementsIndexPayments+"]"))
+			
+		}
 		//WebUI.click(utilityFunctions.addXpathToTestObject(findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + "["+elementsIndexPayments.toString()+"]"))
 		KeywordUtil.logInfo("###################### clicked ##########")
 		placeOrder()
@@ -116,31 +112,14 @@ public class Payments {
 					//						}else {
 					//							KeywordUtil.logInfo("fail tabby+"+getGrandTotal.toString()+"\t!=\t"+TabbyTotal.toString())
 					//						}
-						switch (GlobalVariable.RunningMode)
-						{
-							case '1':
-								WebUI.verifyEqual(getGrandTotal, TabbyTotal, FailureHandling.CONTINUE_ON_FAILURE)
+						WebUI.verifyEqual(getGrandTotal, TabbyTotal, FailureHandling.CONTINUE_ON_FAILURE)
 
-								WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/Close payment method/Tabby back to Store'), 0)
-								WebUI.click(findTestObject('Object Repository/Check Out/Close payment method/Tabby back to Store'))
-								WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/Close payment method/Tabby Cancel'), 0)
-								WebUI.click(findTestObject('Object Repository/Check Out/Close payment method/Tabby Cancel'))
-								WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/Close payment method/Fail order check'), 0)
-								WebUI.takeFullPageScreenshot('./TabbyOrderResult.png')
-								break
-
-							case '2':
-								WebUI.verifyEqual(getGrandTotal, TabbyTotal, FailureHandling.CONTINUE_ON_FAILURE)
-
-								WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/Close payment method/Tabby close icon Phone'), 0)
-								WebUI.click(findTestObject('Object Repository/Check Out/Close payment method/Tabby close icon Phone'))
-								WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/Close payment method/Tabby Cancel'), 0)
-								WebUI.click(findTestObject('Object Repository/Check Out/Close payment method/Tabby Cancel'))
-								WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/Close payment method/Fail order check'), 0)
-								WebUI.takeFullPageScreenshot('./TabbyOrderResult.png')
-								break
-
-						}
+						WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/Close payment method/Tabby back to Store'), 0)
+						WebUI.click(findTestObject('Object Repository/Check Out/Close payment method/Tabby back to Store'))
+						WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/Close payment method/Tabby Cancel'), 0)
+						WebUI.click(findTestObject('Object Repository/Check Out/Close payment method/Tabby Cancel'))
+						WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/Close payment method/Fail order check'), 0)
+						WebUI.takeFullPageScreenshot('./TabbyOrderResult.png')
 						break
 					// ------------------Teler----------------------------------
 					case ~('مدى/فيزا/ماستر كارد/آبل باي') :
