@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>CategoriesL2</name>
+   <tag></tag>
+   <elementGuidId>b5e27777-f8a2-4176-b9a7-80a7a25e5d2c</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//div[@class=&quot;promobanner&quot;]</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//div[@class=&quot;promobanner&quot;]</value>
+      <webElementGuid>b7d9f94a-38c0-40bb-a671-b632cd99b44a</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>
