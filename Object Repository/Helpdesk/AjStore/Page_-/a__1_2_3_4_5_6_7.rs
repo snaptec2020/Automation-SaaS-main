@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>a__1_2_3_4_5_6_7</name>
+   <tag></tag>
+   <elementGuidId>28b66c54-2579-4820-b49a-843cce0b5c32</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='root']/main/header/div[3]/div/nav/div[3]/a</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>a</value>
+      <webElementGuid>5826473b-6e4e-422c-8860-0aa342547737</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>megaMenuItem-megaMenuLink-12G</value>
+      <webElementGuid>ccde6190-7173-4ccb-ac2d-f3fb0292ba4f</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>href</name>
+      <type>Main</type>
+      <value>/kids/underwear.html</value>
+      <webElementGuid>f6122870-eaa6-4606-a204-3b5871d9334f</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>الملابس الداخلية</value>
+      <webElementGuid>b7076c82-554c-4661-9a44-c5739974f9b1</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/main[@class=&quot;main-root-2iR&quot;]/header[@class=&quot;header-closed-2dE header-root-3ce&quot;]/div[@class=&quot;megaMenu-wrapper-2rA&quot;]/div[@class=&quot;megaMenu-container-2FL&quot;]/nav[@class=&quot;megaMenu-megaMenu-2LU&quot;]/div[@class=&quot;megaMenuItem-root-HSc&quot;]/a[@class=&quot;megaMenuItem-megaMenuLink-12G&quot;]</value>
+      <webElementGuid>6a93f73d-32c6-426a-b6da-c0e1bf5e69e4</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/main/header/div[3]/div/nav/div[3]/a</value>
+      <webElementGuid>21890f1f-7f8a-4aee-a725-a8d39c280ead</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:link</name>
+      <type>Main</type>
+      <value>//a[contains(text(),'الملابس الداخلية')]</value>
+      <webElementGuid>9472e627-95fc-4c3b-9ceb-228b386a5357</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='أطفال'])[2]/following::a[1]</value>
+      <webElementGuid>544fbff7-3b65-4c28-b552-d1101d7f067a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='وسط'])[1]/following::a[2]</value>
+      <webElementGuid>1135de60-38e8-4447-a3ac-bc4765fa82da</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='فانلة'])[1]/preceding::a[1]</value>
+      <webElementGuid>49ac3194-9555-4415-9a76-1cc8c8f4943e</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='المنتجات الشتوية'])[1]/preceding::a[2]</value>
+      <webElementGuid>630af1ab-10ef-4b17-a8a9-d151921b6ba6</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='الملابس الداخلية']/parent::*</value>
+      <webElementGuid>fdb4d828-a136-42f4-89bb-4ed6ba9e94ba</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:href</name>
+      <type>Main</type>
+      <value>//a[contains(@href, '/kids/underwear.html')]</value>
+      <webElementGuid>e37f8484-21f4-4915-bc45-5795a49bfc62</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[3]/a</value>
+      <webElementGuid>42f1c468-30d9-4fc3-927a-b7b5be24f11b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//a[@href = '/kids/underwear.html' and (text() = 'الملابس الداخلية' or . = 'الملابس الداخلية')]</value>
+      <webElementGuid>ca815245-169e-40f4-94c3-abcbf0805638</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
