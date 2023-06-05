@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Menu_MageDelight</name>
+   <tag></tag>
+   <elementGuidId>a1e23999-ef8e-4545-8b6e-1d7de327656b</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//a[@href = '#' and (text() = 'MageDelight' or . = 'MageDelight')]</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>#menu-magedelight-base-md-base-root > a</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>a</value>
+      <webElementGuid>dc2285da-24ec-49e2-9527-d9ea6a9c0fcb</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>href</name>
+      <type>Main</type>
+      <value>#</value>
+      <webElementGuid>14f45096-bf22-4e28-b7d2-b951b806ce9a</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>onclick</name>
+      <type>Main</type>
+      <value>return false;</value>
+      <webElementGuid>23354989-59ba-4970-b741-05634ae01c9d</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>MageDelight</value>
+      <webElementGuid>f5d19fab-c797-442b-94b1-b18b01d60d45</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;menu-magedelight-base-md-base-root&quot;)/a[1]</value>
+      <webElementGuid>c38cb512-9df2-4ea9-8ae7-4b837c0fff7a</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>(//a[@onclick='return false;'])[10]</value>
+      <webElementGuid>67909e29-9442-4990-89e5-5c90dd680a97</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//li[@id='menu-magedelight-base-md-base-root']/a</value>
+      <webElementGuid>3060323b-b2be-425e-8dab-b12b8abe1f50</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Manage Cities'])[1]/following::a[1]</value>
+      <webElementGuid>67d817bf-9352-4dad-b2e8-3fb840740bd8</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Store Locator'])[1]/following::a[2]</value>
+      <webElementGuid>cecdfad4-7789-4d0c-9c3a-5aba6945b27c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='MageDelight'])[2]/preceding::a[1]</value>
+      <webElementGuid>bba9231d-0719-4d6c-96a4-57e7b4f00712</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:href</name>
+      <type>Main</type>
+      <value>(//a[contains(@href, '#')])[19]</value>
+      <webElementGuid>28096063-9356-4563-8473-4916ddc8675c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//li[12]/a</value>
+      <webElementGuid>e422f14a-71af-4d44-89ab-fe8252368d3d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//a[@href = '#' and (text() = 'MageDelight' or . = 'MageDelight')]</value>
+      <webElementGuid>c87e1de6-408f-4b7b-982f-812ca09af3c2</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

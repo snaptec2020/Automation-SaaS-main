@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>ShipmentMethodsList</name>
+   <tag></tag>
+   <elementGuidId>3ae1ea7d-9004-4818-b3c4-91cfb86197ca</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//ul[contains(@class,&quot;shippingMethod-shippingMethodBody-&quot;)]</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//ul[contains(@class,&quot;shippingMethod-shippingMethodBody-&quot;)]</value>
+      <webElementGuid>a7a6a7a1-bb02-4c0f-bd78-0c5981b5ec70</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>
