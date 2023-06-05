@@ -85,8 +85,8 @@
       <name>RunningMode</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description>0=All, 1=iPhone, 2=Android</description>
-      <initValue>'0'</initValue>
+      <description>1=iPhone, 2=Android</description>
+      <initValue>'1'</initValue>
       <name>MobileType</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
