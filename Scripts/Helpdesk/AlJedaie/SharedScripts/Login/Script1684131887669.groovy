@@ -84,24 +84,28 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Menu/Menu_Mag
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Menu/Menu_MageDelight_MobileOTPLogin_SMSLog'))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/button_Filters'))
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/transaction_type'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/status'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/s_id'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/recipient_phone'), '')
-
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/entity_id_to'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/entity_id_from'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/api_service'), '')
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Sales_Order_page/Sales_orders_FilterButton'))
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/ClearFilter'), 10)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/ClearFilter'))
+}
+	
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/button_Filters'))
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/transaction_type'), '')
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/status'), '')
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/s_id'), '')
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/recipient_phone'), '')
+//
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/entity_id_to'), '')
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/entity_id_from'), '')
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/SmsLogPage/api_service'), '')
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/BE/Sales_Order_page/Sales_orders_FilterButton'))
 
 WebUI.delay(1)
 
