@@ -1,18 +1,16 @@
 {
-  "keywordFileContentHash": "C668271979AD8C724466E186C4D731CF",
+  "keywordFileContentHash": "833B3561DA7980B68AD69375F2882156",
   "keywordClasses": [
     {
       "name": "checkout.Payments",
       "keywordMethods": [
         {
           "name": "getPaymentMethodsList",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "getRandomPaymentMethods",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "paymentMethodToPayBySelectedMethod",
@@ -30,11 +28,10 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }
