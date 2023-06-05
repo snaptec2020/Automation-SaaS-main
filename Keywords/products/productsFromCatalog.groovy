@@ -28,6 +28,7 @@ import java.util.List
 
 import org.checkerframework.checker.guieffect.qual.UIType
 import org.openqa.selenium.By
+import org.openqa.selenium.Keys
 import org.openqa.selenium.WebElement
 import internal.GlobalVariable
 import utility.Utility
@@ -255,7 +256,7 @@ public class productsFromCatalog {
 		float maximum=2500
 		selectCatalogComponents()
 		WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
-		List<WebElement> prod = utilityFunctions.findWebElements('Object Repository/Products/Product container in page in target',30)
+		List <WebElement> prod = utilityFunctions.findWebElements('Object Repository/Products/Product container in page in target',30)
 		/*	if (prod.size()==0) {
 		 getSpecifiedinStockProductsFromRandomCategoryInTarget()
 		 }*/
@@ -269,7 +270,10 @@ public class productsFromCatalog {
 				def currentURL = WebUI.getUrl()
 				WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(currentAddToCartBtn))
 				//utilityFunctions.clickOnObjectusingJavaScript(currentAddToCartBtn)
-				WebUI.delay(5)
+				WebUI.delay(1)
+				if (currentURL.equals(WebUI.getUrl()) & WebUI.verifyElementNotVisible(findTestObject('Object Repository/Cart/Continue Shopping'),FailureHandling.OPTIONAL)  ) {
+					return
+				}
 				checkOnAddToStoreClickable(currentURL)
 				return true
 			}else if (priceOfSelectedPrudctAmount < minimum) {
@@ -277,16 +281,28 @@ public class productsFromCatalog {
 				WebElement currentAddToCartBtn=it.findElements(By.xpath("./div/div/button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to cart')]")).get(0)
 				def currentURL = WebUI.getUrl()
 				WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(currentAddToCartBtn))
-				WebUI.delay(5)
+				WebUI.delay(1)
+				if (currentURL.equals(WebUI.getUrl()) & WebUI.verifyElementNotVisible(findTestObject('Object Repository/Cart/Continue Shopping'),FailureHandling.OPTIONAL)  ) {
+					return
+				}
 				checkOnAddToStoreClickable(currentURL)
 				WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
 				float Total = (((WebUI.getText(findTestObject('Object Repository/Cart/Cart Subtotal (Inc VAT)')).replaceAll(',', '') =~ '\\d+\\.\\d+')[0]) as float)
 				int neededQty=Math.ceil(minimum/Total)
-				for (int i=1; i< neededQty ; i++) {
-					WebUI.waitForElementClickable(findTestObject('Object Repository/Cart/item plus'), 5)
-					WebUI.click(findTestObject('Object Repository/Cart/item plus'))
-					WebUI.delay(1)
-				}
+				//				for (int i=1; i< neededQty ; i++) {
+				//					WebUI.waitForElementClickable(findTestObject('Object Repository/Cart/item plus'), 5)
+				//					WebUI.click(findTestObject('Object Repository/Cart/item plus'))
+				//					WebUI.delay(1)
+				//				}
+				WebUI.verifyElementVisible(findTestObject('Object Repository/Cart/insert NeedQTY By text'), FailureHandling.CONTINUE_ON_FAILURE)
+
+				//WebUI.sendKeys(findTestObject(findTestObject('Object Repository/Cart/insert NeedQTY By text')), Keys.chord(Keys.CONTROL, 'a'))
+				WebUI.click(findTestObject('Object Repository/Cart/insert NeedQTY By text'))
+				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.CONTROL, 'a'))
+				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.BACK_SPACE))
+				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), neededQty.toString(), FailureHandling.CONTINUE_ON_FAILURE)
+
+				//WebUI.(findTestObject('Object Repository/Cart/insert NeedQTY By text'), neededQty.toString())
 				return true
 			}
 		})
@@ -493,6 +509,7 @@ public class productsFromCatalog {
 			//tb.addProperty('xpath', ConditionType.EQUALS, "//*[@class='product-content__button-wrapper']//button[@class='product-content__cart']")
 			if(WebUI.verifyElementClickable(tb)) {
 				WebUI.click(tb)
+				WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'),5, FailureHandling.CONTINUE_ON_FAILURE)
 				WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
 			} else {
 				KeywordUtil.markPassed("Trying to Get a new product")
