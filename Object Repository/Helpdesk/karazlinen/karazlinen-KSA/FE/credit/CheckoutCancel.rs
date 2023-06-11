@@ -3,7 +3,7 @@
    <description></description>
    <name>CheckoutCancel</name>
    <tag></tag>
-   <elementGuidId>c77a1117-44bd-435c-8871-45a614fb927a</elementGuidId>
+   <elementGuidId>854ca013-aada-4a9f-8a0f-f5c9e2a9919b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

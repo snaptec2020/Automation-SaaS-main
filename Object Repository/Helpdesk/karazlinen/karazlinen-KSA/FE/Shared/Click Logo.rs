@@ -3,7 +3,7 @@
    <description></description>
    <name>Click Logo</name>
    <tag></tag>
-   <elementGuidId>9d854ef2-27ff-4d6b-8d30-eedeb4bc1154</elementGuidId>
+   <elementGuidId>1dd9e7e9-73d2-4de4-b970-51e4ed28a5f7</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

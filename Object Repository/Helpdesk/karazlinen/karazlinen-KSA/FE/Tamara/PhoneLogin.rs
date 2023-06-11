@@ -3,7 +3,7 @@
    <description></description>
    <name>PhoneLogin</name>
    <tag></tag>
-   <elementGuidId>1a203036-2020-4608-a321-6547849f8148</elementGuidId>
+   <elementGuidId>fea96207-a0ff-4b18-9168-a5974fdae4ee</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

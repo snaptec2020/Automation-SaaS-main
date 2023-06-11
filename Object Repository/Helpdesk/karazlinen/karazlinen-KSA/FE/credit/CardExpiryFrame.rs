@@ -3,7 +3,7 @@
    <description></description>
    <name>CardExpiryFrame</name>
    <tag></tag>
-   <elementGuidId>4ece19d6-9c58-44c3-a90e-50567bc4a582</elementGuidId>
+   <elementGuidId>6852b622-b564-4a43-a931-397b59b7d06b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

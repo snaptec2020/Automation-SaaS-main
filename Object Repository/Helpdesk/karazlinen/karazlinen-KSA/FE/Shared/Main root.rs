@@ -3,7 +3,7 @@
    <description></description>
    <name>Main root</name>
    <tag></tag>
-   <elementGuidId>bf5807cf-48d9-42b2-bf4a-c7c78fbe9a20</elementGuidId>
+   <elementGuidId>ff06c820-191d-415f-ac00-5493070b0634</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

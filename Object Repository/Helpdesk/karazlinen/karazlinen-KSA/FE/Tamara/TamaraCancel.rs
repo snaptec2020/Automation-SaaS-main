@@ -3,14 +3,14 @@
    <description></description>
    <name>TamaraCancel</name>
    <tag></tag>
-   <elementGuidId>5e2cd8d9-1f52-4629-aec5-8771992299f2</elementGuidId>
+   <elementGuidId>99f9ff5a-a7b8-471e-b646-781828895141</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button[contains(@class,&quot;login-cancel-button&quot;)]</value>
+         <value>//div[@class=&quot;tamara-cancel-button-template&quot;]/button</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

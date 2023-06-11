@@ -3,7 +3,7 @@
    <description></description>
    <name>CheckoutFormHeader</name>
    <tag></tag>
-   <elementGuidId>4cb9edcb-654f-4f9a-a9bf-7744c38f9aa4</elementGuidId>
+   <elementGuidId>66b5cf50-15db-471a-8a6c-b1cdab347fad</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

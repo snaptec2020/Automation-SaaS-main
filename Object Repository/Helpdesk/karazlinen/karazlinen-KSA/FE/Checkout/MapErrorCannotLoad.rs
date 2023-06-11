@@ -3,7 +3,7 @@
    <description></description>
    <name>MapErrorCannotLoad</name>
    <tag></tag>
-   <elementGuidId>1ab91bcd-03d9-4c26-998e-ae58a4ad1a36</elementGuidId>
+   <elementGuidId>1c546310-6526-4710-b609-36c32cd7d19e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

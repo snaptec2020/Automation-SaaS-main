@@ -3,7 +3,7 @@
    <description></description>
    <name>CheckoutOTP</name>
    <tag></tag>
-   <elementGuidId>3e5703cc-c445-4276-9d1e-d4a86cd8040f</elementGuidId>
+   <elementGuidId>83654709-62b7-4424-8c55-fc4d49b8b064</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

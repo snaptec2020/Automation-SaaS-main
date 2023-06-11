@@ -3,7 +3,7 @@
    <description></description>
    <name>ErrorAfterPayment_Text_OrderDetails</name>
    <tag></tag>
-   <elementGuidId>ae669a45-5c13-452b-bae4-a41cb41ee437</elementGuidId>
+   <elementGuidId>b3eafe1e-334e-471b-a7a2-2990dfc09bba</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

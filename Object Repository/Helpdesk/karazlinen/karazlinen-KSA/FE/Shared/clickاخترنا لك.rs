@@ -3,7 +3,7 @@
    <description></description>
    <name>clickاخترنا لك</name>
    <tag></tag>
-   <elementGuidId>a43ece8f-d574-45be-9745-c94e00138df4</elementGuidId>
+   <elementGuidId>61070086-98b4-472f-a187-2e9a140d2531</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

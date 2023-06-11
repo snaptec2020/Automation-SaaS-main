@@ -3,7 +3,7 @@
    <description></description>
    <name>ShipmentMethodsList</name>
    <tag></tag>
-   <elementGuidId>82a3ae59-37ff-4943-8a9e-4b0aa28ed347</elementGuidId>
+   <elementGuidId>23d7aa92-2d51-408a-b96d-b00818acdf21</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -21,6 +21,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>//ul[contains(@class,&quot;shippingMethod-shippingMethodBody-&quot;)]</value>
-      <webElementGuid>f62c556f-9b9f-4805-addf-042ac5d2605a</webElementGuid>
+      <webElementGuid>55703e17-7bee-4170-a46e-f5718e7b76f0</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

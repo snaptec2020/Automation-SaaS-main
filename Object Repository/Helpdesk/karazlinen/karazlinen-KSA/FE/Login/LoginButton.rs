@@ -3,14 +3,14 @@
    <description></description>
    <name>LoginButton</name>
    <tag></tag>
-   <elementGuidId>143a3110-6a22-446e-8b55-920cf63a6da3</elementGuidId>
+   <elementGuidId>92336ca9-2ef8-405f-9e98-c19c3bccba95</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//span[text()=&quot;استمر&quot;]/parent::button[contains(@class,&quot;signIn-submit-&quot;) and contains(@class,&quot;signIn-fontRtl&quot;)]</value>
+         <value>//fieldset[@class=&quot;fieldset login&quot;]//span[text()=&quot;تسجيل الدخول&quot;]//parent::button[@id=&quot;send2&quot; and @name=&quot;send&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

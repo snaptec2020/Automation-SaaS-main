@@ -3,15 +3,15 @@
    <description></description>
    <name>button_Filters</name>
    <tag></tag>
-   <elementGuidId>988c2c98-2795-4c1c-9999-5b88c6de431e</elementGuidId>
+   <elementGuidId>15614268-945f-4ced-8300-9a722660062a</elementGuidId>
    <selectorCollection>
-      <entry>
-         <key>XPATH</key>
-         <value>//button[(text() = 'Filters' or . = 'Filters')]</value>
-      </entry>
       <entry>
          <key>CSS</key>
          <value>button.action-default</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//button[(text() = 'Filters' or . = 'Filters')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>button</value>
-      <webElementGuid>50a6551e-f845-4ab0-9963-f53039a7f8fd</webElementGuid>
+      <webElementGuid>c33e433c-3786-4eb2-b658-d30c6d883aac</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +30,7 @@
       <name>class</name>
       <type>Main</type>
       <value>action-default</value>
-      <webElementGuid>8e686d01-b8ea-4fe1-88a2-6644cdd7a3b8</webElementGuid>
+      <webElementGuid>0359822f-47c7-43a0-b759-39d78859b868</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -38,7 +38,7 @@
       <name>data-action</name>
       <type>Main</type>
       <value>grid-filter-expand</value>
-      <webElementGuid>29e043f9-8fbf-4864-b169-4fe38de19257</webElementGuid>
+      <webElementGuid>1eec147b-4287-4372-939d-c6b4b81523e2</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -46,7 +46,7 @@
       <name>data-bind</name>
       <type>Main</type>
       <value>css: {_active: hasVisible() &amp;&amp; $collapsible.opened()}, disable: !hasVisible(), i18n: 'Filters', toggleCollapsible</value>
-      <webElementGuid>eadd2310-94e0-43f0-a983-f145ddadc60b</webElementGuid>
+      <webElementGuid>22beaeac-6880-4e93-8ca0-c5a511f1b0c6</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -54,7 +54,7 @@
       <name>text</name>
       <type>Main</type>
       <value>Filters</value>
-      <webElementGuid>a16cae0e-b256-4533-bc8c-61bba87a3eda</webElementGuid>
+      <webElementGuid>d525aa1e-5c63-4e8f-9d9e-2d9b438c244a</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -62,7 +62,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;container&quot;)/div[@class=&quot;admin__data-grid-outer-wrap&quot;]/div[@class=&quot;admin__data-grid-header&quot;]/div[@class=&quot;admin__data-grid-header-row&quot;]/div[@class=&quot;data-grid-filters-actions-wrap&quot;]/div[@class=&quot;data-grid-filters-action-wrap&quot;]/button[@class=&quot;action-default&quot;]</value>
-      <webElementGuid>ab00f38a-2a61-4d31-9109-9b56d679bece</webElementGuid>
+      <webElementGuid>c63cad98-c65f-4f02-97dc-72a43353c5be</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -70,7 +70,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='container']/div/div[2]/div/div[2]/div/button</value>
-      <webElementGuid>63a5da30-3abf-40ed-9096-381aa5f96352</webElementGuid>
+      <webElementGuid>0e3601d1-5eb6-4ef3-940d-a7d818a4129f</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,7 +78,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Export'])[7]/following::button[1]</value>
-      <webElementGuid>6803229a-1fc8-4e51-9d29-2f8756d7d6a1</webElementGuid>
+      <webElementGuid>65a513dd-0427-4207-ace6-6ecd596fe91a</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,7 +86,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Cancel'])[2]/following::button[2]</value>
-      <webElementGuid>bb8fbd9c-0350-4336-a8cb-e3066adcd779</webElementGuid>
+      <webElementGuid>3a10057c-25a4-4a3a-a6c7-cfeada0a68ba</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -94,7 +94,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Active filters:'])[1]/preceding::button[1]</value>
-      <webElementGuid>7f8f6a62-63e8-4532-8af0-f1500f11310c</webElementGuid>
+      <webElementGuid>6e0aacea-cde3-4185-990d-ecceb6e5927c</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -102,7 +102,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Clear all'])[1]/preceding::button[1]</value>
-      <webElementGuid>8aeef6a1-f438-44ce-8b2d-f6176d33b3f6</webElementGuid>
+      <webElementGuid>8aeb533b-1a58-442c-aa15-b245ac5cfedb</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -110,7 +110,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>//*/text()[normalize-space(.)='Filters']/parent::*</value>
-      <webElementGuid>60ba8d93-dc0b-43a9-83ed-b438af5c3874</webElementGuid>
+      <webElementGuid>b8eaf27f-0ee9-4aba-b450-1590e674067b</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -118,7 +118,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[2]/div/button</value>
-      <webElementGuid>794c3b3b-8c1c-4b35-889f-9302b17718c7</webElementGuid>
+      <webElementGuid>8323b9d2-7ce0-4c41-a3fd-bbd2d1285865</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -126,6 +126,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//button[(text() = 'Filters' or . = 'Filters')]</value>
-      <webElementGuid>0956f1fa-aab6-46b5-9396-6d0ca237cdba</webElementGuid>
+      <webElementGuid>652a216a-6752-47ce-a58e-2816f08de960</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

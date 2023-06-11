@@ -3,7 +3,7 @@
    <description></description>
    <name>click الغتر</name>
    <tag></tag>
-   <elementGuidId>d699ac0e-c7d0-4d12-a9d2-875462398784</elementGuidId>
+   <elementGuidId>8a24c775-fbde-4866-9fa9-5b5c6f2c13a0</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

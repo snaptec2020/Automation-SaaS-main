@@ -3,7 +3,7 @@
    <description></description>
    <name>منتجات الموسم</name>
    <tag></tag>
-   <elementGuidId>3191e8d0-7bb6-43c4-a5e7-1fad10264c78</elementGuidId>
+   <elementGuidId>f2b372a2-baf0-48f9-ac36-28d0ed8ac07e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

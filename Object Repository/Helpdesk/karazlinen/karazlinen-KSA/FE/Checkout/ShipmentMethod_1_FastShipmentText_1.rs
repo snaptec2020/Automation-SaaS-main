@@ -3,7 +3,7 @@
    <description></description>
    <name>ShipmentMethod_1_FastShipmentText_1</name>
    <tag></tag>
-   <elementGuidId>8d529dec-0579-48d5-8cb5-55b85c0da660</elementGuidId>
+   <elementGuidId>a9fbdb56-d3cb-445a-b7f9-7e55233543a5</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

@@ -3,7 +3,7 @@
    <description></description>
    <name>Sales_orders_FilterButton</name>
    <tag></tag>
-   <elementGuidId>8ecdb776-e774-4738-a741-41efcdd32bbe</elementGuidId>
+   <elementGuidId>d19e1fa2-5122-4a50-a380-9186623754d6</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

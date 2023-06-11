@@ -3,7 +3,7 @@
    <description></description>
    <name>ReturnPolicyCheckbox</name>
    <tag></tag>
-   <elementGuidId>a90eaecc-6c26-41ee-b752-588d36deb66c</elementGuidId>
+   <elementGuidId>d32eb0c1-809f-4baa-ab59-0d6a799e0185</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

@@ -3,7 +3,7 @@
    <description></description>
    <name>Search</name>
    <tag></tag>
-   <elementGuidId>02440e7a-958f-4a4b-a26b-8c1d1cfb7dbb</elementGuidId>
+   <elementGuidId>8e4ab23f-a744-4f7c-b033-68b0eb7a9f64</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

@@ -3,7 +3,7 @@
    <description></description>
    <name>الغتر</name>
    <tag></tag>
-   <elementGuidId>e70cb2b8-feb3-4916-9cf7-b036d49070f4</elementGuidId>
+   <elementGuidId>de220b89-f7fa-42d6-8f6a-ea6fb3e4bae2</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

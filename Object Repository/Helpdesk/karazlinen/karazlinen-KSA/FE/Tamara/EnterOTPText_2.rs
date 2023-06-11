@@ -3,7 +3,7 @@
    <description></description>
    <name>EnterOTPText_2</name>
    <tag></tag>
-   <elementGuidId>e82fed56-14f2-44dd-9543-d03e0eea2d55</elementGuidId>
+   <elementGuidId>a5124458-8a82-4f44-98fe-7384617f1439</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

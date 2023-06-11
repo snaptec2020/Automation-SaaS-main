@@ -3,14 +3,14 @@
    <description></description>
    <name>Search icon</name>
    <tag></tag>
-   <elementGuidId>bc30d15f-4a52-4680-bd79-020cac1a85c3</elementGuidId>
+   <elementGuidId>0f5a8176-e44e-4766-a385-afe34d47e9b7</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,'searchBar-root')]</value>
+         <value>//button[contains(@class,&quot;searchTrigger-root&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

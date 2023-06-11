@@ -3,14 +3,14 @@
    <description></description>
    <name>LoginTolephone</name>
    <tag></tag>
-   <elementGuidId>6c2f5ea5-7044-4b0e-aaf7-4045e0ce5285</elementGuidId>
+   <elementGuidId>544a20e1-95df-4ebf-b905-c915f68e8748</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,&quot;signIn-rootContainer-&quot;)]//input[@type = 'tel']</value>
+         <value>//input[@type=&quot;tel&quot; and contains(@class,&quot;phone-input-custom-input&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -6,6 +6,7 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling
@@ -153,7 +154,7 @@ public class HelpdeskUtil {
 		//		((JavascriptExecutor) DriverFactory.getWebDriver()).executeScript("arguments[0].scrollIntoView();", )
 		WebUI.waitForPageLoad(20)
 		ScrollToElement(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'))
-//		WebUI.executeJavaScript("arguments[0].scrollIntoView(true);", WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10))
+		//		WebUI.executeJavaScript("arguments[0].scrollIntoView(true);", WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/ProductsSection'), 10))
 		WebUI.delay(2)
 
 
@@ -230,9 +231,9 @@ public class HelpdeskUtil {
 		ScrollToElement(randomNumberCatProductTO)
 		WebUI.waitForElementClickable(randomNumberCatProductTO, 5)
 		WebUI.doubleClick(randomNumberCatProductTO)
-//		WebUI.click(randomNumberCatProductTO)
-//		WebUI.clickImage(randomNumberCatProductTO, FailureHandling.STOP_ON_FAILURE)
-//		clickJS(randomNumberCatProductElm, 5)
+		//		WebUI.click(randomNumberCatProductTO)
+		//		WebUI.clickImage(randomNumberCatProductTO, FailureHandling.STOP_ON_FAILURE)
+		//		clickJS(randomNumberCatProductElm, 5)
 		//println "inside the cat"
 		WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/FooterAlJedaei'), 15)
 		WebUI.delay(5)
@@ -300,14 +301,14 @@ public class HelpdeskUtil {
 
 	@Keyword
 	def OpenRandomProductTBS(){
-		
+
 		boolean isMobile=false
 		if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/RightNav-Mobile'), 3)) {
 			isMobile=true
 		}else {
 			isMobile=false
 		}
-		
+
 		String Categories=""
 		if(!isMobile) {
 			Categories='Object Repository/Helpdesk/TheBodyShop/FE/Shared/Categories'
@@ -315,8 +316,8 @@ public class HelpdeskUtil {
 			clickJS(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/RightNav-Mobile'), 5)
 			Categories='Object Repository/Helpdesk/TheBodyShop/FE/Shared/Categories-Mobile'
 		}
-		
-		
+
+
 		List<WebElement> productsCategoriesList = WebUiCommonHelper.findWebElements(findTestObject(Categories), 5)
 		//		println "Main Cat: "
 		//		println  productsCategoriesList.size()
@@ -329,7 +330,7 @@ public class HelpdeskUtil {
 		WebElement randomNumberCatProductElm = WebUiCommonHelper.findWebElement(randomNumberCatProductTO, 5)
 		ScrollToElement(randomNumberCatProductTO)
 		clickJS(randomNumberCatProductTO, 3)
-		
+
 		WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/ProductsScrollerMainItem'), 10)
 		List<WebElement> prod = WebUI.findWebElements(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Shared/ProductsScrollerMainItem'),3)
 		if(prod.size()>0) {
@@ -438,7 +439,7 @@ public class HelpdeskUtil {
 			//				}
 			//			}
 		}else {
-			OpenRandomProductTBS()
+			OpenRandomProductTheBeautySecrets()
 		}
 
 	}
@@ -451,7 +452,7 @@ public class HelpdeskUtil {
 		}else {
 			isMobile=false
 		}
-		
+
 		if(isMobile) {
 			ScrollToElement(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/RightNav-Mobile'))
 			clickJS(findTestObject('Object Repository/Helpdesk/AlShamasy/FE/Shared/RightNav-Mobile'), 5)
@@ -506,6 +507,142 @@ public class HelpdeskUtil {
 		}
 
 	}
+
+
+	@Keyword
+	def OpenRandomProductkarazlinenKSA(){
+		boolean isMobile=WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/karazlinen/karazlinen-KSA/SharedScripts/isMobile'), [:],	FailureHandling.CONTINUE_ON_FAILURE)
+//		if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/BottomMenu-Mobile'),2)) {
+//			isMobile=true
+//		}
+
+		WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/karazlinen/karazlinen-KSA/SharedScripts/ClickLogo'), [:],	FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.click(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/RightNavigator'))
+
+		List<WebElement> productsCategoriesList = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/Categories'), 5)
+		print "Main Cat: "
+		println  productsCategoriesList.size()
+		Random randomCategory = new Random()
+		int randomCategorySelected = randomCategory.nextInt(productsCategoriesList.size()) + 1
+		//		randomCategorySelected =2
+		String selectedMainCatXPath = '(' + findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/Categories').findPropertyValue("xpath")+ ')[' + randomCategorySelected.toString() + ']/a'
+		println selectedMainCatXPath
+		TestObject randomNumberCatProductTO = new TestObject()
+		randomNumberCatProductTO.addProperty('xpath', ConditionType.EQUALS, selectedMainCatXPath)
+		WebElement randomNumberCatProductElm = WebUiCommonHelper.findWebElement(randomNumberCatProductTO, 5)
+		ScrollToElement(randomNumberCatProductTO)
+		clickJS(randomNumberCatProductTO, 3)
+
+		int trialSubs=0
+		while(trialSubs<5) {
+			trialSubs++
+			List<WebElement> productsCategoriesListL2_1=null
+			List<WebElement> productsCategoriesListL2_2=null
+
+			productsCategoriesListL2_1 = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/CategoriesL2_1'), 3)
+			productsCategoriesListL2_2 = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/CategoriesL2_2'), 3)
+			println "Sub Cat: "
+			println  productsCategoriesListL2_1.size()
+			println  productsCategoriesListL2_2.size()
+			if(!WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Product/ProductsGallery'), 2)
+			& productsCategoriesListL2_1.size()>0) {
+				Random randomCategoryL2 = new Random()
+				int randomCategorySelectedL2 = randomCategoryL2.nextInt(productsCategoriesListL2_1.size()) + 1
+				//				randomCategorySelectedL2=6
+				String randomNumberCatProductTOXPathL2='('+ findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/CategoriesL2_1').findPropertyValue("xpath")+ ')[' + randomCategorySelectedL2.toString() + ']'
+				println randomNumberCatProductTOXPathL2
+				TestObject randomNumberCatProductTOL2 = new TestObject()
+				randomNumberCatProductTOL2.addProperty('xpath', ConditionType.EQUALS, randomNumberCatProductTOXPathL2)
+				WebElement randomNumberCatProductElmL2 = WebUiCommonHelper.findWebElement(randomNumberCatProductTOL2, 5)
+				ScrollToElement(randomNumberCatProductElmL2)
+				clickJS(randomNumberCatProductTOL2, 3)
+			}else if(!WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Product/ProductsGallery'), 2)
+			& productsCategoriesListL2_2.size()>0) {
+				Random randomCategoryL2 = new Random()
+				int randomCategorySelectedL2 = randomCategoryL2.nextInt(productsCategoriesListL2_2.size()) + 1
+				//randomCategorySelectedL2=6
+				String randomNumberCatProductTOXPathL2='('+ findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/CategoriesL2_2').findPropertyValue("xpath")+ ')[' + randomCategorySelectedL2.toString() + ']'
+				println randomNumberCatProductTOXPathL2
+				TestObject randomNumberCatProductTOL2 = new TestObject()
+				randomNumberCatProductTOL2.addProperty('xpath', ConditionType.EQUALS, randomNumberCatProductTOXPathL2)
+				WebElement randomNumberCatProductElmL2 = WebUiCommonHelper.findWebElement(randomNumberCatProductTOL2, 5)
+				ScrollToElement(randomNumberCatProductElmL2)
+				clickJS(randomNumberCatProductTOL2, 3)
+			}else {
+				break
+			}
+		}
+
+
+		ScrollToBottom()
+		WebUI.delay(3)
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Product/ProductsGallery'), 10)
+		List<WebElement> prod = WebUI.findWebElements(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Product/ProductsGallery'),3)
+		println "Products: "
+		println  prod.size()
+		if(prod.size()>0) {
+			Random randomNumberforProduct = new Random()
+			int elementIndexproduct = Math.abs(randomNumberforProduct.nextInt(prod.size() ))
+			String currentURL = WebUI.getUrl()
+			WebElement selectedProduct = prod.get(elementIndexproduct)
+			WebElement LinkSelectedElement = selectedProduct.findElement(By.xpath('./div[contains(@class,"item-title-")]/a'))
+			ScrollToElement(LinkSelectedElement)
+			clickJS(LinkSelectedElement, 5)
+			//			WebUI.navigateToUrl("https://www.thebodyshop.com.sa/east/ar/fragrance/view-all-fragrance/black-musk-eau-de-toilette-p-p053023")
+			//			WebUI.navigateToUrl("https://karazlinen.com/ar-sa/sculpted-calvin-klein-towel.html")
+			//			WebUI.navigateToUrl("https://karazlinen.com/ar-sa/printed-silk-duvet-set-4pcs-2.html")
+			//			WebUI.navigateToUrl("https://karazlinen.com/ar-sa/victoria-mattress.html")
+			WebUI.delay(2)
+
+			//Karaz configurable products
+			String MainXPath = '//h2[contains(@class,"option-titleOption")]/parent::div'
+			String OptionsChoices = ".//button[not(@disabled)]"
+			if(isMobile) {
+				MainXPath = '//div[contains(@class,"option-root-")]'
+				OptionsChoices = ".//button[not(@disabled)]"
+			}
+			TestObject Maintb = new TestObject()
+			Maintb.addProperty('xpath', ConditionType.EQUALS, MainXPath)
+			ScrollToElement(Maintb)
+			WebUI.waitForElementVisible(Maintb, 5,FailureHandling.OPTIONAL)
+			List<WebElement> RequiredOptions = WebUI.findWebElements(Maintb, 5)
+			RequiredOptions.each {
+				if(!isMobile) {
+					List<WebElement> RequiredOptionsChoices =it.findElements(By.xpath(OptionsChoices))
+					if(RequiredOptionsChoices.size()>0) {
+						ScrollToElement(RequiredOptionsChoices.get(0))
+						RequiredOptionsChoices.get(0).click()
+					}
+				}else {
+					List<WebElement> RequiredOptionsChoices =it.findElements(By.xpath(OptionsChoices))
+					if(RequiredOptionsChoices.size()>0) {
+						ScrollToElement(RequiredOptionsChoices.get(0))
+						RequiredOptionsChoices.get(0).click()
+						if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Product/OptionDialogSelection'), 3)) {
+							ScrollToElement(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Product/OptionDialogSelection'))
+							clickJS(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Product/OptionDialogSelection'), 3)
+						}
+					}
+				}
+
+			}
+		}else {
+			OpenRandomProductkarazlinenKSA()
+		}
+
+		String PriceElement = 'Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Product/Product_Price'
+		if(!WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Product/Product_Price'), 3)) {
+			PriceElement = 'Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Product/Product_SpecialPrice'
+		}
+
+		def ProductPrice = WebUI.getText(findTestObject(PriceElement))
+		Float ProductPriceNum=ProductPrice.replace("ر.س", "").replace(" ", "").replace(",", "").toFloat()
+		if(ProductPriceNum>4000 ) {
+			OpenRandomProductkarazlinenKSA()
+		}
+	}
+
 	@Keyword
 	String decodeEncodedValue(String encoded) {
 		return URLDecoder.decode(encoded, StandardCharsets.UTF_8.toString())
@@ -567,16 +704,43 @@ public class HelpdeskUtil {
 
 	@Keyword
 	def ScrollToElement(TestObject tb) {
-		List<WebElement> element = WebUiCommonHelper.findWebElements(tb, 10)
-		//		WebUI.executeJavaScript('arguments[0].scrollIntoView();window.scrollBy(0, -10);', element)
-		WebUI.executeJavaScript("arguments[0].scrollIntoView({ block: 'center' });", element)
-		WebUI.delay(1)
+		try {
+			List<WebElement> element = WebUiCommonHelper.findWebElements(tb, 10)
+			//		WebUI.executeJavaScript('arguments[0].scrollIntoView();window.scrollBy(0, -10);', element)
+			WebUI.executeJavaScript("arguments[0].scrollIntoView({ block: 'center' });", element)
+			WebUI.delay(1)
+		}catch(Exception ex) {
+			println ex.message
+			println ex.cause
+			ex.printStackTrace()
+			
+		}
 	}
 
 	@Keyword
 	def ScrollToElement(WebElement element) {
-		WebUI.executeJavaScript("arguments[0].scrollIntoView({ block: 'center' });", Arrays.asList(element))
-		WebUI.delay(1)
+		try {
+			WebUI.executeJavaScript("arguments[0].scrollIntoView({ block: 'center' });", Arrays.asList(element))
+			WebUI.delay(1)
+		}catch(Exception ex) {
+			println ex.message
+			println ex.cause
+			ex.printStackTrace()
+			
+		}
+	}
+
+	@Keyword
+	def ScrollToBottom() {
+		try {
+			WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight);", null)
+			WebUI.delay(1)
+		}catch(Exception ex) {
+			println ex.message
+			println ex.cause
+			ex.printStackTrace()
+			
+		}
 	}
 
 	@Keyword
@@ -625,23 +789,47 @@ public class HelpdeskUtil {
 
 	@Keyword
 	def checkUsingJS(TestObject to3, int timeout3) {
-		List<WebElement> element = WebUiCommonHelper.findWebElements(to3, timeout3)
-		WebUI.executeJavaScript("arguments[0].checked = true", element)
+		try {
+			List<WebElement> element = WebUiCommonHelper.findWebElements(to3, timeout3)
+			WebUI.executeJavaScript("arguments[0].checked = true", element)
+		}catch(Exception ex) {
+			println ex.message
+			println ex.cause
+			ex.printStackTrace()
+		}
 	}
 
 	@Keyword
 	def uncheckUsingJS(TestObject to3, int timeout3) {
-		List<WebElement> element = WebUiCommonHelper.findWebElements(to3, timeout3)
-		WebUI.executeJavaScript("arguments[0].checked = false", element)
+		try {
+			List<WebElement> element = WebUiCommonHelper.findWebElements(to3, timeout3)
+			WebUI.executeJavaScript("arguments[0].checked = false", element)
+		}catch(Exception ex) {
+			println ex.message
+			println ex.cause
+			ex.printStackTrace()
+		}
 	}
 	@Keyword
 	def checkUsingJS(WebElement element) {
-		WebUI.executeJavaScript("arguments[0].checked = true", element)
+		try {
+			WebUI.executeJavaScript("arguments[0].checked = true", element)
+		}catch(Exception ex) {
+			println ex.message
+			println ex.cause
+			ex.printStackTrace()
+		}
 	}
 
 	@Keyword
 	def uncheckUsingJS(WebElement element) {
-		WebUI.executeJavaScript("arguments[0].checked = false", element)
+		try {
+			WebUI.executeJavaScript("arguments[0].checked = false", element)
+		}catch(Exception ex) {
+			println ex.message
+			println ex.cause
+			ex.printStackTrace()
+		}
 	}
 
 }

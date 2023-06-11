@@ -3,7 +3,7 @@
    <description></description>
    <name>Footer payment Logo</name>
    <tag></tag>
-   <elementGuidId>2c3144ec-9a21-4047-86c3-43ca7714230b</elementGuidId>
+   <elementGuidId>e9a013fc-4932-4825-ac80-7f4d7467cc8d</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

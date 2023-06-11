@@ -3,14 +3,14 @@
    <description></description>
    <name>CardCVVInput</name>
    <tag></tag>
-   <elementGuidId>1d5c7d6b-d4ff-44c6-a050-33193ee7a6f4</elementGuidId>
+   <elementGuidId>e5ef1b4f-bcca-481b-baeb-52e413c77532</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id=&quot;checkout-frames-cvv&quot;]</value>
+         <value>//label[text()=&quot;كود التحقق&quot;]/..//input[contains(@class,&quot;input-input-&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

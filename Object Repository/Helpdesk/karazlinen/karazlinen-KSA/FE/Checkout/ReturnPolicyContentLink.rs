@@ -3,7 +3,7 @@
    <description></description>
    <name>ReturnPolicyContentLink</name>
    <tag></tag>
-   <elementGuidId>8ebd75b4-598b-48de-8509-a9738d42992e</elementGuidId>
+   <elementGuidId>60123e03-b837-4892-92bc-2bfdfb1d30d4</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

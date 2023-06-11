@@ -3,7 +3,7 @@
    <description></description>
    <name>Search Feild</name>
    <tag></tag>
-   <elementGuidId>b3dab435-fa5c-460d-8c18-ea6c7b358a44</elementGuidId>
+   <elementGuidId>10816263-d98d-46a7-baff-831ee61d5f7b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

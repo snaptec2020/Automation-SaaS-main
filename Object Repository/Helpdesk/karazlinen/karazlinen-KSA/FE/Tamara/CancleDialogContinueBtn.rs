@@ -3,7 +3,7 @@
    <description></description>
    <name>CancleDialogContinueBtn</name>
    <tag></tag>
-   <elementGuidId>d40d7d04-d317-458f-80bc-2a695c83dd29</elementGuidId>
+   <elementGuidId>ba437765-df9e-4ffa-a8e1-c5163b135b1a</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

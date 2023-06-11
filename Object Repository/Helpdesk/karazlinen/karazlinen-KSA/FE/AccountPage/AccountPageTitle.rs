@@ -3,14 +3,14 @@
    <description></description>
    <name>AccountPageTitle</name>
    <tag></tag>
-   <elementGuidId>b1606dbd-881a-46f2-a6a0-6ff584e32587</elementGuidId>
+   <elementGuidId>9508d912-fede-423c-8eea-3e2e9d91283b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//h2[contains(@class,'accountInformationPage-heading-')]</value>
+         <value>//span[contains(text(),&quot;المعلومات الشخصية&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

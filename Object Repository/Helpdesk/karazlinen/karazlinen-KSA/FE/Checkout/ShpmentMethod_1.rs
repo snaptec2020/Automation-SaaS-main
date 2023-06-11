@@ -3,7 +3,7 @@
    <description></description>
    <name>ShpmentMethod_1</name>
    <tag></tag>
-   <elementGuidId>89c1e0b9-eb6f-4aee-8d1c-e80ea706af56</elementGuidId>
+   <elementGuidId>1dfab01f-9ffb-43f0-bcfd-3834885082e7</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

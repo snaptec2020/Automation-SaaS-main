@@ -3,14 +3,14 @@
    <description></description>
    <name>Cart</name>
    <tag></tag>
-   <elementGuidId>692ceda3-3c7a-4f8a-a484-8534d9f8808e</elementGuidId>
+   <elementGuidId>ff678e24-e919-4200-b189-792d012c67c0</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button[contains(@class,'cartTrigger') and contains (@class, 'clickable-root')]</value>
+         <value>//span[contains(@class,&quot;cartTrigger-icon&quot;)]/parent::a[contains(@class,&quot;cartTrigger-root-&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

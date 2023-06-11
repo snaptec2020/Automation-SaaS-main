@@ -3,7 +3,7 @@
    <description></description>
    <name>Footer</name>
    <tag></tag>
-   <elementGuidId>101b0919-2138-431e-83f2-08a74ce301a3</elementGuidId>
+   <elementGuidId>9bba75ce-ff35-456d-8bb3-ae22eebec7ba</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

@@ -3,7 +3,7 @@
    <description></description>
    <name>المنتجات الشتوية</name>
    <tag></tag>
-   <elementGuidId>da3b0789-1fe4-41dd-9229-8684dd23fd41</elementGuidId>
+   <elementGuidId>368187cd-7555-416d-aa18-4ba6d8d3a928</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

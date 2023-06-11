@@ -3,7 +3,7 @@
    <description></description>
    <name>click الأشمغه</name>
    <tag></tag>
-   <elementGuidId>9fc5dd7b-c826-4c36-be71-2f49afc19140</elementGuidId>
+   <elementGuidId>0a4b9500-7420-42e2-acf2-b96dec0fefe8</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

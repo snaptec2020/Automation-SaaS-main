@@ -3,7 +3,7 @@
    <description></description>
    <name>Sales_order_Grid</name>
    <tag></tag>
-   <elementGuidId>63321110-fc3b-409d-be8b-fe091e990617</elementGuidId>
+   <elementGuidId>6f108157-25f3-4d5a-bcf7-98c70c7c9426</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

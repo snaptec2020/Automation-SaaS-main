@@ -3,7 +3,7 @@
    <description></description>
    <name>CreditSubmit</name>
    <tag></tag>
-   <elementGuidId>93a9d52a-2219-43e3-b1be-1f25b21c571d</elementGuidId>
+   <elementGuidId>0a9d34fe-56b2-4f8e-8fe4-4f60fd3c4e3e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

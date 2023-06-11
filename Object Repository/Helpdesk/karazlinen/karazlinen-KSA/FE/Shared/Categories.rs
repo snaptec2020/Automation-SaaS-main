@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Categories</name>
+   <tag></tag>
+   <elementGuidId>f1833b17-84ca-4e8c-b984-34e3c38ed7be</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//div[contains(@class,&quot;categoryTree-root&quot;)]/li</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[contains(@class,&quot;categoryTree-root&quot;)]/li</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//div[contains(@class,&quot;categoryTree-root&quot;)]/li</value>
+      <webElementGuid>2199fac8-8dfc-4539-93e3-151f2487b574</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

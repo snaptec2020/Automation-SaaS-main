@@ -3,7 +3,7 @@
    <description></description>
    <name>click رجالي</name>
    <tag></tag>
-   <elementGuidId>e2b43f99-f095-425c-af2c-d57340b12fd2</elementGuidId>
+   <elementGuidId>a588e7ce-44c3-409b-8014-953f353dece8</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

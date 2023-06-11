@@ -3,7 +3,7 @@
    <description></description>
    <name>s_id</name>
    <tag></tag>
-   <elementGuidId>9f861789-c29a-481c-8fc3-2b64b92eea7f</elementGuidId>
+   <elementGuidId>62ca24b2-90aa-408e-a16d-41d1d56ff635</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

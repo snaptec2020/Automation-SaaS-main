@@ -3,7 +3,7 @@
    <description></description>
    <name>Menu_MobileApp</name>
    <tag></tag>
-   <elementGuidId>27a62b2c-e40b-4160-9359-f03b8a3f25dd</elementGuidId>
+   <elementGuidId>b4c0088b-ba03-436a-b0ce-cd3d4ff96390</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

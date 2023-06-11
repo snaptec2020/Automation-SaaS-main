@@ -3,7 +3,7 @@
    <description></description>
    <name>view cart</name>
    <tag></tag>
-   <elementGuidId>aba0e600-7109-4583-9f75-79c5bfe50545</elementGuidId>
+   <elementGuidId>b7f410c0-c727-47bc-8288-7a2652cd66eb</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

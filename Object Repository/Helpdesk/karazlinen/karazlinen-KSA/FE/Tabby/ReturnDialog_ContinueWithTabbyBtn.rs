@@ -3,7 +3,7 @@
    <description></description>
    <name>ReturnDialog_ContinueWithTabbyBtn</name>
    <tag></tag>
-   <elementGuidId>670347e5-3780-4fe8-be11-e21b5034998b</elementGuidId>
+   <elementGuidId>427f739a-0903-4e6c-8969-c870669310cc</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

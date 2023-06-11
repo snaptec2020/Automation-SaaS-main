@@ -3,7 +3,7 @@
    <description></description>
    <name>WrongOTPErrorText</name>
    <tag></tag>
-   <elementGuidId>e77ed4f5-c7bb-44c6-841e-68580be29579</elementGuidId>
+   <elementGuidId>572448fd-2103-494a-80ae-54f7ba593cd8</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

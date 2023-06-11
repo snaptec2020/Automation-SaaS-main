@@ -3,14 +3,14 @@
    <description></description>
    <name>productFullDetail-sku</name>
    <tag></tag>
-   <elementGuidId>98f086e4-fd16-4e5e-80c7-3c191223c8fb</elementGuidId>
+   <elementGuidId>48eb8e2b-7d4d-417d-a9c1-4f4dda6b0b06</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,'productFullDetail-skuProduct')]//p</value>
+         <value>//div[text()=&quot;SKU&quot;]/parent::div[contains(@class,&quot;productFullDetail-additionalDetailsItem-&quot;)]/div[2]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

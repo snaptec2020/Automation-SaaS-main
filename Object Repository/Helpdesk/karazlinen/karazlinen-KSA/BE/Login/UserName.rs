@@ -3,7 +3,7 @@
    <description></description>
    <name>UserName</name>
    <tag></tag>
-   <elementGuidId>d797ef56-7a48-49bf-a64f-f1be4bc73c4b</elementGuidId>
+   <elementGuidId>972d7f17-d8d2-4b2c-b267-1633949d2d6b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

@@ -3,7 +3,7 @@
    <description></description>
    <name>OTPFirstDigit</name>
    <tag></tag>
-   <elementGuidId>2f4111ae-7c51-4e05-9265-a4c0fcb43cbd</elementGuidId>
+   <elementGuidId>20fdbb2b-1b02-4e55-b097-70dc20fdfc4a</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

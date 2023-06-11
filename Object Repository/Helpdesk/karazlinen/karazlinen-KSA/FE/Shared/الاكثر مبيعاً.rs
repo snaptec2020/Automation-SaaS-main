@@ -3,7 +3,7 @@
    <description></description>
    <name>الاكثر مبيعاً</name>
    <tag></tag>
-   <elementGuidId>1443ef56-ca2e-4733-87b1-56a7bd1de3a0</elementGuidId>
+   <elementGuidId>eb581fa7-8cbb-4554-a1ad-deb7b0e6dadf</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

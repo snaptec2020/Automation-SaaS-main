@@ -1,36 +1,48 @@
 {
-  "keywordFileContentHash": "BD4AE987295D46901A99852B37D62BAD",
+  "keywordFileContentHash": "D3DCEE4551CAEF551F554DD28910EFE1",
   "keywordClasses": [
     {
       "name": "helpdesk.HelpdeskUtil",
       "keywordMethods": [
         {
           "name": "OpenRandomProductAJStore",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "OpenRandomProductQasr",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "OpenRandomProductAlAseel",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "OpenRandomProductAlJedaie",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "OpenRandomProductTBS",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "OpenRandomProductTheBeautySecrets",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "OpenRandomProductAlShamasy",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "OpenRandomProductkarazlinenKSA",
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "decodeEncodedValue",
@@ -48,7 +60,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "encodeValue",
@@ -66,7 +79,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "scrollToVerifyElementVisiblity",
@@ -84,11 +98,13 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "OpenRandomProductOrange",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "ScrollToElement",
@@ -106,7 +122,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "ScrollToElement",
@@ -124,7 +141,13 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "ScrollToBottom",
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "clickJS",
@@ -155,7 +178,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "clickJS",
@@ -186,7 +210,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "checkUsingJS",
@@ -217,7 +242,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "uncheckUsingJS",
@@ -248,7 +274,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "checkUsingJS",
@@ -266,7 +293,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "uncheckUsingJS",
@@ -284,10 +312,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

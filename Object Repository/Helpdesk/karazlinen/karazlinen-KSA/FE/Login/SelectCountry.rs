@@ -3,14 +3,14 @@
    <description></description>
    <name>SelectCountry</name>
    <tag></tag>
-   <elementGuidId>686c94ee-bc55-469e-90e5-4120b0ef4105</elementGuidId>
+   <elementGuidId>4a46b3eb-20ac-40af-a9a1-25b99bbaad2f</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[text()=&quot;اختار الدولة&quot;]</value>
+         <value>//select[@name=&quot;phone_code&quot;][2]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

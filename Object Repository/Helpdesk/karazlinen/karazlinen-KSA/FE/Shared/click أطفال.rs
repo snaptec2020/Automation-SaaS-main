@@ -3,7 +3,7 @@
    <description></description>
    <name>click أطفال</name>
    <tag></tag>
-   <elementGuidId>9146a379-0f9d-4cc7-80b2-e22d1ce4bce6</elementGuidId>
+   <elementGuidId>d155035d-195c-4b97-ad6e-bc00f0f36f5a</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

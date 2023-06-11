@@ -3,14 +3,14 @@
    <description></description>
    <name>Search Bar context</name>
    <tag></tag>
-   <elementGuidId>f6e7099c-d673-4cc8-9d54-92983a289ea8</elementGuidId>
+   <elementGuidId>685ff4cf-ac9b-4478-a013-2ab6dc7d722d</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@placeholder='Search for a product' or @placeholder='البحث عن المنتج']</value>
+         <value>//input[@placeholder=&quot;ابحث عن منتج&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

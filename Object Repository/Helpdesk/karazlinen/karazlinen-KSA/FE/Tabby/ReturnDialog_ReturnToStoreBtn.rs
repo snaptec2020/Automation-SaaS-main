@@ -3,7 +3,7 @@
    <description></description>
    <name>ReturnDialog_ReturnToStoreBtn</name>
    <tag></tag>
-   <elementGuidId>fbdfc495-450c-4cbc-af25-631fbbd82b35</elementGuidId>
+   <elementGuidId>ebdf8449-a5c2-4b19-b21f-0646605edf1c</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

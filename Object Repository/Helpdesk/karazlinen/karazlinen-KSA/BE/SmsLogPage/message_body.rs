@@ -3,7 +3,7 @@
    <description></description>
    <name>message_body</name>
    <tag></tag>
-   <elementGuidId>3440d107-05b6-4e68-9788-bb095f2dcacc</elementGuidId>
+   <elementGuidId>89e2bb57-cc69-4501-b178-81ed77bb2560</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

@@ -3,7 +3,7 @@
    <description></description>
    <name>Click الاكثر مبيعاً</name>
    <tag></tag>
-   <elementGuidId>93a06683-5595-415c-9a54-f68c8525a68c</elementGuidId>
+   <elementGuidId>20d1805e-328c-4ffa-a4a3-e60cd524053e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

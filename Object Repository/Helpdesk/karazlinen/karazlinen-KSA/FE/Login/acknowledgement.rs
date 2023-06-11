@@ -3,14 +3,14 @@
    <description></description>
    <name>acknowledgement</name>
    <tag></tag>
-   <elementGuidId>f7f6aa55-46fe-4312-9d6e-59bf43b81cef</elementGuidId>
+   <elementGuidId>3794a7dd-cdf9-4aa5-9858-80a46a400981</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@type = 'checkbox'  and @name = 'acpTerms' and starts-with(@class,'checkbox-input')]</value>
+         <value>//label[@for=&quot;read_accept_privacy_policy&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

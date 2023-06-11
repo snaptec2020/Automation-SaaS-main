@@ -3,7 +3,7 @@
    <description></description>
    <name>اخترنا لك</name>
    <tag></tag>
-   <elementGuidId>7586b398-6f77-4759-bb66-56bd86bf695f</elementGuidId>
+   <elementGuidId>c29f93a8-c10d-451c-a1f2-6e56b322089e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

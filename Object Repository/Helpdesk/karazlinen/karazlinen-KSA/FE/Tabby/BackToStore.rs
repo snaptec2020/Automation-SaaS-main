@@ -3,14 +3,14 @@
    <description></description>
    <name>BackToStore</name>
    <tag></tag>
-   <elementGuidId>99f630f2-a21a-44aa-8b54-df712fbf4b0a</elementGuidId>
+   <elementGuidId>fa0337f4-2d86-4b18-a5f9-a1df2397a126</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//*[@data-test=&quot;backToStore&quot; or text()=&quot;العودة إلى المتجر&quot;]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//span[text()=&quot;العودة إلى المتجر&quot;]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

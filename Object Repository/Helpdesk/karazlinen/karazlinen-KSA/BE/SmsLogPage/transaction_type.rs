@@ -3,7 +3,7 @@
    <description></description>
    <name>transaction_type</name>
    <tag></tag>
-   <elementGuidId>c05d9978-8e49-4ba5-a0b0-a483b28b3083</elementGuidId>
+   <elementGuidId>ef79d8cb-cfd0-4d9b-86a5-8b81500646c3</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

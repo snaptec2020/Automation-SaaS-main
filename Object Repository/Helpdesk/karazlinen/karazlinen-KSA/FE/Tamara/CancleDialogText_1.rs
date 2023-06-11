@@ -3,7 +3,7 @@
    <description></description>
    <name>CancleDialogText_1</name>
    <tag></tag>
-   <elementGuidId>f4c644b0-d364-4791-a0df-357d2ee21b2f</elementGuidId>
+   <elementGuidId>89ecd1d2-66e7-4eed-859c-d1d00b70a72e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

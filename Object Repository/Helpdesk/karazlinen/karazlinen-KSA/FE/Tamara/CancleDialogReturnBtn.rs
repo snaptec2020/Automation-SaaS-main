@@ -3,7 +3,7 @@
    <description></description>
    <name>CancleDialogReturnBtn</name>
    <tag></tag>
-   <elementGuidId>92ca6340-49c7-4b8b-b701-071829924cef</elementGuidId>
+   <elementGuidId>c08b816a-3479-4529-894c-5b287cd35e32</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

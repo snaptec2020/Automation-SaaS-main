@@ -3,7 +3,7 @@
    <description></description>
    <name>Menu_Dashboard</name>
    <tag></tag>
-   <elementGuidId>1d9f653b-2eaf-45c7-b9ed-fb0458b0d2bb</elementGuidId>
+   <elementGuidId>04447a98-e901-4572-98da-a31b10dee803</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

@@ -3,7 +3,7 @@
    <description></description>
    <name>MapOnCheckout</name>
    <tag></tag>
-   <elementGuidId>2edfc086-de2a-426b-a79e-093f35ca7a5b</elementGuidId>
+   <elementGuidId>85c1cd34-855e-467c-898f-b338525f35e3</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

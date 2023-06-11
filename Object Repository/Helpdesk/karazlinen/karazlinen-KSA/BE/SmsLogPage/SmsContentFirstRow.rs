@@ -3,7 +3,7 @@
    <description></description>
    <name>SmsContentFirstRow</name>
    <tag></tag>
-   <elementGuidId>7e8a7cc8-4f80-47e7-9373-30cbc7e5ddcf</elementGuidId>
+   <elementGuidId>71b32fdd-e6b2-4805-8d5e-3f60118fd92a</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

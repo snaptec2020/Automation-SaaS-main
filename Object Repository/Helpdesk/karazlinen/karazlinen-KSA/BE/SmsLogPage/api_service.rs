@@ -3,7 +3,7 @@
    <description></description>
    <name>api_service</name>
    <tag></tag>
-   <elementGuidId>46816b37-ed0b-4def-9405-0c98bb22e929</elementGuidId>
+   <elementGuidId>4e554828-6eb6-4198-8801-8a02b1021ea8</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

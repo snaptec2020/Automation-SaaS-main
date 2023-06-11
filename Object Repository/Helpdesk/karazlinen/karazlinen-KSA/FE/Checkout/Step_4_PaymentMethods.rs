@@ -3,14 +3,14 @@
    <description></description>
    <name>Step_4_PaymentMethods</name>
    <tag></tag>
-   <elementGuidId>cda4599f-111a-4ea0-8c77-5404bdf6b423</elementGuidId>
+   <elementGuidId>faf676ca-e891-4804-9f0c-d25658c8c0af</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,&quot;checkoutPage-title-&quot;) and text()=&quot;3. طريقة الدفع&quot;]</value>
+         <value>//li[@class=&quot;aw-onestep-groups_item payment-methods&quot;]//div[@class=&quot;group-title&quot;]/h2/span[text()=&quot;3. طريقة الدفع&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

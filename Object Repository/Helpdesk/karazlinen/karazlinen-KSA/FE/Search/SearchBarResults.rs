@@ -3,7 +3,7 @@
    <description></description>
    <name>SearchBarResults</name>
    <tag></tag>
-   <elementGuidId>183b7c6a-d7bc-4ea5-bbcb-4c6347cc7240</elementGuidId>
+   <elementGuidId>16b78a63-1189-4ffe-9409-51c508e8396b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

@@ -3,14 +3,14 @@
    <description></description>
    <name>SignOut</name>
    <tag></tag>
-   <elementGuidId>fcf602fa-ce07-405a-9110-9a0148ffbad5</elementGuidId>
+   <elementGuidId>069da3ca-d1f4-47a9-83a4-937bb9462afc</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div/div//div//div[contains(@class,&quot;privateAccountMenu-root-&quot;)]//button[text()=&quot;تسجيل الخروج&quot; and contains(@class,&quot;privateAccountMenu-signOutButton-&quot;)]</value>
+         <value>//button[text()=&quot;تسجيل الخروج&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

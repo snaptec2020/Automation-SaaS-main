@@ -3,7 +3,7 @@
    <description></description>
    <name>CardCVVFrame</name>
    <tag></tag>
-   <elementGuidId>dda487a7-a988-4caf-a60d-3ef94be87c30</elementGuidId>
+   <elementGuidId>1a61091f-30a9-427d-963d-a9228ce7b2d6</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

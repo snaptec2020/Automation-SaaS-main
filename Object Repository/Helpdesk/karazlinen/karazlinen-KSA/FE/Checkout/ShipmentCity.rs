@@ -3,7 +3,7 @@
    <description></description>
    <name>ShipmentCity</name>
    <tag></tag>
-   <elementGuidId>899cd13c-0607-4622-b143-92e8a2ef6a12</elementGuidId>
+   <elementGuidId>02c56a25-e88a-48b5-8204-f8906db9c63a</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

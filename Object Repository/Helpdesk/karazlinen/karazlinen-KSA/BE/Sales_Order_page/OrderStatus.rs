@@ -3,7 +3,7 @@
    <description></description>
    <name>OrderStatus</name>
    <tag></tag>
-   <elementGuidId>be4ba1c7-ee1f-416c-aebc-c82538d1e058</elementGuidId>
+   <elementGuidId>c0fd96af-8794-49cd-8bc5-b16dca6639a7</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

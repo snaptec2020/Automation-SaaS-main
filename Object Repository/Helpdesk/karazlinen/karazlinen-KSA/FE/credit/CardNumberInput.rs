@@ -3,14 +3,14 @@
    <description></description>
    <name>CardNumberInput</name>
    <tag></tag>
-   <elementGuidId>0c6d77bd-f111-4b29-a206-9a31ea2aff1f</elementGuidId>
+   <elementGuidId>01476d2f-2c05-4a76-822a-4a1f56b15b85</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id=&quot;checkout-frames-card-number&quot;]</value>
+         <value>//label[text()=&quot;رقم البطاقة&quot;]/..//input[contains(@class,&quot;input-input-&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

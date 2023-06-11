@@ -3,7 +3,7 @@
    <description></description>
    <name>Step_2_ShipmentLocation</name>
    <tag></tag>
-   <elementGuidId>a285f313-d44e-4da3-abcf-72e25690f7e8</elementGuidId>
+   <elementGuidId>c6dee65e-75cb-4928-9f06-d618d493574a</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

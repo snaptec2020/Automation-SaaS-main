@@ -3,14 +3,14 @@
    <description></description>
    <name>MainForm</name>
    <tag></tag>
-   <elementGuidId>ee832ae7-cb8e-44c2-b71e-abd684e54e8b</elementGuidId>
+   <elementGuidId>ad12cce2-c424-4bf5-b964-707d545807a7</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//form[@id=&quot;payment-form&quot;]</value>
+         <value>//form[@id=&quot;checkoutcom_card_payment_frm&quot;]/div</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

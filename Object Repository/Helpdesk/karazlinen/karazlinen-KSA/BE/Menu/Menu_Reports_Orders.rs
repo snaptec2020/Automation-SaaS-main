@@ -3,7 +3,7 @@
    <description></description>
    <name>Menu_Reports_Orders</name>
    <tag></tag>
-   <elementGuidId>d841d5f4-bb86-431b-a99a-a83bab94adeb</elementGuidId>
+   <elementGuidId>8eef6ab2-ab8c-49fc-95bc-ac80b79c2524</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

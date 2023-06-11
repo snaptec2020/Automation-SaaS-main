@@ -3,7 +3,7 @@
    <description></description>
    <name>الأشمغه</name>
    <tag></tag>
-   <elementGuidId>b235ffd6-ddcd-4833-b22d-f4591d446d3d</elementGuidId>
+   <elementGuidId>c40c1e2f-b4b3-4d96-806b-311802f9ea17</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

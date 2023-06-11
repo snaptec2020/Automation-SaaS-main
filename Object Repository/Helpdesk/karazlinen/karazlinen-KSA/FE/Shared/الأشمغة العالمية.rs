@@ -3,7 +3,7 @@
    <description></description>
    <name>الأشمغة العالمية</name>
    <tag></tag>
-   <elementGuidId>43ee61f6-ec6e-44fe-9f63-a15935974507</elementGuidId>
+   <elementGuidId>7c60f8cb-3f3c-46dd-8894-f2cffae0c0ad</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

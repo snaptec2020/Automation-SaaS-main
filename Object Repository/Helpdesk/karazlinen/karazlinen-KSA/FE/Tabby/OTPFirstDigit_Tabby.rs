@@ -3,7 +3,7 @@
    <description></description>
    <name>OTPFirstDigit_Tabby</name>
    <tag></tag>
-   <elementGuidId>e223074b-1ae6-4223-96e3-8f188695601f</elementGuidId>
+   <elementGuidId>401cd7e3-f666-4035-9650-142b815d6aca</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

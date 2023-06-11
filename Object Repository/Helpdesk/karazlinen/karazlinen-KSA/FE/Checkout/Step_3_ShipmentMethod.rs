@@ -3,14 +3,14 @@
    <description></description>
    <name>Step_3_ShipmentMethod</name>
    <tag></tag>
-   <elementGuidId>a7e86eee-061f-4105-8d9e-411514aca756</elementGuidId>
+   <elementGuidId>63b59913-9416-4817-a729-32ccaeb4bee9</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//span[contains(@class,&quot;shippingMethod-titleModal-&quot;) and text()=&quot;طريقة الشحن&quot;]</value>
+         <value>//li[@class=&quot;aw-onestep-groups_item shipping-dupli&quot;]//div[@class=&quot;group-title&quot;]/h2/span[text()=&quot;2. عنوان وطريقة الشحن&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -3,7 +3,7 @@
    <description></description>
    <name>click الملابس الداخليه</name>
    <tag></tag>
-   <elementGuidId>29c081c9-3c3b-4b9e-90b8-9e8b7b700ed8</elementGuidId>
+   <elementGuidId>28421acc-f6b7-4ef0-ae3c-fa771675be50</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

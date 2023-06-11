@@ -3,7 +3,7 @@
    <description></description>
    <name>click نسائي</name>
    <tag></tag>
-   <elementGuidId>7264efa5-f1a7-4d36-9b94-d4ed99aa2669</elementGuidId>
+   <elementGuidId>6470bf03-526b-49b9-95b9-4c89cc4474d0</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

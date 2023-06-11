@@ -3,7 +3,7 @@
    <description></description>
    <name>TamaraProceedButtonPage2</name>
    <tag></tag>
-   <elementGuidId>0c301785-f6b8-49ef-970b-c061d88e99f4</elementGuidId>
+   <elementGuidId>c8181feb-d974-400c-90fb-7a10b27b53bd</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

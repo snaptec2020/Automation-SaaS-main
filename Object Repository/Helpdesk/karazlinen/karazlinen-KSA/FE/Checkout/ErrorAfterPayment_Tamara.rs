@@ -3,7 +3,7 @@
    <description></description>
    <name>ErrorAfterPayment_Tamara</name>
    <tag></tag>
-   <elementGuidId>f0a6d372-c57a-445e-8696-0709a430551e</elementGuidId>
+   <elementGuidId>afcc9d73-1eca-46fb-8265-8bf0566cd67e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

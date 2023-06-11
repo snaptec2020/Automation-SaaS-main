@@ -3,7 +3,7 @@
    <description></description>
    <name>Web header</name>
    <tag></tag>
-   <elementGuidId>fc68a959-80c7-402e-b2e9-89aaab528d4f</elementGuidId>
+   <elementGuidId>827d3be0-9259-437d-a9a2-c03c671a3967</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

@@ -3,7 +3,7 @@
    <description></description>
    <name>الأثواب</name>
    <tag></tag>
-   <elementGuidId>0a55e19c-4e61-4bfd-b411-5cc7058b584c</elementGuidId>
+   <elementGuidId>4f68ac0e-6c2f-4e82-92da-de9b5222b16b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

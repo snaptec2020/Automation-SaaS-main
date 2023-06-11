@@ -3,7 +3,7 @@
    <description></description>
    <name>TamaraProceed</name>
    <tag></tag>
-   <elementGuidId>781bfa83-42eb-4e41-b2a8-74f6fe393da6</elementGuidId>
+   <elementGuidId>d703fc30-204a-472f-87a5-06bb3cbf22cc</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

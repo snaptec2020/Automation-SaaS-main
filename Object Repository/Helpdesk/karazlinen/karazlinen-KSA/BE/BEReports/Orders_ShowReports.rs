@@ -3,7 +3,7 @@
    <description></description>
    <name>Orders_ShowReports</name>
    <tag></tag>
-   <elementGuidId>e94e3f88-39a8-4d74-aa03-c51863708cba</elementGuidId>
+   <elementGuidId>730e5f4d-e3fe-444a-9e5a-419219975910</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

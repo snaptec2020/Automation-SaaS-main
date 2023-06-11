@@ -3,7 +3,7 @@
    <description></description>
    <name>ErrorAfterPayment_Text_ThankYou</name>
    <tag></tag>
-   <elementGuidId>7ab4e15d-1e04-4786-9b81-904169acaaa9</elementGuidId>
+   <elementGuidId>9012ddc6-afc8-4e62-bb85-b54707f97ebe</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

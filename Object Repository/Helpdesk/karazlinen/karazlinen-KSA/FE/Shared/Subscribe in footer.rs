@@ -3,7 +3,7 @@
    <description></description>
    <name>Subscribe in footer</name>
    <tag></tag>
-   <elementGuidId>66f9e427-9e34-43f1-82ed-df6827db9c40</elementGuidId>
+   <elementGuidId>fbc04e84-b88a-4ba0-8c91-610ecfe61f62</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

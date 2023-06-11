@@ -3,7 +3,7 @@
    <description></description>
    <name>Fav</name>
    <tag></tag>
-   <elementGuidId>19f11973-65ab-47e7-94b9-3ee95f33ebd6</elementGuidId>
+   <elementGuidId>d01509f0-b7f1-4c5c-99bd-c4dc84c95277</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

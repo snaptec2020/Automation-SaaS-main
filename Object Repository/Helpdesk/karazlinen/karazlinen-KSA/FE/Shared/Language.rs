@@ -3,7 +3,7 @@
    <description></description>
    <name>Language</name>
    <tag></tag>
-   <elementGuidId>775d1560-a61c-445c-abcd-3b813fa3df5a</elementGuidId>
+   <elementGuidId>9467c840-73a6-4c4e-b0c2-e65d46a1dda4</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

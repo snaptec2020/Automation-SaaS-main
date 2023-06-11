@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>MailChimpIFrame-Mobile</name>
+   <tag></tag>
+   <elementGuidId>9f8a3f13-bc9c-4470-9e3d-17ce26ed005a</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//iframe[@data-dojo-attach-point=&quot;iframeBannerContainer&quot;]</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//iframe[@data-dojo-attach-point=&quot;iframeBannerContainer&quot;]</value>
+      <webElementGuid>1b776700-0f1c-4225-a964-dabdbad42aa3</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

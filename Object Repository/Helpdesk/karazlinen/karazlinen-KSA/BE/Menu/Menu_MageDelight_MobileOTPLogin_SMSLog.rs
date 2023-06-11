@@ -3,15 +3,15 @@
    <description></description>
    <name>Menu_MageDelight_MobileOTPLogin_SMSLog</name>
    <tag></tag>
-   <elementGuidId>1fa49561-4f88-4f52-904f-270433a88e07</elementGuidId>
+   <elementGuidId>bd098a73-7044-4efa-88a3-edefa2141af1</elementGuidId>
    <selectorCollection>
-      <entry>
-         <key>XPATH</key>
-         <value>//li[@id='menu-magedelight-smsprofile-smsprofile-root']/div/ul/li[3]/a</value>
-      </entry>
       <entry>
          <key>CSS</key>
          <value>li.item-smsprofilelog.level-1 > a</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//li[@id='menu-magedelight-smsprofile-smsprofile-root']/div/ul/li[3]/a</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>a</value>
-      <webElementGuid>7aeb892d-293f-4b95-aa5e-f4393bb359de</webElementGuid>
+      <webElementGuid>c0630993-e7e5-41c4-ac36-3e918b294119</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -30,7 +30,7 @@
       <name>href</name>
       <type>Main</type>
       <value>https://backend.ajstore.com/admin_15cfht/smsprofile/smsprofilelog/index/key/068ae17feeb1b9dafd17910beb81058c0dfe6fc5df59e0d896af275f1f73820f/</value>
-      <webElementGuid>40159dea-1a8e-40fe-9c7b-9240f41ad772</webElementGuid>
+      <webElementGuid>8a286d7c-589c-4075-b28e-f19a8946c202</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +38,7 @@
       <name>text</name>
       <type>Main</type>
       <value>SMS Log</value>
-      <webElementGuid>9af76ad6-a362-45aa-ad6d-6b2591aa69bb</webElementGuid>
+      <webElementGuid>91ffe68a-f6f2-4e01-b846-4f1cc77b7113</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -46,7 +46,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;menu-magedelight-smsprofile-smsprofile-root&quot;)/div[@class=&quot;submenu&quot;]/ul[1]/li[@class=&quot;item-smsprofilelog    level-1&quot;]/a[1]</value>
-      <webElementGuid>e3f18dd8-449d-4ad0-8f37-d188fc2feb93</webElementGuid>
+      <webElementGuid>18c75d44-1c91-4863-8472-5176e6209682</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -54,7 +54,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//li[@id='menu-magedelight-smsprofile-smsprofile-root']/div/ul/li[3]/a</value>
-      <webElementGuid>811228ac-a1f1-43a8-8d92-d5ea8a521d85</webElementGuid>
+      <webElementGuid>261e4e7e-0d2e-4a45-9c94-dfabbc6d9ca7</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -62,7 +62,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Promotional SMS'])[1]/following::a[1]</value>
-      <webElementGuid>704eb4fc-1970-49f3-b35e-537220fc1c1b</webElementGuid>
+      <webElementGuid>499cd5c4-2858-4bf8-b95f-8a4912bed69d</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,7 +70,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='OTP SMS Templates'])[1]/following::a[2]</value>
-      <webElementGuid>28886f69-c769-447f-ac0f-67ffe469f4c8</webElementGuid>
+      <webElementGuid>3705362c-c2f7-4bf7-9d56-a7be323730cc</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,7 +78,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Configuration'])[5]/preceding::a[1]</value>
-      <webElementGuid>99799f37-4889-4aaa-b84e-4d34b24565c9</webElementGuid>
+      <webElementGuid>d90dc9a4-5985-4d85-9f0c-182628863f1b</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,7 +86,7 @@
       <name>xpath:href</name>
       <type>Main</type>
       <value>//a[contains(@href, 'https://backend.ajstore.com/admin_15cfht/smsprofile/smsprofilelog/index/key/068ae17feeb1b9dafd17910beb81058c0dfe6fc5df59e0d896af275f1f73820f/')]</value>
-      <webElementGuid>f8dd3af3-6437-473a-906c-d1d261432d23</webElementGuid>
+      <webElementGuid>772ab6f1-d5ba-4e15-8a02-fa012478ef0f</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -94,7 +94,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//li[14]/div/ul/li[3]/a</value>
-      <webElementGuid>0e5ed023-79de-4021-9973-81cfea9ca4fc</webElementGuid>
+      <webElementGuid>6f790676-f4f3-4b9c-8665-e420eda195ae</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -102,6 +102,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//a[@href = 'https://backend.ajstore.com/admin_15cfht/smsprofile/smsprofilelog/index/key/068ae17feeb1b9dafd17910beb81058c0dfe6fc5df59e0d896af275f1f73820f/' and (text() = 'SMS Log' or . = 'SMS Log')]</value>
-      <webElementGuid>08af99ae-a716-4b9d-81bc-454365d2dda9</webElementGuid>
+      <webElementGuid>a7e7123e-bb6b-438d-ad4d-5ae6eaa5b3b0</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

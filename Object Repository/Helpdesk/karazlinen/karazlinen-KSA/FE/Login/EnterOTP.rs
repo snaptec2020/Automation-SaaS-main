@@ -3,14 +3,14 @@
    <description></description>
    <name>EnterOTP</name>
    <tag></tag>
-   <elementGuidId>8e9341aa-eb1e-44aa-9e57-51c16f2e7142</elementGuidId>
+   <elementGuidId>60c6cdb0-642b-415a-bf25-53f8b9382fd2</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//p[text()=&quot;قمنا بإرسال رمز التحقق إلى جوالك&quot;]</value>
+         <value>//div[contains( @class,'verificationPage-subTitle-')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

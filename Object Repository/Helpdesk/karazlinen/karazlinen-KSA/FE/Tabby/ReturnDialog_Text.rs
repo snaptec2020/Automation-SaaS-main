@@ -3,7 +3,7 @@
    <description></description>
    <name>ReturnDialog_Text</name>
    <tag></tag>
-   <elementGuidId>3a836b03-22bf-4809-ab7c-e190759b365b</elementGuidId>
+   <elementGuidId>f68d1724-7c0f-46e5-bfa9-659dfefa6d48</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

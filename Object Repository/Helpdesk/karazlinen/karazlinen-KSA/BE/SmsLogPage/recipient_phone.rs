@@ -3,7 +3,7 @@
    <description></description>
    <name>recipient_phone</name>
    <tag></tag>
-   <elementGuidId>c5613b71-5967-41e1-96df-0b5c3d1f23aa</elementGuidId>
+   <elementGuidId>86a9b31a-081d-4c8d-9cc9-1af2574fcab0</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

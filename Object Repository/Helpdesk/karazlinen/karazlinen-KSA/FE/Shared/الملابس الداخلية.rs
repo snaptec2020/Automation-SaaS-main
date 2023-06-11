@@ -3,7 +3,7 @@
    <description></description>
    <name>الملابس الداخلية</name>
    <tag></tag>
-   <elementGuidId>ca233d41-b134-4219-8062-c54ece5c967a</elementGuidId>
+   <elementGuidId>cdb48af4-56e4-473c-82d5-8b8f351a0656</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

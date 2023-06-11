@@ -31,7 +31,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'dev test'</initValue>
+      <initValue>'DEV test'</initValue>
       <name>CustomerName</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -48,5 +48,20 @@
       <description></description>
       <initValue>'274'</initValue>
       <name>MadaCVV</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'m.aldawi@snaptec.co'</initValue>
+      <name>CustomerEmail</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>46.67946359838521</initValue>
+      <name>Longtitude</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>24.70437792668048</initValue>
+      <name>Latitude</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

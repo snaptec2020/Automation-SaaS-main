@@ -3,7 +3,7 @@
    <description></description>
    <name>Mega menu</name>
    <tag></tag>
-   <elementGuidId>bdd3f02b-a8a7-46a5-a23e-a049001d49be</elementGuidId>
+   <elementGuidId>7e399d90-ce4d-4bf5-8ab8-39537d5837bf</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

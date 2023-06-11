@@ -3,7 +3,7 @@
    <description></description>
    <name>Menu_Sales</name>
    <tag></tag>
-   <elementGuidId>cbcfdcf8-0cf4-41b1-96a5-47a33cb2fe8e</elementGuidId>
+   <elementGuidId>9a8c1bf9-b260-475f-b057-d77d6f3ef804</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

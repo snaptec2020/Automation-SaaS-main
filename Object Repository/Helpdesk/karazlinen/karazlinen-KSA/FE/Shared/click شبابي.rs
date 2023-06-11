@@ -3,7 +3,7 @@
    <description></description>
    <name>click شبابي</name>
    <tag></tag>
-   <elementGuidId>ffa9b423-0fa2-4a8d-8164-2206840e9291</elementGuidId>
+   <elementGuidId>5c3e39b9-1ef5-4f8d-b617-dda559c60b1e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

@@ -3,7 +3,7 @@
    <description></description>
    <name>AmountText</name>
    <tag></tag>
-   <elementGuidId>82f5ced2-810c-49ad-9e09-8682f94017eb</elementGuidId>
+   <elementGuidId>bd09ba23-3f16-4772-baf9-d6c733c375a7</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

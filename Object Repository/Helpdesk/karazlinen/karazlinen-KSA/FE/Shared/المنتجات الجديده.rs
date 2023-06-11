@@ -3,7 +3,7 @@
    <description></description>
    <name>المنتجات الجديده</name>
    <tag></tag>
-   <elementGuidId>6f0a760f-2734-4cee-bdc7-e8d3f1dd96cd</elementGuidId>
+   <elementGuidId>461f624b-875a-4dfb-a77f-032f22a9d908</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

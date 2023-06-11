@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>CategoriesL2_2</name>
+   <tag></tag>
+   <elementGuidId>ec8e529e-28a4-4d87-b1c8-65e9c9305c2c</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//div[contains(@class,&quot;categoryTree-root&quot;)]/a[contains(@class,&quot;categoryLeaf-target-&quot;)]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//div[contains(@class,&quot;categoryTree-root&quot;)]/a[contains(@class,&quot;categoryLeaf-target-&quot;)]</value>
+      <webElementGuid>796468a9-f432-4459-892c-8bbf98c01f94</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

@@ -3,7 +3,7 @@
    <description></description>
    <name>entity_id_from</name>
    <tag></tag>
-   <elementGuidId>ba58581a-24ea-44f4-afe1-20436fbef4fb</elementGuidId>
+   <elementGuidId>f06b5c4c-0d6d-4c5d-9b45-25f0ff41862e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

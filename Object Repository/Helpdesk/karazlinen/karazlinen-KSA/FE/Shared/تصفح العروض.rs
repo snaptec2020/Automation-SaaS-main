@@ -3,7 +3,7 @@
    <description></description>
    <name>تصفح العروض</name>
    <tag></tag>
-   <elementGuidId>848c1393-2b36-4721-9e81-f8fdba56276a</elementGuidId>
+   <elementGuidId>d7654670-a853-41a7-a890-d75d3781def1</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

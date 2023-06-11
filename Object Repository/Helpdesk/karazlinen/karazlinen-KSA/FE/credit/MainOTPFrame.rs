@@ -3,7 +3,7 @@
    <description></description>
    <name>MainOTPFrame</name>
    <tag></tag>
-   <elementGuidId>fcc2d05c-ee8f-4de8-95e0-daee367e99fe</elementGuidId>
+   <elementGuidId>a5345794-0a3b-43ad-bfce-92219f98b94c</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

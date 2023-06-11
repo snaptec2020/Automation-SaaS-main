@@ -3,7 +3,7 @@
    <description></description>
    <name>FilterClear</name>
    <tag></tag>
-   <elementGuidId>94caba74-22a0-436a-9561-6a04e9d79bcd</elementGuidId>
+   <elementGuidId>15b3ca8a-ac94-404a-a5c2-c3f2bd395cb2</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

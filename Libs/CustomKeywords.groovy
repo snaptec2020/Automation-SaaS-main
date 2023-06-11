@@ -225,6 +225,11 @@ def static "helpdesk.HelpdeskUtil.OpenRandomProductAlShamasy"() {
 }
 
 
+def static "helpdesk.HelpdeskUtil.OpenRandomProductkarazlinenKSA"() {
+    (new helpdesk.HelpdeskUtil()).OpenRandomProductkarazlinenKSA()
+}
+
+
 def static "helpdesk.HelpdeskUtil.decodeEncodedValue"(
     	String encoded	) {
     (new helpdesk.HelpdeskUtil()).decodeEncodedValue(
@@ -262,6 +267,11 @@ def static "helpdesk.HelpdeskUtil.ScrollToElement"(
     	WebElement element	) {
     (new helpdesk.HelpdeskUtil()).ScrollToElement(
         	element)
+}
+
+
+def static "helpdesk.HelpdeskUtil.ScrollToBottom"() {
+    (new helpdesk.HelpdeskUtil()).ScrollToBottom()
 }
 
 

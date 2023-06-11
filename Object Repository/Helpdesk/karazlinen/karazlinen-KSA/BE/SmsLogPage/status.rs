@@ -3,7 +3,7 @@
    <description></description>
    <name>status</name>
    <tag></tag>
-   <elementGuidId>1740b702-a2e5-4e7c-807d-ad17364971ae</elementGuidId>
+   <elementGuidId>b3cf7d11-0d04-4e8f-b026-51dd3aa09849</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>

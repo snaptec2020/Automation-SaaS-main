@@ -3,14 +3,14 @@
    <description></description>
    <name>Add to cart</name>
    <tag></tag>
-   <elementGuidId>7d725b84-f36e-4bfc-867a-4e99ce86ab69</elementGuidId>
+   <elementGuidId>53a4457c-21f3-4e61-8166-50ab8d5dcf08</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button[contains(@class,'productFullDetail') and contains (@class, 'clickable-root')]</value>
+         <value>//span[text()=&quot;أضف إلى السلة&quot;]//parent::button</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
