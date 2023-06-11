@@ -282,8 +282,6 @@ public class productsFromCatalog {
 				found=true
 				WebElement currentAddToCartBtn=it.findElements(By.xpath("./div/div/button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to cart')]")).get(0)
 				def currentURL = WebUI.getUrl()
-				
-				KeywordUtil.logInfo(currentAddToCartBtn.toString())
 				(new HelpdeskUtil().ScrollToElement(currentAddToCartBtn))
 				WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(currentAddToCartBtn))
 				WebUI.delay(1)
