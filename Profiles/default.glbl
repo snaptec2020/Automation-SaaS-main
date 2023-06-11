@@ -20,7 +20,7 @@
       <name>Wrong_email</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>The Languare of Site Ar for Arabic, En for English</description>
       <initValue>'ar'</initValue>
       <name>languageMode</name>
    </GlobalVariableEntity>
@@ -81,7 +81,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>1 = Web Browser, 2 = Mobile Browser, 3= Mobile App</description>
-      <initValue>'2'</initValue>
+      <initValue>'1'</initValue>
       <name>RunningMode</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

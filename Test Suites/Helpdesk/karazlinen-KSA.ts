@@ -74,11 +74,4 @@
       <testCaseId>Test Cases/Helpdesk/karazlinen/karazlinen-KSA/Search</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
-   <testCaseLink>
-      <guid>c58fbb9c-7737-4577-9ef6-3d868364d2ad</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Shared/RunOnAllMobileWebBrowsers</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
 </TestSuiteEntity>

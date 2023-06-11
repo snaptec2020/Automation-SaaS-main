@@ -67,11 +67,4 @@
       <testCaseId>Test Cases/Helpdesk/TheBeautySecrets/KSA/Search</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
-   <testCaseLink>
-      <guid>33908f64-a395-4a0a-9dd9-35358e6db67a</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Shared/RunOnAllMobileWebBrowsers</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
 </TestSuiteEntity>

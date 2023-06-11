@@ -25,7 +25,7 @@ public class GlobalVariable {
     public static Object Wrong_email
      
     /**
-     * <p></p>
+     * <p>Profile default : The Languare of Site Ar for Arabic, En for English</p>
      */
     public static Object languageMode
      

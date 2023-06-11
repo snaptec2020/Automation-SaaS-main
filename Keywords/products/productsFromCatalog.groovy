@@ -23,6 +23,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import catalog.catlogComponants
 import generalactions.generalStrings
+import helpdesk.HelpdeskUtil
 
 import java.util.List
 
@@ -268,6 +269,7 @@ public class productsFromCatalog {
 				found=true
 				WebElement currentAddToCartBtn=it.findElements(By.xpath("./div/div/button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to cart')]")).get(0)
 				def currentURL = WebUI.getUrl()
+				(new HelpdeskUtil().ScrollToElement(currentAddToCartBtn))
 				WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(currentAddToCartBtn))
 				//utilityFunctions.clickOnObjectusingJavaScript(currentAddToCartBtn)
 				WebUI.delay(1)
@@ -280,6 +282,9 @@ public class productsFromCatalog {
 				found=true
 				WebElement currentAddToCartBtn=it.findElements(By.xpath("./div/div/button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to cart')]")).get(0)
 				def currentURL = WebUI.getUrl()
+				
+				KeywordUtil.logInfo(currentAddToCartBtn.toString())
+				(new HelpdeskUtil().ScrollToElement(currentAddToCartBtn))
 				WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(currentAddToCartBtn))
 				WebUI.delay(1)
 				if (currentURL.equals(WebUI.getUrl()) & WebUI.verifyElementNotVisible(findTestObject('Object Repository/Cart/Continue Shopping'),FailureHandling.OPTIONAL)  ) {

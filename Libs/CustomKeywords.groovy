@@ -190,6 +190,11 @@ def static "signup.Signupemailverifications.verificationElementSignUp"() {
 }
 
 
+def static "generalactions.EnvironmentSettings.isRunningByMobile"() {
+    (new generalactions.EnvironmentSettings()).isRunningByMobile()
+}
+
+
 def static "helpdesk.HelpdeskUtil.OpenRandomProductAJStore"() {
     (new helpdesk.HelpdeskUtil()).OpenRandomProductAJStore()
 }
