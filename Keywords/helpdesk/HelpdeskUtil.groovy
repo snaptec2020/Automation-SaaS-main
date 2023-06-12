@@ -512,9 +512,9 @@ public class HelpdeskUtil {
 	@Keyword
 	def OpenRandomProductkarazlinenKSA(){
 		boolean isMobile=WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/karazlinen/karazlinen-KSA/SharedScripts/isMobile'), [:],	FailureHandling.CONTINUE_ON_FAILURE)
-//		if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/BottomMenu-Mobile'),2)) {
-//			isMobile=true
-//		}
+		//		if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/BottomMenu-Mobile'),2)) {
+		//			isMobile=true
+		//		}
 
 		WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/karazlinen/karazlinen-KSA/SharedScripts/ClickLogo'), [:],	FailureHandling.STOP_ON_FAILURE)
 
@@ -713,7 +713,7 @@ public class HelpdeskUtil {
 			println ex.message
 			println ex.cause
 			ex.printStackTrace()
-			
+
 		}
 	}
 
@@ -726,7 +726,7 @@ public class HelpdeskUtil {
 			println ex.message
 			println ex.cause
 			ex.printStackTrace()
-			
+
 		}
 	}
 
@@ -739,7 +739,7 @@ public class HelpdeskUtil {
 			println ex.message
 			println ex.cause
 			ex.printStackTrace()
-			
+
 		}
 	}
 

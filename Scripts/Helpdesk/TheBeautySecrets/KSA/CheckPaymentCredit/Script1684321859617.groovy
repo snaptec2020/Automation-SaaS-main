@@ -140,6 +140,32 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautyS
 //WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/Step_2_ShipmentLocation'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/Step_1_Login'))
 
+
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/ShippedToForm'), 10)) {
+	WebElement FullName = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/ShippedToForm-FullName'),5)
+	WebUI.verifyMatch(FullName.getAttribute('value'), GlobalVariable.CustomerName, false)
+
+	WebElement Phone = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/ShippedToForm-Phone'),5)
+	WebUI.verifyMatch(Phone.getAttribute('value'), GlobalVariable.FE_Tel, false)
+	
+	WebUI.verifyOptionsPresent(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/ShippedToForm-Country')
+		,['الإمارات العربية المتحدة', 'الكويت', 'المملكة العربية السعودية'])
+	WebUI.selectOptionByLabel(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/ShippedToForm-City'), 'الرياض', false)
+	WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/LoadingImg'), 3)
+	
+	WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/ShippedToForm-Street'), 'شارع العليا، العليا، الرياض 12214، المملكة العربية السعودية')
+	WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/LoadingImg'), 3)
+	
+	WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/ShippedToForm-Neighbourhood'), 'العليا')
+	WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/LoadingImg'), 3)
+	
+	WebUI.setText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/ShippedToForm-HomePhone'),GlobalVariable.FE_Tel)
+	WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/LoadingImg'), 3)
+	
+	CustomKeywords.'helpdesk.HelpdeskUtil.uncheckUsingJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/ShippedToForm-SaveAddressCheckbox'),3)
+	WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/LoadingImg'), 3)
+}
+
 //We should check if shipment fee is 0 when total paid is more than x and 20 if less than x
 //PaymentMethods
 TestObject paymentPath = new TestObject()
@@ -147,17 +173,19 @@ paymentPath.addProperty('xpath', ConditionType.EQUALS, '//div[@data-role="paymen
 WebUI.waitForElementVisible(paymentPath,10)
 List Paymentlist = WebUiCommonHelper.findWebElements(paymentPath, 30)
 CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(paymentPath)
-WebUI.verifyMatch(Paymentlist.size().toString(), "3", false, FailureHandling.CONTINUE_ON_FAILURE)
-
-// COD
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/PaymentMethod_1_Text'),FailureHandling.CONTINUE_ON_FAILURE)
-// Credit
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/PaymentMethod_2_Text'))
-// Credit
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/PaymentMethod_3_Text'))
-
+if (Paymentlist.size() != 3) {
+	KeywordUtil.markWarning("Expected 3 payments methods but was: " + Paymentlist.size().toString())
+} else {
+	// COD
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/PaymentMethod_1_Text'),FailureHandling.CONTINUE_ON_FAILURE)
+	// Credit
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/PaymentMethod_2_Text'),FailureHandling.CONTINUE_ON_FAILURE)
+	// Tamara
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/PaymentMethod_3_Text'),FailureHandling.CONTINUE_ON_FAILURE)
+}
 
 //Order with Credit 
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/PaymentMethod_2_Text'))
 WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/Step_4_PaymentMethods'), 5)
 CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/PaymentMethod_2_Text'),3)
 
