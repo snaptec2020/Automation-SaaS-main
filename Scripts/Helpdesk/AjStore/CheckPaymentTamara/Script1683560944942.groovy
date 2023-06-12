@@ -166,6 +166,7 @@ if (Paymentlist.size() != 4) {
 }
 
 //Order with Tamara
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/PaymentMethod_2_Text'))
 CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/PaymentMethod_2_Text'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Checkout/PaymentMethod_2_Text'))
 

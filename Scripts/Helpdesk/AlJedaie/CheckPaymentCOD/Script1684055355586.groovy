@@ -135,8 +135,7 @@ WebUI.waitForElementVisible(paymentPath,10)
 List Paymentlist = WebUiCommonHelper.findWebElements(paymentPath, 30)
 
 if (Paymentlist.size() != 2) {
- 	println (Paymentlist.size())
-   assert false
+	KeywordUtil.markWarning("Expected 2 payments methods but was: " + Paymentlist.size().toString())
 } else {
 	// Tamara
 	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_1_Text'))

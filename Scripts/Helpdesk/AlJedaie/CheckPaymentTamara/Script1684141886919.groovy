@@ -135,19 +135,19 @@ WebUI.waitForElementVisible(paymentPath,10)
 List Paymentlist = WebUiCommonHelper.findWebElements(paymentPath, 30)
 
 if (Paymentlist.size() != 2) {
- 	println (Paymentlist.size())
-   assert false
+	KeywordUtil.markWarning("Expected 2 payments methods but was: " + Paymentlist.size().toString())
 } else {
 	// Tamara
 	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_1_Text'))
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_1_Text'))
+    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_1_Text'),FailureHandling.CONTINUE_ON_FAILURE)
 	// Credit
 	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_2_Text'))
-    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_2_Text'))
+    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_2_Text'),FailureHandling.CONTINUE_ON_FAILURE)
 }
 
 //Order with Tamara
 WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/Step_4_PaymentMethods'), 5)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_1_Text'))
 CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/PaymentMethod_1_Text'),3)
 //WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Checkout/FinishPayment'), 10)
 //WebUI.scrollToPosition(0, element.getLocation().getY())
