@@ -163,7 +163,7 @@ public class Payments {
 					case ~('الدفع عند الإستلام') :
 					case ~('Cash On Delivery') :
 					//WebUI.click(findTestObject('Object Repository/Check Out/Place order check out button'))
-						WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/COD Success'),0)
+						WebUI.verifyElementVisible(findTestObject('Object Repository/Check Out/COD Success'), FailureHandling.CONTINUE_ON_FAILURE)
 						WebUI.takeFullPageScreenshot('./CODOrderResult.png')
 						break
 					//---------------------------Tamara------------------------------------
@@ -220,6 +220,7 @@ public class Payments {
 
 			WebUI.click(findTestObject('Object Repository/Check Out/Place order check out button'))
 			WebUI.delay(10)
+			WebUI.verifyElementVisible(findTestObject('Object Repository/Check Out/Close payment method/Fail order check'), FailureHandling.CONTINUE_ON_FAILURE)
 
 		}
 	}
