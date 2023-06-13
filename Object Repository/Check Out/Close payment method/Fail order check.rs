@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//h3[@class='styles_title__Dbfe2'][normalize-space()=&quot;Your order wasn't accepted.&quot; or text()='لم يتم قبول طلبك' ] </value>
+         <value>//h3[starts-with(@class,'styles_title')][normalize-space()=&quot;Your order wasn't accepted.&quot; or text()='لم يتم قبول طلبك' ]</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

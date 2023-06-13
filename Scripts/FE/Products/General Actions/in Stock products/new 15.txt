@@ -1,0 +1,485 @@
+Orders list
+34 Record(s) found
+
+Order #
+Website
+Store View
+Purchase Date
+Grand Total(Basic)
+Grand Total(Purchased)
+Payment Method
+Customer Name
+Email
+Phone Number
+Country
+City
+Status
+Actions
+
+15000000059
+Natural Touch
+English
+11.12.2022
+SAR 92.99
+SAR 92.99
+Cash On Delivery
+Van Sy
+167042402416704@example.com
++966542450508
+Saudi Arabia
+Riyadh
+Complete
+
+13000000038
+Natural Touch
+العربية
+01.01.2023
+SAR 204.98
+SAR 204.98
+Cash On Delivery
+Dev Test
+167042443316704@example.com
++966566640965
+Saudi Arabia
+Riyadh
+Complete
+
+15000000060
+Natural Touch
+English
+09.01.2023
+SAR 244.98
+SAR 244.98
+Cash On Delivery
+test test
+nguyen.le@snaptec.co
+591029883
+Saudi Arabia
+Riyadh
+Complete
+
+13000000039
+Natural Touch
+العربية
+10.01.2023
+SAR 244.98
+SAR 244.98
+Cash On Delivery
+rr rr
+167334967016733@example.com
++966591029883
+Saudi Arabia
+Al Majma'ah
+Complete
+
+13000000047
+Natural Touch
+العربية
+19.01.2023
+SAR 174.99
+SAR 174.99
+Apple Pay with Checkout.com
+dev test
+thanh.nguyen@snaptec.co
+222333444
+Saudi Arabia
+Riyadh
+Complete
+
+13000000056
+Natural Touch
+العربية
+31.01.2023
+SAR 335.98
+SAR 335.98
+Pay by Card with Checkout.com
+ha QA
+ha.truong@snaptec.co
++966591029883
+Saudi Arabia
+Riyadh
+Complete
+
+13000000059
+Natural Touch
+العربية
+08.02.2023
+SAR 109.99
+SAR 109.99
+Cash On Delivery
+Razan Bawaneh
+test@api.com
++966566640965
+Saudi Arabia
+Riyadh
+Complete
+
+13000000060
+Natural Touch
+العربية
+08.02.2023
+SAR 45.99
+SAR 45.99
+Cash On Delivery
+Ahmad Saber
+166954618916695@example.com
++966536954593
+Saudi Arabia
+Riyadh
+Complete
+
+13000000061
+Natural Touch
+العربية
+09.02.2023
+SAR 45.99
+SAR 45.99
+Cash On Delivery
+Ahmad Saber
+166954618916695@example.com
++966536954523
+Saudi Arabia
+Riyadh
+Complete
+
+13000000062
+Natural Touch
+العربية
+11.02.2023
+SAR 30
+SAR 30
+Cash On Delivery
+Razan Bawaneh
+test1996@test.com
++966542450508
+Saudi Arabia
+Aba Alworood
+Complete
+
+15000000081
+Natural Touch
+English
+23.02.2023
+SAR 645
+SAR 645
+Cash On Delivery
+minh vo
+minhvo@snaptec.co
++966542450500
+Saudi Arabia
+Riyadh
+Complete
+
+13000000082
+Natural Touch
+العربية
+04.03.2023
+SAR 120
+SAR 120
+Cash On Delivery
+Sarah EL-Mustafah
+s.elmustafah@snaptec.co
++966542450500
+Saudi Arabia
+Riyadh
+Complete
+
+15000000144
+Natural Touch
+English
+09.03.2023
+SAR 330
+SAR 330
+Cash On Delivery
+test test
+nhu.le@snaptec.co
+561613356
+Saudi Arabia
+Abha Manhal
+Complete
+
+13000000084
+Natural Touch
+العربية
+09.03.2023
+SAR 330
+SAR 330
+Cash On Delivery
+test test
+nhu.le@snaptec.co
+561613356
+Saudi Arabia
+Abha Manhal
+Complete
+
+13000000087
+Natural Touch
+العربية
+11.03.2023
+SAR 330
+SAR 330
+Cash On Delivery
+test test
+testqa@gmail.com
+561613356
+Saudi Arabia
+Aba Alworood
+Complete
+
+13000000088
+Natural Touch
+العربية
+11.03.2023
+SAR 330
+SAR 330
+Cash On Delivery
+test test
+testqa@gmail.com
+561613356
+Saudi Arabia
+Aba Alworood
+Complete
+
+13000000089
+Natural Touch
+العربية
+11.03.2023
+SAR 330
+SAR 330
+Cash On Delivery
+test test
+testqa@gmail.com
+561613356
+Saudi Arabia
+Aba Alworood
+Complete
+
+13000000091
+Natural Touch
+العربية
+11.03.2023
+SAR 330
+SAR 330
+Cash On Delivery
+test test
+testqa@gmail.com
+561613356
+Saudi Arabia
+Aba Alworood
+Complete
+
+15000000152
+Natural Touch
+English
+11.03.2023
+SAR 419.97
+SAR 419.97
+Cash On Delivery
+test test
+nguyen.le@snaptec.co
++966591029883
+Saudi Arabia
+Abu Ajram
+Complete
+
+15000000206
+Natural Touch
+English
+25.03.2023
+SAR 25
+SAR 25
+Cash On Delivery
+test test
+nguyen.le@snaptec.co
+591029883
+Saudi Arabia
+Riyadh
+Complete
+
+15000000209
+Natural Touch
+English
+28.03.2023
+SAR 31.99
+SAR 31.99
+Pay by Card with Checkout.com
+ha QAfghg
+ha.truong@snaptec.co
++966591029883
+Saudi Arabia
+Riyadh
+Complete
+
+15000000211
+Natural Touch
+English
+30.03.2023
+SAR 33
+SAR 33
+Cash On Delivery
+test test
+testqa@gmail.com
+561613356
+Saudi Arabia
+Aba Alworood
+Complete
+
+15000000229
+Natural Touch
+English
+03.04.2023
+SAR 109.99
+SAR 109.99
+Cash On Delivery
+test test
+testqa@gmail.com
+561613356
+Saudi Arabia
+Aba Alworood
+Complete
+
+15000000260
+Natural Touch
+English
+05.04.2023
+SAR 109.99
+SAR 109.99
+Cash On Delivery
+test test
+nguyen.le@snaptec.co
+591029883
+Saudi Arabia
+Riyadh
+Complete
+
+13000000158
+Natural Touch
+العربية
+11.04.2023
+SAR 143
+SAR 143
+Cash On Delivery
+test test
++966513252222@example.com
++966563233333
+Saudi Arabia
+Makkah
+Complete
+
+15000000288
+Natural Touch
+English
+11.04.2023
+SAR 1149.91
+SAR 1149.91
+Cash On Delivery
+Test1 Test2
+r.bawaneh@snaptec.comm
+556666666
+Saudi Arabia
+Aba Alworood
+Complete
+
+15000000304
+Natural Touch
+English
+21.04.2023
+SAR 444.96
+SAR 444.96
+Cash On Delivery
+test test
+nguyen.le@snaptec.co
++966591029883
+Saudi Arabia
+Abu Ajram
+Complete
+
+15000000331
+Natural Touch
+English
+27.04.2023
+SAR 349.98
+SAR 349.98
+Tamara
+Khoa Nguyen
+khoa@gmail.com
+555555555
+Saudi Arabia
+Aba Alworood
+Complete
+
+13000000172
+Natural Touch
+العربية
+27.04.2023
+SAR 127.99
+SAR 127.99
+Cash On Delivery
+Test1 Test2
+r.bawaneh@snaptec.comm
+556666666
+Saudi Arabia
+Aba Alworood
+Complete
+
+13000000174
+Natural Touch
+العربية
+03.05.2023
+SAR 33
+SAR 33
+Cash On Delivery
+Test1 Test2
+r.bawaneh@snaptec.comm
+556666666
+Saudi Arabia
+Aba Alworood
+Complete
+
+15000000341
+Natural Touch
+English
+09.05.2023
+SAR 962.45
+SAR 962.45
+Cash On Delivery
+razan test
+test@test2023.com
+555888899
+Saudi Arabia
+Aba Alworood
+Complete
+
+15000000345
+Natural Touch
+English
+11.05.2023
+SAR 114.96
+SAR 114.96
+Cash On Delivery
+Khoa Nguyen
+khoa@gmail.com
+555555555
+Saudi Arabia
+Aba Alworood
+Complete
+
+13000000186
+Natural Touch
+العربية
+11.05.2023
+SAR 189.99
+SAR 189.99
+Cash On Delivery
+razan test
+test@test2023.com
+555559966
+Saudi Arabia
+ابها
+Complete
+
+15000000436
+Natural Touch
+English
+26.05.2023
+SAR 242.97
