@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Checkout_Step_3_PaymentMethod_4_Text</name>
+   <name>AddNewAddress</name>
    <tag></tag>
-   <elementGuidId>f9ea121f-7168-4147-beb6-7d075d1e3969</elementGuidId>
+   <elementGuidId>44460b0f-2996-4a95-955b-b5e0da62eed3</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,&quot;payment-paymentMethod&quot;)]//p[contains(text(),&quot;يمكنك الدفع في أي معرض من معارض كرز لنن.&quot;)]</value>
+         <value>//span[text()=&quot;إضافة عنوان جديد&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
