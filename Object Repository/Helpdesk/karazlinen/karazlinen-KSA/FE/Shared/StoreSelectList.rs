@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Checkout_Step_3_PaymentMethod_4_Text</name>
+   <name>StoreSelectList</name>
    <tag></tag>
-   <elementGuidId>f9ea121f-7168-4147-beb6-7d075d1e3969</elementGuidId>
+   <elementGuidId>00c27f06-e147-4fcc-ac7c-dfad9073d6a7</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,&quot;payment-paymentMethod&quot;)]//p[contains(text(),&quot;يمكنك الدفع في أي معرض من معارض كرز لنن.&quot;)]</value>
+         <value>//ul[contains(@class,&quot;storeTrigger-flagIcons&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

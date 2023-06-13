@@ -19,7 +19,9 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.kms.katalon.core.testobject.ConditionType
 import java.awt.Robot as Robot
-import java.awt.event.KeyEvent as KeyEvent
+import java.awt.event.KeyEvent
+
+import org.openqa.selenium.By
 import org.openqa.selenium.JavascriptExecutor as JavascriptExecutor
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
@@ -27,11 +29,36 @@ import org.openqa.selenium.interactions.Actions
 
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
+
+
+private SwitchToStore(String StoreName) {
+	if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/StoreSelect'), 40)) {
+		WebUI.click(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/StoreSelect'))
+		WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/StoreSelectList'))
+		String StoreXPath = './/p[text()="' + StoreName + '"]//ancestor::a[contains(@class,"storeTrigger-listFlags")]'
+		WebElement Store = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/StoreSelectList'), 5).findElement(By.xpath(StoreXPath))
+		Store.click()
+	}else {
+		WebUI.click(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/StoreSelect-Mobile'))
+		WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/StoreSelectList-Mobile'))
+		String StoreXPath = '//p[text()="' + StoreName + '"]//ancestor::li[contains(@class,"bottomTab-listFlags")]'
+		WebElement Store = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/StoreSelectList-Mobile'), 5).findElement(By.xpath(StoreXPath))
+		Store.click()
+	}
+}
+
 boolean isMobile=false
 isMobile=WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/karazlinen/karazlinen-KSA/SharedScripts/isMobile'), [:],	FailureHandling.CONTINUE_ON_FAILURE)
 //if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/BottomMenu-Mobile'),3)) {
 //	isMobile=true
 //}
+
+
+String LastURLPart = CustomKeywords.'helpdesk.HelpdeskUtil.getSecondURLPart'(GlobalVariable.FE_URL)
+
+if(!LastURLPart.equals('/ar-sa/')) {
+	SwitchToStore('السعودية')
+}
 
 String AccountIcon = "Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/AccountIcon"
 if(!WebUI.waitForElementVisible(findTestObject(AccountIcon),3)) {
@@ -143,4 +170,22 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-
 WebUI.waitForPageLoad(20)
 
 
+LastURLPart = CustomKeywords.'helpdesk.HelpdeskUtil.getSecondURLPart'(GlobalVariable.FE_URL)
+switch(LastURLPart) {
+	case '/ar-ae/':
+		SwitchToStore('الإمارات')
+		break
+	case '/ar-kw/':
+		SwitchToStore('الكويت')
+		break
+	case '/ar-om/':
+		SwitchToStore('سلطنة عمان')
+		break
+	case '/ar-bh/':
+		SwitchToStore('البحرين')
+		break
+	case '/ar-qa/':
+		SwitchToStore('قطر')
+		break
+}
 
