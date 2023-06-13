@@ -128,10 +128,7 @@ WebUI.delay(3)
 
 
 String SubPrice=WebUI.getText(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Cart/SubPrice'))
-String VAT_Amount="ر.س 0.00"
-if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Cart/VAT_Amount'), 5)) {
-	VAT_Amount=WebUI.getText(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Cart/VAT_Amount'))
-}
+String VAT_Amount=WebUI.getText(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Cart/VAT_Amount'))
 String TotalAmount=WebUI.getText(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Cart/TotalAmount'))
 String Discount_Amount="0.0"
 if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Cart/DiscountBuyOneGetOne'), 5)) {
@@ -173,35 +170,23 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2'))
 
-String CurrentCountry=CustomKeywords.'helpdesk.HelpdeskUtil.getCountryNamekarazlinen'()
-
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_Country'))
-WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_Country')),CurrentCountry,false)
+WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_Country')),"السعودية",false)
 	
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_City'))
-if(!WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_District'), 5)) {
-	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_DistrictOtherCountry'))
-}
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_District'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_PostCode'))
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_City'))
 WebUI.delay(1)
-//WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_CityInput'), "الرياض")
-if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_CityInput'), 5)) {
-	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_CityInput'), Keys.chord(Keys.ENTER))
-}else {
-	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_CityInputOtherCountry'), Keys.chord(Keys.ENTER))
-}
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_CityInput'), "الرياض")
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_CityInput'), Keys.chord(Keys.ENTER))
 
-if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_District'), 5)) {
-	WebUI.click(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_District'))
-	WebUI.delay(1)
-//	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_DistrictInput'), "العليا")
-	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_DistrictInput'), Keys.chord(Keys.ENTER))
-}else {
-	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_DistrictOtherCountry'), "العليا")
-}
 
+WebUI.click(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_District'))
+WebUI.delay(1)
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_DistrictInput'), "العليا")
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_DistrictInput'), Keys.chord(Keys.ENTER))
 
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_Address'), "شارع العليا، العليا، الرياض 12214")
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_2_PostCode'), "1234")
@@ -216,38 +201,24 @@ paymentPath.addProperty('xpath', ConditionType.EQUALS, '//div[contains(@class,"p
 WebUI.waitForElementVisible(paymentPath,10)
 List Paymentlist = WebUiCommonHelper.findWebElements(paymentPath, 30)
 
-int expectedPaymentsNO = 4
-String LastURLPart = CustomKeywords.'helpdesk.HelpdeskUtil.getSecondURLPart'(WebUI.getUrl())
-println LastURLPart
-if(!LastURLPart.equalsIgnoreCase('/ar-sa/')) {
-	expectedPaymentsNO = 4
-}
-if (Paymentlist.size() != expectedPaymentsNO) {
-	KeywordUtil.markWarning("Expected " + expectedPaymentsNO.toString() + " payment methods but was: " + Paymentlist.size().toString())
-} 
-
-// Credit
-CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_PaymentMethod_3_Text'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_PaymentMethod_3_Text'))
-// In the shop
-CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_PaymentMethod_4_Text'))
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_PaymentMethod_4_Text'))
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_Continue'))
-
-if(LastURLPart.equalsIgnoreCase('/ar-sa/')) {
+if (Paymentlist.size() != 4) {
+ 	println (Paymentlist.size())
+   assert false
+} else {
 	// Tabby
 	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_PaymentMethod_1_Text'))
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_PaymentMethod_1_Text'))
 	// Tamara
 	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_PaymentMethod_2_Text'))
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_PaymentMethod_2_Text'))
-}else {
-	// Tabby
-	WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_PaymentMethod_1_Text'),5)
-	// Tamara
-	WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_PaymentMethod_2_Text'),5)
-
+	// Credit
+	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_PaymentMethod_3_Text'))
+    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_PaymentMethod_3_Text'))
+	// In the shop
+	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_PaymentMethod_4_Text'))
+    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_PaymentMethod_4_Text'))
+	
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_Continue'))
 }
 
 
@@ -283,7 +254,6 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_Summary_VATFees'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_Summary_TotalPrice'))
 
-
 String ACTSubPrice=WebUI.getText(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_Summary_SubPrice'))
 String ACTShippment=WebUI.getText(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_Summary_ShipmentFees'))
 String ACTVAT_Amount=WebUI.getText(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_Summary_VATFees'))
@@ -300,31 +270,23 @@ Float ACTDiscount_AmountNum=ACTDiscount_Amount.replace("ر.س", "").replace(",",
 Float ACTTotalAmountNum=ACTTotalAmount.replace("ر.س", "").replace(",", "").replace(" ", "").toFloat()
 
 //We should check the shipment amount for out side SA
-String shipmentExpected="0.0"
-if(!LastURLPart.equalsIgnoreCase('/ar-sa/')) {
-	shipmentExpected="199.0"
-}
-WebUI.verifyMatch(ACTShippmentNum.toString(), shipmentExpected, false)
+WebUI.verifyMatch(ACTShippmentNum.toString(), "0.0", false)
 //WebUI.verifyMatch(ACTTotalAmountNum.toString(),(ACTSubPriceNum+ACTShippmentNum-ACTDiscount_AmountNum).round(2).toString(),false)
 //To handle the wrong calculation in fractions related to tax
 if (Math.abs (ACTTotalAmountNum-(ACTSubPriceNum+ACTShippmentNum-ACTDiscount_AmountNum).round(2))>1){
-	KeywordUtil.markFailedAndStop("TotalAmount is wrong Actual: " + ACTTotalAmountNum.toString() + " Expected: " + (ACTSubPriceNum+ACTShippmentNum-ACTDiscount_AmountNum).round(2).toString())
+	assert false
 }
 //WebUI.verifyMatch(ACTVAT_AmountNum.toString(),( ACTTotalAmountNum-((ACTSubPriceNum-ACTDiscount_AmountNum)/1.15) ).round(2).toString(),false)
 //To handle the wrong calculation in fractions related to tax
-if(LastURLPart.equalsIgnoreCase('/ar-sa/')) {
-	if (Math.abs (ACTVAT_AmountNum-( ACTTotalAmountNum-((ACTSubPriceNum-ACTDiscount_AmountNum)/1.15) ).round(2))>1){
-		KeywordUtil.markFailedAndStop("VAT is wrong Actual: " + ACTVAT_AmountNum.toString() + " Expected: " + ((ACTSubPriceNum-ACTDiscount_AmountNum)/1.15).round(2).toString())
-	}
+if (Math.abs (ACTVAT_AmountNum-( ACTTotalAmountNum-((ACTSubPriceNum-ACTDiscount_AmountNum)/1.15) ).round(2))>1){
+	assert false
 }
-	
 
 WebUI.verifyMatch(ACTSubPrice, SubPrice, false)
 if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_Summary_BuyOneGetOne'), 3)) {
 	WebUI.verifyMatch(ACTDiscount_Amount, Discount_Amount, false)
 }
 WebUI.verifyMatch(ACTVAT_Amount, VAT_Amount, false)
-
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Checkout/Checkout_Step_3_ConfirmOrder'))
 

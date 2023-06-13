@@ -37,6 +37,12 @@ isMobile=WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/karazlinen/karazli
 //	isMobile=true
 //}
 
+String AccountIcon = "Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/AccountIcon"
+if(!WebUI.waitForElementVisible(findTestObject(AccountIcon),3)) {
+	AccountIcon="Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/AccountIcon-Mobile"
+}
+
+WebUI.click(findTestObject(AccountIcon))
 
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/karazlinen/karazlinen-KSA/SharedScripts/Login'), [:],	FailureHandling.STOP_ON_FAILURE)
 
@@ -46,15 +52,6 @@ WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/karazl
 //WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/Login'),5)
 //CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Login/MyAccount'),3)
 //WebUI.click(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Login/MyAccount'))
-
-String AccountIcon = "Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/AccountIcon"
-if(!WebUI.waitForElementVisible(findTestObject(AccountIcon),3)) {
-	AccountIcon="Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Shared/AccountIcon-Mobile"
-}
-
-WebUI.click(findTestObject(AccountIcon))
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/AccountPage/AccountInfoIcon'), 10)
-WebUI.click(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/AccountPage/AccountInfoIcon'))
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/AccountPage/AccountPageTitle'), 10)
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/AccountPage/AccountPageTitle'), FailureHandling.STOP_ON_FAILURE)
