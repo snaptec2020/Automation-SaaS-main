@@ -330,6 +330,23 @@ def static "helpdesk.HelpdeskUtil.uncheckUsingJS"(
 }
 
 
+def static "helpdesk.HelpdeskUtil.getSecondURLPart"(
+    	String url	) {
+    (new helpdesk.HelpdeskUtil()).getSecondURLPart(
+        	url)
+}
+
+
+def static "helpdesk.HelpdeskUtil.getSecondURLPart"() {
+    (new helpdesk.HelpdeskUtil()).getSecondURLPart()
+}
+
+
+def static "helpdesk.HelpdeskUtil.getCountryNamekarazlinen"() {
+    (new helpdesk.HelpdeskUtil()).getCountryNamekarazlinen()
+}
+
+
 def static "cart.removeItem.getProductsInCart"() {
     (new cart.removeItem()).getProductsInCart()
 }

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Checkout_Step_3_PaymentMethod_4_Text</name>
+   <name>GrandTotalExc</name>
    <tag></tag>
-   <elementGuidId>f9ea121f-7168-4147-beb6-7d075d1e3969</elementGuidId>
+   <elementGuidId>bd984a6d-8b5a-4467-9ada-2fca02bfc4b8</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,&quot;payment-paymentMethod&quot;)]//p[contains(text(),&quot;يمكنك الدفع في أي معرض من معارض كرز لنن.&quot;)]</value>
+         <value>//tr[@class=&quot;grand totals excl&quot;]//span[@class=&quot;price&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
