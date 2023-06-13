@@ -832,39 +832,4 @@ public class HelpdeskUtil {
 		}
 	}
 
-	@Keyword
-	String getSecondURLPart(String url) {
-		List<String> URLParts = url.findAll("/.*?/")
-		return URLParts.get(URLParts.size()-1)
-	}
-
-	@Keyword
-	String getSecondURLPart() {
-		getSecondURLPart(WebUI.getUrl())
-	}
-
-	@Keyword
-	String getCountryNamekarazlinen() {
-		String LastURLPart = getSecondURLPart(GlobalVariable.FE_URL)
-		switch(LastURLPart) {
-			case '/ar-sa/':
-				return 'السعودية'
-				break
-			case '/ar-ae/':
-				return 'الإمارات'
-				break
-			case '/ar-kw/':
-				return 'الكويت'
-				break
-			case '/ar-om/':
-				return 'سلطنة عمان'
-				break
-			case '/ar-bh/':
-				return 'البحرين'
-				break
-			case '/ar-qa/':
-				return 'قطر'
-				break
-		}
-	}
 }

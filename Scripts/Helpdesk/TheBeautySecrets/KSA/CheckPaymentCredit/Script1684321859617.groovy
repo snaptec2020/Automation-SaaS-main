@@ -102,9 +102,9 @@ println(totalText)
 Float totalValue = totalText.toFloat()
 println(totalValue)
 
-if (totalValue < 150) {
+if (totalValue < 100) {
 	//increase the products
-	int neededQty = ((Math.ceil(150 / totalValue)) as int)
+	int neededQty = ((Math.ceil(100 / totalValue)) as int)
 	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/QTYProduct'))
 	WebUI.focus(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/QTYProduct'))
 	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Cart/QTYProduct'), Keys.chord(Keys.BACK_SPACE))

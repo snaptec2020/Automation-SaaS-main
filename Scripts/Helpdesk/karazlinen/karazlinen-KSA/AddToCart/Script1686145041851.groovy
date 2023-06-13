@@ -97,11 +97,8 @@ if(!WebUI.waitForElementClickable(findTestObject(CartIcon),5)) {
 WebUI.waitForElementClickable(findTestObject(CartIcon),10)
 CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject(CartIcon), 10)
 
-String LastURLPart = CustomKeywords.'helpdesk.HelpdeskUtil.getSecondURLPart'()
-
 //String SearchResultsxpath='//table[@id="shopping-cart-table"]//strong/a[@href="' + ProductURL + '" and contains(normalize-space(text()),normalize-space("' + ProductTitle + '"))]'
-//String SearchResultsxpath='//div[contains(@class,"cartPage-productsList-")]//li/a[@href="' + ProductURL.replace(GlobalVariable.FE_URL, '/ar-sa/') + '"]'
-String SearchResultsxpath='//div[contains(@class,"cartPage-productsList-")]//li/a[@href="' + ProductURL.replace(GlobalVariable.FE_URL, LastURLPart) + '"]'
+String SearchResultsxpath='//div[contains(@class,"cartPage-productsList-")]//li/a[@href="' + ProductURL.replace(GlobalVariable.FE_URL, '/ar-sa/') + '"]'
 println SearchResultsxpath
 TestObject Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)

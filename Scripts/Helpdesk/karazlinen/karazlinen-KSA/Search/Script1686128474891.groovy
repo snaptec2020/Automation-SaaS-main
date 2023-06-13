@@ -128,9 +128,7 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-
 
 //String SearchResultsxpath='//div[@class="products wrapper grid products-grid"]//a[@href="' + ProductURL + '" and contains(normalize-space(text()),normalize-space("' + ProductTitle + '"))]'
 //String SearchResultsxpath='//div[@class="products wrapper grid products-grid"]//h5/a[@href="' + ProductURL + '"]'
-String LastURLPart = CustomKeywords.'helpdesk.HelpdeskUtil.getSecondURLPart'()
-
-String SearchResultsxpath='//div[contains(@class,"item-root")]//h3[contains(text(),"' + ProductTitle + '")]//parent::a[@href="' + ProductURL.replace(GlobalVariable.FE_URL, LastURLPart) + '"]'
+String SearchResultsxpath='//div[contains(@class,"item-root")]//h3[contains(text(),"' + ProductTitle + '")]//parent::a[@href="' + ProductURL.replace(GlobalVariable.FE_URL, "/ar-sa/") + '"]'
 println SearchResultsxpath
 TestObject Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,SearchResultsxpath)
