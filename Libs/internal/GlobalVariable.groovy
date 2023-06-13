@@ -25,7 +25,7 @@ public class GlobalVariable {
     public static Object Wrong_email
      
     /**
-     * <p></p>
+     * <p>Profile default : The Languare of Site Ar for Arabic, En for English</p>
      */
     public static Object languageMode
      
@@ -90,7 +90,7 @@ public class GlobalVariable {
     public static Object RunningMode
      
     /**
-     * <p>Profile default : 1=iPhone, 2=Android</p>
+     * <p>Profile default : 0=All, 1=iPhone, 2=Android</p>
      */
     public static Object MobileType
      
@@ -99,12 +99,107 @@ public class GlobalVariable {
      */
     public static Object searchMode
      
+    /**
+     * <p>Profile default : Tabby and Tamara Target</p>
+     */
+    public static Object minimum
+     
+    /**
+     * <p>Profile default : Tabby and Tamara Target</p>
+     */
+    public static Object maximum
+     
+    /**
+     * <p></p>
+     */
+    public static Object FE_URL
+     
+    /**
+     * <p>Profile Orange : 581492572</p>
+     */
+    public static Object FE_Tel
+     
+    /**
+     * <p></p>
+     */
+    public static Object BE_UserName
+     
+    /**
+     * <p></p>
+     */
+    public static Object BE_Password
+     
+    /**
+     * <p></p>
+     */
+    public static Object BE_URL
+     
+    /**
+     * <p>Profile Orange : testing dev</p>
+     */
+    public static Object CustomerName
+     
+    /**
+     * <p></p>
+     */
+    public static Object MadaCardNum
+     
+    /**
+     * <p></p>
+     */
+    public static Object MadaExpiryDate
+     
+    /**
+     * <p></p>
+     */
+    public static Object MadaCVV
+     
+    /**
+     * <p></p>
+     */
+    public static Object Latitude
+     
+    /**
+     * <p></p>
+     */
+    public static Object Longtitude
+     
+    /**
+     * <p></p>
+     */
+    public static Object BEBasicAuthUser
+     
+    /**
+     * <p></p>
+     */
+    public static Object BEBasicAuthPassword
+     
+    /**
+     * <p></p>
+     */
+    public static Object FE_EmailLogin
+     
+    /**
+     * <p></p>
+     */
+    public static Object FE_EmailPassword
+     
+    /**
+     * <p>Profile Orange : mahmoud@snaptec.co</p>
+     */
+    public static Object CustomerEmail
+     
+    /**
+     * <p></p>
+     */
+    public static Object MadaCardHoldName
+     
 
     static {
         try {
             def selectedVariables = TestCaseMain.getGlobalVariables("default")
 			selectedVariables += TestCaseMain.getGlobalVariables(RunConfiguration.getExecutionProfile())
-            selectedVariables += TestCaseMain.getParsedValues(RunConfiguration.getOverridingParameters())
+            selectedVariables += TestCaseMain.getParsedValues(RunConfiguration.getOverridingParameters(), selectedVariables)
     
             URL = selectedVariables['URL']
             Vaild_email = selectedVariables['Vaild_email']
@@ -124,6 +219,25 @@ public class GlobalVariable {
             RunningMode = selectedVariables['RunningMode']
             MobileType = selectedVariables['MobileType']
             searchMode = selectedVariables['searchMode']
+            minimum = selectedVariables['minimum']
+            maximum = selectedVariables['maximum']
+            FE_URL = selectedVariables['FE_URL']
+            FE_Tel = selectedVariables['FE_Tel']
+            BE_UserName = selectedVariables['BE_UserName']
+            BE_Password = selectedVariables['BE_Password']
+            BE_URL = selectedVariables['BE_URL']
+            CustomerName = selectedVariables['CustomerName']
+            MadaCardNum = selectedVariables['MadaCardNum']
+            MadaExpiryDate = selectedVariables['MadaExpiryDate']
+            MadaCVV = selectedVariables['MadaCVV']
+            Latitude = selectedVariables['Latitude']
+            Longtitude = selectedVariables['Longtitude']
+            BEBasicAuthUser = selectedVariables['BEBasicAuthUser']
+            BEBasicAuthPassword = selectedVariables['BEBasicAuthPassword']
+            FE_EmailLogin = selectedVariables['FE_EmailLogin']
+            FE_EmailPassword = selectedVariables['FE_EmailPassword']
+            CustomerEmail = selectedVariables['CustomerEmail']
+            MadaCardHoldName = selectedVariables['MadaCardHoldName']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)

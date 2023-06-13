@@ -19,5 +19,11 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.callTestCase(findTestCase('FE/OTP/Verification/Check OTP elements'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.setText(findTestObject('OTP/OTP code'), GlobalVariable.FixedOTP)
+//WebUI.setText(findTestObject('OTP/OTP code'), GlobalVariable.FixedOTP)
 
+/*
+ * WebUI.sendKeys('3691', Keys.chord(Keys.CONTROL, 'c'))
+ * 
+ * WebUI.sendKeys(findTestObject('OTP/OTP code'), Keys.chord(Keys.CONTROL, 'v'))
+ */
+WebUI.sendKeys(findTestObject('OTP/OTP code'), GlobalVariable.FixedOTP)

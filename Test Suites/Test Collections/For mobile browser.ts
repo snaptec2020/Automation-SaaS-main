@@ -35,7 +35,7 @@
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Web Browsers/Ar/Regression test after deployments - AR</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>

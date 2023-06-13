@@ -27,4 +27,4 @@ CustomKeywords.'checkout.Payments.getRandomPaymentMethods'()
 
 WebUI.takeFullPageScreenshot('./paymentResult.png')
 
-WebUI.navigateToUrl(currentUrl)
+//WebUI.navigateToUrl(currentUrl)

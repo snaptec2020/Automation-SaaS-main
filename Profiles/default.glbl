@@ -20,7 +20,7 @@
       <name>Wrong_email</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>The Languare of Site Ar for Arabic, En for English</description>
       <initValue>'ar'</initValue>
       <name>languageMode</name>
    </GlobalVariableEntity>
@@ -51,7 +51,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'bed'</initValue>
+      <initValue>'perfume'</initValue>
       <name>textSearch</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -85,13 +85,23 @@
       <name>RunningMode</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description>1=iPhone, 2=Android</description>
-      <initValue>'1'</initValue>
+      <description>0=All, 1=iPhone, 2=Android</description>
+      <initValue>'0'</initValue>
       <name>MobileType</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>Modes(Normal, Non-Normal)</description>
       <initValue>'Normal'</initValue>
       <name>searchMode</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Tabby and Tamara Target</description>
+      <initValue>1000</initValue>
+      <name>minimum</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Tabby and Tamara Target</description>
+      <initValue>2500</initValue>
+      <name>maximum</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

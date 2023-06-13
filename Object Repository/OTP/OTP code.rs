@@ -6,12 +6,11 @@
    <elementGuidId>ae0ca5d4-c09e-4e94-8947-c8ba33c56101</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@id='one-time-code']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//input[@aria-label='Please enter verification code. Digit 1']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -1,0 +1,16 @@
+{
+  "keywordFileContentHash": "22D725BB30C8D40AC7083A320646C07E",
+  "keywordClasses": [
+    {
+      "name": "generalactions.EnvironmentSettings",
+      "keywordMethods": [
+        {
+          "name": "isRunningByMobile",
+          "parameters": [],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

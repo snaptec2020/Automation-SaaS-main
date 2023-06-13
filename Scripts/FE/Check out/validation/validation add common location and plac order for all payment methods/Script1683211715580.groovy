@@ -29,7 +29,7 @@ WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check ou
 WebUI.callTestCase(findTestCase('FE/Check out/validation/Select location common case'), [:], FailureHandling.STOP_ON_FAILURE)
 
 CustomKeywords.'checkout.Payments.paymentMethodToPayBySelectedMethod'(i)
-WebUI.takeFullPageScreenshot('./paymentResult.png')
+//WebUI.takeFullPageScreenshot('./paymentResult.png')
 
-WebUI.navigateToUrl(currentUrl)
+//WebUI.navigateToUrl(currentUrl)
 }

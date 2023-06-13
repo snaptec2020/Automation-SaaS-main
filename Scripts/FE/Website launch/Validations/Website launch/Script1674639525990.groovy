@@ -18,21 +18,30 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-switch (GlobalVariable.RunningMode) {
-    case '1':
-        WebUI.openBrowser('')
 
-        WebUI.navigateToUrl(GlobalVariable.URL)
 
-        WebUI.maximizeWindow()
+WebUI.openBrowser('')
+WebUI.maximizeWindow()
+WebUI.navigateToUrl(GlobalVariable.URL)
 
-        break
-    case '2':
-		Map chromeOptions =[deviceName:deviceName]
-		RunConfiguration.setWebDriverPreferencesProperty('mobileEmulation', chromeOptions)
-        WebUI.openBrowser('')
-		//RunConfiguration.setWebDriverPreferencesProperty('moz:firefoxOptions', firefoxOptions)
-		//RunConfiguration.setWebDriverPreferencesProperty('mobileEmulation', chromeOptions)
-		WebUI.navigateToUrl(GlobalVariable.URL)
-        break
-}
+if(GlobalVariable.languageMode.toString().equalsIgnoreCase('EN')) {
+	WebUI.callTestCase(findTestCase('FE/Switch Language/Validations/SwitchLanguage to English'), [:], FailureHandling.STOP_ON_FAILURE)
+}		
+//switch (GlobalVariable.RunningMode) {
+//    case '1':
+//        WebUI.openBrowser('')
+//
+//        WebUI.navigateToUrl(GlobalVariable.URL)
+//
+//        WebUI.maximizeWindow()
+//
+//        break
+//    case '2':
+//		Map chromeOptions =[deviceName:deviceName]
+//		RunConfiguration.setWebDriverPreferencesProperty('mobileEmulation', chromeOptions)
+//        WebUI.openBrowser('')
+//		//RunConfiguration.setWebDriverPreferencesProperty('moz:firefoxOptions', firefoxOptions)
+//		//RunConfiguration.setWebDriverPreferencesProperty('mobileEmulation', chromeOptions)
+//		WebUI.navigateToUrl(GlobalVariable.URL)
+//        break
+//}

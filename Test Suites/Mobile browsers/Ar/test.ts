@@ -12,17 +12,10 @@
    <rerunImmediately>false</rerunImmediately>
    <testSuiteGuid>dd1ecf27-34fa-475c-a332-f625b73d7fb4</testSuiteGuid>
    <testCaseLink>
-      <guid>d2acd49e-45d2-4e05-b970-cdd7f01501fc</guid>
+      <guid>2d30b6e3-cf0b-4c11-ab9a-703697ca6c10</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Sign up TC/Validations/Sign up By phone/Success SignUp by Phone</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>e65b6641-9f30-45cf-bf09-c2d2b0df7b6d</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/LogOut/Validation/LogOut</testCaseId>
+      <testCaseId>Test Cases/FE/Check out/validation/validation add common location and plac order</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>
