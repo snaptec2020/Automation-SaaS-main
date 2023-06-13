@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Cards</name>
+   <tag></tag>
+   <elementGuidId>be2af7a3-f591-4b0f-ae01-5fba824fcaf1</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//div[starts-with(@class,'styles_listCardIllustrating__')]/div[starts-with(@class,'styles_cardIllustratingItem__')]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//div[starts-with(@class,'styles_listCardIllustrating__')]/div[starts-with(@class,'styles_cardIllustratingItem__')]</value>
+      <webElementGuid>a97c2c7f-9a81-49b6-8c92-4846e2cf9c40</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

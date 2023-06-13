@@ -185,6 +185,16 @@ public class GlobalVariable {
     public static Object FE_EmailPassword
      
     /**
+     * <p></p>
+     */
+    public static Object MIDUserName
+     
+    /**
+     * <p></p>
+     */
+    public static Object MIDUserPassword
+     
+    /**
      * <p>Profile Orange : mahmoud@snaptec.co</p>
      */
     public static Object CustomerEmail
@@ -236,6 +246,8 @@ public class GlobalVariable {
             BEBasicAuthPassword = selectedVariables['BEBasicAuthPassword']
             FE_EmailLogin = selectedVariables['FE_EmailLogin']
             FE_EmailPassword = selectedVariables['FE_EmailPassword']
+            MIDUserName = selectedVariables['MIDUserName']
+            MIDUserPassword = selectedVariables['MIDUserPassword']
             CustomerEmail = selectedVariables['CustomerEmail']
             MadaCardHoldName = selectedVariables['MadaCardHoldName']
             
