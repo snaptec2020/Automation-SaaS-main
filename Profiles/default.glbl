@@ -51,7 +51,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'bed'</initValue>
+      <initValue>'Not Defined'</initValue>
       <name>textSearch</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

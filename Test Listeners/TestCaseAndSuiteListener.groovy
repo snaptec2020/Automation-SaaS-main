@@ -47,6 +47,10 @@ class TestCaseAndSuiteListener {
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
 		if(GlobalVariable.testSuiteStatus == 'Not Run' & testCaseContext.getTestCaseId().indexOf("/Helpdesk/")<=0) {
 			WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
+
+		}
+		if(testCaseContext.getTestCaseId().indexOf("/FE/Search/")>0 && GlobalVariable.textSearch.toString().equalsIgnoreCase('Not Defined')) {
+			CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
 		}
 	}
 	
@@ -63,7 +67,7 @@ class TestCaseAndSuiteListener {
 		GlobalVariable.RunningMode=CustomKeywords.'generalactions.EnvironmentSettings.isRunningByMobile'()
 		if(testSuiteContext.getTestSuiteId().indexOf("/Helpdesk/")<=0) {
 			WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
-			CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
+			
 		}
 	}
 	@AfterTestSuite

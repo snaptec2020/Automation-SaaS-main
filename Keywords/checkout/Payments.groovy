@@ -94,7 +94,7 @@ public class Payments {
 
 	def placeOrder()
 	{
-
+		try {
 		def nonVisa = WebUiCommonHelper.findWebElement(utilityFunctions.addXpathToTestObject("//div[contains(@class,'payment-method v2')]/following-sibling::div"),30).getAttribute("class")
 		if(nonVisa !='checkout-com-form-container'){
 			//WebUI.click(findTestObject('Object Repository/Check Out/Place order check out button'))
@@ -221,6 +221,10 @@ public class Payments {
 			WebUI.click(findTestObject('Object Repository/Check Out/Place order check out button'))
 			WebUI.delay(10)
 
+		}
+		} catch (Exception e) {
+			e.printStackTrace()
+		WebUI.navigateToUrl(GlobalVariable.URL, FailureHandling.CONTINUE_ON_FAILURE)	
 		}
 	}
 	//def payemntText= WebUI.getText(findTestObject("//div[starts-with(@class,'payment-method-introduce__description')"))
