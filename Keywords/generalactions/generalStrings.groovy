@@ -93,6 +93,9 @@ public class generalStrings {
 	}
 	@Keyword
 	int getRandomNumberBetweenOnetoTarget(int targetNumber) {
+		if(targetNumber<=0) {
+			return 1
+		}
 		return Math.abs(random.nextInt(targetNumber))+1
 	}
 	@Keyword

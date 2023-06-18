@@ -115,8 +115,9 @@ if(sitesCount!=0) {
 					 bindings.testCaseLink.each{bk->
 						 KeywordUtil.logInfo("${bk.testCaseId.text()}")
 						  String tescCaseId = "${bk.testCaseId.text()}"
-						  KeywordUtil.logInfo(tescCaseId)
-						  if(tescCaseId!='Test Cases/FE/Multi Sites/Multisites') {
+						  String isRun = "${bk.isRun.text()}" //it.isRun.toString().equals("true")
+						  KeywordUtil.logInfo(tescCaseId +"\t Is Run = \t"+ isRun)
+						  if(tescCaseId!='Test Cases/FE/Multi Sites/Multisites' && isRun.equals("true")) {
 						 WebUI.callTestCase(findTestCase(tescCaseId), [:], FailureHandling.CONTINUE_ON_FAILURE)
 						  }
 					 }
