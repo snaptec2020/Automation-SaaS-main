@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Error-Max qty</name>
+   <name>Account Info Button</name>
    <tag></tag>
-   <elementGuidId>3a3ca688-8700-40cf-9279-ba5827238eb9</elementGuidId>
+   <elementGuidId>38fe517d-ad55-497b-9c45-69eef44bcc49</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//span[starts-with(@class,'styles_errorMessage__')]</value>
+         <value>//div[starts-with(@class,'styles_account__')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//span[starts-with(@class,'styles_errorMessage__')]</value>
-      <webElementGuid>317a582c-09ed-4d10-8dab-85bf4f532582</webElementGuid>
+      <value>//div[starts-with(@class,'styles_account__')]</value>
+      <webElementGuid>27bd9ecf-66cf-460d-abfe-a5f20e3b1b2d</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

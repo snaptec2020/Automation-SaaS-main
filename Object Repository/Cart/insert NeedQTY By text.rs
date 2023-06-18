@@ -7,10 +7,11 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[starts-with(@class,'styles_footer__')]//preceding::div[@class='styles_quantityContainer__vpJfV'][1]//input</value>
+         <value>//div[@class='styles_quantityContainer__vpJfV']//input</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

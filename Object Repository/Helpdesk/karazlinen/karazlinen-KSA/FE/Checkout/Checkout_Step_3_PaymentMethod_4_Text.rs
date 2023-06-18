@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,&quot;payment-paymentMethod&quot;)]//p[text()=&quot;يمكنك الدفع في أي معرض من معارض كرز لنن. كل ما عليك هو إظهار الفاتورة لفريق المعرض. سيتم إلغاء الطلب تلقائيا إذا لم يتم الدفع خلال 48 ساعة&quot;]</value>
+         <value>//div[contains(@class,&quot;payment-paymentMethod&quot;)]//p[contains(text(),&quot;يمكنك الدفع في أي معرض من معارض كرز لنن.&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
