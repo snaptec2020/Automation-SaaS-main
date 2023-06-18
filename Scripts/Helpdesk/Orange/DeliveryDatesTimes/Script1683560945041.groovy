@@ -172,7 +172,7 @@ totalPaidElements.each({
 
 totalText=totalText.replace("ر.س.", "").trim()
 println(totalText)
-def totalValue = totalText.toDouble()
+def totalValue = totalText.toFloat()
 
 if (totalValue < 99) {
     //increase the products

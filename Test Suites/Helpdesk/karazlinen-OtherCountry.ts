@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>TheBeautySecrets-KSA</name>
+   <name>karazlinen-OtherCountry</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient>mahmoud@snaptec.co;m.aldawi@snaptec.co;tam.nguyen@snaptec.co;o.omar@snaptec.co;</mailRecipient>
@@ -10,68 +10,54 @@
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>true</rerunFailedTestCasesOnly>
    <rerunImmediately>false</rerunImmediately>
-   <testSuiteGuid>2ff63bb8-43dc-45f2-9505-0bd81807ebe6</testSuiteGuid>
+   <testSuiteGuid>1c6c212c-194d-4af9-bd5d-8ecb130604e8</testSuiteGuid>
    <testCaseLink>
-      <guid>b00df3fe-6a6f-4aea-a603-81b4ea0e6cb3</guid>
+      <guid>28946719-3232-49c4-831c-0d84c1f82853</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/TheBeautySecrets/KSA/AddToCart</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/karazlinen/karazlinen-KSA/AddToCart</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>3eb44660-b6bd-48f6-a2b8-44fa41a28559</guid>
+      <guid>80437a0e-831f-49d5-8733-4a79755a77a5</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/TheBeautySecrets/KSA/CheckBEReport</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/karazlinen/karazlinen-KSA/CheckPaymentCOD</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>122ecb99-429c-40dd-ab40-3bf758f53a31</guid>
+      <guid>d49aa3d7-71cf-4e81-9e31-7f51ad38c605</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/TheBeautySecrets/KSA/CheckPaymentCOD</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/karazlinen/karazlinen-KSA/CheckPaymentCredit</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>44ad3059-08f1-4832-bb1a-33da0c35c594</guid>
+      <guid>becbe9c6-d354-4244-a0ca-ab8ada93c46a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/TheBeautySecrets/KSA/CheckPaymentCredit</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/karazlinen/karazlinen-KSA/CheckPaymentTabby</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>edd43005-d722-48b4-84af-6ba717e81740</guid>
+      <guid>b2890b44-6773-4d1b-907d-f0fb4433b859</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/TheBeautySecrets/KSA/CheckPaymentTamara</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/karazlinen/karazlinen-KSA/CheckPaymentTamara</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>9444f37c-dd79-4a5d-89b1-cefd044fdbaa</guid>
+      <guid>d32fc06f-da4d-46c9-b8a8-bd62dd070563</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/TheBeautySecrets/KSA/CheckTheBEUp</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/karazlinen/karazlinen-KSA/Login Test Case</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>223ebe58-f5b0-4745-b5aa-abaf0c515c46</guid>
+      <guid>cc080c10-d3f2-4a2f-8a90-a42009965045</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/TheBeautySecrets/KSA/Login Test Case</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>2f9de9e1-132c-483f-915b-88d892cea4b6</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/TheBeautySecrets/KSA/Search</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>c2bc8e1e-336e-4993-bbf9-fd21576875a5</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Helpdesk/TheBeautySecrets/KSA/FeesShipment</testCaseId>
+      <testCaseId>Test Cases/Helpdesk/karazlinen/karazlinen-KSA/Search</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>

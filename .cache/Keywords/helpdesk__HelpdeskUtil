@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "D3DCEE4551CAEF551F554DD28910EFE1",
+  "keywordFileContentHash": "8071CFABD842E182475106223DC6E4D4",
   "keywordClasses": [
     {
       "name": "helpdesk.HelpdeskUtil",
@@ -313,6 +313,35 @@
               }
             }
           ],
+          "javadoc": ""
+        },
+        {
+          "name": "getSecondURLPart",
+          "parameters": [
+            {
+              "name": "url",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "getSecondURLPart",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "getCountryNamekarazlinen",
+          "parameters": [],
           "javadoc": ""
         }
       ]

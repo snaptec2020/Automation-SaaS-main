@@ -304,15 +304,7 @@ public class productsFromCatalog {
 				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.CONTROL, 'a'))
 				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.BACK_SPACE))
 				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), neededQty.toString(), FailureHandling.CONTINUE_ON_FAILURE)
-				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.TAB))
-				if(WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Error-Max qty'), 5, FailureHandling.CONTINUE_ON_FAILURE)) {
-					WebUI.click(findTestObject('Object Repository/Cart/insert NeedQTY By text'))
-					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.CONTROL, 'a'))
-					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.BACK_SPACE))
-					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), '1', FailureHandling.CONTINUE_ON_FAILURE)
-					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.TAB))
-					getSpecifiedinStockProductsFromRandomCategoryInTarget()
-				}
+
 				//WebUI.(findTestObject('Object Repository/Cart/insert NeedQTY By text'), neededQty.toString())
 				return true
 			}
