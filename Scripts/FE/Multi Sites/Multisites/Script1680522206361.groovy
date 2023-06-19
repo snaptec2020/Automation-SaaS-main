@@ -104,7 +104,7 @@ if(sitesCount!=0) {
 					// WebUI.callTestCase(findTestCase('FE/Website launch/Verifications/Verifications after launch (headers and footers)'), [:],
 						// FailureHandling.CONTINUE_ON_FAILURE)
 					 
-					 CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
+					 //CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
 					// KeywordUtil.logInfo(testCases.size().toString())
 					/* bindings.testCaseLink.each { bk->
 						 

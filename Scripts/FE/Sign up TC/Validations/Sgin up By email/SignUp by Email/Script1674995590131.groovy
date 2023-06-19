@@ -10,7 +10,8 @@ import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
-import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
@@ -30,4 +31,7 @@ WebUI.setText(findTestObject('Sign up Page/Sign up By email/Password feild'), pa
 WebUI.click(findTestObject('Sign up Page/Sign up By email/Services and Privacy Policy Check box'))
 
 WebUI.click(findTestObject('Sign up Page/Sign up By email/Sign Up Button'))
+
+
+
 

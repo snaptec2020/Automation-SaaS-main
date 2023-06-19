@@ -87,6 +87,7 @@ public class scrolling {
 			//KeywordUtil.logInfo(elementClicable.toString())
 			//WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/"+scrollingPosition.toString()+");", null);
 			//KeywordUtil.logInfo(elementClicable.toString())
+			javaScriptToScrollToElement(testObjectRelativeId)
 			WebUI.click(findTestObject(testObjectRelativeId),FailureHandling.CONTINUE_ON_FAILURE)
 			//KeywordUtil.logInfo(elementClicable.toString())
 			//break
