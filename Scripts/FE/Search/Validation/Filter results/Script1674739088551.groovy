@@ -23,8 +23,7 @@ import org.openqa.selenium.remote.server.handler.FindElements
 
 import java.util.List
 
-try
-{
+
 WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Validation/View all products from view more in container'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
@@ -50,12 +49,4 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Sea
 
 
 WebUI.dragAndDropByOffset(findTestObject('Object Repository/Search contents/Search page/Sider button to change price'), 0, 40)
-}
-
-
-catch (Exception e)
-{
-e.printStackTrace();
-WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE);
-}
 
