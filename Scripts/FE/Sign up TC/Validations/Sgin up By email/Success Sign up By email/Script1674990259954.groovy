@@ -51,7 +51,7 @@ WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/Sign
 GlobalVariable.Vaild_email = randomEmail
 GlobalVariable.ValidPassword= randomPassword
 				for(int i=5;i>0;i--) {
-					KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>>>>>")
+					//KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>>>>>")
 					if (!WebUI.waitForElementClickable(findTestObject('Sign up Page/Sign up By email/Sign Up Button'), 5)) {
 						//WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/2);", null);
 						break
