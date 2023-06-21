@@ -4,7 +4,7 @@
    <name>Checkout All methods</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <mailRecipient></mailRecipient>
+   <mailRecipient>Ahmed@snaptec.co;A.aldon@snaptec.co;r.bawaneh@snaptec.co;</mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>

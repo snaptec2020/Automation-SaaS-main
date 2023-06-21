@@ -26,19 +26,18 @@ import org.openqa.selenium.Keys as Keys
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 
-boolean isMobile=false
-
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlAseel/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
-if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Toggle_Nav_Left-Mobile'),3)) {
-	isMobile=true
-}
+
+//This site has captcha on signup
+WebUI.closeBrowser()
+return
 
 int currentTab = WebUI.getWindowIndex()
 WebDriver driver = DriverFactory.getWebDriver()
 JavascriptExecutor js = ((driver) as JavascriptExecutor)
 js.executeScript('window.open();')
 WebUI.switchToWindowIndex(currentTab + 1)
-WebUI.navigateToUrl(GlobalVariable.BE_URL)
+WebUI.authenticate(GlobalVariable.BE_URL, GlobalVariable.BEBasicAuthUser, GlobalVariable.BEBasicAuthPassword, 20, FailureHandling.OPTIONAL)
 WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Login/UserName'), GlobalVariable.BE_UserName)
 WebUI.setText(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Login/Password'), GlobalVariable.BE_Password)
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Login/LoginButton'))
@@ -46,18 +45,34 @@ if(WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/AlAsee
 	& WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Shared/SomethingWentWrongOK'), 5) ) {
 	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Shared/SomethingWentWrongOK'))
 }
-if(WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Shared/SurveyDivClose'), 5)
-	& WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/BE/Shared/SurveyDivClose'), 5) ) {
-	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/BE/Shared/SurveyDivClose'))
-}
+
 WebUI.switchToWindowIndex(currentTab)
 
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Login'), 20)
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Login'))
 
+
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Login'), 5)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Login'))
+}else {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Shared/Login-Mobile'))
+}
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/PhoneLoginTab'),10)) {
+	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/PhoneLoginTab'),10)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/PhoneLoginTab'))
+}else {
+	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/PhoneLoginTab-Mobile'),10)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/PhoneLoginTab-Mobile'))
+}
+WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Login/LoginTolephone'), 20)
+
+//Mobile
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlAseel/FE/SignUp/SignNewAccountUp'), 5)
 CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/SignUp/SignNewAccountUp'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/SignUp/SignNewAccountUp'))
+
+TestObject awsCap = new TestObject()
+awsCap.addProperty("xpath", ConditionType.EQUALS, '//button[@class="amzn-captcha-verify-button btn btn-primary"]')
+WebUI.click(awsCap)
+
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/SignUp/FirstName'), 5)
 
@@ -67,10 +82,16 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/SignUp/Firs
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/SignUp/FamilyName'), 'testing')
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/SignUp/Email'), 'mahmoud@snaptec.co')
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/SignUp/CustomerPhone'), GlobalVariable.SignUp_Phone)
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/SignUp/Password'), GlobalVariable.SignUp_Phone)
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AlAseel/FE/SignUp/PasswordConfirmation'), GlobalVariable.SignUp_Phone)
+
+WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/AlAseel/FE/SignUp/reCaptchaIFrame'), 5)
 CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/SignUp/Acknowledgement'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/SignUp/Acknowledgement'))
-CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/SignUp/SignNewAccountUp'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/SignUp/SignNewAccountUp'))
+
+WebUI.switchToDefaultContent()
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AlAseel/FE/SignUp/ConfirmSignUp'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/AlAseel/FE/SignUp/ConfirmSignUp'))
 WebUI.delay(2)
 String xPath = "//input[@type='tel' and contains( @aria-label,'Digit 1')]"
 TestObject firstOTPDigit = new TestObject('objectName')

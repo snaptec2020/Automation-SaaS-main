@@ -26,12 +26,8 @@ import org.openqa.selenium.Keys as Keys
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 
-boolean isMobile=false
 
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AjStore/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
-if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Toggle_Nav_Left-Mobile'),3)) {
-	isMobile=true
-}
 
 int currentTab = WebUI.getWindowIndex()
 WebDriver driver = DriverFactory.getWebDriver()
