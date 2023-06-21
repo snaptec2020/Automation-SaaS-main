@@ -45,7 +45,7 @@
       <name>gJDBCClass</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>Test Suites/Test Suites/Regression Suites/Sign In - Up suites</description>
       <initValue>'Not Run'</initValue>
       <name>testSuiteStatus</name>
    </GlobalVariableEntity>

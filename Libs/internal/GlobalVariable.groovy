@@ -50,7 +50,7 @@ public class GlobalVariable {
     public static Object gJDBCClass
      
     /**
-     * <p></p>
+     * <p>Profile default : Test Suites&#47;Test Suites&#47;Regression Suites&#47;Sign In - Up suites</p>
      */
     public static Object testSuiteStatus
      
