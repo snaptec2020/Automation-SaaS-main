@@ -6,11 +6,6 @@
    <defaultProfile>true</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'https://prod-bed-quarter.snaptec.co/'</initValue>
-      <name>URL</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
       <initValue>'sss@ss.co'</initValue>
       <name>Vaild_email</name>
    </GlobalVariableEntity>
