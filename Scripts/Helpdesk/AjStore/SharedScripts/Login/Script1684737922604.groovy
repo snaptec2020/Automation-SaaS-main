@@ -96,25 +96,28 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_Mage
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Menu/Menu_MageDelight_MobileOTPLogin_SMSLog'))
 
 //WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/Page_SMS Log  Magento Admin/button_Remove'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/button_Filters'))
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/transaction_type'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/status'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/s_id'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/recipient_phone'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/message_body'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/entity_id_to'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/entity_id_from'), '')
-
-WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/api_service'), '')
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Sales_Order_page/Sales_orders_FilterButton'))
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/ClearFilter'), 10)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/ClearFilter'))
+}
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/button_Filters'))
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/transaction_type'), '')
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/status'), '')
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/s_id'), '')
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/recipient_phone'), '')
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/message_body'), '')
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/entity_id_to'), '')
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/entity_id_from'), '')
+//
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/AjStore/BE/SmsLogPage/api_service'), '')
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/Sales_Order_page/Sales_orders_FilterButton'))
 
 WebUI.delay(2)
 
@@ -148,7 +151,7 @@ WebUI.delay(2)
 
 WebUI.switchToWindowIndex(currentTab)
 
-String xPath = '//input[@type=\'tel\' and contains( @aria-label,\'Digit 1\')]'
+String xPath = "//input[@type='tel' and contains( @aria-label,'Digit 1')]"
 
 TestObject firstOTPDigit = new TestObject('objectName')
 
