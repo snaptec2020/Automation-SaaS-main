@@ -56,16 +56,20 @@ WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Shared/Login'))
 
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/SignUp/SignNewAccountUp'), 5)
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AjStore/FE/SignUp/SignNewAccountUp'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/SignUp/SignNewAccountUp'))
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/SignUp/FirstName'), 5)
 
 WebUI.delay(1)
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AjStore/FE/SignUp/FirstName'))
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/FE/SignUp/FirstName'), 'Snaptec')
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/FE/SignUp/FamilyName'), 'testing')
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/FE/SignUp/Email'), 'mahmoud@snaptec.co')
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/AjStore/FE/SignUp/CustomerPhone'), GlobalVariable.SignUp_Phone)
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AjStore/FE/SignUp/Acknowledgement'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/SignUp/Acknowledgement'))
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/AjStore/FE/SignUp/SignNewAccountUp'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/SignUp/SignNewAccountUp'))
 WebUI.delay(2)
 String xPath = "//input[@type='tel' and contains( @aria-label,'Digit 1')]"
@@ -169,8 +173,8 @@ void deleteCustomerProfile() {
 	}
 	if (WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/BE/CustomerPage/CustomerInformationTab'),
 		10)) {
-		WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/CustomerPage/CustomerInformationTab'))
-	
+//		WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/BE/CustomerPage/CustomerInformationTab'))
+		CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AjStore/BE/CustomerPage/CustomerInformationTab'),5)
 		String PhoneOnCustomerProfile = WebUI.getAttribute(findTestObject('Object Repository/Helpdesk/AjStore/BE/CustomerPage/CustomerMobile'),
 			'value')
 	

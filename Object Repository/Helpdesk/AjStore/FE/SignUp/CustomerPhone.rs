@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@class=&quot;phoneInputCustom-input-OnI&quot;]</value>
+         <value>//input[contains(@class,&quot;phoneInputCustom-&quot;)]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
