@@ -94,7 +94,7 @@
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>Edge Chromium</runConfigurationId>
          </configuration>
-         <runEnabled>true</runEnabled>
+         <runEnabled>false</runEnabled>
          <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Sign In - Up suites</testSuiteEntity>
       </TestSuiteRunConfiguration>
    </testSuiteRunConfigurations>

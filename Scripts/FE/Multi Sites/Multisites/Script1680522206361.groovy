@@ -26,6 +26,8 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper as WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword as WebUIAbstractKeyword
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+
+import groovy.util.slurpersupport.GPathResult
 import internal.GlobalVariable as GlobalVariable
 import org.apache.commons.io.FileUtils as FileUtils
 import org.apache.poi.hssf.record.CountryRecord as CountryRecord
@@ -37,13 +39,13 @@ import com.kms.katalon.core.logging.XmlKeywordLogger as XmlKeywordLogger
 //TestCaseContext tcx //= new TestCaseContext()
 TestObject tb = new TestObject()
 
-XmlKeywordLogger xmlKeywordLogger
+//XmlKeywordLogger xmlKeywordLogger
 
-KeywordLogger logger = KeywordLogger.getInstance(getClass())
+//KeywordLogger logger = KeywordLogger.getInstance(getClass())
 
-Logger loggerLevels = Logger.getLogger(XmlKeywordLogger.class.getName())
+//Logger loggerLevels = Logger.getLogger(XmlKeywordLogger.class.getName())
 
-loggerLevels.setLevel(Level.OFF)
+//loggerLevels.setLevel(Level.OFF)
 
 String projectDir = RunConfiguration.getProjectDir()
 
@@ -100,20 +102,19 @@ if (sitesCount != 0) {
             //WebUI.delay(10)
         }
         
-        File testSuiteFile = new File(testSuiteDir)
+        String testSuiteFile = new File(testSuiteDir).getText()
 
         //List<String>
-        def bindings = new XmlParser().parse(testSuiteFile //FileUtils.readLines(testSuiteFile, "UTF-8");
-            )
-
-        loggerLevels.setLevel(Level.FINEST)
+        //def bindings = new XmlParser().parse(testSuiteFile)
+		GPathResult bindings = new XmlSlurper().parseText(testSuiteFile)
+       // loggerLevels.setLevel(Level.ALL)
 
         storesToVisit.each({ def val ->
                 //KeywordUtil.logInfo(val)
 				String country = ((val =~ 'text\\(\\)=\'(.*?)\'')[0])[1]
 
-				logger.logInfoHighlight(('>>>>>>>>>>>>>>>>>>>>>>>>> This ' + country) + ' Started <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
-        
+				//logger.logInfoHighlight(('>>>>>>>>>>>>>>>>>>>>>>>>> This ' + country) + ' Started <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
+				KeywordUtil.logger.logInfoHighlight(('>>>>>>>>>>>>>>>>>>>>>>>>> This ' + country) + ' Started <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
                 tb.addProperty('xpath', ConditionType.EQUALS, val)
 
 
@@ -122,31 +123,32 @@ if (sitesCount != 0) {
 
                 WebUI.delay(10)
 
-                //WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
-                // WebUI.callTestCase(findTestCase('FE/Website launch/Verifications/Verifications after launch (headers and footers)'), [:],
-                // FailureHandling.CONTINUE_ON_FAILURE)
-                //CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
-                // KeywordUtil.logInfo(testCases.size().toString())
-                /* bindings.testCaseLink.each { bk->
-						 
-						 KeywordUtil.logInfo("${bk.testCaseId.text()}")
-						 //KeywordUtil.logInfo(it.testCaseId.value.toString())
-					 
-						  }*/
-                bindings.testCaseLink.each({ def bk ->
-                        // KeywordUtil.logInfo("$bk.testCaseId.text()")
-                        String tescCaseId = "$bk.testCaseId.text()"
-
-                        String isRun = "$bk.isRun.text()"
-
-                        //KeywordUtil.logInfo((tescCaseId + '\t Is Run = \t') + isRun)
-                        if ((tescCaseId != 'Test Cases/FE/Multi Sites/Multisites') && isRun.equals('true')) {
-                            WebUI.callTestCase(findTestCase(tescCaseId), [:], FailureHandling.CONTINUE_ON_FAILURE)
-                        }
-                        
-                        logger.logInfoHighlight(('>>>>>>>>>>>>>>>>>>>>>>>>> This ' + country) + ' Ended <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<') //loggerLevels.setLevel(Level.FINEST)
-                    })
-
+		bindings.testCaseLink.each {
+			if(it.isRun.toString().equals("true") & !it.testCaseId.toString().equals('Test Cases/FE/Multi Sites/Multisites')) {
+				try {
+					WebUI.callTestCase(findTestCase(it.testCaseId.toString()), [:],	FailureHandling.CONTINUE_ON_FAILURE)
+				}catch(Exception e) {
+					KeywordUtil.markFailed("This Test case is not success " + it.testCaseId.toString())
+				}
+			}
+		 }
+			/*
+			 * bindings.testCaseLink.each({ def bk -> //
+			 * KeywordUtil.logInfo("$bk.testCaseId.text()") String tescCaseId =
+			 * "$bk.testCaseId.text()"
+			 * 
+			 * String isRun = "$bk.isRun.text()"
+			 * 
+			 * KeywordUtil.logInfo((tescCaseId + '\t Is Run = \t') + isRun) if ((tescCaseId
+			 * != 'Test Cases/FE/Multi Sites/Multisites') && isRun.equals('true')) {
+			 * WebUI.callTestCase(findTestCase(tescCaseId), [:],
+			 * FailureHandling.CONTINUE_ON_FAILURE) }
+			 * 
+			 * //logger.logInfoHighlight(('>>>>>>>>>>>>>>>>>>>>>>>>> This ' + country) + '
+			 * Ended <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
+			 * //loggerLevels.setLevel(Level.FINEST) })
+			 */
+				KeywordUtil.logger.logInfoHighlight(('>>>>>>>>>>>>>>>>>>>>>>>>> This ' + country) + ' Ended <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
                 //CustomKeywords.'generalactions.reporting.exportKatalonReports'(testSuiteContext)
                 openMultiSiteDrop(multiwebsiteDrop)
             })
