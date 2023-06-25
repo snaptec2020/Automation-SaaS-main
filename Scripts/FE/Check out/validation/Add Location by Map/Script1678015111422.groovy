@@ -25,7 +25,7 @@ int mapWidth = WebUI.getElementWidth(findTestObject('Object Repository/Check Out
 
 WebUI.clickOffset(findTestObject('Check Out/Map Block'), mapWidth, mapHeight)
 
-WebUI.click(findTestObject('Check Out/Save location Map Button'))
+//WebUI.click(findTestObject('Check Out/Save location Map Button'))
 
 WebUI.doubleClick(findTestObject('Check Out/map ic marker'), FailureHandling.CONTINUE_ON_FAILURE)
 
