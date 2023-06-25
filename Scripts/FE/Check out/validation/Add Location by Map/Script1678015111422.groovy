@@ -17,17 +17,18 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.click(findTestObject('Check Out/Zoom In (Map)'))
+/*
+ * WebUI.click(findTestObject('Check Out/Zoom In (Map)'))
+ * 
+ * int mapHeight = WebUI.getElementHeight(findTestObject('Object Repository/Check Out/Map Block')) / 2
+ * 
+ * int mapWidth = WebUI.getElementWidth(findTestObject('Object Repository/CheckOut/Map Block')) / 2
+ */
 
-int mapHeight = WebUI.getElementHeight(findTestObject('Object Repository/Check Out/Map Block')) / 2
+WebUI.doubleClick(findTestObject('Check Out/Map Block'), FailureHandling.CONTINUE_ON_FAILURE)
 
-int mapWidth = WebUI.getElementWidth(findTestObject('Object Repository/Check Out/Map Block')) / 2
 
-WebUI.clickOffset(findTestObject('Check Out/Map Block'), mapWidth, mapHeight)
-
-WebUI.click(findTestObject('Check Out/Save location Map Button'))
-
-WebUI.doubleClick(findTestObject('Check Out/map ic marker'), FailureHandling.CONTINUE_ON_FAILURE)
+//WebUI.doubleClick(findTestObject('Check Out/map ic marker'), FailureHandling.CONTINUE_ON_FAILURE)
 
 WebUI.verifyElementVisible(findTestObject('Check Out/Map postion after click on maker'), FailureHandling.CONTINUE_ON_FAILURE)
 
