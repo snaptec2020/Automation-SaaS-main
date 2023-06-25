@@ -23,6 +23,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import catalog.catlogComponants
 import generalactions.generalStrings
+import generalactions.scrolling
 import helpdesk.HelpdeskUtil
 
 import java.util.List
@@ -47,6 +48,7 @@ public class productsFromCatalog {
 	public def utilityFunctions = new Utility()
 	int elementIndex = 0
 	def genaralActions= new generalStrings()
+	def scrollingActions = new scrolling()
 
 	@Keyword
 	def getProducts() {
@@ -508,16 +510,52 @@ public class productsFromCatalog {
 			KeywordUtil.markPassed("Trying to Get Configurable product")
 			WebUI.scrollToElement(findTestObject('Object Repository/Products/Product content'), 0, FailureHandling.STOP_ON_FAILURE)
 			configurableProduct()
+			//KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>> end configurable")
 			tb = utilityFunctions.addXpathToTestObject("//*[@class='product-content__button-wrapper']//button[@class='product-content__cart']")
 			//tb.addProperty('xpath', ConditionType.EQUALS, "//*[@class='product-content__button-wrapper']//button[@class='product-content__cart']")
-			if(WebUI.verifyElementClickable(tb)) {
+			//KeywordUtil.logInfo(WebUI.waitForElementClickable(tb, 10, FailureHandling.CONTINUE_ON_FAILURE).toString())
+
+			try {
+				//KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>> 1")
+				//scrollingActions.scrollToClick(tb)
 				WebUI.click(tb)
-				WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'),5, FailureHandling.CONTINUE_ON_FAILURE)
-				WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
-			} else {
-				KeywordUtil.markPassed("Trying to Get a new product")
+				if(WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'),5, FailureHandling.CONTINUE_ON_FAILURE)) {
+					WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
+				}
+			} catch (Exception e) {
+				for(int i=5;i>0;i--) {
+					if(WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'),5, FailureHandling.CONTINUE_ON_FAILURE) && i!=5) {
+						WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
+						break
+					}
+					WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/"+i.toString()+");", null);
+					WebUI.click(tb, FailureHandling.CONTINUE_ON_FAILURE)
+				}
+				e.printStackTrace()
 				getRandominStockProductsFromRandomCategory()
 			}
+			/*if(WebUI.waitForElementClickable(tb, 10, FailureHandling.CONTINUE_ON_FAILURE)) {
+			 KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>> 1")
+			 //scrollingActions.scrollToClick(tb)
+			 WebUI.click(tb, FailureHandling.CONTINUE_ON_FAILURE)
+			 WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'),5, FailureHandling.CONTINUE_ON_FAILURE)
+			 WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
+			 } else {
+			 KeywordUtil.markPassed("Trying to Get a new product")
+			 for(int i=5;i>0;i--) {
+			 //KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>>>>>")
+			 if (WebUI.waitForElementClickable(tb, 10, FailureHandling.CONTINUE_ON_FAILURE)) {
+			 //WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/2);", null);
+			 WebUI.click(tb)
+			 WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'),5, FailureHandling.CONTINUE_ON_FAILURE)
+			 WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
+			 break
+			 }
+			 WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/"+i.toString()+");", null);
+			 WebUI.click(findTestObject('Sign up Page/Sign up By email/Sign Up Button'))
+			 }
+			 getRandominStockProductsFromRandomCategory()
+			 }*/
 		}
 
 	}

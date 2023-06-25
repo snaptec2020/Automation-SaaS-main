@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteCollectionEntity>
    <description></description>
-   <name>Regression on Production</name>
+   <name>Regression on Production - Web browser</name>
    <tag></tag>
    <delayBetweenInstances>0</delayBetweenInstances>
    <executionMode>SEQUENTIAL</executionMode>
@@ -20,11 +20,11 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>Production NT</profileName>
+            <profileName>Production Othaim</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
-         <runEnabled>false</runEnabled>
+         <runEnabled>true</runEnabled>
          <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
@@ -39,32 +39,62 @@
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
-            <groupName>Custom</groupName>
+            <groupName>Web Desktop</groupName>
             <profileName>Bed Quartar</profileName>
             <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
+            <runConfigurationId>Firefox</runConfigurationId>
          </configuration>
-         <runEnabled>true</runEnabled>
+         <runEnabled>false</runEnabled>
          <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Checkout All methods</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
-            <groupName>Custom</groupName>
+            <groupName>Web Desktop</groupName>
             <profileName>Production NT</profileName>
             <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>ipad mini</runConfigurationId>
+            <runConfigurationId>Firefox</runConfigurationId>
          </configuration>
-         <runEnabled>true</runEnabled>
+         <runEnabled>false</runEnabled>
          <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
-            <groupName>Custom</groupName>
+            <groupName>Web Desktop</groupName>
             <profileName>Bed Quartar</profileName>
             <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
+            <runConfigurationId>Firefox</runConfigurationId>
          </configuration>
-         <runEnabled>true</runEnabled>
+         <runEnabled>false</runEnabled>
+         <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Sign In - Up suites</testSuiteEntity>
+      </TestSuiteRunConfiguration>
+      <TestSuiteRunConfiguration>
+         <configuration>
+            <groupName>Web Desktop</groupName>
+            <profileName>Bed Quartar</profileName>
+            <requireConfigurationData>false</requireConfigurationData>
+            <runConfigurationId>Edge Chromium</runConfigurationId>
+         </configuration>
+         <runEnabled>false</runEnabled>
+         <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Checkout All methods</testSuiteEntity>
+      </TestSuiteRunConfiguration>
+      <TestSuiteRunConfiguration>
+         <configuration>
+            <groupName>Web Desktop</groupName>
+            <profileName>Production NT</profileName>
+            <requireConfigurationData>false</requireConfigurationData>
+            <runConfigurationId>Edge Chromium</runConfigurationId>
+         </configuration>
+         <runEnabled>false</runEnabled>
+         <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
+      </TestSuiteRunConfiguration>
+      <TestSuiteRunConfiguration>
+         <configuration>
+            <groupName>Web Desktop</groupName>
+            <profileName>Bed Quartar</profileName>
+            <requireConfigurationData>false</requireConfigurationData>
+            <runConfigurationId>Edge Chromium</runConfigurationId>
+         </configuration>
+         <runEnabled>false</runEnabled>
          <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Sign In - Up suites</testSuiteEntity>
       </TestSuiteRunConfiguration>
    </testSuiteRunConfigurations>

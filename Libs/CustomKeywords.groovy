@@ -514,10 +514,24 @@ def static "generalactions.scrolling.scrollToClick"(
 }
 
 
+def static "generalactions.scrolling.scrollToClick"(
+    	TestObject testObjec	) {
+    (new generalactions.scrolling()).scrollToClick(
+        	testObjec)
+}
+
+
 def static "generalactions.scrolling.javaScriptToScrollToElement"(
     	Object testObjectRelativeId	) {
     (new generalactions.scrolling()).javaScriptToScrollToElement(
         	testObjectRelativeId)
+}
+
+
+def static "generalactions.scrolling.javaScriptToScrollToElement"(
+    	TestObject testObject	) {
+    (new generalactions.scrolling()).javaScriptToScrollToElement(
+        	testObject)
 }
 
 

@@ -200,7 +200,8 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Tamara/TamaraCancel'))
 
 //WebUI.verifyElementNotClickable(findTestObject('Object Repository/Helpdesk/AjStore/FE/Tamara/TamaraProceedButtonPage2'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Tamara/TamaraCancel'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/AjStore/FE/Tamara/TamaraCancel'))
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AjStore/FE/Tamara/TamaraCancel'), 3)
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AjStore/FE/Tamara/CancleDialogText_1'))
 

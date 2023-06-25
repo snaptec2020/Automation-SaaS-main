@@ -10,7 +10,8 @@ import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
-import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
@@ -49,7 +50,16 @@ WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/Sign
         , ('lastName') : randomEmail.toString().replaceAll("(@.*)", ""), ('email') : randomEmail, ('password') : randomPassword], FailureHandling.STOP_ON_FAILURE)
 GlobalVariable.Vaild_email = randomEmail
 GlobalVariable.ValidPassword= randomPassword
-
+				for(int i=5;i>0;i--) {
+					//KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>>>>>")
+					if (!WebUI.waitForElementClickable(findTestObject('Sign up Page/Sign up By email/Sign Up Button'), 5)) {
+						//WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/2);", null);
+						break
+					}
+					WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/"+i.toString()+");", null);
+					WebUI.click(findTestObject('Sign up Page/Sign up By email/Sign Up Button'))
+						
+				}
 WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'))
 
 

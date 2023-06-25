@@ -74,4 +74,11 @@
       <testCaseId>Test Cases/Helpdesk/karazlinen/karazlinen-KSA/Search</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
+   <testCaseLink>
+      <guid>f06970da-5cdc-45a6-9a49-2ea1d3fb2333</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Helpdesk/karazlinen/karazlinen-KSA/SignUp</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
 </TestSuiteEntity>

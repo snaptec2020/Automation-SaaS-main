@@ -15,7 +15,7 @@
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Helpdesk/karazlinen-OtherCountry</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Helpdesk/karazlinen-KSA</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -25,7 +25,7 @@
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Helpdesk/karazlinen-OtherCountry</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Helpdesk/karazlinen-KSA</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -35,7 +35,7 @@
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Helpdesk/karazlinen-OtherCountry</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Helpdesk/karazlinen-KSA</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -45,7 +45,7 @@
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Helpdesk/karazlinen-OtherCountry</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Helpdesk/karazlinen-KSA</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -55,57 +55,7 @@
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Helpdesk/karazlinen-OtherCountry</testSuiteEntity>
-      </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Custom</groupName>
-            <profileName>karazlinen-Bahren</profileName>
-            <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
-         </configuration>
-         <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Helpdesk/karazlinen-OtherCountry</testSuiteEntity>
-      </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Custom</groupName>
-            <profileName>karazlinen-Kuwait</profileName>
-            <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
-         </configuration>
-         <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Helpdesk/karazlinen-OtherCountry</testSuiteEntity>
-      </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Custom</groupName>
-            <profileName>karazlinen-Oman</profileName>
-            <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
-         </configuration>
-         <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Helpdesk/karazlinen-OtherCountry</testSuiteEntity>
-      </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Custom</groupName>
-            <profileName>karazlinen-Qatar</profileName>
-            <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
-         </configuration>
-         <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Helpdesk/karazlinen-OtherCountry</testSuiteEntity>
-      </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Custom</groupName>
-            <profileName>karazlinen-UAE</profileName>
-            <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
-         </configuration>
-         <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Helpdesk/karazlinen-OtherCountry</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Helpdesk/karazlinen-KSA</testSuiteEntity>
       </TestSuiteRunConfiguration>
    </testSuiteRunConfigurations>
 </TestSuiteCollectionEntity>

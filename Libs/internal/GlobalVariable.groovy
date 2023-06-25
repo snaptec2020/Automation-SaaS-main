@@ -12,11 +12,6 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
-    public static Object URL
-     
-    /**
-     * <p></p>
-     */
     public static Object Vaild_email
      
     /**
@@ -50,7 +45,7 @@ public class GlobalVariable {
     public static Object gJDBCClass
      
     /**
-     * <p></p>
+     * <p>Profile default : Test Suites&#47;Test Suites&#47;Regression Suites&#47;Sign In - Up suites</p>
      */
     public static Object testSuiteStatus
      
@@ -165,6 +160,16 @@ public class GlobalVariable {
     public static Object Longtitude
      
     /**
+     * <p>Profile AJStore : 581492</p>
+     */
+    public static Object SignUp_Phone
+     
+    /**
+     * <p></p>
+     */
+    public static Object URL
+     
+    /**
      * <p></p>
      */
     public static Object BEBasicAuthUser
@@ -211,7 +216,6 @@ public class GlobalVariable {
 			selectedVariables += TestCaseMain.getGlobalVariables(RunConfiguration.getExecutionProfile())
             selectedVariables += TestCaseMain.getParsedValues(RunConfiguration.getOverridingParameters(), selectedVariables)
     
-            URL = selectedVariables['URL']
             Vaild_email = selectedVariables['Vaild_email']
             Wrong_email = selectedVariables['Wrong_email']
             languageMode = selectedVariables['languageMode']
@@ -242,6 +246,8 @@ public class GlobalVariable {
             MadaCVV = selectedVariables['MadaCVV']
             Latitude = selectedVariables['Latitude']
             Longtitude = selectedVariables['Longtitude']
+            SignUp_Phone = selectedVariables['SignUp_Phone']
+            URL = selectedVariables['URL']
             BEBasicAuthUser = selectedVariables['BEBasicAuthUser']
             BEBasicAuthPassword = selectedVariables['BEBasicAuthPassword']
             FE_EmailLogin = selectedVariables['FE_EmailLogin']

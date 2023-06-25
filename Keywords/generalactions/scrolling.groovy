@@ -87,6 +87,7 @@ public class scrolling {
 			//KeywordUtil.logInfo(elementClicable.toString())
 			//WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/"+scrollingPosition.toString()+");", null);
 			//KeywordUtil.logInfo(elementClicable.toString())
+			javaScriptToScrollToElement(testObjectRelativeId)
 			WebUI.click(findTestObject(testObjectRelativeId),FailureHandling.CONTINUE_ON_FAILURE)
 			//KeywordUtil.logInfo(elementClicable.toString())
 			//break
@@ -99,8 +100,38 @@ public class scrolling {
 		//}
 	}
 	@Keyword
+	def scrollToClick(TestObject testObjec) {
+		boolean elementClicable =WebUI.waitForElementClickable(testObjec,10,FailureHandling.CONTINUE_ON_FAILURE)
+		boolean elementVisable = WebUI.waitForElementVisible(testObjec,10,FailureHandling.CONTINUE_ON_FAILURE)
+		KeywordUtil.logInfo(elementClicable.toString())
+		KeywordUtil.logInfo(elementVisable.toString())
+		//for(int scrollingPosition = 4;scrollingPosition!=0;scrollingPosition--) {
+		//KeywordUtil.logInfo(elementVisable.toString())
+		if (elementClicable && elementVisable) {
+			//KeywordUtil.logInfo(elementClicable.toString())
+			//WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/"+scrollingPosition.toString()+");", null);
+			//KeywordUtil.logInfo(elementClicable.toString())
+			javaScriptToScrollToElement(testObjec)
+			WebUI.click(testObjec,FailureHandling.CONTINUE_ON_FAILURE)
+			//KeywordUtil.logInfo(elementClicable.toString())
+			//break
+		}else {
+			javaScriptToScrollToElement(testObjec)
+			WebUI.click(testObjec,FailureHandling.CONTINUE_ON_FAILURE)
+
+		}
+
+		//}
+	}
+	@Keyword
 	def javaScriptToScrollToElement(def testObjectRelativeId) {
 		WebElement element = WebUiCommonHelper.findWebElement(findTestObject(testObjectRelativeId),30)
+		WebUI.executeJavaScript("arguments[0].scrollIntoView()", Arrays.asList(element))
+		WebUI.delay(2)
+	}
+	@Keyword
+	def javaScriptToScrollToElement(TestObject testObject) {
+		WebElement element = WebUiCommonHelper.findWebElement(testObject,30)
 		WebUI.executeJavaScript("arguments[0].scrollIntoView()", Arrays.asList(element))
 		WebUI.delay(2)
 	}
