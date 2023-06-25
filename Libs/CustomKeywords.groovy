@@ -410,6 +410,11 @@ def static "utility.Utility.clickOnObjectusingJavaScript"(
 }
 
 
+def static "utility.Utility.moveToElement"() {
+    (new utility.Utility()).moveToElement()
+}
+
+
 def static "generalactions.notificationsObject.verifyNotificationVisble"(
     	Object arText	
      , 	Object enText	) {

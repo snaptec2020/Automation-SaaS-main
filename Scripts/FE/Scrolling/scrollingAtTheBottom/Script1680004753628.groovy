@@ -13,10 +13,14 @@ import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
+import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.Keys
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.WebElement as Keys
 
 try {
 	long lastHeight=((Number) WebUI.executeJavaScript("return document.body.scrollHeight", null)).longValue();
@@ -32,6 +36,7 @@ try {
 		//KeywordUtil.logInfo(lastHeight.toString())
 		//KeywordUtil.logInfo(newHeight.toString())
 		if (newHeight == lastHeight || scrollingCount==10) {
+			CustomKeywords.'utility.Utility.moveToElement'()
 			//WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/2);", null);
 			break;
 		}

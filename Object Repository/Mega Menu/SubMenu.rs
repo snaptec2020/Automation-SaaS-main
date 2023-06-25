@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>SubMenu</name>
+   <tag></tag>
+   <elementGuidId>c6607b1d-69ed-49b1-8d14-1779b1207ed5</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//div[starts-with(@class,'styles_subMenuRow__')]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//div[starts-with(@class,'styles_subMenuRow__')]</value>
+      <webElementGuid>fe8efec2-6fa7-4c2a-a109-6c1ed75d9cc4</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>
