@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Menu_Store_Configuration_Snaptec</name>
+   <tag></tag>
+   <elementGuidId>eaad5622-cf54-49d2-85d5-b3a35eeb1a46</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//strong[text()=&quot;Snaptec&quot;]/parent::div[contains(@class,&quot;admin__page-nav-title&quot;)]/parent::div[contains(@class,&quot;config-nav-block&quot;)]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>

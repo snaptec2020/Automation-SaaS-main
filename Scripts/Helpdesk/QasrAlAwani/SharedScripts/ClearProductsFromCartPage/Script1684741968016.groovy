@@ -36,7 +36,9 @@ import org.openqa.selenium.remote.server.handler.GetCurrentUrl
 
 ///Clear Cart
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Cart'))
-
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'), 5)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancel'))
+}
 TestObject removeProductFromCart = new TestObject()
 
 removeProductFromCart.addProperty('xpath', ConditionType.EQUALS, '//button[contains(@class,"product-button")]//span//div/img[@alt="Remove" and @loading="lazy"]')

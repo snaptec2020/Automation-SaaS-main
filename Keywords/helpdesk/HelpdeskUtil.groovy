@@ -707,6 +707,7 @@ public class HelpdeskUtil {
 		try {
 			List<WebElement> element = WebUiCommonHelper.findWebElements(tb, 10)
 			//		WebUI.executeJavaScript('arguments[0].scrollIntoView();window.scrollBy(0, -10);', element)
+			WebUI.executeJavaScript("arguments[0].scrollIntoView();", element)
 			WebUI.executeJavaScript("arguments[0].scrollIntoView({ block: 'center' });", element)
 			WebUI.delay(1)
 		}catch(Exception ex) {
@@ -720,7 +721,21 @@ public class HelpdeskUtil {
 	@Keyword
 	def ScrollToElement(WebElement element) {
 		try {
+			WebUI.executeJavaScript("arguments[0].scrollIntoView();", Arrays.asList(element))
 			WebUI.executeJavaScript("arguments[0].scrollIntoView({ block: 'center' });", Arrays.asList(element))
+			WebUI.delay(1)
+		}catch(Exception ex) {
+			println ex.message
+			println ex.cause
+			ex.printStackTrace()
+
+		}
+	}
+
+	@Keyword
+	def ScrollTop() {
+		try {
+			WebUI.executeJavaScript("window.scrollTo(0, 0);", null)
 			WebUI.delay(1)
 		}catch(Exception ex) {
 			println ex.message
