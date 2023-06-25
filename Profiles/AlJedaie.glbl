@@ -59,4 +59,9 @@
       <initValue>'274'</initValue>
       <name>MadaCVV</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'581492572'</initValue>
+      <name>SignUp_Phone</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

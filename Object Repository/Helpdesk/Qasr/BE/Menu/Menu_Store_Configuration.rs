@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Menu_Store_Configuration</name>
+   <tag></tag>
+   <elementGuidId>80b47bcd-025e-42b9-a096-42ac1b08fd50</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//li[@data-ui-id=&quot;menu-magento-config-system-config&quot;]//span[text()=&quot;Configuration&quot;]/parent::a</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>

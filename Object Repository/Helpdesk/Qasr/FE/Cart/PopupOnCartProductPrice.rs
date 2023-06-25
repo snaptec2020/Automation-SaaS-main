@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>PopupOnCartProductPrice</name>
+   <tag></tag>
+   <elementGuidId>095f3918-788e-48c9-af30-6467d7d34700</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@role=&quot;dialog&quot;]/div[contains(@class,&quot;popupProductOnCart-modalAddToCart-&quot;)]//div[contains(@class,&quot;popupProductOnCart-price-&quot;)]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>

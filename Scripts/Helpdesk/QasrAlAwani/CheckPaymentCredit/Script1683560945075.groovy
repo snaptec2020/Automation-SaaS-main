@@ -54,7 +54,9 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
-
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'), 5)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancel'))
+}
 //Check Total Paid for Tabby and Tamara
 TestObject totalPaidTO = new TestObject()
 

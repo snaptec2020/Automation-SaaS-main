@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>PopupOnCartCancel</name>
+   <tag></tag>
+   <elementGuidId>560976d1-e2c5-41ad-867b-e71a78cfe29c</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@role=&quot;dialog&quot;]/div[contains(@class,&quot;popupProductOnCart-modalAddToCart-&quot;)]//button[contains(@class,&quot;popupProductOnCart-dontAddCart-&quot;)]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>
