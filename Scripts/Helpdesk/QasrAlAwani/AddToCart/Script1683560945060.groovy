@@ -79,7 +79,9 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/S
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
-
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'), 5)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancel'))
+}
 Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,'//a[@href="/' + ProductURL + '" and contains(text(),"' + ProductTitle + '")]')
 //WebElement Productlink_Element = WebUiCommonHelper.findWebElement(Productlink_TO, 10)

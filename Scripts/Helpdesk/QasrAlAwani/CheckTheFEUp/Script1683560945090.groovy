@@ -33,7 +33,9 @@ WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), FailureHandling.CONTINUE_ON_FAILURE)
 
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Cart'), FailureHandling.CONTINUE_ON_FAILURE)
-
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'), 5)) {
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancel'))
+}
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Fav'), FailureHandling.CONTINUE_ON_FAILURE)
 
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Login'), FailureHandling.CONTINUE_ON_FAILURE)
