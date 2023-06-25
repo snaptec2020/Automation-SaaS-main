@@ -39,7 +39,7 @@ WebUI.maximizeWindow()
 WebUI.navigateToUrl(GlobalVariable.FE_URL,FailureHandling.OPTIONAL)
 if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/MailChimpIFrame'), 5, FailureHandling.OPTIONAL)) {
 	//Close the MailChimp ifram
-	if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/MailChimpClose'),5)) {
+	if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/MailChimpClose'),20)) {
 		WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/MailChimpClose'),5)
 		WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/MailChimpClose'))
 	}else {
