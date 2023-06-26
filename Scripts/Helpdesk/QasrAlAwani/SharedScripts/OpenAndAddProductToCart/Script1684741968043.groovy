@@ -35,7 +35,8 @@ import org.openqa.selenium.WebElement as WebElement
 import org.openqa.selenium.remote.server.handler.GetCurrentUrl
 
 //Open Random Product
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 3)
 CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductQasr'()
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 10)
@@ -57,8 +58,9 @@ while (
 		) && trials<10) {
 	//Open Random Product
 	trials = trials+1
-	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
-	CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductQasr'()
+//	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 3)
+CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductQasr'()
 
 	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 10)
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/Add to cart'))
