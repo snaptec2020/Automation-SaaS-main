@@ -5,6 +5,7 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.main.CustomKeywordDelegatingMetaClass
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
@@ -58,6 +59,7 @@ String addedProductPrice
 TestObject ProductPrice_TO=new TestObject()
 TestObject Productlink_TO=new TestObject()
 TestObject CartProductList=new TestObject()
+TestObject ProductQty_TO=new TestObject()
 List<WebElement> CartProductListItems
 
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/LaunchFE'), [:],	FailureHandling.STOP_ON_FAILURE)
@@ -102,6 +104,7 @@ KeywordUtil.logInfo('TC_1 visibility of popup When Cart is empty')
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/ClearProductsFromCartPage'), [:],	FailureHandling.STOP_ON_FAILURE)
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+RemoveCartCookie()
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'))
@@ -116,11 +119,13 @@ WebUI.verifyMatch(shownProductName, ProductTitle, false)
 WebUI.verifyMatch(shownProductPrice, ProductPrice, false)
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancel'))
 
+
 // TC_2 visibility of popup When Cart is not empty
 KeywordUtil.logInfo('TC_2 visibility of popup When Cart is not empty')
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+RemoveCartCookie()
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'))
@@ -141,6 +146,7 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/ClearProductsFromCartPage'), [:],	FailureHandling.STOP_ON_FAILURE)
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
+RemoveCartCookie()
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancel'))
@@ -176,6 +182,7 @@ WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
+RemoveCartCookie()
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancel'))
@@ -227,12 +234,36 @@ CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Re
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/Add to cart'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
+RemoveCartCookie()
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
-WebUI.verifyElementNotVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancel'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancelAdd'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductName'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductPrice'))
+shownProductName = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductName'), 3).getText()
+shownProductPrice = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductPrice'), 3).getText().replace("ر.س", "").replace(" ", "")
+shownProductPrice=Float.parseFloat(shownProductPrice).toString()
+WebUI.verifyMatch(shownProductName, ProductTitle, false)
+WebUI.verifyMatch(shownProductPrice, ProductPrice, false)
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancelAdd'))
 Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,'//a[@href="/' + ProductURL + '" and contains(text(),"' + ProductTitle + '")]')
 WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
+ProductPrice_TO=new TestObject()
+ProductPrice_TO.addProperty("xpath",ConditionType.EQUALS,Productlink_TO.findPropertyValue("xpath") + '//../..//div[contains(@class,"product-subTotal-")]//div')
+WebUI.verifyElementVisible(ProductPrice_TO, FailureHandling.STOP_ON_FAILURE)
+addedProductPrice = WebUiCommonHelper.findWebElement(ProductPrice_TO, 3).getText().replace("ر.س", "").replace(" ", "")
+addedProductPrice=Float.parseFloat(addedProductPrice).toString()
+WebUI.verifyMatch(addedProductPrice, (Float.parseFloat(ProductPrice)*2).toString(), false)
+ProductQty_TO=new TestObject()
+ProductQty_TO.addProperty("xpath",ConditionType.EQUALS,Productlink_TO.findPropertyValue("xpath") + '//../..//input[@name="quantity"]')
+WebUI.verifyElementAttributeValue(ProductQty_TO, 'value', "2", 30)
+CartProductList = new TestObject()
+CartProductList.addProperty("xpath", ConditionType.EQUALS, '//ul[contains(@class,"productListing-root-")]/li')
+CartProductListItems = WebUiCommonHelper.findWebElements(CartProductList,3)
+WebUI.verifyMatch(CartProductListItems.size().toString(),"1",false)
 
 
 // TC_6 Use Add while the cart is not empty and contains the same suggested product as one of the products
@@ -258,40 +289,91 @@ CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Re
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/Add to cart'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
+RemoveCartCookie()
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
-WebUI.verifyElementNotVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'))
-Productlink_TO=new TestObject()
-Productlink_TO.addProperty("xpath",ConditionType.EQUALS,'//a[@href="/' + ProductURL + '" and contains(text(),"' + ProductTitle + '")]')
-WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
-WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
-
-
-
-
-assert false
-//Open Random Product
-WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
-
-ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/Qasr/FE/Product/productFullDetail-Name'))
-ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/Qasr/FE/Product/productFullDetail-sku'))
-ProductURL = WebUI.getUrl().replace(GlobalVariable.FE_URL, "")
-ProductPrice = WebUI.getText(findTestObject('Object Repository/Helpdesk/Qasr/FE/Product/Product_Price'))
-
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 10)
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
-if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'), 5)) {
-	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancel'))
-}
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancel'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancelAdd'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductName'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductPrice'))
+shownProductName = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductName'), 3).getText()
+shownProductPrice = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductPrice'), 3).getText().replace("ر.س", "").replace(" ", "")
+shownProductPrice=Float.parseFloat(shownProductPrice).toString()
+WebUI.verifyMatch(shownProductName, ProductTitle, false)
+WebUI.verifyMatch(shownProductPrice, ProductPrice, false)
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancelAdd'))
 Productlink_TO=new TestObject()
 Productlink_TO.addProperty("xpath",ConditionType.EQUALS,'//a[@href="/' + ProductURL + '" and contains(text(),"' + ProductTitle + '")]')
 WebUI.waitForElementVisible(Productlink_TO, 10, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
 ProductPrice_TO=new TestObject()
-ProductPrice_TO.addProperty("xpath",ConditionType.EQUALS,Productlink_TO.findPropertyValue("xpath") + '//../..//div[contains(@class,"product-subTotal-")]//div//span[1]')
+ProductPrice_TO.addProperty("xpath",ConditionType.EQUALS,Productlink_TO.findPropertyValue("xpath") + '//../..//div[contains(@class,"product-subTotal-")]//div')
 WebUI.verifyElementVisible(ProductPrice_TO, FailureHandling.STOP_ON_FAILURE)
+addedProductPrice = WebUiCommonHelper.findWebElement(ProductPrice_TO, 3).getText().replace("ر.س", "").replace(" ", "")
+addedProductPrice=Float.parseFloat(addedProductPrice).toString()
+WebUI.verifyMatch(addedProductPrice, (Float.parseFloat(ProductPrice)*2).toString(), false)
+ProductQty_TO=new TestObject()
+ProductQty_TO.addProperty("xpath",ConditionType.EQUALS,Productlink_TO.findPropertyValue("xpath") + '//../..//input[@name="quantity"]')
+WebUI.verifyElementAttributeValue(ProductQty_TO, 'value', "2", 30)
+CartProductList = new TestObject()
+CartProductList.addProperty("xpath", ConditionType.EQUALS, '//ul[contains(@class,"productListing-root-")]/li')
+CartProductListItems = WebUiCommonHelper.findWebElements(CartProductList,3)
+WebUI.verifyMatch(CartProductListItems.size().toString(),"2",false)
 
+
+// TC_7 Verify the popup will be shown once
+KeywordUtil.logInfo('TC_7 Verify the popup will be shown once')
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/ClearProductsFromCartPage'), [:],	FailureHandling.STOP_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+RemoveCartCookie()
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancel'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancelAdd'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductName'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductPrice'))
+shownProductName = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductName'), 3).getText()
+shownProductPrice = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductPrice'), 3).getText().replace("ر.س", "").replace(" ", "")
+shownProductPrice=Float.parseFloat(shownProductPrice).toString()
+WebUI.verifyMatch(shownProductName, ProductTitle, false)
+WebUI.verifyMatch(shownProductPrice, ProductPrice, false)
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancel'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'),2)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancel'),2)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancelAdd'),2)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductName'),2)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductPrice'),2)
+WebUI.refresh()
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'),2)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancel'),2)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancelAdd'),2)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductName'),2)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductPrice'),2)
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'),2)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancel'),2)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancelAdd'),2)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductName'),2)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductPrice'),2)
+WebUI.refresh()
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCart'),2)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancel'),2)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartCancelAdd'),2)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductName'),2)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/PopupOnCartProductPrice'),2)
+
+
+
+WebUI.delay(5)
 WebUI.closeBrowser()
 
 String getpopupSKU() {
@@ -344,4 +426,9 @@ int getpopupAvailableQty(String popUpSKU) {
 	int qty =((int) Float.parseFloat(WebUI.getText(qtyTO).toString()))
 	WebUI.switchToWindowIndex(currentTab )
 	return qty
+}
+
+Void RemoveCartCookie() {
+	CustomKeywords.'helpdesk.HelpdeskUtil.RemoveItemFromLocalStorage'("M2_VENIA_BROWSER_PERSISTENCE__product_on_cart")
+//	WebUI.executeJavaScript('localStorage.removeItem("M2_VENIA_BROWSER_PERSISTENCE__product_on_cart")', null)
 }

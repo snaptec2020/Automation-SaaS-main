@@ -40,15 +40,21 @@ CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductQasr'()
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 10)
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/Add to cart'))
-CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/Add to cart'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/Add to cart'))
+
+if(WebUI.verifyElementNotHasAttribute(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/Add to cart'), 'disabled', 3,FailureHandling.OPTIONAL)) {
+	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/Add to cart'))
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/Add to cart'))
+}
 
 // Check if qty accepted
 def trials=1
 TestObject errorQTY_TO = new TestObject()
 errorQTY_TO.addProperty("xpath",ConditionType.EQUALS,'//*[contains(text(),"Could not add the product" ) and contains(text(), "The requested qty is not available" )]')
 List<WebElement> errorQTY_Element = WebUiCommonHelper.findWebElements(errorQTY_TO, 5)
-while (errorQTY_Element.size()>0 && trials<10) {
+while (	
+		(errorQTY_Element.size()>0 | 
+		WebUI.verifyElementHasAttribute(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/Add to cart'), 'disabled', 3, FailureHandling.OPTIONAL)
+		) && trials<10) {
 	//Open Random Product
 	trials = trials+1
 	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))

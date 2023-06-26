@@ -38,7 +38,7 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl(GlobalVariable.FE_URL)
 
-if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/AppDownload_close'), 10)) {
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/AppDownload_close'), 15)) {
 	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/AppDownload_close'))
 }
 WebUI.maximizeWindow()

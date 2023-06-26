@@ -103,6 +103,7 @@ public class HelpdeskUtil {
 		WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
 		ScrollToElement(tb)
 		clickJS(tb, 5)
+//		WebUI.navigateToUrl("https://qasralawani.com/ar/va20hs4-2-serving-plate.html")
 	}
 
 	@Keyword
@@ -881,5 +882,10 @@ public class HelpdeskUtil {
 				return 'قطر'
 				break
 		}
+	}
+	
+	@Keyword
+	Void RemoveItemFromLocalStorage(String ItemName) {
+		WebUI.executeJavaScript('localStorage.removeItem("' + ItemName + '")', null)
 	}
 }
