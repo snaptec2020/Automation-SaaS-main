@@ -20,7 +20,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
-
+import cart.cartItems
 import catalog.catlogComponants
 import generalactions.generalStrings
 import generalactions.scrolling
@@ -49,6 +49,7 @@ public class productsFromCatalog {
 	int elementIndex = 0
 	def genaralActions= new generalStrings()
 	def scrollingActions = new scrolling()
+	def cartIm = new cartItems()
 
 	@Keyword
 	def getProducts() {
@@ -292,6 +293,12 @@ public class productsFromCatalog {
 				}
 				checkOnAddToStoreClickable(currentURL)
 				WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
+				float cartSubTotal = (new cartItems()).cartSubtotal//WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'), 10).size()
+				
+				
+				if (cartSubTotal == 0) {
+					getSpecifiedinStockProductsFromRandomCategoryInTarget()
+				}
 				float Total = (((WebUI.getText(findTestObject('Object Repository/Cart/Cart Subtotal (Inc VAT)')).replaceAll(',', '') =~ '\\d+\\.\\d+')[0]) as float)
 				int neededQty=Math.ceil(minimum/Total)
 				//				for (int i=1; i< neededQty ; i++) {
