@@ -32,6 +32,6 @@ WebUI.click(findTestObject('Sign up Page/Sign up By email/Services and Privacy P
 
 WebUI.click(findTestObject('Sign up Page/Sign up By email/Sign Up Button'))
 
-
+GlobalVariable.shouldRefresh = CustomKeywords.'generalactions.notificationsObject.waitNotificationVisble'('الرجاء الانتظار للحظة والمحاولة مرة أخرى', 'Please wait for a second and try again')
 
 

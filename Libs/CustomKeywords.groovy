@@ -433,6 +433,15 @@ def static "generalactions.notificationsObject.verifyNotificationNotVisble"(
 }
 
 
+def static "generalactions.notificationsObject.waitNotificationVisble"(
+    	Object arText	
+     , 	Object enText	) {
+    (new generalactions.notificationsObject()).waitNotificationVisble(
+        	arText
+         , 	enText)
+}
+
+
 def static "generalactions.notificationsObject.getMessageText"() {
     (new generalactions.notificationsObject()).getMessageText()
 }

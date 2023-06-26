@@ -22,7 +22,12 @@ WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navig
 WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), GlobalVariable.phoneNumber)
 
 WebUI.click(findTestObject('login page/phone page/Submit Button phone number'))
-
+GlobalVariable.shouldRefresh = CustomKeywords.'generalactions.notificationsObject.waitNotificationVisble'('الرجاء الانتظار للحظة والمحاولة مرة أخرى', 'Please wait for a second and try again')
+if(GlobalVariable.shouldRefresh) {
+	WebUI.delay(2)
+	WebUI.navigateToUrl(GlobalVariable.URL)
+	WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/Login by phone/Success Sign in by phone'), [:], FailureHandling.STOP_ON_FAILURE)
+}
 WebUI.callTestCase(findTestCase('FE/OTP/General Actions/Insert fixed OTP'), [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'))
