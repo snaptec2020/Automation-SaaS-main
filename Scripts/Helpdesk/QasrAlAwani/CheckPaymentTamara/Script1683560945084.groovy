@@ -41,15 +41,18 @@ WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/L
 
 
 /////////////////////////
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 3)
 
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/ClearProductsFromCartPage'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 3)
 
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/OpenAndAddProductToCart'), [:],	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 3)
 
 WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Cart/view cart'))
 

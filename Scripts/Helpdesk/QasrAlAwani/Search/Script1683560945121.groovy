@@ -54,7 +54,8 @@ WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/S
 
 
 // Search By Title
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 3)
 if(isMobile) {
 	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search icon'))
 }
@@ -79,7 +80,8 @@ WebUI.verifyElementVisible(Productlink_TO, FailureHandling.STOP_ON_FAILURE)
 
 
 // Search By SKU
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 3)
 if(isMobile) {
 	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search icon'))
 }

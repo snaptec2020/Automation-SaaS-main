@@ -74,4 +74,11 @@
       <testCaseId>Test Cases/Helpdesk/QasrAlAwani/Search</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
+   <testCaseLink>
+      <guid>49f88755-e101-456b-ab40-1b064e498e8d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Helpdesk/QasrAlAwani/PopupAddToCart</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
 </TestSuiteEntity>

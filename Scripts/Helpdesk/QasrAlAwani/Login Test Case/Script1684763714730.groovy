@@ -39,7 +39,8 @@ WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/L
 WebUI.verifyElementNotPresent(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/EnterOTP'), 2)
 
 /////////////////////////
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'))
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 3)
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Login'))
 if(!isMobile) {
 	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/AccountPage/SignOut'))
