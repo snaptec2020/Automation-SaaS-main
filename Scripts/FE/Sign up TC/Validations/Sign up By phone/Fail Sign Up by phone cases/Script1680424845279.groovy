@@ -72,7 +72,12 @@ for (def rowData : td.allData) {
     WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sign up By phone/SignUp by phone'), [('firstname') : firstName
             , ('lastname') : lastname, ('PhoneNumber') : phoneNumber, ('isCheck') : isCheck], FailureHandling.STOP_ON_FAILURE)
 
-    /*
+	if(GlobalVariable.shouldRefresh) {
+		WebUI.delay(2)
+		WebUI.navigateToUrl(GlobalVariable.URL)
+		WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sign up By phone/Fail Sign Up by phone cases'), [:], FailureHandling.STOP_ON_FAILURE)
+	}
+	/*
 		 * WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sign up By
 		 * phone/SignUp by phone'), [('firstname') : firstName , ('lastname') :
 		 * lastname, ('PhoneNumber') : phoneNumber], FailureHandling.STOP_ON_FAILURE)

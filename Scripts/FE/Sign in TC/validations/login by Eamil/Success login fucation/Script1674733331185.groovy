@@ -32,6 +32,12 @@ WebUI.setText(findTestObject('login page/email page/password field'), GlobalVari
 WebUI.click(findTestObject('login page/email page/login in Button Email page'))
 
 WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'))
+GlobalVariable.shouldRefresh = CustomKeywords.'generalactions.notificationsObject.waitNotificationVisble'('الرجاء الانتظار للحظة والمحاولة مرة أخرى', 'Please wait for a second and try again')
+if(GlobalVariable.shouldRefresh) {
+	WebUI.delay(2)
+	WebUI.navigateToUrl(GlobalVariable.URL)
+	WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/login by Eamil/Success login fucation'), [:], FailureHandling.STOP_ON_FAILURE)
+}
 } else {
 	KeywordUtil.logInfo('the user alreay logged in so we will logout and login again')
 	WebUI.callTestCase(findTestCase('FE/LogOut/Validation/LogOut'), [:], FailureHandling.STOP_ON_FAILURE)

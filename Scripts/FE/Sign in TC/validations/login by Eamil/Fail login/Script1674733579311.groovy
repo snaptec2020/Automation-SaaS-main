@@ -33,6 +33,7 @@ WebUI.setText(findTestObject('login page/email page/email field'), findTestData(
 WebUI.setText(findTestObject('login page/email page/password field'), findTestData('SingIn TD').getValue(2, rowNumber))
 
 WebUI.click(findTestObject('login page/email page/login in Button Email page'))
+GlobalVariable.shouldRefresh = CustomKeywords.'generalactions.notificationsObject.waitNotificationVisble'('الرجاء الانتظار للحظة والمحاولة مرة أخرى', 'Please wait for a second and try again')
 if (GlobalVariable.languageMode=='en') {
 	messageColumn=4
 	

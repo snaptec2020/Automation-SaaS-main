@@ -107,6 +107,11 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
+    public static Object shouldRefresh
+     
+    /**
+     * <p></p>
+     */
     public static Object FE_URL
      
     /**
@@ -235,6 +240,7 @@ public class GlobalVariable {
             searchMode = selectedVariables['searchMode']
             minimum = selectedVariables['minimum']
             maximum = selectedVariables['maximum']
+            shouldRefresh = selectedVariables['shouldRefresh']
             FE_URL = selectedVariables['FE_URL']
             FE_Tel = selectedVariables['FE_Tel']
             BE_UserName = selectedVariables['BE_UserName']

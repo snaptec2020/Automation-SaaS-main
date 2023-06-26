@@ -26,7 +26,11 @@ GlobalVariable.phoneNumber = phoneNumber
 
 WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sign up By phone/SignUp by phone'), [('firstname') : 'Azeez', ('lastname') : 'Saleh'
         , ('PhoneNumber') : phoneNumber, ('isCheck') : '1'], FailureHandling.STOP_ON_FAILURE)
-
+if(GlobalVariable.shouldRefresh) {
+	WebUI.delay(2)
+	WebUI.navigateToUrl(GlobalVariable.URL)
+	WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sign up By phone/Success SignUp by Phone'), [:], FailureHandling.STOP_ON_FAILURE)
+}
 WebUI.callTestCase(findTestCase('FE/OTP/General Actions/Insert fixed OTP'), [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'))
