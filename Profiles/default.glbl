@@ -99,4 +99,9 @@
       <initValue>2500</initValue>
       <name>maximum</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>false</initValue>
+      <name>shouldRefresh</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

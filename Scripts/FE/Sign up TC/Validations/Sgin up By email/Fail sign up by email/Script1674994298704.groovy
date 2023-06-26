@@ -52,7 +52,11 @@ for(def rowData:td.allData) {
 	}
 WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/SignUp by Email'), [('firstName') : findTestData(
             'Signup TD').getValue(1, rowNumber), ('lastName') : findTestData('Signup TD').getValue(2, rowNumber), ('email') : emailForCheck, ('password') : findTestData('Signup TD').getValue(4, rowNumber)], FailureHandling.STOP_ON_FAILURE)
-
+if(GlobalVariable.shouldRefresh) {
+	WebUI.delay(2)
+	WebUI.navigateToUrl(GlobalVariable.URL)
+	WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/Success Sign up By email'), [:], FailureHandling.STOP_ON_FAILURE)
+}
 if (td.getValue(7, rowNumber) != 'ButtonDisabled') {
 	if (GlobalVariable.languageMode=='en') {
 		messageColumn=6

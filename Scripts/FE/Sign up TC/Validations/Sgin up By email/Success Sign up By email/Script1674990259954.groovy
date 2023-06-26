@@ -48,6 +48,11 @@ def randomPassword='Abc123456'
  */
 WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/SignUp by Email'), [('firstName') : 'Automationtest'
         , ('lastName') : randomEmail.toString().replaceAll("(@.*)", ""), ('email') : randomEmail, ('password') : randomPassword], FailureHandling.STOP_ON_FAILURE)
+if(GlobalVariable.shouldRefresh) {
+	WebUI.delay(2)
+	WebUI.navigateToUrl(GlobalVariable.URL)
+	WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/Success Sign up By email'), [:], FailureHandling.STOP_ON_FAILURE)
+}
 GlobalVariable.Vaild_email = randomEmail
 GlobalVariable.ValidPassword= randomPassword
 				for(int i=5;i>0;i--) {

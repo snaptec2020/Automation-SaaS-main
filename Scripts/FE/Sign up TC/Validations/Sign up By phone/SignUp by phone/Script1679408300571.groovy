@@ -72,3 +72,4 @@ if (PhoneNumber.length() == 0) {
 WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/4);", null);
 //CustomKeywords.'utility.Utility.scrollToVerifyElementVisiblity'('Sign up Page/Sgin up By phone/Submit Button Sign up mobile page')
 WebUI.click(findTestObject('Sign up Page/Sgin up By phone/Submit Button Sign up mobile page'))
+GlobalVariable.shouldRefresh = CustomKeywords.'generalactions.notificationsObject.waitNotificationVisble'('الرجاء الانتظار للحظة والمحاولة مرة أخرى', 'Please wait for a second and try again')
