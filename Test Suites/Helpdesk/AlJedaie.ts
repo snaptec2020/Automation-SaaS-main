@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>aljedaie</name>
+   <name>AlJedaie</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient>mahmoud@snaptec.co;m.aldawi@snaptec.co;o.omar@snaptec.co;tam.nguyen@snaptec.co;</mailRecipient>
