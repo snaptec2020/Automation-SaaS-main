@@ -88,8 +88,15 @@ if(isMobile) {
 //WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search icon'))
 
 //WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search Feild'))
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search Bar context'),5)) {
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search Bar context'))
+}else {
+	if(isMobile) {
+		WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search icon'))
+		WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search Bar context'))
+	}
+}
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search Bar context'))
 WebUI.setText(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search Bar context'), ProductSKU)
 WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/Search/Search Bar context'), Keys.chord(Keys.ENTER))
 

@@ -16,12 +16,12 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'snaptecsupport'</initValue>
+      <initValue>'snaptec'</initValue>
       <name>BE_UserName</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'Lqd!566562g&amp;1'</initValue>
+      <initValue>'snaptec2023'</initValue>
       <name>BE_Password</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

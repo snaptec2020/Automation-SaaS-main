@@ -60,7 +60,7 @@
       <name>Longtitude</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description>581492</description>
+      <description>581492 </description>
       <initValue>'581492572'</initValue>
       <name>SignUp_Phone</name>
    </GlobalVariableEntity>

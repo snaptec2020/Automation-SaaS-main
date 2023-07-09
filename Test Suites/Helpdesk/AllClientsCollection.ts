@@ -35,7 +35,7 @@
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Helpdesk/aljedaie</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Helpdesk/AlJedaie</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -125,7 +125,7 @@
             <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Helpdesk/aljedaie</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Helpdesk/AlJedaie</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
