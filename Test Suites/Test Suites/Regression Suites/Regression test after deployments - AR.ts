@@ -140,6 +140,25 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
+      <guid>04413ce4-6a64-4d43-8cb9-a6784c35ce75</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Website launch/General Actions/Subscribe email General</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>f788a5d3-44f4-4a3a-a09f-a947a1b09f42</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>45ca9d6e-a97b-4736-a756-db125a7861e0</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
       <guid>13c3f865-a5ec-493d-9356-99a67887e248</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

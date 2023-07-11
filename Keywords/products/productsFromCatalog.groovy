@@ -322,7 +322,6 @@ public class productsFromCatalog {
 					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.TAB))
 					getSpecifiedinStockProductsFromRandomCategoryInTarget()
 				}
-
 				//WebUI.(findTestObject('Object Repository/Cart/insert NeedQTY By text'), neededQty.toString())
 				return true
 			}

@@ -21,10 +21,10 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('FE/Sign up TC/General Actions Sign up/Navigate to Sign up page'), [:], FailureHandling.STOP_ON_FAILURE)
 
 def phoneNumber = CustomKeywords.'generalactions.generalStrings.generateRandomPhoneNumber'()
+def firstName = 'Automationtest'
+//GlobalVariable.phoneNumber = phoneNumber
 
-GlobalVariable.phoneNumber = phoneNumber
-
-WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sign up By phone/SignUp by phone'), [('firstname') : 'Azeez', ('lastname') : 'Saleh'
+WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sign up By phone/SignUp by phone'), [('firstname') : firstName, ('lastname') : phoneNumber
         , ('PhoneNumber') : phoneNumber, ('isCheck') : '1'], FailureHandling.STOP_ON_FAILURE)
 if(GlobalVariable.shouldRefresh) {
 	WebUI.delay(2)
@@ -33,5 +33,7 @@ if(GlobalVariable.shouldRefresh) {
 }
 WebUI.callTestCase(findTestCase('FE/OTP/General Actions/Insert fixed OTP'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'))
+//WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'))
+WebUI.callTestCase(findTestCase('FE/Sign up TC/Verifications/Verification After Signup'), [('firstName') : firstName, ('lastName') : phoneNumber
+	, ('phoneNumber') : phoneNumber, ('emailAccount') : '', ('isSignupByPhone') : 1, ('emailPassword') : ''], FailureHandling.STOP_ON_FAILURE)
 

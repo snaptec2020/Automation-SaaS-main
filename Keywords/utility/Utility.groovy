@@ -67,14 +67,14 @@ public class Utility {
 	@Keyword
 	def moveToElement() {
 		if(!WebUI.waitForElementVisible(findTestObject('Spinner'), 5, FailureHandling.CONTINUE_ON_FAILURE)) {
-
-			//if(WebUI.waitForElementPresent(findTestObject('Menu/SubMenu'), 10, FailureHandling.CONTINUE_ON_FAILURE)) {
-			WebElement logoElm =WebUiCommonHelper.findWebElement(findTestObject('Headers and Footers/Header contents/Logo'),5)
-
-			Actions actions = new Actions(DriverFactory.getWebDriver())
-			actions.moveToElement(logoElm).perform()
-			//}
-		}
+			
+						//if(WebUI.waitForElementPresent(findTestObject('Menu/SubMenu'), 10, FailureHandling.CONTINUE_ON_FAILURE)) {
+							WebElement logoElm =WebUiCommonHelper.findWebElement(findTestObject('Headers and Footers/Header contents/Logo'),5)
+			
+							Actions actions = new Actions(DriverFactory.getWebDriver())
+							actions.moveToElement(logoElm).perform()
+						//}
+					}
 	}
 }
 
