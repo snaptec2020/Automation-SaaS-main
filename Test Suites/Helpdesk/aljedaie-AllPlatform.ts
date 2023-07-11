@@ -10,7 +10,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>AlJedaie</profileName>
+            <profileName>HelpDesk-AlJedaie</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
@@ -20,7 +20,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Custom</groupName>
-            <profileName>AlJedaie</profileName>
+            <profileName>HelpDesk-AlJedaie</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
          </configuration>
@@ -30,7 +30,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Custom</groupName>
-            <profileName>AlJedaie</profileName>
+            <profileName>HelpDesk-AlJedaie</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>ipad mini</runConfigurationId>
          </configuration>
