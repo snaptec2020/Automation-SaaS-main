@@ -69,6 +69,13 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 //Open Random Product
 CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlJedaie'()
+int trialsOfHavingProduct=1
+while(!WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Cart/Add to cart'), 5) & trialsOfHavingProduct <10) {
+	trialsOfHavingProduct++
+	WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/AlJedaie/SharedScripts/ClickLogo'), [:],	FailureHandling.STOP_ON_FAILURE)
+	CustomKeywords.'helpdesk.HelpdeskUtil.OpenRandomProductAlJedaie'()
+}
+
 def ProductTitle = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/productFullDetail-Name'))
 def ProductSKU = WebUI.getText(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Product/productFullDetail-sku'))
 def ProductURL = WebUI.getUrl() //.replace(GlobalVariable.FE_URL, "")

@@ -10,7 +10,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>AJStore</profileName>
+            <profileName>HelpDesk-AJStore</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
@@ -20,7 +20,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>AlAseel</profileName>
+            <profileName>HelpDesk-AlAseel</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
@@ -30,17 +30,17 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>AlJedaie</profileName>
+            <profileName>HelpDesk-AlJedaie</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Helpdesk/aljedaie</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Helpdesk/AlJedaie</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>karazlinen-KSA</profileName>
+            <profileName>HelpDesk-karazlinen-KSA</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
@@ -50,7 +50,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>Orange</profileName>
+            <profileName>HelpDesk-Orange</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
@@ -60,7 +60,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>QasrAlAwani</profileName>
+            <profileName>HelpDesk-QasrAlAwani</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
@@ -70,7 +70,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>TheBeautySecrets-KSA</profileName>
+            <profileName>HelpDesk-TheBeautySecrets-KSA</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
@@ -80,7 +80,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>TheBodyShop</profileName>
+            <profileName>HelpDesk-TheBodyShop</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
@@ -90,7 +90,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>AlShamasy</profileName>
+            <profileName>HelpDesk-AlShamasy</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
@@ -100,7 +100,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Custom</groupName>
-            <profileName>AJStore</profileName>
+            <profileName>HelpDesk-AJStore</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
          </configuration>
@@ -110,7 +110,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Custom</groupName>
-            <profileName>AlAseel</profileName>
+            <profileName>HelpDesk-AlAseel</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
          </configuration>
@@ -120,17 +120,17 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Custom</groupName>
-            <profileName>AlJedaie</profileName>
+            <profileName>HelpDesk-AlJedaie</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Helpdesk/aljedaie</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Helpdesk/AlJedaie</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Custom</groupName>
-            <profileName>karazlinen-KSA</profileName>
+            <profileName>HelpDesk-karazlinen-KSA</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
          </configuration>
@@ -140,7 +140,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Custom</groupName>
-            <profileName>Orange</profileName>
+            <profileName>HelpDesk-Orange</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
          </configuration>
@@ -150,7 +150,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Custom</groupName>
-            <profileName>QasrAlAwani</profileName>
+            <profileName>HelpDesk-QasrAlAwani</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
          </configuration>
@@ -160,7 +160,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Custom</groupName>
-            <profileName>TheBeautySecrets-KSA</profileName>
+            <profileName>HelpDesk-TheBeautySecrets-KSA</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
          </configuration>
@@ -170,7 +170,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Custom</groupName>
-            <profileName>TheBodyShop</profileName>
+            <profileName>HelpDesk-TheBodyShop</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
          </configuration>
@@ -180,7 +180,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Custom</groupName>
-            <profileName>AlShamasy</profileName>
+            <profileName>HelpDesk-AlShamasy</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>iphone 6-7-8 plus</runConfigurationId>
          </configuration>
