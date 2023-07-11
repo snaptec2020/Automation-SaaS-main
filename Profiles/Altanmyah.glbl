@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalVariableEntities>
    <description></description>
-   <name>Al-zohoor prod-ksa</name>
+   <name>Altanmyah</name>
    <tag></tag>
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'https://prod-zohoor.snaptec.co/ksa_ar'</initValue>
+      <initValue>'https://prod-tanmiah.snaptec.co/ar'</initValue>
       <name>URL</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
