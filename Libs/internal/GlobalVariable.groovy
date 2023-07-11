@@ -110,7 +110,7 @@ public class GlobalVariable {
     public static Object FE_URL
      
     /**
-     * <p>Profile Orange : 581492572</p>
+     * <p>Profile HelpDesk-Orange : 581492572</p>
      */
     public static Object FE_Tel
      
@@ -130,7 +130,7 @@ public class GlobalVariable {
     public static Object BE_URL
      
     /**
-     * <p>Profile Orange : testing dev</p>
+     * <p>Profile HelpDesk-Orange : testing dev</p>
      */
     public static Object CustomerName
      
@@ -160,14 +160,9 @@ public class GlobalVariable {
     public static Object Longtitude
      
     /**
-     * <p>Profile AJStore : 581492</p>
+     * <p>Profile HelpDesk-AJStore : 581492 </p>
      */
     public static Object SignUp_Phone
-     
-    /**
-     * <p></p>
-     */
-    public static Object URL
      
     /**
      * <p></p>
@@ -190,6 +185,21 @@ public class GlobalVariable {
     public static Object FE_EmailPassword
      
     /**
+     * <p>Profile HelpDesk-Orange : mahmoud@snaptec.co</p>
+     */
+    public static Object CustomerEmail
+     
+    /**
+     * <p></p>
+     */
+    public static Object MadaCardHoldName
+     
+    /**
+     * <p></p>
+     */
+    public static Object URL
+     
+    /**
      * <p></p>
      */
     public static Object MIDUserName
@@ -198,16 +208,6 @@ public class GlobalVariable {
      * <p></p>
      */
     public static Object MIDUserPassword
-     
-    /**
-     * <p>Profile Orange : mahmoud@snaptec.co</p>
-     */
-    public static Object CustomerEmail
-     
-    /**
-     * <p></p>
-     */
-    public static Object MadaCardHoldName
      
 
     static {
@@ -247,15 +247,15 @@ public class GlobalVariable {
             Latitude = selectedVariables['Latitude']
             Longtitude = selectedVariables['Longtitude']
             SignUp_Phone = selectedVariables['SignUp_Phone']
-            URL = selectedVariables['URL']
             BEBasicAuthUser = selectedVariables['BEBasicAuthUser']
             BEBasicAuthPassword = selectedVariables['BEBasicAuthPassword']
             FE_EmailLogin = selectedVariables['FE_EmailLogin']
             FE_EmailPassword = selectedVariables['FE_EmailPassword']
-            MIDUserName = selectedVariables['MIDUserName']
-            MIDUserPassword = selectedVariables['MIDUserPassword']
             CustomerEmail = selectedVariables['CustomerEmail']
             MadaCardHoldName = selectedVariables['MadaCardHoldName']
+            URL = selectedVariables['URL']
+            MIDUserName = selectedVariables['MIDUserName']
+            MIDUserPassword = selectedVariables['MIDUserPassword']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)
