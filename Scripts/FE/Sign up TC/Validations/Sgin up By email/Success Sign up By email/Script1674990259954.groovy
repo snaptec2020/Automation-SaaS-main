@@ -10,8 +10,8 @@ import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
-import com.kms.katalon.core.testobject.TestObject
-import com.kms.katalon.core.util.KeywordUtil
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
@@ -22,9 +22,11 @@ import org.openqa.selenium.Keys as Keys
  * def generator = { String alphabet, int n -> new Random().with({
  * (1..n).collect({ alphabet[nextInt(alphabet.length())] }).join() }) }
  */
-
 def randomEmail = CustomKeywords.'generalactions.generalStrings.generatRandomEmail'()
-def randomPassword='Abc123456'
+
+def randomPassword = 'Abc123456'
+def firstName = 'Automationtest'
+def lastName = randomEmail.toString().replaceAll('(@.*)', '')
 /*
  * WebUI.callTestCase(findTestCase('FE/Sign up TC/General Actions Sign
  * up/Navigate to Sign up page'), [:], FailureHandling.STOP_ON_FAILURE)
@@ -46,26 +48,28 @@ def randomPassword='Abc123456'
  * 
  * WebUI.click(findTestObject('Sign up Page/Sign up By email/Sign Up Button'))
  */
-WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/SignUp by Email'), [('firstName') : 'Automationtest'
-        , ('lastName') : randomEmail.toString().replaceAll("(@.*)", ""), ('email') : randomEmail, ('password') : randomPassword], FailureHandling.STOP_ON_FAILURE)
-if(GlobalVariable.shouldRefresh) {
-	WebUI.delay(2)
-	WebUI.navigateToUrl(GlobalVariable.URL)
-	WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/Success Sign up By email'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/SignUp by Email'), [('firstName') : firstName
+        , ('lastName') : lastName, ('email') : randomEmail, ('password') : randomPassword], 
+    FailureHandling.STOP_ON_FAILURE)
+
+for (int i = 5; i > 0; i--) {
+    //KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>>>>>")
+    if (!(WebUI.waitForElementClickable(findTestObject('Sign up Page/Sign up By email/Sign Up Button'), 5, FailureHandling.CONTINUE_ON_FAILURE))) {
+        //WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/2);", null);
+        break
+    }
+    
+    WebUI.executeJavaScript(('window.scrollTo(0, document.body.scrollHeight/' + i.toString()) + ');', null)
+
+    WebUI.click(findTestObject('Sign up Page/Sign up By email/Sign Up Button'))
 }
-GlobalVariable.Vaild_email = randomEmail
-GlobalVariable.ValidPassword= randomPassword
-				for(int i=5;i>0;i--) {
-					//KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>>>>>")
-					if (!WebUI.waitForElementClickable(findTestObject('Sign up Page/Sign up By email/Sign Up Button'), 5)) {
-						//WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/2);", null);
-						break
-					}
-					WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/"+i.toString()+");", null);
-					WebUI.click(findTestObject('Sign up Page/Sign up By email/Sign Up Button'))
-						
-				}
-WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'))
 
+/*if (WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'), FailureHandling.CONTINUE_ON_FAILURE)) {
+    GlobalVariable.Vaild_email = randomEmail
 
+    GlobalVariable.ValidPassword = randomPassword
+}
+*/
+WebUI.callTestCase(findTestCase('FE/Sign up TC/Verifications/Verification After Signup'), [('firstName') : firstName, ('lastName') : lastName
+        , ('phoneNumber') : '', ('emailAccount') : randomEmail, ('isSignupByPhone') : 0, ('emailPassword') : randomPassword], FailureHandling.STOP_ON_FAILURE)
 

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>HelpDesk-QasrAlAwani</name>
+   <tag></tag>
+   <defaultProfile>false</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://qasralawani.com/'</initValue>
+      <name>FE_URL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'566640965'</initValue>
+      <name>FE_Tel</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'snaptecsupport'</initValue>
+      <name>BE_UserName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Lqd!566562g&amp;'</initValue>
+      <name>BE_Password</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://prod-alawani.snaptec.co/admin_15cfht/'</initValue>
+      <name>BE_URL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'dev test'</initValue>
+      <name>CustomerName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'4201322031914739'</initValue>
+      <name>MadaCardNum</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'1227'</initValue>
+      <name>MadaExpiryDate</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'274'</initValue>
+      <name>MadaCVV</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'581492572'</initValue>
+      <name>SignUp_Phone</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>

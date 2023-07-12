@@ -275,6 +275,11 @@ def static "helpdesk.HelpdeskUtil.ScrollToElement"(
 }
 
 
+def static "helpdesk.HelpdeskUtil.ScrollTop"() {
+    (new helpdesk.HelpdeskUtil()).ScrollTop()
+}
+
+
 def static "helpdesk.HelpdeskUtil.ScrollToBottom"() {
     (new helpdesk.HelpdeskUtil()).ScrollToBottom()
 }
@@ -344,6 +349,13 @@ def static "helpdesk.HelpdeskUtil.getSecondURLPart"() {
 
 def static "helpdesk.HelpdeskUtil.getCountryNamekarazlinen"() {
     (new helpdesk.HelpdeskUtil()).getCountryNamekarazlinen()
+}
+
+
+def static "helpdesk.HelpdeskUtil.RemoveItemFromLocalStorage"(
+    	String ItemName	) {
+    (new helpdesk.HelpdeskUtil()).RemoveItemFromLocalStorage(
+        	ItemName)
 }
 
 

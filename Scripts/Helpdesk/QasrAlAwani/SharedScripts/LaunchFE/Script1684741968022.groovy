@@ -1,4 +1,5 @@
-import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.checkpoint.Checkpoint
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
@@ -7,6 +8,7 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
@@ -34,11 +36,25 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 import org.openqa.selenium.remote.server.handler.GetCurrentUrl 
 
+
+Map<String, Object> NotificationPrefs = new HashMap<String, Object>()
+NotificationPrefs.put("profile.default_content_setting_values.notifications", 1)
+RunConfiguration.setWebDriverPreferencesProperty('prefs',NotificationPrefs)
+
 WebUI.openBrowser('')
 
 WebUI.navigateToUrl(GlobalVariable.FE_URL)
 
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/SubscriptionNotificationIframe'), 10)) {
+	WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/SubscriptionNotificationIframe'), 5)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/SubscriptionNotificationDialog-Allow'))
+	WebUI.switchToDefaultContent()
+	//WebUI.delay(10)
+	//WebUiBuiltInKeywords.acceptAlert(FailureHandling.OPTIONAL)
+}
+
 if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/AppDownload_close'), 15)) {
 	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/AppDownload_close'))
 }
-WebUI.maximizeWindow()
+
+WebUI.maximizeWindow() 	

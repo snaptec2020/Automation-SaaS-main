@@ -252,6 +252,7 @@ public class HelpdeskUtil {
 				elementIndexproduct) + ']')
 		String currentURL = WebUI.getUrl()
 		WebUI.doubleClick(tb)
+//		WebUI.navigateToUrl("https://aljedaie.com/product/mx-35.html")
 		WebUI.delay(2)
 		WebUI.waitForPageLoad(20,FailureHandling.OPTIONAL)
 
@@ -280,8 +281,6 @@ public class HelpdeskUtil {
 						ScrollToElement(SubColorElem.get(0))
 						clickJS(SubColorElem.get(0), 5)
 					}
-
-
 					String SubxPath= '(' + MainXPath + ')' +'[' + i + ']//select'
 					TestObject Subtb = new TestObject()
 					Subtb.addProperty('xpath', ConditionType.EQUALS, SubxPath)
