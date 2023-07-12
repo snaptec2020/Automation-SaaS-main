@@ -294,8 +294,8 @@ public class productsFromCatalog {
 				checkOnAddToStoreClickable(currentURL)
 				WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
 				float cartSubTotal = (new cartItems()).cartSubtotal//WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'), 10).size()
-				
-				
+
+
 				if (cartSubTotal == 0) {
 					getSpecifiedinStockProductsFromRandomCategoryInTarget()
 				}

@@ -24,7 +24,7 @@ if(WebUI.verifyElementVisible(findTestObject('login page/email page/Check contex
 WebUI.verifyEqual(WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Sign up Page/Verifications/firstName'),30).getAttribute("value"), firstName, FailureHandling.CONTINUE_ON_FAILURE)
 WebUI.verifyEqual(WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Sign up Page/Verifications/lastName'),30).getAttribute("value"), lastName, FailureHandling.CONTINUE_ON_FAILURE)
 if(isSignupByPhone==1) {
-	WebUI.verifyEqual(WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Sign up Page/Verifications/phoneAccount'),30).getAttribute("placeholder").replaceAll('-', ''), phoneNumber, FailureHandling.CONTINUE_ON_FAILURE)
+	WebUI.verifyEqual(WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Sign up Page/Verifications/phoneAccount'),30).getAttribute("value").replaceAll('-', ''), phoneNumber, FailureHandling.CONTINUE_ON_FAILURE)
 	GlobalVariable.phoneNumber = phoneNumber
 } else {
 	WebUI.verifyEqual(WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Sign up Page/Verifications/emailAccount'),30).getAttribute("value"), emailAccount, FailureHandling.CONTINUE_ON_FAILURE)
