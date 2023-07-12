@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>PaymentMethod_4_Text</name>
+   <name>OrderSubTotalAmount</name>
    <tag></tag>
-   <elementGuidId>82688698-d6ca-4b29-b801-898461dbc3e1</elementGuidId>
+   <elementGuidId>873ffd67-65e4-4d51-888f-d5c2c7f457f4</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,&quot;payment-method&quot;)]/div/label/span[contains(text(),&quot;قسّمها على ٤ بدون رسوم ولا فوائد مع تابي&quot;)]</value>
+         <value>//td[contains(text(),&quot;Subtotal&quot;) or contains(.,&quot;Subtotal&quot;)]/..//span[@class=&quot;price&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

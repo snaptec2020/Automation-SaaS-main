@@ -114,9 +114,10 @@ WebUI.delay(5)
 WebUI.waitForElementVisible(paymentPath,10)
 List Paymentlist = WebUiCommonHelper.findWebElements(paymentPath, 30)
 
-if (Paymentlist.size() != 2) {
-	 println (Paymentlist.size())
-   assert false
+int expectedNoOFPayments = 2
+if (Paymentlist.size() != expectedNoOFPayments) {
+	println (Paymentlist.size())
+   	KeywordUtil.markErrorAndStop("Expected No of payment: " + expectedNoOFPayments.toString() + " But was: " + Paymentlist.size().toString())
 } else {
 	// Tamara
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/AlAseel/FE/Checkout/PaymentMethod_1_Text'))

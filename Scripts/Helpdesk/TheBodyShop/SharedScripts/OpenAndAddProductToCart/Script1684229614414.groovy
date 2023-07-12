@@ -97,7 +97,7 @@ WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBody
 List<WebElement> counter = WebUiCommonHelper.findWebElements(findTestObject(CartCounter), 5)
 int noOfItemsBefore = 0
 if (counter.size()>0) {
-	noOfItemsBefor=counter.get(0).findElement(By.xpath("./span[@class='counter-number']")).getText().toInteger()
+	noOfItemsBefore=Integer.parseInt(counter.get(0).findElement(By.xpath("./span[@class='counter-number']")).getText())
 }
 
 println noOfItemsBefore
@@ -146,7 +146,7 @@ if(noOfItemsAfter!=noOfItemsBefore+1) {
 		counter = WebUiCommonHelper.findWebElements(findTestObject(CartCounter), 5)
 		noOfItemsBefore = 0
 		if (counter.size()>0) {
-			noOfItemsBefor=counter.get(0).findElement(By.xpath("./span[@class='counter-number']")).getText().toInteger()
+			noOfItemsBefore=Integer.parseInt(counter.get(0).findElement(By.xpath("./span[@class='counter-number']")).getText())
 		}
 		println noOfItemsBefore
 		CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Product/AddToCartFromProduct'), 2)

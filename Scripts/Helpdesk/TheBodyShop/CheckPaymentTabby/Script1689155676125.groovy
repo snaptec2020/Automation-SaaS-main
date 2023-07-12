@@ -176,65 +176,62 @@ if (Paymentlist.size() != 4) {
 }
 
 
-//Order with Tamara
-CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/PaymentMethod_1_Text'))
-CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/PaymentMethod_1_Text'),3)
-//WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/FinishPayment'), 10)
-//WebUI.scrollToPosition(0, element.getLocation().getY())
+//Order with Tabby
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/PaymentMethod_4_Text'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/PaymentMethod_4_Text'))
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/Step_1_Login'))
 
-//WebUI.scrollToElement(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/Step_1_Login'), 5)
+TestObject newTotalPaidTO = new TestObject()
+newTotalPaidTO.addProperty('xpath', ConditionType.EQUALS, '//span[text()="الإجمالي الكلي"]//following-sibling::span//div/span')
+List<WebElement> newTotalPaidElements = WebUI.findWebElements(newTotalPaidTO, 10)
+
 CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/FinishPayment'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/FinishPayment'))
 
 WebUI.waitForPageLoad(20)
 
-WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/TamaraProceed'), 20)
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/TamaraProceed'))
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/PrependPhone'))
-
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/PhoneLogin'))
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tabby/OTPFirstDigit_Tabby'), 20)
 
 String url = WebUI.getUrl()
 
-WebUI.verifyMatch(url, 'https://checkout.tamara.co/.*', true)
+WebUI.verifyMatch(url, 'https://checkout.tabby.ai/.*', true)
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/TamaraProceed'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tabby/BackToStore'))
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/EnterOTPText_1'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tabby/OTPFirstDigit_Tabby'))
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/EnterOTPText_2'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tabby/AmountText'))
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/OTPFirstDigit'))
+TestObject TabbyRequiredPaymentTO = new TestObject()
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/TamaraProceedButtonPage2'))
+//TabbyRequiredPaymentTO.addProperty('xpath', ConditionType.EQUALS, '//div[@data-test="order.amount"]')
+TabbyRequiredPaymentTO.addProperty('xpath', ConditionType.EQUALS, '//div[text()="قيمة الطلب"]//following-sibling::div')
 
-WebUI.verifyElementClickable(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/TamaraCancel'))
+WebElement TabbyRequiredPaymentElement = WebUI.findWebElement(TabbyRequiredPaymentTO, 10)
 
-//WebUI.verifyElementNotClickable(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/TamaraProceedButtonPage2'))
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/TamaraCancel'))
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tabby/BackToStore'), 10)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/CancleDialogText_1'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tabby/BackToStore'))
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/CancleDialogReturnBtn'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tabby/ReturnDialog_Text'))
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/CancleDialogContinueBtn'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tabby/ReturnDialog_ReturnToStoreBtn'))
 
-WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/CancleDialogReturnBtn'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tabby/ReturnDialog_ContinueWithTabbyBtn'))
+
+WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tabby/ReturnDialog_ReturnToStoreBtn'))
 
 
 WebUI.delay(5)
 WebUI.waitForPageLoad(10)
-WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/TamaraPaymentError'), 20)
-WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/TamaraPaymentError'))
 
 url = WebUI.getUrl()
 
 WebUI.verifyMatch(url, GlobalVariable.FE_URL + '.*', true)
 
-CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/ClickHereToContinueShopping'), 2)
-//WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/ErrorAfterPayment_Tamara'), 20)
+//CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Tamara/ClickHereToContinueShopping'), 2)
+
+//WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/ErrorAfterPayment_Tamara'), 20)
 //
 //url = WebUI.getUrl()
 //
@@ -255,6 +252,7 @@ CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository
 //
 ////Check the order
 //WebUI.delay(2)
+//int currentTab = WebUI.getWindowIndex()
 //
 //WebUI.switchToWindowIndex(currentTab + 1)
 //
@@ -281,7 +279,7 @@ CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository
 //searchResultTO.addProperty('xpath', ConditionType.EQUALS, ('//div[@class="data-grid-cell-content" and text()="' + orderNumber) + 
 //    '"]')
 //
-//List searchResultElm = WebUiCommonHelper.findWebElements(searchResultTO, 10)
+//List<WebElement> searchResultElm = WebUiCommonHelper.findWebElements(searchResultTO, 10)
 //
 //if (searchResultElm.size().equals(1)) {
 //    searchResultElm.get(0).click()
@@ -295,7 +293,7 @@ CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository
 //    def OrderHeaderText = OrderHeaderElem.getText()
 //
 //    if (OrderHeaderText.equals('#' + orderNumber)) {
-//        WebUI.verifyElementText(findTestObject('Object Repository/Helpdesk/TheBodyShop/BE/Sales_Order_page/OrderStatus'), 'Canceled')
+//		WebUI.verifyElementText(findTestObject('Object Repository/Helpdesk/TheBodyShop/BE/Sales_Order_page/OrderStatus'), 'Canceled')
 //
 //        TestObject CustomerNameTO = new TestObject()
 //
@@ -313,3 +311,4 @@ CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository
 WebUI.delay(5)
 
 WebUI.closeBrowser()
+

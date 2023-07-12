@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>PaymentMethod_4_Text</name>
+   <name>OrderShippingAddress</name>
    <tag></tag>
-   <elementGuidId>82688698-d6ca-4b29-b801-898461dbc3e1</elementGuidId>
+   <elementGuidId>cb07b0a9-4592-4e61-bccc-06323b11309c</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,&quot;payment-method&quot;)]/div/label/span[contains(text(),&quot;قسّمها على ٤ بدون رسوم ولا فوائد مع تابي&quot;)]</value>
+         <value>//span[text()=&quot;Shipping Address&quot;]//following::address[@class=&quot;admin__page-section-item-content&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
