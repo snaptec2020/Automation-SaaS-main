@@ -47,6 +47,13 @@
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
+      <guid>9172a966-8705-4bb5-9304-b6e3d66399f5</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Helpdesk/TheBodyShop/CheckPaymentTabby</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
       <guid>b4b23fea-51e8-451b-9f52-8aad5cc7f9d6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

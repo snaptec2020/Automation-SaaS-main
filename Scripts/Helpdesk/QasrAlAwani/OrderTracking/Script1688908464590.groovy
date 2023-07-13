@@ -77,12 +77,13 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'))
 WebUI.verifyElementNotHasAttribute(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'),"disabled",10)
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'))
-	try {
-		VerifyOrderTrackingContent()
-	}catch(Exception ex) {
-		//silient error until fix the issue with this feature ticket # HELP-3900
-		KeywordUtil.markFailed("TC_1 get Canceled Order while not logged in \n" + ex.message)
-	}
+//	try {
+//		VerifyOrderTrackingContent()
+//	}catch(Exception ex) {
+//		//silient error until fix the issue with this feature ticket # HELP-3900
+//		KeywordUtil.markFailedAndStop("TC_1 get Canceled Order while not logged in \n" + ex.message)
+//	}
+VerifyOrderTrackingContent()
 
 //TC_2 get Pending Order while not logged in
 KeywordUtil.logInfo("TC_2 get Pending Order while not logged in")
@@ -104,12 +105,13 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'))
 WebUI.verifyElementNotHasAttribute(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'),"disabled",10)
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'))
-	try {
-		VerifyOrderTrackingContent()
-	}catch(Exception ex) {
-		//silient error until fix the issue with this feature ticket # HELP-3900
-		KeywordUtil.markFailed("TC_2 get Pending Order while not logged in \n" + ex.message)
-	}
+//	try {
+//		VerifyOrderTrackingContent()
+//	}catch(Exception ex) {
+//		//silient error until fix the issue with this feature ticket # HELP-3900
+//		KeywordUtil.markFailedAndStop("TC_1 get Canceled Order while not logged in \n" + ex.message)
+//	}
+VerifyOrderTrackingContent()
 
 //TC_3 get Closed Order while not logged in
 KeywordUtil.logInfo("TC_3 get Closed Order while not logged in")
@@ -131,48 +133,19 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'))
 WebUI.verifyElementNotHasAttribute(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'),"disabled",10)
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'))
-	try {
-		VerifyOrderTrackingContent()
-	}catch(Exception ex) {
-		//silient error until fix the issue with this feature ticket # HELP-3900
-		KeywordUtil.markFailed("TC_3 get Closed Order while not logged in \n" + ex.message)
-	}
+//	try {
+//		VerifyOrderTrackingContent()
+//	}catch(Exception ex) {
+//		//silient error until fix the issue with this feature ticket # HELP-3900
+//		KeywordUtil.markFailedAndStop("TC_1 get Canceled Order while not logged in \n" + ex.message)
+//	}
+VerifyOrderTrackingContent()
 
 //TC_4 get Processing Order while not logged in
-	KeywordUtil.logInfo("TC_4 get Processing Order while not logged in")
-	clearVars()
-	variableDeclation.currentOrder = GetOrCreateProcessingOrder()
-	variableDeclation.processingOrder = variableDeclation.currentOrder
-	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingMenu'))
-	CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingMenu'))
-	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingMenu'))
-	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingPageTitle'))
-	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingOrderNumber'))
-	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountry'))
-	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountry'))
-	WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountry'),10)
-	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountry'))
-	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountryDropDownKSA'))
-	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/LoginTolephone'), variableDeclation.orderTel)
-	WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingOrderNumber'),variableDeclation.currentOrder)
-	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'))
-	WebUI.verifyElementNotHasAttribute(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'),"disabled",10)
-	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'))
-	try {
-		VerifyOrderTrackingContent()
-	}catch(Exception ex) {
-		//silient error until fix the issue with this feature ticket # HELP-3900
-		KeywordUtil.markFailed("TC_4 get Processing Order while not logged in \n" + ex.message)
-	}
-
-
-//TC_5 get Order while logged in for the same user
-KeywordUtil.logInfo("TC_5 get Order while logged in for the same user")
+KeywordUtil.logInfo("TC_4 get Processing Order while not logged in")
 clearVars()
-variableDeclation.currentOrder = GetOrCreateCanceledOrder()
-variableDeclation.cancelledOrder = variableDeclation.currentOrder
-CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 3)
-WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/Login'), [:],	FailureHandling.STOP_ON_FAILURE)
+variableDeclation.currentOrder = GetOrCreateProcessingOrder()
+variableDeclation.processingOrder = variableDeclation.currentOrder
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingMenu'))
 CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingMenu'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingMenu'))
@@ -188,12 +161,47 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'))
 WebUI.verifyElementNotHasAttribute(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'),"disabled",10)
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'))
-	try {
-		VerifyOrderTrackingContent()
-	}catch(Exception ex) {
-		//silient error until fix the issue with this feature ticket # HELP-3900
-		KeywordUtil.markFailed("TC_5 get Order while logged in for the same user \n" + ex.message)
-	}
+//	try {
+//		VerifyOrderTrackingContent()
+//	}catch(Exception ex) {
+//		//silient error until fix the issue with this feature ticket # HELP-3900
+//		KeywordUtil.markFailedAndStop("TC_1 get Canceled Order while not logged in \n" + ex.message)
+//	}
+VerifyOrderTrackingContent()
+
+
+
+//TC_5 get Order while logged in for the same user
+KeywordUtil.logInfo("TC_5 get Order while logged in for the same user")
+clearVars()
+variableDeclation.currentOrder = GetOrCreateCanceledOrder()
+variableDeclation.cancelledOrder = variableDeclation.currentOrder
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 3)
+WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/Login'), [:],	FailureHandling.STOP_ON_FAILURE)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 3)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingMenu'))
+CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingMenu'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingMenu'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingPageTitle'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingOrderNumber'))
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountry'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountry'))
+WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountry'),10)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountry'))
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountryDropDownKSA'))
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/LoginTolephone'), variableDeclation.orderTel)
+WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingOrderNumber'),variableDeclation.currentOrder)
+WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'))
+WebUI.verifyElementNotHasAttribute(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'),"disabled",10)
+WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'))
+//	try {
+//		VerifyOrderTrackingContent()
+//	}catch(Exception ex) {
+//		//silient error until fix the issue with this feature ticket # HELP-3900
+//		KeywordUtil.markFailedAndStop("TC_1 get Canceled Order while not logged in \n" + ex.message)
+//	}
+VerifyOrderTrackingContent()
+
 CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 3)
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Login'))
 if(!variableDeclation.isMobile) {
@@ -212,6 +220,7 @@ variableDeclation.currentOrder = getRandomOrderForOtherUsers()
 variableDeclation.cancelledOrder_2 = variableDeclation.currentOrder
 CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 3)
 WebUI.callTestCase(findTestCase('Test Cases/Helpdesk/QasrAlAwani/SharedScripts/Login'), [:],	FailureHandling.STOP_ON_FAILURE)
+CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 3)
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingMenu'))
 CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingMenu'))
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingMenu'))
@@ -227,12 +236,14 @@ WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'))
 WebUI.verifyElementNotHasAttribute(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'),"disabled",10)
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingBtn'))
-	try {
-		VerifyOrderTrackingContent()
-	}catch(Exception ex) {
-		//silient error until fix the issue with this feature ticket # HELP-3900
-		KeywordUtil.markFailed("TC_6 get Order while logged in for the different user \n" + ex.message)
-	}
+//	try {
+//		VerifyOrderTrackingContent()
+//	}catch(Exception ex) {
+//		//silient error until fix the issue with this feature ticket # HELP-3900
+//		KeywordUtil.markFailedAndStop("TC_1 get Canceled Order while not logged in \n" + ex.message)
+//	}
+VerifyOrderTrackingContent()
+
 CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 3)
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Login'))
 if(!variableDeclation.isMobile) {
@@ -270,7 +281,6 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Or
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingOrderNumber'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountry'))
 CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Logo'), 3)
-
 
 
 
@@ -439,7 +449,8 @@ String getOrderIfExists(String status,boolean sameUser){
 	
 	TestObject orderByDesc =new TestObject()
 	orderByDesc.addProperty("xpath", ConditionType.EQUALS, '//div[@data-role="grid-wrapper"]//span[text()="Purchase Date"]/parent::th[@class="data-grid-th _sortable _draggable _descend"]')
-	if(!WebUI.waitForElementVisible(orderByDesc,3)) {
+	if(!WebUI.waitForElementVisible(orderByDesc,20)) {
+		println "Re-Order based on date"
 		TestObject orderBy =new TestObject()
 		orderBy.addProperty("xpath", ConditionType.EQUALS, '//div[@data-role="grid-wrapper"]//span[text()="Purchase Date"]/parent::th')
 		WebUI.click(orderBy)
@@ -533,7 +544,7 @@ void VerifyOrderTrackingContent() {
 	String orderLastStatus = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingOrderDetails'), 10)
 		.findElement(By.xpath('//div[text()="حالة الطلب"]/following-sibling::div')).getText()
 		.replace("تم الغاء الطلب", "Canceled").replace("تحت المعالجة", "Processing").replace("قيد الانتظار", "Pending")
-		.replace("pending_payment", "Pending Payment").replace("تكملة", "Complete").replace("closed", "Closed")
+		.replace("pending_payment", "Pending Payment").replace("الطلب مكتمل", "Complete").replace("الطلب مغلق", "Closed")
 	WebUI.verifyMatch(orderLastStatus, variableDeclation.orderLastStatus.toString(), false)
 	
 	String orderShipmentAddress = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingOrderDetails'), 10)
@@ -558,7 +569,7 @@ void VerifyOrderTrackingContent() {
 		KeywordUtil.markPassed("found the sku: " + productSKUElement.getText())
 		
 		WebElement productQtyElement = productTitleElement.findElement(
-			By.xpath('.//../..//div[contains(@class,"orderDetails-imageRow-")]//span[contains(@class,"orderDetails-subImageText-") and text()="' + it.get("qty") + '"]'))
+			By.xpath('.//../..//div[contains(@class,"orderDetails-imageRow-")]//span[contains(@class,"orderDetails-subImageText-") and normalize-space(text())=normalize-space("' + it.get("qty") + '")]'))
 //			By.xpath('.//../..//div[contains(@class,"orderDetails-imageRow-")]//span[contains(@class,"orderDetails-subImageText-") and text()="' + "1" + '"]'))
 		WebUI.verifyMatch(productQtyElement.isDisplayed().toString(),"true",false)
 		KeywordUtil.markPassed("found the sku: " + productQtyElement.getText())
