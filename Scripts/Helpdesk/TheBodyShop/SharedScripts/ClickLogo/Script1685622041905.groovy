@@ -33,5 +33,6 @@ if(!isMobile) {
 }
 
 if(WebUI.verifyElementPresent(findTestObject(Logo),5,FailureHandling.OPTIONAL)){
-	WebUI.click(findTestObject(Logo),FailureHandling.OPTIONAL)
+//	WebUI.click(findTestObject(Logo),FailureHandling.OPTIONAL)
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject(Logo), 20)
 }
