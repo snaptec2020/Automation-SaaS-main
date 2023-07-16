@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>(//div[@class=&quot;data-grid-cell-content&quot;])[17]</value>
+         <value>(//div[@class=&quot;data-grid-cell-content&quot;])[6]</value>
       </entry>
       <entry>
          <key>BASIC</key>
