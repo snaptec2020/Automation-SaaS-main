@@ -256,8 +256,8 @@ public class productsFromCatalog {
 
 	@Keyword
 	def getSpecifiedinStockProductsFromRandomCategoryInTarget() {
-		float minimum = 1000
-		float maximum=2500
+		float minimum = GlobalVariable.minimum as float
+		float maximum=GlobalVariable.maximum as float
 		selectCatalogComponents()
 		WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 		List <WebElement> prod = utilityFunctions.findWebElements('Object Repository/Products/Product container in page in target',30)
@@ -299,8 +299,16 @@ public class productsFromCatalog {
 				if (cartSubTotal == 0) {
 					getSpecifiedinStockProductsFromRandomCategoryInTarget()
 				}
+				if(WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Cart/insert NeedQTY By text'),30).getAttribute("value") != '1') {
+				WebUI.click(findTestObject('Object Repository/Cart/insert NeedQTY By text'))
+				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.CONTROL, 'a'))
+				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.BACK_SPACE))
+				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), '1', FailureHandling.CONTINUE_ON_FAILURE)
+				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.TAB))
+				}
 				float Total = (((WebUI.getText(findTestObject('Object Repository/Cart/Cart Subtotal (Inc VAT)')).replaceAll(',', '') =~ '\\d+\\.\\d+')[0]) as float)
-				int neededQty=Math.ceil(minimum/Total)
+				float lastItemPrice = (new cartItems()).getLastItemPrice()
+				int neededQty=Math.ceil((minimum-Total)/lastItemPrice)+1
 				//				for (int i=1; i< neededQty ; i++) {
 				//					WebUI.waitForElementClickable(findTestObject('Object Repository/Cart/item plus'), 5)
 				//					WebUI.click(findTestObject('Object Repository/Cart/item plus'))
@@ -320,7 +328,7 @@ public class productsFromCatalog {
 					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.BACK_SPACE))
 					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), '1', FailureHandling.CONTINUE_ON_FAILURE)
 					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.TAB))
-					getSpecifiedinStockProductsFromRandomCategoryInTarget()
+					//getSpecifiedinStockProductsFromRandomCategoryInTarget()
 				}
 				//WebUI.(findTestObject('Object Repository/Cart/insert NeedQTY By text'), neededQty.toString())
 				return true
