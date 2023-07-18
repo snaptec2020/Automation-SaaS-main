@@ -443,7 +443,7 @@ String getOrderIfExists(String status,boolean sameUser){
 		WebUI.sendKeys(findTestObject('Object Repository/Helpdesk/Qasr/BE/Sales_Order_page/FilterMobileNumber'), "966" + variableDeclation.orderTel)
 		xPathStr = '(//div[@class="data-grid-cell-content"])[1]'
 	}else {
-		xPathStr = '(//tr[contains(@class,"data-row")]/td[13]//div[@class="data-grid-cell-content" and not(text()="' + "966" + variableDeclation.orderTel + '")])[1]'
+		xPathStr = '(//tr[contains(@class,"data-row")]/td[15]//div[@class="data-grid-cell-content" and not(text()="' + "966" + variableDeclation.orderTel + '")])[1]'
 	}
 	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/BE/Sales_Order_page/Sales_orders_FilterButton'))
 	
@@ -525,7 +525,9 @@ void VerifyOrderTrackingContent() {
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingOrderShipmentAmount'))
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingOrderTotalAmount'))
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingOrderTaxAmount'))
-	WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingOrderDiscountAmount'))
+	if(variableDeclation.orderDiscount !=null) {
+		WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingOrderDiscountAmount'))
+	}
 	
 	String OrderNumberHeader = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Helpdesk/Qasr/FE/OrderTracking/OrderTrackingOrderNumberHeader'), 5).getText()
 	println OrderNumberHeader
