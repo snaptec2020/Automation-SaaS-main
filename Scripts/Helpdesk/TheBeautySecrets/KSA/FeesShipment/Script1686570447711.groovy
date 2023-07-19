@@ -151,6 +151,9 @@ Float ShipmentFees=0
 Float TaxAmount=0
 Float GrandTotal=0
 Float GrandTotalExc=0
+Float AdditionalFees=0
+Float DiscountAmount=0
+
 
 
 
@@ -187,15 +190,25 @@ WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBea
 
 TotalSub=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/TotalSub')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
 ShipmentFees=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/ShipmentFees')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/AdditionalFees'), 5)) {
+	AdditionalFees=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/AdditionalFees')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
+}else {
+	AdditionalFees=0
+}
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/DiscountAmount'), 5)) {
+	DiscountAmount=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/DiscountAmount')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
+}else {
+	DiscountAmount=0
+}
 TaxAmount=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/TaxAmount')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
 GrandTotal=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/GrandTotal')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
 GrandTotalExc=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/GrandTotalExc')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
 
 WebUI.verifyMatch(TotalSub.toString(), totalValue.toString(), false)
 WebUI.verifyMatch(ShipmentFees.toString(), '25.0', false)
-WebUI.verifyMatch(TaxAmount.toString(), (((TotalSub+ShipmentFees)/1.15)*0.15).round(2).toString(), false)
-WebUI.verifyMatch(GrandTotal.toString(), (TotalSub+ShipmentFees).round(2).toString(), false)
-WebUI.verifyMatch(GrandTotalExc.toString(), ((TotalSub+ShipmentFees)/1.15).round(2).toString(), false)
+WebUI.verifyMatch(TaxAmount.toString(), (((TotalSub+ShipmentFees+DiscountAmount)/1.15)*0.15).round(2).toString(), false)
+WebUI.verifyMatch(GrandTotal.toString(), ((TotalSub+ShipmentFees+DiscountAmount).round(2)+AdditionalFees).toString(), false)
+WebUI.verifyMatch(GrandTotalExc.toString(), (((TotalSub+ShipmentFees+DiscountAmount)/1.15).round(2)+AdditionalFees).toString(), false)
 
 /////// Kuwait
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/ShippedToForm-Country'), 'الكويت', false)
@@ -212,15 +225,25 @@ WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBea
 
 TotalSub=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/TotalSub')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
 ShipmentFees=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/ShipmentFees')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/AdditionalFees'), 5)) {
+	AdditionalFees=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/AdditionalFees')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
+}else {
+	AdditionalFees=0
+}
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/DiscountAmount'), 5)) {
+	DiscountAmount=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/DiscountAmount')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
+}else {
+	DiscountAmount=0
+}
 TaxAmount=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/TaxAmount')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
 GrandTotal=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/GrandTotal')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
 GrandTotalExc=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/GrandTotalExc')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
 
 WebUI.verifyMatch(TotalSub.toString(), totalValue.toString(), false)
 WebUI.verifyNotMatch(ShipmentFees.toString(), '25.0', false)
-WebUI.verifyMatch(TaxAmount.toString(), (((TotalSub+ShipmentFees)/1.15)*0.15).round(2).toString(), false)
-WebUI.verifyMatch(GrandTotal.toString(), (TotalSub+ShipmentFees).round(2).toString(), false)
-WebUI.verifyMatch(GrandTotalExc.toString(), ((TotalSub+ShipmentFees)/1.15).round(2).toString(), false)
+WebUI.verifyMatch(TaxAmount.toString(), (((TotalSub+ShipmentFees+DiscountAmount)/1.15)*0.15).round(2).toString(), false)
+WebUI.verifyMatch(GrandTotal.toString(), ((TotalSub+ShipmentFees+DiscountAmount).round(2)+AdditionalFees).toString(), false)
+WebUI.verifyMatch(GrandTotalExc.toString(), (((TotalSub+ShipmentFees+DiscountAmount)/1.15).round(2)+AdditionalFees).toString(), false)
 
 
 /////// UAE
@@ -238,15 +261,25 @@ WebUI.waitForElementNotVisible(findTestObject('Object Repository/Helpdesk/TheBea
 
 TotalSub=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/TotalSub')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
 ShipmentFees=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/ShipmentFees')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/AdditionalFees'), 5)) {
+	AdditionalFees=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/AdditionalFees')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
+}else {
+	AdditionalFees=0
+}
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/DiscountAmount'), 5)) {
+	DiscountAmount=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/DiscountAmount')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
+}else {
+	DiscountAmount=0
+}
 TaxAmount=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/TaxAmount')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
 GrandTotal=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/GrandTotal')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
 GrandTotalExc=WebUI.getText(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Checkout/GrandTotalExc')).replace(" ر.س.", "").replace(" ", "").replace("٫", ".").toFloat()
 
 WebUI.verifyMatch(TotalSub.toString(), totalValue.toString(), false)
 WebUI.verifyNotMatch(ShipmentFees.toString(), '25.0', false)
-WebUI.verifyMatch(TaxAmount.toString(), (((TotalSub+ShipmentFees)/1.15)*0.15).round(2).toString(), false)
-WebUI.verifyMatch(GrandTotal.toString(), (TotalSub+ShipmentFees).round(2).toString(), false)
-WebUI.verifyMatch(GrandTotalExc.toString(), ((TotalSub+ShipmentFees)/1.15).round(2).toString(), false)
+WebUI.verifyMatch(TaxAmount.toString(), (((TotalSub+ShipmentFees+DiscountAmount)/1.15)*0.15).round(2).toString(), false)
+WebUI.verifyMatch(GrandTotal.toString(), ((TotalSub+ShipmentFees+DiscountAmount).round(2)+AdditionalFees).toString(), false)
+WebUI.verifyMatch(GrandTotalExc.toString(), (((TotalSub+ShipmentFees+DiscountAmount)/1.15).round(2)+AdditionalFees).toString(), false)
 
 
 WebUI.delay(5)
