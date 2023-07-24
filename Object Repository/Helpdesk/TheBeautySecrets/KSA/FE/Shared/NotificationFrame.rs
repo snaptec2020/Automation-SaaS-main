@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>SubscriptionNotificationDialog</name>
+   <name>NotificationFrame</name>
    <tag></tag>
-   <elementGuidId>be831511-e741-4c36-8776-caf6dac63239</elementGuidId>
+   <elementGuidId>862f3abc-1197-464e-86d4-7f46ff95b9cc</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id=&quot;webengage-notification-container&quot;]</value>
+         <value>//iframe[@id=&quot;webpush-onsite&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

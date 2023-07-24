@@ -6,12 +6,11 @@
    <elementGuidId>f5997986-db98-4f34-b195-a3ca9eb089b4</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//a[text()=&quot;السماح&quot;]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id=&quot;webpush-prompt&quot;]//button[@id=&quot;allow&quot;]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

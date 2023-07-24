@@ -49,3 +49,15 @@ if(WebUI.verifyElementPresent(findTestObject('Object Repository/Helpdesk/TheBeau
 	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/AllowCookie'))
 }
 
+WebUI.refresh()
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/SubscriptionFrame'), 20)) {
+	WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/SubscriptionFrame'), 10)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/SubscriptionCloseBtn'))
+}
+
+WebUI.delay(3)
+
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/NotificationFrame'), 20)) {
+	WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/NotificationFrame'), 10)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBeautySecrets/KSA/FE/Shared/NotificationDeny'))
+}

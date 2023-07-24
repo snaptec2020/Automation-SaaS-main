@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>SubscriptionNotificationDialog</name>
+   <name>NotificationDeny</name>
    <tag></tag>
-   <elementGuidId>be831511-e741-4c36-8776-caf6dac63239</elementGuidId>
+   <elementGuidId>13122564-77e1-4c5d-96e2-e0f96a0000b9</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id=&quot;webengage-notification-container&quot;]</value>
+         <value>//button[@id=&quot;deny&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
