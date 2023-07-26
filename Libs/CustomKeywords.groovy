@@ -378,6 +378,11 @@ def static "cart.removeItem.clearCart"() {
 }
 
 
+def static "cart.removeItem.deleteItemFromCart"() {
+    (new cart.removeItem()).deleteItemFromCart()
+}
+
+
 def static "utility.Utility.checkIfElementExist"(
     	Object objPath	) {
     (new utility.Utility()).checkIfElementExist(
@@ -480,6 +485,11 @@ def static "cart.cartItems.getSumOfProductsPriceInCart"() {
 
 def static "cart.cartItems.getCartSubtotal"() {
     (new cart.cartItems()).getCartSubtotal()
+}
+
+
+def static "cart.cartItems.getLastItemPrice"() {
+    (new cart.cartItems()).getLastItemPrice()
 }
 
 

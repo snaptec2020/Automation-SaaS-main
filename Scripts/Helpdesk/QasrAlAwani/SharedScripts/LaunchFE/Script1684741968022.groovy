@@ -45,7 +45,7 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl(GlobalVariable.FE_URL)
 
-if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/SubscriptionNotificationIframe'), 10)) {
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/SubscriptionNotificationIframe'), 20)) {
 	WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/SubscriptionNotificationIframe'), 5)
 	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/SubscriptionNotificationDialog-Allow'))
 	WebUI.switchToDefaultContent()

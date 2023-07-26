@@ -63,6 +63,10 @@ public class cartItems {
 			return totalPrice[0] as float
 		}
 	}
+	@Keyword
+	float getLastItemPrice() {
+		return (((WebUI.getText(findTestObject('Object Repository/Cart/lastItemPrice')).replaceAll(',', '') =~ '\\d+\\.\\d+')[0]) as float)
+	}
 	//	@Keyword
 	//	def checkTheTarget() {
 	//		double minimum=1000

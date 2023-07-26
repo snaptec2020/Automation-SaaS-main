@@ -18,31 +18,22 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 
-//Random randomNumberforProduct = new Random();
+WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
 
-//int elementIndex;
+//CustomKeywords.'cart.removeItem.clearCart'()
+//WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog - Select All Categories and Scrolling'), [:], FailureHandling.STOP_ON_FAILURE)
+float cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()//WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'), 10).size()
 
-
-	WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Cart is filled'), [:], FailureHandling.STOP_ON_FAILURE)
-	
-	
-	//WebUI.scrollToElement(findTestObject('Object Repository/Cart/Product in item container'), 0)
-	
-	
-	//WebUI.scrollToPosition(400, 450);
-	
-	//WebUI.scrollToElement(findTestObject('Object Repository/Cart/Remove product from cart'), 0)
-	WebUI.click(findTestObject('Object Repository/Cart/Remove product from cart'))
-	/*List Items = CustomKeywords.'cart.removeItem.getProductsInCart'()
-
-
-	if (Items.size() == 0) {
-		WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)
+//KeywordUtil.logInfo(cartSubTotal.toString())
+if (cartSubTotal == 0) {
+    //CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromRandomCategory'()
+	for(int i=1;i<=5;i++) {
+		CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategoryInTarget'()
 	}
-else {
-elementIndex = Math.abs(randomNumberforProduct.nextInt(Items.size() - 1))
+}
 
-CustomKeywords.'cart.removeItem.getSpecifiedIteminThecart'(1, Items)*/
+CustomKeywords.'cart.removeItem.clearCart'()
+
 
 
 

@@ -65,7 +65,7 @@ if(isMobile) {
 }else {
 	WebUI.click(findTestObject(LoginIcon))
 	WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Login/AccountIcon'), 5)
-	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Login/AccountIcon'))
+//	WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Login/AccountIcon'))
 }
 WebUI.click(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/AccountPage/SignOut'),FailureHandling.OPTIONAL)
 

@@ -6,12 +6,11 @@
    <elementGuidId>f4d908ea-a71d-4748-884d-c7d3041fb295</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//IFRAME[@id=&quot;webklipper-publisher-widget-container-notification-frame&quot;]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//IFRAME[@id=&quot;webpush-onsite&quot;] </value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

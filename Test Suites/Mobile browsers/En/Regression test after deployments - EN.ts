@@ -141,7 +141,7 @@
       <guid>e899e5db-8252-4290-aaa2-73d79c1d6b04</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Cart/Validations/Remove product from cart</testCaseId>
+      <testCaseId>Test Cases/FE/Cart/Validations/Remove All products from cart</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
