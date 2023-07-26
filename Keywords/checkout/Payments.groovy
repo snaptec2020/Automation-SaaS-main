@@ -8,6 +8,7 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
 import javax.xml.bind.annotation.XmlElementDecl.GLOBAL
 
+import org.apache.commons.lang3.StringUtils
 import org.openqa.selenium.WebElement
 
 import com.kms.katalon.core.annotation.Keyword
@@ -31,12 +32,13 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import generalactions.generalStrings
 import internal.GlobalVariable
 import utility.Utility
-
+import com.kms.katalon.core.configuration.RunConfiguration as RC
 public class Payments {
 	TestObject tb=new TestObject();
 	Random randomNumberforProduct = new Random()
 	def utilityFunctions = new Utility()
 	def generalStrings = new generalStrings()
+	def executionProfile = RC.getExecutionProfile()
 	@Keyword
 	def getPaymentMethodsList() {
 		List Paymentlist = WebUI.findWebElements(findTestObject('Object Repository/Check Out/Payment methods list'),0)
@@ -162,10 +164,14 @@ public class Payments {
 						//---------------------------Cash On Delivery---------------
 						case ~('الدفع عند الإستلام') :
 						case ~('Cash On Delivery') :
+						if(StringUtils.indexOfIgnoreCase(executionProfile, "-Live")>0) {
+							break
+						} else {
 						//WebUI.click(findTestObject('Object Repository/Check Out/Place order check out button'))
 							WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/COD Success'),0)
 							WebUI.takeFullPageScreenshot('./CODOrderResult.png')
 							break
+						}
 						//---------------------------Tamara------------------------------------
 						case ~('قسم فاتورتك على 3 دفعات بدون فوائد') :
 						case ~('Mada/ Visa/Masster Card/Apple pay') :

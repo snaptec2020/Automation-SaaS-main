@@ -19,7 +19,9 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-
+import com.kms.katalon.core.configuration.RunConfiguration as RC
+import org.apache.commons.lang3.StringUtils
+def executionProfile = RC.getExecutionProfile()
 //def x = findTestObject('Object Repository/Mega Menu/Catalog list').findPropertyValue('xpath') + '[3]'
 
 //def xpathval = x.findPropertyValue('xpath') + '[3]'
@@ -46,9 +48,14 @@ import org.openqa.selenium.Keys as Keys
  */
 //WebUI.click(CustomKeywords.'utility.Utility.addXpathToTestObject'(findTestObject('Object Repository/Mega Menu/Catalog list').findPropertyValue('xpath') + '[3]'))
 //WebUI.delay(5)
+if(StringUtils.indexOfIgnoreCase(executionProfile, "-Live")>0) {
+KeywordUtil.logInfo(GlobalVariable.productionPhones.get(CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenAnytoAny'(GlobalVariable.productionPhones.size()-1,0)).toString())
+}
+KeywordUtil.logInfo(GlobalVariable.productionPhones.size().toString())
 
-KeywordUtil.logInfo(CustomKeywords.'cart.cartItems.getSumOfProductsPriceInCart'().toString())
-
-def totalPrice = WebUI.getText(findTestObject('Object Repository/Cart/Cart Subtotal (Inc VAT)')) =~/\d+\.\d+/
-KeywordUtil.logInfo(totalPrice[0].toString())
-WebUI.verifyEqual(CustomKeywords.'cart.cartItems.getCartSubtotal'(), CustomKeywords.'cart.cartItems.getSumOfProductsPriceInCart'())
+KeywordUtil.logInfo(CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenOnetoTarget'(GlobalVariable.productionPhones.size()).toString())
+KeywordUtil.logInfo(CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenAnytoAny'(GlobalVariable.productionPhones.size()-1,0).toString())
+KeywordUtil.logInfo(GlobalVariable.productionPhones.get(0).toString())
+//def totalPrice = WebUI.getText(findTestObject('Object Repository/Cart/Cart Subtotal (Inc VAT)')) =~/\d+\.\d+/
+//KeywordUtil.logInfo(totalPrice[0].toString())
+//WebUI.verifyEqual(CustomKeywords.'cart.cartItems.getCartSubtotal'(), CustomKeywords.'cart.cartItems.getSumOfProductsPriceInCart'())

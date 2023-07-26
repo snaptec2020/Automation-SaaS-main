@@ -30,7 +30,8 @@ WebUI.setText(findTestObject('Sign up Page/Sign up By email/Password feild'), pa
 
 WebUI.click(findTestObject('Sign up Page/Sign up By email/Services and Privacy Policy Check box'))
 
-WebUI.click(findTestObject('Sign up Page/Sign up By email/Sign Up Button'))
+WebUI.click(findTestObject('Sign up Page/Sgin up By phone/Submit Button Sign up mobile page'))
+	//findTestObject('Sign up Page/Sign up By email/Sign Up Button'))
 
 GlobalVariable.shouldRefresh = CustomKeywords.'generalactions.notificationsObject.waitNotificationVisble'('الرجاء الانتظار للحظة والمحاولة مرة أخرى', 'Please wait for a second and try again')
 

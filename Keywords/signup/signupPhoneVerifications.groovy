@@ -40,9 +40,23 @@ public class signupPhoneVerifications {
 		//WebUI.verifyElementVisible(findTestObject('Sign up Page/Sign up By email/Error message by email'))
 		//WebUI.verifyElementVisible(signUpObj)
 	}
+	boolean verifyPhoneVerificationMessage(def expectedMessage) {
+		//p[@class='error-message' and (normalize-space(text()) ='الرجاء ادخال كلمة مرور من 8 خانات على الأقل' or normalize-space(text()) ='')]
+		signUpObj.addProperty('xpath', ConditionType.EQUALS, "//p[contains(@class,'error-message')]")
+		if(WebUI.getText(signUpObj)==expectedMessage) {
+			return true
+
+		}else {
+			return false
+		}
+
+		//WebUI.verifyElementVisible(findTestObject('Sign up Page/Sign up By email/Error message by email'))
+		//WebUI.verifyElementVisible(signUpObj)
+	}
+	
 	@Keyword
 	def verificationElementPhoneSignUp() {
-		signUpObj.addProperty('xpath', ConditionType.EQUALS, "//button[contains(text(),'اشتراك')or normalize-space()='Sign Up']")
+		signUpObj.addProperty('xpath', ConditionType.EQUALS, "//button[@type='submit']")
 		WebUI.verifyElementNotClickable(signUpObj, FailureHandling.CONTINUE_ON_FAILURE)
 	}
 }

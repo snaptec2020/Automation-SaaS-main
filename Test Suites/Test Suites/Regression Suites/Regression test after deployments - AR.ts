@@ -75,13 +75,6 @@
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>e899e5db-8252-4290-aaa2-73d79c1d6b04</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Cart/Validations/Remove product from cart</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
       <guid>6616d382-f081-4ce4-9dac-a803f75c790f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -157,6 +150,13 @@
          <value></value>
          <variableId>45ca9d6e-a97b-4736-a756-db125a7861e0</variableId>
       </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>65f4e0fc-f955-415a-bb98-8bc726ae535a</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Cart/Validations/Remove All products from cart</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>13c3f865-a5ec-493d-9356-99a67887e248</guid>

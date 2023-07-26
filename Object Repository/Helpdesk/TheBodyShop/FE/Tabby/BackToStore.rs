@@ -6,11 +6,11 @@
    <elementGuidId>ebef4a2e-c16a-42c4-94ac-0fb203bd647e</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//*[@data-test=&quot;backToStore&quot; or text()=&quot;العودة إلى المتجر&quot;]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//span[text()=&quot;العودة إلى المتجر&quot;]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

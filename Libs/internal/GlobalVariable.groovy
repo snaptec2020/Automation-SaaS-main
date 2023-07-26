@@ -112,7 +112,7 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
-    public static Object URL
+    public static Object productionPhones
      
     /**
      * <p></p>
@@ -207,6 +207,11 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
+    public static Object URL
+     
+    /**
+     * <p></p>
+     */
     public static Object MIDUserName
      
     /**
@@ -241,7 +246,7 @@ public class GlobalVariable {
             minimum = selectedVariables['minimum']
             maximum = selectedVariables['maximum']
             shouldRefresh = selectedVariables['shouldRefresh']
-            URL = selectedVariables['URL']
+            productionPhones = selectedVariables['productionPhones']
             FE_URL = selectedVariables['FE_URL']
             FE_Tel = selectedVariables['FE_Tel']
             BE_UserName = selectedVariables['BE_UserName']
@@ -260,6 +265,7 @@ public class GlobalVariable {
             FE_EmailPassword = selectedVariables['FE_EmailPassword']
             CustomerEmail = selectedVariables['CustomerEmail']
             MadaCardHoldName = selectedVariables['MadaCardHoldName']
+            URL = selectedVariables['URL']
             MIDUserName = selectedVariables['MIDUserName']
             MIDUserPassword = selectedVariables['MIDUserPassword']
             

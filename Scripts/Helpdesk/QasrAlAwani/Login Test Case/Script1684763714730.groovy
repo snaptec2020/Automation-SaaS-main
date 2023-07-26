@@ -54,6 +54,14 @@ if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/F
 	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/AppDownload_close'))
 }
 
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/SubscriptionNotificationIframe'), 20)) {
+	WebUI.switchToFrame(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/SubscriptionNotificationIframe'), 5)
+	WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/SubscriptionNotificationDialog-Allow'))
+	WebUI.switchToDefaultContent()
+	//WebUI.delay(10)
+	//WebUiBuiltInKeywords.acceptAlert(FailureHandling.OPTIONAL)
+}
+
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/FE/Shared/Login'))
 
 WebUI.waitForElementClickable(findTestObject('Object Repository/Helpdesk/Qasr/FE/Login/SelectCountry'),20)

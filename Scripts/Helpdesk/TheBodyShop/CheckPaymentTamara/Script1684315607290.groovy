@@ -156,15 +156,17 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodySho
 //We should check if shipment fee is 0 when total paid is more than x and 20 if less than x
 //PaymentMethods
 TestObject paymentPath = new TestObject()
-paymentPath.addProperty('xpath', ConditionType.EQUALS, '//div[@class="payment-method" or @class="payment-method _active"]')
+paymentPath.addProperty('xpath', ConditionType.EQUALS, '//div[@class="payment-group"]/div[contains(@class,"payment-method")]')
 WebUI.waitForElementVisible(paymentPath,10)
 List Paymentlist = WebUiCommonHelper.findWebElements(paymentPath, 30)
 WebUI.delay(5)
 
-if (Paymentlist.size() != 3) {
+if (Paymentlist.size() != 4) {
  	println (Paymentlist.size())
    assert false
 } else {
+	// Tabby
+    WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/PaymentMethod_4_Text'))
 	// Tamara
     WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/TheBodyShop/FE/Checkout/PaymentMethod_1_Text'))
 	// Credit

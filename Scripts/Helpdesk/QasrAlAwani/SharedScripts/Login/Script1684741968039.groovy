@@ -72,28 +72,42 @@ WebUI.verifyElementVisible(findTestObject('Object Repository/Helpdesk/Qasr/FE/Lo
 
 int currentTab = WebUI.getWindowIndex()
 
-//Robot robot = new Robot()
-//robot.keyPress(KeyEvent.VK_CONTROL)
-//robot.keyPress(KeyEvent.VK_T)
-//robot.keyRelease(KeyEvent.VK_CONTROL)
-//robot.keyRelease(KeyEvent.VK_T)
-WebDriver driver = DriverFactory.getWebDriver()
-
-JavascriptExecutor js = ((driver) as JavascriptExecutor)
-
-js.executeScript('window.open();')
-
-WebUI.switchToWindowIndex(currentTab + 1)
-
-WebUI.navigateToUrl(GlobalVariable.BE_URL)
-
-//WebUI.switchToWindowTitle('متجر عجلان واخوانه')
-WebUI.setText(findTestObject('Object Repository/Helpdesk/Qasr/BE/Login/UserName'), GlobalVariable.BE_UserName)
-
-//WebUI.setEncryptedText(findTestObject('Object Repository/Helpdesk/Qasr/BE/Login/Password'), 'h9YfHV16ZyMBoeJlmdP5xA==')
-WebUI.setText(findTestObject('Object Repository/Helpdesk/Qasr/BE/Login/Password'), GlobalVariable.BE_Password)
-
-WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/BE/Login/LoginButton'))
+try {
+	WebUI.switchToWindowIndex(currentTab + 1)
+}catch(Exception ex) {
+	WebDriver driver = DriverFactory.getWebDriver()
+	JavascriptExecutor js = ((driver) as JavascriptExecutor)
+	js.executeScript('window.open();')
+	WebUI.switchToWindowIndex(currentTab + 1)
+	WebUI.navigateToUrl(GlobalVariable.BE_URL)
+	if(!WebUI.waitForElementPresent(findTestObject('Object Repository/Helpdesk/Qasr/BE/Login/UserAdministrationDropDown'), 5)) {
+		WebUI.setText(findTestObject('Object Repository/Helpdesk/Qasr/BE/Login/UserName'), GlobalVariable.BE_UserName)
+		WebUI.setText(findTestObject('Object Repository/Helpdesk/Qasr/BE/Login/Password'), GlobalVariable.BE_Password)
+		WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/BE/Login/LoginButton'))
+	}
+}
+////Robot robot = new Robot()
+////robot.keyPress(KeyEvent.VK_CONTROL)
+////robot.keyPress(KeyEvent.VK_T)
+////robot.keyRelease(KeyEvent.VK_CONTROL)
+////robot.keyRelease(KeyEvent.VK_T)
+//WebDriver driver = DriverFactory.getWebDriver()
+//
+//JavascriptExecutor js = ((driver) as JavascriptExecutor)
+//
+//js.executeScript('window.open();')
+//
+//WebUI.switchToWindowIndex(currentTab + 1)
+//
+//WebUI.navigateToUrl(GlobalVariable.BE_URL)
+//
+////WebUI.switchToWindowTitle('متجر عجلان واخوانه')
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/Qasr/BE/Login/UserName'), GlobalVariable.BE_UserName)
+//
+////WebUI.setEncryptedText(findTestObject('Object Repository/Helpdesk/Qasr/BE/Login/Password'), 'h9YfHV16ZyMBoeJlmdP5xA==')
+//WebUI.setText(findTestObject('Object Repository/Helpdesk/Qasr/BE/Login/Password'), GlobalVariable.BE_Password)
+//
+//WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/BE/Login/LoginButton'))
 
 WebUI.click(findTestObject('Object Repository/Helpdesk/Qasr/BE/Menu/Menu_MageDelight'))
 

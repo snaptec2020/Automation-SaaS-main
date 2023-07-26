@@ -26,9 +26,8 @@ WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnt
 switch (GlobalVariable.searchMode) {
     case 'Normal':
         WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), GlobalVariable.textSearch)
-
-        WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'), 
-            FailureHandling.STOP_ON_FAILURE)
+		
+        WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'),FailureHandling.STOP_ON_FAILURE)
 
         WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/View more button'), FailureHandling.STOP_ON_FAILURE)
 
