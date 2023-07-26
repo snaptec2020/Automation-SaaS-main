@@ -300,11 +300,11 @@ public class productsFromCatalog {
 					getSpecifiedinStockProductsFromRandomCategoryInTarget()
 				}
 				if(WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Cart/insert NeedQTY By text'),30).getAttribute("value") != '1') {
-				WebUI.click(findTestObject('Object Repository/Cart/insert NeedQTY By text'))
-				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.CONTROL, 'a'))
-				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.BACK_SPACE))
-				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), '1', FailureHandling.CONTINUE_ON_FAILURE)
-				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.TAB))
+					WebUI.click(findTestObject('Object Repository/Cart/insert NeedQTY By text'))
+					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.CONTROL, 'a'))
+					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.BACK_SPACE))
+					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), '1', FailureHandling.CONTINUE_ON_FAILURE)
+					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.TAB))
 				}
 				float Total = (((WebUI.getText(findTestObject('Object Repository/Cart/Cart Subtotal (Inc VAT)')).replaceAll(',', '') =~ '\\d+\\.\\d+')[0]) as float)
 				float lastItemPrice = (new cartItems()).getLastItemPrice()

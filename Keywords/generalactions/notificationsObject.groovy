@@ -40,7 +40,7 @@ public class notificationsObject {
 		WebUI.verifyElementNotVisible(getNotificationObject(arText,enText), FailureHandling.CONTINUE_ON_FAILURE)
 	}
 	@Keyword
-	def waitNotificationVisble(def arText, def enText) {
+	boolean waitNotificationVisble(def arText, def enText) {
 		return WebUI.waitForElementVisible(getNotificationObject(arText,enText), 5)
 	}
 	@Keyword

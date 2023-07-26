@@ -20,12 +20,15 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-
+import com.kms.katalon.core.configuration.RunConfiguration as RC
+import org.apache.commons.lang3.StringUtils
 import internal.GlobalVariable
+import signup.signupPhoneVerifications
 
 public class generalStrings {
 	Random random = new Random()
-
+	def executionProfile = RC.getExecutionProfile()
+	def signUp = new signupPhoneVerifications()
 	@Keyword
 	def generatRandomEmail() {
 		def generator = { String alphabet, int n ->
@@ -39,6 +42,9 @@ public class generalStrings {
 	}
 	@Keyword
 	def generateRandomPhoneNumber() {
+		if(StringUtils.indexOfIgnoreCase(executionProfile, "-Live")>0) {
+			return GlobalVariable.productionPhones.get(getRandomNumberBetweenAnytoAny(GlobalVariable.productionPhones.size()-1,0))
+		} else {
 		def generator = { String alphabet, int n ->
 			new Random().with {
 				(1..n).collect { alphabet[ nextInt( alphabet.length() ) ] }.join()
@@ -59,6 +65,7 @@ public class generalStrings {
 		//		KeywordUtil.logInfo(nonZerosFromString[0].toString())
 		//		KeywordUtil.logInfo(phoneFormate)
 		return nonZerosFromString[0].toString()+randomNumber
+		}
 	}
 	@Keyword
 	def generatePhoneWithConditions(int expectedPhoneSize , int isPhoneKeyReplaced) {

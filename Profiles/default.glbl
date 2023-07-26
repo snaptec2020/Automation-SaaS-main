@@ -104,4 +104,9 @@
       <initValue>false</initValue>
       <name>shouldRefresh</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>['506639627', '576101030', '534375562', '580053732', '553913672', '546932695', '503049792', '564785404', '539774822', '561613356']</initValue>
+      <name>productionPhones</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

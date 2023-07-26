@@ -28,9 +28,15 @@ WebUI.click(findTestObject('Check Out/Proceed To Checkout Button'))
 int otpRequierd = WebUI.findWebElements(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), 20).size()
 
 if (otpRequierd != 0) {
+	boolean isPhoneExist = true
+	int traials = 0
+	while(isPhoneExist && traials<=10) {
     WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), CustomKeywords.'generalactions.generalStrings.generateRandomPhoneNumber'())
 
     WebUI.click(findTestObject('Check Out/Update added phone number'))
+	isPhoneExist = WebUI.waitForElementVisible(findTestObject('OTP/Phone exist error'), 3, FailureHandling.CONTINUE_ON_FAILURE)
+	traials++
+	}
 
     WebUI.callTestCase(findTestCase('FE/OTP/General Actions/Insert fixed OTP'), [:], FailureHandling.STOP_ON_FAILURE)
 }
