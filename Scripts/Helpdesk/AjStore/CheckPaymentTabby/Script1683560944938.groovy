@@ -278,10 +278,11 @@ TestObject searchResultTO = new TestObject()
 searchResultTO.addProperty('xpath', ConditionType.EQUALS, ('//div[@class="data-grid-cell-content" and text()="' + orderNumber) + 
     '"]')
 
-List searchResultElm = WebUiCommonHelper.findWebElements(searchResultTO, 10)
+List<WebElement> searchResultElm = WebUiCommonHelper.findWebElements(searchResultTO, 10)
 
 if (searchResultElm.size().equals(1)) {
-    searchResultElm.get(0).click()
+//    searchResultElm.get(0).click()
+	CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(searchResultElm.get(0), 10)
 
     TestObject OrderHeaderTO = new TestObject()
 
