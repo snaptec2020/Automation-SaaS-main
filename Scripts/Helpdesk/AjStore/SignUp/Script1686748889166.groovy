@@ -160,7 +160,7 @@ void deleteCustomerProfile() {
 	SearchResultsPhone.any {
 		String Phone = it.getText()
 		println Phone
-		if(Phone.equalsIgnoreCase("966" + GlobalVariable.SignUp_Phone.toString())) {
+		if(Phone.contains("966" + GlobalVariable.SignUp_Phone.toString())) {
 			WebElement editCustomer = it.findElement(By.xpath('./ancestor::tr//a[text()="Edit"]'))
 			CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(editCustomer)
 			editCustomer.click()

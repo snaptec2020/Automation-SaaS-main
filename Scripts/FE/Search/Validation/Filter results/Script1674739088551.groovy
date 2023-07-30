@@ -24,7 +24,7 @@ import org.openqa.selenium.remote.server.handler.FindElements
 import java.util.List
 
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Validation/View all products from view more in container'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Validation/View all products from view more in container - By Product Name'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
 /*WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), 'Test ')

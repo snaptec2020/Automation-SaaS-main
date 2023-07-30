@@ -164,14 +164,14 @@ public class Payments {
 						//---------------------------Cash On Delivery---------------
 						case ~('الدفع عند الإستلام') :
 						case ~('Cash On Delivery') :
-						if(StringUtils.indexOfIgnoreCase(executionProfile, "-Live")>0) {
-							break
-						} else {
-						//WebUI.click(findTestObject('Object Repository/Check Out/Place order check out button'))
-							WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/COD Success'),0)
-							WebUI.takeFullPageScreenshot('./CODOrderResult.png')
-							break
-						}
+							if(StringUtils.indexOfIgnoreCase(executionProfile, "-Live")>0) {
+								break
+							} else {
+								//WebUI.click(findTestObject('Object Repository/Check Out/Place order check out button'))
+								WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/COD Success'),0)
+								WebUI.takeFullPageScreenshot('./CODOrderResult.png')
+								break
+							}
 						//---------------------------Tamara------------------------------------
 						case ~('قسم فاتورتك على 3 دفعات بدون فوائد') :
 						case ~('Mada/ Visa/Masster Card/Apple pay') :

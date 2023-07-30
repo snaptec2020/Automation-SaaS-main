@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Search by search button</name>
+   <name>Search by search button - By Product SKU</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>421d8dbf-6df4-4d78-b75c-a8ddfb90dd9e</testCaseGuid>
+   <testCaseGuid>5309bbdc-a7ae-4469-a6f9-96a552f5840a</testCaseGuid>
 </TestCaseEntity>

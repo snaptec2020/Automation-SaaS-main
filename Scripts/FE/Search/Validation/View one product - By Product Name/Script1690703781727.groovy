@@ -24,7 +24,7 @@ switch (GlobalVariable.searchMode) {
         WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), InvalidProduct)
 
         if (WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'))) {
-            WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), GlobalVariable.textSearch)
+            WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), GlobalVariable.textSearch[0])
         }
         
         WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'))
@@ -38,7 +38,7 @@ switch (GlobalVariable.searchMode) {
         WebUI.setText(findTestObject('Object Repository/Search contents/input'), InvalidProduct)
 
         if (WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'))) {
-            WebUI.setText(findTestObject('Object Repository/Search contents/input'), GlobalVariable.textSearch)
+            WebUI.setText(findTestObject('Object Repository/Search contents/input'), GlobalVariable.textSearch[0])
         }
         
         WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'))
