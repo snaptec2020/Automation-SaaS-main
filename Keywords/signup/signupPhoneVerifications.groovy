@@ -53,7 +53,7 @@ public class signupPhoneVerifications {
 		//WebUI.verifyElementVisible(findTestObject('Sign up Page/Sign up By email/Error message by email'))
 		//WebUI.verifyElementVisible(signUpObj)
 	}
-	
+
 	@Keyword
 	def verificationElementPhoneSignUp() {
 		signUpObj.addProperty('xpath', ConditionType.EQUALS, "//button[@type='submit']")

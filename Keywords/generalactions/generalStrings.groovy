@@ -45,26 +45,26 @@ public class generalStrings {
 		if(StringUtils.indexOfIgnoreCase(executionProfile, "-Live")>0) {
 			return GlobalVariable.productionPhones.get(getRandomNumberBetweenAnytoAny(GlobalVariable.productionPhones.size()-1,0))
 		} else {
-		def generator = { String alphabet, int n ->
-			new Random().with {
-				(1..n).collect { alphabet[ nextInt( alphabet.length() ) ] }.join()
+			def generator = { String alphabet, int n ->
+				new Random().with {
+					(1..n).collect { alphabet[ nextInt( alphabet.length() ) ] }.join()
+				}
 			}
-		}
 
 
-		def phoneFormate =WebUiCommonHelper.findWebElement(findTestObject('Object Repository/OTP/input Phone number'),30).getAttribute("placeholder")
-		def nonZerosFromString
-		def ZerosfromString = ''
-		nonZerosFromString = phoneFormate =~ '[1-9]+'
+			def phoneFormate =WebUiCommonHelper.findWebElement(findTestObject('Object Repository/OTP/input Phone number'),30).getAttribute("placeholder")
+			def nonZerosFromString
+			def ZerosfromString = ''
+			nonZerosFromString = phoneFormate =~ '[1-9]+'
 
-		ZerosfromString = phoneFormate =~ '(0.*?$)'
+			ZerosfromString = phoneFormate =~ '(0.*?$)'
 
-		def randomNumber=generator( (('0'..'9')).join(), ZerosfromString[0][1].toString().replaceAll("-","").length() )
-		//		KeywordUtil.logInfo(nonZerosFromString[0].toString()+randomNumber)
-		//		KeywordUtil.logInfo(ZerosfromString[0].toString())
-		//		KeywordUtil.logInfo(nonZerosFromString[0].toString())
-		//		KeywordUtil.logInfo(phoneFormate)
-		return nonZerosFromString[0].toString()+randomNumber
+			def randomNumber=generator( (('0'..'9')).join(), ZerosfromString[0][1].toString().replaceAll("-","").length() )
+			//		KeywordUtil.logInfo(nonZerosFromString[0].toString()+randomNumber)
+			//		KeywordUtil.logInfo(ZerosfromString[0].toString())
+			//		KeywordUtil.logInfo(nonZerosFromString[0].toString())
+			//		KeywordUtil.logInfo(phoneFormate)
+			return nonZerosFromString[0].toString()+randomNumber
 		}
 	}
 	@Keyword

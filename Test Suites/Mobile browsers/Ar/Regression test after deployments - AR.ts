@@ -105,14 +105,14 @@
       <guid>aaa88dfe-61a9-4ea6-b0f3-30e0882fc943</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Search/Validation/Search by search button</testCaseId>
+      <testCaseId>Test Cases/FE/Search/Validation/Search by search button - By Product name</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>2e243f65-8bb7-4f39-8117-9369b7c61e02</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Search/Validation/View all products from view more in container</testCaseId>
+      <testCaseId>Test Cases/FE/Search/Validation/View all products from view more in container - By Product Name</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
       <variableLink>
          <testDataLinkId></testDataLinkId>
@@ -131,7 +131,7 @@
       <guid>c4e1e576-f56e-4db4-8e33-a42a5a1e3276</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Search/Validation/View one product</testCaseId>
+      <testCaseId>Test Cases/FE/Search/Validation/View one product - By Product Name</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
       <variableLink>
          <testDataLinkId></testDataLinkId>

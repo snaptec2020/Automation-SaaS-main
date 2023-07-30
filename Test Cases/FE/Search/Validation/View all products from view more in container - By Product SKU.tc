@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>View all products from view more in container</name>
+   <name>View all products from view more in container - By Product SKU</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>a1e8aba7-e7ed-4308-bafd-a015bd57d6db</testCaseGuid>
+   <testCaseGuid>11a3c0f2-47f4-4a32-8cd6-31b8f2a88d53</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>3362ef26-c942-40b6-90e7-2f4557f6dbf1</variableId>
+      <variableId>8fe8f347-045c-4d83-a3cc-bdd3ea68b9e3</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>4f14c89d-a551-48e6-8afb-72e722addc3e</variableId>
+      <variableId>ccccc477-f770-4c72-8150-8c5daf6a4e2b</variableId>
    </variableLinks>
    <variable>
       <defaultValue>'Wrong'</defaultValue>
       <description></description>
-      <id>3362ef26-c942-40b6-90e7-2f4557f6dbf1</id>
+      <id>8fe8f347-045c-4d83-a3cc-bdd3ea68b9e3</id>
       <masked>false</masked>
       <name>InvalidProduct</name>
    </variable>
    <variable>
       <defaultValue>'Test'</defaultValue>
       <description></description>
-      <id>4f14c89d-a551-48e6-8afb-72e722addc3e</id>
+      <id>ccccc477-f770-4c72-8150-8c5daf6a4e2b</id>
       <masked>false</masked>
       <name>validProduct</name>
    </variable>

@@ -23,9 +23,10 @@ import org.openqa.selenium.Keys as Keyss
 
 
 WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
+
 switch (GlobalVariable.searchMode) {
     case 'Normal':
-        WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), GlobalVariable.textSearch)
+        WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), GlobalVariable.textSearch[0])
 
         WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'), 
             FailureHandling.CONTINUE_ON_FAILURE)
@@ -36,7 +37,7 @@ switch (GlobalVariable.searchMode) {
 
         break
     case 'Non-Normal':
-        WebUI.setText(findTestObject('Object Repository/Search contents/input'), GlobalVariable.textSearch)
+        WebUI.setText(findTestObject('Object Repository/Search contents/input'), GlobalVariable.textSearch[0])
 		
 		WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'),
 			FailureHandling.CONTINUE_ON_FAILURE)
