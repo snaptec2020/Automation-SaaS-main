@@ -14,3 +14,9 @@ build
 .classpath
 
 .project
+
+/.cache/*
+.cache*
+/.cache/Keywords/*
+/.cache/Keywords/*.*
+/.cache/Keywords/

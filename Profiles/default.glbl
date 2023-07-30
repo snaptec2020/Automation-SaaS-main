@@ -46,7 +46,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'Not Defined'</initValue>
+      <initValue>[]</initValue>
       <name>textSearch</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

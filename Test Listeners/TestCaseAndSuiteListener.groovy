@@ -50,7 +50,8 @@ class TestCaseAndSuiteListener {
 			WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 
 		}
-		if(testCaseContext.getTestCaseId().indexOf("/FE/Search/")>0 && GlobalVariable.textSearch.toString().equalsIgnoreCase('Not Defined')) {
+		KeywordUtil.logInfo(GlobalVariable.textSearch.toString())
+		if(testCaseContext.getTestCaseId().indexOf("/FE/Search/")>0 && GlobalVariable.textSearch.toString().equalsIgnoreCase('[]')) {
 			CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsText'()
 		}
 	}

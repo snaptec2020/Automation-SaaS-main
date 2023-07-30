@@ -135,43 +135,13 @@ public class productsFromCatalog {
 	@Keyword
 	def getSpecifiedinStockProductsText() {
 
-
-		selectCatalogComponents()
-		//WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
-
-		//		for (int i = 1; i <= 4; i++) {
-		//			WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
-		//		}
-		//
-		//		WebUI.delay(3)
-		WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
-
-
-		//def xPathDef = "(\"//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')]\")["+elementIndex+"]"
-		List prod = getinStockProduct()
-		//KeywordUtil.markError(prod.get(1))
-		if(prod.size()==0){
-			//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)
-			getSpecifiedinStockProductsText()
-
-		} else{
-			def elementIndexproduct= genaralActions.getRandomNumberBetweenOnetoTarget(prod.size())//Math.abs((randomNumberforProduct.nextInt(prod.size())))
-			//KeywordUtil.logInfo(elementIndexproduct.toString() +prod.get(elementIndexproduct).toString())
-			if(elementIndexproduct==0) {
-				elementIndexproduct=1
-			}
-			//KeywordUtil.logInfo("AAAAAAAAAAAAAAAAAAAAAAAAAAAA\t"+elementIndexproduct.toString())
-			//tb.addProperty('xpath', ConditionType.EQUALS, "(//button[text() = 'أضف إلى السلة' or text() ='Add to Cart']//parent::div//parent::div[@class='styles_bottomContainer__Fvu6h']//parent::div[@class='styles_productItem__YY5Bs']//p)["+elementIndexproduct+"]")
-
-			objText = WebUI.getText(utilityFunctions.addXpathToTestObject("(//button[text() = 'أضف إلى السلة' or text() ='Add to Cart']//parent::div//parent::div[@class='styles_bottomContainer__Fvu6h']//parent::div[@class='styles_productItem__YY5Bs']//p)["+elementIndexproduct+"]"))
-			if(objText.length()<=1) {
-				//KeywordUtil.logInfo("BBBBBBBBBBBBBBBBBBBBBBBBBB\t"+objText)
-				getSpecifiedinStockProductsText()
-			}
-			//println("AAAAAAAAAAAAAAAAAAAAAAAAAAAA\t"+objText)
-			GlobalVariable.textSearch = objText
-
-		}
+		getSpecifiedinStockProductsFromRandomCategory()
+		GlobalVariable.textSearch[0] = WebUI.getText(utilityFunctions.addXpathToTestObject("//h2[@class='product-content__title']"))
+		GlobalVariable.textSearch[1] = WebUI.getText(utilityFunctions.addXpathToTestObject("//span[@class='sku__value']"))
+		
+		KeywordUtil.logInfo(GlobalVariable.textSearch[0])
+		KeywordUtil.logInfo(GlobalVariable.textSearch[1])
+		
 	}
 	//-------------------------------------------------
 	@Keyword
