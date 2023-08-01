@@ -135,4 +135,18 @@ public class scrolling {
 		WebUI.executeJavaScript("arguments[0].scrollIntoView()", Arrays.asList(element))
 		WebUI.delay(2)
 	}
+	@Keyword
+	def scrollAndTryClicking(def testObjectPath) {
+		for (int i = 5; i > 0; i--) {
+			//KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>>>>>")
+			if (!(WebUI.waitForElementClickable(findTestObject(testObjectPath), 5, FailureHandling.CONTINUE_ON_FAILURE))) {
+				//WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/2);", null);
+				break
+			}
+			
+			WebUI.executeJavaScript(('window.scrollTo(0, document.body.scrollHeight/' + i.toString()) + ');', null)
+		
+			WebUI.click(findTestObject(testObjectPath))
+		}
+	}
 }
