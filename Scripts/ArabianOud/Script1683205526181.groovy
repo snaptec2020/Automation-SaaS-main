@@ -48,6 +48,7 @@ WebUI.click(findTestObject('Object Repository/ArabianOud/Page_Register Account/i
 WebUI.delay(2)
 WebUI.deleteAllCookies()
 WebUI.click(findTestObject('Object Repository/ArabianOud/image'))
+// TEST
 //WebUI.refresh()
 //WebUI.delay(3)
 }
