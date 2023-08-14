@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "E9DFAF4918ED4E8EE28ED425E0673849",
+  "keywordFileContentHash": "21321B8EF24DA965C7566932A7DB47C1",
   "keywordClasses": [
     {
       "name": "generalactions.notificationsObject",
@@ -38,6 +38,38 @@
         },
         {
           "name": "verifyNotificationNotVisble",
+          "parameters": [
+            {
+              "name": "arText",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "enText",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "waitNotificationVisble",
           "parameters": [
             {
               "name": "arText",
