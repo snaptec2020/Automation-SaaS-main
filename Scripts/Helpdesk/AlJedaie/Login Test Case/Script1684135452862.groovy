@@ -57,11 +57,11 @@ WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Ac
 CustomKeywords.'helpdesk.HelpdeskUtil.clickJS'(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/AccountPage/SignOut'),3)
 WebUI.waitForPageLoad(10)
 
-WebUI.delay(5)
+
 WebUI.click(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/AccountIcon'))
 WebUI.mouseOver(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/AccountIcon'))
 WebUI.waitForElementNotPresent(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/AccountPage/SignOut'),5)
 WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/AlJedaie/FE/Shared/Login'),10)
-
+WebUI.delay(5)
 WebUI.closeBrowser()
 

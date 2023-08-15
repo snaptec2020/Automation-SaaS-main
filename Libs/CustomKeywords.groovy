@@ -571,6 +571,13 @@ def static "generalactions.scrolling.javaScriptToScrollToElement"(
 }
 
 
+def static "generalactions.scrolling.scrollAndTryClicking"(
+    	Object testObjectPath	) {
+    (new generalactions.scrolling()).scrollAndTryClicking(
+        	testObjectPath)
+}
+
+
 def static "generalactions.generalStrings.generatRandomEmail"() {
     (new generalactions.generalStrings()).generatRandomEmail()
 }

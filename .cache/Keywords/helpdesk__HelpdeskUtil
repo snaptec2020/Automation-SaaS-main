@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "8071CFABD842E182475106223DC6E4D4",
+  "keywordFileContentHash": "393B25CDB976200D6E674A3FFC66D640",
   "keywordClasses": [
     {
       "name": "helpdesk.HelpdeskUtil",
@@ -142,6 +142,11 @@
               }
             }
           ],
+          "javadoc": ""
+        },
+        {
+          "name": "ScrollTop",
+          "parameters": [],
           "javadoc": ""
         },
         {
@@ -342,6 +347,25 @@
         {
           "name": "getCountryNamekarazlinen",
           "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "RemoveItemFromLocalStorage",
+          "parameters": [
+            {
+              "name": "ItemName",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
           "javadoc": ""
         }
       ]

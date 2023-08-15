@@ -159,13 +159,6 @@
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>13c3f865-a5ec-493d-9356-99a67887e248</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Multi Sites/Multisites</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
       <guid>03ded116-034e-48b2-b8bb-f7766f846e5c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -209,5 +202,19 @@
          <value></value>
          <variableId>ccccc477-f770-4c72-8150-8c5daf6a4e2b</variableId>
       </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>0485f2c8-ea55-4f9f-9ae4-4eca6c4e2fad</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Products/Validation/Add Product review</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>13c3f865-a5ec-493d-9356-99a67887e248</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Multi Sites/Multisites</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>

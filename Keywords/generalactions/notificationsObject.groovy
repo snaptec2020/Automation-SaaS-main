@@ -33,7 +33,11 @@ public class notificationsObject {
 
 	@Keyword
 	def verifyNotificationVisble(def arText, def enText) {
-		WebUI.verifyElementVisible(getNotificationObject(arText,enText), FailureHandling.CONTINUE_ON_FAILURE)
+		if(GlobalVariable.languageMode.toString().equalsIgnoreCase('Ar')) {
+			WebUI.verifyElementVisible(getNotificationObject(arText,''), FailureHandling.CONTINUE_ON_FAILURE)
+		}else {
+			WebUI.verifyElementVisible(getNotificationObject('',enText), FailureHandling.CONTINUE_ON_FAILURE)
+		}
 	}
 	@Keyword
 	def verifyNotificationNotVisble(def arText, def enText) {
