@@ -36,7 +36,7 @@ public class notificationsObject {
 		if(GlobalVariable.languageMode.toString().equalsIgnoreCase('Ar')) {
 			WebUI.verifyElementVisible(getNotificationObject(arText,''), FailureHandling.CONTINUE_ON_FAILURE)
 		}else {
-		WebUI.verifyElementVisible(getNotificationObject('',enText), FailureHandling.CONTINUE_ON_FAILURE)
+			WebUI.verifyElementVisible(getNotificationObject('',enText), FailureHandling.CONTINUE_ON_FAILURE)
 		}
 	}
 	@Keyword
