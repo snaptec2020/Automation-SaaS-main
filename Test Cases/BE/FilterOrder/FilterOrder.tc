@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>FilterOrder</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f0ef012f-6948-4beb-b8b2-cf5b0c6550de</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>46045a59-eaf8-4f05-be4d-491bd0f0b222</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>8abf4863-de6e-40e5-a556-ad202361fac9</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>60401f8e-b784-4549-9622-6135c5e573ff</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>2be0cf39-4433-4182-a645-3b490cf9e966</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>0ff0f1fd-82a5-4dec-954b-7132f780320c</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'121222'</defaultValue>
+      <description></description>
+      <id>46045a59-eaf8-4f05-be4d-491bd0f0b222</id>
+      <masked>false</masked>
+      <name>OrderNumber</name>
+   </variable>
+   <variable>
+      <defaultValue>['Object Repository/Page_Middle Dashboard/input_OrderNumber', 'Object Repository/Page_Middle Dashboard/dropdown_Stores', 'Object Repository/Page_Middle Dashboard/input_FromGrandTotalPurchased', 'Object Repository/Page_Middle Dashboard/input_GrandTotalPurchasedTo']</defaultValue>
+      <description></description>
+      <id>8abf4863-de6e-40e5-a556-ad202361fac9</id>
+      <masked>false</masked>
+      <name>xpath</name>
+   </variable>
+   <variable>
+      <defaultValue>['15000000405', 'Object Repository/Page_Middle Dashboard/option2', '60', '170']</defaultValue>
+      <description></description>
+      <id>60401f8e-b784-4549-9622-6135c5e573ff</id>
+      <masked>false</masked>
+      <name>value</name>
+   </variable>
+   <variable>
+      <defaultValue>['99999', 'Object Repository/Page_Middle Dashboard/option1', '10000', '10000']</defaultValue>
+      <description></description>
+      <id>2be0cf39-4433-4182-a645-3b490cf9e966</id>
+      <masked>false</masked>
+      <name>value1</name>
+   </variable>
+   <variable>
+      <defaultValue>['34', 'Object Repository/Page_Middle Dashboard/option1', '100', '90']</defaultValue>
+      <description></description>
+      <id>0ff0f1fd-82a5-4dec-954b-7132f780320c</id>
+      <masked>false</masked>
+      <name>value3</name>
+   </variable>
+</TestCaseEntity>

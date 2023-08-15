@@ -6,17 +6,17 @@
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'https://mid.snapdev.co/'</initValue>
+      <initValue>'https://release-mid.snaptec.co/'</initValue>
       <name>URL</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'qa.nt'</initValue>
+      <initValue>'NTsupport'</initValue>
       <name>MIDUserName</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'admin@123'</initValue>
+      <initValue>'admin123'</initValue>
       <name>MIDUserPassword</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
