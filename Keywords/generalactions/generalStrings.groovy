@@ -109,5 +109,31 @@ public class generalStrings {
 	int getRandomNumberBetweenAnytoAny(int upperLimit, int lowerLimit) {
 		return Math.abs(random.nextInt((upperLimit+1)-lowerLimit))+lowerLimit
 	}
+	@Keyword
+	def isNotEnglish(String text) {
+
+		//boolean onlyEnglish = false;
+		def notTranslated = []
+		String textWithoutSpace = text.trim().replaceAll(" ","");
+		for (char character : textWithoutSpace.toCharArray()) {
+
+			if (Character.UnicodeBlock.of(character) == Character.UnicodeBlock.BASIC_LATIN
+			|| Character.UnicodeBlock.of(character) == Character.UnicodeBlock.LATIN_1_SUPPLEMENT
+			|| Character.UnicodeBlock.of(character) == Character.UnicodeBlock.LATIN_EXTENDED_A
+			|| Character.UnicodeBlock.of(character) == Character.UnicodeBlock.GENERAL_PUNCTUATION) {
+
+				//println("True");
+				notTranslated.add(character)
+			} 
+			/*else {
+
+				println("False");
+			}*/
+		}
+		if(notTranslated.size()!=0){
+			KeywordUtil.markError("This is not translated\t"+text);
+		}
+
+	}
 }
 

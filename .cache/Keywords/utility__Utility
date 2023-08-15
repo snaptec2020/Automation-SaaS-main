@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "CBFCD49A9AF3AD527194519EB6111343",
+  "keywordFileContentHash": "86CA9F5CFB6E7342289D15F47DE2DAEA",
   "keywordClasses": [
     {
       "name": "utility.Utility",
@@ -129,6 +129,11 @@
               }
             }
           ],
+          "javadoc": ""
+        },
+        {
+          "name": "moveToElement",
+          "parameters": [],
           "javadoc": ""
         }
       ]

@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "FC6A1C8FA2452AD8BE19711A238AD263",
+  "keywordFileContentHash": "A27773743B9C14D19ACDF998BA0F61E1",
   "keywordClasses": [
     {
       "name": "cart.cartItems",
@@ -48,6 +48,11 @@
         },
         {
           "name": "getCartSubtotal",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "getLastItemPrice",
           "parameters": [],
           "javadoc": ""
         }

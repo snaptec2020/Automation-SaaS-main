@@ -54,14 +54,14 @@ WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/Sign
 
 for (int i = 5; i > 0; i--) {
     //KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>>>>>")
-    if (!(WebUI.waitForElementClickable(findTestObject('Sign up Page/Sign up By email/Sign Up Button'), 5, FailureHandling.CONTINUE_ON_FAILURE))) {
+    if (!(WebUI.waitForElementClickable(findTestObject('Sign up Page/Sgin up By phone/Submit Button Sign up mobile page'), 5, FailureHandling.CONTINUE_ON_FAILURE))) {
         //WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/2);", null);
         break
     }
     
     WebUI.executeJavaScript(('window.scrollTo(0, document.body.scrollHeight/' + i.toString()) + ');', null)
 
-    WebUI.click(findTestObject('Sign up Page/Sign up By email/Sign Up Button'))
+    WebUI.click(findTestObject('Sign up Page/Sgin up By phone/Submit Button Sign up mobile page'))
 }
 
 /*if (WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'), FailureHandling.CONTINUE_ON_FAILURE)) {

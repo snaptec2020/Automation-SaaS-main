@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "7074B6B2F1122CCD1389588E606DAE3B",
+  "keywordFileContentHash": "20474AD080B50E20C8C33D83E092762C",
   "keywordClasses": [
     {
       "name": "generalactions.scrolling",
@@ -48,10 +48,67 @@
           "javadoc": ""
         },
         {
+          "name": "scrollToClick",
+          "parameters": [
+            {
+              "name": "testObjec",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
           "name": "javaScriptToScrollToElement",
           "parameters": [
             {
               "name": "testObjectRelativeId",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "javaScriptToScrollToElement",
+          "parameters": [
+            {
+              "name": "testObject",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "scrollAndTryClicking",
+          "parameters": [
+            {
+              "name": "testObjectPath",
               "initialExpression": "",
               "type": {
                 "fullClassName": "java.lang.Object",
