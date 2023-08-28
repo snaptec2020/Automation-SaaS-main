@@ -27,16 +27,17 @@ WebUI.clearText(findTestObject('Sign up Page/Sgin up By phone/First name sign up
 
 //WebUI.sendKeys(findTestObject('Sign up Page/Sgin up By phone/First name sign up mobile'), Keys.chord(Keys.CONTROL, ‘a’))
 WebUI.clearText(findTestObject('Sign up Page/Sgin up By phone/Last name sign up Mobile'))
-
+if(PhoneNumber!="No Need") {
 WebUI.clearText(findTestObject('Sign up Page/Sgin up By phone/insert phone number'))
+}
 
 //WebUI.sendKeys(findTestObject('Sign up Page/Sgin up By phone/Last name sign up Mobile'), Keys.chord(Keys.CONTROL, ‘a’))
 WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/First name sign up mobile'), firstname)
 
 WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/Last name sign up Mobile'), lastname)
-
+if(PhoneNumber!="No Need") {
 WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), PhoneNumber)
-
+}
 //WebUI.delay(3)
 if (isCheck == '1') {
     WebUI.check(findTestObject('Sign up Page/Sgin up By phone/Check box rules'))

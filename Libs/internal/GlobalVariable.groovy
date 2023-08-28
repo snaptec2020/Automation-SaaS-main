@@ -117,6 +117,11 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
+    public static Object Countries
+     
+    /**
+     * <p></p>
+     */
     public static Object FE_URL
      
     /**
@@ -247,6 +252,7 @@ public class GlobalVariable {
             maximum = selectedVariables['maximum']
             shouldRefresh = selectedVariables['shouldRefresh']
             productionPhones = selectedVariables['productionPhones']
+            Countries = selectedVariables['Countries']
             FE_URL = selectedVariables['FE_URL']
             FE_Tel = selectedVariables['FE_Tel']
             BE_UserName = selectedVariables['BE_UserName']
