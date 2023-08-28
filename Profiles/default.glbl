@@ -109,4 +109,9 @@
       <initValue>['506639627', '576101030', '534375562', '580053732', '553913672', '546932695', '503049792', '564785404', '539774822', '561613356']</initValue>
       <name>productionPhones</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[('bahrain') : 'Manama', ('yemen') : 'Sanaa', ('qatar') : 'Doha', ('oman') : 'Muscat', ('jordan') : 'Amman', ('kuwait') : 'Kuwait City', ('united arab emirates') : 'Abu Dhabi', ('saudi arabia') : 'Riyadh']</initValue>
+      <name>Countries</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

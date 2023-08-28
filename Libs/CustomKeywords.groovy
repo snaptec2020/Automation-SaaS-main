@@ -613,6 +613,13 @@ def static "generalactions.generalStrings.getRandomNumberBetweenAnytoAny"(
 }
 
 
+def static "generalactions.generalStrings.isNotEnglish"(
+    	String text	) {
+    (new generalactions.generalStrings()).isNotEnglish(
+        	text)
+}
+
+
 def static "signup.signupPhoneVerifications.phoneVerificationMessage"(
     	Object expectedMessage	) {
     (new signup.signupPhoneVerifications()).phoneVerificationMessage(

@@ -124,11 +124,10 @@ public class generalStrings {
 
 				//println("True");
 				notTranslated.add(character)
-			} 
+			}
 			/*else {
-
-				println("False");
-			}*/
+			 println("False");
+			 }*/
 		}
 		if(notTranslated.size()!=0){
 			KeywordUtil.markError("This is not translated\t"+text);

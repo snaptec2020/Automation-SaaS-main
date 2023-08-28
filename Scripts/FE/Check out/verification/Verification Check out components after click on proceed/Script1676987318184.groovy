@@ -14,7 +14,9 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import internal.GlobalVariable
+
+import org.apache.commons.lang3.StringUtils
 import org.openqa.selenium.Keys as Keys
 
 WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components'), [:], FailureHandling.STOP_ON_FAILURE)
@@ -25,6 +27,11 @@ WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check ou
 //checkTheTarget()
 WebUI.click(findTestObject('Check Out/Proceed To Checkout Button'))
 //boolean otpRequierd=WebUI.verifyElementVisible(findTestObject('OTP/OTP container'))
+//def currentUrl = WebUI.getUrl()
+//WebUI.waitForElementNotVisible(findTestObject('Spinner'), 10, FailureHandling.CONTINUE_ON_FAILURE)
+if(StringUtils.indexOfIgnoreCase(WebUI.getUrl(), "/checkout/registration") >0) {
+	WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/Login by phone/Success Sign in by phone For Checkout'), [:], FailureHandling.STOP_ON_FAILURE)
+}
 int otpRequierd = WebUI.findWebElements(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), 20).size()
 
 if (otpRequierd != 0) {
