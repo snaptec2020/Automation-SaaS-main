@@ -35,6 +35,6 @@ public class Signupemailverifications {
 	@Keyword
 	def verificationElementSignUp() {
 		signUpObj.addProperty('xpath', ConditionType.EQUALS, "//button[contains(text(),'اشتراك')or normalize-space()='Sign Up']")
-		WebUI.verifyElementNotClickable(signUpObj, FailureHandling.CONTINUE_ON_FAILURE)
+		WebUI.verifyElementNotClickable(findTestObject('Sign up Page/Sgin up By phone/Submit Button Sign up mobile page'), FailureHandling.CONTINUE_ON_FAILURE)
 	}
 }

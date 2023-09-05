@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[contains(text(),'هل نسيت كلمة المرور؟') or normalize-space()='Forgot your password?']</value>
+         <value>//div[starts-with(@class,'styles_forgotPassword_')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
