@@ -65,7 +65,7 @@ if (td.getValue(7, rowNumber) != 'ButtonDisabled') {
     CustomKeywords.'signup.Signupemailverifications.verificationMessage'(td.getValue(messageColumn, rowNumber),td.getValue(messageColumn, rowNumber))
 }
  else {
-	CustomKeywords.'signup.Signupemailverifications.verificationElementSignUp'()
+	WebUI.verifyElementNotClickable(findTestObject('Sign up Page/Sgin up By phone/Submit Button Sign up mobile page'), FailureHandling.CONTINUE_ON_FAILURE)
 }
 }
 

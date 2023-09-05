@@ -10,7 +10,8 @@ import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
-import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
@@ -28,7 +29,10 @@ WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check ou
 WebUI.click(findTestObject('Check Out/Proceed To Checkout Button'))
 //boolean otpRequierd=WebUI.verifyElementVisible(findTestObject('OTP/OTP container'))
 //def currentUrl = WebUI.getUrl()
-//WebUI.waitForElementNotVisible(findTestObject('Spinner'), 10, FailureHandling.CONTINUE_ON_FAILURE)
+
+while(WebUI.waitForElementVisible(findTestObject('Spinner'), 10, FailureHandling.CONTINUE_ON_FAILURE)) {
+	KeywordUtil.logInfo("waiting spinner to hide ")
+}
 if(StringUtils.indexOfIgnoreCase(WebUI.getUrl(), "/checkout/registration") >0) {
 	WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/Login by phone/Success Sign in by phone For Checkout'), [:], FailureHandling.STOP_ON_FAILURE)
 }
