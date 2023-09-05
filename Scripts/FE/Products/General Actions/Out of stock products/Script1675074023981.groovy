@@ -61,7 +61,7 @@ for (int elementIndex = 0; elementIndex <= Math.abs((Categories.size() - 1) / 2)
     KeywordUtil.logInfo('00000000000000000000000000000000000000\t' + OutOfStockProducts.size())
 
     if (OutOfStockProducts.size() >= 1) {
-		       elementIndexProduct = CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenOnetoTarget'(OutOfStockProducts.size()-1)
+		       elementIndexProduct = CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenOnetoTarget'(OutOfStockProducts.size())
 			   //Math.abs(randomNumberforProduct.nextInt()% OutOfStockProducts.size()+1)
 			   //Random().nextInt() % 600 + 1
 			   KeywordUtil.logInfo(elementIndexProduct.toString())
