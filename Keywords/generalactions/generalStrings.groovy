@@ -20,6 +20,9 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+
+import groovy.json.JsonSlurper
+
 import com.kms.katalon.core.configuration.RunConfiguration as RC
 import org.apache.commons.lang3.StringUtils
 import internal.GlobalVariable
@@ -41,7 +44,7 @@ public class generalStrings {
 		return randomEmail
 	}
 	@Keyword
-	def generateRandomPhoneNumber() {
+	def generateRandomPhoneNumber(def objectToGetFormula = 'Object Repository/OTP/input Phone number') {
 		if(StringUtils.indexOfIgnoreCase(executionProfile, "-Live")>0) {
 			return GlobalVariable.productionPhones.get(getRandomNumberBetweenAnytoAny(GlobalVariable.productionPhones.size()-1,0))
 		} else {
@@ -52,7 +55,7 @@ public class generalStrings {
 			}
 
 
-			def phoneFormate =WebUiCommonHelper.findWebElement(findTestObject('Object Repository/OTP/input Phone number'),30).getAttribute("placeholder")
+			def phoneFormate =WebUiCommonHelper.findWebElement(findTestObject(objectToGetFormula),30).getAttribute("placeholder")
 			def nonZerosFromString
 			def ZerosfromString = ''
 			nonZerosFromString = phoneFormate =~ '[1-9]+'
@@ -133,6 +136,11 @@ public class generalStrings {
 			KeywordUtil.markError("This is not translated\t"+text);
 		}
 
+	}
+	@Keyword
+	def jsonParser(def jsonString) {
+		def jsonSlurper = new JsonSlurper()
+		return jsonSlurper.parseText(jsonString)
 	}
 }
 

@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Map Block</name>
+   <name>Map postion after click on maker</name>
    <tag></tag>
-   <elementGuidId>134bddcf-a5c7-4764-8e90-83d9d915f547</elementGuidId>
+   <elementGuidId>70bbbb79-49f4-408d-826a-bb17d6bf5616</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//img[@alt='ic-marker']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//canvas[@aria-label='Map']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

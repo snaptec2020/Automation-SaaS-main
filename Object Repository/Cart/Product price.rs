@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//div[starts-with(@class,'styles_subtotal__')]/span[starts-with(@class,'styles_price__') and not(contains(@class,'styles_regularPrice'))]//span[@dir='rtl']/child::span[1]</value>
+         <value>//div[starts-with(@class,'styles_subtotal__')]/span[starts-with(@class,'styles_price__') and not(contains(@class,'styles_regularPrice'))]//span[@dir='rtl' or @dir='rtl']/child::span[1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//div[starts-with(@class,'styles_subtotal__')]/span[starts-with(@class,'styles_price__') and not(contains(@class,'styles_regularPrice'))]//span[@dir='rtl']/child::span[1]</value>
-      <webElementGuid>df35bd0b-2f06-4b95-a93f-507faa927592</webElementGuid>
+      <value>//div[starts-with(@class,'styles_subtotal__')]/span[starts-with(@class,'styles_price__') and not(contains(@class,'styles_regularPrice'))]//span[@dir='rtl' or @dir='rtl']/child::span[1]</value>
+      <webElementGuid>2da1f1dd-bb79-4143-9ff0-6900bca512ac</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

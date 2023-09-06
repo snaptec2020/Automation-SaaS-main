@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//div[starts-with(@class,'styles_footer__')]//preceding::div[starts-with(@class,'styles_subtotal__')][1]/span/span[@dir='rtl']</value>
+         <value>//div[starts-with(@class,'styles_footer__')]//preceding::div[starts-with(@class,'styles_subtotal__')][1]/span[starts-with(@class,'styles_price__') and not(contains(@class,'styles_regularPrice'))]/span[@dir='ltr' or @dir='rtl']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//div[starts-with(@class,'styles_footer__')]//preceding::div[starts-with(@class,'styles_subtotal__')][1]/span/span[@dir='rtl']</value>
-      <webElementGuid>29d077d9-471b-4cf3-9bce-38b630eb2aa8</webElementGuid>
+      <value>//div[starts-with(@class,'styles_footer__')]//preceding::div[starts-with(@class,'styles_subtotal__')][1]/span[starts-with(@class,'styles_price__') and not(contains(@class,'styles_regularPrice'))]/span[@dir='ltr' or @dir='rtl']</value>
+      <webElementGuid>e1e32dd2-0670-454c-8aba-99c42cc5f718</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

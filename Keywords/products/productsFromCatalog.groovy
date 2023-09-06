@@ -138,10 +138,10 @@ public class productsFromCatalog {
 		getSpecifiedinStockProductsFromRandomCategory()
 		GlobalVariable.textSearch[0] = WebUI.getText(utilityFunctions.addXpathToTestObject("//h2[@class='product-content__title']"))
 		GlobalVariable.textSearch[1] = WebUI.getText(utilityFunctions.addXpathToTestObject("//span[@class='sku__value']"))
-		
+
 		KeywordUtil.logInfo(GlobalVariable.textSearch[0])
 		KeywordUtil.logInfo(GlobalVariable.textSearch[1])
-		
+
 	}
 	//-------------------------------------------------
 	@Keyword
@@ -231,16 +231,18 @@ public class productsFromCatalog {
 		selectCatalogComponents()
 		WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 		List <WebElement> prod = utilityFunctions.findWebElements('Object Repository/Products/Product container in page in target',30)
-		/*	if (prod.size()==0) {
-		 getSpecifiedinStockProductsFromRandomCategoryInTarget()
-		 }*/
+		if (prod.size()==0) {
+			getSpecifiedinStockProductsFromRandomCategoryInTarget()
+		}
+		//KeywordUtil.logInfo("++++++++++++++++++++++++++++"+prod.size().toString())
 		boolean found=false
 		prod.any ({
+			//KeywordUtil.logInfo("++++++++++++++++++++++++++++"+prod.size().toString())
 			WebElement currentPrice= it.findElements(By.xpath("./div[contains(@class,'styles_informationContainer')]/div[contains(@class,'styles_priceContainer')]/span/span/span/span/span[1]")).get(0)
 			float priceOfSelectedPrudctAmount= currentPrice.getText().replaceAll(",", "").replaceAll(" ", "").toFloat()
 			if(priceOfSelectedPrudctAmount>=minimum & priceOfSelectedPrudctAmount<=maximum) {
 				found=true
-				WebElement currentAddToCartBtn=it.findElements(By.xpath("./div/div/button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to cart')]")).get(0)
+				WebElement currentAddToCartBtn=it.findElements(By.xpath("./div/div/button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to Cart')]")).get(0)
 				def currentURL = WebUI.getUrl()
 				(new HelpdeskUtil().ScrollToElement(currentAddToCartBtn))
 				WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(currentAddToCartBtn))
@@ -253,7 +255,7 @@ public class productsFromCatalog {
 				return true
 			}else if (priceOfSelectedPrudctAmount < minimum) {
 				found=true
-				WebElement currentAddToCartBtn=it.findElements(By.xpath("./div/div/button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to cart')]")).get(0)
+				WebElement currentAddToCartBtn=it.findElements(By.xpath("./div/div/button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to Cart')]")).get(0)
 				def currentURL = WebUI.getUrl()
 				(new HelpdeskUtil().ScrollToElement(currentAddToCartBtn))
 				WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(currentAddToCartBtn))

@@ -10,25 +10,30 @@ import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
-import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components after click on proceed'), [:], 
-    FailureHandling.STOP_ON_FAILURE)
+WebUI.waitForElementVisible(findTestObject('Map Objs/Address title'), 0)
+def phoneNumber = CustomKeywords.'generalactions.generalStrings.generateRandomPhoneNumber'('Map Objs/Address Phone')
+KeywordUtil.logInfo(WebUI.getText(findTestObject('Map Objs/Address title'), FailureHandling.CONTINUE_ON_FAILURE))
+if (WebUiCommonHelper.findWebElement(findTestObject('Map Objs/Address title'),5).getAttribute('value').isEmpty()) {
 
-WebUI.doubleClick(findTestObject('Check Out/map ic marker'))
 
-WebUI.verifyElementVisible(findTestObject('Map Objs/Map postion after click on maker'))
+    def addressTitle = 'Automationtest ' + phoneNumber
 
-WebUI.verifyElementVisible(findTestObject('Check Out/Save location Map Button'))
+    WebUI.setText(findTestObject('Map Objs/Address title'), addressTitle)
+}
+//KeywordUtil.logInfo(WebUI.getText(findTestObject('OTP/input Phone number').trim(), FailureHandling.CONTINUE_ON_FAILURE))
+if(WebUiCommonHelper.findWebElement(findTestObject('OTP/input Phone number'), 5).getAttribute('value').isEmpty()) {
+	
+//WebUI.click(findTestObject('OTP/input Phone number'))
+WebUI.setText(findTestObject('Map Objs/Address Phone'), phoneNumber)
+}
 
-WebUI.click(findTestObject('Check Out/Save location Map Button'))
-
-CustomKeywords.'checkout.Payments.getRandomPaymentMethods'()
-
-WebUI.takeFullPageScreenshot('./paymentResult.png')
-
+WebUI.click(findTestObject('Map Objs/Continue After select Address'))

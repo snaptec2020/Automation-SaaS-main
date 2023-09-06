@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//*[contains(text(),'أضف إلى السلة') or contains(text(),'Add to cart')]/parent::div/parent::div/parent::div</value>
+         <value>//*[contains(text(),'أضف إلى السلة') or contains(text(),'Add to Cart')]/parent::div/parent::div/parent::div</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

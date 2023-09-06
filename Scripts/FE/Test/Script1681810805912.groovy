@@ -3,8 +3,18 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
-import com.kms.katalon.core.checkpoint.Checkpoint
-import com.kms.katalon.core.configuration.RunConfiguration
+import com.amazonaws.ClientConfiguration as ClientConfiguration
+import com.amazonaws.DefaultRequest as DefaultRequest
+import com.amazonaws.Request as Request
+import com.amazonaws.Response as Response
+import com.amazonaws.auth.AWS4Signer as AWS4Signer
+import com.amazonaws.auth.AWSCredentials as AWSCredentials
+import com.amazonaws.auth.Signer as Signer
+import com.amazonaws.http.AmazonHttpClient as AmazonHttpClient
+import com.amazonaws.http.ExecutionContext as ExecutionContext
+import com.amazonaws.http.HttpMethodName as HttpMethodName
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.configuration.RunConfiguration as RunConfiguration
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.main.CustomKeywordDelegatingMetaClass as CustomKeywordDelegatingMetaClass
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -15,47 +25,117 @@ import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.common.WebUiCommonHelper as WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword as WebUIAbstractKeyword
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.WebElement as WebElement
+import com.thoughtworks.selenium.webdriven.Windows as Windows
+import org.openqa.selenium.Point as Point
 import com.kms.katalon.core.configuration.RunConfiguration as RC
-import org.apache.commons.lang3.StringUtils
-def executionProfile = RC.getExecutionProfile()
-//def x = findTestObject('Object Repository/Mega Menu/Catalog list').findPropertyValue('xpath') + '[3]'
+import org.apache.commons.codec.binary.Hex as Hex
+import org.apache.commons.lang3.StringUtils as StringUtils
+import java.text.Collator as Collator
+import java.text.SimpleDateFormat as SimpleDateFormat
+import java.util.*
+import javax.crypto.Mac as Mac
+import javax.crypto.spec.SecretKeySpec as SecretKeySpec
 
-//def xpathval = x.findPropertyValue('xpath') + '[3]'
+String awsAccessKey
+//
+///** Put your secret key here **/
+String awsSecretKey
+//
+///** Put your bucket name here **/
+String SecurityToken
+//
+///** The name of the region where the bucket is created. (e.g. us-west-1) **/
+String regionName = 'eu-west-1'
+//String latitude
+//String longitude
+def script = "return JSON.parse(JSON.parse(localStorage.getItem('persist:availableCacheData:tanmiah_ar')).appState).locatorZones"
 
-//x.findProperty('xpath').setValue(xpathval)
-
-//KeywordUtil.logInfo(xpathval)
-
-//x.addProperty("xpath", ConditionType.EQUALS, xpathval,true)
-//("", ConditionType.EQUALS, "[2]",true)
-/*
- * double sumOfOrder def numOfElementsInCard =
- * CustomKeywords.'utility.Utility.checkIfElementExist'('Object
- * Repository/Cart/Product price') if(numOfElementsInCard!=0) { for(int
- * i=1;i<=numOfElementsInCard;i++) { productPrice =
- * WebUI.getText(CustomKeywords.'utility.Utility.addXpathToTestObject'("("+
- * findTestObject('Object Repository/Cart/Product
- * price').findPropertyValue('xpath') + ")["+i+"]")) as double sumOfOrder
- * =sumOfOrder + productPrice
- * KeywordUtil.logInfo(WebUI.getText(CustomKeywords.'utility.Utility.
- * addXpathToTestObject'("("+findTestObject('Object Repository/Cart/Product
- * price').findPropertyValue('xpath') + ")["+i+"]")))
- * KeywordUtil.logInfo(sumOfOrder.round(2).toString()) } }
- */
-//WebUI.click(CustomKeywords.'utility.Utility.addXpathToTestObject'(findTestObject('Object Repository/Mega Menu/Catalog list').findPropertyValue('xpath') + '[3]'))
-//WebUI.delay(5)
-if(StringUtils.indexOfIgnoreCase(executionProfile, "-Live")>0) {
-KeywordUtil.logInfo(GlobalVariable.productionPhones.get(CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenAnytoAny'(GlobalVariable.productionPhones.size()-1,0)).toString())
+def locatorZones = WebUI.executeJavaScript(script, null)
+KeywordUtil.logInfo(locatorZones.coordinate.toString())
+def latLong = []
+for(int i =0;i<=locatorZones.coordinate.size()-1;i++) {
+	locatorZones.coordinate[i].each { 
+		latLong.add([it.latitude,it.longitude])
+	}
+	
 }
-KeywordUtil.logInfo(GlobalVariable.productionPhones.size().toString())
+KeywordUtil.logInfo(latLong.toString())
+first:
+for(int i =0;i<= latLong.size()-1;i++) {
+	KeywordUtil.logInfo(latLong[i][0].toString())
+	KeywordUtil.logInfo(latLong[i][1].toString())
+	def resopnse = CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequest(findTestObject('APIs/Location APIs/Postman/cognito-identity.eu-west-1.amazonaws.com')).getResponseText())
+	/*
+	 def resopnse = CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequest(findTestObject('APIs/Location APIs/Postman/cognito-identity.eu-west-1.amazonaws.com')).getResponseText())
+	
+	KeywordUtil.logInfo(resopnse.toString())
+	String awsAccessKey = resopnse.Credentials.AccessKeyId
+	
+	
+	String awsSecretKey = resopnse.Credentials.SecretKey
+	
+	
+	String SecurityToken = resopnse.Credentials.SessionToken
+	
+	
+	String regionName = 'eu-west-1'
+	
+	CustomKeywords.'com.amazonaws.services.s3.sample.getAPIResults.getAPIResultsByLatLong'(awsAccessKey, awsSecretKey, SecurityToken,
+		regionName, '39.1291145', '21.3369007')
+	*/
+	KeywordUtil.logInfo(resopnse.toString())
+	 awsAccessKey = resopnse.Credentials.AccessKeyId
+	
+	 awsSecretKey = resopnse.Credentials.SecretKey
+	
 
-KeywordUtil.logInfo(CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenOnetoTarget'(GlobalVariable.productionPhones.size()).toString())
-KeywordUtil.logInfo(CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenAnytoAny'(GlobalVariable.productionPhones.size()-1,0).toString())
-KeywordUtil.logInfo(GlobalVariable.productionPhones.get(0).toString())
-//def totalPrice = WebUI.getText(findTestObject('Object Repository/Cart/Cart Subtotal (Inc VAT)')) =~/\d+\.\d+/
-//KeywordUtil.logInfo(totalPrice[0].toString())
-//WebUI.verifyEqual(CustomKeywords.'cart.cartItems.getCartSubtotal'(), CustomKeywords.'cart.cartItems.getSumOfProductsPriceInCart'())
+	 SecurityToken = resopnse.Credentials.SessionToken
+	 KeywordUtil.logInfo(awsAccessKey)
+	 KeywordUtil.logInfo(awsSecretKey)
+	 KeywordUtil.logInfo(SecurityToken)
+	 KeywordUtil.logInfo(latLong[i][1].toString())
+	 KeywordUtil.logInfo(latLong[i][0].toString())
+	
+	def locations = CustomKeywords.'com.amazonaws.services.s3.sample.getAPIResults.getAPIResultsByLatLong'(awsAccessKey, awsSecretKey, SecurityToken,
+		regionName, latLong[i][1].toString(), latLong[i][0].toString())
+	second:
+	for(int j =0;j<= locations.size()-1;j++){ 
+		WebUI.setText(findTestObject('Map Objs/Input search location'), locations[j])
+		WebUI.click(findTestObject('Map Objs/Select 1st location'))
+		if (WebUI.waitForElementClickable(findTestObject('Map Objs/Confirim location'), 5)) {
+			WebUI.click(findTestObject('Map Objs/Confirim location'))
+			break first
+			}
+	}
+}
+
+
+//KeywordUtil.markErrorAndStop("for testing")
+/*
+ def resopnse = CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequest(findTestObject('APIs/Location APIs/Postman/cognito-identity.eu-west-1.amazonaws.com')).getResponseText())
+
+KeywordUtil.logInfo(resopnse.toString())
+String awsAccessKey = resopnse.Credentials.AccessKeyId
+
+
+String awsSecretKey = resopnse.Credentials.SecretKey
+
+
+String SecurityToken = resopnse.Credentials.SessionToken
+
+
+String regionName = 'eu-west-1'
+
+CustomKeywords.'com.amazonaws.services.s3.sample.getAPIResults.getAPIResultsByLatLong'(awsAccessKey, awsSecretKey, SecurityToken, 
+    regionName, '39.1291145', '21.3369007')
+*/
+
+
+

@@ -80,11 +80,11 @@ switch (locationSuccessMessage) {
 def tryToGetLocation() {
     WebUI.click(findTestObject('Check Out/Zoom In (Map)'))
 
-    int mapHeight = WebUI.getElementHeight(findTestObject('Object Repository/Check Out/Map Block')) / 2
+    int mapHeight = WebUI.getElementHeight(findTestObject('Object Repository/Map Objs/Map Block')) / 2
 
-    int mapWidth = WebUI.getElementWidth(findTestObject('Object Repository/Check Out/Map Block')) / 2
+    int mapWidth = WebUI.getElementWidth(findTestObject('Object Repository/Map Objs/Map Block')) / 2
 
-    WebUI.clickOffset(findTestObject('Check Out/Map Block'), mapWidth, mapHeight)
+    WebUI.clickOffset(findTestObject('Map Objs/Map Block'), mapWidth, mapHeight)
 
     WebUI.click(findTestObject('Check Out/Save location Map Button'))
 }
