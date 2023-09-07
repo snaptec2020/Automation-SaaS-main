@@ -24,8 +24,8 @@ import org.openqa.selenium.Keys as Keys
  * 
  * int mapWidth = WebUI.getElementWidth(findTestObject('Object Repository/CheckOut/Map Block')) / 2
  */
-
-WebUI.doubleClick(findTestObject('Check Out/Map Block'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.clickOffset(findTestObject('Check Out/Map Block'), 0, 0, FailureHandling.CONTINUE_ON_FAILURE)
+//WebUI.doubleClick(findTestObject('Check Out/Map Block'), FailureHandling.CONTINUE_ON_FAILURE)
 
 
 //WebUI.doubleClick(findTestObject('Check Out/map ic marker'), FailureHandling.CONTINUE_ON_FAILURE)

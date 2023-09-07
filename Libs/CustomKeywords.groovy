@@ -531,6 +531,11 @@ def static "catalog.catlogComponants.getSpecifiedCatalogElement"(
 }
 
 
+def static "generalactions.generalActions.waiteSpinnerToHide"() {
+    (new generalactions.generalActions()).waiteSpinnerToHide()
+}
+
+
 def static "generalactions.scrolling.scrollingAtTheBottom"() {
     (new generalactions.scrolling()).scrollingAtTheBottom()
 }

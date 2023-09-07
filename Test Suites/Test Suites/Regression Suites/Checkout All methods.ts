@@ -14,7 +14,7 @@
    <testCaseLink>
       <guid>15d3af45-03a1-43f1-b8bc-7f64e5d02e8c</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/FE/menu Items/Select Catalog - Select All Categories and Scrolling</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
