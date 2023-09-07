@@ -50,10 +50,10 @@ switch (locationSuccessMessage) {
 		case 'Save Shipping Address successfully':
 		case 'حفظ عنوان الشحن بنجاح':
 		break; 
-		case 'Country is not available':
-		case 'الدولة غير متاحة':
-		WebUI.callTestCase(findTestCase('FE/Check out/validation/Add location Manually'), [:], FailureHandling.STOP_ON_FAILURE)
-		break;
+		//case 'Country is not available':
+		//case 'الدولة غير متاحة':
+		//WebUI.callTestCase(findTestCase('FE/Check out/validation/Add location Manually'), [:], FailureHandling.STOP_ON_FAILURE)
+		//break;
     
 	
         
@@ -80,11 +80,11 @@ switch (locationSuccessMessage) {
 def tryToGetLocation() {
     WebUI.click(findTestObject('Check Out/Zoom In (Map)'))
 
-    int mapHeight = WebUI.getElementHeight(findTestObject('Object Repository/Check Out/Map Block')) / 2
+   // int mapHeight = WebUI.getElementHeight(findTestObject('Object Repository/Check Out/Map Block')) / 2
 
-    int mapWidth = WebUI.getElementWidth(findTestObject('Object Repository/Check Out/Map Block')) / 2
+    //int mapWidth = WebUI.getElementWidth(findTestObject('Object Repository/Check Out/Map Block')) / 2
 
-    WebUI.clickOffset(findTestObject('Check Out/Map Block'), mapWidth, mapHeight)
+    WebUI.clickOffset(findTestObject('Check Out/Map Block'), 0, 0)
 
     WebUI.click(findTestObject('Check Out/Save location Map Button'))
 }
