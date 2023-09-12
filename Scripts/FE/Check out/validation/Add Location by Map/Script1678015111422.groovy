@@ -46,77 +46,77 @@ WebUI.clickOffset(findTestObject('Map Objs/Map Block'), 0, 0)
 
 if (WebUI.waitForElementClickable(findTestObject('Map Objs/Confirim location'), 5)) {
     WebUI.click(findTestObject('Map Objs/Confirim location'))
-	
+    
 } else {
-	//def searchText = WebUI.getText(findTestObject('Map Objs/Map Title')).replaceAll('^.*,', '').toString().trim()
-	
-	//KeywordUtil.logInfo(searchText.toString())
-	script = "return JSON.parse(JSON.parse(localStorage.getItem('persist:availableCacheData:"+store+"')).appState).locatorZones"
-	def locatorZones = WebUI.executeJavaScript(script, null)
-	String awsAccessKey
-	//
-	///** Put your secret key here **/
-	String awsSecretKey
-	//
-	///** Put your bucket name here **/
-	String SecurityToken
-	//
-	///** The name of the region where the bucket is created. (e.g. us-west-1) **/
-	String regionName = 'eu-west-1'
-	if(locatorZones!=null) {
-		def latLong = []
-		for(int i =0;i<=locatorZones.coordinate.size()-1;i++) {
-			locatorZones.coordinate[i].each {
-				latLong.add([it.latitude,it.longitude])
-			}
-			
-		}
-		first:
-		for(int i =0;i<= latLong.size()-1;i++) {
-			//KeywordUtil.logInfo(latLong[i][0].toString())
-			//KeywordUtil.logInfo(latLong[i][1].toString())
-			def resopnse = CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequest(findTestObject('APIs/Location APIs/Postman/cognito-identity.eu-west-1.amazonaws.com')).getResponseText())
+    //def searchText = WebUI.getText(findTestObject('Map Objs/Map Title')).replaceAll('^.*,', '').toString().trim()
+    
+    //KeywordUtil.logInfo(searchText.toString())
+    script = "return JSON.parse(JSON.parse(localStorage.getItem('persist:availableCacheData:"+store+"')).appState).locatorZones"
+    def locatorZones = WebUI.executeJavaScript(script, null)
+    String awsAccessKey
+    //
+    ///** Put your secret key here **/
+    String awsSecretKey
+    //
+    ///** Put your bucket name here **/
+    String SecurityToken
+    //
+    ///** The name of the region where the bucket is created. (e.g. us-west-1) **/
+    String regionName = 'eu-west-1'
+    if(locatorZones!=null) {
+        def latLong = []
+        for(int i =0;i<=locatorZones.coordinate.size()-1;i++) {
+            locatorZones.coordinate[i].each {
+                latLong.add([it.latitude,it.longitude])
+            }
+            
+        }
+        first:
+        for(int i =0;i<= latLong.size()-1;i++) {
+            //KeywordUtil.logInfo(latLong[i][0].toString())
+            //KeywordUtil.logInfo(latLong[i][1].toString())
+            def resopnse = CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequest(findTestObject('APIs/Location APIs/Postman/cognito-identity.eu-west-1.amazonaws.com')).getResponseText())
 
-			//KeywordUtil.logInfo(resopnse.toString())
-			 awsAccessKey = resopnse.Credentials.AccessKeyId
-			
-			 awsSecretKey = resopnse.Credentials.SecretKey
-			
-		
-			 SecurityToken = resopnse.Credentials.SessionToken
-//			 KeywordUtil.logInfo(awsAccessKey)
-//			 KeywordUtil.logInfo(awsSecretKey)
-//			 KeywordUtil.logInfo(SecurityToken)
-//			 KeywordUtil.logInfo(latLong[i][1].toString())
-//			 KeywordUtil.logInfo(latLong[i][0].toString())
-			
-			def locations = CustomKeywords.'com.amazonaws.services.s3.sample.getAPIResults.getAPIResultsByLatLong'(awsAccessKey, awsSecretKey, SecurityToken,
-				regionName, latLong[i][1].toString(), latLong[i][0].toString())
-			second:
-			for(int j =0;j<= locations.size()-1;j++){
-				WebUI.setText(findTestObject('Map Objs/Input search location'), locations[j])
-				WebUI.click(findTestObject('Map Objs/Select 1st location'))
-				if (WebUI.waitForElementClickable(findTestObject('Map Objs/Confirim location'), 5)) {
-					WebUI.click(findTestObject('Map Objs/Confirim location'))
-					break first
-					}
-			}
-		}
-	}else {
-	int numTrails = 0
-	while(!WebUI.waitForElementClickable(findTestObject('Map Objs/Confirim location'), 5)&& numTrails<5){
+            //KeywordUtil.logInfo(resopnse.toString())
+             awsAccessKey = resopnse.Credentials.AccessKeyId
+            
+             awsSecretKey = resopnse.Credentials.SecretKey
+            
+        
+             SecurityToken = resopnse.Credentials.SessionToken
+//             KeywordUtil.logInfo(awsAccessKey)
+//             KeywordUtil.logInfo(awsSecretKey)
+//             KeywordUtil.logInfo(SecurityToken)
+//             KeywordUtil.logInfo(latLong[i][1].toString())
+//             KeywordUtil.logInfo(latLong[i][0].toString())
+            
+            def locations = CustomKeywords.'com.amazonaws.services.s3.sample.getAPIResults.getAPIResultsByLatLong'(awsAccessKey, awsSecretKey, SecurityToken,
+                regionName, latLong[i][1].toString(), latLong[i][0].toString())
+            second:
+            for(int j =0;j<= locations.size()-1;j++){
+                WebUI.setText(findTestObject('Map Objs/Input search location'), locations[j])
+                WebUI.click(findTestObject('Map Objs/Select 1st location'))
+                if (WebUI.waitForElementClickable(findTestObject('Map Objs/Confirim location'), 5)) {
+                    WebUI.click(findTestObject('Map Objs/Confirim location'))
+                    break first
+                    }
+            }
+        }
+    }else {
+    int numTrails = 0
+    while(!WebUI.waitForElementClickable(findTestObject('Map Objs/Confirim location'), 5)&& numTrails<5){
 
-		numTrails++
-		WebUI.setText(findTestObject('Map Objs/Input search location'), GlobalVariable.Countries[locale.getDisplayCountry().toLowerCase()])
-		WebUI.click(findTestObject('Map Objs/Select 1st location'))
-		//WebUI.clickOffset(findTestObject('Map Objs/Map Block'), 0, 0)
-		WebUI.doubleClick(findTestObject('Map Objs/Zoom In'))
+        numTrails++
+        WebUI.setText(findTestObject('Map Objs/Input search location'), GlobalVariable.Countries[locale.getDisplayCountry().toLowerCase()])
+        WebUI.click(findTestObject('Map Objs/Select 1st location'))
+        //WebUI.clickOffset(findTestObject('Map Objs/Map Block'), 0, 0)
+        WebUI.doubleClick(findTestObject('Map Objs/Zoom In'))
 
-		WebUI.delay(2)
+        WebUI.delay(2)
 
-		WebUI.clickOffset(findTestObject('Map Objs/Map Block'), 0, 0)
-	}
-	WebUI.click(findTestObject('Map Objs/Confirim location'))
+        WebUI.clickOffset(findTestObject('Map Objs/Map Block'), 0, 0)
+    }
+    WebUI.click(findTestObject('Map Objs/Confirim location'))
 }
 }
 

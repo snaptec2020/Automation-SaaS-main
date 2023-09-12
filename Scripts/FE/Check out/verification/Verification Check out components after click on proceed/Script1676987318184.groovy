@@ -29,10 +29,11 @@ WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check ou
 WebUI.click(findTestObject('Check Out/Proceed To Checkout Button'))
 //boolean otpRequierd=WebUI.verifyElementVisible(findTestObject('OTP/OTP container'))
 //def currentUrl = WebUI.getUrl()
-
-while(WebUI.waitForElementVisible(findTestObject('Spinner'), 10, FailureHandling.CONTINUE_ON_FAILURE)) {
-	KeywordUtil.logInfo("waiting spinner to hide ")
-}
+//def isSpennerVisable= WebUI.waitForElementVisible(findTestObject('Spinner'), 10, FailureHandling.CONTINUE_ON_FAILURE)
+//while(isSpennerVisable) {
+//	isSpennerVisable= WebUI.waitForElementVisible(findTestObject('Spinner'), 10, FailureHandling.CONTINUE_ON_FAILURE)
+//}
+CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
 if(StringUtils.indexOfIgnoreCase(WebUI.getUrl(), "/checkout/registration") >0) {
 	WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/Login by phone/Success Sign in by phone For Checkout'), [:], FailureHandling.STOP_ON_FAILURE)
 }
