@@ -138,10 +138,10 @@ public class productsFromCatalog {
 		getSpecifiedinStockProductsFromRandomCategory()
 		GlobalVariable.textSearch[0] = WebUI.getText(utilityFunctions.addXpathToTestObject("//h2[@class='product-content__title']"))
 		GlobalVariable.textSearch[1] = WebUI.getText(utilityFunctions.addXpathToTestObject("//span[@class='sku__value']"))
-		
+
 		KeywordUtil.logInfo(GlobalVariable.textSearch[0])
 		KeywordUtil.logInfo(GlobalVariable.textSearch[1])
-		
+
 	}
 	//-------------------------------------------------
 	@Keyword
@@ -561,7 +561,7 @@ public class productsFromCatalog {
 		def currentURL = WebUI.getUrl()
 		//tb.addProperty('xpath', ConditionType.EQUALS, "(//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]")
 
-		utilityFunctions.clickOnObjectusingJavaScript(utilityFunctions.addXpathToTestObject("(//div[starts-with(@class,'styles_productItem__')]//button[starts-with(@class,'styles_atcButton__')][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]"))
+		utilityFunctions.clickOnObjectusingJavaScript(findTestObject('Object Repository/Products/Add InStock ToCart', [index:elementIndexproduct]))
 		//WebElement element = WebUiCommonHelper.findWebElement(tb,30)
 		//WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
 		WebUI.delay(5)

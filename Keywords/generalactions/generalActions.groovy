@@ -24,9 +24,11 @@ import internal.GlobalVariable
 public class generalActions {
 	@Keyword
 	def waiteSpinnerToHide() {
+		int numberOfTrails=0
 		def isSpennerVisable= WebUI.waitForElementVisible(findTestObject('Spinner'), 2, FailureHandling.CONTINUE_ON_FAILURE)
-		while(isSpennerVisable) {
+		while(isSpennerVisable && numberOfTrails<=20) {
 			isSpennerVisable= WebUI.waitForElementVisible(findTestObject('Spinner'), 2, FailureHandling.CONTINUE_ON_FAILURE)
+			numberOfTrails++
 		}
 	}
 }

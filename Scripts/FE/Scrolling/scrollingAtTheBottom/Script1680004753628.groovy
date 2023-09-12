@@ -30,7 +30,8 @@ try {
 		//WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 30, FailureHandling.CONTINUE_ON_FAILURE) 
 		WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight);", null);
 		//WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 30, FailureHandling.CONTINUE_ON_FAILURE) 
-		Thread.sleep(2000);
+		//Thread.sleep(1000);
+		CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
 		
 		long newHeight = ((Number)WebUI.executeJavaScript("return document.body.scrollHeight", null)).longValue();
 		//KeywordUtil.logInfo(lastHeight.toString())
