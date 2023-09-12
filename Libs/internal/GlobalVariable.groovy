@@ -122,6 +122,31 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
+    public static Object testSuiteReportFolder
+     
+    /**
+     * <p></p>
+     */
+    public static Object isRunByMultiSites
+     
+    /**
+     * <p></p>
+     */
+    public static Object storesToVisit
+     
+    /**
+     * <p></p>
+     */
+    public static Object isItFirstSite
+     
+    /**
+     * <p></p>
+     */
+    public static Object testSuiteJsonReport
+     
+    /**
+     * <p></p>
+     */
     public static Object FE_URL
      
     /**
@@ -253,6 +278,11 @@ public class GlobalVariable {
             shouldRefresh = selectedVariables['shouldRefresh']
             productionPhones = selectedVariables['productionPhones']
             Countries = selectedVariables['Countries']
+            testSuiteReportFolder = selectedVariables['testSuiteReportFolder']
+            isRunByMultiSites = selectedVariables['isRunByMultiSites']
+            storesToVisit = selectedVariables['storesToVisit']
+            isItFirstSite = selectedVariables['isItFirstSite']
+            testSuiteJsonReport = selectedVariables['testSuiteJsonReport']
             FE_URL = selectedVariables['FE_URL']
             FE_Tel = selectedVariables['FE_Tel']
             BE_UserName = selectedVariables['BE_UserName']

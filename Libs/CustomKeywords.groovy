@@ -29,18 +29,6 @@ def static "dbconnections.executeQueries.getOtp"(
 }
 
 
-def static "signIn.signInVerifications.verificationElementSignIn"() {
-    (new signIn.signInVerifications()).verificationElementSignIn()
-}
-
-
-def static "signIn.signInVerifications.verifyActualMessageWithExpectedSignIn"(
-    	Object expectedMessage	) {
-    (new signIn.signInVerifications()).verifyActualMessageWithExpectedSignIn(
-        	expectedMessage)
-}
-
-
 def static "products.productsFromCatalog.getProducts"() {
     (new products.productsFromCatalog()).getProducts()
 }
@@ -359,6 +347,83 @@ def static "helpdesk.HelpdeskUtil.RemoveItemFromLocalStorage"(
 }
 
 
+def static "cart.cartItems.getProductsInCart"() {
+    (new cart.cartItems()).getProductsInCart()
+}
+
+
+def static "cart.cartItems.getSpecifiedIteminThecart"(
+    	int elementIndex	
+     , 	List items	) {
+    (new cart.cartItems()).getSpecifiedIteminThecart(
+        	elementIndex
+         , 	items)
+}
+
+
+def static "cart.cartItems.getSumOfProductsPriceInCart"() {
+    (new cart.cartItems()).getSumOfProductsPriceInCart()
+}
+
+
+def static "cart.cartItems.getCartSubtotal"() {
+    (new cart.cartItems()).getCartSubtotal()
+}
+
+
+def static "cart.cartItems.getLastItemPrice"() {
+    (new cart.cartItems()).getLastItemPrice()
+}
+
+
+def static "generalactions.reporting.exportKatalonReports"(
+    	TestSuiteContext testSuiteContext	) {
+    (new generalactions.reporting()).exportKatalonReports(
+        	testSuiteContext)
+}
+
+
+def static "signup.signupPhoneVerifications.phoneVerificationMessage"(
+    	Object expectedMessage	) {
+    (new signup.signupPhoneVerifications()).phoneVerificationMessage(
+        	expectedMessage)
+}
+
+
+def static "signup.signupPhoneVerifications.verificationElementPhoneSignUp"() {
+    (new signup.signupPhoneVerifications()).verificationElementPhoneSignUp()
+}
+
+
+def static "signIn.signInVerifications.verificationElementSignIn"() {
+    (new signIn.signInVerifications()).verificationElementSignIn()
+}
+
+
+def static "signIn.signInVerifications.verifyActualMessageWithExpectedSignIn"(
+    	Object expectedMessage	) {
+    (new signIn.signInVerifications()).verifyActualMessageWithExpectedSignIn(
+        	expectedMessage)
+}
+
+
+def static "com.amazonaws.services.s3.sample.getAPIResults.getAPIResultsByLatLong"(
+    	String awsAccessKey	
+     , 	String awsSecretKey	
+     , 	String SecurityToken	
+     , 	String regionName	
+     , 	String theLongitude	
+     , 	String theLatitude	) {
+    (new com.amazonaws.services.s3.sample.getAPIResults()).getAPIResultsByLatLong(
+        	awsAccessKey
+         , 	awsSecretKey
+         , 	SecurityToken
+         , 	regionName
+         , 	theLongitude
+         , 	theLatitude)
+}
+
+
 def static "cart.removeItem.getProductsInCart"() {
     (new cart.removeItem()).getProductsInCart()
 }
@@ -380,6 +445,11 @@ def static "cart.removeItem.clearCart"() {
 
 def static "cart.removeItem.deleteItemFromCart"() {
     (new cart.removeItem()).deleteItemFromCart()
+}
+
+
+def static "cart.removeItem.deleteOutStockFromCart"() {
+    (new cart.removeItem()).deleteOutStockFromCart()
 }
 
 
@@ -464,35 +534,6 @@ def static "generalactions.notificationsObject.getMessageText"() {
 }
 
 
-def static "cart.cartItems.getProductsInCart"() {
-    (new cart.cartItems()).getProductsInCart()
-}
-
-
-def static "cart.cartItems.getSpecifiedIteminThecart"(
-    	int elementIndex	
-     , 	List items	) {
-    (new cart.cartItems()).getSpecifiedIteminThecart(
-        	elementIndex
-         , 	items)
-}
-
-
-def static "cart.cartItems.getSumOfProductsPriceInCart"() {
-    (new cart.cartItems()).getSumOfProductsPriceInCart()
-}
-
-
-def static "cart.cartItems.getCartSubtotal"() {
-    (new cart.cartItems()).getCartSubtotal()
-}
-
-
-def static "cart.cartItems.getLastItemPrice"() {
-    (new cart.cartItems()).getLastItemPrice()
-}
-
-
 def static "checkout.Payments.getPaymentMethodsList"() {
     (new checkout.Payments()).getPaymentMethodsList()
 }
@@ -507,13 +548,6 @@ def static "checkout.Payments.paymentMethodToPayBySelectedMethod"(
     	int elementsIndexPayments	) {
     (new checkout.Payments()).paymentMethodToPayBySelectedMethod(
         	elementsIndexPayments)
-}
-
-
-def static "generalactions.reporting.exportKatalonReports"(
-    	TestSuiteContext testSuiteContext	) {
-    (new generalactions.reporting()).exportKatalonReports(
-        	testSuiteContext)
 }
 
 
@@ -583,8 +617,10 @@ def static "generalactions.generalStrings.generatRandomEmail"() {
 }
 
 
-def static "generalactions.generalStrings.generateRandomPhoneNumber"() {
-    (new generalactions.generalStrings()).generateRandomPhoneNumber()
+def static "generalactions.generalStrings.generateRandomPhoneNumber"(
+    	Object objectToGetFormula	) {
+    (new generalactions.generalStrings()).generateRandomPhoneNumber(
+        	objectToGetFormula)
 }
 
 
@@ -620,13 +656,13 @@ def static "generalactions.generalStrings.isNotEnglish"(
 }
 
 
-def static "signup.signupPhoneVerifications.phoneVerificationMessage"(
-    	Object expectedMessage	) {
-    (new signup.signupPhoneVerifications()).phoneVerificationMessage(
-        	expectedMessage)
+def static "generalactions.generalStrings.jsonParser"(
+    	Object jsonString	) {
+    (new generalactions.generalStrings()).jsonParser(
+        	jsonString)
 }
 
 
-def static "signup.signupPhoneVerifications.verificationElementPhoneSignUp"() {
-    (new signup.signupPhoneVerifications()).verificationElementPhoneSignUp()
+def static "generalactions.generalStrings.generateRandomPhoneNumber"() {
+    (new generalactions.generalStrings()).generateRandomPhoneNumber()
 }
