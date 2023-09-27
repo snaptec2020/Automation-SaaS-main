@@ -6,11 +6,11 @@
    <elementGuidId>1faf04d5-3261-4048-ad8a-b6983a05c5d3</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//*[contains(text(),'أضف إلى السلة') or contains(text(),'Add to Cart')]/parent::div/parent::div/parent::div</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//*[contains(text(),'أضف إلى السلة') or contains(text(),'Add to Cart')]/ancestor-or-self::div[starts-with(@class,'styles_productItem__')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

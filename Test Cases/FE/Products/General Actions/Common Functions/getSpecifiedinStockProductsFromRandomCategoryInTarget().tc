@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>getSpecifiedinStockProductsFromRandomCategoryInTarget()</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>9e15086c-aaac-415e-ac11-6153fe1e1683</testCaseGuid>
+</TestCaseEntity>

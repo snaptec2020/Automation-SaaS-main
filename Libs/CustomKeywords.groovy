@@ -383,6 +383,11 @@ def static "generalactions.reporting.exportKatalonReports"(
 }
 
 
+def static "generalactions.generalActions.waiteSpinnerToHide"() {
+    (new generalactions.generalActions()).waiteSpinnerToHide()
+}
+
+
 def static "signup.signupPhoneVerifications.phoneVerificationMessage"(
     	Object expectedMessage	) {
     (new signup.signupPhoneVerifications()).phoneVerificationMessage(
@@ -562,11 +567,6 @@ def static "catalog.catlogComponants.getSpecifiedCatalogElement"(
     (new catalog.catlogComponants()).getSpecifiedCatalogElement(
         	elementIndex
          , 	catalogList)
-}
-
-
-def static "generalactions.generalActions.waiteSpinnerToHide"() {
-    (new generalactions.generalActions()).waiteSpinnerToHide()
 }
 
 

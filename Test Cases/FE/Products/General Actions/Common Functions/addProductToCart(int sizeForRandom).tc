@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>addProductToCart(int sizeForRandom)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ac13dfa5-1c0c-47f1-99e7-a9d5ec8f925f</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>af22d228-4bf9-4771-9285-7189b837bf5f</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>1</defaultValue>
+      <description></description>
+      <id>af22d228-4bf9-4771-9285-7189b837bf5f</id>
+      <masked>false</masked>
+      <name>sizeForRandom</name>
+   </variable>
+</TestCaseEntity>

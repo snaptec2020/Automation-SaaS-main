@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[starts-with(@class,'header__item styles_profilebtn')]</value>
+         <value>//div[starts-with(@class,'header__item styles_profilebtn')] | //*[starts-with(@class,'feather feather-user')]</value>
       </entry>
       <entry>
          <key>BASIC</key>

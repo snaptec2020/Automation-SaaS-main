@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[starts-with(@class,'styles_searchButtonContainer')]</value>
+         <value>//div[starts-with(@class,'styles_searchButtonContainer')] | //*[starts-with(@class,'feather feather-search')]</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

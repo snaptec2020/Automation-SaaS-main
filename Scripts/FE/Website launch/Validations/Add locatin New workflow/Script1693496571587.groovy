@@ -28,6 +28,7 @@ import java.util.*
  * 
  * int mapWidth = WebUI.getElementWidth(findTestObject('Object Repository/CheckOut/Map Block')) / 2
  */
+//WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 10)
 String script = 'return (JSON.parse(localStorage.getItem(\'BROWSER_PERSISTENCE__store_view_code\')).value).replaceAll(\'"\',\'\')'
 
 def store = WebUI.executeJavaScript(script, null)
@@ -39,40 +40,22 @@ def countryCode = WebUI.executeJavaScript(script, null)
 //KeywordUtil.logInfo(countryCode.toString())
 Locale locale = new Locale('en', countryCode)
 
-WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 10)
 
-WebUI.click(findTestObject('Map Objs/Pick from map btn'))
+
+//WebUI.click(findTestObject('Map Objs/Pick from map btn'))
 
 //WebUI.delay(50)
-WebUI.setText(findTestObject('Map Objs/Input search location'), GlobalVariable.Countries[locale.getDisplayCountry().toLowerCase()])
+//WebUI.setText(findTestObject('Map Objs/Input search location'), GlobalVariable.Countries[locale.getDisplayCountry().toLowerCase()])
 
-WebUI.click(findTestObject('Map Objs/Select 1st location'))
+//WebUI.click(findTestObject('Map Objs/Select 1st location'))
 
-WebUI.clickOffset(findTestObject('Map Objs/Map Block'), 0, 0)
+//WebUI.clickOffset(findTestObject('Map Objs/Map Block'), 0, 0)
 
-//WebUI.doubleClick(findTestObject('Map Objs/Map Block'), FailureHandling.CONTINUE_ON_FAILURE)
-//WebUI.verifyElementVisible(findTestObject('Map Objs/Map postion after click on maker'), FailureHandling.CONTINUE_ON_FAILURE)
-if (WebUI.waitForElementClickable(findTestObject('Map Objs/Confirim location'), 5)) {
-    WebUI.click(findTestObject('Map Objs/Confirim location')) //def searchText = WebUI.getText(findTestObject('Map Objs/Map Title')).replaceAll('^.*,', '').toString().trim()
-    //KeywordUtil.logInfo(searchText.toString())
-    //
-    ///** Put your secret key here **/
-    //
-    ///** Put your bucket name here **/
-    //
-    ///** The name of the region where the bucket is created. (e.g. us-west-1) **/
-    //KeywordUtil.logInfo(latLong[i][0].toString())
-    //KeywordUtil.logInfo(latLong[i][1].toString())
-    //KeywordUtil.logInfo(resopnse.toString())
-    //			 KeywordUtil.logInfo(awsAccessKey)
-    //			 KeywordUtil.logInfo(awsSecretKey)
-    //			 KeywordUtil.logInfo(SecurityToken)
-    //			 KeywordUtil.logInfo(latLong[i][1].toString())
-    //			 KeywordUtil.logInfo(latLong[i][0].toString())
-    //second:
-    //needs to check
-    //WebUI.clickOffset(findTestObject('Map Objs/Map Block'), 0, 0)
-} else {
+
+/*if (WebUI.waitForElementClickable(findTestObject('Map Objs/Continue After select Address'), 5)) {
+    WebUI.click(findTestObject('Map Objs/Continue After select Address')) //def searchText = WebUI.getText(findTestObject('Map Objs/Map Title')).replaceAll('^.*,', '').toString().trim()
+
+} else {*/
     script = (('return JSON.parse(JSON.parse(localStorage.getItem(\'persist:availableCacheData:' + store) + '\')).appState).locatorZones')
 
     def locatorZones = WebUI.executeJavaScript(script, null)
@@ -86,6 +69,7 @@ if (WebUI.waitForElementClickable(findTestObject('Map Objs/Confirim location'), 
     String regionName = 'eu-west-1'
 
     if (locatorZones != null) {
+		WebUI.click(findTestObject('Map Objs/Pick from map btn'))
         def latLong = []
 
         for (int i = 0; i <= (locatorZones.coordinate.size() - 1); i++) {
@@ -94,7 +78,7 @@ if (WebUI.waitForElementClickable(findTestObject('Map Objs/Confirim location'), 
                 })
         }
         
-        mainLoop: for (int i = 0; i <= (latLong.size() - 1); i++) {
+       for (int i = 0; i <= (latLong.size() - 1); i++) {
             def resopnse = CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequest(findTestObject('APIs/Location APIs/Postman/cognito-identity.eu-west-1.amazonaws.com')).getResponseText())
 
             awsAccessKey = resopnse.Credentials.AccessKeyId
@@ -111,21 +95,25 @@ if (WebUI.waitForElementClickable(findTestObject('Map Objs/Confirim location'), 
 
                 WebUI.click(findTestObject('Map Objs/Select 1st location'))
 
-                if (WebUI.waitForElementClickable(findTestObject('Map Objs/Confirim location'), 5)) {
-                    WebUI.click(findTestObject('Map Objs/Confirim location'))
+                if (WebUI.waitForElementClickable(findTestObject('Map Objs/Continue After select Address'), 5)) {
+                    WebUI.click(findTestObject('Map Objs/Continue After select Address'))
 
-                    break mainLoop 
+                    return null 
                 }
             }
         }
     } else {
+		WebUI.click(findTestObject('Map Objs/Change address button'))
+		WebUI.click(findTestObject('Map Objs/Pick from map btn'))
         int numTrails = 0
-
-        while (!(WebUI.waitForElementClickable(findTestObject('Map Objs/Confirim location'), 5)) && (numTrails < 5)) {
+		
+		WebUI.clickOffset(findTestObject('Map Objs/Map Block'), 0, 0)
+        while (!(WebUI.waitForElementClickable(findTestObject('Map Objs/Continue After select Address'), 5)) && (numTrails < 5)) {
             numTrails++
 
-            WebUI.setText(findTestObject('Map Objs/Input search location'), GlobalVariable.Countries[locale.getDisplayCountry().toLowerCase()])
+			WebUI.setText(findTestObject('Map Objs/Input search location'), GlobalVariable.Countries[locale.getDisplayCountry().toLowerCase()])
 
+			WebUI.delay(2)
             WebUI.click(findTestObject('Map Objs/Select 1st location'))
 
             WebUI.doubleClick(findTestObject('Map Objs/Zoom In'))
@@ -135,9 +123,9 @@ if (WebUI.waitForElementClickable(findTestObject('Map Objs/Confirim location'), 
             WebUI.clickOffset(findTestObject('Map Objs/Map Block'), 0, 0)
         }
         
-        WebUI.click(findTestObject('Map Objs/Confirim location'))
+        WebUI.click(findTestObject('Map Objs/Continue After select Address'))
     }
-}
+//}
 
-WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Address Info Dialog'), [:], FailureHandling.STOP_ON_FAILURE)
+//WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Address Info Dialog'), [:], FailureHandling.STOP_ON_FAILURE)
 

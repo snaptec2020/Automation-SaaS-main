@@ -27,7 +27,7 @@ public class notificationsObject {
 	TestObject tb = new TestObject()
 
 	TestObject getNotificationObject(def arText, def enText) {
-		tb.addProperty('xpath', ConditionType.EQUALS, "//div[contains(@class,'react-toast-notifications__container')]//*[contains(@class,'react-toast-notifications__toast__content')][normalize-space()='"+arText+"' or normalize-space() ='"+enText+"']")
+		tb.addProperty('xpath', ConditionType.EQUALS, "//div[starts-with(@class,'react-toast-notifications__')]//*[starts-with(@class,'react-toast-notifications__toast__content')][normalize-space()='"+arText+"' or normalize-space() ='"+enText+"']")
 		return tb
 	}
 
@@ -49,7 +49,7 @@ public class notificationsObject {
 	}
 	@Keyword
 	def getMessageText() {
-		tb.addProperty('xpath', ConditionType.EQUALS, "//div[contains(@class,'react-toast-notifications__container')]//*[contains(@class,'react-toast-notifications__toast__content')]")
+		tb.addProperty('xpath', ConditionType.EQUALS, "//div[starts-with(@class,'react-toast-notifications__')]//*[starts-with(@class,'react-toast-notifications__toast__content')]")
 		WebUI.waitForElementPresent(tb, 60)
 		return WebUI.getText(tb, FailureHandling.CONTINUE_ON_FAILURE)
 	}

@@ -17,3 +17,26 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+def elementIndexproduct = CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenOnetoTarget'(sizeForRandom //Math.abs((randomNumberforProduct.nextInt(sizeForRandom)))
+    )
+
+//KeywordUtil.logInfo(elementIndexproduct.toString() +prod.get(elementIndexproduct).toString())
+if (elementIndexproduct == 0) {
+    elementIndexproduct = 1
+}
+
+def currentURL = WebUI.getUrl()
+
+//tb.addProperty('xpath', ConditionType.EQUALS, "(//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]")
+CustomKeywords.'utility.Utility.clickOnObjectusingJavaScript'(findTestObject('Object Repository/Products/Add InStock ToCart', 
+        [('index') : elementIndexproduct]))
+
+//WebElement element = WebUiCommonHelper.findWebElement(tb,30)
+//WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
+WebUI.delay(5)
+
+//checkOnAddToStoreClickable(currentURL)
+
+WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/checkOnAddToStoreClickable(def currentURL)'), 
+    [('currentURL') : currentURL], FailureHandling.STOP_ON_FAILURE)
+

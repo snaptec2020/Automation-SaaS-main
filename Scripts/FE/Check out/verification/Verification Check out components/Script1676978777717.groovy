@@ -30,7 +30,7 @@ if(WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Out Of Sto
 //WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog - Select All Categories and Scrolling'), [:], FailureHandling.STOP_ON_FAILURE)
 float cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()//WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'), 10).size()
 
-//KeywordUtil.logInfo(cartSubTotal.toString())
+KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> "+cartSubTotal.toString())
 if (cartSubTotal == 0 || !(cartSubTotal>=GlobalVariable.minimum && cartSubTotal<=GlobalVariable.maximum)) {
     //CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromRandomCategory'()
 	while(!(cartSubTotal>=GlobalVariable.minimum && cartSubTotal<=GlobalVariable.maximum))	{

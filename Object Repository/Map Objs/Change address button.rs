@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Continue After select Address</name>
+   <name>Change address button</name>
    <tag></tag>
-   <elementGuidId>bcf381a3-4edc-4180-8f4b-40713f02a8b7</elementGuidId>
+   <elementGuidId>60d44042-acea-430d-8e55-2a64f8fe354e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//span[text()='استمرار' or text()='Continue']/parent::button</value>
+         <value>//div[starts-with(@class,'styles_deliveryToBlock__')]/div[starts-with(@class,'styles_title__')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//span[text()='استمرار' or text()='Continue']/parent::button</value>
-      <webElementGuid>63480e22-0661-4631-b3b3-3ce64817cb58</webElementGuid>
+      <value>//div[starts-with(@class,'styles_deliveryToBlock__')]/div[starts-with(@class,'styles_title__')]</value>
+      <webElementGuid>795d623e-d659-4921-848b-fd9a3eb3eecf</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

@@ -32,7 +32,7 @@ for (int i = 1; i <= 3; i++) {
         case 1:
             logger.logInfo('Checking Required Fields')
 
-            WebUI.callTestCase(findTestCase('BE/Sign In/General Action/Sign In General Steps'), [('userName') : Keys.chord(
+            WebUI.callTestCase(findTestCase('BE/MID/Sign In/General Action/Sign In General Steps'), [('userName') : Keys.chord(
                         Keys.BACK_SPACE), ('password') : Keys.chord(Keys.BACK_SPACE)], FailureHandling.CONTINUE_ON_FAILURE)
 
             WebUI.verifyElementVisible(CustomKeywords.'utility.Utility.addXpathToTestObject'(findTestObject('Object Repository/BE/Sign In/User Name').findPropertyValue(
@@ -45,7 +45,7 @@ for (int i = 1; i <= 3; i++) {
         case 2:
             logger.logInfo('Checking Wrong Password')
 
-            WebUI.callTestCase(findTestCase('BE/Sign In/General Action/Sign In General Steps'), [('userName') : GlobalVariable.MIDUserName
+            WebUI.callTestCase(findTestCase('BE/MID/Sign In/General Action/Sign In General Steps'), [('userName') : GlobalVariable.MIDUserName
                     , ('password') : 'hjfdknghfdgnnbbvhfdhvnmn'], FailureHandling.CONTINUE_ON_FAILURE)
 
             WebUI.verifyEqual(WebUI.getText(CustomKeywords.'utility.Utility.addXpathToTestObject'(errorMessage), FailureHandling.CONTINUE_ON_FAILURE), 
@@ -57,7 +57,7 @@ for (int i = 1; i <= 3; i++) {
         case 3:
             logger.logInfo('Checking Wrong username and Password')
 
-            WebUI.callTestCase(findTestCase('BE/Sign In/General Action/Sign In General Steps'), [('userName') : 'hjfdknghfdgnnbbvhfdhvnmn'
+            WebUI.callTestCase(findTestCase('BE/MID/Sign In/General Action/Sign In General Steps'), [('userName') : 'hjfdknghfdgnnbbvhfdhvnmn'
                     , ('password') : 'hjfdknghfdgnnbbvhfdhvnmn'], FailureHandling.CONTINUE_ON_FAILURE)
 
             WebUI.verifyEqual(WebUI.getText(CustomKeywords.'utility.Utility.addXpathToTestObject'(errorMessage), FailureHandling.CONTINUE_ON_FAILURE), 

@@ -19,7 +19,7 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 //KeywordUtil.logInfo(GlobalVariable.MIDUserName)
-WebUI.callTestCase(findTestCase('BE/Sign In/General Action/Sign In General Steps'), [('userName') : GlobalVariable.MIDUserName, ('password') : GlobalVariable.MIDUserPassword], 
+WebUI.callTestCase(findTestCase('BE/MID/Sign In/General Action/Sign In General Steps'), [('userName') : GlobalVariable.MIDUserName, ('password') : GlobalVariable.MIDUserPassword], 
     FailureHandling.STOP_ON_FAILURE)
 
 WebUI.verifyElementVisible(findTestObject('Object Repository/BE/Landing Page/Logo'), FailureHandling.CONTINUE_ON_FAILURE)

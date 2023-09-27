@@ -106,7 +106,7 @@ import com.kms.katalon.core.main.TestCaseMain as XmlKeywordLogger
 		   def suiteID = GlobalVariable.testSuiteStatus
 			   storesToVisit.each({ def val ->
 				   WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
-
+				   WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Add locatin New workflow'), [:], FailureHandling.STOP_ON_FAILURE)
 				   openMultiSiteDrop(multiwebsiteDrop)
 				   WebUI.delay(5)
 

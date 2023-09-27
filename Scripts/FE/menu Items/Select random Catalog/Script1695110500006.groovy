@@ -17,13 +17,10 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('BE/Sign In/Validation/Sucess SignIn'), [:], FailureHandling.STOP_ON_FAILURE)
+List Categories = CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
 
-WebUI.click(findTestObject('BE/Sign Out/Dropdown to logout'))
 
-WebUI.click(findTestObject('BE/Sign Out/Signout button'))
+elementIndex= CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenOnetoTarget'(Categories.size() - 1)//Math.abs((randomNumber.nextInt(Categories.size() - 1)))
 
-WebUI.click(findTestObject('BE/Sign Out/Confirm Logout'))
-
-WebUI.verifyElementVisible(findTestObject('BE/Sign In/button_Sign-In'))
-
+		//CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
+CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)

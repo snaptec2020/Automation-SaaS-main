@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>checkOnAddToStoreClickable(def currentURL)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>2af59ac5-6c22-4173-b981-592765ed5cca</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>43b0bb7f-f6bd-40ff-9885-644fc42b0c58</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>43b0bb7f-f6bd-40ff-9885-644fc42b0c58</id>
+      <masked>false</masked>
+      <name>currentURL</name>
+   </variable>
+</TestCaseEntity>

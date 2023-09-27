@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalVariableEntities>
    <description></description>
-   <name>SaaS-Rel-Bed Quartar UAE</name>
+   <name>SaaS-Prod-Brosh</name>
    <tag></tag>
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'https://release-bed-quarter-multisite.snaptec.co/uae_ar'</initValue>
+      <initValue>'https://prod-brosh.snaptec.co/ar'</initValue>
       <name>URL</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
