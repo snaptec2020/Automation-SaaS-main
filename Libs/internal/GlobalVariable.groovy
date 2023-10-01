@@ -147,6 +147,16 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
+    public static Object MID_URL
+     
+    /**
+     * <p></p>
+     */
+    public static Object launchingConfig
+     
+    /**
+     * <p></p>
+     */
     public static Object FE_URL
      
     /**
@@ -283,6 +293,8 @@ public class GlobalVariable {
             storesToVisit = selectedVariables['storesToVisit']
             isItFirstSite = selectedVariables['isItFirstSite']
             testSuiteJsonReport = selectedVariables['testSuiteJsonReport']
+            MID_URL = selectedVariables['MID_URL']
+            launchingConfig = selectedVariables['launchingConfig']
             FE_URL = selectedVariables['FE_URL']
             FE_Tel = selectedVariables['FE_Tel']
             BE_UserName = selectedVariables['BE_UserName']

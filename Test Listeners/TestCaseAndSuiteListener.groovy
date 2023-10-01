@@ -63,8 +63,12 @@ class TestCaseAndSuiteListener {
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
 		if(GlobalVariable.testSuiteStatus == 'Not Run' & testCaseContext.getTestCaseId().indexOf("/Helpdesk/")<=0) {
 			GlobalVariable.RunningMode=CustomKeywords.'generalactions.EnvironmentSettings.isRunningByMobile'()
+			GlobalVariable.launchingConfig.put("Mode",(testCaseContext.testCaseId=~"Test Cases/(.*?)/(.*?)/")[0][1])
+			GlobalVariable.launchingConfig.put("BEMode",(testCaseContext.testCaseId=~"Test Cases/(.*?)/(.*?)/")[0][2])
+			
+			GlobalVariable.launchingConfig.put("SiteUrl",(RunConfiguration.executionProfile=~"^.*?-(.*?)-")[0][1])
 			WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
-			WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Add locatin New workflow'), [:], FailureHandling.STOP_ON_FAILURE)
+			
 		}
 		if (GlobalVariable.languageMode.toString().equalsIgnoreCase('EN')) {
 			WebUI.callTestCase(findTestCase('FE/Switch Language/Validations/SwitchLanguage to English'), [:], FailureHandling.STOP_ON_FAILURE)
@@ -95,10 +99,13 @@ class TestCaseAndSuiteListener {
 			//String reportFolder = RunConfiguration.getReportFolder();
 			//File reportFolderFile = new File(reportFolder);
 			//finalReport = new File(reportFolderFile, reportFolderFile.getName() + ".html")
+			GlobalVariable.launchingConfig.put("Mode",(testSuiteContext.testSuiteId=~"Test Suites/Test Suites/(.*?)/(.*?)/")[0][1])
+			GlobalVariable.launchingConfig.put("BEMode",(testSuiteContext.testSuiteId=~"Test Suites/Test Suites/(.*?)/(.*?)/")[0][2])
+			GlobalVariable.launchingConfig.put("SiteUrl",(RunConfiguration.executionProfile=~"^.*?-(.*?)-")[0][1])
 			WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 			//checkIfMultiSites()
 			//WebUI.refresh()
-			WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Add locatin New workflow'), [:], FailureHandling.STOP_ON_FAILURE)
+			
 			
 		}
 	}

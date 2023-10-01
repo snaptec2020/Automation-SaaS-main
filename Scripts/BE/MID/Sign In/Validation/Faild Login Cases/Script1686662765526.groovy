@@ -23,9 +23,9 @@ KeywordLogger logger = KeywordLogger.getInstance(getClass())
 
 def reuiredFieldError = '/following::span[starts-with(@class,\'styles_errorText__\')][1]'
 
-def errorMessage = findTestObject('Object Repository/BE/Sign In/Fail login popup').findPropertyValue('xpath') + '/span[starts-with(@class,\'styles_message__\')]'
+def errorMessage = findTestObject('Object Repository/BE/MID/Sign In/Fail login popup').findPropertyValue('xpath') + '/span[starts-with(@class,\'styles_message__\')]'
 
-def closeErrorPopup = findTestObject('Object Repository/BE/Sign In/Fail login popup').findPropertyValue('xpath') + '//button/*[text()=\'Close\']'
+def closeErrorPopup = findTestObject('Object Repository/BE/MID/Sign In/Fail login popup').findPropertyValue('xpath') + '//button/*[text()=\'Close\']'
 
 for (int i = 1; i <= 3; i++) {
     switch (i) {
@@ -35,10 +35,10 @@ for (int i = 1; i <= 3; i++) {
             WebUI.callTestCase(findTestCase('BE/MID/Sign In/General Action/Sign In General Steps'), [('userName') : Keys.chord(
                         Keys.BACK_SPACE), ('password') : Keys.chord(Keys.BACK_SPACE)], FailureHandling.CONTINUE_ON_FAILURE)
 
-            WebUI.verifyElementVisible(CustomKeywords.'utility.Utility.addXpathToTestObject'(findTestObject('Object Repository/BE/Sign In/User Name').findPropertyValue(
+            WebUI.verifyElementVisible(CustomKeywords.'utility.Utility.addXpathToTestObject'(findTestObject('Object Repository/BE/MID/Sign In/User Name').findPropertyValue(
                         'xpath') + reuiredFieldError), FailureHandling.CONTINUE_ON_FAILURE)
 
-            WebUI.verifyElementVisible(CustomKeywords.'utility.Utility.addXpathToTestObject'(findTestObject('Object Repository/BE/Sign In/Password').findPropertyValue(
+            WebUI.verifyElementVisible(CustomKeywords.'utility.Utility.addXpathToTestObject'(findTestObject('Object Repository/BE/MID/Sign In/Password').findPropertyValue(
                         'xpath') + reuiredFieldError), FailureHandling.CONTINUE_ON_FAILURE)
 
             break

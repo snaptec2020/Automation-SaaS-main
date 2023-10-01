@@ -6,12 +6,11 @@
    <elementGuidId>bb5e3378-1ce0-4db9-8a9a-6069edbe5e19</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value></value>
-      </entry>
-      <entry>
          <key>BASIC</key>
          <value>//*[@type = 'text' and @placeholder = 'Add user name']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
       </entry>
       <entry>
          <key>XPATH</key>

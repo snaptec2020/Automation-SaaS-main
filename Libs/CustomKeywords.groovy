@@ -480,10 +480,10 @@ def static "utility.Utility.switchToIframeByXpath"(
 
 
 def static "utility.Utility.findWebElements"(
-    	Object testObject	
+    	Object testObjectPathId	
      , 	int timedOut	) {
     (new utility.Utility()).findWebElements(
-        	testObject
+        	testObjectPathId
          , 	timedOut)
 }
 

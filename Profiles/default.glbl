@@ -139,4 +139,14 @@
       <initValue>[]</initValue>
       <name>testSuiteJsonReport</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[('Stg') : 'https://staging-mid.9ten.online/', ('Prod') : 'https://mid.thenineten.co/', ('Rel') : 'https://release-mid.snaptec.co/']</initValue>
+      <name>MID_URL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[('SiteUrl') : '', ('BEMode') : '', ('Mode') : '']</initValue>
+      <name>launchingConfig</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

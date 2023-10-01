@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Spinner</name>
+   <name>Menu Groups</name>
    <tag></tag>
-   <elementGuidId>12579f38-0a05-41af-b76e-27b612e0b997</elementGuidId>
+   <elementGuidId>092d3747-a51d-4f5e-a6f3-c5f369c0a0c8</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@class='indicator__icon-root'] | //img[@alt='loading']</value>
+         <value>//div[text()='${menuName}']/parent::div[starts-with(@class,'styles_menuItem__')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@class='indicator__icon-root'] | //img[@alt='loading']</value>
-      <webElementGuid>433c9e80-61e0-42d8-aab9-13f803692902</webElementGuid>
+      <value>//div[text()='${menuName}']/parent::div[starts-with(@class,'styles_menuItem__')]</value>
+      <webElementGuid>77ded02d-da80-4547-8aed-0786e04a9b8f</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

@@ -51,8 +51,8 @@ public class Utility {
 		WebUI.switchToFrame(addXpathToTestObject(xpath), 0)
 	}
 	@Keyword
-	List findWebElements(def testObject, int timedOut) {
-		return WebUI.findWebElements(findTestObject(testObject),timedOut)
+	List findWebElements(def testObjectPathId, int timedOut) {
+		return WebUI.findWebElements(findTestObject(testObjectPathId),timedOut)
 	}
 	@Keyword
 	def clickOnObjectusingJavaScript(TestObject testObject) {

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Open menu group by Name</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8ac30cca-e85e-4303-a4e3-9bca69668994</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>cad56079-94f4-4414-b1a0-adbc39cb19ce</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>cad56079-94f4-4414-b1a0-adbc39cb19ce</id>
+      <masked>false</masked>
+      <name>menuGroupName</name>
+   </variable>
+</TestCaseEntity>

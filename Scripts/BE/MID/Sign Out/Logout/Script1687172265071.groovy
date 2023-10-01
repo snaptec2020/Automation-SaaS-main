@@ -19,11 +19,11 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.callTestCase(findTestCase('BE/MID/Sign In/Validation/Sucess SignIn'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('BE/Sign Out/Dropdown to logout'))
+WebUI.click(findTestObject('BE/MID/Sign Out/Dropdown to logout'))
 
-WebUI.click(findTestObject('BE/Sign Out/Signout button'))
+WebUI.click(findTestObject('BE/MID/Sign Out/Signout button'))
 
-WebUI.click(findTestObject('BE/Sign Out/Confirm Logout'))
+WebUI.click(findTestObject('BE/MID/Sign Out/Confirm Logout'))
 
-WebUI.verifyElementVisible(findTestObject('BE/Sign In/button_Sign-In'))
+WebUI.verifyElementVisible(findTestObject('BE/MID/Sign In/button_Sign-In'))
 

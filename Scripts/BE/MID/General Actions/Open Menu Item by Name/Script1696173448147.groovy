@@ -4,7 +4,6 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
-import com.kms.katalon.core.configuration.RunConfiguration as RunConfiguration
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
@@ -16,30 +15,26 @@ import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
-//KeywordUtil.logInfo(RunConfiguration.getExecutionProfile())
-//Map geoLocationOption =[:]
-//geoLocationOption.put("latitude",21.3369007)
-//geoLocationOption.put("longitude",39.1291145)
-//RunConfiguration.setWebDriverPreferencesProperty('Emulation.setGeolocationOverride', geoLocationOption)
-switch(GlobalVariable.launchingConfig.get("Mode")) {
-	case 'FE': WebUI.openBrowser('')
+import internal.GlobalVariable
 
-			   WebUI.maximizeWindow()
+import org.openqa.selenium.By
+import org.openqa.selenium.Keys
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.WebElement as Keys
 
-			   WebUI.navigateToUrl(GlobalVariable.URL)
-
-			   CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
-			   WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Add locatin New workflow'), [:], FailureHandling.STOP_ON_FAILURE)
-			   break;
-	case 'BE': WebUI.openBrowser('')
-
-			   WebUI.maximizeWindow()
-			   
-			   switch(GlobalVariable.launchingConfig.get("BEMode")) {
-				   case 'MID': WebUI.navigateToUrl(GlobalVariable.MID_URL.get(GlobalVariable.launchingConfig.get("SiteUrl")))
-				   			   break
-				   
-			   }
+List <WebElement> menuGroup = WebUI.findWebElements(findTestObject('BE/MID/Menus/Menu Groups', [('menuName') : menuGroupName]),30)
+menuGroup.any { 
+	def isItOpen = it.findElement(By.xpath("./following-sibling::div[@class='ReactCollapse--collapse'][1]")).getAttribute("aria-hidden")
+	def menuItem = "./following-sibling::div[@class='ReactCollapse--collapse'][1]//div[text()='"+menuItemName+"']"
+	KeywordUtil.logInfo(isItOpen.toString())
+	if(isItOpen.equalsIgnoreCase('true')) {
+		//it.findElement(By.xpath("./div[text()='"+menuGroupName+"']")).click()
+		it.click()
+		it.findElement(By.xpath(menuItem)).click()
+	}else {
+		//WebUI.click(findTestObject('BE/MID/Menus/Menu Groups', [('menuName') : menuGroupName]))
+		it.findElement(By.xpath(menuItem)).click()
+	}
+	CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
+	
 }
