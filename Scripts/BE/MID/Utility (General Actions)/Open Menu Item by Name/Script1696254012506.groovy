@@ -24,10 +24,10 @@ import org.openqa.selenium.WebElement as Keys
 
 List <WebElement> menuGroup = WebUI.findWebElements(findTestObject('BE/MID/Menus/Menu Groups', [('menuName') : menuGroupName]),30)
 menuGroup.any { 
-	def isItOpen = it.findElement(By.xpath("./following-sibling::div[@class='ReactCollapse--collapse'][1]")).getAttribute("aria-hidden")
+	def isItNotOpen = it.findElement(By.xpath("./following-sibling::div[@class='ReactCollapse--collapse'][1]")).getAttribute("aria-hidden")
 	def menuItem = "./following-sibling::div[@class='ReactCollapse--collapse'][1]//div[text()='"+menuItemName+"']"
-	KeywordUtil.logInfo(isItOpen.toString())
-	if(isItOpen.equalsIgnoreCase('true')) {
+	//KeywordUtil.logInfo(isItNotOpen.toString())
+	if(isItNotOpen.equalsIgnoreCase('true')) {
 		//it.findElement(By.xpath("./div[text()='"+menuGroupName+"']")).click()
 		it.click()
 		it.findElement(By.xpath(menuItem)).click()

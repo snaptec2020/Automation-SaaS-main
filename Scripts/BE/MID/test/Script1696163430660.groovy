@@ -19,6 +19,6 @@ import org.openqa.selenium.Keys as Keys
 WebUI.verifyNotEqual(CustomKeywords.'utility.Utility.checkIfElementExist'('Object Repository/BE/MID/Landing Page/Side Bar contents'), '0', FailureHandling.CONTINUE_ON_FAILURE)
 WebUI.verifyEqual(CustomKeywords.'utility.Utility.checkIfElementExist'('Object Repository/BE/MID/Dashboard obj/Cards'), '10', FailureHandling.CONTINUE_ON_FAILURE)
 WebUI.verifyEqual(CustomKeywords.'utility.Utility.checkIfElementExist'('Object Repository/BE/MID/Dashboard obj/Store View contents'), '2', FailureHandling.CONTINUE_ON_FAILURE)
-WebUI.callTestCase(findTestCase('BE/MID/General Actions/Open Menu Item by Name'), [('menuItemName') : "Orders", ('menuGroupName') : "Sales"], 
+WebUI.callTestCase(findTestCase('BE/MID/Utility (General Actions)/Open Menu Item by Name'), [('menuItemName') : "Orders", ('menuGroupName') : "Sales"], 
     FailureHandling.STOP_ON_FAILURE)
 
