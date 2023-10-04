@@ -22,7 +22,7 @@ WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check ou
 
 WebUI.doubleClick(findTestObject('Check Out/map ic marker'))
 
-WebUI.verifyElementVisible(findTestObject('Check Out/Map postion after click on maker'))
+WebUI.verifyElementVisible(findTestObject('Map Objs/Map postion after click on maker'))
 
 WebUI.verifyElementVisible(findTestObject('Check Out/Save location Map Button'))
 

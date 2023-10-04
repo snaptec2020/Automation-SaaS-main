@@ -15,7 +15,7 @@
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Checkout All methods</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Checkout All methods</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -25,7 +25,7 @@
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Checkout All methods</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Checkout All methods</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>

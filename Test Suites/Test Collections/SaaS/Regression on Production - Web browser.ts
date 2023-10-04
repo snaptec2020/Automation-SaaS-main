@@ -10,32 +10,32 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Prod-Altanmyah-Live</profileName>
+            <profileName>SaaS-Upgrade-NT</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Prod-Altanmyah-Live</profileName>
+            <profileName>SaaS-Upgrade-NT</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Sign In - Up suites</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Sign In - Up suites</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Prod-Altanmyah-Live</profileName>
+            <profileName>SaaS-Upgrade-NT</profileName>
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Checkout All methods</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Checkout All methods</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -45,7 +45,7 @@
             <runConfigurationId>Firefox</runConfigurationId>
          </configuration>
          <runEnabled>false</runEnabled>
-         <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Checkout All methods</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Checkout All methods</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -55,7 +55,7 @@
             <runConfigurationId>Firefox</runConfigurationId>
          </configuration>
          <runEnabled>false</runEnabled>
-         <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -65,7 +65,7 @@
             <runConfigurationId>Firefox</runConfigurationId>
          </configuration>
          <runEnabled>false</runEnabled>
-         <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Sign In - Up suites</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Sign In - Up suites</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -75,7 +75,7 @@
             <runConfigurationId>Edge Chromium</runConfigurationId>
          </configuration>
          <runEnabled>false</runEnabled>
-         <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Checkout All methods</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Checkout All methods</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -85,7 +85,7 @@
             <runConfigurationId>Edge Chromium</runConfigurationId>
          </configuration>
          <runEnabled>false</runEnabled>
-         <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -95,7 +95,7 @@
             <runConfigurationId>Edge Chromium</runConfigurationId>
          </configuration>
          <runEnabled>false</runEnabled>
-         <testSuiteEntity>Test Suites/Test Suites/Regression Suites/Sign In - Up suites</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Sign In - Up suites</testSuiteEntity>
       </TestSuiteRunConfiguration>
    </testSuiteRunConfigurations>
 </TestSuiteCollectionEntity>

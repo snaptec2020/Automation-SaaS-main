@@ -26,7 +26,7 @@ if(i!=1) {
 WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components after click on proceed'), [:],
 		FailureHandling.STOP_ON_FAILURE)
 }
-WebUI.callTestCase(findTestCase('FE/Check out/validation/Select location common case'), [:], FailureHandling.STOP_ON_FAILURE)
+//WebUI.callTestCase(findTestCase('FE/Check out/validation/Select location common case'), [:], FailureHandling.STOP_ON_FAILURE)
 
 CustomKeywords.'checkout.Payments.paymentMethodToPayBySelectedMethod'(i)
 //WebUI.takeFullPageScreenshot('./paymentResult.png')

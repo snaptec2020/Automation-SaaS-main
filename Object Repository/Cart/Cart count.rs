@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[@class='d-flex align-items-center']//*[@class='count']</value>
+         <value>//span[@class='d-flex align-items-center']//*[@class='count'] | //div[starts-with(@class,'styles_countWrapper__')]/span</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

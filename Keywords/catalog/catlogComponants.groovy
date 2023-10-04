@@ -23,11 +23,14 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+
+import generalactions.generalActions
 import internal.GlobalVariable
 import utility.Utility
 
 public class catlogComponants {
 	TestObject tb=new TestObject()
+	def generalActions = new generalActions()
 	def utilityFunctions = new Utility()
 	@Keyword
 	public def getCategoryElements() {
@@ -74,8 +77,9 @@ public class catlogComponants {
 		 Thread.sleep(2000);*/
 		WebUI.waitForElementClickable(tb, 30)
 		WebUI.click(tb,FailureHandling.CONTINUE_ON_FAILURE)
-		WebUI.delay(2)
+		//WebUI.delay(2)
 		//WebUI.mouseOver(findTestObject('Headers and Footers/Header contents/Logo'), FailureHandling.CONTINUE_ON_FAILURE)
+		generalActions.waiteSpinnerToHide()
 		utilityFunctions.moveToElement()
 		/*		else {
 		 WebUI.scrollToPosition(9999999, 9999999)

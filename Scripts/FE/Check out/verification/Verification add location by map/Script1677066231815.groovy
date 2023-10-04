@@ -20,5 +20,5 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components after click on proceed'), [:], 
     FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Check Out/Map Block'))
+WebUI.verifyElementVisible(findTestObject('Map Objs/Map Block'))
 

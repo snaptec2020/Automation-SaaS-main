@@ -114,4 +114,39 @@
       <initValue>[('bahrain') : 'Manama', ('yemen') : 'Sanaa', ('qatar') : 'Doha', ('oman') : 'Muscat', ('jordan') : 'Amman', ('kuwait') : 'Kuwait City', ('united arab emirates') : 'Abu Dhabi', ('saudi arabia') : 'Riyadh']</initValue>
       <name>Countries</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'N/A'</initValue>
+      <name>testSuiteReportFolder</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>false</initValue>
+      <name>isRunByMultiSites</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[]</initValue>
+      <name>storesToVisit</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>true</initValue>
+      <name>isItFirstSite</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[]</initValue>
+      <name>testSuiteJsonReport</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[('Stg') : 'https://staging-mid.9ten.online/', ('Prod') : 'https://mid.thenineten.co/', ('Rel') : 'https://release-mid.snaptec.co/']</initValue>
+      <name>MID_URL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[('SiteUrl') : '', ('BEMode') : '', ('Mode') : '']</initValue>
+      <name>launchingConfig</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
