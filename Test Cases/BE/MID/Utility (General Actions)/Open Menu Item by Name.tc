@@ -9,26 +9,26 @@
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>ee482793-6f78-46a1-92fd-871e19d0773b</variableId>
+      <variableId>c0533af1-6033-402e-9232-2c5d45c4e49f</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>c0533af1-6033-402e-9232-2c5d45c4e49f</variableId>
+      <variableId>ee482793-6f78-46a1-92fd-871e19d0773b</variableId>
    </variableLinks>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
-      <id>ee482793-6f78-46a1-92fd-871e19d0773b</id>
-      <masked>false</masked>
-      <name>menuItemName</name>
-   </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
       <id>c0533af1-6033-402e-9232-2c5d45c4e49f</id>
       <masked>false</masked>
       <name>menuGroupName</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ee482793-6f78-46a1-92fd-871e19d0773b</id>
+      <masked>false</masked>
+      <name>menuItemName</name>
    </variable>
 </TestCaseEntity>
