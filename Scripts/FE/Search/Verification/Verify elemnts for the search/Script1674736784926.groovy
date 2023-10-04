@@ -25,7 +25,7 @@ import org.openqa.selenium.Keys as Keys
 //WebUI.callTestCase(findTestCase('Test Cases/FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 
 
-if (CustomKeywords.'utility.Utility.checkIfElementExist'('Search contents/Serach button container')==0) {
+if (WebUI.waitForElementVisible(findTestObject('Object Repository/Search contents/Search button'), 5)) {
 	GlobalVariable.searchMode='Normal'
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search'))
 	

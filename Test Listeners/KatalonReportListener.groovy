@@ -15,7 +15,7 @@ import org.apache.commons.io.FileUtils
 
 public class KatalonReportListener {
 
-    @AfterTestSuite
+	//@AfterTestSuite
     public void exportKatalonReports(TestSuiteContext testSuiteContext) {
         try {                 
             String reportFolder = RunConfiguration.getReportFolder();
@@ -33,13 +33,14 @@ public class KatalonReportListener {
             }
 
             File reportFolderFile = new File(reportFolder);
+			KeywordUtil.logInfo("reportFolder ******************* " + reportFolder)
             File folderTemp = Files.createTempDirectory(reportFolderFile.getName() + "_").toFile();
             // rename temp folder to match with report folder         
             folderTemp = Files.move(folderTemp.toPath(), folderTemp.toPath().resolveSibling(reportFolderFile.getName())).toFile();
-
+			KeywordUtil.logInfo("folderTemp ******************* " + folderTemp.absolutePath)
             FileUtils.copyDirectory(reportFolderFile, folderTemp);
             String folderTempString = folderTemp.getAbsolutePath();           
-            
+			KeywordUtil.logInfo("folderTempString ******************* " + folderTempString)
             TestSuiteLogRecord suiteLogEntity = ReportUtil.generate(folderTempString);
 
             if (genereteHTML) {

@@ -18,16 +18,19 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-if (GlobalVariable.testSuiteStatus == 'Not Run') {
-    WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/Success Sign up By email'), [:], FailureHandling.STOP_ON_FAILURE)
-}
+//if (GlobalVariable.testSuiteStatus == 'NotRun') {
+//    WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/Success Sign up By email'), [:], FailureHandling.STOP_ON_FAILURE)
+//}
 WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
-
+if(WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Out Of Stock Items'),5)) {
+	CustomKeywords.'cart.removeItem.deleteOutStockFromCart'()
+	//cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
+}
 //CustomKeywords.'cart.removeItem.clearCart'()
 //WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog - Select All Categories and Scrolling'), [:], FailureHandling.STOP_ON_FAILURE)
 float cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()//WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'), 10).size()
 
-//KeywordUtil.logInfo(cartSubTotal.toString())
+KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> "+cartSubTotal.toString())
 if (cartSubTotal == 0 || !(cartSubTotal>=GlobalVariable.minimum && cartSubTotal<=GlobalVariable.maximum)) {
     //CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromRandomCategory'()
 	while(!(cartSubTotal>=GlobalVariable.minimum && cartSubTotal<=GlobalVariable.maximum))	{
@@ -38,7 +41,10 @@ if (cartSubTotal == 0 || !(cartSubTotal>=GlobalVariable.minimum && cartSubTotal<
 			}else if (cartSubTotal < GlobalVariable.minimum) {
 				CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategoryInTarget'()
 				cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
-			}else { 
+			}else if(WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Out Of Stock Items'),5)) {
+				CustomKeywords.'cart.removeItem.deleteOutStockFromCart'()
+				cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
+			}else{ 
 				CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategoryInTarget'()
 				cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
 			}

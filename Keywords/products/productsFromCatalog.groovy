@@ -40,7 +40,7 @@ import utility.Utility
  */
 
 public class productsFromCatalog {
-	TestObject tb=new TestObject();
+	TestObject tb=new TestObject()
 	Random randomNumber = new Random()
 	Random randomNumberforProduct = new Random()
 	String objText = ""
@@ -226,87 +226,88 @@ public class productsFromCatalog {
 
 	@Keyword
 	def getSpecifiedinStockProductsFromRandomCategoryInTarget() {
-		float minimum = GlobalVariable.minimum as float
-		float maximum=GlobalVariable.maximum as float
-		selectCatalogComponents()
-		WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
-		List <WebElement> prod = utilityFunctions.findWebElements('Object Repository/Products/Product container in page in target',30)
-		/*	if (prod.size()==0) {
+		WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/getSpecifiedinStockProductsFromRandomCategoryInTarget()'),
+				[:], FailureHandling.STOP_ON_FAILURE)
+		/*float minimum = GlobalVariable.minimum as float
+		 float maximum=GlobalVariable.maximum as float
+		 selectCatalogComponents()
+		 WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+		 List <WebElement> prod = utilityFunctions.findWebElements('Object Repository/Products/Product container in page in target',30)
+		 if (prod.size()==0) {
+		 getSpecifiedinStockProductsFromRandomCategoryInTarget()
+		 }
+		 //KeywordUtil.logInfo("++++++++++++++++++++++++++++"+prod.size().toString())
+		 boolean found=false
+		 prod.any ({
+		 //KeywordUtil.logInfo("++++++++++++++++++++++++++++"+prod.size().toString())
+		 WebElement currentPrice= it.findElements(By.xpath("./div[contains(@class,'styles_informationContainer')]/div[contains(@class,'styles_priceContainer')]/span/span/span/span/span[1]")).get(0)
+		 float priceOfSelectedPrudctAmount= currentPrice.getText().replaceAll(",", "").replaceAll(" ", "").toFloat()
+		 if(priceOfSelectedPrudctAmount>=minimum & priceOfSelectedPrudctAmount<=maximum) {
+		 found=true
+		 WebElement currentAddToCartBtn=it.findElements(By.xpath("./div/div/button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to Cart')]")).get(0)
+		 def currentURL = WebUI.getUrl()
+		 (new HelpdeskUtil().ScrollToElement(currentAddToCartBtn))
+		 WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(currentAddToCartBtn))
+		 //utilityFunctions.clickOnObjectusingJavaScript(currentAddToCartBtn)
+		 WebUI.delay(1)
+		 if (currentURL.equals(WebUI.getUrl()) & WebUI.verifyElementNotVisible(findTestObject('Object Repository/Cart/Continue Shopping'),FailureHandling.OPTIONAL)  ) {
+		 return
+		 }
+		 checkOnAddToStoreClickable(currentURL)
+		 return true
+		 }else if (priceOfSelectedPrudctAmount < minimum) {
+		 found=true
+		 WebElement currentAddToCartBtn=it.findElements(By.xpath("./div/div/button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to Cart')]")).get(0)
+		 def currentURL = WebUI.getUrl()
+		 (new HelpdeskUtil().ScrollToElement(currentAddToCartBtn))
+		 WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(currentAddToCartBtn))
+		 WebUI.delay(1)
+		 if (currentURL.equals(WebUI.getUrl()) & WebUI.verifyElementNotVisible(findTestObject('Object Repository/Cart/Continue Shopping'),FailureHandling.OPTIONAL)  ) {
+		 return
+		 }
+		 checkOnAddToStoreClickable(currentURL)
+		 WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
+		 float cartSubTotal = (new cartItems()).cartSubtotal//WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'), 10).size()
+		 if (cartSubTotal == 0) {
+		 getSpecifiedinStockProductsFromRandomCategoryInTarget()
+		 }
+		 if(WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Cart/insert NeedQTY By text'),30).getAttribute("value") != '1') {
+		 WebUI.click(findTestObject('Object Repository/Cart/insert NeedQTY By text'))
+		 WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.CONTROL, 'a'))
+		 WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.BACK_SPACE))
+		 WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), '1', FailureHandling.CONTINUE_ON_FAILURE)
+		 WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.TAB))
+		 }
+		 float Total = (((WebUI.getText(findTestObject('Object Repository/Cart/Cart Subtotal (Inc VAT)')).replaceAll(',', '') =~ '\\d+\\.\\d+')[0]) as float)
+		 float lastItemPrice = (new cartItems()).getLastItemPrice()
+		 int neededQty=Math.ceil((minimum-Total)/lastItemPrice)+1
+		 //				for (int i=1; i< neededQty ; i++) {
+		 //					WebUI.waitForElementClickable(findTestObject('Object Repository/Cart/item plus'), 5)
+		 //					WebUI.click(findTestObject('Object Repository/Cart/item plus'))
+		 //					WebUI.delay(1)
+		 //				}
+		 WebUI.verifyElementVisible(findTestObject('Object Repository/Cart/insert NeedQTY By text'), FailureHandling.CONTINUE_ON_FAILURE)
+		 //WebUI.sendKeys(findTestObject(findTestObject('Object Repository/Cart/insert NeedQTY By text')), Keys.chord(Keys.CONTROL, 'a'))
+		 WebUI.click(findTestObject('Object Repository/Cart/insert NeedQTY By text'))
+		 WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.CONTROL, 'a'))
+		 WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.BACK_SPACE))
+		 WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), neededQty.toString(), FailureHandling.CONTINUE_ON_FAILURE)
+		 WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.TAB))
+		 if(WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Error-Max qty'), 5, FailureHandling.CONTINUE_ON_FAILURE)) {
+		 WebUI.click(findTestObject('Object Repository/Cart/insert NeedQTY By text'))
+		 WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.CONTROL, 'a'))
+		 WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.BACK_SPACE))
+		 WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), '1', FailureHandling.CONTINUE_ON_FAILURE)
+		 WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.TAB))
+		 //getSpecifiedinStockProductsFromRandomCategoryInTarget()
+		 }
+		 //WebUI.(findTestObject('Object Repository/Cart/insert NeedQTY By text'), neededQty.toString())
+		 return true
+		 }
+		 })
+		 if(!found) {
 		 getSpecifiedinStockProductsFromRandomCategoryInTarget()
 		 }*/
-		boolean found=false
-		prod.any ({
-			WebElement currentPrice= it.findElements(By.xpath("./div[contains(@class,'styles_informationContainer')]/div[contains(@class,'styles_priceContainer')]/span/span/span/span/span[1]")).get(0)
-			float priceOfSelectedPrudctAmount= currentPrice.getText().replaceAll(",", "").replaceAll(" ", "").toFloat()
-			if(priceOfSelectedPrudctAmount>=minimum & priceOfSelectedPrudctAmount<=maximum) {
-				found=true
-				WebElement currentAddToCartBtn=it.findElements(By.xpath("./div/div/button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to cart')]")).get(0)
-				def currentURL = WebUI.getUrl()
-				(new HelpdeskUtil().ScrollToElement(currentAddToCartBtn))
-				WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(currentAddToCartBtn))
-				//utilityFunctions.clickOnObjectusingJavaScript(currentAddToCartBtn)
-				WebUI.delay(1)
-				if (currentURL.equals(WebUI.getUrl()) & WebUI.verifyElementNotVisible(findTestObject('Object Repository/Cart/Continue Shopping'),FailureHandling.OPTIONAL)  ) {
-					return
-				}
-				checkOnAddToStoreClickable(currentURL)
-				return true
-			}else if (priceOfSelectedPrudctAmount < minimum) {
-				found=true
-				WebElement currentAddToCartBtn=it.findElements(By.xpath("./div/div/button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to cart')]")).get(0)
-				def currentURL = WebUI.getUrl()
-				(new HelpdeskUtil().ScrollToElement(currentAddToCartBtn))
-				WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(currentAddToCartBtn))
-				WebUI.delay(1)
-				if (currentURL.equals(WebUI.getUrl()) & WebUI.verifyElementNotVisible(findTestObject('Object Repository/Cart/Continue Shopping'),FailureHandling.OPTIONAL)  ) {
-					return
-				}
-				checkOnAddToStoreClickable(currentURL)
-				WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
-				float cartSubTotal = (new cartItems()).cartSubtotal//WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'), 10).size()
-
-
-				if (cartSubTotal == 0) {
-					getSpecifiedinStockProductsFromRandomCategoryInTarget()
-				}
-				if(WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Cart/insert NeedQTY By text'),30).getAttribute("value") != '1') {
-					WebUI.click(findTestObject('Object Repository/Cart/insert NeedQTY By text'))
-					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.CONTROL, 'a'))
-					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.BACK_SPACE))
-					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), '1', FailureHandling.CONTINUE_ON_FAILURE)
-					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.TAB))
-				}
-				float Total = (((WebUI.getText(findTestObject('Object Repository/Cart/Cart Subtotal (Inc VAT)')).replaceAll(',', '') =~ '\\d+\\.\\d+')[0]) as float)
-				float lastItemPrice = (new cartItems()).getLastItemPrice()
-				int neededQty=Math.ceil((minimum-Total)/lastItemPrice)+1
-				//				for (int i=1; i< neededQty ; i++) {
-				//					WebUI.waitForElementClickable(findTestObject('Object Repository/Cart/item plus'), 5)
-				//					WebUI.click(findTestObject('Object Repository/Cart/item plus'))
-				//					WebUI.delay(1)
-				//				}
-				WebUI.verifyElementVisible(findTestObject('Object Repository/Cart/insert NeedQTY By text'), FailureHandling.CONTINUE_ON_FAILURE)
-
-				//WebUI.sendKeys(findTestObject(findTestObject('Object Repository/Cart/insert NeedQTY By text')), Keys.chord(Keys.CONTROL, 'a'))
-				WebUI.click(findTestObject('Object Repository/Cart/insert NeedQTY By text'))
-				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.CONTROL, 'a'))
-				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.BACK_SPACE))
-				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), neededQty.toString(), FailureHandling.CONTINUE_ON_FAILURE)
-				WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.TAB))
-				if(WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Error-Max qty'), 5, FailureHandling.CONTINUE_ON_FAILURE)) {
-					WebUI.click(findTestObject('Object Repository/Cart/insert NeedQTY By text'))
-					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.CONTROL, 'a'))
-					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.BACK_SPACE))
-					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), '1', FailureHandling.CONTINUE_ON_FAILURE)
-					WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.TAB))
-					//getSpecifiedinStockProductsFromRandomCategoryInTarget()
-				}
-				//WebUI.(findTestObject('Object Repository/Cart/insert NeedQTY By text'), neededQty.toString())
-				return true
-			}
-		})
-		if(!found) {
-			getSpecifiedinStockProductsFromRandomCategoryInTarget()
-		}
 	}
 	@Keyword
 	def getRandominStockProductsFromRandomCategoryInTarget(boolean isInTarget) {
@@ -319,52 +320,50 @@ public class productsFromCatalog {
 
 	@Keyword
 	def getRandominStockProductsFromRandomCategory() {
+		//#Step 4
 		//CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
 		//WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
-		selectCatalogComponents()
-
-		//		for (int i = 1; i <= 4; i++) {
-		//			WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
-		//		}
-		//
-		//		WebUI.delay(3)
-		WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
-
-		//def xPathDef = "(\"//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')]\")["+elementIndex+"]"
-		List prod = getinStockProductFromOnePage()
-		//KeywordUtil.markError(prod.get(1))
-		if(prod.size()==0){
-			//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)
-			getRandominStockProductsFromRandomCategory()
-
-		} else{
-			def elementIndexproduct= genaralActions.getRandomNumberBetweenOnetoTarget(prod.size())//Math.abs((randomNumberforProduct.nextInt(prod.size())))
-			//KeywordUtil.logInfo(elementIndexproduct.toString() +prod.get(elementIndexproduct).toString())
-			if(elementIndexproduct==0) {
-				elementIndexproduct=1
-			}
-			//tb.addProperty('xpath', ConditionType.EQUALS, "(//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]")
-
-			//WebElement element = WebUiCommonHelper.findWebElement(tb,30)
-			//WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
-			//Updated By Ahmed 14 Mar, 2023
-
-			addProductToCart(prod.size())
-			//checkOnAddToStoreClickable()
-			/*if(WebUI.verifyElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)) {
-			 WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
-			 } else {
-			 //WebUI.takeScreenshot(FailureHandling.CONTINUE_ON_FAILURE)
-			 KeywordUtil.markPassed("try to select product again")
-			 getRandominStockProductsFromRandomCategory()
-			 /*if(WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Cart'), 10,FailureHandling.CONTINUE_ON_FAILURE)) {
-			 WebUI.verifyElementNotClickable(findTestObject('Object Repository/Products/Add To Cart'), FailureHandling.STOP_ON_FAILURE)
-			 } else {
-			 //WebUI.takeScreenshot(FailureHandling.CONTINUE_ON_FAILURE)
-			 KeywordUtil.markError("The product you selected is not found")
-			 }
-			 }*/
-		}
+		WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/getRandominStockProductsFromRandomCategory()'),
+				[:], FailureHandling.STOP_ON_FAILURE)
+		/*selectCatalogComponents()
+		 //		for (int i = 1; i <= 4; i++) {
+		 //			WebUI.scrollToElement(findTestObject('Headers and Footers/Footer contents/Web footer'), 0, FailureHandling.CONTINUE_ON_FAILURE)
+		 //		}
+		 //
+		 //		WebUI.delay(3)
+		 WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+		 //def xPathDef = "(\"//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')]\")["+elementIndex+"]"
+		 List prod = getinStockProductFromOnePage()
+		 //KeywordUtil.markError(prod.get(1))
+		 if(prod.size()==0){
+		 //WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)
+		 getRandominStockProductsFromRandomCategory()
+		 } else{
+		 def elementIndexproduct= genaralActions.getRandomNumberBetweenOnetoTarget(prod.size())//Math.abs((randomNumberforProduct.nextInt(prod.size())))
+		 //KeywordUtil.logInfo(elementIndexproduct.toString() +prod.get(elementIndexproduct).toString())
+		 if(elementIndexproduct==0) {
+		 elementIndexproduct=1
+		 }
+		 //tb.addProperty('xpath', ConditionType.EQUALS, "(//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]")
+		 //WebElement element = WebUiCommonHelper.findWebElement(tb,30)
+		 //WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
+		 //Updated By Ahmed 14 Mar, 2023
+		 addProductToCart(prod.size())
+		 //checkOnAddToStoreClickable()
+		 /*if(WebUI.verifyElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)) {
+		 WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
+		 } else {
+		 //WebUI.takeScreenshot(FailureHandling.CONTINUE_ON_FAILURE)
+		 KeywordUtil.markPassed("try to select product again")
+		 getRandominStockProductsFromRandomCategory()
+		 /*if(WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Cart'), 10,FailureHandling.CONTINUE_ON_FAILURE)) {
+		 WebUI.verifyElementNotClickable(findTestObject('Object Repository/Products/Add To Cart'), FailureHandling.STOP_ON_FAILURE)
+		 } else {
+		 //WebUI.takeScreenshot(FailureHandling.CONTINUE_ON_FAILURE)
+		 KeywordUtil.markError("The product you selected is not found")
+		 }
+		 }
+		 }*/
 
 		/*		String javaScript = '$x'+xPathDef+'.click()'
 		 KeywordUtil.logInfo("**************** " + javaScript)
@@ -386,7 +385,7 @@ public class productsFromCatalog {
 
 
 		List OutOfStockProducts = WebUI.findWebElements(findTestObject('Object Repository/Products/Out of Stock products'),10)
-		return OutOfStockProducts;
+		return OutOfStockProducts
 	}
 
 
@@ -433,141 +432,124 @@ public class productsFromCatalog {
 	}
 	@Keyword
 	def configurableProduct() {
+		//#Step 3
 		//TO DO: Search for another key types of configurations
 		//tb.addProperty('xpath', ConditionType.EQUALS, '//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')]')
+		WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/configurableProduct()'), [:], FailureHandling.STOP_ON_FAILURE)
 
-
-		List genralDropDowns = WebUI.findWebElements(utilityFunctions.addXpathToTestObject('//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')]'), 30)
-		if (genralDropDowns.size()!=0) {
-
-
-
-			def element
-
-			for (int i = 1; i <= genralDropDowns.size(); i++) {
-				tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-						i) + ']')
-
-				element = WebUiCommonHelper.findWebElement(tb, 30).findElement(By.xpath(('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-						i) + ']//child::*[contains(@class,\'styles_dropdownOption\') or contains(@class,\'styles_swatchOption\') or contains(@class,\'styles_checkboxOption\')]')).getAttribute(
-						'class')
-
-
-				switch (element) {
-					case ~('^styles_dropdownOption.*') :
-						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-						i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]')
-					//WebUI.scrollToElement(tb, 10)
-
-						WebUI.click(tb)
-
-
-					/*						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-					 i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[1]')
-					 */
-						tb.addProperty('xpath', ConditionType.EQUALS, ('((//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-								i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[@class=\'menu__item\']//button[not(@disabled)])[1]')
-						WebUI.click(tb)
-
-						break
-					case ~('^styles_checkboxOption.*') :
-						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-						i) + ']//span[contains(@class,\'styles_checkboxOption\')][1]//input')
-
-						WebUI.check(tb)
-
-						break
-					case ~('^styles_swatchOption.*') :
-						tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
-						i) + ']//span[contains(@class,\'styles_swatchOption\')][1]')
-
-						WebUI.check(tb)
-				}
-			}
-		}
+		/*List genralDropDowns = WebUI.findWebElements(utilityFunctions.addXpathToTestObject('//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')]'), 30)
+		 if (genralDropDowns.size()!=0) {
+		 def element
+		 for (int i = 1; i <= genralDropDowns.size(); i++) {
+		 tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+		 i) + ']')
+		 element = WebUiCommonHelper.findWebElement(tb, 30).findElement(By.xpath(('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+		 i) + ']//child::*[contains(@class,\'styles_dropdownOption\') or contains(@class,\'styles_swatchOption\') or contains(@class,\'styles_checkboxOption\')  or contains(@class,\'styles_badgeOption\')  or (@src and @alt)]')).getAttribute(
+		 'class')
+		 println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" +element.toString())
+		 switch (element) {
+		 case ~('^styles_dropdownOption.*') :
+		 tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+		 i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]')
+		 //WebUI.scrollToElement(tb, 10)
+		 WebUI.click(tb)
+		 tb.addProperty('xpath', ConditionType.EQUALS, ('((//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+		 i) + ']//following-sibling::*[@class]//*[contains(@class,\'general-dropdown__button\')]//following-sibling::*[contains(@class,\'general-dropdown__menu\')]//li[@class=\'menu__item\']//button[not(@disabled)])[1]')
+		 WebUI.click(tb)
+		 break
+		 case ~('^styles_checkboxOption.*') :
+		 tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+		 i) + ']//span[contains(@class,\'styles_checkboxOption\')][1]//input')
+		 WebUI.check(tb)
+		 break
+		 case ~('^styles_swatchOption.*') :
+		 tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+		 i) + ']//span[contains(@class,\'styles_swatchOption\')][1]')
+		 WebUI.check(tb)
+		 break
+		 case ~('^styles_badgeOption.*') :
+		 tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+		 i) + ']//button[contains(@class,\'styles_badgeOption\')][1]')
+		 WebUI.check(tb)
+		 break
+		 case '' :
+		 tb.addProperty('xpath', ConditionType.EQUALS, ('(//div[contains(@class,\'attributesContainer_attributesContainer\')]//div[contains(@class,\'attributesContainer_optionsList\')])[' +
+		 i) + ']//img[@src][1]')
+		 WebUI.check(tb)
+		 break
+		 }
+		 }
+		 }*/
 	}
 
 
 	@Keyword
 	def checkOnAddToStoreClickable(def currentURL) {
-		KeywordUtil.logInfo(WebUI.getUrl())
-		KeywordUtil.logInfo(currentURL)
 
-		//if(WebUI.verifyElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)) {
-		if(WebUI.getUrl()==currentURL){
-
-
-			WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
-
-		} else {
-			KeywordUtil.markPassed("Trying to Get Configurable product")
-			WebUI.scrollToElement(findTestObject('Object Repository/Products/Product content'), 0, FailureHandling.STOP_ON_FAILURE)
-			configurableProduct()
-			//KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>> end configurable")
-			tb = utilityFunctions.addXpathToTestObject("//*[@class='product-content__button-wrapper']//button[@class='product-content__cart']")
-			//tb.addProperty('xpath', ConditionType.EQUALS, "//*[@class='product-content__button-wrapper']//button[@class='product-content__cart']")
-			//KeywordUtil.logInfo(WebUI.waitForElementClickable(tb, 10, FailureHandling.CONTINUE_ON_FAILURE).toString())
-
-			try {
-				//KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>> 1")
-				//scrollingActions.scrollToClick(tb)
-				WebUI.click(tb)
-				if(WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'),5, FailureHandling.CONTINUE_ON_FAILURE)) {
-					WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
-				}
-			} catch (Exception e) {
-				for(int i=5;i>0;i--) {
-					if(WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'),5, FailureHandling.CONTINUE_ON_FAILURE) && i!=5) {
-						WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
-						break
-					}
-					WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/"+i.toString()+");", null);
-					WebUI.click(tb, FailureHandling.CONTINUE_ON_FAILURE)
-				}
-				e.printStackTrace()
-				getRandominStockProductsFromRandomCategory()
-			}
-			/*if(WebUI.waitForElementClickable(tb, 10, FailureHandling.CONTINUE_ON_FAILURE)) {
-			 KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>> 1")
-			 //scrollingActions.scrollToClick(tb)
-			 WebUI.click(tb, FailureHandling.CONTINUE_ON_FAILURE)
-			 WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'),5, FailureHandling.CONTINUE_ON_FAILURE)
-			 WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
-			 } else {
-			 KeywordUtil.markPassed("Trying to Get a new product")
-			 for(int i=5;i>0;i--) {
-			 //KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>>>>>")
-			 if (WebUI.waitForElementClickable(tb, 10, FailureHandling.CONTINUE_ON_FAILURE)) {
-			 //WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/2);", null);
-			 WebUI.click(tb)
-			 WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'),5, FailureHandling.CONTINUE_ON_FAILURE)
-			 WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
-			 break
-			 }
-			 WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/"+i.toString()+");", null);
-			 WebUI.click(findTestObject('Sign up Page/Sign up By email/Sign Up Button'))
-			 }
-			 getRandominStockProductsFromRandomCategory()
-			 }*/
-		}
-
+		WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/checkOnAddToStoreClickable(def currentURL)'),[('currentURL') : currentURL], FailureHandling.STOP_ON_FAILURE)
+		/*	KeywordUtil.logInfo(WebUI.getUrl())
+		 KeywordUtil.logInfo(currentURL)
+		 //if(WebUI.verifyElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)) {
+		 if(WebUI.getUrl()==currentURL){
+		 WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
+		 } else {
+		 KeywordUtil.markPassed("Trying to Get Configurable product")
+		 //WebUI.scrollToElement(findTestObject('Object Repository/Products/Product content'), 0, FailureHandling.STOP_ON_FAILURE)
+		 tb = utilityFunctions.addXpathToTestObject("//*[@class='product-content__button-wrapper']//button[@class='product-content__cart'] | //button[starts-with(@class,'styles_cartWrapper__')]")
+		 for (int i = 5; i > 0; i--) {
+		 //KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>>>>>")
+		 if (!(WebUI.waitForElementVisible(tb, 5, FailureHandling.CONTINUE_ON_FAILURE))) {
+		 //WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/2);", null);
+		 break
+		 }
+		 WebUI.executeJavaScript(('window.scrollTo(0, document.body.scrollHeight/' + i.toString()) + ');', null)
+		 //WebUI.click(findTestObject(testObjectPath))
+		 }
+		 configurableProduct()
+		 //KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>> end configurable")
+		 //tb.addProperty('xpath', ConditionType.EQUALS, "//*[@class='product-content__button-wrapper']//button[@class='product-content__cart']")
+		 //KeywordUtil.logInfo(WebUI.waitForElementClickable(tb, 10, FailureHandling.CONTINUE_ON_FAILURE).toString())
+		 try {
+		 //KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>> 1")
+		 //scrollingActions.scrollToClick(tb)
+		 WebUI.click(tb)
+		 if(WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'),5, FailureHandling.CONTINUE_ON_FAILURE)) {
+		 WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
+		 }
+		 } catch (Exception e) {
+		 for(int i=5;i>0;i--) {
+		 if(WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'),5, FailureHandling.CONTINUE_ON_FAILURE) && i!=5) {
+		 WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
+		 break
+		 }
+		 WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/"+i.toString()+");", null);
+		 WebUI.click(tb, FailureHandling.CONTINUE_ON_FAILURE)
+		 }
+		 e.printStackTrace()
+		 getRandominStockProductsFromRandomCategory()
+		 }
+		 }
+		 */
 	}
 	def addProductToCart(int sizeForRandom) {
-		def elementIndexproduct= genaralActions.getRandomNumberBetweenOnetoTarget(sizeForRandom)//Math.abs((randomNumberforProduct.nextInt(sizeForRandom)))
-		//KeywordUtil.logInfo(elementIndexproduct.toString() +prod.get(elementIndexproduct).toString())
-		if(elementIndexproduct==0) {
-			elementIndexproduct=1
-		}
-		def currentURL = WebUI.getUrl()
-		//tb.addProperty('xpath', ConditionType.EQUALS, "(//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]")
-
-		utilityFunctions.clickOnObjectusingJavaScript(findTestObject('Object Repository/Products/Add InStock ToCart', [index:elementIndexproduct]))
-		//WebElement element = WebUiCommonHelper.findWebElement(tb,30)
-		//WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
-		WebUI.delay(5)
-		checkOnAddToStoreClickable(currentURL)
+		//#step 1
+		/*def elementIndexproduct= genaralActions.getRandomNumberBetweenOnetoTarget(sizeForRandom)//Math.abs((randomNumberforProduct.nextInt(sizeForRandom)))
+		 //KeywordUtil.logInfo(elementIndexproduct.toString() +prod.get(elementIndexproduct).toString())
+		 if(elementIndexproduct==0) {
+		 elementIndexproduct=1
+		 }
+		 def currentURL = WebUI.getUrl()
+		 //tb.addProperty('xpath', ConditionType.EQUALS, "(//div[@class='styles_productItem__YY5Bs']//button[@class='styles_atcButton__qYfHB styles_atcButton__kaT52'][contains(text(),'Add to Cart') or contains(text(),'أضف إلى السلة')])["+elementIndexproduct+"]")
+		 utilityFunctions.clickOnObjectusingJavaScript(findTestObject('Object Repository/Products/Add InStock ToCart', [index:elementIndexproduct]))
+		 //WebElement element = WebUiCommonHelper.findWebElement(tb,30)
+		 //WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
+		 WebUI.delay(5)
+		 checkOnAddToStoreClickable(currentURL)*/
+		WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/addProductToCart(int sizeForRandom)'), [('sizeForRandom') : sizeForRandom],
+		FailureHandling.STOP_ON_FAILURE)
 	}
 	def selectCatalogComponents() {
+		//#step 5
 		List Categories = catalogComp.getCategoryElements()
 
 

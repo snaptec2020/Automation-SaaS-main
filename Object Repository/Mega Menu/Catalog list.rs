@@ -6,12 +6,12 @@
    <elementGuidId>5e1c995b-56c9-4883-83bf-802157454696</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
          <value>//a[contains(@class,'styles_megaMenuItem')]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//a[contains(@class,'styles_megaMenuItem')]</value>
+         <key>BASIC</key>
+         <value>(//a[contains(@class,'styles_megaMenuItem')] | //div[starts-with(@class,'styles_menu__')]/div/div/a)</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -21,7 +21,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//a[contains(@class,'styles_megaMenuItem')]</value>
-      <webElementGuid>0093018d-2755-4d7d-9adb-d1632610f40f</webElementGuid>
+      <value>(//a[contains(@class,'styles_megaMenuItem')] | //div[starts-with(@class,'styles_menu__')]/div/div/a)</value>
+      <webElementGuid>2192cad6-50d0-4d3a-9cf1-b8a97cb060d4</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

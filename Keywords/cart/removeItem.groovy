@@ -82,6 +82,25 @@ public class removeItem {
 			}
 		//}
 	}
+	@Keyword
+	def deleteOutStockFromCart() {
+		//TestObject removeProductFromCart = new TestObject()
+		//removeProductFromCart.addProperty('xpath', ConditionType.EQUALS, '//td[@class="col item"]//a[@title="إزالة منتج"]')
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Out Of Stock Items'),5)
+		List<WebElement> removeProductFromCartElements = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Cart/Out Of Stock Items'), 5)
+
+		while (removeProductFromCartElements.size() != 0) {
+			if (removeProductFromCartElements.size().equals(1)) {
+				//CustomKeywords.'products.productsFromCatalog.clickJS'(removeProductFromCartElements.get(0), 10)
+				//CustomKeywords.'utility.Utility.clickOnObjectusingJavaScript'(removeProductFromCartElements.get(0))
+				utilityFunctions.clickOnObjectusingJavaScript(removeProductFromCartElements.get(0))
+				removeProductFromCartElements.remove(0)
+			} else {
+				utilityFunctions.clickOnObjectusingJavaScript(removeProductFromCartElements.get(0))
+				removeProductFromCartElements = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Cart/Out Of Stock Items'), 10)
+			}
+		}
+	}
 }
 
 

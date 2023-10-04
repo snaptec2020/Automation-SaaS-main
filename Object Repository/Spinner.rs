@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@class='indicator__icon-root']</value>
+         <value>//*[@class='indicator__icon-root'] | //img[@alt='loading']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@class='indicator__icon-root']</value>
-      <webElementGuid>4ece9827-3389-4b40-9540-1dd2edb6efb3</webElementGuid>
+      <value>//*[@class='indicator__icon-root'] | //img[@alt='loading']</value>
+      <webElementGuid>433c9e80-61e0-42d8-aab9-13f803692902</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

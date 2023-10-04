@@ -27,35 +27,35 @@ WebUI.callTestCase(findTestCase('FE/Check out/validation/Add Location by Map'), 
 def locationSuccessMessage=CustomKeywords.'generalactions.notificationsObject.getMessageText'()
 KeywordUtil.logInfo(locationSuccessMessage)
 switch (locationSuccessMessage) {
-	case 'عنوانك ينقصه بعض المعلومات.' :
-	case 'Your address are missing some informations.': 
-		for (int i=1 ; i<=3; i++) {
-			tryToGetLocation()
-			locationSuccessMessage=CustomKeywords.'generalactions.notificationsObject.getMessageText'()
-			switch (locationSuccessMessage) {
-				case 'Save Shipping Address successfully':
-				case 'حفظ عنوان الشحن بنجاح':
-				break;
-			}
-			
-			
-			/*if (!(CustomKeywords.'generalactions.notificationsObject.verifyNotificationVisble'('عنوانك ينقصه بعض المعلومات',
-				'Save Shipping Address successfully'))) {
-				break
-			}*/
-			
-		}
-		WebUI.callTestCase(findTestCase('FE/Check out/validation/Add location Manually'), [:], FailureHandling.STOP_ON_FAILURE)
-		break;
-		case 'Save Shipping Address successfully':
-		case 'حفظ عنوان الشحن بنجاح':
-		break; 
-		//case 'Country is not available':
-		//case 'الدولة غير متاحة':
-		//WebUI.callTestCase(findTestCase('FE/Check out/validation/Add location Manually'), [:], FailureHandling.STOP_ON_FAILURE)
-		//break;
+    case 'عنوانك ينقصه بعض المعلومات.' :
+    case 'Your address are missing some informations.': 
+        for (int i=1 ; i<=3; i++) {
+            tryToGetLocation()
+            locationSuccessMessage=CustomKeywords.'generalactions.notificationsObject.getMessageText'()
+            switch (locationSuccessMessage) {
+                case 'Save Shipping Address successfully':
+                case 'حفظ عنوان الشحن بنجاح':
+                break;
+            }
+            
+            
+            /*if (!(CustomKeywords.'generalactions.notificationsObject.verifyNotificationVisble'('عنوانك ينقصه بعض المعلومات',
+                'Save Shipping Address successfully'))) {
+                break
+            }*/
+            
+        }
+        WebUI.callTestCase(findTestCase('FE/Check out/validation/Add location Manually'), [:], FailureHandling.STOP_ON_FAILURE)
+        break;
+        case 'Save Shipping Address successfully':
+        case 'حفظ عنوان الشحن بنجاح':
+        break; 
+        //case 'Country is not available':
+        //case 'الدولة غير متاحة':
+        //WebUI.callTestCase(findTestCase('FE/Check out/validation/Add location Manually'), [:], FailureHandling.STOP_ON_FAILURE)
+        //break;
     
-	
+    
         
 }
 
@@ -80,11 +80,11 @@ switch (locationSuccessMessage) {
 def tryToGetLocation() {
     WebUI.click(findTestObject('Check Out/Zoom In (Map)'))
 
-   // int mapHeight = WebUI.getElementHeight(findTestObject('Object Repository/Check Out/Map Block')) / 2
+    int mapHeight = WebUI.getElementHeight(findTestObject('Object Repository/Map Objs/Map Block')) / 2
 
-    //int mapWidth = WebUI.getElementWidth(findTestObject('Object Repository/Check Out/Map Block')) / 2
+    int mapWidth = WebUI.getElementWidth(findTestObject('Object Repository/Map Objs/Map Block')) / 2
 
-    WebUI.clickOffset(findTestObject('Check Out/Map Block'), 0, 0)
+    WebUI.clickOffset(findTestObject('Map Objs/Map Block'), mapWidth, mapHeight)
 
     WebUI.click(findTestObject('Check Out/Save location Map Button'))
 }
