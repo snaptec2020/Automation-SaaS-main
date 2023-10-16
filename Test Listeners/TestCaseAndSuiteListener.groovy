@@ -28,6 +28,7 @@ import sun.security.util.KeyUtil
 import com.kms.katalon.core.annotation.BeforeTestCase
 import com.kms.katalon.core.annotation.BeforeTestSuite
 import com.kms.katalon.core.annotation.SetupTestCase
+import com.kms.katalon.core.appium.driver.AppiumDriverManager
 import com.kms.katalon.core.annotation.AfterTestCase
 import com.kms.katalon.core.annotation.AfterTestSuite
 import com.kms.katalon.core.context.TestCaseContext
@@ -61,6 +62,7 @@ class TestCaseAndSuiteListener {
 	//boolean isItFirstSite = true
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
+		//KeywordUtil.logInfo(AppiumDriverManager.getDeviceOS(StringConstants.CONF_PROPERTY_MOBILE_DRIVER))
 		if(GlobalVariable.testSuiteStatus == 'Not Run' & testCaseContext.getTestCaseId().indexOf("/Helpdesk/")<=0) {
 			GlobalVariable.RunningMode=CustomKeywords.'generalactions.EnvironmentSettings.isRunningByMobile'()
 			GlobalVariable.launchingConfig.put("Mode",(testCaseContext.testCaseId=~"Test Cases/(.*?)/(.*?)/")[0][1])

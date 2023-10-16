@@ -388,6 +388,15 @@ def static "generalactions.generalActions.waiteSpinnerToHide"() {
 }
 
 
+def static "com.katalon.plugin.keyword.Gsuite.GsuiteReader.getSpreadSheetRecords"(
+    	String spreadsheetId	
+     , 	String range	) {
+    (new com.katalon.plugin.keyword.Gsuite.GsuiteReader()).getSpreadSheetRecords(
+        	spreadsheetId
+         , 	range)
+}
+
+
 def static "signup.signupPhoneVerifications.phoneVerificationMessage"(
     	Object expectedMessage	) {
     (new signup.signupPhoneVerifications()).phoneVerificationMessage(

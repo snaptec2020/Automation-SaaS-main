@@ -48,69 +48,30 @@ import java.util.*
 import javax.crypto.Mac as Mac
 import javax.crypto.spec.SecretKeySpec as SecretKeySpec
 
-SmartWait smw = new SmartWait()
-
-WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/getSpecifiedinStockProductsFromRandomCategoryInTarget()'), 
-    [:], FailureHandling.STOP_ON_FAILURE)
-
-WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/getRandominStockProductsFromRandomCategory()'), 
-    [:], FailureHandling.STOP_ON_FAILURE)
-
-WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/configurableProduct()'), [:], FailureHandling.STOP_ON_FAILURE)
-
-WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/checkOnAddToStoreClickable(def currentURL)'), 
-    [('currentURL') : ''], FailureHandling.STOP_ON_FAILURE)
-
-WebUI.click(findTestObject //cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
-    ) //CustomKeywords.'cart.removeItem.clearCart'()
-//WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog - Select All Categories and Scrolling'), [:], FailureHandling.STOP_ON_FAILURE)
-//WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'), 10).size()
-//KeywordUtil.logInfo(cartSubTotal.toString())
-//CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromRandomCategory'()
-//switch(cartSubTotal){
-//}
-
-static void main(String[] args) {
-    WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
-
-    if (WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Out Of Stock Items'), 5)) {
-        CustomKeywords.'cart.removeItem.deleteOutStockFromCart'()
-    }
-    
-    float cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
-
-    if ((cartSubTotal == 0) || !((cartSubTotal >= GlobalVariable.minimum) && (cartSubTotal <= GlobalVariable.maximum))) {
-        while (!((cartSubTotal >= GlobalVariable.minimum) && (cartSubTotal <= GlobalVariable.maximum))) {
-            if (cartSubTotal > GlobalVariable.maximum) {
-                CustomKeywords.'cart.removeItem.deleteItemFromCart'()
-
-                cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
-            } else if (cartSubTotal < GlobalVariable.minimum) {
-                CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategoryInTarget'()
-
-                cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
-            } else if (WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Out Of Stock Items'), 5)) {
-                CustomKeywords.'cart.removeItem.deleteOutStockFromCart'()
-
-                cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
-            } else {
-                CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategoryInTarget'()
-
-                cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
-            }
-        }
-    }
-    
-    WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
-
-    WebUI.verifyElementVisible(findTestObject('Check Out/Apply Discount Button'))
-
-    WebUI.verifyElementVisible(findTestObject('Check Out/Cart Calculation'))
-
-    WebUI.verifyElementVisible(findTestObject('Check Out/Proceed To Checkout Button'))
-
-    WebUI.verifyElementVisible(findTestObject('Check Out/Shopping Cart head'))
-}
+def Data=CustomKeywords.'com.katalon.plugin.keyword.Gsuite.GsuiteReader.getSpreadSheetRecords'('1UIjlLn5PfIF65s7jpP5KWHoLwJn6USO35oWz5WA4RDU', 
+    'A2:D')
+System.out.println("Data ---> "+Data)
+//SmartWait smw = new SmartWait()
+//
+//WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/getSpecifiedinStockProductsFromRandomCategoryInTarget()'), 
+//    [:], FailureHandling.STOP_ON_FAILURE)
+//
+//WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/getRandominStockProductsFromRandomCategory()'), 
+//    [:], FailureHandling.STOP_ON_FAILURE)
+//
+//WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/configurableProduct()'), [:], FailureHandling.STOP_ON_FAILURE)
+//
+//WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/checkOnAddToStoreClickable(def currentURL)'), 
+//    [('currentURL') : ''], FailureHandling.STOP_ON_FAILURE)
+//
+//WebUI.click(findTestObject //cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
+//    ) //CustomKeywords.'cart.removeItem.clearCart'()
+////WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog - Select All Categories and Scrolling'), [:], FailureHandling.STOP_ON_FAILURE)
+////WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'), 10).size()
+////KeywordUtil.logInfo(cartSubTotal.toString())
+////CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromRandomCategory'()
+////switch(cartSubTotal){
+////}
 
 //Files.copy(new File("C:/Users/aboel/Desktop/GitHub/Automation-SaaS-main/Reports/20230911_111657/Test Suites/Regression Suites/Checkout All methods/20230911_111657/20230911_111657.html").getPath(), new File("C:/Users/aboel/Desktop/GitHub/Automation-SaaS-main/Reports/20230911_111657/Test Suites/Regression Suites/Checkout All methods/20230911_111657/index.html").getPath())
 /*

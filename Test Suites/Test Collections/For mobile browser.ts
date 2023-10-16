@@ -14,7 +14,7 @@
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
-         <runEnabled>true</runEnabled>
+         <runEnabled>false</runEnabled>
          <testSuiteEntity>Test Suites/Mobile browsers/Ar/Regression test after deployments - AR</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
@@ -24,15 +24,25 @@
             <requireConfigurationData>false</requireConfigurationData>
             <runConfigurationId>Chrome</runConfigurationId>
          </configuration>
-         <runEnabled>true</runEnabled>
+         <runEnabled>false</runEnabled>
          <testSuiteEntity>Test Suites/Mobile browsers/Ar/Regression test after deployments - AR</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
-            <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Rel-Bed Quartar KSA </profileName>
-            <requireConfigurationData>false</requireConfigurationData>
-            <runConfigurationId>Chrome</runConfigurationId>
+            <groupName>Mobile</groupName>
+            <profileName>SaaS-Stg-Tanmiah</profileName>
+            <requireConfigurationData>true</requireConfigurationData>
+            <runConfigurationData>
+               <entry>
+                  <key>deviceName</key>
+                  <value>emulator-5554 (sdk_gphone64_x86_64 - Android 13)</value>
+               </entry>
+               <entry>
+                  <key>deviceId</key>
+                  <value>emulator-5554</value>
+               </entry>
+            </runConfigurationData>
+            <runConfigurationId>Android</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
          <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
