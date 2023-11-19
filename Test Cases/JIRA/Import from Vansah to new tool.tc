@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Import from Vansah to new tool</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>1ceff52a-f290-4152-ad2d-550f947ffff5</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>fdd9c733-e962-4239-9696-39ee92fec25d</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>[:]</defaultValue>
+      <description></description>
+      <id>fdd9c733-e962-4239-9696-39ee92fec25d</id>
+      <masked>false</masked>
+      <name>testCaseInfo</name>
+   </variable>
+</TestCaseEntity>

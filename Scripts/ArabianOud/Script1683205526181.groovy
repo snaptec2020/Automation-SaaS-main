@@ -31,7 +31,7 @@ WebUI.setText(findTestObject('Object Repository/ArabianOud/Page_Register Account
 
 WebUI.setText(findTestObject('Object Repository/ArabianOud/Page_Register Account/input_First Name_lastname'), 'Abc')
 
-WebUI.setText(findTestObject('Object Repository/ArabianOud/Page_Register Account/input_Last Name_email'), 'ahmed@snaptec.co')
+WebUI.setText(findTestObject('Object Repository/ArabianOud/Page_Register Account/input_Last Name_email'), 'Ahmed@AutomationHeadless.co')
 
 WebUI.setText(findTestObject('Object Repository/ArabianOud/Page_Register Account/input_land Islands_telephone'), '561613356')
 

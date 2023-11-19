@@ -15,7 +15,7 @@
             <runConfigurationId>Chrome (headless)</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Web Browsers/Arabian Attack</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Test Suites/Arabian Attack</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -25,7 +25,7 @@
             <runConfigurationId>Chrome (headless)</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Web Browsers/Arabian Attack</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Test Suites/Arabian Attack</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -35,7 +35,7 @@
             <runConfigurationId>Chrome (headless)</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Web Browsers/Arabian Attack</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Test Suites/Arabian Attack</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -45,7 +45,7 @@
             <runConfigurationId>Chrome (headless)</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Web Browsers/Arabian Attack</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Test Suites/Arabian Attack</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
@@ -55,7 +55,37 @@
             <runConfigurationId>Chrome (headless)</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Web Browsers/Arabian Attack</testSuiteEntity>
+         <testSuiteEntity>Test Suites/Test Suites/Arabian Attack</testSuiteEntity>
+      </TestSuiteRunConfiguration>
+      <TestSuiteRunConfiguration>
+         <configuration>
+            <groupName>Web Desktop</groupName>
+            <profileName>default</profileName>
+            <requireConfigurationData>false</requireConfigurationData>
+            <runConfigurationId>Chrome (headless)</runConfigurationId>
+         </configuration>
+         <runEnabled>false</runEnabled>
+         <testSuiteEntity>Test Suites/Test Suites/Arabian Attack</testSuiteEntity>
+      </TestSuiteRunConfiguration>
+      <TestSuiteRunConfiguration>
+         <configuration>
+            <groupName>Web Desktop</groupName>
+            <profileName>default</profileName>
+            <requireConfigurationData>false</requireConfigurationData>
+            <runConfigurationId>Chrome (headless)</runConfigurationId>
+         </configuration>
+         <runEnabled>false</runEnabled>
+         <testSuiteEntity>Test Suites/Test Suites/Arabian Attack</testSuiteEntity>
+      </TestSuiteRunConfiguration>
+      <TestSuiteRunConfiguration>
+         <configuration>
+            <groupName>Web Desktop</groupName>
+            <profileName>default</profileName>
+            <requireConfigurationData>false</requireConfigurationData>
+            <runConfigurationId>Chrome (headless)</runConfigurationId>
+         </configuration>
+         <runEnabled>false</runEnabled>
+         <testSuiteEntity>Test Suites/Test Suites/Arabian Attack</testSuiteEntity>
       </TestSuiteRunConfiguration>
    </testSuiteRunConfigurations>
 </TestSuiteCollectionEntity>
