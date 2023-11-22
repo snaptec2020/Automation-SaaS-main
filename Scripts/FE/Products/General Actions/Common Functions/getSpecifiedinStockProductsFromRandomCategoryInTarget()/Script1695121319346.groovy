@@ -10,7 +10,8 @@ import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
-import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -36,14 +37,15 @@ if (prod.size()==0) {
 }
 //KeywordUtil.logInfo("++++++++++++++++++++++++++++"+prod.size().toString())
 boolean found=false
-prod.any ({
+def getRandomElement= prod.get(CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenAnytoAny'(prod.size(), 0))
+//prod.any ({
 	//KeywordUtil.logInfo("++++++++++++++++++++++++++++"+prod.size().toString())
-	WebElement currentPrice= it.findElements(By.xpath("./div[contains(@class,'styles_informationContainer')]/div[contains(@class,'styles_priceContainer')]/span/span/span/span/span[1]")).get(0)
+	WebElement currentPrice= getRandomElement.findElements(By.xpath("./div[contains(@class,'styles_informationContainer')]/div[contains(@class,'styles_priceContainer')]/span/span/span/span/span[1]")).get(0)
 	float priceOfSelectedPrudctAmount= currentPrice.getText().replaceAll(",", "").replaceAll(" ", "").toFloat()
 	if(priceOfSelectedPrudctAmount>=minimum & priceOfSelectedPrudctAmount<=maximum) {
 		found=true
 		//WebElement currentAddToCartBtn=it.findElements(By.xpath("./div/div/button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to Cart')]")).get(0)
-		WebElement currentAddToCartBtn=it.findElements(By.xpath(".//child::button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to Cart')]")).get(0) //child::button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to Cart')]
+		WebElement currentAddToCartBtn=getRandomElement.findElements(By.xpath(".//child::button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to Cart')]")).get(0) //child::button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to Cart')]
 		def currentURL = WebUI.getUrl()
 		(CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(currentAddToCartBtn))
 		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(currentAddToCartBtn))
@@ -59,7 +61,7 @@ prod.any ({
 	}else if (priceOfSelectedPrudctAmount < minimum) {
 		found=true
 		//WebElement currentAddToCartBtn=it.findElements(By.xpath("./div/div/button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to Cart')]")).get(0)
-		WebElement currentAddToCartBtn=it.findElements(By.xpath(".//child::button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to Cart')]")).get(0)
+		WebElement currentAddToCartBtn=getRandomElement.findElements(By.xpath(".//child::button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to Cart')]")).get(0)
 		def currentURL = WebUI.getUrl()
 		(CustomKeywords.'helpdesk.HelpdeskUtil.ScrollToElement'(currentAddToCartBtn))
 		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(currentAddToCartBtn))
@@ -86,6 +88,7 @@ prod.any ({
 			WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.TAB))
 		}
 		float Total = (((WebUI.getText(findTestObject('Object Repository/Cart/Cart Subtotal (Inc VAT)')).replaceAll(',', '') =~ '\\d+\\.\\d+')[0]) as float)
+		
 		float lastItemPrice = CustomKeywords.'cart.cartItems.getLastItemPrice'()
 		int neededQty=Math.ceil((minimum-Total)/lastItemPrice)+1
 		//				for (int i=1; i< neededQty ; i++) {
@@ -93,18 +96,20 @@ prod.any ({
 		//					WebUI.click(findTestObject('Object Repository/Cart/item plus'))
 		//					WebUI.delay(1)
 		//				}
+		KeywordUtil.logInfo(Total.toString()+"\n"+lastItemPrice.toString()+"\n"+neededQty)
 		WebUI.verifyElementVisible(findTestObject('Object Repository/Cart/insert NeedQTY By text'), FailureHandling.CONTINUE_ON_FAILURE)
+		
 
 		//WebUI.sendKeys(findTestObject(findTestObject('Object Repository/Cart/insert NeedQTY By text')), Keys.chord(Keys.CONTROL, 'a'))
 		WebUI.click(findTestObject('Object Repository/Cart/insert NeedQTY By text'))
 		WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.CONTROL, 'a'))
-		WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.BACK_SPACE))
+		//WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.BACK_SPACE))
 		WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), neededQty.toString(), FailureHandling.CONTINUE_ON_FAILURE)
 		WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.TAB))
 		if(WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Error-Max qty'), 5, FailureHandling.CONTINUE_ON_FAILURE)) {
 			WebUI.click(findTestObject('Object Repository/Cart/insert NeedQTY By text'))
 			WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.CONTROL, 'a'))
-			WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.BACK_SPACE))
+			//WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.BACK_SPACE))
 			WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), '1', FailureHandling.CONTINUE_ON_FAILURE)
 			WebUI.sendKeys(findTestObject('Object Repository/Cart/insert NeedQTY By text'), Keys.chord(Keys.TAB))
 			//getSpecifiedinStockProductsFromRandomCategoryInTarget()
@@ -112,10 +117,10 @@ prod.any ({
 		//WebUI.(findTestObject('Object Repository/Cart/insert NeedQTY By text'), neededQty.toString())
 		return true
 	}
-})
-if(!found) {
+//})
+/*if(!found) {
 	//getSpecifiedinStockProductsFromRandomCategoryInTarget()
 	WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/getSpecifiedinStockProductsFromRandomCategoryInTarget()'),
 		[:], FailureHandling.STOP_ON_FAILURE)
-}
+}*/
 //}

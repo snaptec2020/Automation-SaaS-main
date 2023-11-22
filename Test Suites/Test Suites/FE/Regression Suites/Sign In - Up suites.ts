@@ -43,7 +43,7 @@
       <guid>785a2aac-0566-4708-a470-2af5ebe003d5</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/LogOut/Validation/LogOut</testCaseId>
+      <testCaseId>Test Cases/FE/LogOut/Validation/Force logout LogOut</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
@@ -71,7 +71,7 @@
       <guid>371b0ad6-3af5-4a99-bb07-bc9a78d567b6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/LogOut/Validation/LogOut</testCaseId>
+      <testCaseId>Test Cases/FE/LogOut/Validation/Force logout LogOut</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
@@ -99,7 +99,7 @@
       <guid>2be1f58c-17ca-45c8-acad-b7daaf20119a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/LogOut/Validation/LogOut</testCaseId>
+      <testCaseId>Test Cases/FE/LogOut/Validation/Force logout LogOut</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>

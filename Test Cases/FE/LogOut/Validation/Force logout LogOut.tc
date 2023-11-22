@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>LogOut</name>
+   <name>Force logout LogOut</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>ba140e56-77e2-45b5-be13-a055e544ab70</testCaseGuid>
+   <testCaseGuid>0cd6b420-63e2-463c-b157-184b12c41823</testCaseGuid>
 </TestCaseEntity>
