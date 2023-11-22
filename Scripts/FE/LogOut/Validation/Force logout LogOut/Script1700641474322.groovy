@@ -17,26 +17,8 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate to Sgin in'), [:], FailureHandling.STOP_ON_FAILURE)
+String script = 'return (localStorage.removeItem("BROWSER_PERSISTENCE__signin_token"))'
 
-WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), GlobalVariable.phoneNumber)
+WebUI.executeJavaScript(script, null)
 
-WebUI.click(findTestObject('login page/phone page/Submit Button phone number'))
-
-GlobalVariable.shouldRefresh = CustomKeywords.'generalactions.notificationsObject.waitNotificationVisble'('الرجاء الانتظار للحظة والمحاولة مرة أخرى', 
-    'Please wait for a second and try again')
-
-if (GlobalVariable.shouldRefresh) {
-    WebUI.delay(2)
-
-    WebUI.navigateToUrl(GlobalVariable.URL)
-
-    WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/Login by phone/Success Sign in by phone'), [:], FailureHandling.STOP_ON_FAILURE)
-}
-
-WebUI.callTestCase(findTestCase('FE/OTP/General Actions/Insert fixed OTP'), [:], FailureHandling.STOP_ON_FAILURE)
-
-WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'))
-
-//WebUI.callTestCase(findTestCase('FE/LogOut/Validation/Force logout LogOut'), [:], FailureHandling.STOP_ON_FAILURE)
-
+WebUI.refresh(FailureHandling.CONTINUE_ON_FAILURE)

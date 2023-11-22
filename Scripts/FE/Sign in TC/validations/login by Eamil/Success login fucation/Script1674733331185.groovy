@@ -40,7 +40,7 @@ if(GlobalVariable.shouldRefresh) {
 }
 } else {
 	KeywordUtil.logInfo('the user alreay logged in so we will logout and login again')
-	WebUI.callTestCase(findTestCase('FE/LogOut/Validation/LogOut'), [:], FailureHandling.STOP_ON_FAILURE)
+	WebUI.callTestCase(findTestCase('FE/LogOut/Validation/Force logout LogOut'), [:], FailureHandling.STOP_ON_FAILURE)
 	WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/login by Eamil/Success login fucation'), [:], FailureHandling.STOP_ON_FAILURE)
 }
 
