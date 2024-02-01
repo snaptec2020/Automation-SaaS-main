@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//*[starts-with(@class,'styles_headerLogo__')] | //a[starts-with(@class,'styles_containerLogo__')]</value>
+         <value>//*[starts-with(@class,'styles_headerLogo__')] | //a[starts-with(@class,'styles_containerLogo__')] |//img[@alt='logo']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>img</value>
-      <webElementGuid>82d578a8-9f6b-43f6-9a70-73d468e32564</webElementGuid>
+      <webElementGuid>0f1b7782-9b37-4a2c-b92e-195da230382b</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +30,7 @@
       <name>loading</name>
       <type>Main</type>
       <value>eager</value>
-      <webElementGuid>b8039a3a-e63d-4520-8c82-1702436df23e</webElementGuid>
+      <webElementGuid>91d765ed-4d0d-4a25-880a-ca1b70d39e80</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +38,7 @@
       <name>src</name>
       <type>Main</type>
       <value>https://performance.thenineten.co/media/logo/stores/13/header-logo-en_1.png</value>
-      <webElementGuid>0f8eea31-90a4-49fe-84c3-c118acc4cfca</webElementGuid>
+      <webElementGuid>f43ec23e-3014-4827-8b57-916d26a4186f</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -46,7 +46,7 @@
       <name>alt</name>
       <type>Main</type>
       <value>logo</value>
-      <webElementGuid>b3929425-ec2a-4d15-99ed-256bc5232331</webElementGuid>
+      <webElementGuid>74957e64-ebd1-48b5-9bf1-9ac5b719ffeb</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -54,7 +54,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;__next&quot;)/div[@class=&quot;styles_headerContainer__b9Hm9&quot;]/div[@class=&quot;header v5&quot;]/div[@class=&quot;main-header&quot;]/div[@class=&quot;main-header__content&quot;]/div[@class=&quot;desktop-content&quot;]/div[1]/a[@class=&quot;header__logo&quot;]/div[@class=&quot;styles_logoImage__eE8oT&quot;]/img[1]</value>
-      <webElementGuid>8c167590-59b8-4fa8-a6c0-516e9c0e8f33</webElementGuid>
+      <webElementGuid>941b1a5a-5927-4e36-b482-5baaa4dc3c84</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -62,7 +62,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='__next']/div[4]/div/div[2]/div/div/div/a/div/img</value>
-      <webElementGuid>e776afaf-ab77-4f39-a237-a2ea29e902bd</webElementGuid>
+      <webElementGuid>62608696-81c6-4d29-acab-50aaaf3f80ea</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,7 +70,7 @@
       <name>xpath:img</name>
       <type>Main</type>
       <value>//img[@alt='logo']</value>
-      <webElementGuid>c7a73be9-c89b-49d6-b832-ae74e85d96e2</webElementGuid>
+      <webElementGuid>0da9854e-0544-48bb-ab11-791c98d46d1e</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,7 +78,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div/img</value>
-      <webElementGuid>b32e8972-f7a1-43f4-84ea-59074379805c</webElementGuid>
+      <webElementGuid>1d21006d-617f-4e9a-a308-69a6907b4323</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,6 +86,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//img[@src = 'https://performance.thenineten.co/media/logo/stores/13/header-logo-en_1.png' and @alt = 'logo']</value>
-      <webElementGuid>1ac4a863-0efd-49d7-aa4a-a74983f90c63</webElementGuid>
+      <webElementGuid>767d161e-f523-472c-a7af-56bc841e7294</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>
