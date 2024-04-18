@@ -62,13 +62,15 @@ WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/ch
     [('currentURL') : ''], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.click(findTestObject //cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
-    ) //CustomKeywords.'cart.removeItem.clearCart'()
-//WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog - Select All Categories and Scrolling'), [:], FailureHandling.STOP_ON_FAILURE)
+    //CustomKeywords.'cart.removeItem.clearCart'()
+    ) //WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog - Select All Categories and Scrolling'), [:], FailureHandling.STOP_ON_FAILURE)
 //WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'), 10).size()
 //KeywordUtil.logInfo(cartSubTotal.toString())
 //CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromRandomCategory'()
 //switch(cartSubTotal){
 //}
+
+WebUI.click(findTestObject('Helpdesk/AlAseel/BE/BEReports/Orders_to'))
 
 static void main(String[] args) {
     WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
