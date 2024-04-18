@@ -70,8 +70,6 @@ WebUI.click(findTestObject //cartSubTotal = CustomKeywords.'cart.cartItems.getCa
 //switch(cartSubTotal){
 //}
 
-WebUI.click(findTestObject('Helpdesk/AlAseel/BE/BEReports/Orders_to'))
-
 static void main(String[] args) {
     WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
 
