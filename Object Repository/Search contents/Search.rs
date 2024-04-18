@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='core-input-button-group input search-product-input']</value>
+         <value>//div[@class='core-input-button-group input search-product-input'] |//div [starts-with(@class,'styles_searchBox___')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -18,7 +18,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>DIV</value>
-      <webElementGuid>21058749-1fcc-4c40-9357-4f38d97a0b0d</webElementGuid>
+      <webElementGuid>ca74a6c4-c956-4db9-b80b-c908d03a4eb8</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -26,6 +26,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>xpath1674658486391</value>
-      <webElementGuid>e7a9c054-8aa6-4353-992a-a71881377bd1</webElementGuid>
+      <webElementGuid>d9c387a1-e089-4313-bc46-670ee2e35501</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

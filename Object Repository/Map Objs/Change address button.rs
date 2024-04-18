@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//div[starts-with(@class,'styles_deliveryToBlock__')]/div[starts-with(@class,'styles_title__')]</value>
+         <value>//div[starts-with(@class,'styles_deliveryToBlock__')]/div[starts-with(@class,'styles_buttonPickAddress__')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//div[starts-with(@class,'styles_deliveryToBlock__')]/div[starts-with(@class,'styles_title__')]</value>
-      <webElementGuid>795d623e-d659-4921-848b-fd9a3eb3eecf</webElementGuid>
+      <value>//div[starts-with(@class,'styles_deliveryToBlock__')]/div[starts-with(@class,'styles_buttonPickAddress__')]</value>
+      <webElementGuid>da56f546-fcfd-4a85-a32f-5438c176adbf</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

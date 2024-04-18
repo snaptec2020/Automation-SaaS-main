@@ -76,12 +76,12 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>1 = Web Browser, 2 = Mobile Browser, 3= Mobile App</description>
-      <initValue>'1'</initValue>
+      <initValue>'2'</initValue>
       <name>RunningMode</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>0=All, 1=iPhone, 2=Android</description>
-      <initValue>'0'</initValue>
+      <initValue>'1'</initValue>
       <name>MobileType</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
