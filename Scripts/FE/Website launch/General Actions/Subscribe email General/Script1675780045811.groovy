@@ -17,23 +17,28 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import com.kms.katalon.core.configuration.RunConfiguration
+
+
 
 
 WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.STOP_ON_FAILURE)
-        
 
+
+	
            // WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Lets stay in touch field'), FailureHandling.STOP_ON_FAILURE)
+//			if(WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Lets stay in touch field'), FailureHandling.CONTINUE_ON_FAILURE)) {
+//				WebUI.setText(findTestObject('Headers and Footers/Header contents/Lets stay in touch field'), CustomKeywords.'generalactions.generalStrings.generatRandomEmail'(), FailureHandling.CONTINUE_ON_FAILURE)
+//				WebUI.click(findTestObject('Subscribe/Subcribe Button on touch'), FailureHandling.CONTINUE_ON_FAILURE)
+//				verifyTheMessage()
+//			}
 
             if (WebUI.verifyElementVisible(findTestObject('Subscribe/Subcribe Footer field'), FailureHandling.CONTINUE_ON_FAILURE)) {
                 WebUI.setText(findTestObject('Subscribe/Subcribe Footer field'), CustomKeywords.'generalactions.generalStrings.generatRandomEmail'(), FailureHandling.CONTINUE_ON_FAILURE)
                 WebUI.click(findTestObject('Subscribe/Subscribe Footer Button'), FailureHandling.CONTINUE_ON_FAILURE)
 				verifyTheMessage()
             } 
-			if(WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Lets stay in touch field'), FailureHandling.CONTINUE_ON_FAILURE)) {
-                WebUI.setText(findTestObject('Headers and Footers/Header contents/Lets stay in touch field'), CustomKeywords.'generalactions.generalStrings.generatRandomEmail'(), FailureHandling.CONTINUE_ON_FAILURE)
-                WebUI.click(findTestObject('Subscribe/Subcribe Button on touch'), FailureHandling.CONTINUE_ON_FAILURE)
-				verifyTheMessage()
-            }
+			
 
 def verifyTheMessage() {
 	if(GlobalVariable.languageMode.toString().equalsIgnoreCase('ar')) {

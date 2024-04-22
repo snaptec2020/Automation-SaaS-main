@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[starts-with(@class,'styles_formWrapper__')]/input</value>
+         <value>//div[starts-with(@class,'styles_formWrapper__')]/input |  //*[@id='inputSubcribe']</value>
       </entry>
       <entry>
          <key>BASIC</key>

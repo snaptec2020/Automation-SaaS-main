@@ -6,11 +6,11 @@
    <elementGuidId>bad98e31-4a1e-4f00-8974-fea06b80ac0a</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[starts-with(@class,'styles_formWrapper__')]/button</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[starts-with(@class,'styles_formWrapper__')]/button | //button[@id='buttonSubcribe']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
