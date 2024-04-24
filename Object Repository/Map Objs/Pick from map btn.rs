@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//div[starts-with(@class,'styles_startedPage__')]/div[starts-with(@class,'styles_buttonGroup__')]/button/span</value>
+         <value>(//div[starts-with(@class,'styles_startedPage__')]/div[starts-with(@class,'styles_buttonGroup__')]/button)[3]/span</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//div[starts-with(@class,'styles_startedPage__')]/div[starts-with(@class,'styles_buttonGroup__')]/button/span</value>
-      <webElementGuid>6cba6392-94f5-44c9-8bcf-5df3d772bef5</webElementGuid>
+      <value>(//div[starts-with(@class,'styles_startedPage__')]/div[starts-with(@class,'styles_buttonGroup__')]/button)[3]/span</value>
+      <webElementGuid>c31fb92e-a503-4d29-a4cc-e0e19b900871</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
