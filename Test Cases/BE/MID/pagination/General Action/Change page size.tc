@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Change page size</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>82703266-2f65-41e8-9541-6ea65214664f</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>42946831-cf92-4570-bfe4-8f02c8324071</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>6286aca0-2803-457e-9681-cce1536aa839</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>13255ef4-0bf4-46c4-b018-5ef1ec28498e</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>42946831-cf92-4570-bfe4-8f02c8324071</id>
+      <masked>false</masked>
+      <name>value</name>
+   </variable>
+   <variable>
+      <defaultValue>false</defaultValue>
+      <description></description>
+      <id>6286aca0-2803-457e-9681-cce1536aa839</id>
+      <masked>false</masked>
+      <name>isByIndex</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>13255ef4-0bf4-46c4-b018-5ef1ec28498e</id>
+      <masked>false</masked>
+      <name>indexID</name>
+   </variable>
+</TestCaseEntity>
