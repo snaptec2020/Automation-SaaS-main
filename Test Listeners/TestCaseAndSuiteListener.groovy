@@ -82,7 +82,7 @@ class TestCaseAndSuiteListener {
 		}
 	}
 	
-	//@AfterTestCase
+//	@AfterTestCase
 	def sampleAfterTestCase(TestCaseContext testCaseContext) {
 		if(GlobalVariable.testSuiteStatus == 'Not Run' & testCaseContext.getTestCaseId().indexOf("/Helpdesk/")<=0) {
 			WebUI.closeBrowser()
