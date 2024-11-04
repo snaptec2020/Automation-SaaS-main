@@ -62,7 +62,7 @@ class TestCaseAndSuiteListener {
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
 		if(GlobalVariable.testSuiteStatus == 'Not Run' & testCaseContext.getTestCaseId().indexOf("/Helpdesk/")<=0) {
-			GlobalVariable.RunningMode=CustomKeywords.'generalactions.EnvironmentSettings.isRunningByMobile'()
+//			GlobalVariable.RunningMode=CustomKeywords.'generalactions.EnvironmentSettings.isRunningByMobile'()
 			GlobalVariable.launchingConfig.put("Mode",(testCaseContext.testCaseId=~"Test Cases/(.*?)/(.*?)/")[0][1])
 			GlobalVariable.launchingConfig.put("BEMode",(testCaseContext.testCaseId=~"Test Cases/(.*?)/(.*?)/")[0][2])
 			
@@ -94,7 +94,7 @@ class TestCaseAndSuiteListener {
 		KeywordUtil.logInfo(testSuiteContext.testSuiteId.toString())
 		GlobalVariable.testSuiteStatus = testSuiteContext.testSuiteId
 		GlobalVariable.testSuiteReportFolder = RunConfiguration.getReportFolder()
-		GlobalVariable.RunningMode=CustomKeywords.'generalactions.EnvironmentSettings.isRunningByMobile'()
+//		GlobalVariable.RunningMode=CustomKeywords.'generalactions.EnvironmentSettings.isRunningByMobile'()
 		if(testSuiteContext.getTestSuiteId().indexOf("/Helpdesk/")<=0 && !GlobalVariable.isRunByMultiSites) {
 			//String reportFolder = RunConfiguration.getReportFolder();
 			//File reportFolderFile = new File(reportFolder);
@@ -132,7 +132,8 @@ class TestCaseAndSuiteListener {
 			//new File(logFolder, logFolder.getName() + ".html")
 			generateReport(testSuiteContext)
 			if(GlobalVariable.isItFirstSite) {
-				WebUI.callTestCase(findTestCase('FE/Multi Sites/Multisites New way'), [:], FailureHandling.STOP_ON_FAILURE)
+				GlobalVariable.testSuiteStatus = 'Not Run'
+//				WebUI.callTestCase(findTestCase('FE/Multi Sites/Multisites New way'), [:], FailureHandling.STOP_ON_FAILURE)
 			}
 			if(!GlobalVariable.isRunByMultiSites) {
 			WebUI.closeBrowser()

@@ -33,7 +33,12 @@ import com.amazonaws.services.s3.sample.auth.AWS4SignerForAuthorizationHeader;
 import com.amazonaws.services.s3.sample.util.HttpUtils;
 /*******************************************************/
 
-public class GetGeoSigniture extends AWS4SignerBase{
+public class GetGeoSigniture extends AWS4SignerBase{	
+	
+	public GetGeoSigniture() {
+		super("","","","")
+	}
+	
 	public static def getGeoSign(String regionName, String awsAccessKey, String awsSecretKey, String securityToken,String theLongitude, String theLatitude) {
 		//		System.out.println("*******************************************************");
 		//		System.out.println("*  Executing sample 'GetObjectUsingHostedAddressing'  *");
