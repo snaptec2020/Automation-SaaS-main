@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalVariableEntities>
    <description></description>
-   <name>SaaS-Prod-NT-Live</name>
+   <name>SaaS-Staging-Zohoor</name>
    <tag></tag>
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'https://naturaltouchshop.com/'</initValue>
+      <initValue>'https://zohoor.9ten.online/ksa_ar'</initValue>
       <name>URL</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

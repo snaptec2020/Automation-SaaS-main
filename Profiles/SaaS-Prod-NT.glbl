@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalVariableEntities>
    <description></description>
-   <name>SaaS-Stg-Bed Q</name>
+   <name>SaaS-Prod-NT</name>
    <tag></tag>
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'https://staging-bed-quarter-multisites.9ten.online/'</initValue>
+      <initValue>'https://naturaltouchshop.com/'</initValue>
       <name>URL</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

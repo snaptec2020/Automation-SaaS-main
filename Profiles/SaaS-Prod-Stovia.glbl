@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalVariableEntities>
    <description></description>
-   <name>SaaS-Rel-NT</name>
+   <name>SaaS-Prod-Stovia</name>
    <tag></tag>
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'https://release-natural-touch.snaptec.co/ar'</initValue>
+      <initValue>'https://www.stovia.com/'</initValue>
       <name>URL</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
