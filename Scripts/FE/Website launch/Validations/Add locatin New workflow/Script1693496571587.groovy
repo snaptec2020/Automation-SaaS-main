@@ -38,11 +38,11 @@ script = (('return JSON.parse(JSON.parse(localStorage.getItem(\'persist:availabl
 
 //def countryCode = WebUI.executeJavaScript(script, null)
 //KeywordUtil.logInfo(countryCode.toString())
-def countryResponse = CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequestAndVerify(findTestObject('APIs/Postman/Get country', 
-            [('URL') : GlobalVariable.URL, ('store') : store])).getResponseText())
-
-def locale = countryResponse.data.countries[0].full_name_english.toString().toLowerCase( //new Locale('en', countryCode)
-    )
+//def countryResponse = CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequestAndVerify(findTestObject('APIs/Postman/Get country', 
+//            [('URL') : GlobalVariable.URL, ('store') : store])).getResponseText())
+//
+//def locale = countryResponse.data.countries[0].full_name_english.toString().toLowerCase( //new Locale('en', countryCode)
+//    )
 
 if (WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 5)) {
     def locatorZonesResponse = CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequestAndVerify(findTestObject(
@@ -96,12 +96,13 @@ if (WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 
     int numTrails = 0
 
     WebUI.clickOffset(findTestObject('Map Objs/Map Block'), 0, 0)
-
+	def theCapitalOfCountry = WebUI.getText(findTestObject('Map Objs/Current Location'))
     while (!(WebUI.waitForElementClickable(findTestObject('Map Objs/Continue After select Address'), 5)) && (numTrails < 
     5)) {
         numTrails++
-
-        WebUI.setText(findTestObject('Map Objs/Input search location'), GlobalVariable.Countries[locale])
+		
+        //WebUI.setText(findTestObject('Map Objs/Input search location'), GlobalVariable.Countries[locale])
+		WebUI.setText(findTestObject('Map Objs/Input search location'), theCapitalOfCountry)
 
         WebUI.delay(2)
 
