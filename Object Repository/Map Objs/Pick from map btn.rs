@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//div[starts-with(@class,'styles_startedPage__')]/div[starts-with(@class,'styles_buttonGroup__')]/button/span</value>
+         <value>//span[text() = 'Pick address on map' or .= 'اختر عنوان على الخريطة']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//div[starts-with(@class,'styles_startedPage__')]/div[starts-with(@class,'styles_buttonGroup__')]/button/span</value>
-      <webElementGuid>6cba6392-94f5-44c9-8bcf-5df3d772bef5</webElementGuid>
+      <value>//span[text() = 'Pick address on map' or .= 'اختر عنوان على الخريطة']</value>
+      <webElementGuid>4b2a888d-9a29-46d4-ade8-86516f05e6bb</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

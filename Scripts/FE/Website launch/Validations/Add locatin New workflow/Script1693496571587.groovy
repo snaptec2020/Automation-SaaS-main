@@ -15,9 +15,8 @@ import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable
-
-import org.apache.commons.lang3.StringUtils
+import internal.GlobalVariable as GlobalVariable
+import org.apache.commons.lang3.StringUtils as StringUtils
 import org.openqa.selenium.Keys as Keys
 import java.text.Collator as Collator
 import java.util.*
@@ -38,75 +37,57 @@ def store = WebUI.executeJavaScript(script, null)
 script = (('return JSON.parse(JSON.parse(localStorage.getItem(\'persist:availableCacheData:' + store) + '\')).appState).storeConfig.default_country_code')
 
 //def countryCode = WebUI.executeJavaScript(script, null)
-
 //KeywordUtil.logInfo(countryCode.toString())
-def countryResponse = CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequestAndVerify(findTestObject('APIs/Postman/Get country', [('URL') : GlobalVariable.URL, ('store') : store])).getResponseText())
-def locale = (countryResponse.data.countries[0].full_name_english).toString().toLowerCase()//new Locale('en', countryCode)
+def countryResponse = CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequestAndVerify(findTestObject('APIs/Postman/Get country', 
+            [('URL') : GlobalVariable.URL, ('store') : store])).getResponseText())
 
-
-
-//WebUI.click(findTestObject('Map Objs/Pick from map btn'))
-//WebUI.delay(50)
-//WebUI.setText(findTestObject('Map Objs/Input search location'), GlobalVariable.Countries[locale.getDisplayCountry().toLowerCase()])
-//WebUI.click(findTestObject('Map Objs/Select 1st location'))
-//WebUI.clickOffset(findTestObject('Map Objs/Map Block'), 0, 0)
-/*if (WebUI.waitForElementClickable(findTestObject('Map Objs/Continue After select Address'), 5)) {
-    WebUI.click(findTestObject('Map Objs/Continue After select Address')) //def searchText = WebUI.getText(findTestObject('Map Objs/Map Title')).replaceAll('^.*,', '').toString().trim()
-
-} else {*/
-//script = (('return JSON.parse(JSON.parse(localStorage.getItem(\'persist:availableCacheData:' + store) + '\')).appState).locatorZones')
-
-String awsAccessKey
-
-String awsSecretKey
-
-String SecurityToken
-
-String regionName = 'eu-west-1'
+def locale = countryResponse.data.countries[0].full_name_english.toString().toLowerCase( //new Locale('en', countryCode)
+    )
 
 if (WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 5)) {
-	def locatorZonesResponse =CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequestAndVerify(findTestObject('APIs/Postman/Get locator Zones', [('URL') : GlobalVariable.URL, ('store') : store])).getResponseText())//WebUI.executeJavaScript(script, null)
-	def locatorZones = locatorZonesResponse.data.getLocatorZones
-	KeywordUtil.logInfo(locatorZones.toString())
+    def locatorZonesResponse = CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequestAndVerify(findTestObject(
+                'APIs/Postman/Get locator Zones', [('URL') : GlobalVariable.URL, ('store') : store])).getResponseText() //WebUI.executeJavaScript(script, null)
+        )
+
     WebUI.click(findTestObject('Map Objs/Pick from map btn'))
 
-    def latLong = []
 
-    for (int i = 0; i <= (locatorZones.size() - 1); i++) {
-        (locatorZones[i]).each({ 
-			for (int j = 0; j <= (locatorZones.coordinate.size() - 1); j++) {
-				locatorZones.coordinate[j].each { 
-					latLong.add([it.latitude, it.longitude])
-					 }
-				}
-                
-            })
-    }
-    
-    for (int i = 0; i <= (latLong.size() - 1); i++) {
-        def resopnse = CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequest(findTestObject('APIs/Location APIs/Postman/cognito-identity.eu-west-1.amazonaws.com')).getResponseText())
+    def coordinates = []
 
-        awsAccessKey = resopnse.Credentials.AccessKeyId
+    locatorZonesResponse.data.getLocatorZones.each({ def zone ->
+            zone.coordinate.each({ def coordinate ->
+                    def lat = coordinate.latitude
 
-        awsSecretKey = resopnse.Credentials.SecretKey
+                    def lon = coordinate.longitude
 
-        SecurityToken = resopnse.Credentials.SessionToken
+                    coordinates << [('latitude') : lat, ('longitude') : lon]
+                })
+        })
 
-        def locations = CustomKeywords.'com.amazonaws.services.s3.sample.getAPIResults.getAPIResultsByLatLong'(awsAccessKey, 
-            awsSecretKey, SecurityToken, regionName, ((latLong[i])[1]).toString(), ((latLong[i])[0]).toString())
+    coordinates.find({ def coord ->
 
-        for (int j = 0; j <= (locations.size() - 1); j++) {
-            WebUI.setText(findTestObject('Map Objs/Input search location'), locations[j])
+			def latitude = coord.latitude
+			def longitude = coord.longitude
+		    // Format the coordinates with 6 decimal places
+		    def latLong = "${latitude}, ${longitude}"
+//
+            KeywordUtil.logInfo("$latitude,$longitude")
 
+			WebUI.sendKeys(findTestObject('Map Objs/Input search location'), latLong)
+			//WebUI.delay(1)
+			WebUI.sendKeys(findTestObject('Map Objs/Input search location'), Keys.chord(Keys.SPACE))
+			//WebUI.delay(2)
             WebUI.click(findTestObject('Map Objs/Select 1st location'))
 
+            // Condition to stop the loop
             if (WebUI.waitForElementClickable(findTestObject('Map Objs/Continue After select Address'), 5)) {
                 WebUI.click(findTestObject('Map Objs/Continue After select Address'))
 
-                return null
+                return true // This stops the loop
             }
-        }
-    }
+            
+            return false // Continue the loop
+        })
 } else {
     WebUI.click(findTestObject('Map Objs/Change address button'))
 
@@ -135,6 +116,3 @@ if (WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 
     
     WebUI.click(findTestObject('Map Objs/Continue After select Address'))
 }
-
-
-
