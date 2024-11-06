@@ -4,7 +4,7 @@
    <name>Regression test after deployments - AR</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <mailRecipient>Ahmed@snaptec.co;A.aldon@snaptec.co;r.bawaneh@snaptec.co;</mailRecipient>
+   <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
