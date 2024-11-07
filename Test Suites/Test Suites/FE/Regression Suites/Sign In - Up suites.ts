@@ -4,11 +4,11 @@
    <name>Sign In - Up suites</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <mailRecipient>Ahmed@snaptec.co;A.aldon@snaptec.co;r.bawaneh@snaptec.co;</mailRecipient>
+   <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
-   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <rerunFailedTestCasesOnly>true</rerunFailedTestCasesOnly>
    <rerunImmediately>false</rerunImmediately>
    <testSuiteGuid>de43f1a5-2657-48ea-82a0-2a8e733dec83</testSuiteGuid>
    <testCaseLink>
