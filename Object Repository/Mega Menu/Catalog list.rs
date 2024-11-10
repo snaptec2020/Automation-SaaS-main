@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>(//a[contains(@class,'styles_megaMenuItem')] | //div[starts-with(@class,'styles_menu__')]/div/div/a | //div[@id='container-main-menu']/div[starts-with(@class,'styles_container__')]/div[starts-with(@class,'styles_linkWrapper__')])</value>
+         <value>(//a[contains(@class,'styles_megaMenuItem')] | //div[starts-with(@class,'styles_menu__')]/div/div[starts-with(@class,'styles_linkWrapper__')] | //div[@id='container-main-menu']/div[starts-with(@class,'styles_container__')]/div[starts-with(@class,'styles_linkWrapper__')])</value>
       </entry>
       <entry>
          <key>XPATH</key>
@@ -21,7 +21,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>(//a[contains(@class,'styles_megaMenuItem')] | //div[starts-with(@class,'styles_menu__')]/div/div/a | //div[@id='container-main-menu']/div[starts-with(@class,'styles_container__')]/div[starts-with(@class,'styles_linkWrapper__')])</value>
-      <webElementGuid>3677105a-e11e-4080-97e2-1d713311fa4e</webElementGuid>
+      <value>(//a[contains(@class,'styles_megaMenuItem')] | //div[starts-with(@class,'styles_menu__')]/div/div[starts-with(@class,'styles_linkWrapper__')] | //div[@id='container-main-menu']/div[starts-with(@class,'styles_container__')]/div[starts-with(@class,'styles_linkWrapper__')])</value>
+      <webElementGuid>85d6b184-9f1a-43c7-aec9-cd1fbdbb45c6</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

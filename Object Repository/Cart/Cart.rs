@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[@class='d-flex align-items-center'] | //*[starts-with(@class,'feather feather-shopping-bag')]</value>
+         <value>//span[@class='d-flex align-items-center'] | //*[starts-with(@class,'feather feather-shopping-bag')] | //*[starts-with(@class,'feather feather-shopping-cart')]</value>
       </entry>
       <entry>
          <key>BASIC</key>

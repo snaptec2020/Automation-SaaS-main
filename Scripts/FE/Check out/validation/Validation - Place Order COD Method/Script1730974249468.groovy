@@ -14,26 +14,27 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import com.kms.katalon.entity.global.GlobalVariableEntity as GlobalVariableEntity
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-//WebUI.callTestCase(findTestCase('FE/Sign up TC/General Actions Sign up/Navigate to Sign up page'), [:], FailureHandling.STOP_ON_FAILURE)
-
-//def phoneNumber = CustomKeywords.'generalactions.generalStrings.generateRandomPhoneNumber'()
-def firstName = 'Automationtest'
-//GlobalVariable.phoneNumber = phoneNumber
-boolean isPhoneExist = true
-int traials = 0
-
-WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sign up By phone/SignUp by phone'), [('firstname') : firstName, ('lastname') : firstName
-        , ('PhoneNumber') : "No Need", ('isCheck') : '1'], FailureHandling.STOP_ON_FAILURE)
-if(GlobalVariable.shouldRefresh) {
-	WebUI.delay(2)
-	WebUI.navigateToUrl(GlobalVariable.URL)
-	WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sign up By phone/Success SignUp by Phone'), [:], FailureHandling.STOP_ON_FAILURE)
-} else {
-	WebUI.callTestCase(findTestCase('FE/OTP/General Actions/Insert fixed OTP'), [:], FailureHandling.STOP_ON_FAILURE)
+def currentUrl=WebUI.getUrl()
+WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components after click on proceed'), [:],
+	FailureHandling.STOP_ON_FAILURE)
+List PaymentMethods =CustomKeywords.'checkout.EnhancedPayments.getPaymentMethodsList'()
+for(int i=1;i<=PaymentMethods.size();i++) {
+if(i!=1) {
+WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components after click on proceed'), [:],
+		FailureHandling.STOP_ON_FAILURE)
 }
+//WebUI.callTestCase(findTestCase('FE/Check out/validation/Select location common case'), [:], FailureHandling.STOP_ON_FAILURE)
+def languageMode = GlobalVariable.languageMode
+def paymentMethod = 'Cash On Delivery'
+if (languageMode.equalsIgnoreCase("ar")) {
+    paymentMethod = 'الدفع عند الإستلام'
+}
+CustomKeywords.'checkout.EnhancedPayments.paymentMethodToPayBySelectedMethod'(i,paymentMethod)
+//WebUI.takeFullPageScreenshot('./paymentResult.png')
 
+//WebUI.navigateToUrl(currentUrl)
+}
 

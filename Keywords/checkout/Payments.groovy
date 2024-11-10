@@ -233,51 +233,5 @@ public class Payments {
 			WebUI.navigateToUrl(GlobalVariable.URL, FailureHandling.CONTINUE_ON_FAILURE)
 		}
 	}
-	//def payemntText= WebUI.getText(findTestObject("//div[starts-with(@class,'payment-method-introduce__description')"))
-
-	//tb.addProperty('xpath', ConditionType.EQUALS, "//div[contains(@class,'payment-method v2')]/following-sibling::div")
-
-	//	def nonVisa = WebUiCommonHelper.findWebElement(utilityFunctions.addXpathToTestObject("//div[contains(@class,'payment-method v2')]/following-sibling::div"),30).getAttribute("class")
-	//	//KeywordUtil.logInfo(nonVisa.toString())
-	//	//int visa = WebUI.findWebElements(findTestObject('Object Repository/Check Out/Check Out insert Card'),30).size()
-	//    if(nonVisa !='checkout-com-form-container')
-	//     {
-	//	WebUI.click(findTestObject('Object Repository/Check Out/Place order check out button'))
-	//	WebUI.delay(10)}
-	//	}else //if(visa!=0)
-	//	{
-	//		//WebUI.scrollToElement(findTestObject('Object Repository/Check Out/Card Number Field'), 30)
-	//		KeywordUtil.logInfo(nonVisa.toString())
-	//		WebUI.verifyElementVisible(findTestObject('Object Repository/Check Out/Place order check out button'))
-	//		//tb.addProperty('xpath', ConditionType.EQUALS, "//iframe[@id='cardNumber']")
-	//		utilityFunctions.switchToIframeByXpath("//iframe[@id='cardNumber']")
-	//		//WebUI.switchToFrame(tb, 0)
-	//		//tb.addProperty('xpath', ConditionType.EQUALS, "//input[@name='cardnumber']")
-	//		WebUI.sendKeys(utilityFunctions.addXpathToTestObject("//input[@name='cardnumber']"), '4440000009900010')
-	//		WebUI.switchToDefaultContent()
-	//		utilityFunctions.switchToIframeByXpath("//iframe[@id='cvv']")
-	//		//tb.addProperty('xpath', ConditionType.EQUALS, "//iframe[@id='cvv']")
-	//		//WebUI.switchToFrame(tb, 0)
-	//		//tb.addProperty('xpath', ConditionType.EQUALS, "//input[@class='cvv field']")
-	//		WebUI.sendKeys(utilityFunctions.addXpathToTestObject("//input[@class='cvv field']"), '123')
-	//		WebUI.switchToDefaultContent()
-	//		utilityFunctions.switchToIframeByXpath("//iframe[@id='expiryDate']")
-	//		//tb.addProperty('xpath', ConditionType.EQUALS, "//iframe[@id='expiryDate']")
-	//		//WebUI.switchToFrame(tb, 0)
-	//		//tb.addProperty('xpath', ConditionType.EQUALS, "//input[@class='expiry-date field']")
-	//		WebUI.sendKeys(utilityFunctions.addXpathToTestObject("//input[@class='expiry-date field']"), '0226')
-	//		WebUI.switchToDefaultContent()
-	//		//WebUI.sendKeys(findTestObject('Object Repository/Check Out/Expire Data Card Field'), '0226')
-	//
-	//
-	//		//WebElement element = WebUiCommonHelper.findWebElement(tb,30)
-	//		//WebUI.executeJavaScript("arguments[0].value='4440000009900010'", Arrays.asList(element))
-	//		//WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/Card Number Field'), 10)
-	//		//KeywordUtil.logInfo(nonVisa.toString())
-	//		//WebUI.sendKeys(findTestObject('Object Repository/Check Out/Card Number Field'), '4440000009900010')
-	//
-	//		WebUI.click(findTestObject('Object Repository/Check Out/Place order check out button'))
-	//		WebUI.delay(10)
-	//	}
 }
 

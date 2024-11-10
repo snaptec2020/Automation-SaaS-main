@@ -54,6 +54,12 @@ if (otpRequierd != 0) {
 }
 
 //WebUI.verifyEqual(CustomKeywords.'cart.cartItems.getCartSubtotal'(), SumOfProductsPriceInCart) // after proceed
+if(WebUI.waitForElementVisible(findTestObject('Check Out/Checkout Email'), 5)) {
+	def randomEmail = CustomKeywords.'generalactions.generalStrings.generatRandomEmail'()
+	WebUI.setText(findTestObject('Check Out/Checkout Email'), randomEmail, FailureHandling.STOP_ON_FAILURE)
+	WebUI.click(findTestObject('Check Out/Submit Email Checkout'))
+}
+
 WebUI.verifyElementVisible(findTestObject('Check Out/checkout user details 1'))
 
 WebUI.verifyElementVisible(findTestObject('Check Out/Checkout address 2'))

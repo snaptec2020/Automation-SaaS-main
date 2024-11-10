@@ -37,10 +37,10 @@ if (prod.size()==0) {
 }
 //KeywordUtil.logInfo("++++++++++++++++++++++++++++"+prod.size().toString())
 boolean found=false
-def getRandomElement= prod.get(CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenAnytoAny'(prod.size(), 0))
+def getRandomElement= prod.get(CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenAnytoAny'(prod.size()-1, 0))
 //prod.any ({
 	//KeywordUtil.logInfo("++++++++++++++++++++++++++++"+prod.size().toString())
-	WebElement currentPrice= getRandomElement.findElements(By.xpath("./div[contains(@class,'styles_informationContainer')]/div[contains(@class,'styles_priceContainer')]/span/span/span/span/span[1]")).get(0)
+	WebElement currentPrice= getRandomElement.findElements(By.xpath("./div[contains(@class,'styles_informationContainer')]/div[contains(@class,'styles_priceContainer')]/span/span[not(contains(@class,'styles_oldPrice__'))]/span/span[1]")).get(0)
 	float priceOfSelectedPrudctAmount= currentPrice.getText().replaceAll(",", "").replaceAll(" ", "").toFloat()
 	if(priceOfSelectedPrudctAmount>=minimum & priceOfSelectedPrudctAmount<=maximum) {
 		found=true
