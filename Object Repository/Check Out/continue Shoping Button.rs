@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Spinner</name>
+   <name>continue Shoping Button</name>
    <tag></tag>
-   <elementGuidId>12579f38-0a05-41af-b76e-27b612e0b997</elementGuidId>
+   <elementGuidId>cfece461-3bdf-48d5-970e-cadc7fe4d832</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@class='indicator__icon-root'] | //img[@alt='loading'] | //div[@class=&quot;spinner-icon&quot;]</value>
+         <value>//a[@class='order-status__continue-shopping']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@class='indicator__icon-root'] | //img[@alt='loading'] | //div[@class=&quot;spinner-icon&quot;]</value>
-      <webElementGuid>16a642fb-d544-4f15-ba36-3c8ab1ed1144</webElementGuid>
+      <value>//a[@class='order-status__continue-shopping']</value>
+      <webElementGuid>b1d171d1-22ad-431d-8697-1d651f4683f0</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

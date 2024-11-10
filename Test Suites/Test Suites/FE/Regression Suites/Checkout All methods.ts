@@ -12,9 +12,16 @@
    <rerunImmediately>false</rerunImmediately>
    <testSuiteGuid>8d4533d6-8c76-40cd-8193-c3abbd5512db</testSuiteGuid>
    <testCaseLink>
-      <guid>833c3716-4a86-42a1-9f83-9a55fe91a4a5</guid>
+      <guid>e9b9a025-0a96-4fe7-ae89-6795bec7c108</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Check out/validation/Validation - Place Order COD Method</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>833c3716-4a86-42a1-9f83-9a55fe91a4a5</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/FE/Check out/validation/validation add common location and plac order for all payment methods</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>

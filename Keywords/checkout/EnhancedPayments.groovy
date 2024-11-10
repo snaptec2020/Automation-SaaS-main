@@ -14,6 +14,8 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import generalactions.generalActions
 import generalactions.generalStrings
 import internal.GlobalVariable
 import utility.Utility
@@ -23,6 +25,7 @@ public class EnhancedPayments {
 	Random randomNumberforProduct = new Random()
 	def utilityFunctions = new Utility()
 	def generalStrings = new generalStrings()
+	def generalActions = new generalActions()
 	def executionProfile = RC.getExecutionProfile()
 
 	@Keyword
@@ -44,30 +47,41 @@ public class EnhancedPayments {
 	}
 
 	@Keyword
-	def paymentMethodToPayBySelectedMethod(int selectedIndex,def paymentMethod = 'Default') {
+	def paymentMethodToPayBySelectedMethod(int selectedIndex,def expectedPaymentMethod = 'Default') {
+		
 		if (selectedIndex == 0) {
 			selectedIndex = 1
 		}
 		tb = utilityFunctions.addXpathToTestObject("("+findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + ")["+selectedIndex+"]")
 		utilityFunctions.clickOnObjectusingJavaScript(tb)
-		placeOrder(paymentMethod)
-	}
+		if (WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/payment Method Text'), 3)) {
+		String paymentMethod = WebUI.getText(findTestObject('Object Repository/Check Out/payment Method Text'))
+		if (paymentMethod.equalsIgnoreCase(expectedPaymentMethod) || expectedPaymentMethod.equalsIgnoreCase('Default')) {
+			placeOrder(paymentMethod)
+		} else {
+	           //KeywordUtil.logInfo("Expected payment method: $expectedPaymentMethod, Actual payment method: $paymentMethod")
+	           return
+	                
+		}	
+		}
+		}
 
 	def placeOrder(String expectedPaymentMethod = 'Default') {
 	    try {
 	       // def nonVisa = WebUiCommonHelper.findWebElement(utilityFunctions.addXpathToTestObject("//div[contains(@class,'payment-method v2')]/following-sibling::div"), 30).getAttribute("class")
 	        //if (nonVisa != 'checkout-com-form-container') {
-	            if (WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/payment Method Text'), 0)) {
-	                double grandTotal = (WebUI.getText(findTestObject('Object Repository/Check Out/Grand Total')).replaceAll(",", "") =~ /\d+\.\d+/)[0] as double
-	                String paymentMethod = WebUI.getText(findTestObject('Object Repository/Check Out/payment Method Text'))
-	                if (paymentMethod.equalsIgnoreCase(expectedPaymentMethod) || paymentMethod.equalsIgnoreCase('Default')) {
+	            //if (WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/payment Method Text'), 5)) {
+	                
+	                //if (paymentMethod.equalsIgnoreCase(expectedPaymentMethod) || paymentMethod.equalsIgnoreCase('Default')) {
+						double grandTotal = (WebUI.getText(findTestObject('Object Repository/Check Out/Grand Total')).replaceAll(",", "") =~ /\d+\.\d+/)[0] as double
 	                    WebUI.click(findTestObject('Object Repository/Check Out/Place order check out button'))
-	                    handlePaymentMethod(paymentMethod, grandTotal)
-	                } else {
-	                    KeywordUtil.logInfo("Expected payment method: $expectedPaymentMethod, Actual payment method: $paymentMethod")
-	                    return
-	                }
-	            }
+						generalActions.waiteSpinnerToHide()
+	                    handlePaymentMethod(expectedPaymentMethod, grandTotal)
+//	                } else {
+//	                    KeywordUtil.logInfo("Expected payment method: $expectedPaymentMethod, Actual payment method: $paymentMethod")
+//	                    return
+//	                }
+	            //}
 	        /*} /*else {
 	            WebUI.verifyElementVisible(findTestObject('Object Repository/Check Out/Place order check out button'))
 	            fillCreditCardDetails()
@@ -81,7 +95,9 @@ public class EnhancedPayments {
 	}
 
 	private void handlePaymentMethod(String paymentMethod, double grandTotal) {
+		KeywordUtil.logInfo(paymentMethod)
 		switch (paymentMethod) {
+			
 			case ~('قسّمها على 4 بدون رسوم ولا فوائد'):
 			case ~('4 interest-free payments'):
 				handleTabbyPayment(grandTotal)
@@ -117,11 +133,13 @@ public class EnhancedPayments {
 	}
 
 	private void handleCashOnDeliveryPayment() {
+		KeywordUtil.logInfo(executionProfile.toString())
 		if (StringUtils.indexOfIgnoreCase(executionProfile, "-Live") > 0) {
 			return
 		} else {
-			WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/COD Success'), 0)
-			WebUI.takeFullPageScreenshot('./CODOrderResult.png')
+			WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/COD Success'), 10)
+			//WebUI.takeFullPageScreenshot('./CODOrderResult.png')
+			verifyOrderConfirmation();
 		}
 	}
 
@@ -179,5 +197,35 @@ public class EnhancedPayments {
 		WebUI.click(findTestObject('Object Repository/Check Out/Close payment method/Tamara cancel button'))
 		WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/Close payment method/Fail order check'), 0)
 		WebUI.takeFullPageScreenshot('./TamaraOrderResult.png')
+	}
+	
+	def verifyOrderConfirmation() {
+		// Get the actual text from the element
+		// Replace 'Your_Element_ID' with your actual element identifier
+		def actualText = WebUI.getText(findTestObject('Check Out/Success Order message'))
+		
+		// Define the expected text pattern using regex
+		// This pattern matches the Arabic text with any number between the quotes
+		def expectedPattern = 'تم اتمام طلبك رقم "\\d+" بنجاح'
+		def languageMode = GlobalVariable.languageMode
+		
+		if (languageMode.equalsIgnoreCase("en")) {
+			expectedPattern = 'Your order number "\\d+" was completed successfully'
+		}
+		
+		// Verify if the actual text matches the pattern
+		if (actualText =~ expectedPattern) {
+			KeywordUtil.markPassed("Message format is correct: ${actualText}")
+			
+			// Extract the order number if needed
+			def matcher = actualText =~ /"(\d+)"/
+			if (matcher.find()) {
+				def orderNumber = matcher.group(1)
+				KeywordUtil.logInfo("Order number found: ${orderNumber}")
+			}
+		} else {
+			KeywordUtil.markFailed("Message format is incorrect. Expected pattern: ${expectedPattern}, Actual text: ${actualText}")
+		}
+		WebUI.click(findTestObject('Check Out/continue Shoping Button'))
 	}
 }
