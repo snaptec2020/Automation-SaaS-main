@@ -59,7 +59,26 @@ if(WebUI.waitForElementVisible(findTestObject('Check Out/Checkout Email'), 5)) {
 	WebUI.setText(findTestObject('Check Out/Checkout Email'), randomEmail, FailureHandling.STOP_ON_FAILURE)
 	WebUI.click(findTestObject('Check Out/Submit Email Checkout'))
 }
+if(WebUI.waitForElementVisible(findTestObject('Map Objs/Map Block'), 5)) {
+	for(int i = 1; i<= 2;i++) {
+		WebUI.click(findTestObject('Check Out/Save location Map Button'), FailureHandling.CONTINUE_ON_FAILURE)
 
+//		def addressMessage = CustomKeywords.'generalactions.notificationsObject.getMessageText'()
+//		if(addressMessage == 'حفظ عنوان الشحن بنجاح' || addressMessage == 'Save Shipping Address successfully') {
+//			break;
+//		}
+		for(int j = 1; j<=3;j++) {
+			WebUI.doubleClick(findTestObject('Map Objs/Zoom In'))
+		}
+		
+		WebUI.delay(2)
+		
+		WebUI.clickOffset(findTestObject('Map Objs/Map Block'), 0, 0)
+//		if(i == 5) {
+//			KeywordUtil.markFailedAndStop("Cannot select address");
+//		}
+	}
+}
 WebUI.verifyElementVisible(findTestObject('Check Out/checkout user details 1'))
 
 WebUI.verifyElementVisible(findTestObject('Check Out/Checkout address 2'))

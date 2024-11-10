@@ -48,14 +48,15 @@ public class EnhancedPayments {
 		if (selectedIndex == 0) {
 			selectedIndex = 1
 		}
-		utilityFunctions.clickOnObjectUsingJavaScript(utilityFunctions.addXpathToTestObject("("+findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + ")["+selectedIndex+"]"))
+		tb = utilityFunctions.addXpathToTestObject("("+findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + ")["+selectedIndex+"]")
+		utilityFunctions.clickOnObjectusingJavaScript(tb)
 		placeOrder(paymentMethod)
 	}
 
 	def placeOrder(String expectedPaymentMethod = 'Default') {
 	    try {
-	        def nonVisa = WebUiCommonHelper.findWebElement(utilityFunctions.addXpathToTestObject("//div[contains(@class,'payment-method v2')]/following-sibling::div"), 30).getAttribute("class")
-	        if (nonVisa != 'checkout-com-form-container') {
+	       // def nonVisa = WebUiCommonHelper.findWebElement(utilityFunctions.addXpathToTestObject("//div[contains(@class,'payment-method v2')]/following-sibling::div"), 30).getAttribute("class")
+	        //if (nonVisa != 'checkout-com-form-container') {
 	            if (WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/payment Method Text'), 0)) {
 	                double grandTotal = (WebUI.getText(findTestObject('Object Repository/Check Out/Grand Total')).replaceAll(",", "") =~ /\d+\.\d+/)[0] as double
 	                String paymentMethod = WebUI.getText(findTestObject('Object Repository/Check Out/payment Method Text'))
@@ -67,12 +68,12 @@ public class EnhancedPayments {
 	                    return
 	                }
 	            }
-	        } else {
+	        /*} /*else {
 	            WebUI.verifyElementVisible(findTestObject('Object Repository/Check Out/Place order check out button'))
 	            fillCreditCardDetails()
 	            WebUI.click(findTestObject('Object Repository/Check Out/Place order check out button'))
 	            WebUI.delay(10)
-	        }
+	        }*/
 	    } catch (Exception e) {
 	        e.printStackTrace()
 	        WebUI.navigateToUrl(GlobalVariable.URL, FailureHandling.CONTINUE_ON_FAILURE)
@@ -90,6 +91,7 @@ public class EnhancedPayments {
 				handleTelrPayment(grandTotal)
 				break
 			case ~('الدفع عند الإستلام'):
+			case ~('الدفع عند الاستلام'):
 			case ~('Cash On Delivery'):
 				handleCashOnDeliveryPayment()
 				break

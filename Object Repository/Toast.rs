@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Toast</name>
+   <tag></tag>
+   <elementGuidId>8afd54d4-159f-4266-8029-31cff60ec4a4</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//div[starts-with(@class,'react-toast-notifications__')]//*[starts-with(@class,'react-toast-notifications__toast__content')]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//div[starts-with(@class,'react-toast-notifications__')]//*[starts-with(@class,'react-toast-notifications__toast__content')]</value>
+      <webElementGuid>416b5b90-6d86-480b-857e-cca5f9b7e028</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>
