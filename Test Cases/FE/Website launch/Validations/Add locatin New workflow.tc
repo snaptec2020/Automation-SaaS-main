@@ -5,4 +5,17 @@
    <tag></tag>
    <comment></comment>
    <testCaseGuid>15438d65-3367-44f9-9594-d898105a459f</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>96c90c3f-e756-4767-a2d3-a1d036fc77b6</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>true</defaultValue>
+      <description></description>
+      <id>96c90c3f-e756-4767-a2d3-a1d036fc77b6</id>
+      <masked>false</masked>
+      <name>isSelectFromMap</name>
+   </variable>
 </TestCaseEntity>

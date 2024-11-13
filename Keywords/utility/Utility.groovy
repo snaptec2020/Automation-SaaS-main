@@ -6,6 +6,9 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.interactions.Actions
 
@@ -59,6 +62,19 @@ public class Utility {
 		WebElement element = WebUiCommonHelper.findWebElement(testObject,30)
 		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
 	}
+	
+	   @Keyword
+    def setDateUsingJavaScript() {
+        // Set date format to yyyy-MM-dd for date input
+        LocalDate date = LocalDate.now().plusDays(1)
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+        def dateString = date.format(formatter)
+
+        // JavaScript to set the date value directly in the date field by ID
+        def js = "document.getElementById('date').value = '${dateString}';"
+        WebUI.executeJavaScript(js, null)
+    }
+
 	@Keyword
 	def clickOnObjectusingJavaScript(WebElement element) {
 		//WebElement element = WebUiCommonHelper.findWebElement(testObject,30)

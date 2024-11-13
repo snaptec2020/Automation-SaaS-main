@@ -17,14 +17,6 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-//WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
-WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate to Sgin in'), [:], FailureHandling.STOP_ON_FAILURE)
-
-WebUI.verifyElementVisible(findTestObject('login page/phone page/Login button context'))
-
-WebUI.verifyElementVisible(findTestObject('login page/phone page/Phone number feild'))
-
-WebUI.verifyElementVisible(findTestObject('login page/email page/Select e-mail Way'))
-
-WebUI.verifyElementVisible(findTestObject('login page/phone page/login by phone'))
+WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Add locatin New workflow'), [('isSelectFromMap') : false], 
+    FailureHandling.STOP_ON_FAILURE)
 

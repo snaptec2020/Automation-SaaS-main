@@ -43,51 +43,67 @@ script = (('return JSON.parse(JSON.parse(localStorage.getItem(\'persist:availabl
 //
 //def locale = countryResponse.data.countries[0].full_name_english.toString().toLowerCase( //new Locale('en', countryCode)
 //    )
-
-if (WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 5)) {
+if (WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 5) || !isSelectFromMap ) {
     def locatorZonesResponse = CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequestAndVerify(findTestObject(
-                'APIs/Postman/Get locator Zones', [('URL') : GlobalVariable.URL, ('store') : store])).getResponseText() //WebUI.executeJavaScript(script, null)
-        )
+                'APIs/Postman/Get locator Zones', [('URL') : GlobalVariable.URL, ('store') : store])).getResponseText( //WebUI.executeJavaScript(script, null)
+            ))
 
-    WebUI.click(findTestObject('Map Objs/Pick from map btn'))
+    if (isSelectFromMap) {
+        WebUI.click(findTestObject('Map Objs/Pick from map btn'))
 
+        def coordinates = []
 
-    def coordinates = []
+        locatorZonesResponse.data.getLocatorZones.each({ def zone ->
+                zone.coordinate.each({ def coordinate ->
+                        def lat = coordinate.latitude
 
-    locatorZonesResponse.data.getLocatorZones.each({ def zone ->
-            zone.coordinate.each({ def coordinate ->
-                    def lat = coordinate.latitude
+                        def lon = coordinate.longitude
 
-                    def lon = coordinate.longitude
+                        coordinates << [('latitude') : lat, ('longitude') : lon]
+                    })
+            })
 
-                    coordinates << [('latitude') : lat, ('longitude') : lon]
-                })
-        })
+        coordinates.find({ def coord ->
+                def latitude = coord.latitude
 
-    coordinates.find({ def coord ->
+                def longitude = coord.longitude
 
-			def latitude = coord.latitude
-			def longitude = coord.longitude
-		    // Format the coordinates with 6 decimal places
-		    def latLong = "${latitude}, ${longitude}"
-//
-            KeywordUtil.logInfo("$latitude,$longitude")
+                // Format the coordinates with 6 decimal places
+                def latLong = "$latitude, $longitude"
 
-			WebUI.sendKeys(findTestObject('Map Objs/Input search location'), latLong)
-			//WebUI.delay(1)
-			WebUI.sendKeys(findTestObject('Map Objs/Input search location'), Keys.chord(Keys.SPACE))
-			//WebUI.delay(2)
-            WebUI.click(findTestObject('Map Objs/Select 1st location'))
+                //
+                KeywordUtil.logInfo("$latitude,$longitude")
 
-            // Condition to stop the loop
-            if (WebUI.waitForElementClickable(findTestObject('Map Objs/Continue After select Address'), 5)) {
-                WebUI.click(findTestObject('Map Objs/Continue After select Address'))
+                WebUI.sendKeys(findTestObject('Map Objs/Input search location'), latLong)
 
-                return true // This stops the loop
-            }
-            
-            return false // Continue the loop
-        })
+                //WebUI.delay(1)
+                WebUI.sendKeys(findTestObject('Map Objs/Input search location'), Keys.chord(Keys.SPACE))
+
+                //WebUI.delay(2)
+                WebUI.click(findTestObject('Map Objs/Select 1st location'))
+
+                // Condition to stop the loop
+                if (WebUI.waitForElementClickable(findTestObject('Map Objs/Continue After select Address'), 5)) {
+                    WebUI.click(findTestObject('Map Objs/Continue After select Address'))
+
+                    return true // This stops the loop
+                }
+                
+                return false // Continue the loop
+            })
+    } else {
+		WebUI.click(findTestObject('Map Objs/Change address button'))
+       // WebUI.verifyElementPresent(findTestObject('PickUp/Pickup popup'), 5)
+
+        WebUI.click(findTestObject('PickUp/PickupButton'))
+
+        //WebUI.verifyElementPresent(findTestObject('PickUp/Map PopUp'), 5)
+
+        WebUI.doubleClick(findTestObject('PickUp/first option from adderss list'))
+
+        WebUI.click(findTestObject('PickUp/Select branch button'))
+    }
+    //WebUI.setText(findTestObject('Map Objs/Input search location'), GlobalVariable.Countries[locale])
 } else {
     WebUI.click(findTestObject('Map Objs/Change address button'))
 
@@ -96,13 +112,14 @@ if (WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 
     int numTrails = 0
 
     WebUI.clickOffset(findTestObject('Map Objs/Map Block'), 0, 0)
-	def theCapitalOfCountry = WebUI.getText(findTestObject('Map Objs/Current Location'))
+
+    def theCapitalOfCountry = WebUI.getText(findTestObject('Map Objs/Current Location'))
+
     while (!(WebUI.waitForElementClickable(findTestObject('Map Objs/Continue After select Address'), 5)) && (numTrails < 
     5)) {
         numTrails++
-		
-        //WebUI.setText(findTestObject('Map Objs/Input search location'), GlobalVariable.Countries[locale])
-		WebUI.setText(findTestObject('Map Objs/Input search location'), theCapitalOfCountry)
+
+        WebUI.setText(findTestObject('Map Objs/Input search location'), theCapitalOfCountry)
 
         WebUI.delay(2)
 
