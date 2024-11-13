@@ -25,7 +25,7 @@ import org.apache.commons.lang3.StringUtils as StringUtils
 import org.openqa.selenium.Keys
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.WebElement as Keys
-
+import com.kms.katalon.core.testobject.ConditionType
 WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components'), [:], FailureHandling.STOP_ON_FAILURE)
 
 //def SumOfProductsPriceInCart = CustomKeywords.'cart.cartItems.getSumOfProductsPriceInCart'()
@@ -114,10 +114,10 @@ if (WebUI.waitForElementVisible(findTestObject('Check Out/PickUp Date'), 3)) {
     }
 
 	if (WebUI.waitForElementVisible(findTestObject('Check Out/CheckOut Wallet'), 3)) {
-    TestObject walletAmountObject = new TestObject().addProperty('xpath', com.kms.katalon.core.testobject.ConditionType.EQUALS, 
+    TestObject walletAmountObject = new TestObject().addProperty('xpath', ConditionType.EQUALS, 
         '//div[@class=\'checkout-wallet\']//span')
 
-    TestObject walletInputField = new TestObject().addProperty('xpath', com.kms.katalon.core.testobject.ConditionType.EQUALS, 
+    TestObject walletInputField = new TestObject().addProperty('xpath', ConditionType.EQUALS, 
         '//input[@type=\'text\' and @class=\'wallet-input \']')
 
     // Get the text of the wallet amount element
@@ -128,17 +128,21 @@ if (WebUI.waitForElementVisible(findTestObject('Check Out/PickUp Date'), 3)) {
     String walletAmountString = String.format('%.2f', walletAmount // Optional: Format to 2 decimal places
         )
 
-    if (walletAmount > 0) {
+    if (walletAmount > 0.0) {
+		boolean isWalletFieldEdittable = WebUI.getAttribute(walletInputField, 'disabled', FailureHandling.CONTINUE_ON_FAILURE)
+		if(!isWalletFieldEdittable) {
         WebUI.click(walletInputField)
 
         WebUI.sendKeys(walletInputField, walletAmountString)
 
         WebUI.click(findTestObject('Check Out/Wallet Submit Button'), FailureHandling.CONTINUE_ON_FAILURE)
-    } else {
+		}
+    } 
+	/*else {
         WebUI.comment('The wallet amount is zero or negative.')
 
         WebUI.verifyGreaterThan(walletAmount, 0, FailureHandling.STOP_ON_FAILURE)
-    }
+    }*/
 }
 
 

@@ -71,15 +71,15 @@ public class removeItem {
 		List<WebElement> removeProductFromCartElements = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Cart/Remove products from carts buttons'), 5)
 
 		//while (removeProductFromCartElements.size() != 0) {
-			if (removeProductFromCartElements.size().equals(1)) {
-				//CustomKeywords.'products.productsFromCatalog.clickJS'(removeProductFromCartElements.get(0), 10)
-				//CustomKeywords.'utility.Utility.clickOnObjectusingJavaScript'(removeProductFromCartElements.get(0))
-				utilityFunctions.clickOnObjectusingJavaScript(removeProductFromCartElements.get(0))
-				removeProductFromCartElements.remove(0)
-			} else {
-				utilityFunctions.clickOnObjectusingJavaScript(removeProductFromCartElements.get(0))
-				removeProductFromCartElements = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Cart/Remove products from carts buttons'), 10)
-			}
+		if (removeProductFromCartElements.size().equals(1)) {
+			//CustomKeywords.'products.productsFromCatalog.clickJS'(removeProductFromCartElements.get(0), 10)
+			//CustomKeywords.'utility.Utility.clickOnObjectusingJavaScript'(removeProductFromCartElements.get(0))
+			utilityFunctions.clickOnObjectusingJavaScript(removeProductFromCartElements.get(0))
+			removeProductFromCartElements.remove(0)
+		} else {
+			utilityFunctions.clickOnObjectusingJavaScript(removeProductFromCartElements.get(0))
+			removeProductFromCartElements = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Cart/Remove products from carts buttons'), 10)
+		}
 		//}
 	}
 	@Keyword

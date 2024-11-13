@@ -24,12 +24,14 @@ import org.openqa.selenium.Keys as Keys
 WebUI.setText(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), GlobalVariable.phoneNumber)
 
 WebUI.click(findTestObject('login page/phone page/Submit Button phone number'))
-GlobalVariable.shouldRefresh = CustomKeywords.'generalactions.notificationsObject.waitNotificationVisble'('الرجاء الانتظار للحظة والمحاولة مرة أخرى', 'Please wait for a second and try again')
-if(GlobalVariable.shouldRefresh) {
-	WebUI.delay(2)
-	WebUI.refresh(FailureHandling.CONTINUE_ON_FAILURE)
-	WebUI.callTestCase(findTestCase('Test Cases/FE/Sign in TC/validations/Login by phone/Success Sign in by phone For Checkout'), [:], FailureHandling.STOP_ON_FAILURE)
-}
+//GlobalVariable.shouldRefresh = CustomKeywords.'generalactions.notificationsObject.waitNotificationVisble'('الرجاء الانتظار للحظة والمحاولة مرة أخرى', 'Please wait for a second and try again')
+CustomKeywords.'generalactions.notificationsObject.shouldRefresh'()
+CustomKeywords.'generalactions.notificationsObject.refreshSignByPhone'('Test Cases/FE/Sign in TC/validations/Login by phone/Success Sign in by phone For Checkout')
+//if(GlobalVariable.shouldRefresh) {
+//	WebUI.delay(2)
+//	WebUI.refresh(FailureHandling.CONTINUE_ON_FAILURE)
+//	WebUI.callTestCase(findTestCase('Test Cases/FE/Sign in TC/validations/Login by phone/Success Sign in by phone For Checkout'), [:], FailureHandling.STOP_ON_FAILURE)
+//}
 //WebUI.verifyMatch((WebUI.getUrl(FailureHandling.CONTINUE_ON_FAILURE)=~"checkout(.*)")[0][1].toString(), "/registration", true, FailureHandling.STOP_ON_FAILURE)
 if(StringUtils.indexOfIgnoreCase(WebUI.getUrl(), "/checkout/signup") >0) {
 	WebUI.callTestCase(findTestCase('Test Cases/FE/Sign up TC/Validations/Sign up By phone/Success SignUp by Phone For Checkout'), [:], FailureHandling.STOP_ON_FAILURE)

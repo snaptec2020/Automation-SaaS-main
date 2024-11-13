@@ -41,7 +41,18 @@ def getRandomElement= prod.get(CustomKeywords.'generalactions.generalStrings.get
 //prod.any ({
 	//KeywordUtil.logInfo("++++++++++++++++++++++++++++"+prod.size().toString())
 	WebElement currentPrice= getRandomElement.findElements(By.xpath("./div[contains(@class,'styles_informationContainer')]/div[contains(@class,'styles_priceContainer')]/span/span[not(contains(@class,'styles_oldPrice__'))]/span/span[1]")).get(0)
-	float priceOfSelectedPrudctAmount= currentPrice.getText().replaceAll(",", "").replaceAll(" ", "").toFloat()
+//	float priceOfSelectedPrudctAmount= currentPrice.getText().replaceAll(",", "").replaceAll(" ", "").toFloat()
+	
+	String priceText = currentPrice.getText().replaceAll(",", "").replaceAll(" ", "")
+	float priceOfSelectedPrudctAmount;
+	
+	if (!priceText.isEmpty()) {
+		priceOfSelectedPrudctAmount = Float.parseFloat(priceText);
+	} else {
+		WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/getSpecifiedinStockProductsFromRandomCategoryInTarget()'),
+			[:], FailureHandling.STOP_ON_FAILURE)
+	}
+	
 	if(priceOfSelectedPrudctAmount>=minimum & priceOfSelectedPrudctAmount<=maximum) {
 		found=true
 		//WebElement currentAddToCartBtn=it.findElements(By.xpath("./div/div/button[contains(text(),'أضف إلى السلة') or contains(text(),'Add to Cart')]")).get(0)

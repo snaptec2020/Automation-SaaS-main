@@ -62,18 +62,18 @@ public class Utility {
 		WebElement element = WebUiCommonHelper.findWebElement(testObject,30)
 		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
 	}
-	
-	   @Keyword
-    def setDateUsingJavaScript() {
-        // Set date format to yyyy-MM-dd for date input
-        LocalDate date = LocalDate.now().plusDays(1)
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-        def dateString = date.format(formatter)
 
-        // JavaScript to set the date value directly in the date field by ID
-        def js = "document.getElementById('date').value = '${dateString}';"
-        WebUI.executeJavaScript(js, null)
-    }
+	@Keyword
+	def setDateUsingJavaScript() {
+		// Set date format to yyyy-MM-dd for date input
+		LocalDate date = LocalDate.now().plusDays(1)
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+		def dateString = date.format(formatter)
+
+		// JavaScript to set the date value directly in the date field by ID
+		def js = "document.getElementById('date').value = '${dateString}';"
+		WebUI.executeJavaScript(js, null)
+	}
 
 	@Keyword
 	def clickOnObjectusingJavaScript(WebElement element) {
@@ -82,7 +82,7 @@ public class Utility {
 	}
 	@Keyword
 	def moveToElement() {
-		if(!WebUI.waitForElementVisible(findTestObject('Spinner'), 5, FailureHandling.CONTINUE_ON_FAILURE)) {
+		//if(!WebUI.waitForElementVisible(findTestObject('Spinner'), 5, FailureHandling.CONTINUE_ON_FAILURE)) {
 
 			//if(WebUI.waitForElementPresent(findTestObject('Menu/SubMenu'), 10, FailureHandling.CONTINUE_ON_FAILURE)) {
 			WebElement logoElm =WebUiCommonHelper.findWebElement(findTestObject('Headers and Footers/Header contents/Logo'),5)
@@ -90,7 +90,7 @@ public class Utility {
 			Actions actions = new Actions(DriverFactory.getWebDriver())
 			actions.moveToElement(logoElm).perform()
 			//}
-		}
+		//}
 	}
 }
 

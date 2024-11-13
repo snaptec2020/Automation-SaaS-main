@@ -6,12 +6,11 @@
    <elementGuidId>f8f20680-4e07-4800-b027-7e0360bbd854</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//button[starts-with(@class,'checkout-button')]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//button[@class='checkout-button']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

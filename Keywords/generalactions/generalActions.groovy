@@ -1,34 +1,100 @@
 package generalactions
 
-import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
-import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+
+import org.openqa.selenium.StaleElementReferenceException
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.support.ui.ExpectedConditions
+import org.openqa.selenium.support.ui.WebDriverWait
 
 import com.kms.katalon.core.annotation.Keyword
-import com.kms.katalon.core.checkpoint.Checkpoint
-import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
-import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling
-import com.kms.katalon.core.testcase.TestCase
-import com.kms.katalon.core.testdata.TestData
-import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject
-import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.util.KeywordUtil
+import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-
-import internal.GlobalVariable
 
 public class generalActions {
+	private static final int MAX_ATTEMPTS = 60
+	private static final int WAIT_TIMEOUT = 1
+
 	@Keyword
 	def waiteSpinnerToHide() {
-		int numberOfTrails=0
-		def isSpennerVisable= WebUI.waitForElementVisible(findTestObject('Spinner'), 2, FailureHandling.CONTINUE_ON_FAILURE)
-		while(isSpennerVisable && numberOfTrails<=20) {
-			isSpennerVisable= WebUI.waitForElementVisible(findTestObject('Spinner'), 2, FailureHandling.CONTINUE_ON_FAILURE)
-			numberOfTrails++
+		def spinnerObject = findTestObject('Spinner')
+		WebDriver driver = DriverFactory.getWebDriver()
+		int attemptCount = 0
+
+		while (attemptCount < MAX_ATTEMPTS) {
+			try {
+				KeywordUtil.logInfo("Waiting for spinner to hide, attempt ${attemptCount + 1}")
+
+				// First, check if the spinner exists at all
+				boolean spinnerExists = WebUI.verifyElementPresent(spinnerObject, 1, FailureHandling.OPTIONAL)
+
+				if (!spinnerExists) {
+					KeywordUtil.logInfo("Spinner is not present in DOM")
+					return
+				}
+
+				// Check if spinner is visible
+				boolean isVisible = WebUI.verifyElementVisible(spinnerObject, FailureHandling.OPTIONAL)
+
+				if (!isVisible) {
+					KeywordUtil.logInfo("Spinner is not visible")
+					return
+				}
+
+				// If still visible, wait a bit before next attempt
+				WebUI.delay(WAIT_TIMEOUT)
+				attemptCount++
+
+			} catch (StaleElementReferenceException e) {
+				// If we get a stale element exception, it likely means the spinner has been removed
+				KeywordUtil.logInfo("Spinner appears to be gone (StaleElementReferenceException)")
+				return
+
+			} catch (Exception e) {
+				// For any other exception, log it and consider the spinner gone
+				KeywordUtil.logInfo("Exception while checking spinner: ${e.class.simpleName}. Assuming spinner is gone.")
+				return
+			}
+		}
+
+		// If we've reached this point, the spinner was still visible after all attempts
+		KeywordUtil.markWarning("Spinner remained visible after ${MAX_ATTEMPTS} attempts")
+	}
+
+	@Keyword
+	def waitForSpinnerWithRetry() {
+		def spinnerObject = findTestObject('Spinner')
+		WebDriver driver = DriverFactory.getWebDriver()
+		WebDriverWait wait = new WebDriverWait(driver, WAIT_TIMEOUT)
+		int attemptCount = 0
+
+		while (attemptCount < MAX_ATTEMPTS) {
+			try {
+				// Wait for spinner to appear (if it's going to)
+				boolean spinnerAppeared = WebUI.verifyElementPresent(spinnerObject, 1, FailureHandling.OPTIONAL)
+
+				if (spinnerAppeared) {
+					// Wait for it to disappear
+					wait.until(ExpectedConditions.invisibilityOfElementLocated(WebUI.convertTestObjectToLocator(spinnerObject)))
+				}
+
+				return // Success - either spinner never appeared or it disappeared
+
+			} catch (StaleElementReferenceException e) {
+				// If we get a stale reference, the element is already gone
+				return
+
+			} catch (Exception e) {
+				attemptCount++
+				if (attemptCount >= MAX_ATTEMPTS) {
+					KeywordUtil.markWarning("Failed to handle spinner after ${MAX_ATTEMPTS} attempts: ${e.message}")
+					return
+				}
+				WebUI.delay(WAIT_TIMEOUT)
+			}
 		}
 	}
 }

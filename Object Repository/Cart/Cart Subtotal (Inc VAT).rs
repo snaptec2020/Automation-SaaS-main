@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//span[text()='المجموع الكلي (شامل الضريبة)' or text()='Cart Subtotal (Inc VAT)' or text()='المجموع الفرعي:' or text() = 'Subtotal: ']//following-sibling::span[@class='price--bold']</value>
+         <value>//span[@class = 'label'][text() = 'المجموع الكلي (شامل الضريبة)' or .= 'Cart Subtotal (Inc VAT)']/following-sibling::span[@class= 'price--bold']/*[@dir]/span[1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//span[text()='المجموع الكلي (شامل الضريبة)' or text()='Cart Subtotal (Inc VAT)' or text()='المجموع الفرعي:' or text() = 'Subtotal: ']//following-sibling::span[@class='price--bold']</value>
-      <webElementGuid>bec16f98-7d0b-4318-bc6a-84a05239bb1d</webElementGuid>
+      <value>//span[@class = 'label'][text() = 'المجموع الكلي (شامل الضريبة)' or .= 'Cart Subtotal (Inc VAT)']/following-sibling::span[@class= 'price--bold']/*[@dir]/span[1]</value>
+      <webElementGuid>39ec7d00-03b8-4e51-805a-bce20acfd94b</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

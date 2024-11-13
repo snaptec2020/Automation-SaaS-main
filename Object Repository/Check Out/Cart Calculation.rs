@@ -6,12 +6,11 @@
    <elementGuidId>7f2020f4-41be-49e4-bdc0-5036ca86c69a</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[contains(@class,'cart-calculation-container')]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@class='cart-calculation-container']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

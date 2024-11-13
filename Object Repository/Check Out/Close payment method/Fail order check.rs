@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//h3[@class='styles_title__Dbfe2'][normalize-space()=&quot;Your order wasn't accepted.&quot; or text()='لم يتم قبول طلبك' ] </value>
+         <value>//div[@class='error-message'][normalize-space()=&quot;You aborted the payment. Please retry or choose another payment method.&quot; or text()='لقد ألغيت الدفعة. فضلاً حاول مجددًا أو اختر طريقة دفع أخرى.' ]</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

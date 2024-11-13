@@ -59,7 +59,7 @@ public class notificationsObject {
 		WebUI.waitForElementVisible(tb, 10)
 		return WebUI.getText(tb, FailureHandling.CONTINUE_ON_FAILURE)
 	}
-	
+
 	@Keyword
 	String getTextAfterVisible(TestObject testObject, int timeoutSeconds) {
 		// Custom keyword or test case script
@@ -90,11 +90,11 @@ public class notificationsObject {
         
         return waitForElementVisible(arguments[0], arguments[1]);
     '''
-		
+
 		// Convert TestObject to CSS selector
 		WebElement element = WebUiCommonHelper.findWebElement(testObject, 5)
 		String cssSelector = WebUI.executeJavaScript("return arguments[0].tagName.toLowerCase() + (arguments[0].id ? '#' + arguments[0].id : '') + (arguments[0].className ? '.' + arguments[0].className.replace(/\\s+/g, '.') : '');", Arrays.asList(element))
-		
+
 		// Execute the script and wait for result
 		String text = WebUI.executeJavaScript(script, Arrays.asList(cssSelector, timeoutSeconds * 1000))
 		return text
@@ -102,24 +102,45 @@ public class notificationsObject {
 	@Keyword
 	def waitForSpecificChildren(TestObject parentObject, int expectedCount, int timeoutSeconds) {
 		long endTime = System.currentTimeMillis() + (timeoutSeconds * 1000)
-		
+
 		while (System.currentTimeMillis() < endTime) {
 			try {
 				WebElement parent = WebUiCommonHelper.findWebElement(parentObject, 5)
 				List<WebElement> children = parent.findElements(By.xpath(".//*"))
-				
+
 				if (children.size() >= expectedCount) {
 					KeywordUtil.logInfo("Found ${children.size()} children")
 					return true
 				}
-				
+
 				Thread.sleep(500) // Wait before next check
 			} catch (Exception e) {
 				// Continue waiting if element not found
 			}
 		}
-		
+
 		KeywordUtil.markWarning("Timeout waiting for children elements")
 		return false
+	}
+
+	@Keyword
+	def shouldRefresh() {
+		if(WebUI.waitForElementVisible(findTestObject('Sign up Page/Sgin up By phone/Retry Captcha'), 3)) {
+			def errorMessage = WebUI.getText(findTestObject('Sign up Page/Sgin up By phone/Retry Captcha'))
+			KeywordUtil.logInfo(errorMessage)
+			if(errorMessage.equalsIgnoreCase('الرجاء المحاولة بعد قليل') || errorMessage.equalsIgnoreCase('Please try again.')) {
+				GlobalVariable.shouldRefresh = true
+			}
+		}
+	}
+
+	@Keyword
+	def refreshSignByPhone(def testCasePath) {
+		if(GlobalVariable.shouldRefresh) {
+			WebUI.delay(2)
+			WebUI.refresh(FailureHandling.CONTINUE_ON_FAILURE)
+			GlobalVariable.shouldRefresh = false
+			WebUI.callTestCase(findTestCase(testCasePath), [:], FailureHandling.STOP_ON_FAILURE)
+		}
 	}
 }

@@ -56,7 +56,7 @@ WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], Failu
 
 
 
-WebUI.verifyElementVisible(findTestObject('Check Out/Apply Discount Button'))
+WebUI.verifyElementVisible(findTestObject('Check Out/Discount container'))
 
 WebUI.verifyElementVisible(findTestObject('Check Out/Cart Calculation'))
 

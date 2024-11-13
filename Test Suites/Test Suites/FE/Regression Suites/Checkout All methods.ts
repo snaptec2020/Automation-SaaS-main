@@ -15,7 +15,14 @@
       <guid>e9b9a025-0a96-4fe7-ae89-6795bec7c108</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Check out/validation/Validation - Place Order COD Method</testCaseId>
+      <testCaseId>Test Cases/FE/Check out/validation/Validation - Place Order Tamara Method</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>6e021e97-505a-48ff-8043-c8031324deeb</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Check out/validation/Validation - Place Order Tabby Method</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
