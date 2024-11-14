@@ -12,6 +12,13 @@
    <rerunImmediately>false</rerunImmediately>
    <testSuiteGuid>8d4533d6-8c76-40cd-8193-c3abbd5512db</testSuiteGuid>
    <testCaseLink>
+      <guid>43f6d964-67ba-4387-bde5-b24ef1f7619b</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Check out/validation/Validation - Place Order COD Method</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
       <guid>e9b9a025-0a96-4fe7-ae89-6795bec7c108</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
