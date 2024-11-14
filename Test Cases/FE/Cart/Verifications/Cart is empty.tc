@@ -4,5 +4,6 @@
    <name>Cart is empty</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>58db6d6f-3b27-4f62-9131-d6d212c42e42</testCaseGuid>
 </TestCaseEntity>

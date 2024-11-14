@@ -4,6 +4,7 @@
    <name>Open menu group by Name</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>8ac30cca-e85e-4303-a4e3-9bca69668994</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>

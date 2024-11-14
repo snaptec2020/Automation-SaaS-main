@@ -10,7 +10,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Staging-NT</profileName>
+            <profileName>SaaS-Stg-NT</profileName>
             <requireConfigurationData>true</requireConfigurationData>
             <runConfigurationData>
                <entry>
@@ -41,7 +41,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Staging-NT</profileName>
+            <profileName>SaaS-Stg-NT</profileName>
             <requireConfigurationData>true</requireConfigurationData>
             <runConfigurationData>
                <entry>
@@ -72,7 +72,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Staging-NT</profileName>
+            <profileName>SaaS-Stg-NT</profileName>
             <requireConfigurationData>true</requireConfigurationData>
             <runConfigurationData>
                <entry>
@@ -103,7 +103,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Staging-Zohoor</profileName>
+            <profileName>SaaS-Stg-Zohoor</profileName>
             <requireConfigurationData>true</requireConfigurationData>
             <runConfigurationData>
                <entry>
@@ -134,7 +134,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Staging-Zohoor</profileName>
+            <profileName>SaaS-Stg-Zohoor</profileName>
             <requireConfigurationData>true</requireConfigurationData>
             <runConfigurationData>
                <entry>
@@ -165,7 +165,7 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Staging-Zohoor</profileName>
+            <profileName>SaaS-Stg-Zohoor</profileName>
             <requireConfigurationData>true</requireConfigurationData>
             <runConfigurationData>
                <entry>

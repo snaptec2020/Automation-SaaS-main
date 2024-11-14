@@ -4,6 +4,7 @@
    <name>Open Menu Item by Name</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>d65f190d-7c6d-44e2-8e95-5f20eb81a852</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
