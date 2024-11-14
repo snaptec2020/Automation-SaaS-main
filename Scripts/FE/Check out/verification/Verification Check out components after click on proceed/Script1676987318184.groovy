@@ -3,10 +3,8 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
-
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-
+import java.time.LocalDate as LocalDate
+import java.time.format.DateTimeFormatter as DateTimeFormatter
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -17,15 +15,16 @@ import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
-import com.kms.katalon.core.webui.common.WebUiCommonHelper
+import com.kms.katalon.core.webui.common.WebUiCommonHelper as WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.apache.commons.lang3.StringUtils as StringUtils
-import org.openqa.selenium.Keys
-import org.openqa.selenium.WebElement
+import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.WebElement as WebElement
 import org.openqa.selenium.WebElement as Keys
-import com.kms.katalon.core.testobject.ConditionType
+import com.kms.katalon.core.testobject.ConditionType as ConditionType
+
 WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components'), [:], FailureHandling.STOP_ON_FAILURE)
 
 //def SumOfProductsPriceInCart = CustomKeywords.'cart.cartItems.getSumOfProductsPriceInCart'()
@@ -90,35 +89,34 @@ if (WebUI.waitForElementVisible(findTestObject('Map Objs/Map Block'), 5)) {
         
         WebUI.delay(2)
 
-        WebUI.clickOffset(findTestObject('Map Objs/Map Block'), 0, 0) //		if(i == 5) {
-        //			KeywordUtil.markFailedAndStop("Cannot select address");
+        WebUI.clickOffset(findTestObject('Map Objs/Map Block'), 0, 0 //		if(i == 5) {
+            ) //			KeywordUtil.markFailedAndStop("Cannot select address");
         //		}
     }
 }
 
-if (WebUI.waitForElementVisible(findTestObject('Check Out/PickUp Date'), 3)) { 
-        WebUI.setText(findTestObject('Check Out/PickUp time'), '17:30')
+if (WebUI.waitForElementVisible(findTestObject('Check Out/PickUp Date'), 3)) {
+    WebUI.setText(findTestObject('Check Out/PickUp time'), '17:30')
 
-        TestObject dateInput = findTestObject('Check Out/PickUp Date')
+    TestObject dateInput = findTestObject('Check Out/PickUp Date')
 
-        WebElement element = WebUiCommonHelper.findWebElement(dateInput, 30)
+    WebElement element = WebUiCommonHelper.findWebElement(dateInput, 30)
 
-        LocalDate tomorrow = LocalDate.now().plusDays(2)
+    LocalDate tomorrow = LocalDate.now().plusDays(2)
 
-        String dateToSet = tomorrow.format(DateTimeFormatter.ofPattern('yyyy-MM-dd'))
+    String dateToSet = tomorrow.format(DateTimeFormatter.ofPattern('yyyy-MM-dd'))
 
-        WebUI.executeJavaScript('arguments[0].value = arguments[1]', Arrays.asList(element, dateToSet))
-		
-		if (WebUI.waitForElementVisible(findTestObject('Check Out/Save Pickup date and Time'), 2))
+    WebUI.executeJavaScript('arguments[0].value = arguments[1]', Arrays.asList(element, dateToSet))
+
+    if (WebUI.waitForElementVisible(findTestObject('Check Out/Save Pickup date and Time'), 2)) {
         WebUI.click(findTestObject('Check Out/Save Pickup date and Time'))
     }
+}
 
-	if (WebUI.waitForElementVisible(findTestObject('Check Out/CheckOut Wallet'), 3)) {
-    TestObject walletAmountObject = new TestObject().addProperty('xpath', ConditionType.EQUALS, 
-        '//div[@class=\'checkout-wallet\']//span')
+if (WebUI.waitForElementVisible(findTestObject('Check Out/CheckOut Wallet'), 3)) {
+    TestObject walletAmountObject = new TestObject().addProperty('xpath', ConditionType.EQUALS, '//div[@class=\'checkout-wallet\']//span')
 
-    TestObject walletInputField = new TestObject().addProperty('xpath', ConditionType.EQUALS, 
-        '//input[@type=\'text\' and @class=\'wallet-input \']')
+    TestObject walletInputField = new TestObject().addProperty('xpath', ConditionType.EQUALS, '//input[@type=\'text\' and @class=\'wallet-input \']')
 
     // Get the text of the wallet amount element
     String walletAmountText = WebUI.getText(walletAmountObject)
@@ -129,22 +127,23 @@ if (WebUI.waitForElementVisible(findTestObject('Check Out/PickUp Date'), 3)) {
         )
 
     if (walletAmount > 0.0) {
-		boolean isWalletFieldEdittable = WebUI.getAttribute(walletInputField, 'disabled', FailureHandling.CONTINUE_ON_FAILURE)
-		if(!isWalletFieldEdittable) {
-        WebUI.click(walletInputField)
+        boolean isWalletFieldEdittable = WebUI.getAttribute(walletInputField, 'disabled', FailureHandling.CONTINUE_ON_FAILURE)
 
-        WebUI.sendKeys(walletInputField, walletAmountString)
+        if (!(isWalletFieldEdittable)) {
+            WebUI.click(walletInputField)
 
-        WebUI.click(findTestObject('Check Out/Wallet Submit Button'), FailureHandling.CONTINUE_ON_FAILURE)
-		}
-    } 
-	/*else {
+            WebUI.sendKeys(walletInputField, walletAmountString)
+
+            WebUI.click(findTestObject('Check Out/Wallet Submit Button'), FailureHandling.CONTINUE_ON_FAILURE)
+        }
+    } /*else {
         WebUI.comment('The wallet amount is zero or negative.')
 
         WebUI.verifyGreaterThan(walletAmount, 0, FailureHandling.STOP_ON_FAILURE)
     }*/
 }
 
+WebUI.callTestCase(findTestCase('FE/Check out/validation/Set Coupon Code'), [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.verifyElementVisible(findTestObject('Check Out/checkout user details 1'))
 
