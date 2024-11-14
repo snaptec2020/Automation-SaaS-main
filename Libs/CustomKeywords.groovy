@@ -13,6 +13,12 @@ import org.openqa.selenium.WebElement
 
 import com.kms.katalon.core.context.TestSuiteContext
 
+import java.util.Map
+
+import java.lang.Boolean
+
+import java.lang.Object
+
 
 
 def static "dbconnections.executeQueries.getDataFromDBByQuery"(
@@ -388,6 +394,49 @@ def static "generalactions.generalActions.waiteSpinnerToHide"() {
 }
 
 
+def static "generalactions.generalActions.waitForSpinnerWithRetry"() {
+    (new generalactions.generalActions()).waitForSpinnerWithRetry()
+}
+
+
+def static "mid.FilterPage.expandFilter"() {
+    (new mid.FilterPage()).expandFilter()
+}
+
+
+def static "mid.FilterPage.filter"(
+    	java.util.Map<String, Object>[] params	) {
+    (new mid.FilterPage()).filter(
+        	params)
+}
+
+
+def static "mid.FilterPage.clearFilter"(
+    	boolean allFilter	
+     , 	Object filterData	) {
+    (new mid.FilterPage()).clearFilter(
+        	allFilter
+         , 	filterData)
+}
+
+
+def static "mid.FilterPage.enabledSearchButton"() {
+    (new mid.FilterPage()).enabledSearchButton()
+}
+
+
+def static "mid.FilterPage.clearFilter"(
+    	boolean allFilter	) {
+    (new mid.FilterPage()).clearFilter(
+        	allFilter)
+}
+
+
+def static "mid.FilterPage.clearFilter"() {
+    (new mid.FilterPage()).clearFilter()
+}
+
+
 def static "signup.signupPhoneVerifications.phoneVerificationMessage"(
     	Object expectedMessage	) {
     (new signup.signupPhoneVerifications()).phoneVerificationMessage(
@@ -409,6 +458,32 @@ def static "signIn.signInVerifications.verifyActualMessageWithExpectedSignIn"(
     	Object expectedMessage	) {
     (new signIn.signInVerifications()).verifyActualMessageWithExpectedSignIn(
         	expectedMessage)
+}
+
+
+def static "checkout.EnhancedPayments.getPaymentMethodsList"() {
+    (new checkout.EnhancedPayments()).getPaymentMethodsList()
+}
+
+
+def static "checkout.EnhancedPayments.getRandomPaymentMethod"() {
+    (new checkout.EnhancedPayments()).getRandomPaymentMethod()
+}
+
+
+def static "checkout.EnhancedPayments.paymentMethodToPayBySelectedMethod"(
+    	int selectedIndex	
+     , 	Object expectedPaymentMethod	) {
+    (new checkout.EnhancedPayments()).paymentMethodToPayBySelectedMethod(
+        	selectedIndex
+         , 	expectedPaymentMethod)
+}
+
+
+def static "checkout.EnhancedPayments.paymentMethodToPayBySelectedMethod"(
+    	int selectedIndex	) {
+    (new checkout.EnhancedPayments()).paymentMethodToPayBySelectedMethod(
+        	selectedIndex)
 }
 
 
@@ -495,6 +570,11 @@ def static "utility.Utility.clickOnObjectusingJavaScript"(
 }
 
 
+def static "utility.Utility.setDateUsingJavaScript"() {
+    (new utility.Utility()).setDateUsingJavaScript()
+}
+
+
 def static "utility.Utility.clickOnObjectusingJavaScript"(
     	WebElement element	) {
     (new utility.Utility()).clickOnObjectusingJavaScript(
@@ -504,6 +584,60 @@ def static "utility.Utility.clickOnObjectusingJavaScript"(
 
 def static "utility.Utility.moveToElement"() {
     (new utility.Utility()).moveToElement()
+}
+
+
+def static "mid.PaginationPage.getSelectedOptionValue"(
+    	TestObject selector	) {
+    (new mid.PaginationPage()).getSelectedOptionValue(
+        	selector)
+}
+
+
+def static "mid.PaginationPage.getItemsNum"(
+    	TestObject itemsTableSelector	) {
+    (new mid.PaginationPage()).getItemsNum(
+        	itemsTableSelector)
+}
+
+
+def static "mid.PaginationPage.selectOption"(
+    	TestObject dropdownSelector	
+     , 	Boolean isByIndex	
+     , 	Object indexID	
+     , 	Object value	) {
+    (new mid.PaginationPage()).selectOption(
+        	dropdownSelector
+         , 	isByIndex
+         , 	indexID
+         , 	value)
+}
+
+
+def static "mid.PaginationPage.selectOption"(
+    	TestObject dropdownSelector	
+     , 	Boolean isByIndex	
+     , 	Object indexID	) {
+    (new mid.PaginationPage()).selectOption(
+        	dropdownSelector
+         , 	isByIndex
+         , 	indexID)
+}
+
+
+def static "mid.PaginationPage.selectOption"(
+    	TestObject dropdownSelector	
+     , 	Boolean isByIndex	) {
+    (new mid.PaginationPage()).selectOption(
+        	dropdownSelector
+         , 	isByIndex)
+}
+
+
+def static "mid.PaginationPage.selectOption"(
+    	TestObject dropdownSelector	) {
+    (new mid.PaginationPage()).selectOption(
+        	dropdownSelector)
 }
 
 
@@ -536,6 +670,38 @@ def static "generalactions.notificationsObject.waitNotificationVisble"(
 
 def static "generalactions.notificationsObject.getMessageText"() {
     (new generalactions.notificationsObject()).getMessageText()
+}
+
+
+def static "generalactions.notificationsObject.getTextAfterVisible"(
+    	TestObject testObject	
+     , 	int timeoutSeconds	) {
+    (new generalactions.notificationsObject()).getTextAfterVisible(
+        	testObject
+         , 	timeoutSeconds)
+}
+
+
+def static "generalactions.notificationsObject.waitForSpecificChildren"(
+    	TestObject parentObject	
+     , 	int expectedCount	
+     , 	int timeoutSeconds	) {
+    (new generalactions.notificationsObject()).waitForSpecificChildren(
+        	parentObject
+         , 	expectedCount
+         , 	timeoutSeconds)
+}
+
+
+def static "generalactions.notificationsObject.shouldRefresh"() {
+    (new generalactions.notificationsObject()).shouldRefresh()
+}
+
+
+def static "generalactions.notificationsObject.refreshSignByPhone"(
+    	Object testCasePath	) {
+    (new generalactions.notificationsObject()).refreshSignByPhone(
+        	testCasePath)
 }
 
 

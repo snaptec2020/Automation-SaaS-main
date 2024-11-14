@@ -13,6 +13,7 @@ import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
@@ -20,6 +21,8 @@ import org.apache.commons.lang3.StringUtils as StringUtils
 import org.openqa.selenium.Keys as Keys
 import java.text.Collator as Collator
 import java.util.*
+
+
 
 /*
  * WebUI.click(findTestObject('Check Out/Zoom In (Map)'))
@@ -98,6 +101,8 @@ if (WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 
         WebUI.click(findTestObject('PickUp/PickupButton'))
 
         //WebUI.verifyElementPresent(findTestObject('PickUp/Map PopUp'), 5)
+		
+		
 
         WebUI.doubleClick(findTestObject('PickUp/first option from adderss list'))
 
