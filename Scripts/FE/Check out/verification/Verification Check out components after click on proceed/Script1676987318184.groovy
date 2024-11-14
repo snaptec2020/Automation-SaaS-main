@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter
 
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.main.CustomKeywordDelegatingMetaClass
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
@@ -22,9 +23,8 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.apache.commons.lang3.StringUtils as StringUtils
-import org.openqa.selenium.Keys
 import org.openqa.selenium.WebElement
-import org.openqa.selenium.WebElement as Keys
+import org.openqa.selenium.Keys as Keys
 import com.kms.katalon.core.testobject.ConditionType
 WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components'), [:], FailureHandling.STOP_ON_FAILURE)
 
@@ -34,12 +34,7 @@ WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check ou
 //checkTheTarget()
 WebUI.click(findTestObject('Check Out/Proceed To Checkout Button'))
 
-//boolean otpRequierd=WebUI.verifyElementVisible(findTestObject('OTP/OTP container'))
-//def currentUrl = WebUI.getUrl()
-//def isSpennerVisable= WebUI.waitForElementVisible(findTestObject('Spinner'), 10, FailureHandling.CONTINUE_ON_FAILURE)
-//while(isSpennerVisable) {
-//	isSpennerVisable= WebUI.waitForElementVisible(findTestObject('Spinner'), 10, FailureHandling.CONTINUE_ON_FAILURE)
-//}
+CustomKeywords.'com.utils.URLUtils.waitForURLContains'('/checkout',10)
 CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
 
 if (StringUtils.indexOfIgnoreCase(WebUI.getUrl(), '/checkout/registration') > 0) {
@@ -47,9 +42,9 @@ if (StringUtils.indexOfIgnoreCase(WebUI.getUrl(), '/checkout/registration') > 0)
         FailureHandling.STOP_ON_FAILURE)
 }
 
-int otpRequierd = WebUI.findWebElements(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), 20).size()
+boolean otpRequierd = WebUI.waitForElementVisible(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), 5, FailureHandling.CONTINUE_ON_FAILURE)//WebUI.findWebElements(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), 20).size()
 
-if (otpRequierd != 0) {
+if (otpRequierd) {
     boolean isPhoneExist = true
 
     int traials = 0
@@ -100,17 +95,20 @@ if (WebUI.waitForElementVisible(findTestObject('Check Out/PickUp Date'), 3)) {
         WebUI.setText(findTestObject('Check Out/PickUp time'), '17:30')
 
         TestObject dateInput = findTestObject('Check Out/PickUp Date')
-
+		//WebUI.click(dateInput)
         WebElement element = WebUiCommonHelper.findWebElement(dateInput, 30)
 
         LocalDate tomorrow = LocalDate.now().plusDays(2)
 
         String dateToSet = tomorrow.format(DateTimeFormatter.ofPattern('yyyy-MM-dd'))
-
+		//WebUI.sendKeys(dateInput, Keys.chord(Keys.ARROW_DOWN))
+		//WebUI.sendKeys(dateInput, Keys.chord(Keys.ARROW_RIGHT))
+		//WebUI.sendKeys(dateInput, Keys.chord(Keys.ENTER))
+		//WebUI.sendKeys(dateInput, dateToSet)
         WebUI.executeJavaScript('arguments[0].value = arguments[1]', Arrays.asList(element, dateToSet))
-		
+//		WebUI.click(findTestObject('Check Out/PickUp time'))
 		if (WebUI.waitForElementVisible(findTestObject('Check Out/Save Pickup date and Time'), 2))
-        WebUI.click(findTestObject('Check Out/Save Pickup date and Time'))
+			WebUI.click(findTestObject('Check Out/Save Pickup date and Time'))
     }
 
 	if (WebUI.waitForElementVisible(findTestObject('Check Out/CheckOut Wallet'), 3)) {

@@ -13,6 +13,7 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.utils.CustomLogger
 
 public class generalActions {
 	private static final int MAX_ATTEMPTS = 60
@@ -26,21 +27,21 @@ public class generalActions {
 
 		while (attemptCount < MAX_ATTEMPTS) {
 			try {
-				KeywordUtil.logInfo("Waiting for spinner to hide, attempt ${attemptCount + 1}")
+				CustomLogger.logInfo("Waiting for spinner to hide, attempt ${attemptCount + 1}")
 
 				// First, check if the spinner exists at all
-				boolean spinnerExists = WebUI.verifyElementPresent(spinnerObject, 1, FailureHandling.OPTIONAL)
+				boolean spinnerExists = WebUI.waitForElementPresent(spinnerObject, WAIT_TIMEOUT, FailureHandling.OPTIONAL)
 
 				if (!spinnerExists) {
-					KeywordUtil.logInfo("Spinner is not present in DOM")
+					CustomLogger.logInfo("Spinner is not present in DOM")
 					return
 				}
 
 				// Check if spinner is visible
-				boolean isVisible = WebUI.verifyElementVisible(spinnerObject, FailureHandling.OPTIONAL)
+				boolean isVisible = WebUI.waitForElementVisible(spinnerObject, WAIT_TIMEOUT, FailureHandling.STOP_ON_FAILURE)
 
 				if (!isVisible) {
-					KeywordUtil.logInfo("Spinner is not visible")
+					CustomLogger.logInfo("Spinner is not visible")
 					return
 				}
 
@@ -50,18 +51,18 @@ public class generalActions {
 
 			} catch (StaleElementReferenceException e) {
 				// If we get a stale element exception, it likely means the spinner has been removed
-				KeywordUtil.logInfo("Spinner appears to be gone (StaleElementReferenceException)")
+				CustomLogger.logInfo("Spinner appears to be gone (StaleElementReferenceException)")
 				return
 
 			} catch (Exception e) {
 				// For any other exception, log it and consider the spinner gone
-				KeywordUtil.logInfo("Exception while checking spinner: ${e.class.simpleName}. Assuming spinner is gone.")
+				CustomLogger.logInfo("Exception while checking spinner: ${e.class.simpleName}. Assuming spinner is gone.")
 				return
 			}
 		}
 
 		// If we've reached this point, the spinner was still visible after all attempts
-		KeywordUtil.markWarning("Spinner remained visible after ${MAX_ATTEMPTS} attempts")
+		CustomLogger.logWarning("Spinner remained visible after ${MAX_ATTEMPTS} attempts")
 	}
 
 	@Keyword
@@ -90,7 +91,7 @@ public class generalActions {
 			} catch (Exception e) {
 				attemptCount++
 				if (attemptCount >= MAX_ATTEMPTS) {
-					KeywordUtil.markWarning("Failed to handle spinner after ${MAX_ATTEMPTS} attempts: ${e.message}")
+					CustomLogger.logWarning("Failed to handle spinner after ${MAX_ATTEMPTS} attempts: ${e.message}")
 					return
 				}
 				WebUI.delay(WAIT_TIMEOUT)
