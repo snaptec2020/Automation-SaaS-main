@@ -19,6 +19,12 @@ import java.util.Map
 
 import com.kms.katalon.core.context.TestSuiteContext
 
+import java.util.Map
+
+import java.lang.Boolean
+
+import java.lang.Object
+
 
 
 def static "mid.framework.PaginationPage.getSelectedOptionValue"(
@@ -491,6 +497,44 @@ def static "generalactions.generalActions.waitForSpinnerWithRetry"() {
 }
 
 
+
+def static "mid.FilterPage.expandFilter"() {
+    (new mid.FilterPage()).expandFilter()
+}
+
+
+def static "mid.FilterPage.filter"(
+    	java.util.Map<String, Object>[] params	) {
+    (new mid.FilterPage()).filter(
+        	params)
+}
+
+
+def static "mid.FilterPage.clearFilter"(
+    	boolean allFilter	
+     , 	Object filterData	) {
+    (new mid.FilterPage()).clearFilter(
+        	allFilter
+         , 	filterData)
+}
+
+
+def static "mid.FilterPage.enabledSearchButton"() {
+    (new mid.FilterPage()).enabledSearchButton()
+}
+
+
+def static "mid.FilterPage.clearFilter"(
+    	boolean allFilter	) {
+    (new mid.FilterPage()).clearFilter(
+        	allFilter)
+}
+
+
+def static "mid.FilterPage.clearFilter"() {
+    (new mid.FilterPage()).clearFilter()
+}
+
 def static "signup.signupPhoneVerifications.phoneVerificationMessage"(
     	Object expectedMessage	) {
     (new signup.signupPhoneVerifications()).phoneVerificationMessage(
@@ -643,6 +687,60 @@ def static "utility.Utility.clickOnObjectusingJavaScript"(
 
 def static "utility.Utility.moveToElement"() {
     (new utility.Utility()).moveToElement()
+}
+
+
+def static "mid.PaginationPage.getSelectedOptionValue"(
+    	TestObject selector	) {
+    (new mid.PaginationPage()).getSelectedOptionValue(
+        	selector)
+}
+
+
+def static "mid.PaginationPage.getItemsNum"(
+    	TestObject itemsTableSelector	) {
+    (new mid.PaginationPage()).getItemsNum(
+        	itemsTableSelector)
+}
+
+
+def static "mid.PaginationPage.selectOption"(
+    	TestObject dropdownSelector	
+     , 	Boolean isByIndex	
+     , 	Object indexID	
+     , 	Object value	) {
+    (new mid.PaginationPage()).selectOption(
+        	dropdownSelector
+         , 	isByIndex
+         , 	indexID
+         , 	value)
+}
+
+
+def static "mid.PaginationPage.selectOption"(
+    	TestObject dropdownSelector	
+     , 	Boolean isByIndex	
+     , 	Object indexID	) {
+    (new mid.PaginationPage()).selectOption(
+        	dropdownSelector
+         , 	isByIndex
+         , 	indexID)
+}
+
+
+def static "mid.PaginationPage.selectOption"(
+    	TestObject dropdownSelector	
+     , 	Boolean isByIndex	) {
+    (new mid.PaginationPage()).selectOption(
+        	dropdownSelector
+         , 	isByIndex)
+}
+
+
+def static "mid.PaginationPage.selectOption"(
+    	TestObject dropdownSelector	) {
+    (new mid.PaginationPage()).selectOption(
+        	dropdownSelector)
 }
 
 
@@ -935,6 +1033,74 @@ def static "generalactions.scrolling.scrollAndTryClicking"(
     	Object testObjectPath	) {
     (new generalactions.scrolling()).scrollAndTryClicking(
         	testObjectPath)
+}
+
+
+def static "com.utils.URLUtils.waitForURLChange"(
+    	String expectedURL	
+     , 	int timeoutSeconds	) {
+    (new com.utils.URLUtils()).waitForURLChange(
+        	expectedURL
+         , 	timeoutSeconds)
+}
+
+
+def static "com.utils.URLUtils.waitForURLContains"(
+    	String partialURL	
+     , 	int timeoutSeconds	) {
+    (new com.utils.URLUtils()).waitForURLContains(
+        	partialURL
+         , 	timeoutSeconds)
+}
+
+
+def static "com.utils.URLUtils.waitForURLChange"(
+    	String currentURL	
+     , 	String expectedURL	
+     , 	int timeoutSeconds	) {
+    (new com.utils.URLUtils()).waitForURLChange(
+        	currentURL
+         , 	expectedURL
+         , 	timeoutSeconds)
+}
+
+
+def static "com.utils.URLUtils.waitForURLPattern"(
+    	String urlPattern	
+     , 	int timeoutSeconds	) {
+    (new com.utils.URLUtils()).waitForURLPattern(
+        	urlPattern
+         , 	timeoutSeconds)
+}
+
+
+def static "com.utils.URLUtils.waitForURLChange"(
+    	String expectedURL	) {
+    (new com.utils.URLUtils()).waitForURLChange(
+        	expectedURL)
+}
+
+
+def static "com.utils.URLUtils.waitForURLContains"(
+    	String partialURL	) {
+    (new com.utils.URLUtils()).waitForURLContains(
+        	partialURL)
+}
+
+
+def static "com.utils.URLUtils.waitForURLChange"(
+    	String currentURL	
+     , 	String expectedURL	) {
+    (new com.utils.URLUtils()).waitForURLChange(
+        	currentURL
+         , 	expectedURL)
+}
+
+
+def static "com.utils.URLUtils.waitForURLPattern"(
+    	String urlPattern	) {
+    (new com.utils.URLUtils()).waitForURLPattern(
+        	urlPattern)
 }
 
 

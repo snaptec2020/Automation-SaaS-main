@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Set Coupon Code</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a7f37945-fe1b-47f8-ab7f-60fb612801b2</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>d9492de0-e7bb-4ca5-9ce0-29fb535f48e0</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'Test2024'</defaultValue>
+      <description></description>
+      <id>d9492de0-e7bb-4ca5-9ce0-29fb535f48e0</id>
+      <masked>false</masked>
+      <name>couponCode</name>
+   </variable>
+</TestCaseEntity>

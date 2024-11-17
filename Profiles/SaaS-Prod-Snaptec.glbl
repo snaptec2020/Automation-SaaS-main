@@ -9,4 +9,14 @@
       <initValue>'https://prod-saas.snaptec.co'</initValue>
       <name>URL</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Test2024'</initValue>
+      <name>couponCode</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'test99'</initValue>
+      <name>labelValue</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

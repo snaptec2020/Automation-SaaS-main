@@ -131,13 +131,13 @@ public class EnhancedPayments {
 			case ~('الدفع عند الإستلام'):
 			case ~('الدفع عند الاستلام'):
 			case ~('Cash On Delivery'):
-			CustomLogger.logInfo("Start handling COD")
+				CustomLogger.logInfo("Start handling COD")
 				handleCashOnDeliveryPayment()
 				break
 			case ~('قسم فاتورتك على \\d دفعات بدون فوائد'):
 			case ~('Split in \\d payments without interest or hidden fees'):
 			case ~('Tamara'):
-			CustomLogger.logInfo("Start handling Tamara")
+				CustomLogger.logInfo("Start handling Tamara")
 				handleTamaraPayment()
 				break
 		}
