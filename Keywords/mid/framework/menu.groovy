@@ -32,53 +32,58 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.interactions.Actions
 import internal.GlobalVariable
+import mid.framework.jsonUtility
 
 class menu {
 
-	String url = "/"
-	private final Map<String, String> resourceBundle = [
-		"Sales": "Sales",
-		"Sales_Orders": "Orders",
-		"Sales_Invoices": "Invoices",
-		"Sales_Shipments": "Shipments",
-		"Sales_CreditMemos": "Credit Memos",
-		"Sales_ReturnRequests": "Return Requests",
-		"OMS": "OMS",
-		"Sales_ReturnRequestSettings": "Return Request Settings",
-		"Sales_Quotations": "Quotations",
-		"Catalog": "Catalog",
-		"Catalog_Products": "Products",
-		"Catalog_Categories": "Categories",
-		"Catalog_RelatedProductRules": "Related Product Rules",
-		"Catalog_ProductLabels": "Product Labels",
-		"Content": "Content",
-		"Content_CMSPages": "CMS Pages",
-		"Content_LandingPages": "Landing Pages",
-		"Content_Headers": "Headers",
-		"Content_Footers": "Footers",
-		"Content_SubscriptionForms": "Subscription Forms",
-		"Customers": "Customers",
-		"Customers_AllCustomers": "All Customers",
-		"Customers_CustomerGroups": "Customer Groups",
-		"Marketing": "Marketing",
-		"Marketing_CartPriceRules": "Cart Price Rules",
-		"Marketing_ProductsReviews": "Products Reviews",
-		"Reports": "Reports",
-		"Reports_BasicReports": "Basic Reports",
-		"System": "System",
-		"System_Configuration": "Configuration",
-		"System_Permissions": "Permissions",
-		"System_LocatorZones": "Locator Zones",
-		"System_DataTransfer": "Data Transfer",
-		"DriverApp": "Driver App",
-		"DriverApp_Drivers": "Drivers",
-		"DriverApp_AssignOrderToDriver": "Assign Order To Driver",
-		"Stores": "Stores",
-		"Stores_Inventory": "Inventory",
-		"Stores_Inventory_Sources": "Sources",
-		"Stores_Inventory_Stocks": "Stocks"
-	]
+	//	String url = "/"
+	//	private final Map<String, String> resourceBundle = [
+	//		"Sales": "Sales",
+	//		"Sales_Orders": "Orders",
+	//		"Sales_Invoices": "Invoices",
+	//		"Sales_Shipments": "Shipments",
+	//		"Sales_CreditMemos": "Credit Memos",
+	//		"Sales_ReturnRequests": "Return Requests",
+	//		"OMS": "OMS",
+	//		"Sales_ReturnRequestSettings": "Return Request Settings",
+	//		"Sales_Quotations": "Quotations",
+	//		"Catalog": "Catalog",
+	//		"Catalog_Products": "Products",
+	//		"Catalog_Categories": "Categories",
+	//		"Catalog_RelatedProductRules": "Related Product Rules",
+	//		"Catalog_ProductLabels": "Product Labels",
+	//		"Content": "Content",
+	//		"Content_CMSPages": "CMS Pages",
+	//		"Content_LandingPages": "Landing Pages",
+	//		"Content_Headers": "Headers",
+	//		"Content_Footers": "Footers",
+	//		"Content_SubscriptionForms": "Subscription Forms",
+	//		"Customers": "Customers",
+	//		"Customers_AllCustomers": "All Customers",
+	//		"Customers_CustomerGroups": "Customer Groups",
+	//		"Marketing": "Marketing",
+	//		"Marketing_CartPriceRules": "Cart Price Rules",
+	//		"Marketing_ProductsReviews": "Products Reviews",
+	//		"Reports": "Reports",
+	//		"Reports_BasicReports": "Basic Reports",
+	//		"System": "System",
+	//		"System_Configuration": "Configuration",
+	//		"System_Permissions": "Permissions",
+	//		"System_LocatorZones": "Locator Zones",
+	//		"System_DataTransfer": "Data Transfer",
+	//		"DriverApp": "Driver App",
+	//		"DriverApp_Drivers": "Drivers",
+	//		"DriverApp_AssignOrderToDriver": "Assign Order To Driver",
+	//		"Stores": "Stores",
+	//		"Stores_Inventory": "Inventory",
+	//		"Stores_Inventory_Sources": "Sources",
+	//		"Stores_Inventory_Stocks": "Stocks"
+	//	]
 
+	
+	String filePath = "Resources/menus_en.json"
+	def resourceBundle = jsonUtility.readJsonFile(filePath)
+	
 	private def translation(String key) {
 		return resourceBundle[key]
 	}
