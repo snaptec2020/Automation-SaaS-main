@@ -108,7 +108,6 @@ if (WebUI.waitForElementVisible(findTestObject('Check Out/PickUp Date'), 3)) {
 		if (WebUI.waitForElementVisible(findTestObject('Check Out/Save Pickup date and Time'), 2))
 			WebUI.click(findTestObject('Check Out/Save Pickup date and Time'))
     }
-}
 
 if (WebUI.waitForElementVisible(findTestObject('Check Out/CheckOut Wallet'), 3)) {
     TestObject walletAmountObject = new TestObject().addProperty('xpath', ConditionType.EQUALS, '//div[@class=\'checkout-wallet\']//span')

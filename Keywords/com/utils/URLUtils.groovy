@@ -15,71 +15,71 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 public class URLUtils {
-    
-    @Keyword
-    def waitForURLChange(String expectedURL, int timeoutSeconds = 30) {
-        WebDriver driver = DriverFactory.getWebDriver()
-        WebDriverWait wait = new WebDriverWait(driver, timeoutSeconds)
-        
-        try {
-            wait.until(ExpectedConditions.urlToBe(expectedURL))
-            KeywordUtil.markPassed("URL changed to expected URL: ${expectedURL}")
-            return true
-        } catch (Exception e) {
-            KeywordUtil.markFailed("URL did not change to expected URL within ${timeoutSeconds} seconds")
-            return false
-        }
-    }
-    
-    @Keyword
-    def waitForURLContains(String partialURL, int timeoutSeconds = 30) {
-        WebDriver driver = DriverFactory.getWebDriver()
-        WebDriverWait wait = new WebDriverWait(driver, timeoutSeconds)
-        
-        try {
-            wait.until(ExpectedConditions.urlContains(partialURL))
-            KeywordUtil.markPassed("URL contains expected text: ${partialURL}")
-            return true
-        } catch (Exception e) {
-            KeywordUtil.markFailed("URL did not contain expected text within ${timeoutSeconds} seconds")
-            return false
-        }
-    }
-    
-    @Keyword
-    def waitForURLChange(String currentURL, String expectedURL, int timeoutSeconds = 30) {
-        WebDriver driver = DriverFactory.getWebDriver()
-        WebDriverWait wait = new WebDriverWait(driver, timeoutSeconds)
-        
-        try {
-            // First wait for current URL to change
-            wait.until(ExpectedConditions.not(ExpectedConditions.urlToBe(currentURL)))
-            
-            // Then wait for expected URL if provided
-            if (expectedURL) {
-                wait.until(ExpectedConditions.urlToBe(expectedURL))
-            }
-            
-            KeywordUtil.markPassed("URL changed successfully to: ${driver.getCurrentUrl()}")
-            return true
-        } catch (Exception e) {
-            KeywordUtil.markFailed("URL change failed. Current URL: ${driver.getCurrentUrl()}")
-            return false
-        }
-    }
-    
-    @Keyword
-    def waitForURLPattern(String urlPattern, int timeoutSeconds = 30) {
-        WebDriver driver = DriverFactory.getWebDriver()
-        WebDriverWait wait = new WebDriverWait(driver, timeoutSeconds)
-        
-        try {
-            wait.until(ExpectedConditions.urlMatches(urlPattern))
-            KeywordUtil.markPassed("URL matches pattern: ${urlPattern}")
-            return true
-        } catch (Exception e) {
-            KeywordUtil.markFailed("URL did not match pattern within ${timeoutSeconds} seconds")
-            return false
-        }
-    }
+
+	@Keyword
+	def waitForURLChange(String expectedURL, int timeoutSeconds = 30) {
+		WebDriver driver = DriverFactory.getWebDriver()
+		WebDriverWait wait = new WebDriverWait(driver, timeoutSeconds)
+
+		try {
+			wait.until(ExpectedConditions.urlToBe(expectedURL))
+			KeywordUtil.markPassed("URL changed to expected URL: ${expectedURL}")
+			return true
+		} catch (Exception e) {
+			KeywordUtil.markFailed("URL did not change to expected URL within ${timeoutSeconds} seconds")
+			return false
+		}
+	}
+
+	@Keyword
+	def waitForURLContains(String partialURL, int timeoutSeconds = 30) {
+		WebDriver driver = DriverFactory.getWebDriver()
+		WebDriverWait wait = new WebDriverWait(driver, timeoutSeconds)
+
+		try {
+			wait.until(ExpectedConditions.urlContains(partialURL))
+			KeywordUtil.markPassed("URL contains expected text: ${partialURL}")
+			return true
+		} catch (Exception e) {
+			KeywordUtil.markFailed("URL did not contain expected text within ${timeoutSeconds} seconds")
+			return false
+		}
+	}
+
+	@Keyword
+	def waitForURLChange(String currentURL, String expectedURL, int timeoutSeconds = 30) {
+		WebDriver driver = DriverFactory.getWebDriver()
+		WebDriverWait wait = new WebDriverWait(driver, timeoutSeconds)
+
+		try {
+			// First wait for current URL to change
+			wait.until(ExpectedConditions.not(ExpectedConditions.urlToBe(currentURL)))
+
+			// Then wait for expected URL if provided
+			if (expectedURL) {
+				wait.until(ExpectedConditions.urlToBe(expectedURL))
+			}
+
+			KeywordUtil.markPassed("URL changed successfully to: ${driver.getCurrentUrl()}")
+			return true
+		} catch (Exception e) {
+			KeywordUtil.markFailed("URL change failed. Current URL: ${driver.getCurrentUrl()}")
+			return false
+		}
+	}
+
+	@Keyword
+	def waitForURLPattern(String urlPattern, int timeoutSeconds = 30) {
+		WebDriver driver = DriverFactory.getWebDriver()
+		WebDriverWait wait = new WebDriverWait(driver, timeoutSeconds)
+
+		try {
+			wait.until(ExpectedConditions.urlMatches(urlPattern))
+			KeywordUtil.markPassed("URL matches pattern: ${urlPattern}")
+			return true
+		} catch (Exception e) {
+			KeywordUtil.markFailed("URL did not match pattern within ${timeoutSeconds} seconds")
+			return false
+		}
+	}
 }

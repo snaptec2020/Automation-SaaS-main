@@ -783,6 +783,74 @@ def static "generalactions.scrolling.scrollAndTryClicking"(
 }
 
 
+def static "com.utils.URLUtils.waitForURLChange"(
+    	String expectedURL	
+     , 	int timeoutSeconds	) {
+    (new com.utils.URLUtils()).waitForURLChange(
+        	expectedURL
+         , 	timeoutSeconds)
+}
+
+
+def static "com.utils.URLUtils.waitForURLContains"(
+    	String partialURL	
+     , 	int timeoutSeconds	) {
+    (new com.utils.URLUtils()).waitForURLContains(
+        	partialURL
+         , 	timeoutSeconds)
+}
+
+
+def static "com.utils.URLUtils.waitForURLChange"(
+    	String currentURL	
+     , 	String expectedURL	
+     , 	int timeoutSeconds	) {
+    (new com.utils.URLUtils()).waitForURLChange(
+        	currentURL
+         , 	expectedURL
+         , 	timeoutSeconds)
+}
+
+
+def static "com.utils.URLUtils.waitForURLPattern"(
+    	String urlPattern	
+     , 	int timeoutSeconds	) {
+    (new com.utils.URLUtils()).waitForURLPattern(
+        	urlPattern
+         , 	timeoutSeconds)
+}
+
+
+def static "com.utils.URLUtils.waitForURLChange"(
+    	String expectedURL	) {
+    (new com.utils.URLUtils()).waitForURLChange(
+        	expectedURL)
+}
+
+
+def static "com.utils.URLUtils.waitForURLContains"(
+    	String partialURL	) {
+    (new com.utils.URLUtils()).waitForURLContains(
+        	partialURL)
+}
+
+
+def static "com.utils.URLUtils.waitForURLChange"(
+    	String currentURL	
+     , 	String expectedURL	) {
+    (new com.utils.URLUtils()).waitForURLChange(
+        	currentURL
+         , 	expectedURL)
+}
+
+
+def static "com.utils.URLUtils.waitForURLPattern"(
+    	String urlPattern	) {
+    (new com.utils.URLUtils()).waitForURLPattern(
+        	urlPattern)
+}
+
+
 def static "generalactions.generalStrings.generatRandomEmail"() {
     (new generalactions.generalStrings()).generatRandomEmail()
 }

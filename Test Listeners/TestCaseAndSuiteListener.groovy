@@ -82,10 +82,11 @@ class TestCaseAndSuiteListener {
 		}
 	}
 	
-	//@AfterTestCase
+	@AfterTestCase
 	def sampleAfterTestCase(TestCaseContext testCaseContext) {
 		if(GlobalVariable.testSuiteStatus == 'Not Run' & testCaseContext.getTestCaseId().indexOf("/Helpdesk/")<=0) {
-			WebUI.closeBrowser()
+			WebUI.takeFullPageScreenshot("./ScreenAfterTestcase_${testCaseContext.getTestCaseId()}.png",FailureHandling.CONTINUE_ON_FAILURE)
+			//WebUI.closeBrowser()
 		}
 	}
 
