@@ -1,22 +1,21 @@
-.gradle
+# Ignore everything in .cache
+.cache/*
 
-bin
-
-Reports
-
-Libs
-
-output
-
+# Keep .gitkeep in output
 !output/.gitkeep
-build
 
-.classpath
+# Ignore the following directories
+.gradle/
+bin/
+Reports/
+Libs/
+output/
+build/
+.settings/
+.temp/
+settings/
+
+# Ignore .cache/Keywords and all its content
+.cache/Keywords/
 
 .project
-
-/.cache/*
-.cache*
-/.cache/Keywords/*
-/.cache/Keywords/*.*
-/.cache/Keywords/
