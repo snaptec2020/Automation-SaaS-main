@@ -2,9 +2,7 @@ name: CI FOR KATALON ENGINE
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [ CICD-for-production ]
 
 jobs:
   build:
