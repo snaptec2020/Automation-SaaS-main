@@ -69,12 +69,13 @@ if (WebUI.waitForElementVisible(findTestObject('Check Out/Discount container'), 
 
 def applyOrRemoveDiscount(boolean isRemoved = false) {
     if (isRemoved) {
-        WebUI.click(findTestObject('Check Out/Discount Code/Apply Button discount'))
+		CustomKeywords.'utility.Utility.clickElementSafely'(findTestObject('Check Out/Discount Code/Apply Button discount'))
+        //WebUI.click(findTestObject('Check Out/Discount Code/Apply Button discount'))
     }
     
     WebUI.setText(findTestObject('Check Out/Discount Code/Discount code field'), couponCode)
-
-    WebUI.click(findTestObject('Check Out/Discount Code/Apply Button discount'))
+	CustomKeywords.'utility.Utility.clickElementSafely'(findTestObject('Check Out/Discount Code/Apply Button discount'))
+    //WebUI.click(findTestObject('Check Out/Discount Code/Apply Button discount'))
 
     checkDiscountLableValue()
 }

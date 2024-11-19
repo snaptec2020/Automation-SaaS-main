@@ -30,10 +30,11 @@ float maximum=GlobalVariable.maximum as float
 WebUI.callTestCase(findTestCase('FE/menu Items/Select random Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
 WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 List <WebElement> prod = CustomKeywords.'utility.Utility.findWebElements'('Object Repository/Products/Product container in page in target',30)
-if (prod.size()==0) {
+if (prod.size()<=0) {
 	//getSpecifiedinStockProductsFromRandomCategoryInTarget()
 	WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/getSpecifiedinStockProductsFromRandomCategoryInTarget()'),
 		[:], FailureHandling.STOP_ON_FAILURE)
+	return
 }
 //KeywordUtil.logInfo("++++++++++++++++++++++++++++"+prod.size().toString())
 boolean found=false
