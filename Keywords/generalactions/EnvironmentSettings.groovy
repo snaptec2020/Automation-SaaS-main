@@ -19,19 +19,41 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import com.utils.CustomLogger
 
 import internal.GlobalVariable
-
+import com.kms.katalon.core.webui.driver.DriverFactory
 public class EnvironmentSettings {
 
 	@Keyword
 	String isRunningByMobile() {
 		String runningMode='1'
-		def mobileEmulation = (Map<String,Object>)RunConfiguration.getDriverPreferencesProperties().get('WebUI')
-		println mobileEmulation.get('mobileEmulation')
-		if(mobileEmulation.get('mobileEmulation')!=null) {
-			runningMode='2'
+		def driverPreferences = (Map<String,Object>)RunConfiguration.getDriverPreferencesProperties().get('WebUI')
+		//CustomLogger.logInfo("----------------> ${driverPreferences.toString()}")
+		//println mobileEmulation.get('mobileEmulation')
+		if(driverPreferences != null) {
+		if(driverPreferences.get('mobileEmulation')!=null || driverPreferences.get('platformName') == 'android' || driverPreferences.get('platformName') == 'ios') {
+			return runningMode='2'
 		}
-		return runningMode
+		} else if((Map<String,Object>)RunConfiguration.getDriverPreferencesProperties().get('Mobile') != null) {
+			return runningMode='3'
+		} else {
+			return runningMode
+		}
+
 	}
+
+
+
+//    @Keyword
+//    static String getEnvironmentType() {
+//        try {
+//            if (Mobile.getCurrentSessionMobileDriver() != null) {
+//                return RunConfiguration.getDriverType() == 'WebUI' ? 'Mobile Browser' : 'Mobile App'
+//            }
+//            return 'Browser'
+//        } catch (Exception e) {
+//            return 'Unknown'
+//        }
+//    }
 }
