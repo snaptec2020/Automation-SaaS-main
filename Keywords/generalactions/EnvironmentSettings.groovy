@@ -23,37 +23,50 @@ import com.utils.CustomLogger
 
 import internal.GlobalVariable
 import com.kms.katalon.core.webui.driver.DriverFactory
+import org.openqa.selenium.WebDriver
+
+
+
 public class EnvironmentSettings {
 
 	@Keyword
 	String isRunningByMobile() {
-		String runningMode='1'
-		def driverPreferences = (Map<String,Object>)RunConfiguration.getDriverPreferencesProperties().get('WebUI')
-		//CustomLogger.logInfo("----------------> ${driverPreferences.toString()}")
-		//println mobileEmulation.get('mobileEmulation')
-		if(driverPreferences != null) {
-		if(driverPreferences.get('mobileEmulation')!=null || driverPreferences.get('platformName') == 'android' || driverPreferences.get('platformName') == 'ios') {
-			return runningMode='2'
-		}
-		} else if((Map<String,Object>)RunConfiguration.getDriverPreferencesProperties().get('Mobile') != null) {
-			return runningMode='3'
-		} else {
-			return runningMode
+		String runningMode = '1'  
+
+		def driverPreferences = RunConfiguration.getDriverPreferencesProperties()
+		def webUIPreferences = driverPreferences?.get('WebUI')
+		def mobilePreferences = driverPreferences?.get('Mobile')
+		def remotePreferences = driverPreferences?.get('Remote')
+		def platformName = remotePreferences?.get('platformName')
+		def deviceName = remotePreferences?.get('appium:deviceName')
+		
+		if (webUIPreferences != null) {
+			if (webUIPreferences.get('mobileEmulation') != null ||
+					(webUIPreferences.get('platformName')?.toLowerCase() in ['android', 'ios'])) {
+				return '2' 
+			}
 		}
 
+		
+		if (mobilePreferences != null || (platformName?.toLowerCase() in ['android', 'ios'] || deviceName != null)) {
+			return '3' 
+		}
+
+		return runningMode  
 	}
 
 
 
-//    @Keyword
-//    static String getEnvironmentType() {
-//        try {
-//            if (Mobile.getCurrentSessionMobileDriver() != null) {
-//                return RunConfiguration.getDriverType() == 'WebUI' ? 'Mobile Browser' : 'Mobile App'
-//            }
-//            return 'Browser'
-//        } catch (Exception e) {
-//            return 'Unknown'
-//        }
-//    }
+
+	//    @Keyword
+	//    static String getEnvironmentType() {
+	//        try {
+	//            if (Mobile.getCurrentSessionMobileDriver() != null) {
+	//                return RunConfiguration.getDriverType() == 'WebUI' ? 'Mobile Browser' : 'Mobile App'
+	//            }
+	//            return 'Browser'
+	//        } catch (Exception e) {
+	//            return 'Unknown'
+	//        }
+	//    }
 }
