@@ -80,10 +80,10 @@ class menu {
 	//		"Stores_Inventory_Stocks": "Stocks"
 	//	]
 
-	
+
 	String filePath = "Resources/menus_en.json"
 	def resourceBundle = jsonUtility.readJsonFile(filePath)
-	
+
 	private def translation(String key) {
 		return resourceBundle[key]
 	}

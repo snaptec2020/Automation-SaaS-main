@@ -19,12 +19,13 @@ import java.util.Map
 
 import com.kms.katalon.core.context.TestSuiteContext
 
-import java.util.Map
 
-import java.lang.Boolean
 
-import java.lang.Object
-
+def static "mid.framework.PaginationPage.getSelectedOptionValue2"(
+    	TestObject selector	) {
+    (new mid.framework.PaginationPage()).getSelectedOptionValue2(
+        	selector)
+}
 
 
 def static "mid.framework.PaginationPage.getSelectedOptionValue"(
@@ -34,10 +35,15 @@ def static "mid.framework.PaginationPage.getSelectedOptionValue"(
 }
 
 
-def static "mid.framework.PaginationPage.getItemsNum"(
-    	TestObject itemsTableSelector	) {
-    (new mid.framework.PaginationPage()).getItemsNum(
-        	itemsTableSelector)
+def static "mid.framework.PaginationPage.getSelectedOptionValue3"(
+    	TestObject selector	) {
+    (new mid.framework.PaginationPage()).getSelectedOptionValue3(
+        	selector)
+}
+
+
+def static "mid.framework.PaginationPage.getItemsNum"() {
+    (new mid.framework.PaginationPage()).getItemsNum()
 }
 
 
@@ -497,44 +503,6 @@ def static "generalactions.generalActions.waitForSpinnerWithRetry"() {
 }
 
 
-
-def static "mid.FilterPage.expandFilter"() {
-    (new mid.FilterPage()).expandFilter()
-}
-
-
-def static "mid.FilterPage.filter"(
-    	java.util.Map<String, Object>[] params	) {
-    (new mid.FilterPage()).filter(
-        	params)
-}
-
-
-def static "mid.FilterPage.clearFilter"(
-    	boolean allFilter	
-     , 	Object filterData	) {
-    (new mid.FilterPage()).clearFilter(
-        	allFilter
-         , 	filterData)
-}
-
-
-def static "mid.FilterPage.enabledSearchButton"() {
-    (new mid.FilterPage()).enabledSearchButton()
-}
-
-
-def static "mid.FilterPage.clearFilter"(
-    	boolean allFilter	) {
-    (new mid.FilterPage()).clearFilter(
-        	allFilter)
-}
-
-
-def static "mid.FilterPage.clearFilter"() {
-    (new mid.FilterPage()).clearFilter()
-}
-
 def static "signup.signupPhoneVerifications.phoneVerificationMessage"(
     	Object expectedMessage	) {
     (new signup.signupPhoneVerifications()).phoneVerificationMessage(
@@ -599,6 +567,45 @@ def static "com.amazonaws.services.s3.sample.getAPIResults.getAPIResultsByLatLon
          , 	regionName
          , 	theLongitude
          , 	theLatitude)
+}
+
+
+def static "mid.framework.jsonUtility.readJsonFile"(
+    	String filePath	) {
+    (new mid.framework.jsonUtility()).readJsonFile(
+        	filePath)
+}
+
+
+def static "mid.framework.item.editItem"(
+    	boolean isView	
+     , 	boolean isRandom	
+     , 	int incrementID	) {
+    (new mid.framework.item()).editItem(
+        	isView
+         , 	isRandom
+         , 	incrementID)
+}
+
+
+def static "mid.framework.item.editItem"(
+    	boolean isView	
+     , 	boolean isRandom	) {
+    (new mid.framework.item()).editItem(
+        	isView
+         , 	isRandom)
+}
+
+
+def static "mid.framework.item.editItem"(
+    	boolean isView	) {
+    (new mid.framework.item()).editItem(
+        	isView)
+}
+
+
+def static "mid.framework.item.editItem"() {
+    (new mid.framework.item()).editItem()
 }
 
 
@@ -687,60 +694,6 @@ def static "utility.Utility.clickOnObjectusingJavaScript"(
 
 def static "utility.Utility.moveToElement"() {
     (new utility.Utility()).moveToElement()
-}
-
-
-def static "mid.PaginationPage.getSelectedOptionValue"(
-    	TestObject selector	) {
-    (new mid.PaginationPage()).getSelectedOptionValue(
-        	selector)
-}
-
-
-def static "mid.PaginationPage.getItemsNum"(
-    	TestObject itemsTableSelector	) {
-    (new mid.PaginationPage()).getItemsNum(
-        	itemsTableSelector)
-}
-
-
-def static "mid.PaginationPage.selectOption"(
-    	TestObject dropdownSelector	
-     , 	Boolean isByIndex	
-     , 	Object indexID	
-     , 	Object value	) {
-    (new mid.PaginationPage()).selectOption(
-        	dropdownSelector
-         , 	isByIndex
-         , 	indexID
-         , 	value)
-}
-
-
-def static "mid.PaginationPage.selectOption"(
-    	TestObject dropdownSelector	
-     , 	Boolean isByIndex	
-     , 	Object indexID	) {
-    (new mid.PaginationPage()).selectOption(
-        	dropdownSelector
-         , 	isByIndex
-         , 	indexID)
-}
-
-
-def static "mid.PaginationPage.selectOption"(
-    	TestObject dropdownSelector	
-     , 	Boolean isByIndex	) {
-    (new mid.PaginationPage()).selectOption(
-        	dropdownSelector
-         , 	isByIndex)
-}
-
-
-def static "mid.PaginationPage.selectOption"(
-    	TestObject dropdownSelector	) {
-    (new mid.PaginationPage()).selectOption(
-        	dropdownSelector)
 }
 
 

@@ -17,5 +17,15 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('BE/MID/Sales/Orders/Check Order Page'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('BE/MID/SignIn - SingOut/Sucess SignIn'), [:], FailureHandling.STOP_ON_FAILURE)
+
+CustomKeywords.'mid.framework.menu.openOMSFromSales'()
+
+CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
+
+WebUI.verifyElementPresent(findTestObject('Object Repository/Mid/OMS/omsTitle'), 5)
+
+WebUI.verifyElementPresent(findTestObject('Object Repository/Mid/items/itemsList'), 5)
+
+
 

@@ -17,7 +17,8 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.support.ui.Select
 import internal.GlobalVariable
 
 class PaginationPage {
@@ -25,16 +26,53 @@ class PaginationPage {
 	String url = "/"
 
 	@Keyword
-	int getSelectedOptionValue(TestObject selector) {
+	int getSelectedOptionValue2(TestObject selector) {
 		WebUI.waitForElementVisible(selector, 10)
 		String selectedOptionText = WebUI.getText(selector)
 		return Integer.parseInt(selectedOptionText.trim())
 	}
 
 	@Keyword
-	int getItemsNum(TestObject itemsTableSelector) {
-		WebUI.waitForElementVisible(itemsTableSelector, 10)
-		return WebUI.findWebElements(itemsTableSelector, 10).size()
+	int getSelectedOptionValue(TestObject selector) {
+
+		WebElement dropdownElement = WebUI.findWebElement(selector)
+		Select dropdown = new Select(dropdownElement)
+		WebElement selectedOption = dropdown.getFirstSelectedOption()
+		String selectedValue = selectedOption.getAttribute('value')
+		String selectedText = selectedOption.getText()
+		return Integer.parseInt(selectedValue) 
+	}
+
+	@Keyword
+	List<Integer> getSelectedOptionValue3(TestObject selector) {
+		WebUI.waitForElementVisible(selector, 10)
+		String selectedOptionText = WebUI.getText(selector).trim()
+
+		// Log the selected option text for debugging
+		println("Selected option text: '${selectedOptionText}'")
+
+		// Remove the brackets [] and split the string by commas
+		selectedOptionText = selectedOptionText.replaceAll("[\\[\\]']","") // Remove brackets and quotes
+		def values = selectedOptionText.split(",") // Split by comma
+
+		// Convert the values to integers
+		List<Integer> result = values.collect { Integer.parseInt(it.trim()) }
+
+		// Return the list of integers
+		return result
+	}
+
+	@Keyword
+	int getItemsNum() {
+		// Convert the object path to a TestObject
+		def testObject = findTestObject("Object Repository/Mid/pagination/ItemsTable")
+
+		// Wait for the elements to be visible
+		WebUI.waitForElementVisible(testObject, 10)
+
+		// Find the web elements and return the size of the list
+		def elements = WebUI.findWebElements(testObject, 5) // Timeout here is 5 seconds
+		return elements.size()
 	}
 
 	@Keyword

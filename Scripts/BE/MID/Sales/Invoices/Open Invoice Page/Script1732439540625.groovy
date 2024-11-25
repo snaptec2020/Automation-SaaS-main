@@ -18,8 +18,14 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 WebUI.callTestCase(findTestCase('BE/MID/SignIn - SingOut/Sucess SignIn'), [:], FailureHandling.STOP_ON_FAILURE)
-CustomKeywords.'mid.framework.menu.openOrdersFromSales'()
+
+CustomKeywords.'mid.framework.menu.openInvoicesFromSales'()
+
 CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
-WebUI.verifyElementPresent(findTestObject('Object Repository/Mid/createOrder/orderTitle'), 5)
-WebUI.verifyElementPresent(findTestObject('Object Repository/Mid/createOrder/ordersList'), 5)
+
+WebUI.verifyElementPresent(findTestObject('Object Repository/Mid/Invoices/invoiceTitle'), 5)
+
+WebUI.verifyElementPresent(findTestObject('Object Repository/Mid/items/itemsList'), 5)
+
+
 
