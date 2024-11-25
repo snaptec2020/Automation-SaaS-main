@@ -25,7 +25,7 @@ import org.openqa.selenium.Keys as Keys
 //RunConfiguration.setWebDriverPreferencesProperty('Emulation.setGeolocationOverride', geoLocationOption)
 switch(GlobalVariable.launchingConfig.get("Mode")) {
 	case 'FE': WebUI.openBrowser('')
-
+				
 			   WebUI.maximizeWindow()
 
 			   WebUI.navigateToUrl(GlobalVariable.URL)
@@ -43,3 +43,4 @@ switch(GlobalVariable.launchingConfig.get("Mode")) {
 				   
 			   }
 }
+GlobalVariable.RunningMode=CustomKeywords.'generalactions.EnvironmentSettings.isRunningByMobile'()

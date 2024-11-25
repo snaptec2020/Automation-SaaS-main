@@ -30,8 +30,9 @@ WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check ou
 //WebUI.verifyEqual(CustomKeywords.'cart.cartItems.getCartSubtotal'(), SumOfProductsPriceInCart) // before proceed
 //CustomKeywords.'checkout.Payments.checkTheTarget'()
 //checkTheTarget()
-WebUI.click(findTestObject('Check Out/Proceed To Checkout Button'))
-
+//WebUI.waitForElementClickable(findTestObject('Check Out/Proceed To Checkout Button'), 10, FailureHandling.CONTINUE_ON_FAILURE)
+//WebUI.click(findTestObject('Check Out/Proceed To Checkout Button'))
+CustomKeywords.'utility.Utility.clickOnObjectusingJavaScript'(findTestObject('Check Out/Proceed To Checkout Button'))
 CustomKeywords.'com.utils.URLUtils.waitForURLContains'('/checkout',10)
 CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
 
@@ -138,12 +139,12 @@ if (WebUI.waitForElementVisible(findTestObject('Check Out/CheckOut Wallet'), 3))
         WebUI.verifyGreaterThan(walletAmount, 0, FailureHandling.STOP_ON_FAILURE)
     }*/
 }
-
-WebUI.callTestCase(findTestCase('FE/Check out/validation/Set Coupon Code'), [:], FailureHandling.STOP_ON_FAILURE)
-
 WebUI.verifyElementVisible(findTestObject('Check Out/checkout user details 1'))
 
 WebUI.verifyElementVisible(findTestObject('Check Out/Checkout address 2'))
 
 WebUI.verifyElementVisible(findTestObject('Check Out/Checkout payment method'))
+WebUI.callTestCase(findTestCase('FE/Check out/validation/Set Coupon Code'), [:], FailureHandling.STOP_ON_FAILURE)
+
+
 

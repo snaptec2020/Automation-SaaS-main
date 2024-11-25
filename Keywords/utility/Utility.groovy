@@ -26,12 +26,19 @@ import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import com.utils.CustomLogger
 
 import internal.GlobalVariable
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.webui.driver.DriverFactory
 
+import org.openqa.selenium.ElementClickInterceptedException
+import org.openqa.selenium.JavascriptExecutor
+import org.openqa.selenium.WebElement
 public class Utility {
 	TestObject tb=new TestObject()
 	@Keyword
@@ -59,6 +66,7 @@ public class Utility {
 	}
 	@Keyword
 	def clickOnObjectusingJavaScript(TestObject testObject) {
+		WebUI.waitForElementClickable(testObject, 0, FailureHandling.STOP_ON_FAILURE)
 		WebElement element = WebUiCommonHelper.findWebElement(testObject,30)
 		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
 	}
@@ -91,6 +99,39 @@ public class Utility {
 		actions.moveToElement(logoElm).perform()
 		//}
 		//}
+	}
+	// Method to click using JavaScript
+	@Keyword
+	def clickUsingJavaScript(WebElement element) {
+		try {
+			//WebDriver driver = DriverFactory.getWebDriver()
+			//JavascriptExecutor executor = (JavascriptExecutor) driver
+			CustomLogger.logInfo("Clicking using JavaScript")
+			WebUI.executeJavaScript("arguments[0].click();", Arrays.asList(element))
+		} catch (Exception e) {
+			WebUI.takeScreenshot()
+			CustomLogger.logError("JavaScript cannot click on object")
+			KeywordUtil.markFailedAndStop("Failed to click element: " + e.getMessage())
+		}
+	}
+
+	// Alternative method with explicit wait
+	@Keyword
+	def clickElementSafely(TestObject testObject) {
+		try {
+			// Wait for element to be clickable
+			CustomLogger.logInfo("waiting to click on button")
+			WebUI.waitForElementClickable(testObject, 10)
+
+			// Try regular click first
+			CustomLogger.logInfo("clicking on button")
+			WebUI.click(testObject)
+		} catch (Exception e) {
+			// If regular click fails, try JavaScript click
+			CustomLogger.logInfo("The button is not clickable and we are trying to click using JavaScript")
+			WebElement element = WebUiBuiltInKeywords.findWebElement(testObject,5)
+			clickUsingJavaScript(element)
+		}
 	}
 }
 

@@ -48,33 +48,48 @@ public class EnhancedPayments {
 	}
 
 	@Keyword
-	def paymentMethodToPayBySelectedMethod(int selectedIndex,def expectedPaymentMethod = 'Default') {
+	def paymentMethodToPayBySelectedMethod(int selectedIndex,def expectedPaymentMethods /*= 'Default'*/) {
 
 		if (selectedIndex == 0) {
 			selectedIndex = 1
 		}
-		if(expectedPaymentMethod.equalsIgnoreCase('Tabby') && WebUI.waitForElementClickable(findTestObject('Check Out/Tabby Button'), 5)) {
+		// Ensure expectedPaymentMethods is always a list
+		def paymentMethodList = expectedPaymentMethods instanceof List ?
+				expectedPaymentMethods : [expectedPaymentMethods]
+
+		// Create a combined regex pattern
+		def combinedPattern = paymentMethodList.collect { it.toString() }.join('|')
+		def paymentMethodPattern = ~/${combinedPattern}/
+
+
+		if(expectedPaymentMethods.toString() =~ /Tabby/ && WebUI.waitForElementClickable(findTestObject('Check Out/Tabby Button'), 5)) {
 			WebUI.click(findTestObject('Check Out/Tabby Button'));
-			def expectedPattern = 'قسّمها على \\d+ بدون رسوم ولا فوائد'
+			def expectedPattern
+
 			def languageMode = GlobalVariable.languageMode
 
 			if (languageMode.equalsIgnoreCase("en")) {
-				expectedPattern = '\\d+ interest-free payments'
+				expectedPattern =~ '\\d+ interest-free payments'
 			}
+			expectedPattern  =~ 'قسّمها على \\d+ بدون رسوم ولا فوائد'
 			verifyMessageMatching(expectedPattern, 'Check Out/payment Method Text');
 			WebUI.verifyElementVisible(findTestObject('Check Out/Tabby Card'), FailureHandling.CONTINUE_ON_FAILURE)
-			placeOrder(expectedPaymentMethod)
-		}else if(expectedPaymentMethod.equalsIgnoreCase('Tamara')){
+			placeOrder(expectedPaymentMethods)
+		}else if(expectedPaymentMethods.toString() =~ /Tamara/){
 			CustomLogger.logInfo("Tammara Selected")
 			WebUI.click(findTestObject('Check Out/Tamara Img'));
-			placeOrder(expectedPaymentMethod)
+			placeOrder(expectedPaymentMethods)
+		}else if(expectedPaymentMethods.toString() =~ /COD/){
+			CustomLogger.logInfo("Tammara Selected")
+			WebUI.click(findTestObject('Check Out/Tamara Img'));
+			placeOrder(expectedPaymentMethods)
 		}else {
 			tb = utilityFunctions.addXpathToTestObject("("+findTestObject('Object Repository/Check Out/Payment methods list').findPropertyValue('xpath') + ")["+selectedIndex+"]")
 			utilityFunctions.clickOnObjectusingJavaScript(tb)
 			if (WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/payment Method Text'), 3)) {
 				String paymentMethod = WebUI.getText(findTestObject('Object Repository/Check Out/payment Method Text'))
-				if (paymentMethod ==~ expectedPaymentMethod /*paymentMethod.equalsIgnoreCase(expectedPaymentMethod)*/ || expectedPaymentMethod.equalsIgnoreCase('Default')) {
-					placeOrder(expectedPaymentMethod)
+				if (paymentMethod ==~ paymentMethodPattern /*paymentMethod.equalsIgnoreCase(expectedPaymentMethod) || expectedPaymentMethod.equalsIgnoreCase('Default')*/) {
+					placeOrder(paymentMethod)
 				} else {
 					//KeywordUtil.logInfo("Expected payment method: $expectedPaymentMethod, Actual payment method: $paymentMethod")
 					return
@@ -84,7 +99,7 @@ public class EnhancedPayments {
 		}
 	}
 
-	def placeOrder(String expectedPaymentMethod = 'Default') {
+	def placeOrder(def expectedPaymentMethod /*= 'Default'*/) {
 		try {
 			// def nonVisa = WebUiCommonHelper.findWebElement(utilityFunctions.addXpathToTestObject("//div[contains(@class,'payment-method v2')]/following-sibling::div"), 30).getAttribute("class")
 			//if (nonVisa != 'checkout-com-form-container') {
@@ -93,7 +108,7 @@ public class EnhancedPayments {
 			//if (paymentMethod.equalsIgnoreCase(expectedPaymentMethod) || paymentMethod.equalsIgnoreCase('Default')) {
 			double grandTotal = (WebUI.getText(findTestObject('Object Repository/Check Out/Grand Total')).replaceAll(",", "") =~ /\d+\.\d+/)[0] as double
 			WebUI.click(findTestObject('Object Repository/Check Out/Place order check out button'))
-			if(!expectedPaymentMethod.equalsIgnoreCase('Tabby')) {
+			if(!expectedPaymentMethod.toString() =~ /Tabby/) {
 				generalActions.waiteSpinnerToHide()
 			}
 			handlePaymentMethod(expectedPaymentMethod, grandTotal)
@@ -129,8 +144,9 @@ public class EnhancedPayments {
 				handleTelrPayment(grandTotal)
 				break
 			case ~('الدفع عند الإستلام'):
-			case ~('الدفع عند الاستلام'):
+			//case ~('الدفع عند الاستلام'):
 			case ~('Cash On Delivery'):
+			case ~('COD'):
 				CustomLogger.logInfo("Start handling COD")
 				handleCashOnDeliveryPayment()
 				break
