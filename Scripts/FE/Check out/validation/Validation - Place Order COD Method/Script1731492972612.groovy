@@ -22,7 +22,11 @@ def currentUrl=WebUI.getUrl()
 WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components after click on proceed'), [:],
 	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.STOP_ON_FAILURE)
+//WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.STOP_ON_FAILURE)
+
+if(WebUI.waitForElementVisible(findTestObject('Check Out/COD img'), 3, FailureHandling.CONTINUE_ON_FAILURE)) {
+	CustomKeywords.'checkout.EnhancedPayments.paymentMethodToPayBySelectedMethod'(0,'COD')
+}else {
 List PaymentMethods =CustomKeywords.'checkout.EnhancedPayments.getPaymentMethodsList'()
 KeywordUtil.logInfo(PaymentMethods.toString())
 
@@ -32,11 +36,11 @@ KeywordUtil.logInfo(PaymentMethods.toString())
 //}
 //WebUI.callTestCase(findTestCase('FE/Check out/validation/Select location common case'), [:], FailureHandling.STOP_ON_FAILURE)
 def languageMode = GlobalVariable.languageMode
-def paymentMethod = ~ 'Cash On Delivery'
-if (languageMode.equalsIgnoreCase("ar")) {
-    paymentMethod = ~ 'الدفع عند الاستلام'
-}
+def paymentMethod = ['Cash On Delivery' , 'الدفع عند الاستلام']
+//if (languageMode.equalsIgnoreCase("ar")) {
+//    paymentMethod = ~ 'الدفع عند الاستلام'
+//}
 for(int i=1;i<=PaymentMethods.size();i++) {
 CustomKeywords.'checkout.EnhancedPayments.paymentMethodToPayBySelectedMethod'(i,paymentMethod)
 }
-
+}

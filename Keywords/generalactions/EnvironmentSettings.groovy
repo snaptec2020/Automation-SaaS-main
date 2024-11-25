@@ -19,19 +19,54 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import com.utils.CustomLogger
 
 import internal.GlobalVariable
+import com.kms.katalon.core.webui.driver.DriverFactory
+import org.openqa.selenium.WebDriver
+
+
 
 public class EnvironmentSettings {
 
 	@Keyword
 	String isRunningByMobile() {
-		String runningMode='1'
-		def mobileEmulation = (Map<String,Object>)RunConfiguration.getDriverPreferencesProperties().get('WebUI')
-		println mobileEmulation.get('mobileEmulation')
-		if(mobileEmulation.get('mobileEmulation')!=null) {
-			runningMode='2'
+		String runningMode = '1'  
+
+		def driverPreferences = RunConfiguration.getDriverPreferencesProperties()
+		def webUIPreferences = driverPreferences?.get('WebUI')
+		def mobilePreferences = driverPreferences?.get('Mobile')
+		def remotePreferences = driverPreferences?.get('Remote')
+		def platformName = remotePreferences?.get('platformName')
+		def deviceName = remotePreferences?.get('appium:deviceName')
+		
+		if (webUIPreferences != null) {
+			if (webUIPreferences.get('mobileEmulation') != null ||
+					(webUIPreferences.get('platformName')?.toLowerCase() in ['android', 'ios'])) {
+				return '2' 
+			}
 		}
-		return runningMode
+
+		
+		if (mobilePreferences != null || (platformName?.toLowerCase() in ['android', 'ios'] || deviceName != null)) {
+			return '3' 
+		}
+
+		return runningMode  
 	}
+
+
+
+
+	//    @Keyword
+	//    static String getEnvironmentType() {
+	//        try {
+	//            if (Mobile.getCurrentSessionMobileDriver() != null) {
+	//                return RunConfiguration.getDriverType() == 'WebUI' ? 'Mobile Browser' : 'Mobile App'
+	//            }
+	//            return 'Browser'
+	//        } catch (Exception e) {
+	//            return 'Unknown'
+	//        }
+	//    }
 }

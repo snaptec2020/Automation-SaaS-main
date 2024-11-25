@@ -26,10 +26,10 @@ WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], Failu
 
 if(WebUI.waitForElementVisible(findTestObject('Check Out/Tamara Img'), 3, FailureHandling.CONTINUE_ON_FAILURE)) {
 	CustomKeywords.'checkout.EnhancedPayments.paymentMethodToPayBySelectedMethod'(0,'Tamara')
-}
+} else {
 
 List PaymentMethods =CustomKeywords.'checkout.EnhancedPayments.getPaymentMethodsList'()
-KeywordUtil.logInfo(PaymentMethods.toString())
+//KeywordUtil.logInfo(PaymentMethods.toString())
 
 //if(i!=1) {
 //WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components after click on proceed'), [:],
@@ -37,11 +37,11 @@ KeywordUtil.logInfo(PaymentMethods.toString())
 //}
 //WebUI.callTestCase(findTestCase('FE/Check out/validation/Select location common case'), [:], FailureHandling.STOP_ON_FAILURE)
 def languageMode = GlobalVariable.languageMode
-def paymentMethod = ~('Split in \\d payments without interest or hidden fees')
-if (languageMode.equalsIgnoreCase("ar")) {
-    paymentMethod = ~('قسم فاتورتك على \\d دفعات بدون فوائد')
-}
+def paymentMethod = ['Split in \\d payments without interest or hidden fees','قسم فاتورتك على \\d دفعات بدون فوائد']
+//if (languageMode.equalsIgnoreCase("ar")) {
+//    paymentMethod = ~('قسم فاتورتك على \\d دفعات بدون فوائد')
+//}
 for(int i=1;i<=PaymentMethods.size();i++) {
 CustomKeywords.'checkout.EnhancedPayments.paymentMethodToPayBySelectedMethod'(i,paymentMethod)
 }
-
+}
