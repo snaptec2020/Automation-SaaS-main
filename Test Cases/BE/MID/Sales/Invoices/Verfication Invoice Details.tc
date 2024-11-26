@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Verfication Invoice Details</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>9279ee70-ffb5-4d8c-810a-e02d5034ca4b</testCaseGuid>
+</TestCaseEntity>

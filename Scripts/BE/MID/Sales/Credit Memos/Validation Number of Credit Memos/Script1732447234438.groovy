@@ -18,36 +18,8 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import org.openqa.selenium.WebElement
 
-TestObject foundsRecord = findTestObject('Object Repository/Mid/pagination/foundsRecord')
-TestObject pageSizeDropdown = findTestObject('Object Repository/Mid/pagination/pageSizeDropdown')
-TestObject listOfItemsPerPage = findTestObject('Object Repository/Mid/pagination/listOfItemsPerPage')
 
 
 WebUI.callTestCase(findTestCase('Test Cases/BE/MID/Sales/Credit Memos/Open Credit Memo Page'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementPresent(foundsRecord, 10, FailureHandling.STOP_ON_FAILURE)
-
-WebUI.verifyElementPresent(pageSizeDropdown, 10, FailureHandling.STOP_ON_FAILURE)
-
-
-def selectedPageNumber = CustomKeywords.'mid.framework.PaginationPage.getSelectedOptionValue'(listOfItemsPerPage)
-int ItemsNum = 0
-
-List<WebElement> allPageLinks = WebUI.findWebElements(findTestObject("Object Repository/Mid/pagination/SpecificPageLink"), 10)
-
-for (WebElement li : allPageLinks) {
-	
-	li.click()
-
-	ItemsNum = CustomKeywords.'mid.framework.PaginationPage.getItemsNum'()
-
-	// Validate the number of items
-	if ((ItemsNum <= selectedPageNumber) && (ItemsNum > 0)) {
-		WebUI.comment("Number of items ($ItemsNum) is less than or equal to product")
-	} else {
-		throw new Exception("Number of items ($ItemsNum) is greater than selectedPageNumber or no product shows")
-	}
-}
-
-
-
+WebUI.callTestCase(findTestCase('BE/MID/General Test Cases/Validation Number of Items'), [:], FailureHandling.STOP_ON_FAILURE)

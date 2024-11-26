@@ -16,9 +16,9 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import org.openqa.selenium.WebElement
 
+CustomKeywords.'mid.framework.item.selectItem'(true, [])
 
-WebUI.callTestCase(findTestCase('Test Cases/BE/MID/Sales/Invoices/Open Invoice Page'), [:], FailureHandling.STOP_ON_FAILURE)
+CustomKeywords.'mid.framework.item.exportItems'('CSV')
 
-WebUI.callTestCase(findTestCase('BE/MID/General Test Cases/Validation Number of Items'), [:], FailureHandling.STOP_ON_FAILURE)
+CustomKeywords.'mid.framework.generalAction.verifyMessagePresent'('The CSV file is exported successfully.')

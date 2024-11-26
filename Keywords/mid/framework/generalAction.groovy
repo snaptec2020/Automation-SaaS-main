@@ -22,6 +22,18 @@ import internal.GlobalVariable
 
 public class generalAction {
 
+	@Keyword
+	def verifyHeaderText(String expectedText) {
+		def headerObject = generalAction.createTestObject("//*[local-name() = 'h1'or local-name() = 'h2'or local-name() = 'h3'or local-name() = 'h4'][text()='"+expectedText+"']")
+		WebUI.verifyElementText(headerObject, expectedText)
+	}
+	
+	@Keyword
+	def verifyMessagePresent(String text) {
+		def itemNumberTitle = generalAction.createTestObject("//*[contains(@class,'toast-notifications') and text()='"+text+"'] | //*[contains(@class,'styles_message')]//*[text()='"+text+"']")
+		WebUI.verifyElementPresent(itemNumberTitle, 5)
+	}
+
 	public static TestObject createTestObject(String xpath) {
 		TestObject testObject = new TestObject("dynamicTestObject_" + xpath.hashCode())
 		testObject.addProperty("xpath", ConditionType.EQUALS, xpath)

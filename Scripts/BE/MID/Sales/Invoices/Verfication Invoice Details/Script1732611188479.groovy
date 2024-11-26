@@ -16,9 +16,17 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import org.openqa.selenium.WebElement
 
+WebUI.callTestCase(findTestCase('BE/MID/Sales/Invoices/Open Invoice details page'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('Test Cases/BE/MID/Sales/Invoices/Open Invoice Page'), [:], FailureHandling.STOP_ON_FAILURE)
+//check all invoice headersand sub-headers 
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Order & Account Information')
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Invoice Total')
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Address Information')
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Invoice Comments')
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Billing Address')
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Shipping Address')
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Payment & Shipping Method')
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Payment Information')
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Shipping & Handling Information')
 
-WebUI.callTestCase(findTestCase('BE/MID/General Test Cases/Validation Number of Items'), [:], FailureHandling.STOP_ON_FAILURE)

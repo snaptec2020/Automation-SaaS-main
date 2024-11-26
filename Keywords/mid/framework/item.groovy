@@ -20,6 +20,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import internal.GlobalVariable
 import mid.framework.generalAction
+import mid.framework.PaginationPage
 
 
 public class item {
@@ -51,5 +52,36 @@ public class item {
 		if (!myRegex.matcher(itemNumberText).matches()) {
 			println("Item number title did not match the expected format.")
 		}
+	}
+
+	@Keyword
+	def selectItem(boolean isRandom = false, List<Integer> incrementID = []) {
+		def itemsList = generalAction.createTestObject("//div[contains(@class,'row-table-custom')]/div[starts-with(@class,'styles_list__')]//div[starts-with(@class,'styles_content__')]")
+		def itemNumberTitle = generalAction.createTestObject("//span[contains(@class, 'styles_title') and contains(text(),'#')]")
+		def item
+		WebUI.waitForElementVisible(itemsList, 10)
+		PaginationPage p = new PaginationPage()
+		def ItemsNum = p.getItemsNum()
+		if (isRandom) {
+			while (ItemsNum > 0) {
+				item = generalAction.createTestObject("//div[@id='table-with-scroll']/div[contains(@class, 'row-table-custom')]["+ItemsNum+"]//*[@type = 'checkbox']")
+				WebUI.waitForElementVisible(item, 10)
+				WebUI.click(item)
+				ItemsNum-=2
+			}
+		} else if(incrementID.size() > 0) {
+			incrementID.each { id ->
+				item = generalAction.createTestObject("//div[@id='table-with-scroll']/div[contains(@class, 'row-table-custom')][" + id + "]//*[@type = 'checkbox']")
+				WebUI.waitForElementVisible(item, 10)
+				WebUI.click(item)
+			}
+		}
+	}
+	
+	@Keyword
+	def exportItems(String text) {
+		WebUI.click(findTestObject('Object Repository/Mid/items/Export Button'))
+		def exportType = generalAction.createTestObject("//span[text()='"+text+"']")
+		WebUI.click(exportType)
 	}
 }
