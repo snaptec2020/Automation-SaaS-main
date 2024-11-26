@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Filter button</name>
+   <name>CheckOut Button</name>
    <tag></tag>
-   <elementGuidId>0bd9533e-1061-4d1c-a5cb-51f94bcd746d</elementGuidId>
+   <elementGuidId>1bb9f641-9f07-4490-9c41-462c8df77c31</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//button[starts-with(@class, 'styles_filterButton') or @class='general-dropdown__button']</value>
+         <value>//button[@class='checkout__container__review__button']</value>
       </entry>
       <entry>
          <key>BASIC</key>
