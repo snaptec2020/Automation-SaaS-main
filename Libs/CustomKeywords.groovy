@@ -515,6 +515,20 @@ def static "signup.signupPhoneVerifications.verificationElementPhoneSignUp"() {
 }
 
 
+def static "mid.framework.generalAction.verifyHeaderText"(
+    	String expectedText	) {
+    (new mid.framework.generalAction()).verifyHeaderText(
+        	expectedText)
+}
+
+
+def static "mid.framework.generalAction.verifyMessagePresent"(
+    	String text	) {
+    (new mid.framework.generalAction()).verifyMessagePresent(
+        	text)
+}
+
+
 def static "signIn.signInVerifications.verificationElementSignIn"() {
     (new signIn.signInVerifications()).verificationElementSignIn()
 }
@@ -539,17 +553,10 @@ def static "checkout.EnhancedPayments.getRandomPaymentMethod"() {
 
 def static "checkout.EnhancedPayments.paymentMethodToPayBySelectedMethod"(
     	int selectedIndex	
-     , 	Object expectedPaymentMethod	) {
+     , 	Object expectedPaymentMethods	) {
     (new checkout.EnhancedPayments()).paymentMethodToPayBySelectedMethod(
         	selectedIndex
-         , 	expectedPaymentMethod)
-}
-
-
-def static "checkout.EnhancedPayments.paymentMethodToPayBySelectedMethod"(
-    	int selectedIndex	) {
-    (new checkout.EnhancedPayments()).paymentMethodToPayBySelectedMethod(
-        	selectedIndex)
+         , 	expectedPaymentMethods)
 }
 
 
@@ -588,6 +595,22 @@ def static "mid.framework.item.editItem"(
 }
 
 
+def static "mid.framework.item.selectItem"(
+    	boolean isRandom	
+     , 	List incrementID	) {
+    (new mid.framework.item()).selectItem(
+        	isRandom
+         , 	incrementID)
+}
+
+
+def static "mid.framework.item.exportItems"(
+    	String text	) {
+    (new mid.framework.item()).exportItems(
+        	text)
+}
+
+
 def static "mid.framework.item.editItem"(
     	boolean isView	
      , 	boolean isRandom	) {
@@ -606,6 +629,18 @@ def static "mid.framework.item.editItem"(
 
 def static "mid.framework.item.editItem"() {
     (new mid.framework.item()).editItem()
+}
+
+
+def static "mid.framework.item.selectItem"(
+    	boolean isRandom	) {
+    (new mid.framework.item()).selectItem(
+        	isRandom)
+}
+
+
+def static "mid.framework.item.selectItem"() {
+    (new mid.framework.item()).selectItem()
 }
 
 
@@ -694,6 +729,20 @@ def static "utility.Utility.clickOnObjectusingJavaScript"(
 
 def static "utility.Utility.moveToElement"() {
     (new utility.Utility()).moveToElement()
+}
+
+
+def static "utility.Utility.clickUsingJavaScript"(
+    	WebElement element	) {
+    (new utility.Utility()).clickUsingJavaScript(
+        	element)
+}
+
+
+def static "utility.Utility.clickElementSafely"(
+    	TestObject testObject	) {
+    (new utility.Utility()).clickElementSafely(
+        	testObject)
 }
 
 
