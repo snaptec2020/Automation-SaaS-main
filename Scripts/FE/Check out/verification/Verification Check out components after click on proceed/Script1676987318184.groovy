@@ -7,7 +7,7 @@ import java.time.LocalDate as LocalDate
 import java.time.format.DateTimeFormatter as DateTimeFormatter
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
-import com.kms.katalon.core.main.CustomKeywordDelegatingMetaClass
+import com.kms.katalon.core.main.CustomKeywordDelegatingMetaClass as CustomKeywordDelegatingMetaClass
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
@@ -21,9 +21,10 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.apache.commons.lang3.StringUtils as StringUtils
-import org.openqa.selenium.WebElement
+import org.openqa.selenium.WebElement as WebElement
 import org.openqa.selenium.Keys as Keys
-import com.kms.katalon.core.testobject.ConditionType
+import com.kms.katalon.core.testobject.ConditionType as ConditionType
+
 WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check out components'), [:], FailureHandling.STOP_ON_FAILURE)
 
 //def SumOfProductsPriceInCart = CustomKeywords.'cart.cartItems.getSumOfProductsPriceInCart'()
@@ -33,7 +34,9 @@ WebUI.callTestCase(findTestCase('FE/Check out/verification/Verification Check ou
 //WebUI.waitForElementClickable(findTestObject('Check Out/Proceed To Checkout Button'), 10, FailureHandling.CONTINUE_ON_FAILURE)
 //WebUI.click(findTestObject('Check Out/Proceed To Checkout Button'))
 CustomKeywords.'utility.Utility.clickOnObjectusingJavaScript'(findTestObject('Check Out/Proceed To Checkout Button'))
-CustomKeywords.'com.utils.URLUtils.waitForURLContains'('/checkout',10)
+
+CustomKeywords.'com.utils.URLUtils.waitForURLContains'('/checkout', 10)
+
 CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
 
 if (StringUtils.indexOfIgnoreCase(WebUI.getUrl(), '/checkout/registration') > 0) {
@@ -41,7 +44,9 @@ if (StringUtils.indexOfIgnoreCase(WebUI.getUrl(), '/checkout/registration') > 0)
         FailureHandling.STOP_ON_FAILURE)
 }
 
-boolean otpRequierd = WebUI.waitForElementVisible(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), 5, FailureHandling.CONTINUE_ON_FAILURE)//WebUI.findWebElements(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), 20).size()
+boolean otpRequierd = WebUI.waitForElementVisible(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), 5, 
+    FailureHandling.CONTINUE_ON_FAILURE //WebUI.findWebElements(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), 20).size()
+    )
 
 if (otpRequierd) {
     boolean isPhoneExist = true
@@ -85,30 +90,34 @@ if (WebUI.waitForElementVisible(findTestObject('Map Objs/Map Block'), 5)) {
         WebUI.delay(2)
 
         WebUI.clickOffset(findTestObject('Map Objs/Map Block'), 0, 0 //		if(i == 5) {
-            ) //			KeywordUtil.markFailedAndStop("Cannot select address");
-        //		}
+            //			KeywordUtil.markFailedAndStop("Cannot select address");
+            ) //		}
     }
 }
 
 if (WebUI.waitForElementVisible(findTestObject('Check Out/PickUp Date'), 3)) {
     WebUI.setText(findTestObject('Check Out/PickUp time'), '17:30')
 
-        TestObject dateInput = findTestObject('Check Out/PickUp Date')
-		//WebUI.click(dateInput)
-        WebElement element = WebUiCommonHelper.findWebElement(dateInput, 30)
+    TestObject dateInput = findTestObject('Check Out/PickUp Date')
+
+    //WebUI.click(dateInput)
+    WebElement element = WebUiCommonHelper.findWebElement(dateInput, 30)
 
     LocalDate tomorrow = LocalDate.now().plusDays(2)
 
-        String dateToSet = tomorrow.format(DateTimeFormatter.ofPattern('yyyy-MM-dd'))
-		//WebUI.sendKeys(dateInput, Keys.chord(Keys.ARROW_DOWN))
-		//WebUI.sendKeys(dateInput, Keys.chord(Keys.ARROW_RIGHT))
-		//WebUI.sendKeys(dateInput, Keys.chord(Keys.ENTER))
-		//WebUI.sendKeys(dateInput, dateToSet)
-        WebUI.executeJavaScript('arguments[0].value = arguments[1]', Arrays.asList(element, dateToSet))
-//		WebUI.click(findTestObject('Check Out/PickUp time'))
-		if (WebUI.waitForElementVisible(findTestObject('Check Out/Save Pickup date and Time'), 2))
-			WebUI.click(findTestObject('Check Out/Save Pickup date and Time'))
+    String dateToSet = tomorrow.format(DateTimeFormatter.ofPattern('yyyy-MM-dd'))
+
+    //WebUI.sendKeys(dateInput, Keys.chord(Keys.ARROW_DOWN))
+    //WebUI.sendKeys(dateInput, Keys.chord(Keys.ARROW_RIGHT))
+    //WebUI.sendKeys(dateInput, Keys.chord(Keys.ENTER))
+    //WebUI.sendKeys(dateInput, dateToSet)
+    WebUI.executeJavaScript('arguments[0].value = arguments[1]', Arrays.asList(element, dateToSet))
+
+    //		WebUI.click(findTestObject('Check Out/PickUp time'))
+    if (WebUI.waitForElementVisible(findTestObject('Check Out/Save Pickup date and Time'), 2)) {
+        WebUI.click(findTestObject('Check Out/Save Pickup date and Time'))
     }
+}
 
 if (WebUI.waitForElementVisible(findTestObject('Check Out/CheckOut Wallet'), 3)) {
     TestObject walletAmountObject = new TestObject().addProperty('xpath', ConditionType.EQUALS, '//div[@class=\'checkout-wallet\']//span')
@@ -132,19 +141,22 @@ if (WebUI.waitForElementVisible(findTestObject('Check Out/CheckOut Wallet'), 3))
             WebUI.sendKeys(walletInputField, walletAmountString)
 
             WebUI.click(findTestObject('Check Out/Wallet Submit Button'), FailureHandling.CONTINUE_ON_FAILURE)
-        }
-    } /*else {
+        } /*else {
         WebUI.comment('The wallet amount is zero or negative.')
 
         WebUI.verifyGreaterThan(walletAmount, 0, FailureHandling.STOP_ON_FAILURE)
     }*/
+    }
 }
+
+
+
 WebUI.verifyElementVisible(findTestObject('Check Out/checkout user details 1'))
 
 WebUI.verifyElementVisible(findTestObject('Check Out/Checkout address 2'))
 
 WebUI.verifyElementVisible(findTestObject('Check Out/Checkout payment method'))
+
 WebUI.callTestCase(findTestCase('FE/Check out/validation/Set Coupon Code'), [:], FailureHandling.STOP_ON_FAILURE)
 
-
-
+//WebUI.click(findTestObject('Check Out/CheckOut Button'))
