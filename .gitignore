@@ -1,5 +1,6 @@
 # Ignore everything in .cache
 .cache/*
+.cache/
 
 # Keep .gitkeep in output
 !output/.gitkeep
