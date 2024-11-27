@@ -21,3 +21,5 @@ settings/
 
 .project
 /ScreenAfterTestcase_Test Cases
+/bin/lib
+Libs/CustomKeywords.groovy
