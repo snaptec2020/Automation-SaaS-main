@@ -48,6 +48,7 @@ switch (GlobalVariable.launchingConfig.get('Mode')) {
 
 GlobalVariable.RunningMode = CustomKeywords.'generalactions.EnvironmentSettings.isRunningByMobile'()
 
-if (GlobalVariable.RunningMode in [1,2]) {
+
+if (GlobalVariable.RunningMode in ["1","2"]) {
     WebUI.maximizeWindow(FailureHandling.CONTINUE_ON_FAILURE)
 }
