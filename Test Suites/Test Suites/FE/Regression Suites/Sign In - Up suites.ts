@@ -33,13 +33,6 @@
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>88b290ee-234d-46e2-a359-5604c63acee4</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/FE/Check out/validation/validation add common location and plac order</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
       <guid>785a2aac-0566-4708-a470-2af5ebe003d5</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
