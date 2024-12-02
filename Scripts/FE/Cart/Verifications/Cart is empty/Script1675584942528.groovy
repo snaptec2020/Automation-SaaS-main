@@ -22,4 +22,4 @@ import org.openqa.selenium.Keys as Keys
 	WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE);
 	
 	WebUI.verifyElementPresent(findTestObject('Object Repository/Cart/Empty cart'), 3);
-	
+

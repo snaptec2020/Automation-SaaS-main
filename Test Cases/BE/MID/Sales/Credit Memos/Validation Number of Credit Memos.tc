@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Validation Number of Credit Memos</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>5a6a647b-856a-416a-a7c3-23bb5897c73e</testCaseGuid>
+</TestCaseEntity>

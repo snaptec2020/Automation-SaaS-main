@@ -77,8 +77,6 @@ public class HelpdeskUtil {
 				}
 			}
 		}
-
-
 	}
 
 
@@ -103,7 +101,7 @@ public class HelpdeskUtil {
 		WebElement element = WebUiCommonHelper.findWebElement(tb, 30)
 		ScrollToElement(tb)
 		clickJS(tb, 5)
-//		WebUI.navigateToUrl("https://qasralawani.com/ar/va20hs4-2-serving-plate.html")
+		//		WebUI.navigateToUrl("https://qasralawani.com/ar/va20hs4-2-serving-plate.html")
 	}
 
 	@Keyword
@@ -212,7 +210,6 @@ public class HelpdeskUtil {
 					clickJS(SubElem.get(0), 5)
 				}
 			}
-
 		}
 	}
 
@@ -252,7 +249,7 @@ public class HelpdeskUtil {
 				elementIndexproduct) + ']')
 		String currentURL = WebUI.getUrl()
 		WebUI.doubleClick(tb)
-//		WebUI.navigateToUrl("https://aljedaie.com/product/mx-35.html")
+		//		WebUI.navigateToUrl("https://aljedaie.com/product/mx-35.html")
 		WebUI.delay(2)
 		WebUI.waitForPageLoad(20,FailureHandling.OPTIONAL)
 
@@ -291,11 +288,8 @@ public class HelpdeskUtil {
 						ScrollToElement(Subtb)
 						WebUI.selectOptionByIndex(Subtb, 1)
 					}
-
-
 				}
 			}
-
 		}
 	}
 
@@ -363,7 +357,6 @@ public class HelpdeskUtil {
 		}else {
 			OpenRandomProductTBS()
 		}
-
 	}
 
 	@Keyword
@@ -441,7 +434,6 @@ public class HelpdeskUtil {
 		}else {
 			OpenRandomProductTheBeautySecrets()
 		}
-
 	}
 
 	@Keyword
@@ -505,7 +497,6 @@ public class HelpdeskUtil {
 		}else {
 			OpenRandomProductAlShamasy()
 		}
-
 	}
 
 
@@ -546,7 +537,7 @@ public class HelpdeskUtil {
 			println  productsCategoriesListL2_1.size()
 			println  productsCategoriesListL2_2.size()
 			if(!WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Product/ProductsGallery'), 2)
-			& productsCategoriesListL2_1.size()>0) {
+					& productsCategoriesListL2_1.size()>0) {
 				Random randomCategoryL2 = new Random()
 				int randomCategorySelectedL2 = randomCategoryL2.nextInt(productsCategoriesListL2_1.size()) + 1
 				//				randomCategorySelectedL2=6
@@ -558,7 +549,7 @@ public class HelpdeskUtil {
 				ScrollToElement(randomNumberCatProductElmL2)
 				clickJS(randomNumberCatProductTOL2, 3)
 			}else if(!WebUI.waitForElementVisible(findTestObject('Object Repository/Helpdesk/karazlinen/karazlinen-KSA/FE/Product/ProductsGallery'), 2)
-			& productsCategoriesListL2_2.size()>0) {
+					& productsCategoriesListL2_2.size()>0) {
 				Random randomCategoryL2 = new Random()
 				int randomCategorySelectedL2 = randomCategoryL2.nextInt(productsCategoriesListL2_2.size()) + 1
 				//randomCategorySelectedL2=6
@@ -625,7 +616,6 @@ public class HelpdeskUtil {
 						}
 					}
 				}
-
 			}
 		}else {
 			OpenRandomProductkarazlinenKSA()
@@ -714,7 +704,6 @@ public class HelpdeskUtil {
 			println ex.message
 			println ex.cause
 			ex.printStackTrace()
-
 		}
 	}
 
@@ -728,7 +717,6 @@ public class HelpdeskUtil {
 			println ex.message
 			println ex.cause
 			ex.printStackTrace()
-
 		}
 	}
 
@@ -741,7 +729,6 @@ public class HelpdeskUtil {
 			println ex.message
 			println ex.cause
 			ex.printStackTrace()
-
 		}
 	}
 
@@ -754,7 +741,6 @@ public class HelpdeskUtil {
 			println ex.message
 			println ex.cause
 			ex.printStackTrace()
-
 		}
 	}
 
@@ -769,8 +755,7 @@ public class HelpdeskUtil {
 				WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element.get(0)))
 				break;
 			}
-			catch(Exception ex)
-			{
+			catch(Exception ex) {
 				println ex.getMessage()
 				WebUI.delay(1)
 				if( attempts.equals(trials)){
@@ -791,8 +776,7 @@ public class HelpdeskUtil {
 				WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
 				break;
 			}
-			catch(org.openqa.selenium.StaleElementReferenceException ex)
-			{
+			catch(org.openqa.selenium.StaleElementReferenceException ex) {
 				println ex.getMessage()
 				WebUI.delay(1)
 				if( attempts.equals(trials)){
@@ -882,7 +866,7 @@ public class HelpdeskUtil {
 				break
 		}
 	}
-	
+
 	@Keyword
 	Void RemoveItemFromLocalStorage(String ItemName) {
 		WebUI.executeJavaScript('localStorage.removeItem("' + ItemName + '")', null)

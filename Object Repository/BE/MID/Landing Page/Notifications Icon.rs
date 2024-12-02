@@ -9,8 +9,13 @@
          <key>BASIC</key>
          <value>//*[local-name()='svg' and contains(@class,'feather-bell')]</value>
       </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@alt='bell icon']</value>
+      </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -18,6 +23,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>//*[local-name()='svg' and contains(@class,'feather-bell')]</value>
-      <webElementGuid>221c8791-4936-4d7f-bc61-9194c6d3250d</webElementGuid>
+      <webElementGuid>de316d34-1742-420f-bef6-263fd42d8159</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

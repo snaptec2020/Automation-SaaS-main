@@ -3,22 +3,88 @@
  * This class is generated automatically by Katalon Studio and should not be modified or deleted.
  */
 
-import java.util.List
-
-import java.lang.String
-
 import com.kms.katalon.core.testobject.TestObject
-
-import org.openqa.selenium.WebElement
-
-import com.kms.katalon.core.context.TestSuiteContext
-
-import java.util.Map
 
 import java.lang.Boolean
 
 import java.lang.Object
 
+import java.util.List
+
+import java.lang.String
+
+import org.openqa.selenium.WebElement
+
+import java.util.Map
+
+import com.kms.katalon.core.context.TestSuiteContext
+
+
+
+def static "mid.framework.PaginationPage.getSelectedOptionValue2"(
+    	TestObject selector	) {
+    (new mid.framework.PaginationPage()).getSelectedOptionValue2(
+        	selector)
+}
+
+
+def static "mid.framework.PaginationPage.getSelectedOptionValue"(
+    	TestObject selector	) {
+    (new mid.framework.PaginationPage()).getSelectedOptionValue(
+        	selector)
+}
+
+
+def static "mid.framework.PaginationPage.getSelectedOptionValue3"(
+    	TestObject selector	) {
+    (new mid.framework.PaginationPage()).getSelectedOptionValue3(
+        	selector)
+}
+
+
+def static "mid.framework.PaginationPage.getItemsNum"() {
+    (new mid.framework.PaginationPage()).getItemsNum()
+}
+
+
+def static "mid.framework.PaginationPage.selectOption"(
+    	TestObject dropdownSelector	
+     , 	Boolean isByIndex	
+     , 	Object indexID	
+     , 	Object value	) {
+    (new mid.framework.PaginationPage()).selectOption(
+        	dropdownSelector
+         , 	isByIndex
+         , 	indexID
+         , 	value)
+}
+
+
+def static "mid.framework.PaginationPage.selectOption"(
+    	TestObject dropdownSelector	
+     , 	Boolean isByIndex	
+     , 	Object indexID	) {
+    (new mid.framework.PaginationPage()).selectOption(
+        	dropdownSelector
+         , 	isByIndex
+         , 	indexID)
+}
+
+
+def static "mid.framework.PaginationPage.selectOption"(
+    	TestObject dropdownSelector	
+     , 	Boolean isByIndex	) {
+    (new mid.framework.PaginationPage()).selectOption(
+        	dropdownSelector
+         , 	isByIndex)
+}
+
+
+def static "mid.framework.PaginationPage.selectOption"(
+    	TestObject dropdownSelector	) {
+    (new mid.framework.PaginationPage()).selectOption(
+        	dropdownSelector)
+}
 
 
 def static "dbconnections.executeQueries.getDataFromDBByQuery"(
@@ -353,6 +419,44 @@ def static "helpdesk.HelpdeskUtil.RemoveItemFromLocalStorage"(
 }
 
 
+def static "mid.framework.FilterPage.expandFilter"() {
+    (new mid.framework.FilterPage()).expandFilter()
+}
+
+
+def static "mid.framework.FilterPage.filter"(
+    	java.util.Map<String, Object>[] params	) {
+    (new mid.framework.FilterPage()).filter(
+        	params)
+}
+
+
+def static "mid.framework.FilterPage.clearFilter"(
+    	boolean allFilter	
+     , 	Object filterData	) {
+    (new mid.framework.FilterPage()).clearFilter(
+        	allFilter
+         , 	filterData)
+}
+
+
+def static "mid.framework.FilterPage.enabledSearchButton"() {
+    (new mid.framework.FilterPage()).enabledSearchButton()
+}
+
+
+def static "mid.framework.FilterPage.clearFilter"(
+    	boolean allFilter	) {
+    (new mid.framework.FilterPage()).clearFilter(
+        	allFilter)
+}
+
+
+def static "mid.framework.FilterPage.clearFilter"() {
+    (new mid.framework.FilterPage()).clearFilter()
+}
+
+
 def static "cart.cartItems.getProductsInCart"() {
     (new cart.cartItems()).getProductsInCart()
 }
@@ -399,44 +503,6 @@ def static "generalactions.generalActions.waitForSpinnerWithRetry"() {
 }
 
 
-def static "mid.FilterPage.expandFilter"() {
-    (new mid.FilterPage()).expandFilter()
-}
-
-
-def static "mid.FilterPage.filter"(
-    	java.util.Map<String, Object>[] params	) {
-    (new mid.FilterPage()).filter(
-        	params)
-}
-
-
-def static "mid.FilterPage.clearFilter"(
-    	boolean allFilter	
-     , 	Object filterData	) {
-    (new mid.FilterPage()).clearFilter(
-        	allFilter
-         , 	filterData)
-}
-
-
-def static "mid.FilterPage.enabledSearchButton"() {
-    (new mid.FilterPage()).enabledSearchButton()
-}
-
-
-def static "mid.FilterPage.clearFilter"(
-    	boolean allFilter	) {
-    (new mid.FilterPage()).clearFilter(
-        	allFilter)
-}
-
-
-def static "mid.FilterPage.clearFilter"() {
-    (new mid.FilterPage()).clearFilter()
-}
-
-
 def static "signup.signupPhoneVerifications.phoneVerificationMessage"(
     	Object expectedMessage	) {
     (new signup.signupPhoneVerifications()).phoneVerificationMessage(
@@ -446,6 +512,20 @@ def static "signup.signupPhoneVerifications.phoneVerificationMessage"(
 
 def static "signup.signupPhoneVerifications.verificationElementPhoneSignUp"() {
     (new signup.signupPhoneVerifications()).verificationElementPhoneSignUp()
+}
+
+
+def static "mid.framework.generalAction.verifyHeaderText"(
+    	String expectedText	) {
+    (new mid.framework.generalAction()).verifyHeaderText(
+        	expectedText)
+}
+
+
+def static "mid.framework.generalAction.verifyMessagePresent"(
+    	String text	) {
+    (new mid.framework.generalAction()).verifyMessagePresent(
+        	text)
 }
 
 
@@ -473,17 +553,10 @@ def static "checkout.EnhancedPayments.getRandomPaymentMethod"() {
 
 def static "checkout.EnhancedPayments.paymentMethodToPayBySelectedMethod"(
     	int selectedIndex	
-     , 	Object expectedPaymentMethod	) {
+     , 	Object expectedPaymentMethods	) {
     (new checkout.EnhancedPayments()).paymentMethodToPayBySelectedMethod(
         	selectedIndex
-         , 	expectedPaymentMethod)
-}
-
-
-def static "checkout.EnhancedPayments.paymentMethodToPayBySelectedMethod"(
-    	int selectedIndex	) {
-    (new checkout.EnhancedPayments()).paymentMethodToPayBySelectedMethod(
-        	selectedIndex)
+         , 	expectedPaymentMethods)
 }
 
 
@@ -501,6 +574,73 @@ def static "com.amazonaws.services.s3.sample.getAPIResults.getAPIResultsByLatLon
          , 	regionName
          , 	theLongitude
          , 	theLatitude)
+}
+
+
+def static "mid.framework.jsonUtility.readJsonFile"(
+    	String filePath	) {
+    (new mid.framework.jsonUtility()).readJsonFile(
+        	filePath)
+}
+
+
+def static "mid.framework.item.editItem"(
+    	boolean isView	
+     , 	boolean isRandom	
+     , 	int incrementID	) {
+    (new mid.framework.item()).editItem(
+        	isView
+         , 	isRandom
+         , 	incrementID)
+}
+
+
+def static "mid.framework.item.selectItem"(
+    	boolean isRandom	
+     , 	List incrementID	) {
+    (new mid.framework.item()).selectItem(
+        	isRandom
+         , 	incrementID)
+}
+
+
+def static "mid.framework.item.exportItems"(
+    	String text	) {
+    (new mid.framework.item()).exportItems(
+        	text)
+}
+
+
+def static "mid.framework.item.editItem"(
+    	boolean isView	
+     , 	boolean isRandom	) {
+    (new mid.framework.item()).editItem(
+        	isView
+         , 	isRandom)
+}
+
+
+def static "mid.framework.item.editItem"(
+    	boolean isView	) {
+    (new mid.framework.item()).editItem(
+        	isView)
+}
+
+
+def static "mid.framework.item.editItem"() {
+    (new mid.framework.item()).editItem()
+}
+
+
+def static "mid.framework.item.selectItem"(
+    	boolean isRandom	) {
+    (new mid.framework.item()).selectItem(
+        	isRandom)
+}
+
+
+def static "mid.framework.item.selectItem"() {
+    (new mid.framework.item()).selectItem()
 }
 
 
@@ -530,6 +670,11 @@ def static "cart.removeItem.deleteItemFromCart"() {
 
 def static "cart.removeItem.deleteOutStockFromCart"() {
     (new cart.removeItem()).deleteOutStockFromCart()
+}
+
+
+def static "mid.framework.UserCredentialKeywords.getUserCredentials"() {
+    (new mid.framework.UserCredentialKeywords()).getUserCredentials()
 }
 
 
@@ -587,57 +732,17 @@ def static "utility.Utility.moveToElement"() {
 }
 
 
-def static "mid.PaginationPage.getSelectedOptionValue"(
-    	TestObject selector	) {
-    (new mid.PaginationPage()).getSelectedOptionValue(
-        	selector)
+def static "utility.Utility.clickUsingJavaScript"(
+    	WebElement element	) {
+    (new utility.Utility()).clickUsingJavaScript(
+        	element)
 }
 
 
-def static "mid.PaginationPage.getItemsNum"(
-    	TestObject itemsTableSelector	) {
-    (new mid.PaginationPage()).getItemsNum(
-        	itemsTableSelector)
-}
-
-
-def static "mid.PaginationPage.selectOption"(
-    	TestObject dropdownSelector	
-     , 	Boolean isByIndex	
-     , 	Object indexID	
-     , 	Object value	) {
-    (new mid.PaginationPage()).selectOption(
-        	dropdownSelector
-         , 	isByIndex
-         , 	indexID
-         , 	value)
-}
-
-
-def static "mid.PaginationPage.selectOption"(
-    	TestObject dropdownSelector	
-     , 	Boolean isByIndex	
-     , 	Object indexID	) {
-    (new mid.PaginationPage()).selectOption(
-        	dropdownSelector
-         , 	isByIndex
-         , 	indexID)
-}
-
-
-def static "mid.PaginationPage.selectOption"(
-    	TestObject dropdownSelector	
-     , 	Boolean isByIndex	) {
-    (new mid.PaginationPage()).selectOption(
-        	dropdownSelector
-         , 	isByIndex)
-}
-
-
-def static "mid.PaginationPage.selectOption"(
-    	TestObject dropdownSelector	) {
-    (new mid.PaginationPage()).selectOption(
-        	dropdownSelector)
+def static "utility.Utility.clickElementSafely"(
+    	TestObject testObject	) {
+    (new utility.Utility()).clickElementSafely(
+        	testObject)
 }
 
 
@@ -733,6 +838,156 @@ def static "catalog.catlogComponants.getSpecifiedCatalogElement"(
     (new catalog.catlogComponants()).getSpecifiedCatalogElement(
         	elementIndex
          , 	catalogList)
+}
+
+
+def static "mid.framework.menu.openOrdersFromSales"() {
+    (new mid.framework.menu()).openOrdersFromSales()
+}
+
+
+def static "mid.framework.menu.openInvoicesFromSales"() {
+    (new mid.framework.menu()).openInvoicesFromSales()
+}
+
+
+def static "mid.framework.menu.openShipmentsFromSales"() {
+    (new mid.framework.menu()).openShipmentsFromSales()
+}
+
+
+def static "mid.framework.menu.openCreditMemosFromSales"() {
+    (new mid.framework.menu()).openCreditMemosFromSales()
+}
+
+
+def static "mid.framework.menu.openReturnRequestsFromSales"() {
+    (new mid.framework.menu()).openReturnRequestsFromSales()
+}
+
+
+def static "mid.framework.menu.openReturnRequestSettingsFromSales"() {
+    (new mid.framework.menu()).openReturnRequestSettingsFromSales()
+}
+
+
+def static "mid.framework.menu.openQuotationsFromSales"() {
+    (new mid.framework.menu()).openQuotationsFromSales()
+}
+
+
+def static "mid.framework.menu.openOMSFromSales"() {
+    (new mid.framework.menu()).openOMSFromSales()
+}
+
+
+def static "mid.framework.menu.openProductsFromCatalog"() {
+    (new mid.framework.menu()).openProductsFromCatalog()
+}
+
+
+def static "mid.framework.menu.openCategoriesFromCatalog"() {
+    (new mid.framework.menu()).openCategoriesFromCatalog()
+}
+
+
+def static "mid.framework.menu.openRelatedProductRulesFromCatalog"() {
+    (new mid.framework.menu()).openRelatedProductRulesFromCatalog()
+}
+
+
+def static "mid.framework.menu.openProductLabelsFromCatalog"() {
+    (new mid.framework.menu()).openProductLabelsFromCatalog()
+}
+
+
+def static "mid.framework.menu.openCMSPagesFromContent"() {
+    (new mid.framework.menu()).openCMSPagesFromContent()
+}
+
+
+def static "mid.framework.menu.openLandingPagesFromContent"() {
+    (new mid.framework.menu()).openLandingPagesFromContent()
+}
+
+
+def static "mid.framework.menu.openHeadersFromContent"() {
+    (new mid.framework.menu()).openHeadersFromContent()
+}
+
+
+def static "mid.framework.menu.openFootersFromContent"() {
+    (new mid.framework.menu()).openFootersFromContent()
+}
+
+
+def static "mid.framework.menu.openSubscriptionFormsFromContent"() {
+    (new mid.framework.menu()).openSubscriptionFormsFromContent()
+}
+
+
+def static "mid.framework.menu.openAllCustomersFormsFromCustomers"() {
+    (new mid.framework.menu()).openAllCustomersFormsFromCustomers()
+}
+
+
+def static "mid.framework.menu.openCustomerGroupsFormsFromCustomers"() {
+    (new mid.framework.menu()).openCustomerGroupsFormsFromCustomers()
+}
+
+
+def static "mid.framework.menu.openCartPriceRulesFormsFromMarketing"() {
+    (new mid.framework.menu()).openCartPriceRulesFormsFromMarketing()
+}
+
+
+def static "mid.framework.menu.openProductsReviewsFormsFromMarketing"() {
+    (new mid.framework.menu()).openProductsReviewsFormsFromMarketing()
+}
+
+
+def static "mid.framework.menu.openBasicReportsFormsFromReports"() {
+    (new mid.framework.menu()).openBasicReportsFormsFromReports()
+}
+
+
+def static "mid.framework.menu.openConfigurationFormsFromSystem"() {
+    (new mid.framework.menu()).openConfigurationFormsFromSystem()
+}
+
+
+def static "mid.framework.menu.openPermissionsFormsFromSystem"() {
+    (new mid.framework.menu()).openPermissionsFormsFromSystem()
+}
+
+
+def static "mid.framework.menu.openLocatorZonesFormsFromSystem"() {
+    (new mid.framework.menu()).openLocatorZonesFormsFromSystem()
+}
+
+
+def static "mid.framework.menu.openDataTransferFormsFromSystem"() {
+    (new mid.framework.menu()).openDataTransferFormsFromSystem()
+}
+
+
+def static "mid.framework.menu.openDriversFormsFromDriverApp"() {
+    (new mid.framework.menu()).openDriversFormsFromDriverApp()
+}
+
+
+def static "mid.framework.menu.openAssignOrderToDriverFormsFromDriverApp"() {
+    (new mid.framework.menu()).openAssignOrderToDriverFormsFromDriverApp()
+}
+
+
+def static "mid.framework.menu.openSourcesFormsFromStores"() {
+    (new mid.framework.menu()).openSourcesFormsFromStores()
+}
+
+
+def static "mid.framework.menu.openStocksFormsFromStores"() {
+    (new mid.framework.menu()).openStocksFormsFromStores()
 }
 
 

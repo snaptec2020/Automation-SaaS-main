@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Sign In General Steps</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>7a8afa04-c42c-4bbb-8033-f0198fef5baa</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>b40e8720-1014-4902-a399-c86b9d978028</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>96e05947-b855-47ca-a71d-bdcc8ccadbff</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'saas.snaptec'</defaultValue>
+      <description></description>
+      <id>b40e8720-1014-4902-a399-c86b9d978028</id>
+      <masked>false</masked>
+      <name>userName</name>
+   </variable>
+   <variable>
+      <defaultValue>'snaptec@2023'</defaultValue>
+      <description></description>
+      <id>96e05947-b855-47ca-a71d-bdcc8ccadbff</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
+</TestCaseEntity>

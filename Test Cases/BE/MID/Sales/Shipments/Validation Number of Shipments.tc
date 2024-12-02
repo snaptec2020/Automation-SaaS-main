@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Validation Number of Shipments</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>e123d41b-8a37-45e8-a045-61dc5db0bee9</testCaseGuid>
+</TestCaseEntity>

@@ -4,6 +4,7 @@
    <name>Website launch</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>0cb88d71-d392-4dc6-b921-c8313a223e43</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
