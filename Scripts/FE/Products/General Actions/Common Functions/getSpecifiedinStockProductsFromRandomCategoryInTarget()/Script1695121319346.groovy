@@ -52,6 +52,7 @@ def getRandomElement= prod.get(CustomKeywords.'generalactions.generalStrings.get
 	} else {
 		WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/getSpecifiedinStockProductsFromRandomCategoryInTarget()'),
 			[:], FailureHandling.STOP_ON_FAILURE)
+		return
 	}
 	
 	if(priceOfSelectedPrudctAmount>=minimum & priceOfSelectedPrudctAmount<=maximum) {
@@ -91,6 +92,7 @@ def getRandomElement= prod.get(CustomKeywords.'generalactions.generalStrings.get
 			//getSpecifiedinStockProductsFromRandomCategoryInTarget()
 			WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/getSpecifiedinStockProductsFromRandomCategoryInTarget()'),
 				[:], FailureHandling.STOP_ON_FAILURE)
+			return
 		}
 		if(WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Cart/insert NeedQTY By text'),30).getAttribute("value") != '1') {
 			WebUI.click(findTestObject('Object Repository/Cart/insert NeedQTY By text'))
@@ -128,6 +130,11 @@ def getRandomElement= prod.get(CustomKeywords.'generalactions.generalStrings.get
 		}
 		//WebUI.(findTestObject('Object Repository/Cart/insert NeedQTY By text'), neededQty.toString())
 		return true
+	}else {
+		//getSpecifiedinStockProductsFromRandomCategoryInTarget()
+		WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/getSpecifiedinStockProductsFromRandomCategoryInTarget()'),
+			[:], FailureHandling.STOP_ON_FAILURE)
+		return
 	}
 //})
 /*if(!found) {

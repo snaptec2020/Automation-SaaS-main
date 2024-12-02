@@ -16,7 +16,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'test99'</initValue>
+      <initValue>'test20'</initValue>
       <name>labelValue</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
