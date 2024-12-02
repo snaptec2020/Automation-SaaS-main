@@ -61,7 +61,7 @@ class TestCaseAndSuiteListener {
 	//boolean isItFirstSite = true
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
-		if(GlobalVariable.testSuiteStatus == 'Not Run' & testCaseContext.getTestCaseId().indexOf("/Helpdesk/")<=0) {
+		if(testCaseContext.getTestCaseId().indexOf("/Helpdesk/")<=0) {
 			
 			GlobalVariable.launchingConfig.put("Mode",(testCaseContext.testCaseId=~"Test Cases/(.*?)/(.*?)/")[0][1])
 			GlobalVariable.launchingConfig.put("BEMode",(testCaseContext.testCaseId=~"Test Cases/(.*?)/(.*?)/")[0][2])
@@ -84,10 +84,12 @@ class TestCaseAndSuiteListener {
 	
 	@AfterTestCase
 	def sampleAfterTestCase(TestCaseContext testCaseContext) {
+		
 		if(GlobalVariable.testSuiteStatus == 'Not Run' & testCaseContext.getTestCaseId().indexOf("/Helpdesk/")<=0) {
 			WebUI.takeFullPageScreenshot("./ScreenAfterTestcase_${testCaseContext.getTestCaseId()}.png",FailureHandling.CONTINUE_ON_FAILURE)
 			//WebUI.closeBrowser()
 		}
+		WebUI.closeBrowser()
 	}
 
 	@BeforeTestSuite
@@ -96,19 +98,19 @@ class TestCaseAndSuiteListener {
 		GlobalVariable.testSuiteStatus = testSuiteContext.testSuiteId
 		GlobalVariable.testSuiteReportFolder = RunConfiguration.getReportFolder()
 //		GlobalVariable.RunningMode=CustomKeywords.'generalactions.EnvironmentSettings.isRunningByMobile'()
-		if(testSuiteContext.getTestSuiteId().indexOf("/Helpdesk/")<=0 && !GlobalVariable.isRunByMultiSites) {
-			//String reportFolder = RunConfiguration.getReportFolder();
-			//File reportFolderFile = new File(reportFolder);
-			//finalReport = new File(reportFolderFile, reportFolderFile.getName() + ".html")
-			GlobalVariable.launchingConfig.put("Mode",(testSuiteContext.testSuiteId=~"Test Suites/Test Suites/(.*?)/(.*?)/")[0][1])
-			GlobalVariable.launchingConfig.put("BEMode",(testSuiteContext.testSuiteId=~"Test Suites/Test Suites/(.*?)/(.*?)/")[0][2])
-			GlobalVariable.launchingConfig.put("SiteUrl",(RunConfiguration.executionProfile=~"^.*?-(.*?)-")[0][1])
-			WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
-			//checkIfMultiSites()
-			//WebUI.refresh()
-			
-			
-		}
+//		if(testSuiteContext.getTestSuiteId().indexOf("/Helpdesk/")<=0 && !GlobalVariable.isRunByMultiSites) {
+//			//String reportFolder = RunConfiguration.getReportFolder();
+//			//File reportFolderFile = new File(reportFolder);
+//			//finalReport = new File(reportFolderFile, reportFolderFile.getName() + ".html")
+//			GlobalVariable.launchingConfig.put("Mode",(testSuiteContext.testSuiteId=~"Test Suites/Test Suites/(.*?)/(.*?)/")[0][1])
+//			GlobalVariable.launchingConfig.put("BEMode",(testSuiteContext.testSuiteId=~"Test Suites/Test Suites/(.*?)/(.*?)/")[0][2])
+//			GlobalVariable.launchingConfig.put("SiteUrl",(RunConfiguration.executionProfile=~"^.*?-(.*?)-")[0][1])
+//			WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
+//			//checkIfMultiSites()
+//			//WebUI.refresh()
+//			
+//			
+//		}
 	}
 	@AfterTestSuite
 	def sampleAfterTestSuite(TestSuiteContext testSuiteContext) {
