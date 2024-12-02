@@ -4,9 +4,12 @@
    <name>Automation-SaaS-main</name>
    <tag></tag>
    <UUID>4ae713cf-3d02-4ad8-b34b-261507b0c463</UUID>
+   <freeLicense>false</freeLicense>
    <migratedVersion>5.9.0</migratedVersion>
+   <modifiedEdition>ENTERPRISE</modifiedEdition>
+   <modifiedVersion>10.0.0</modifiedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
-   <projectFileLocation>C:\Automation-SaaS-main\ST-1606-Merge-before-Main\new\Automation-SaaS-main.prj</projectFileLocation>
+   <projectFileLocation>C:\Users\Administrator\Documents\GitHub\Katalon-Framework\Automation-SaaS-main\Automation-SaaS-main.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
