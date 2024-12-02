@@ -43,10 +43,13 @@ if (StringUtils.indexOfIgnoreCase(WebUI.getUrl(), '/checkout/registration') > 0)
     WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/Login by phone/Success Sign in by phone For Checkout'), [:], 
         FailureHandling.STOP_ON_FAILURE)
 }
-
+CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
+if(CustomKeywords.'com.utils.URLUtils.waitForURLContains'('/cart', 5)) {
+	WebUI.callTestCase(findTestCase('FE/Cart/Validations/Modify the cart subtotals'), [:], FailureHandling.STOP_ON_FAILURE)
+	CustomKeywords.'utility.Utility.clickOnObjectusingJavaScript'(findTestObject('Check Out/Proceed To Checkout Button'))
+}
 boolean otpRequierd = WebUI.waitForElementVisible(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), 5, 
-    FailureHandling.CONTINUE_ON_FAILURE //WebUI.findWebElements(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), 20).size()
-    )
+    FailureHandling.CONTINUE_ON_FAILURE) //WebUI.findWebElements(findTestObject('Sign up Page/Sgin up By phone/insert phone number'), 20).size()
 
 if (otpRequierd) {
     boolean isPhoneExist = true
