@@ -9,7 +9,7 @@
    <dataFileGUID>d7f9a2f3-4b31-49fe-a36a-69f19a298bb0</dataFileGUID>
    <dataSourceUrl></dataSourceUrl>
    <driver>InternalData</driver>
-   <data>SaaS-Prod-Snaptec saas.snaptec snaptec%402023</data>
+   <data>SaaS-Prod-Snaptec saas.snaptec snaptec%402023 saas.qa%40snaptec.co</data>
    <internalDataColumns>
       <columnIndex>0</columnIndex>
       <name>Profile name</name>
@@ -23,6 +23,11 @@
    <internalDataColumns>
       <columnIndex>2</columnIndex>
       <name>Password</name>
+      <size>1</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>3</columnIndex>
+      <name>email</name>
       <size>1</size>
    </internalDataColumns>
    <isInternalPath>false</isInternalPath>

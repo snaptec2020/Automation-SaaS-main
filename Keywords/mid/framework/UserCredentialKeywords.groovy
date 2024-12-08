@@ -29,18 +29,20 @@ public class UserCredentialKeywords {
 
 		String username = ""
 		String password = ""
-
+		String email = ""
+		
 		int rowCount = data.getRowNumbers()
 		for (int i = 1; i <= rowCount; i++) {
 			if (data.getValue("Profile name", i) == currentProfileName) {
 				username = data.getValue("User Name", i)
 				password = data.getValue("Password", i)
+				email = data.getValue("email", i)
 				break
 			}
 		}
 
 		if (username != "" && password != "") {
-			return [username: username, password: password]
+			return [username: username, password: password, email:email]
 		} else {
 			throw new Exception("Profile not found in data file!")
 		}
