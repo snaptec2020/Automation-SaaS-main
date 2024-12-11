@@ -16,11 +16,11 @@
                <entry>
                   <key>testCloudDesktopBrowser</key>
                   <value>{
-  &quot;id&quot;: 437,
+  &quot;id&quot;: 412,
   &quot;osDisplayName&quot;: &quot;Windows&quot;,
   &quot;browserName&quot;: &quot;chrome&quot;,
   &quot;browserDisplayName&quot;: &quot;Chrome&quot;,
-  &quot;browserVersion&quot;: &quot;132&quot;,
+  &quot;browserVersion&quot;: &quot;130&quot;,
   &quot;os&quot;: &quot;windows&quot;,
   &quot;platformName&quot;: &quot;IOS&quot;,
   &quot;timeout&quot;: 15,
@@ -41,48 +41,17 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Prod-Brosh</profileName>
+            <profileName>SaaS-Prod-NT</profileName>
             <requireConfigurationData>true</requireConfigurationData>
             <runConfigurationData>
                <entry>
                   <key>testCloudDesktopBrowser</key>
                   <value>{
-  &quot;id&quot;: 437,
+  &quot;id&quot;: 412,
   &quot;osDisplayName&quot;: &quot;Windows&quot;,
   &quot;browserName&quot;: &quot;chrome&quot;,
   &quot;browserDisplayName&quot;: &quot;Chrome&quot;,
-  &quot;browserVersion&quot;: &quot;132&quot;,
-  &quot;os&quot;: &quot;windows&quot;,
-  &quot;platformName&quot;: &quot;IOS&quot;,
-  &quot;timeout&quot;: 15,
-  &quot;usingTunnel&quot;: false,
-  &quot;isHighAvailableDevice&quot;: false
-}</value>
-               </entry>
-               <entry>
-                  <key>testCloudSessionType</key>
-                  <value>DESKTOP_BROWSER</value>
-               </entry>
-            </runConfigurationData>
-            <runConfigurationId>TestCloud</runConfigurationId>
-         </configuration>
-         <runEnabled>false</runEnabled>
-         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
-      </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Prod-Snaptec</profileName>
-            <requireConfigurationData>true</requireConfigurationData>
-            <runConfigurationData>
-               <entry>
-                  <key>testCloudDesktopBrowser</key>
-                  <value>{
-  &quot;id&quot;: 437,
-  &quot;osDisplayName&quot;: &quot;Windows&quot;,
-  &quot;browserName&quot;: &quot;chrome&quot;,
-  &quot;browserDisplayName&quot;: &quot;Chrome&quot;,
-  &quot;browserVersion&quot;: &quot;132&quot;,
+  &quot;browserVersion&quot;: &quot;130&quot;,
   &quot;os&quot;: &quot;windows&quot;,
   &quot;platformName&quot;: &quot;IOS&quot;,
   &quot;timeout&quot;: 15,
@@ -103,17 +72,17 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Prod-Dukan</profileName>
+            <profileName>SaaS-Prod-AnniandDani</profileName>
             <requireConfigurationData>true</requireConfigurationData>
             <runConfigurationData>
                <entry>
                   <key>testCloudDesktopBrowser</key>
                   <value>{
-  &quot;id&quot;: 437,
+  &quot;id&quot;: 412,
   &quot;osDisplayName&quot;: &quot;Windows&quot;,
   &quot;browserName&quot;: &quot;chrome&quot;,
   &quot;browserDisplayName&quot;: &quot;Chrome&quot;,
-  &quot;browserVersion&quot;: &quot;132&quot;,
+  &quot;browserVersion&quot;: &quot;130&quot;,
   &quot;os&quot;: &quot;windows&quot;,
   &quot;platformName&quot;: &quot;IOS&quot;,
   &quot;timeout&quot;: 15,
@@ -126,113 +95,72 @@
                   <value>DESKTOP_BROWSER</value>
                </entry>
             </runConfigurationData>
-            <runConfigurationId>TestCloud</runConfigurationId>
-         </configuration>
-         <runEnabled>false</runEnabled>
-         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
-      </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Prod-Snaptec</profileName>
-            <requireConfigurationData>true</requireConfigurationData>
-            <runConfigurationData>
-               <entry>
-                  <key>testCloudDesktopBrowser</key>
-                  <value>{
-  &quot;id&quot;: 437,
-  &quot;osDisplayName&quot;: &quot;Windows&quot;,
-  &quot;browserName&quot;: &quot;chrome&quot;,
-  &quot;browserDisplayName&quot;: &quot;Chrome&quot;,
-  &quot;browserVersion&quot;: &quot;132&quot;,
-  &quot;os&quot;: &quot;windows&quot;,
-  &quot;platformName&quot;: &quot;IOS&quot;,
-  &quot;timeout&quot;: 15,
-  &quot;usingTunnel&quot;: false,
-  &quot;isHighAvailableDevice&quot;: false
-}</value>
-               </entry>
-               <entry>
-                  <key>testCloudSessionType</key>
-                  <value>DESKTOP_BROWSER</value>
-               </entry>
-            </runConfigurationData>
-            <runConfigurationId>TestCloud</runConfigurationId>
-         </configuration>
-         <runEnabled>false</runEnabled>
-         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
-      </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Prod-Stovia</profileName>
-            <requireConfigurationData>true</requireConfigurationData>
-            <runConfigurationData>
-               <entry>
-                  <key>testCloudDesktopBrowser</key>
-                  <value>{
-  &quot;id&quot;: 437,
-  &quot;osDisplayName&quot;: &quot;Windows&quot;,
-  &quot;browserName&quot;: &quot;chrome&quot;,
-  &quot;browserDisplayName&quot;: &quot;Chrome&quot;,
-  &quot;browserVersion&quot;: &quot;132&quot;,
-  &quot;os&quot;: &quot;windows&quot;,
-  &quot;platformName&quot;: &quot;IOS&quot;,
-  &quot;timeout&quot;: 15,
-  &quot;usingTunnel&quot;: false,
-  &quot;isHighAvailableDevice&quot;: false
-}</value>
-               </entry>
-               <entry>
-                  <key>testCloudSessionType</key>
-                  <value>DESKTOP_BROWSER</value>
-               </entry>
-            </runConfigurationData>
-            <runConfigurationId>TestCloud</runConfigurationId>
-         </configuration>
-         <runEnabled>false</runEnabled>
-         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
-      </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Prod-laphayeat</profileName>
-            <requireConfigurationData>true</requireConfigurationData>
-            <runConfigurationData>
-               <entry>
-                  <key>testCloudDesktopBrowser</key>
-                  <value>{
-  &quot;id&quot;: 437,
-  &quot;osDisplayName&quot;: &quot;Windows&quot;,
-  &quot;browserName&quot;: &quot;chrome&quot;,
-  &quot;browserDisplayName&quot;: &quot;Chrome&quot;,
-  &quot;browserVersion&quot;: &quot;132&quot;,
-  &quot;os&quot;: &quot;windows&quot;,
-  &quot;platformName&quot;: &quot;IOS&quot;,
-  &quot;timeout&quot;: 15,
-  &quot;usingTunnel&quot;: false,
-  &quot;isHighAvailableDevice&quot;: false
-}</value>
-               </entry>
-               <entry>
-                  <key>testCloudSessionType</key>
-                  <value>DESKTOP_BROWSER</value>
-               </entry>
-            </runConfigurationData>
-            <runConfigurationId>TestCloud</runConfigurationId>
-         </configuration>
-         <runEnabled>false</runEnabled>
-         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
-      </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Prod-Snaptec</profileName>
-            <requireConfigurationData>true</requireConfigurationData>
             <runConfigurationId>TestCloud</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
          <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
+      </TestSuiteRunConfiguration>
+      <TestSuiteRunConfiguration>
+         <configuration>
+            <groupName>Web Desktop</groupName>
+            <profileName>SaaS-Prod-Snaptec</profileName>
+            <requireConfigurationData>true</requireConfigurationData>
+            <runConfigurationData>
+               <entry>
+                  <key>testCloudDesktopBrowser</key>
+                  <value>{
+  &quot;id&quot;: 412,
+  &quot;osDisplayName&quot;: &quot;Windows&quot;,
+  &quot;browserName&quot;: &quot;chrome&quot;,
+  &quot;browserDisplayName&quot;: &quot;Chrome&quot;,
+  &quot;browserVersion&quot;: &quot;130&quot;,
+  &quot;os&quot;: &quot;windows&quot;,
+  &quot;platformName&quot;: &quot;IOS&quot;,
+  &quot;timeout&quot;: 15,
+  &quot;usingTunnel&quot;: false,
+  &quot;isHighAvailableDevice&quot;: false
+}</value>
+               </entry>
+               <entry>
+                  <key>testCloudSessionType</key>
+                  <value>DESKTOP_BROWSER</value>
+               </entry>
+            </runConfigurationData>
+            <runConfigurationId>TestCloud</runConfigurationId>
+         </configuration>
+         <runEnabled>true</runEnabled>
+         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Sign In - Up suites</testSuiteEntity>
+      </TestSuiteRunConfiguration>
+      <TestSuiteRunConfiguration>
+         <configuration>
+            <groupName>Web Desktop</groupName>
+            <profileName>SaaS-Prod-Snaptec</profileName>
+            <requireConfigurationData>true</requireConfigurationData>
+            <runConfigurationData>
+               <entry>
+                  <key>testCloudDesktopBrowser</key>
+                  <value>{
+  &quot;id&quot;: 412,
+  &quot;osDisplayName&quot;: &quot;Windows&quot;,
+  &quot;browserName&quot;: &quot;chrome&quot;,
+  &quot;browserDisplayName&quot;: &quot;Chrome&quot;,
+  &quot;browserVersion&quot;: &quot;130&quot;,
+  &quot;os&quot;: &quot;windows&quot;,
+  &quot;platformName&quot;: &quot;IOS&quot;,
+  &quot;timeout&quot;: 15,
+  &quot;usingTunnel&quot;: false,
+  &quot;isHighAvailableDevice&quot;: false
+}</value>
+               </entry>
+               <entry>
+                  <key>testCloudSessionType</key>
+                  <value>DESKTOP_BROWSER</value>
+               </entry>
+            </runConfigurationData>
+            <runConfigurationId>TestCloud</runConfigurationId>
+         </configuration>
+         <runEnabled>true</runEnabled>
+         <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Checkout All methods</testSuiteEntity>
       </TestSuiteRunConfiguration>
    </testSuiteRunConfigurations>
 </TestSuiteCollectionEntity>
