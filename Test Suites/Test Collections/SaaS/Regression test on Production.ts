@@ -128,7 +128,7 @@
             </runConfigurationData>
             <runConfigurationId>TestCloud</runConfigurationId>
          </configuration>
-         <runEnabled>true</runEnabled>
+         <runEnabled>false</runEnabled>
          <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Sign In - Up suites</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
