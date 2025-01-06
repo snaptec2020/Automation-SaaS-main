@@ -113,7 +113,7 @@ class TestCaseAndSuiteListener {
 //			
 //		}
 	}
-//	@AfterTestSuite
+	@AfterTestSuite
 	def sampleAfterTestSuite(TestSuiteContext testSuiteContext) {
 		//KeywordUtil.logInfo(storesToVisit.toString())
 		//Map suiteProperties =[:]
