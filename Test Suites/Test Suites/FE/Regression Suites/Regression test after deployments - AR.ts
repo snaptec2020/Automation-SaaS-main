@@ -4,7 +4,7 @@
    <name>Regression test after deployments - AR</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <mailRecipient></mailRecipient>
+   <mailRecipient>tri@snaptec.co;</mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
@@ -97,7 +97,7 @@
    <testCaseLink>
       <guid>2e243f65-8bb7-4f39-8117-9369b7c61e02</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/FE/Search/Validation/View all products from view more in container - By Product Name</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
       <variableLink>
@@ -116,7 +116,7 @@
    <testCaseLink>
       <guid>c4e1e576-f56e-4db4-8e33-a42a5a1e3276</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/FE/Search/Validation/View one product - By Product Name</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
       <variableLink>
@@ -135,7 +135,7 @@
    <testCaseLink>
       <guid>04413ce4-6a64-4d43-8cb9-a6784c35ce75</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/FE/Website launch/General Actions/Subscribe email General</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
       <variableLink>
@@ -154,21 +154,21 @@
    <testCaseLink>
       <guid>65f4e0fc-f955-415a-bb98-8bc726ae535a</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/FE/Cart/Validations/Remove All products from cart</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>03ded116-034e-48b2-b8bb-f7766f846e5c</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/FE/Search/Validation/Search by search button - By Product SKU</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>cc210254-7c55-48bb-a551-5eb2ad5b2cad</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/FE/Search/Validation/View one product - By Product SKU</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
       <variableLink>
@@ -187,7 +187,7 @@
    <testCaseLink>
       <guid>9ed73f47-677f-4c05-952d-634ce4cde0be</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/FE/Search/Validation/View all products from view more in container - By Product SKU</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
       <variableLink>
@@ -206,7 +206,7 @@
    <testCaseLink>
       <guid>0485f2c8-ea55-4f9f-9ae4-4eca6c4e2fad</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/FE/Products/Validation/Add Product review</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>

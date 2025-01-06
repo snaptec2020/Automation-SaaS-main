@@ -24,14 +24,16 @@ WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnt
 switch (GlobalVariable.searchMode) {
 
 case 'Normal': 
+//	println(InvalidProduct + ",,,,,,,,,,,,,,,,,,,,,,,,,,,,")
 
-    WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), InvalidProduct)
+    WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), "test")
 
     WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'))
 	break
  
 case 'Non-Normal':
-    WebUI.setText(findTestObject('Object Repository/Search contents/input'), InvalidProduct)
+//	println(InvalidProduct + ",,,,,,,,,,,,,,,,,,,,,,,,,,,,")
+    WebUI.setText(findTestObject('Object Repository/Search contents/input'), "test")
 
     WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'))
 	break

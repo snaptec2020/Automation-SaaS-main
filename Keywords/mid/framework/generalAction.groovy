@@ -1,4 +1,4 @@
-package mid.framework
+package mid.framework;
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -19,19 +19,59 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import com.kms.katalon.core.testobject.ConditionType
 import internal.GlobalVariable
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 public class generalAction {
 
 	@Keyword
+	def setTextToInputFieldDependOnName(String fieldName, String fieldData) {
+		def inputField = generalAction.createTestObject("//*[translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz') = '"+fieldName.toLowerCase()+"']/parent::div//input | //*[translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz') = '"+fieldName.toLowerCase()+"']/parent::span/parent::*//input")
+		WebUI.setText(inputField, fieldData)
+	}
+
+	@Keyword
+	def setDate(String dateValue=LocalDate.now().toString()) {
+		//		String script = "document.evaluate('//input[@name=\"dob\"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.value = '2024-12-30';"
+		//		WebUI.executeJavaScript(script, null)
+		def inputField = generalAction.createTestObject("//*[translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz') = 'date of birth']/parent::div//input")
+		WebUI.sendKeys(inputField, dateValue)
+	}
+
+	@Keyword
+	def clickOnDependOnName(String fieldName) {
+		def fieldObject = generalAction.createTestObject("//*[translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz') = '"+fieldName.toLowerCase()+"']")
+		WebUI.click(fieldObject)
+	}
+
+	@Keyword
+	def unableFieldDependOnName(String fieldName) {
+		def fieldObject = generalAction.createTestObject("//*[translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz') = '"+fieldName.toLowerCase()+"']/parent::div//label")
+		WebUI.click(fieldObject)
+	}
+
+	@Keyword
+	def selectOptionDependOnName(String fieldName, String OptionLabel) {
+		def fieldObject = generalAction.createTestObject("//*[translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz') = '"+fieldName.toLowerCase()+"']/../..//select")
+		WebUI.selectOptionByLabel(fieldObject, OptionLabel, false)
+	}
+
+	@Keyword
 	def verifyHeaderText(String expectedText) {
-		def headerObject = generalAction.createTestObject("//*[local-name() = 'h1'or local-name() = 'h2'or local-name() = 'h3'or local-name() = 'h4'][text()='"+expectedText+"']")
+		def headerObject = generalAction.createTestObject("//*[local-name() = 'h1'or local-name() = 'h2'or local-name() = 'h3'or local-name() = 'h4' or local-name() = 'span'][text()='"+expectedText+"']")
 		WebUI.verifyElementText(headerObject, expectedText)
 	}
-	
+
 	@Keyword
 	def verifyMessagePresent(String text) {
 		def itemNumberTitle = generalAction.createTestObject("//*[contains(@class,'toast-notifications') and text()='"+text+"'] | //*[contains(@class,'styles_message')]//*[text()='"+text+"']")
 		WebUI.verifyElementPresent(itemNumberTitle, 5)
+	}
+
+	@Keyword
+	def generateRandomString() {
+		def randomString = UUID.randomUUID().toString().substring(0, 8)
+		return randomString
 	}
 
 	public static TestObject createTestObject(String xpath) {

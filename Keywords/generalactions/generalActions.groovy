@@ -16,7 +16,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.utils.CustomLogger
 
 public class generalActions {
-	private static final int MAX_ATTEMPTS = 60
+	private static final int MAX_ATTEMPTS = 10
 	private static final int WAIT_TIMEOUT = 1
 
 	@Keyword
@@ -27,15 +27,13 @@ public class generalActions {
 
 		while (attemptCount < MAX_ATTEMPTS) {
 			try {
-				CustomLogger.logInfo("Waiting for spinner to hide, attempt ${attemptCount + 1}")
 
-				// First, check if the spinner exists at all
-				boolean spinnerExists = WebUI.waitForElementPresent(spinnerObject, WAIT_TIMEOUT, FailureHandling.OPTIONAL)
-
-				if (!spinnerExists) {
-					CustomLogger.logInfo("Spinner is not present in DOM")
-					return
-				}
+//				boolean spinnerExists = WebUI.waitForElementPresent(spinnerObject, WAIT_TIMEOUT, FailureHandling.OPTIONAL)
+//
+//				if (!spinnerExists) {
+//					CustomLogger.logInfo("Spinner is not present in DOM")
+//					return
+//				}
 
 				// Check if spinner is visible
 				boolean isVisible = WebUI.waitForElementVisible(spinnerObject, WAIT_TIMEOUT, FailureHandling.STOP_ON_FAILURE)
@@ -46,7 +44,7 @@ public class generalActions {
 				}
 
 				// If still visible, wait a bit before next attempt
-				WebUI.delay(WAIT_TIMEOUT)
+//				WebUI.delay(WAIT_TIMEOUT)
 				attemptCount++
 
 			} catch (StaleElementReferenceException e) {

@@ -21,36 +21,31 @@ import com.utils.CustomLogger
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-//KeywordUtil.logInfo(RunConfiguration.getExecutionProfile())
-//Map geoLocationOption =[:]
-//geoLocationOption.put("latitude",21.3369007)
-//geoLocationOption.put("longitude",39.1291145)
-//RunConfiguration.setWebDriverPreferencesProperty('Emulation.setGeolocationOverride', geoLocationOption)
+
+GlobalVariable.RunningMode = CustomKeywords.'generalactions.EnvironmentSettings.isRunningByMobile'()
+
 switch (GlobalVariable.launchingConfig.get('Mode')) {
     case 'FE':
         WebUI.openBrowser('')
 
         WebUI.navigateToUrl(GlobalVariable.URL)
 
-        CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
+		if (GlobalVariable.RunningMode == "1") {
+			WebUI.maximizeWindow(FailureHandling.CONTINUE_ON_FAILURE)
+		}
 
         WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Add locatin New workflow'), [:], FailureHandling.STOP_ON_FAILURE)
 
         break
     case 'BE':
         WebUI.openBrowser('')
-
-        switch (GlobalVariable.launchingConfig.get('BEMode')) {
-            case 'MID':
+		WebUI.maximizeWindow(FailureHandling.CONTINUE_ON_FAILURE)
+        if (GlobalVariable.launchingConfig.get('BEMode') == 'MID') {
                 WebUI.navigateToUrl(GlobalVariable.MID_URL.get(GlobalVariable.launchingConfig.get('SiteUrl')))
-
-                break
         }
+		break
 }
 
-GlobalVariable.RunningMode = CustomKeywords.'generalactions.EnvironmentSettings.isRunningByMobile'()
 
 
-if (GlobalVariable.RunningMode == "1") {
-    WebUI.maximizeWindow(FailureHandling.CONTINUE_ON_FAILURE)
-}
+

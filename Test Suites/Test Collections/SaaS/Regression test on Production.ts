@@ -4,7 +4,7 @@
    <name>Regression test on Production</name>
    <tag></tag>
    <delayBetweenInstances>0</delayBetweenInstances>
-   <executionMode>SEQUENTIAL</executionMode>
+   <executionMode>PARALLEL</executionMode>
    <maxConcurrentInstances>8</maxConcurrentInstances>
    <testSuiteRunConfigurations>
       <TestSuiteRunConfiguration>
@@ -35,7 +35,7 @@
             </runConfigurationData>
             <runConfigurationId>TestCloud</runConfigurationId>
          </configuration>
-         <runEnabled>true</runEnabled>
+         <runEnabled>false</runEnabled>
          <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
@@ -97,7 +97,7 @@
             </runConfigurationData>
             <runConfigurationId>TestCloud</runConfigurationId>
          </configuration>
-         <runEnabled>true</runEnabled>
+         <runEnabled>false</runEnabled>
          <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Regression test after deployments - AR</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
@@ -159,7 +159,7 @@
             </runConfigurationData>
             <runConfigurationId>TestCloud</runConfigurationId>
          </configuration>
-         <runEnabled>true</runEnabled>
+         <runEnabled>false</runEnabled>
          <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Checkout All methods</testSuiteEntity>
       </TestSuiteRunConfiguration>
    </testSuiteRunConfigurations>

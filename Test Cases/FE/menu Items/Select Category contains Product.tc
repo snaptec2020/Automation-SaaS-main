@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Select Catalog - Select All Categories and Scrolling</name>
+   <name>Select Category contains Product</name>
    <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
-   <testCaseGuid>3b6db461-084d-4a65-b565-6b43d40bcc30</testCaseGuid>
+   <testCaseGuid>bec41946-2e7f-4756-8d93-fbe2c762a1e8</testCaseGuid>
 </TestCaseEntity>

@@ -85,11 +85,12 @@ class TestCaseAndSuiteListener {
 	@AfterTestCase
 	def sampleAfterTestCase(TestCaseContext testCaseContext) {
 		
-		if(GlobalVariable.testSuiteStatus == 'Not Run' & testCaseContext.getTestCaseId().indexOf("/Helpdesk/")<=0) {
-			WebUI.takeFullPageScreenshot("./ScreenAfterTestcase_${testCaseContext.getTestCaseId()}.png",FailureHandling.CONTINUE_ON_FAILURE)
-			//WebUI.closeBrowser()
-		}
-		WebUI.closeBrowser()
+//		if(GlobalVariable.testSuiteStatus == 'Not Run' & testCaseContext.getTestCaseId().indexOf("/Helpdesk/")<=0) {
+//			WebUI.takeFullPageScreenshot("./ScreenAfterTestcase_${testCaseContext.getTestCaseId()}.png",FailureHandling.CONTINUE_ON_FAILURE)
+//			//WebUI.closeBrowser()
+//		}
+		WebUI.comment("done")
+//		WebUI.closeBrowser()
 	}
 
 	@BeforeTestSuite

@@ -36,11 +36,11 @@ public class catlogComponants {
 	public def getCategoryElements() {
 		List Catalogs
 		switch(GlobalVariable.RunningMode) {
-			case "1": Catalogs = WebUI.findWebElements(findTestObject('Object Repository/Mega Menu/Catalog list'),30)
+			case "1": Catalogs = WebUI.findWebElements(findTestObject('Object Repository/Mega Menu/Catalog list'),10)
 				break
-			case "2": //WebUI.waitForElementVisible(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'), 10)
+			case "2":
 				WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
-				Catalogs= WebUI.findWebElements(findTestObject('Object Repository/Mega Menu/MenuSider on mobile'),30)
+				Catalogs= WebUI.findWebElements(findTestObject('Object Repository/Mega Menu/MenuSider on mobile'),10)
 				WebUI.click(findTestObject('Object Repository/Mega Menu/Close MM Mobile'))
 				break
 		}
@@ -54,39 +54,21 @@ public class catlogComponants {
 
 		elementIndex =elementIndex+1
 
-
-
-		//catalogList.get(elementIndex).click()
-
-
-		//if (elementIndex >=0)
 		switch(GlobalVariable.RunningMode) {
 			case "1":
 				tb = utilityFunctions.addXpathToTestObject(findTestObject('Object Repository/Mega Menu/Catalog list').findPropertyValue('xpath') + "["+elementIndex+"]")
-			//tb.addProperty('xpath', ConditionType.EQUALS, "//a[contains(@class,'styles_megaMenuItem')]["+elementIndex+"]")
 				break
 			case "2":WebUI.waitForElementClickable(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'), 0)
 				WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
 
-				Thread.sleep(1000);								//button[@class='mega-menu-sidebar__item-title']
+				Thread.sleep(1000);						
 				tb = utilityFunctions.addXpathToTestObject("("+findTestObject('Object Repository/Mega Menu/MenuSider on mobile').findPropertyValue('xpath') + ")["+elementIndex+"]")
-			//tb.addProperty('xpath', ConditionType.EQUALS, "(//button[@class='mega-menu-sidebar__item-title'])["+elementIndex+"]")
 				break
 		}
-		/*		catalogList.get(elementIndex).click()
-		 Thread.sleep(2000);*/
-		WebUI.waitForElementClickable(tb, 30)
+		WebUI.waitForElementClickable(tb, 5)
 		WebUI.click(tb,FailureHandling.CONTINUE_ON_FAILURE)
-		//WebUI.delay(2)
-		//WebUI.mouseOver(findTestObject('Headers and Footers/Header contents/Logo'), FailureHandling.CONTINUE_ON_FAILURE)
 		generalActions.waiteSpinnerToHide()
 		utilityFunctions.moveToElement()
-		/*		else {
-		 WebUI.scrollToPosition(9999999, 9999999)
-		 WebUI.scrollToPosition(9999999, 9999999)
-		 WebUI.click(findTestObject('Object Repository/Mega Menu/another catategory'), FailureHandling.STOP_ON_FAILURE)
-		 //catalogList.get(2).click()
-		 }*/
 	}
 }
 

@@ -10,34 +10,38 @@ import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
-import com.kms.katalon.core.testobject.TestObject
-import com.kms.katalon.core.util.KeywordUtil
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
-import com.kms.katalon.core.webui.common.WebUiCommonHelper
-import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys
 import org.openqa.selenium.WebElement
-import org.openqa.selenium.WebElement as Keys
 
-try {
-	long lastHeight=((Number) WebUI.executeJavaScript("return document.body.scrollHeight", null)).longValue();
-	int  scrollingCount=0
+Random randomNumberforProduct = new Random()
 
-	while (true) {
-		WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight);", null);
-		CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
-		
-		long newHeight = ((Number)WebUI.executeJavaScript("return document.body.scrollHeight", null)).longValue();
-		if (newHeight == lastHeight || scrollingCount==5) {
-			CustomKeywords.'utility.Utility.moveToElement'()
-			break;
-		}
-		lastHeight = newHeight;
-		scrollingCount++;
-	}
-} catch (InterruptedException e) {
-	e.printStackTrace();
+Random randomNumber = new Random()
+
+List Categories = CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
+
+if (Categories.size() == 0) {
+    throw new AssertionError('The Categories list is empty. No categories are available to proceed with the test.')
 }
+
+
+for (int elementIndex = 0; elementIndex <= (Categories.size() - 1); elementIndex++) {
+  
+	CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
+	
+    WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+
+	List <WebElement> products = WebUI.findWebElements(findTestObject('Object Repository/Products/Product container in page'),2)
+	
+	if(products.size()>0) {
+		return products
+	}
+
+}
+
+throw new AssertionError('No Products within the categories are available to proceed with the test.')

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Select Catalog - Select All Categories and Scrolling</name>
+   <name>Validation Number Of Customers</name>
    <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
-   <testCaseGuid>3b6db461-084d-4a65-b565-6b43d40bcc30</testCaseGuid>
+   <testCaseGuid>4a541e7b-a2f0-4fd5-b554-d5cafb6d0941</testCaseGuid>
 </TestCaseEntity>

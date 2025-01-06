@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>itemsList</name>
+   <name>allCustomerTitle</name>
    <tag></tag>
-   <elementGuidId>052564f2-ad69-484a-b56c-c588daa40ff0</elementGuidId>
+   <elementGuidId>93d8389b-1a30-47f3-bdd9-ec484e95cd58</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class,'row-table-custom')]/div[starts-with(@class,'styles_list__')]//div[starts-with(@class,'styles_content__')] | //div[contains(@id,'table-with-scroll')]</value>
+         <value>//span[text()=&quot;All Customers&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>

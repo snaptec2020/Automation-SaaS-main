@@ -16,7 +16,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.Keys
+import org.openqa.selenium.WebElement
 
 Random randomNumberforProduct = new Random()
 
@@ -32,17 +33,24 @@ try {
 
     for (int elementIndex = 0; elementIndex <= (Categories.size() - 1); elementIndex++) {
 
-        if ((elementIndex == 0) & (GlobalVariable.RunningMode > 1)) {
-            WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
-
-            CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromOnePage'()
-        }
+//        if ((elementIndex == 0) & (GlobalVariable.RunningMode > 1)) {
+//            WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+//
+//            CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromOnePage'()
+//        }
         
         CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
 
         WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
-
-        CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromOnePage'()
+		
+		List <WebElement> products = WebUI.findWebElements(findTestObject('Object Repository/Products/Product container in page'),2)
+		
+		if(products.size()<=0) {
+			KeywordUtil.markFailed("There is No Product on the category ${elementIndex}")
+		}
+		
+		CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromOnePage'()
+ 
     }
 }
 catch (Exception e) {

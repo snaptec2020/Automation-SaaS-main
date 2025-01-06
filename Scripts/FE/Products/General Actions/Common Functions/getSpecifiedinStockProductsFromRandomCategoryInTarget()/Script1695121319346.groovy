@@ -27,23 +27,31 @@ import org.openqa.selenium.WebElement
 float minimum = GlobalVariable.minimum as float
 float maximum=GlobalVariable.maximum as float
 //selectCatalogComponents()
-WebUI.callTestCase(findTestCase('FE/menu Items/Select random Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
-WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
-List <WebElement> prod = CustomKeywords.'utility.Utility.findWebElements'('Object Repository/Products/Product container in page in target',30)
-if (prod.size()<=0) {
-	//getSpecifiedinStockProductsFromRandomCategoryInTarget()
-	WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/getSpecifiedinStockProductsFromRandomCategoryInTarget()'),
-		[:], FailureHandling.STOP_ON_FAILURE)
-	return
-}
-//KeywordUtil.logInfo("++++++++++++++++++++++++++++"+prod.size().toString())
+//WebUI.callTestCase(findTestCase('FE/menu Items/Select random Catalog'), [:], FailureHandling.STOP_ON_FAILURE)
+//WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+List <WebElement> prod = WebUI.callTestCase(findTestCase('Test Cases/FE/menu Items/Select Category contains Product'), [:], FailureHandling.STOP_ON_FAILURE)
+//if (prod.size()<=0) {
+//	//getSpecifiedinStockProductsFromRandomCategoryInTarget()
+//	WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/getSpecifiedinStockProductsFromRandomCategoryInTarget()'),
+//		[:], FailureHandling.STOP_ON_FAILURE)
+//	return
+//}
+//KeywordUtil.logInfo("++++++++++++++++++++++++++++"+prod.size().toString()
+
 boolean found=false
-def getRandomElement= prod.get(CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenAnytoAny'(prod.size()-1, 0))
+
+//println(prod.size() + ".................Product Size" + CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenAnytoAny'(prod.size()-1, 0))
+
+WebElement getRandomElement= prod.get(10)
+
+
 //prod.any ({
 	//KeywordUtil.logInfo("++++++++++++++++++++++++++++"+prod.size().toString())
-	WebElement currentPrice= getRandomElement.findElements(By.xpath("./div[contains(@class,'styles_informationContainer')]/div[contains(@class,'styles_priceContainer')]/span/span[not(contains(@class,'styles_oldPrice__'))]/span/span[1]")).get(0)
+List <WebElement> a= getRandomElement.findElements(By.xpath("./div[contains(@class,'styles_informationContainer')]/div[contains(@class,'styles_priceContainer')]/span/span[not(contains(@class,'styles_oldPrice__'))]/span/span[1]"))
 //	float priceOfSelectedPrudctAmount= currentPrice.getText().replaceAll(",", "").replaceAll(" ", "").toFloat()
-	
+println(a.size() + ".......................a.size............")
+	WebElement currentPrice = a.get(0)
+
 	String priceText = currentPrice.getText().replaceAll(",", "").replaceAll(" ", "")
 	float priceOfSelectedPrudctAmount;
 	

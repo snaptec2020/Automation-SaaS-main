@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Select Catalog - Select All Categories and Scrolling</name>
+   <name>Verfication Invoice Details</name>
    <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
-   <testCaseGuid>3b6db461-084d-4a65-b565-6b43d40bcc30</testCaseGuid>
+   <testCaseGuid>00f90912-6ff9-4f43-8bb0-264634c37e17</testCaseGuid>
 </TestCaseEntity>

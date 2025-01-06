@@ -10,34 +10,23 @@ import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
-import com.kms.katalon.core.testobject.TestObject
-import com.kms.katalon.core.util.KeywordUtil
+import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
-import com.kms.katalon.core.webui.common.WebUiCommonHelper
-import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys
-import org.openqa.selenium.WebElement
-import org.openqa.selenium.WebElement as Keys
+import org.openqa.selenium.Keys as Keys
 
-try {
-	long lastHeight=((Number) WebUI.executeJavaScript("return document.body.scrollHeight", null)).longValue();
-	int  scrollingCount=0
+WebUI.callTestCase(findTestCase('BE/MID/Sales/Invoices/Open Invoice details page'), [:], FailureHandling.STOP_ON_FAILURE)
 
-	while (true) {
-		WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight);", null);
-		CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
-		
-		long newHeight = ((Number)WebUI.executeJavaScript("return document.body.scrollHeight", null)).longValue();
-		if (newHeight == lastHeight || scrollingCount==5) {
-			CustomKeywords.'utility.Utility.moveToElement'()
-			break;
-		}
-		lastHeight = newHeight;
-		scrollingCount++;
-	}
-} catch (InterruptedException e) {
-	e.printStackTrace();
-}
+//check all invoice headersand sub-headers 
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Order & Account Information')
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Invoice Total')
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Address Information')
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Invoice Comments')
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Billing Address')
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Shipping Address')
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Payment & Shipping Method')
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Payment Information')
+CustomKeywords.'mid.framework.generalAction.verifyHeaderText'('Shipping & Handling Information')
+

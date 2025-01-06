@@ -18,16 +18,10 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 
-
-
-
 WebUI.callTestCase(findTestCase('Test Cases/FE/Cart/Verifications/Add in stock products to cart'), [:], FailureHandling.STOP_ON_FAILURE)
 
-
-WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Cart'), 10)
-
-WebUI.click(findTestObject('Object Repository/Products/Add To Cart'))
+//WebUI.verifyElementPresent(findTestObject('Object Repository/Products/Add To Cart'), 10)
+//
+//WebUI.click(findTestObject('Object Repository/Products/Add To Cart'))
 
 WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
-
-

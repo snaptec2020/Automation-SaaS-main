@@ -4,5 +4,6 @@
    <name>Add in stock products to cart</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>0d02585c-42f9-4a72-a634-45cdc9da5de6</testCaseGuid>
 </TestCaseEntity>

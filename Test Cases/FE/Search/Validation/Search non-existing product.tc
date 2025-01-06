@@ -4,6 +4,7 @@
    <name>Search non-existing product</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>f1f05546-ca04-4af6-bc6b-05f3b8001f3c</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>

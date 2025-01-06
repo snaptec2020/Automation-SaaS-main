@@ -93,7 +93,6 @@ public class EnhancedPayments {
 				} else {
 					//KeywordUtil.logInfo("Expected payment method: $expectedPaymentMethod, Actual payment method: $paymentMethod")
 					return
-
 				}
 			}
 		}

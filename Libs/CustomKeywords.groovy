@@ -515,6 +515,45 @@ def static "signup.signupPhoneVerifications.verificationElementPhoneSignUp"() {
 }
 
 
+def static "mid.framework.generalAction.setTextToInputFieldDependOnName"(
+    	String fieldName	
+     , 	String fieldData	) {
+    (new mid.framework.generalAction()).setTextToInputFieldDependOnName(
+        	fieldName
+         , 	fieldData)
+}
+
+
+def static "mid.framework.generalAction.setDate"(
+    	String dateValue	) {
+    (new mid.framework.generalAction()).setDate(
+        	dateValue)
+}
+
+
+def static "mid.framework.generalAction.clickOnDependOnName"(
+    	String fieldName	) {
+    (new mid.framework.generalAction()).clickOnDependOnName(
+        	fieldName)
+}
+
+
+def static "mid.framework.generalAction.unableFieldDependOnName"(
+    	String fieldName	) {
+    (new mid.framework.generalAction()).unableFieldDependOnName(
+        	fieldName)
+}
+
+
+def static "mid.framework.generalAction.selectOptionDependOnName"(
+    	String fieldName	
+     , 	String OptionLabel	) {
+    (new mid.framework.generalAction()).selectOptionDependOnName(
+        	fieldName
+         , 	OptionLabel)
+}
+
+
 def static "mid.framework.generalAction.verifyHeaderText"(
     	String expectedText	) {
     (new mid.framework.generalAction()).verifyHeaderText(
@@ -526,6 +565,16 @@ def static "mid.framework.generalAction.verifyMessagePresent"(
     	String text	) {
     (new mid.framework.generalAction()).verifyMessagePresent(
         	text)
+}
+
+
+def static "mid.framework.generalAction.generateRandomString"() {
+    (new mid.framework.generalAction()).generateRandomString()
+}
+
+
+def static "mid.framework.generalAction.setDate"() {
+    (new mid.framework.generalAction()).setDate()
 }
 
 
@@ -557,23 +606,6 @@ def static "checkout.EnhancedPayments.paymentMethodToPayBySelectedMethod"(
     (new checkout.EnhancedPayments()).paymentMethodToPayBySelectedMethod(
         	selectedIndex
          , 	expectedPaymentMethods)
-}
-
-
-def static "com.amazonaws.services.s3.sample.getAPIResults.getAPIResultsByLatLong"(
-    	String awsAccessKey	
-     , 	String awsSecretKey	
-     , 	String SecurityToken	
-     , 	String regionName	
-     , 	String theLongitude	
-     , 	String theLatitude	) {
-    (new com.amazonaws.services.s3.sample.getAPIResults()).getAPIResultsByLatLong(
-        	awsAccessKey
-         , 	awsSecretKey
-         , 	SecurityToken
-         , 	regionName
-         , 	theLongitude
-         , 	theLatitude)
 }
 
 

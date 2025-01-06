@@ -4,5 +4,6 @@
    <name>getSpecifiedinStockProductsFromRandomCategoryInTarget()</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>9e15086c-aaac-415e-ac11-6153fe1e1683</testCaseGuid>
 </TestCaseEntity>
