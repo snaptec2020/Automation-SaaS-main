@@ -213,7 +213,7 @@
    <testCaseLink>
       <guid>13c3f865-a5ec-493d-9356-99a67887e248</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Multi Sites/Multisites New way</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
