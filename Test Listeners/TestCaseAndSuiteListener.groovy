@@ -113,7 +113,7 @@ class TestCaseAndSuiteListener {
 //			
 //		}
 	}
-	@AfterTestSuite
+//	@AfterTestSuite
 	def sampleAfterTestSuite(TestSuiteContext testSuiteContext) {
 		//KeywordUtil.logInfo(storesToVisit.toString())
 		//Map suiteProperties =[:]
@@ -136,8 +136,8 @@ class TestCaseAndSuiteListener {
 			//new File(logFolder, logFolder.getName() + ".html")
 			generateReport(testSuiteContext)
 			if(GlobalVariable.isItFirstSite) {
-				GlobalVariable.testSuiteStatus = 'Not Run'
-//				WebUI.callTestCase(findTestCase('FE/Multi Sites/Multisites New way'), [:], FailureHandling.STOP_ON_FAILURE)
+//				GlobalVariable.testSuiteStatus = 'Not Run'
+				WebUI.callTestCase(findTestCase('FE/Multi Sites/Multisites New way'), [:], FailureHandling.STOP_ON_FAILURE)
 			}
 			if(!GlobalVariable.isRunByMultiSites) {
 			WebUI.closeBrowser()
