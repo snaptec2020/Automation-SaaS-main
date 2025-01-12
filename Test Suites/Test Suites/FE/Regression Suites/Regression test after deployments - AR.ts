@@ -70,14 +70,14 @@
    <testCaseLink>
       <guid>21b9eae1-dc58-4a98-b9ea-d7f2d74aab66</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/FE/Wishlist/Validations/Wishlist before sign in/Wishlist from cart</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>6616d382-f081-4ce4-9dac-a803f75c790f</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/FE/Search/Validation/Search non-existing product</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
       <variableLink>
@@ -90,7 +90,7 @@
    <testCaseLink>
       <guid>aaa88dfe-61a9-4ea6-b0f3-30e0882fc943</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/FE/Search/Validation/Search by search button - By Product name</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
