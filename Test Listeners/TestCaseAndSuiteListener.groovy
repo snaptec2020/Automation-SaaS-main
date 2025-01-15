@@ -141,11 +141,11 @@ class TestCaseAndSuiteListener {
 			String folderTempString = folderTemp.getAbsolutePath();
 			TestSuiteLogRecord suiteLogEntity = ReportUtil.generate(folderTempString);
 
-			if (genereteHTML) {
-				KeywordUtil.logInfo("Start generating HTML report folder at:" + reportFolder + "...");
-				ReportUtil.writeHtmlReport(suiteLogEntity, folderTemp);
-				KeywordUtil.logInfo("HTML report generated");
-			}
+//			if (genereteHTML) {
+//				KeywordUtil.logInfo("Start generating HTML report folder at:" + reportFolder + "...");
+			ReportUtil.writeHtmlReport(suiteLogEntity, folderTemp);
+//				KeywordUtil.logInfo("HTML report generated");
+//			}
 
 			if (genereteCSV) {
 				KeywordUtil.logInfo("Start generating CSV report folder at: " + reportFolder + "...");
