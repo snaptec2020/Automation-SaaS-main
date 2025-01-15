@@ -61,6 +61,7 @@ class TestCaseAndSuiteListener {
 	//boolean isItFirstSite = true
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
+		
 		if(testCaseContext.getTestCaseId().indexOf("/Helpdesk/")<=0) {
 
 			GlobalVariable.launchingConfig.put("Mode",(testCaseContext.testCaseId=~"Test Cases/(.*?)/(.*?)/")[0][1])
@@ -88,11 +89,12 @@ class TestCaseAndSuiteListener {
 		//			WebUI.takeFullPageScreenshot("./ScreenAfterTestcase_${testCaseContext.getTestCaseId()}.png",FailureHandling.CONTINUE_ON_FAILURE)
 		//			//WebUI.closeBrowser()
 		//		}
-		WebUI.comment("done")
+		WebUI.closeBrowser()
+//		WebUI.comment("done")
 	}
 
 	@BeforeTestSuite
-	def sampleBeforeTestSuite(TestSuiteContext testSuiteContext) {
+	def sampleBeforeTestSuite(TestSuiteContext testSuiteContext) {		
 		KeywordUtil.logInfo(testSuiteContext.testSuiteId.toString())
 		GlobalVariable.testSuiteStatus = testSuiteContext.testSuiteId
 		GlobalVariable.testSuiteReportFolder = RunConfiguration.getReportFolder()
@@ -101,13 +103,13 @@ class TestCaseAndSuiteListener {
 	def sampleAfterTestSuite(TestSuiteContext testSuiteContext) {
 		if(testSuiteContext.getTestSuiteId().indexOf("/Helpdesk/")<=0/*&&isItFirstSite*/) {
 			generateReport(testSuiteContext)
-//			if(GlobalVariable.isItFirstSite) {
-//				WebUI.callTestCase(findTestCase('FE/Multi Sites/Multisites New way'), [:], FailureHandling.STOP_ON_FAILURE)
-//			}
-//			if(!GlobalVariable.isRunByMultiSites) {
-//				WebUI.closeBrowser()
-//				generateFinalReport()
-//			}
+			if(GlobalVariable.isItFirstSite) {
+				WebUI.callTestCase(findTestCase('FE/Multi Sites/Multisites New way'), [:], FailureHandling.STOP_ON_FAILURE)
+			}
+			if(!GlobalVariable.isRunByMultiSites) {
+				WebUI.closeBrowser()
+				generateFinalReport()
+			}
 		}
 		GlobalVariable.testSuiteStatus = 'Not Run'
 	}
@@ -115,7 +117,6 @@ class TestCaseAndSuiteListener {
 	def generateReport(TestSuiteContext testSuiteContext) {
 		try {
 			String script = 'return (JSON.parse(localStorage.getItem(\'BROWSER_PERSISTENCE__store_view_code\')).value).replaceAll(\'"\',\'\')'
-
 			def store = WebUI.executeJavaScript(script, null)
 			Map reportMap =[:]
 			String reportFolder = RunConfiguration.getReportFolder();
@@ -127,9 +128,10 @@ class TestCaseAndSuiteListener {
 			boolean genereteHTML = bundleSettingStore.getBoolean("generateHTML", true);
 			boolean genereteCSV = bundleSettingStore.getBoolean("generateCSV", true);
 			boolean generetePDF = bundleSettingStore.getBoolean("generatePDF", false);
-			if (!genereteHTML && !genereteCSV && !generetePDF) {
-				return;
-			}
+			
+//			if (!genereteHTML && !genereteCSV && !generetePDF) {
+//				return;
+//			}
 
 			File reportFolderFile = new File(reportFolder);
 			File folderTemp = Files.createTempDirectory(reportFolderFile.getName()+"_"+store).toFile();
@@ -139,7 +141,7 @@ class TestCaseAndSuiteListener {
 			TestSuiteLogRecord suiteLogEntity = ReportUtil.generate(folderTempString);
 
 			if (genereteHTML) {
-				KeywordUtil.logInfo("Start generating HTML report folder at: .........................." + reportFolder + "...");
+				KeywordUtil.logInfo("Start generating HTML report folder at:" + reportFolder + "...");
 				ReportUtil.writeHtmlReport(suiteLogEntity, folderTemp);
 				KeywordUtil.logInfo("HTML report generated");
 			}
