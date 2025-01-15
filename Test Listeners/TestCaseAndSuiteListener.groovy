@@ -117,8 +117,8 @@ class TestCaseAndSuiteListener {
 
 	def generateReport(TestSuiteContext testSuiteContext) {
 		try {
-			String script = 'return (JSON.parse(localStorage.getItem(\'BROWSER_PERSISTENCE__store_view_code\')).value).replaceAll(\'"\',\'\')'
-			def store = WebUI.executeJavaScript(script, null)
+//			String script = 'return (JSON.parse(localStorage.getItem(\'BROWSER_PERSISTENCE__store_view_code\')).value).replaceAll(\'"\',\'\')'
+			def store = "test"//WebUI.executeJavaScript(script, null)
 			Map reportMap =[:]
 			String reportFolder = RunConfiguration.getReportFolder();
 			String projectDir = RunConfiguration.getProjectDir();
