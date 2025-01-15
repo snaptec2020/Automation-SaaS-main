@@ -101,17 +101,18 @@ class TestCaseAndSuiteListener {
 	}
 	@AfterTestSuite
 	def sampleAfterTestSuite(TestSuiteContext testSuiteContext) {
-		if(testSuiteContext.getTestSuiteId().indexOf("/Helpdesk/")<=0/*&&isItFirstSite*/) {
-			generateReport(testSuiteContext)
-			if(GlobalVariable.isItFirstSite) {
-				WebUI.callTestCase(findTestCase('FE/Multi Sites/Multisites New way'), [:], FailureHandling.STOP_ON_FAILURE)
-			}
-			if(!GlobalVariable.isRunByMultiSites) {
-				WebUI.closeBrowser()
-				generateFinalReport()
-			}
-		}
-		GlobalVariable.testSuiteStatus = 'Not Run'
+		generateReport(testSuiteContext)
+//		if(testSuiteContext.getTestSuiteId().indexOf("/Helpdesk/")<=0/*&&isItFirstSite*/) {
+//			generateReport(testSuiteContext)
+//			if(GlobalVariable.isItFirstSite) {
+//				WebUI.callTestCase(findTestCase('FE/Multi Sites/Multisites New way'), [:], FailureHandling.STOP_ON_FAILURE)
+//			}
+//			if(!GlobalVariable.isRunByMultiSites) {
+//				WebUI.closeBrowser()
+//				generateFinalReport()
+//			}
+//		}
+//		GlobalVariable.testSuiteStatus = 'Not Run'
 	}
 
 	def generateReport(TestSuiteContext testSuiteContext) {
