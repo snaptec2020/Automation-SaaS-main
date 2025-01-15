@@ -4,7 +4,7 @@
    <name>Regression test on Production</name>
    <tag></tag>
    <delayBetweenInstances>5</delayBetweenInstances>
-   <executionMode>PARALLEL</executionMode>
+   <executionMode>SEQUENTIAL</executionMode>
    <maxConcurrentInstances>8</maxConcurrentInstances>
    <testSuiteRunConfigurations>
       <TestSuiteRunConfiguration>
