@@ -17,7 +17,7 @@ jobs:
           version: '10.0.0'
           projectPath: '${{ github.workspace }}'
           args: '-noSplash -retry=0 -testSuiteCollectionPath="Test Suites/Test Collections/SaaS/Regression test on Production" -apiKey="85154bfa-7201-47ab-891b-253ece8a3a85" --config -webui.autoUpdateDrivers=true'
-      continue-on-error: true  # Continue workflow even if this step fails
+      continue-on-error: true  # Continue workflow even if this step fail
 
     - name: Verify Report Path
       if: always()  # Run this step even if the previous step fails
