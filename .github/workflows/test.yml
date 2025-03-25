@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Delay 30 minutes
       if: github.event_name == 'repository_dispatch' # Chỉ delay khi được trigger từ dispatch
-      run: Start-Sleep -Seconds 10 # 1800 giây = 30 phút
+      run: Start-Sleep -Seconds 1800 # 1800 giây = 30 phút
 
     - name: Checkout
       uses: actions/checkout@v4
@@ -33,7 +33,7 @@ jobs:
 
     - name: Upload Katalon Reports
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4 # Cập nhật từ v3 lên v4
       with:
         name: katalon-reports
         path: '${{ github.workspace }}/Reports'
