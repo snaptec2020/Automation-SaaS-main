@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Delay 30 minutes
       if: github.event_name == 'repository_dispatch' # Chỉ delay khi được trigger từ dispatch
-      run: Start-Sleep -Seconds 1800 # 1800 giây = 30 phút
+      run: Start-Sleep -Seconds 30 # 1800 giây = 30 phút
 
     - name: Checkout
       uses: actions/checkout@v4
