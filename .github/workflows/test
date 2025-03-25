@@ -1,0 +1,39 @@
+name: CI FOR KATALON ENGINE
+
+on:
+  repository_dispatch:
+    types: [trigger_katalon_ci] # Phải khớp với event_type ở Task 1
+  # Giữ lại trigger push nếu bạn vẫn muốn chạy theo push trên main
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - name: Delay 30 minutes
+      if: github.event_name == 'repository_dispatch' # Chỉ delay khi được trigger từ dispatch
+      run: Start-Sleep -Seconds 10 # 1800 s
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Katalon Studio Github Action
+      uses: katalon-studio/katalon-studio-github-action@v4.0
+      with:
+        version: '10.0.0'
+        projectPath: '${{ github.workspace }}'
+        args: '-noSplash -retry=0 -testSuiteCollectionPath="Test Suites/Test Collections/SaaS/Regression test on Production" -apiKey="85154bfa-7201-47ab-891b-253ece8a3a85" --config -webui.autoUpdateDrivers=true'
+      continue-on-error: true
+
+    - name: Verify Report Path
+      if: always()
+      run: |
+        echo "Listing report files..."
+        dir "${{ github.workspace }}/Reports"
+
+    - name: Upload Katalon Reports
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: katalon-reports
+        path: '${{ github.workspace }}/Reports'
