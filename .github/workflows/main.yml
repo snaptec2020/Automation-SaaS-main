@@ -27,7 +27,7 @@ jobs:
 
     - name: Upload Katalon Reports
       if: always()  # Ensure this step runs regardless of previous steps' success or failure
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: katalon-reports
         path: '${{ github.workspace }}/Reports'
