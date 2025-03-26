@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Delay 30 minutes
       if: github.event_name == 'repository_dispatch' # 
-      run: Start-Sleep -Seconds 1800 # 
+      run: Start-Sleep -Seconds 1 # 
 
     - name: Checkout
       uses: actions/checkout@v4
