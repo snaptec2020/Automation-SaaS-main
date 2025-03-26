@@ -1,6 +1,8 @@
 name: CI FOR KATALON ENGINE
 #
 on:
+  repository_dispatch:
+    types: [trigger_katalon_ci] # 
   push:
     branches: [ main ]
 
@@ -8,26 +10,29 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
+    - name: Delay 30 minutes
+      if: github.event_name == 'repository_dispatch' # 
+      run: Start-Sleep -Seconds 1800 # 
+
     - name: Checkout
       uses: actions/checkout@v4
 
     - name: Katalon Studio Github Action
       uses: katalon-studio/katalon-studio-github-action@v4.0
       with:
-          version: '10.0.0'
-          projectPath: '${{ github.workspace }}'
-          args: '-noSplash -retry=0 -testSuiteCollectionPath="Test Suites/Test Collections/SaaS/Regression test on Production" -apiKey="85154bfa-7201-47ab-891b-253ece8a3a85" --config -webui.autoUpdateDrivers=true'
-      continue-on-error: true  # Continue workflow even if this step fail
+        version: '10.0.0'
+        projectPath: '${{ github.workspace }}'
+        args: '-noSplash -retry=0 -testSuiteCollectionPath="Test Suites/Test Collections/SaaS/Regression test on Production" -apiKey="85154bfa-7201-47ab-891b-253ece8a3a85" --config -webui.autoUpdateDrivers=true'
+      continue-on-error: true
 
     - name: Verify Report Path
-      if: always()  # Run this step even if the previous step fails
+      if: always()
       run: |
         echo "Listing report files..."
         dir "${{ github.workspace }}/Reports"
-
     - name: Upload Katalon Reports
-      if: always()  # Ensure this step runs regardless of previous steps' success or failure
-      uses: actions/upload-artifact@v4
+      if: always()
+      uses: actions/upload-artifact@v4 #
       with:
         name: katalon-reports
         path: '${{ github.workspace }}/Reports'
