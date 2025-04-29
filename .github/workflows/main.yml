@@ -2,7 +2,7 @@ name: CI FOR KATALON ENGINE
 ##
 on:
   repository_dispatch:
-    types: [post-deployment] ## 
+    types: [post-deployment] ### 
   push:
     branches: [ main ]
 
