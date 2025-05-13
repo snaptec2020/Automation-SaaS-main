@@ -22,7 +22,7 @@ jobs:
       with:
         version: '10.0.0'
         projectPath: '${{ github.workspace }}'
-        args: '-noSplash -retry=0 -testSuiteCollectionPath="Test Suites/Test Collections/SaaS/Regression test on Production" -apiKey="85154bfa-7201-47ab-891b-253ece8a3a85" --config -webui.autoUpdateDrivers=true'
+        args: '-noSplash -retry=0 -testSuiteCollectionPath="Test Suites/Test Suites/FE/Regression Suites/Regression test after deployments - AR" -apiKey="85154bfa-7201-47ab-891b-253ece8a3a85" --config -webui.autoUpdateDrivers=true'
       continue-on-error: true
 
     - name: Verify Report Path
