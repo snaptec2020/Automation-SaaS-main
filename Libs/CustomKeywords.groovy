@@ -609,6 +609,23 @@ def static "checkout.EnhancedPayments.paymentMethodToPayBySelectedMethod"(
 }
 
 
+def static "com.amazonaws.services.s3.sample.getAPIResults.getAPIResultsByLatLong"(
+    	String awsAccessKey	
+     , 	String awsSecretKey	
+     , 	String SecurityToken	
+     , 	String regionName	
+     , 	String theLongitude	
+     , 	String theLatitude	) {
+    (new com.amazonaws.services.s3.sample.getAPIResults()).getAPIResultsByLatLong(
+        	awsAccessKey
+         , 	awsSecretKey
+         , 	SecurityToken
+         , 	regionName
+         , 	theLongitude
+         , 	theLatitude)
+}
+
+
 def static "mid.framework.jsonUtility.readJsonFile"(
     	String filePath	) {
     (new mid.framework.jsonUtility()).readJsonFile(
