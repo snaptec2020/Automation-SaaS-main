@@ -94,7 +94,7 @@ public class productsFromCatalog {
 			if(elementIndexproduct==0) {
 				elementIndexproduct=1
 			}
-			utilityFunctions.clickOnObjectusingJavaScript(utilityFunctions.addXpathToTestObject("(//button[text() = 'أضف إلى السلة' or text() ='Add to Cart']//parent::div//parent::div[@class='styles_bottomContainer__Fvu6h']//parent::div[@class='styles_productItem__YY5Bs']//button)["+elementIndexproduct+"]"))
+			utilityFunctions.clickOnObjectusingJavaScript(utilityFunctions.addXpathToTestObject("(//div[contains(@class, 'styles_productItem_')][.//span[contains(@class, 'styles_regularPrice') or contains(@class,'styles_oldPrice__')]/span[@dir]/span/span[2][not(text()='0')]]//button[text() = 'أضف إلى السلة' or text() ='Add to Cart']//parent::div//parent::div[@class='styles_bottomContainer__Fvu6h']//parent::div[@class='styles_productItem__YY5Bs']//button)["+elementIndexproduct+"]"))
 		}
 	}
 
