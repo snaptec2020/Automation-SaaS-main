@@ -157,6 +157,11 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
+    public static Object isFirstTime
+     
+    /**
+     * <p></p>
+     */
     public static Object FE_URL
      
     /**
@@ -269,6 +274,11 @@ public class GlobalVariable {
      */
     public static Object labelValue
      
+    /**
+     * <p></p>
+     */
+    public static Object normalEcommerce
+     
 
     static {
         try {
@@ -305,6 +315,7 @@ public class GlobalVariable {
             testSuiteJsonReport = selectedVariables['testSuiteJsonReport']
             MID_URL = selectedVariables['MID_URL']
             launchingConfig = selectedVariables['launchingConfig']
+            isFirstTime = selectedVariables['isFirstTime']
             FE_URL = selectedVariables['FE_URL']
             FE_Tel = selectedVariables['FE_Tel']
             BE_UserName = selectedVariables['BE_UserName']
@@ -328,6 +339,7 @@ public class GlobalVariable {
             MIDUserPassword = selectedVariables['MIDUserPassword']
             couponCode = selectedVariables['couponCode']
             labelValue = selectedVariables['labelValue']
+            normalEcommerce = selectedVariables['normalEcommerce']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)

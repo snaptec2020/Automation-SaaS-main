@@ -19,4 +19,9 @@
       <initValue>'test20'</initValue>
       <name>labelValue</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>true</initValue>
+      <name>normalEcommerce</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

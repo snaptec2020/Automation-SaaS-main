@@ -34,8 +34,14 @@ switch (GlobalVariable.launchingConfig.get('Mode')) {
 			WebUI.maximizeWindow(FailureHandling.CONTINUE_ON_FAILURE)
 		}
 
-        WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Add locatin New workflow'), [:], FailureHandling.STOP_ON_FAILURE)
 
+		// Normal E-commerce 
+		if(GlobalVariable.normalEcommerce != null && GlobalVariable.normalEcommerce) {
+			WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Add locatin New workflow'), [:], FailureHandling.STOP_ON_FAILURE) //move to add to cart
+		}else {
+			GlobalVariable.isFirstTime = true
+		}
+		
         break
     case 'BE':
         WebUI.openBrowser('')

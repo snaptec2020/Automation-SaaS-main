@@ -31,6 +31,11 @@ def currentURL = WebUI.getUrl()
 CustomKeywords.'utility.Utility.clickOnObjectusingJavaScript'(findTestObject('Object Repository/Products/Add InStock ToCart', 
         [('index') : elementIndexproduct]))
 
+if((GlobalVariable.normalEcommerce == null || !GlobalVariable.normalEcommerce) && GlobalVariable.isFirstTime) {
+	WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Add locatin New workflow'), [:], FailureHandling.STOP_ON_FAILURE) 
+	CustomKeywords.'utility.Utility.clickOnObjectusingJavaScript'(findTestObject('Object Repository/Products/Add InStock ToCart',
+		[('index') : elementIndexproduct]))
+}
 //WebElement element = WebUiCommonHelper.findWebElement(tb,30)
 //WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
 WebUI.delay(5)

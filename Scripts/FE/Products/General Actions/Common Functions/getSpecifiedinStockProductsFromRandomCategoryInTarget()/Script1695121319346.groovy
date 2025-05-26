@@ -72,6 +72,15 @@ println(a.size() + ".......................a.size............")
 		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(currentAddToCartBtn))
 		//utilityFunctions.clickOnObjectusingJavaScript(currentAddToCartBtn)
 		WebUI.delay(1)
+		
+		// we need to call add new location 
+		if((GlobalVariable.normalEcommerce == null || !GlobalVariable.normalEcommerce) && GlobalVariable.isFirstTime) {
+			WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Add locatin New workflow'), [:], FailureHandling.STOP_ON_FAILURE) 
+			WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(currentAddToCartBtn))
+			WebUI.delay(1)
+			
+		}
+		
 		if (currentURL.equals(WebUI.getUrl()) & WebUI.verifyElementNotVisible(findTestObject('Object Repository/Cart/Continue Shopping'),FailureHandling.OPTIONAL)  ) {
 			return
 		}

@@ -149,4 +149,9 @@
       <initValue>[('SiteUrl') : '', ('BEMode') : '', ('Mode') : '']</initValue>
       <name>launchingConfig</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>true</initValue>
+      <name>isFirstTime</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

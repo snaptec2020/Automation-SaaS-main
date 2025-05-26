@@ -24,6 +24,7 @@ import java.util.*
 
 
 
+
 /*
  * WebUI.click(findTestObject('Check Out/Zoom In (Map)'))
 
@@ -46,7 +47,7 @@ script = (('return JSON.parse(JSON.parse(localStorage.getItem(\'persist:availabl
 //
 //def locale = countryResponse.data.countries[0].full_name_english.toString().toLowerCase( //new Locale('en', countryCode)
 //    )
-if (WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 5) || !isSelectFromMap ) {
+if (WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 5) || !isSelectFromMap ) { 
     def locatorZonesResponse = CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequestAndVerify(findTestObject(
                 'APIs/Postman/Get locator Zones', [('URL') : GlobalVariable.URL, ('store') : store])).getResponseText( //WebUI.executeJavaScript(script, null)
             ))
@@ -139,3 +140,7 @@ if (WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 
     
     WebUI.click(findTestObject('Map Objs/Continue After select Address'))
 }
+
+GlobalVariable.isFirstTime = false
+WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+
