@@ -10,27 +10,31 @@
       <TestSuiteRunConfiguration>
          <configuration>
             <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Prod-NT</profileName>
+            <profileName>SaaS-Prod-Snaptec</profileName>
             <requireConfigurationData>true</requireConfigurationData>
             <runConfigurationData>
                <entry>
-                  <key>testCloudDesktopBrowser</key>
+                  <key>testCloudMobileDevice</key>
                   <value>{
-  &quot;id&quot;: 412,
-  &quot;osDisplayName&quot;: &quot;Windows&quot;,
-  &quot;browserName&quot;: &quot;chrome&quot;,
-  &quot;browserDisplayName&quot;: &quot;Chrome&quot;,
-  &quot;browserVersion&quot;: &quot;130&quot;,
-  &quot;os&quot;: &quot;windows&quot;,
-  &quot;platformName&quot;: &quot;IOS&quot;,
+  &quot;capability&quot;: {
+    &quot;availability&quot;: &quot;HIGH&quot;
+  },
+  &quot;id&quot;: &quot;any_android_phone&quot;,
+  &quot;isTablet&quot;: false,
+  &quot;mobileDeviceId&quot;: &quot;any_android_phone_15&quot;,
+  &quot;name&quot;: &quot;Any Phone&quot;,
+  &quot;displayName&quot;: &quot;Any Phone&quot;,
+  &quot;osVersion&quot;: &quot;15&quot;,
+  &quot;os&quot;: &quot;Android&quot;,
+  &quot;platformName&quot;: &quot;ANDROID&quot;,
   &quot;timeout&quot;: 15,
   &quot;usingTunnel&quot;: false,
-  &quot;isHighAvailableDevice&quot;: false
+  &quot;isHighAvailableDevice&quot;: true
 }</value>
                </entry>
                <entry>
                   <key>testCloudSessionType</key>
-                  <value>DESKTOP_BROWSER</value>
+                  <value>MOBILE_NATIVE</value>
                </entry>
             </runConfigurationData>
             <runConfigurationId>TestCloud</runConfigurationId>
@@ -45,23 +49,27 @@
             <requireConfigurationData>true</requireConfigurationData>
             <runConfigurationData>
                <entry>
-                  <key>testCloudDesktopBrowser</key>
+                  <key>testCloudMobileDevice</key>
                   <value>{
-  &quot;id&quot;: 412,
-  &quot;osDisplayName&quot;: &quot;Windows&quot;,
-  &quot;browserName&quot;: &quot;chrome&quot;,
-  &quot;browserDisplayName&quot;: &quot;Chrome&quot;,
-  &quot;browserVersion&quot;: &quot;130&quot;,
-  &quot;os&quot;: &quot;windows&quot;,
-  &quot;platformName&quot;: &quot;IOS&quot;,
+  &quot;capability&quot;: {
+    &quot;availability&quot;: &quot;HIGH&quot;
+  },
+  &quot;id&quot;: &quot;any_android_phone&quot;,
+  &quot;isTablet&quot;: false,
+  &quot;mobileDeviceId&quot;: &quot;any_android_phone_15&quot;,
+  &quot;name&quot;: &quot;Any Phone&quot;,
+  &quot;displayName&quot;: &quot;Any Phone&quot;,
+  &quot;osVersion&quot;: &quot;15&quot;,
+  &quot;os&quot;: &quot;Android&quot;,
+  &quot;platformName&quot;: &quot;ANDROID&quot;,
   &quot;timeout&quot;: 15,
   &quot;usingTunnel&quot;: false,
-  &quot;isHighAvailableDevice&quot;: false
+  &quot;isHighAvailableDevice&quot;: true
 }</value>
                </entry>
                <entry>
                   <key>testCloudSessionType</key>
-                  <value>DESKTOP_BROWSER</value>
+                  <value>MOBILE_NATIVE</value>
                </entry>
             </runConfigurationData>
             <runConfigurationId>TestCloud</runConfigurationId>
@@ -76,23 +84,27 @@
             <requireConfigurationData>true</requireConfigurationData>
             <runConfigurationData>
                <entry>
-                  <key>testCloudDesktopBrowser</key>
+                  <key>testCloudMobileDevice</key>
                   <value>{
-  &quot;id&quot;: 412,
-  &quot;osDisplayName&quot;: &quot;Windows&quot;,
-  &quot;browserName&quot;: &quot;chrome&quot;,
-  &quot;browserDisplayName&quot;: &quot;Chrome&quot;,
-  &quot;browserVersion&quot;: &quot;130&quot;,
-  &quot;os&quot;: &quot;windows&quot;,
-  &quot;platformName&quot;: &quot;IOS&quot;,
+  &quot;capability&quot;: {
+    &quot;availability&quot;: &quot;HIGH&quot;
+  },
+  &quot;id&quot;: &quot;any_android_phone&quot;,
+  &quot;isTablet&quot;: false,
+  &quot;mobileDeviceId&quot;: &quot;any_android_phone_15&quot;,
+  &quot;name&quot;: &quot;Any Phone&quot;,
+  &quot;displayName&quot;: &quot;Any Phone&quot;,
+  &quot;osVersion&quot;: &quot;15&quot;,
+  &quot;os&quot;: &quot;Android&quot;,
+  &quot;platformName&quot;: &quot;ANDROID&quot;,
   &quot;timeout&quot;: 15,
   &quot;usingTunnel&quot;: false,
-  &quot;isHighAvailableDevice&quot;: false
+  &quot;isHighAvailableDevice&quot;: true
 }</value>
                </entry>
                <entry>
                   <key>testCloudSessionType</key>
-                  <value>DESKTOP_BROWSER</value>
+                  <value>MOBILE_NATIVE</value>
                </entry>
             </runConfigurationData>
             <runConfigurationId>TestCloud</runConfigurationId>
@@ -107,60 +119,33 @@
             <requireConfigurationData>true</requireConfigurationData>
             <runConfigurationData>
                <entry>
-                  <key>testCloudDesktopBrowser</key>
+                  <key>testCloudMobileDevice</key>
                   <value>{
-  &quot;id&quot;: 412,
-  &quot;osDisplayName&quot;: &quot;Windows&quot;,
-  &quot;browserName&quot;: &quot;chrome&quot;,
-  &quot;browserDisplayName&quot;: &quot;Chrome&quot;,
-  &quot;browserVersion&quot;: &quot;130&quot;,
-  &quot;os&quot;: &quot;windows&quot;,
-  &quot;platformName&quot;: &quot;IOS&quot;,
+  &quot;capability&quot;: {
+    &quot;availability&quot;: &quot;HIGH&quot;
+  },
+  &quot;id&quot;: &quot;any_android_phone&quot;,
+  &quot;isTablet&quot;: false,
+  &quot;mobileDeviceId&quot;: &quot;any_android_phone_15&quot;,
+  &quot;name&quot;: &quot;Any Phone&quot;,
+  &quot;displayName&quot;: &quot;Any Phone&quot;,
+  &quot;osVersion&quot;: &quot;15&quot;,
+  &quot;os&quot;: &quot;Android&quot;,
+  &quot;platformName&quot;: &quot;ANDROID&quot;,
   &quot;timeout&quot;: 15,
   &quot;usingTunnel&quot;: false,
-  &quot;isHighAvailableDevice&quot;: false
+  &quot;isHighAvailableDevice&quot;: true
 }</value>
                </entry>
                <entry>
                   <key>testCloudSessionType</key>
-                  <value>DESKTOP_BROWSER</value>
+                  <value>MOBILE_NATIVE</value>
                </entry>
             </runConfigurationData>
             <runConfigurationId>TestCloud</runConfigurationId>
          </configuration>
-         <runEnabled>true</runEnabled>
+         <runEnabled>false</runEnabled>
          <testSuiteEntity>Test Suites/Test Suites/FE/Regression Suites/Checkout All methods</testSuiteEntity>
-      </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Web Desktop</groupName>
-            <profileName>SaaS-Prod-Snaptec</profileName>
-            <requireConfigurationData>true</requireConfigurationData>
-            <runConfigurationData>
-               <entry>
-                  <key>testCloudDesktopBrowser</key>
-                  <value>{
-  &quot;id&quot;: 412,
-  &quot;osDisplayName&quot;: &quot;Windows&quot;,
-  &quot;browserName&quot;: &quot;chrome&quot;,
-  &quot;browserDisplayName&quot;: &quot;Chrome&quot;,
-  &quot;browserVersion&quot;: &quot;130&quot;,
-  &quot;os&quot;: &quot;windows&quot;,
-  &quot;platformName&quot;: &quot;IOS&quot;,
-  &quot;timeout&quot;: 15,
-  &quot;usingTunnel&quot;: false,
-  &quot;isHighAvailableDevice&quot;: false
-}</value>
-               </entry>
-               <entry>
-                  <key>testCloudSessionType</key>
-                  <value>DESKTOP_BROWSER</value>
-               </entry>
-            </runConfigurationData>
-            <runConfigurationId>TestCloud</runConfigurationId>
-         </configuration>
-         <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/Test Suites/Mid/MID</testSuiteEntity>
       </TestSuiteRunConfiguration>
    </testSuiteRunConfigurations>
 </TestSuiteCollectionEntity>
