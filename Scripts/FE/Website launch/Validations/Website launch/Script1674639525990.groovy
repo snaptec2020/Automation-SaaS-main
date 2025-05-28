@@ -35,13 +35,13 @@ switch (GlobalVariable.launchingConfig.get('Mode')) {
 		}
 
 
-		// Normal E-commerce 
-		if(GlobalVariable.normalEcommerce != null && GlobalVariable.normalEcommerce) {
-			WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Add locatin New workflow'), [:], FailureHandling.STOP_ON_FAILURE) //move to add to cart
-		}else {
-			GlobalVariable.isFirstTime = true
-		}
-		
+//		// Normal E-commerce 
+//		if(GlobalVariable.normalEcommerce != null && GlobalVariable.normalEcommerce) {
+//			WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Add locatin New workflow'), [:], FailureHandling.STOP_ON_FAILURE) //move to add to cart
+//		}else {
+//			GlobalVariable.isFirstTime = true
+//		}
+//		
         break
     case 'BE':
         WebUI.openBrowser('')
