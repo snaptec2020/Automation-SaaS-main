@@ -1,18 +1,18 @@
 name: CI FOR KATALON ENGINE
-###
+
 on:
   repository_dispatch:
-    types: [post-deployment] ## 
-  push:
-    branches: [ main ]
+    types: [post-deployment]
+  # push:
+  #   branches: [ main ]
 
 jobs:
-  build:
+  katalon-test:
     runs-on: windows-latest
     steps:
 #    - name: Delay 30 minutes
-#      if: github.event_name == 'repository_dispatch' # 
-#      run: Start-Sleep -Seconds 1 # 
+#      if: github.event_name == 'repository_dispatch'
+#      run: Start-Sleep -Seconds 1
 
     - name: Checkout
       uses: actions/checkout@v4
@@ -30,9 +30,23 @@ jobs:
       run: |
         echo "Listing report files..."
         dir "${{ github.workspace }}/Reports"
+
     - name: Upload Katalon Reports
       if: always()
-      uses: actions/upload-artifact@v4 #
+      uses: actions/upload-artifact@v4
       with:
         name: katalon-reports
         path: '${{ github.workspace }}/Reports'
+
+  upload-to-gdrive:
+    needs: katalon-test
+    if: always()
+    uses: ./.github/workflows/upload-to-gdrive.yml
+    with:
+      reports-path: 'Reports'
+      file-prefix: 'katalon-regression-reports'
+    secrets:
+      GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+      GOOGLE_DRIVE_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
+
+      
