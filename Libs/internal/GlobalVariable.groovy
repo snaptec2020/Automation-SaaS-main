@@ -267,17 +267,17 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
+    public static Object normalEcommerce
+     
+    /**
+     * <p></p>
+     */
     public static Object couponCode
      
     /**
      * <p></p>
      */
     public static Object labelValue
-     
-    /**
-     * <p></p>
-     */
-    public static Object normalEcommerce
      
 
     static {
@@ -337,9 +337,9 @@ public class GlobalVariable {
             URL = selectedVariables['URL']
             MIDUserName = selectedVariables['MIDUserName']
             MIDUserPassword = selectedVariables['MIDUserPassword']
+            normalEcommerce = selectedVariables['normalEcommerce']
             couponCode = selectedVariables['couponCode']
             labelValue = selectedVariables['labelValue']
-            normalEcommerce = selectedVariables['normalEcommerce']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)

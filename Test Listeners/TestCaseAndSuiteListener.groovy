@@ -90,6 +90,7 @@ class TestCaseAndSuiteListener {
 		//			//WebUI.closeBrowser()
 		//		}
 		WebUI.closeBrowser()
+		GlobalVariable.isFirstTime = true
 //		WebUI.comment("done")
 	}
 

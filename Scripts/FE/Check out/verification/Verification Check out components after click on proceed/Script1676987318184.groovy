@@ -99,7 +99,7 @@ if (WebUI.waitForElementVisible(findTestObject('Map Objs/Map Block'), 5)) {
 }
 
 if (WebUI.waitForElementVisible(findTestObject('Check Out/PickUp Date'), 3)) {
-    WebUI.setText(findTestObject('Check Out/PickUp time'), '17:30')
+//    WebUI.setText(findTestObject('Check Out/PickUp time'), '17:30')
 
     TestObject dateInput = findTestObject('Check Out/PickUp Date')
 

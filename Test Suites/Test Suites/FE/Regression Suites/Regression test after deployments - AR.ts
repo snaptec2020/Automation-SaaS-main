@@ -12,6 +12,25 @@
    <rerunImmediately>false</rerunImmediately>
    <testSuiteGuid>9040d0e1-7c0e-444c-a611-a3665d5c0eac</testSuiteGuid>
    <testCaseLink>
+      <guid>0c49bc51-6ae1-4c95-b104-f360aa3eba53</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Website launch/Validations/Add locatin New workflow</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>96c90c3f-e756-4767-a2d3-a1d036fc77b6</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>12b917de-273b-43a4-85ca-6ea4b1cb8624</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
       <guid>e5c791a1-0b9e-40c3-8ac6-9ea687726471</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -135,7 +154,7 @@
    <testCaseLink>
       <guid>04413ce4-6a64-4d43-8cb9-a6784c35ce75</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Website launch/General Actions/Subscribe email General</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
       <variableLink>
@@ -213,7 +232,7 @@
    <testCaseLink>
       <guid>13c3f865-a5ec-493d-9356-99a67887e248</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Multi Sites/Multisites New way</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>

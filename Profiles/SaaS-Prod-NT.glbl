@@ -6,7 +6,12 @@
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'https://naturaltouchshop.com/'</initValue>
+      <initValue>'https://naturaltouchshop.com/en'</initValue>
       <name>URL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>true</initValue>
+      <name>normalEcommerce</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -47,8 +47,11 @@ script = (('return JSON.parse(JSON.parse(localStorage.getItem(\'persist:availabl
 //
 //def locale = countryResponse.data.countries[0].full_name_english.toString().toLowerCase( //new Locale('en', countryCode)
 //    )
-if (WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 5) || !isSelectFromMap ) { 
-    def locatorZonesResponse = CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequestAndVerify(findTestObject(
+if ((WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 5) || !isSelectFromMap ) && (GlobalVariable.normalEcommerce == null && !GlobalVariable.normalEcommerce)) { 
+   
+	
+	
+	 def locatorZonesResponse = CustomKeywords.'generalactions.generalStrings.jsonParser'(WS.sendRequestAndVerify(findTestObject(
                 'APIs/Postman/Get locator Zones', [('URL') : GlobalVariable.URL, ('store') : store])).getResponseText( //WebUI.executeJavaScript(script, null)
             ))
 
@@ -89,7 +92,9 @@ if (WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 
                 // Condition to stop the loop
                 if (WebUI.waitForElementClickable(findTestObject('Map Objs/Continue After select Address'), 5)) {
                     WebUI.click(findTestObject('Map Objs/Continue After select Address'))
-
+					
+					WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+					
                     return true // This stops the loop
                 }
                 
@@ -108,9 +113,11 @@ if (WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 
         WebUI.doubleClick(findTestObject('PickUp/first option from adderss list'))
 
         WebUI.click(findTestObject('PickUp/Select branch button'))
+		WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)	
     }
+	
     //WebUI.setText(findTestObject('Map Objs/Input search location'), GlobalVariable.Countries[locale])
-} else {
+} else if(GlobalVariable.normalEcommerce != null && GlobalVariable.normalEcommerce) {
     WebUI.click(findTestObject('Map Objs/Change address button'))
 
     WebUI.click(findTestObject('Map Objs/Pick from map btn'))
@@ -142,5 +149,4 @@ if (WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 
 }
 
 GlobalVariable.isFirstTime = false
-WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 
