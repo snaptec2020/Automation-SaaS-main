@@ -1,0 +1,147 @@
+name: Upload to Google Drive
+
+on:
+  workflow_call:
+    inputs:
+      reports-path:
+        description: 'Path to the reports directory'
+        required: false
+        default: 'Reports'
+        type: string
+      file-prefix:
+        description: 'Prefix for the uploaded file name'
+        required: false
+        default: 'katalon-reports'
+        type: string
+    secrets:
+      GOOGLE_SERVICE_ACCOUNT_KEY:
+        required: true
+      GOOGLE_DRIVE_FOLDER_ID:
+        required: true
+
+jobs:
+  upload-to-gdrive:
+    runs-on: windows-latest
+    steps:
+    - name: Download Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: katalon-reports
+        path: ${{ inputs.reports-path }}
+
+    - name: Setup Python for Google Drive Upload
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install Google Drive Dependencies
+      run: |
+        pip install google-api-python-client google-auth google-auth-oauthlib google-auth-httplib2
+
+    - name: Create Google Drive Upload Script
+      run: |
+        @"
+        import os
+        import json
+        from googleapiclient.discovery import build
+        from google.oauth2 import service_account
+        from googleapiclient.http import MediaFileUpload
+        import zipfile
+        import tempfile
+        from datetime import datetime
+
+        def upload_to_drive():
+            # Get credentials from environment
+            service_account_key = os.environ.get('GOOGLE_SERVICE_ACCOUNT_KEY')
+            folder_id = os.environ.get('GOOGLE_DRIVE_FOLDER_ID')
+            reports_path = os.environ.get('REPORTS_PATH', 'Reports')
+            file_prefix = os.environ.get('FILE_PREFIX', 'katalon-reports')
+            
+            if not service_account_key or not folder_id:
+                print("Missing required environment variables")
+                return
+            
+            # Parse service account key
+            try:
+                credentials_info = json.loads(service_account_key)
+                credentials = service_account.Credentials.from_service_account_info(
+                    credentials_info,
+                    scopes=['https://www.googleapis.com/auth/drive.file']
+                )
+            except json.JSONDecodeError as e:
+                print(f"Error parsing service account key: {e}")
+                return
+            
+            # Build the service
+            try:
+                service = build('drive', 'v3', credentials=credentials)
+            except Exception as e:
+                print(f"Error building Drive service: {e}")
+                return
+            
+            # Check if reports directory exists
+            if not os.path.exists(reports_path):
+                print(f"Reports directory not found: {reports_path}")
+                return
+            
+            # Check if directory has files
+            file_count = sum([len(files) for r, d, files in os.walk(reports_path)])
+            if file_count == 0:
+                print("No files found in reports directory")
+                return
+            
+            print(f"Found {file_count} files to upload")
+            
+            # Create timestamp for filename
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            zip_filename = f'{file_prefix}-{timestamp}.zip'
+            
+            try:
+                with tempfile.NamedTemporaryFile(delete=False, suffix='.zip') as tmp_file:
+                    with zipfile.ZipFile(tmp_file.name, 'w', zipfile.ZIP_DEFLATED) as zipf:
+                        for root, dirs, files in os.walk(reports_path):
+                            for file in files:
+                                file_path = os.path.join(root, file)
+                                arcname = os.path.relpath(file_path, reports_path)
+                                zipf.write(file_path, arcname)
+                                print(f"Added to zip: {arcname}")
+                    
+                    print(f"Created zip file: {zip_filename}")
+                    
+                    # Upload to Google Drive
+                    file_metadata = {
+                        'name': zip_filename,
+                        'parents': [folder_id]
+                    }
+                    
+                    media = MediaFileUpload(tmp_file.name, resumable=True)
+                    
+                    file = service.files().create(
+                        body=file_metadata,
+                        media_body=media,
+                        fields='id,name,webViewLink'
+                    ).execute()
+                    
+                    print(f'File uploaded successfully!')
+                    print(f'File Name: {file.get("name")}')
+                    print(f'File ID: {file.get("id")}')
+                    print(f'View Link: {file.get("webViewLink")}')
+                    
+                    # Clean up temp file
+                    os.unlink(tmp_file.name)
+                    
+            except Exception as e:
+                print(f"Error during upload: {e}")
+                return
+
+        if __name__ == '__main__':
+            upload_to_drive()
+        "@ | Out-File -FilePath "upload_to_drive.py" -Encoding UTF8
+
+    - name: Upload Reports to Google Drive
+      env:
+        GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+        GOOGLE_DRIVE_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
+        REPORTS_PATH: ${{ inputs.reports-path }}
+        FILE_PREFIX: ${{ inputs.file-prefix }}
+      run: python upload_to_drive.py
