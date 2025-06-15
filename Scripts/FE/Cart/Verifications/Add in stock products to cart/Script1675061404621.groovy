@@ -34,3 +34,4 @@ if (genralDropDowns.size() != 0) {
 }
 
 WebUI.waitForElementClickable(findTestObject('Object Repository/Products/Add To Cart'), 10)
+

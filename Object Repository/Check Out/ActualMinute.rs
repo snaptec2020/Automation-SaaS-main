@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>PickUp time</name>
+   <name>ActualMinute</name>
    <tag></tag>
-   <elementGuidId>aae0804a-3f39-41fe-b99e-d596401f9689</elementGuidId>
+   <elementGuidId>b5289cb9-761e-45d4-9378-7091b3673208</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[starts-with(@class,'styles_timePicker__')]/div[contains(@class,'styles_display')]</value>
+         <value>//div[starts-with(@class,'styles_timePicker__')]/div[starts-with(@class,'styles_pickerContainer__')]/div[starts-with(@class,'styles_select__')][1]/p[not(starts-with(@class,'styles_disabled__'))][1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

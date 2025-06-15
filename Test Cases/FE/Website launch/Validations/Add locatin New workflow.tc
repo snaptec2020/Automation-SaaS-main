@@ -4,6 +4,7 @@
    <name>Add locatin New workflow</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>15438d65-3367-44f9-9594-d898105a459f</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
@@ -11,11 +12,24 @@
       <value></value>
       <variableId>96c90c3f-e756-4767-a2d3-a1d036fc77b6</variableId>
    </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>12b917de-273b-43a4-85ca-6ea4b1cb8624</variableId>
+   </variableLinks>
    <variable>
       <defaultValue>true</defaultValue>
       <description></description>
       <id>96c90c3f-e756-4767-a2d3-a1d036fc77b6</id>
       <masked>false</masked>
       <name>isSelectFromMap</name>
+   </variable>
+   <variable>
+      <defaultValue>true</defaultValue>
+      <description></description>
+      <id>12b917de-273b-43a4-85ca-6ea4b1cb8624</id>
+      <masked>false</masked>
+      <name>isFirstTime</name>
    </variable>
 </TestCaseEntity>

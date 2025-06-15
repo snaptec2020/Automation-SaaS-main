@@ -98,28 +98,32 @@ if (WebUI.waitForElementVisible(findTestObject('Map Objs/Map Block'), 5)) {
     }
 }
 
-if (WebUI.waitForElementVisible(findTestObject('Check Out/PickUp Date'), 3)) {
-//    WebUI.setText(findTestObject('Check Out/PickUp time'), '17:30')
+//
+////div[starts-with(@class,'styles_timePicker__')]/div[starts-with(@class,'styles_pickerContainer__')]/div[starts-with(@class,'styles_select__')][2]/p[not(starts-with(@class,'styles_disabled__'))]
+////div[starts-with(@class,'styles_timePicker__')]/div[starts-with(@class,'styles_pickerContainer__')]/div[starts-with(@class,'styles_select__')][1]/p[not(starts-with(@class,'styles_disabled__'))]
+//$x("//*[@id='expectedDeliveryDate']")[0].click()
+//$x("//*[@class='flatpickr-day' or @class='flatpickr-day today selected']")[1].click()
+//$x("//div[starts-with(@class,'styles_timePicker__')]/div[starts-with(@class,'styles_pickerContainer__')]/div[starts-with(@class,'styles_select__')][2]/p[not(starts-with(@class,'styles_disabled__'))]")[2].click()
+//$x("//div[starts-with(@class,'styles_timePicker__')]/div[starts-with(@class,'styles_pickerContainer__')]/div[starts-with(@class,'styles_select__')][1]/p[not(starts-with(@class,'styles_disabled__'))]")[2].click()
+TestObject dateInput = findTestObject('Check Out/PickUp Date')
 
-    TestObject dateInput = findTestObject('Check Out/PickUp Date')
 
-    //WebUI.click(dateInput)
-    WebElement element = WebUiCommonHelper.findWebElement(dateInput, 30)
+if (WebUI.waitForElementVisible(dateInput, 3)) {
 
-    LocalDate tomorrow = LocalDate.now().plusDays(2)
+	// Select Date 
+	//	WebUI.click(dateInput)
+	WebUI.click(findTestObject('Check Out/SelectActiveDate'))
+	
+	//Select Time 
+    WebUI.click(findTestObject('Check Out/PickUp time'))
+	WebUI.click(findTestObject('Check Out/ActualHour'))
+	WebUI.click(findTestObject('Check Out/ActualMinute'))
+	
+	// Save date & time 
+	WebUI.click(findTestObject('Check Out/Save Pickup date and Time'))
 
-    String dateToSet = tomorrow.format(DateTimeFormatter.ofPattern('yyyy-MM-dd'))
+	
 
-    //WebUI.sendKeys(dateInput, Keys.chord(Keys.ARROW_DOWN))
-    //WebUI.sendKeys(dateInput, Keys.chord(Keys.ARROW_RIGHT))
-    //WebUI.sendKeys(dateInput, Keys.chord(Keys.ENTER))
-    //WebUI.sendKeys(dateInput, dateToSet)
-    WebUI.executeJavaScript('arguments[0].value = arguments[1]', Arrays.asList(element, dateToSet))
-
-    //		WebUI.click(findTestObject('Check Out/PickUp time'))
-    if (WebUI.waitForElementVisible(findTestObject('Check Out/Save Pickup date and Time'), 2)) {
-        WebUI.click(findTestObject('Check Out/Save Pickup date and Time'))
-    }
 }
 
 if (WebUI.waitForElementVisible(findTestObject('Check Out/CheckOut Wallet'), 3)) {
