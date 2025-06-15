@@ -4,7 +4,7 @@ on:
   repository_dispatch:
     types: [post-deployment] ## 
   push:
-    branches: [ update-git-action ]
+    branches: [ main ]
 jobs:
   katalon-test:
     runs-on: windows-latest
