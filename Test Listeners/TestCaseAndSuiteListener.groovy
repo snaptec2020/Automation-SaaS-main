@@ -22,7 +22,7 @@ import com.kms.katalon.entity.testsuite.TestSuiteCollectionEntity
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 
 import internal.GlobalVariable
-import io.netty.util.concurrent.GlobalEventExecutor
+//import io.netty.util.concurrent.GlobalEventExecutor
 import sun.security.util.KeyUtil
 
 import com.kms.katalon.core.annotation.BeforeTestCase

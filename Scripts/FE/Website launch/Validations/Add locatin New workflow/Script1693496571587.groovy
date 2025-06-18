@@ -47,7 +47,7 @@ script = (('return JSON.parse(JSON.parse(localStorage.getItem(\'persist:availabl
 //
 //def locale = countryResponse.data.countries[0].full_name_english.toString().toLowerCase( //new Locale('en', countryCode)
 //    )
-if ((WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 5) || !isSelectFromMap ) && (GlobalVariable.normalEcommerce == null && !GlobalVariable.normalEcommerce)) { 
+if ((WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'), 2) || !isSelectFromMap ) && (GlobalVariable.normalEcommerce == null || !GlobalVariable.normalEcommerce)) { 
    
 	
 	
@@ -113,6 +113,7 @@ if ((WebUI.waitForElementClickable(findTestObject('Map Objs/Pick from map btn'),
         WebUI.doubleClick(findTestObject('PickUp/first option from adderss list'))
 
         WebUI.click(findTestObject('PickUp/Select branch button'))
+		WebUI.refresh(FailureHandling.OPTIONAL)
 		WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)	
     }
 	

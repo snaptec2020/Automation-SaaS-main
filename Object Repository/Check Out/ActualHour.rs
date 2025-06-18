@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[starts-with(@class,'styles_timePicker__')]/div[starts-with(@class,'styles_pickerContainer__')]/div[starts-with(@class,'styles_select__')][2]/p[not(starts-with(@class,'styles_disabled__'))][1]</value>
+         <value>//div[starts-with(@class,'styles_timePicker__')]/div[starts-with(@class,'styles_pickerContainer__')]/div[starts-with(@class,'styles_select__')][2]/p[not(starts-with(@class,'styles_disabled__'))][${index}]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

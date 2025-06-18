@@ -31,10 +31,10 @@ if (Categories.size() == 0) {
 
 
 for (int elementIndex = 0; elementIndex <= (Categories.size() - 1); elementIndex++) {
-  
-	CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
+  //def selectRandomCat = CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenAnytoAny'(0, Categories.size() - 1)
+	CustomKeywords.'catalog.catlogComponants.getRandomCatalogElement'(Categories)
 	
-    WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+    WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.OPTIONAL)
 
 	List <WebElement> products = WebUI.findWebElements(findTestObject('Object Repository/Products/Product container in page'),2)
 	

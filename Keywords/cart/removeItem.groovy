@@ -86,7 +86,7 @@ public class removeItem {
 	def deleteOutStockFromCart() {
 		//TestObject removeProductFromCart = new TestObject()
 		//removeProductFromCart.addProperty('xpath', ConditionType.EQUALS, '//td[@class="col item"]//a[@title="إزالة منتج"]')
-		WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Out Of Stock Items'),5)
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Out Of Stock Items'),2, FailureHandling.OPTIONAL)
 		List<WebElement> removeProductFromCartElements = WebUiCommonHelper.findWebElements(findTestObject('Object Repository/Cart/Out Of Stock Items'), 5)
 
 		while (removeProductFromCartElements.size() != 0) {

@@ -23,7 +23,9 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import com.utils.CustomLogger
 
+import CustomKeywords
 import generalactions.generalActions
 import internal.GlobalVariable
 import utility.Utility
@@ -53,7 +55,7 @@ public class catlogComponants {
 	public def getSpecifiedCatalogElement(int elementIndex,List catalogList) {
 
 		elementIndex =elementIndex+1
-
+		CustomLogger.logInfo("Running Mode is: ${GlobalVariable.RunningMode}")
 		switch(GlobalVariable.RunningMode) {
 			case "1":
 				tb = utilityFunctions.addXpathToTestObject(findTestObject('Object Repository/Mega Menu/Catalog list').findPropertyValue('xpath') + "["+elementIndex+"]")
@@ -65,10 +67,111 @@ public class catlogComponants {
 				tb = utilityFunctions.addXpathToTestObject("("+findTestObject('Object Repository/Mega Menu/MenuSider on mobile').findPropertyValue('xpath') + ")["+elementIndex+"]")
 				break
 		}
-		WebUI.waitForElementClickable(tb, 5)
-		WebUI.click(tb,FailureHandling.CONTINUE_ON_FAILURE)
+		CustomLogger.logInfo("Waiting ${elementIndex.toString()} to be clickable")
+		WebUI.waitForElementClickable(tb, 2,FailureHandling.OPTIONAL)
+		CustomLogger.logInfo("Clicking on: ${elementIndex.toString()}")
+		//CustomKeywords.'utility.Utility.clickOnObjectusingJavaScript'(tb)
+		WebUI.click(tb,FailureHandling.OPTIONAL)
+		CustomLogger.logInfo("Checking the sppinner if it's displaying")
 		generalActions.waiteSpinnerToHide()
+		CustomLogger.logInfo("Moving to the element")
 		utilityFunctions.moveToElement()
+		CustomLogger.logInfo("getSpecifiedCatalogElement finished")
+	}
+	
+	/**
+	 * Get total count of available catalog elements
+	 */
+	@Keyword
+	private int getCatalogElementCount() {
+		try {
+			String xpath = ""
+			switch(GlobalVariable.RunningMode) {
+				case "1":
+					xpath = findTestObject('Object Repository/Mega Menu/Catalog list').findPropertyValue('xpath')
+					break
+				case "2":
+					// Open mobile menu first
+					WebUI.waitForElementClickable(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'), 0)
+					WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
+					Thread.sleep(1000)
+					xpath = findTestObject('Object Repository/Mega Menu/MenuSider on mobile').findPropertyValue('xpath')
+					break
+			}
+			
+			// Count elements using JavaScript
+			def elementCount = WebUI.executeJavaScript("""
+            var xpath = "${xpath.replace('xpath=', '')}";
+            var result = document.evaluate(xpath, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+            return result.snapshotLength;
+        """, [])
+			
+			return elementCount as Integer
+		} catch (Exception e) {
+			CustomLogger.logInfo("Error counting elements: ${e.getMessage()}")
+			return 0
+		}
+	}
+	
+	/**
+	 * Select and click a random catalog element
+	 */
+	@Keyword
+	public def getRandomCatalogElement(List catalogList = []) {
+		CustomLogger.logInfo("Getting random catalog element...")
+		
+		int totalElements = getCatalogElementCount()
+		if (totalElements <= 0) {
+			CustomLogger.logInfo("No catalog elements found")
+			return -1
+		}
+		
+		// Generate random index (0-based)
+		Random random = new Random()
+		int randomIndex = random.nextInt(totalElements)
+		
+		CustomLogger.logInfo("Total elements: ${totalElements}, Selected random index: ${randomIndex}")
+		
+		// Use your existing method
+		getSpecifiedCatalogElement(randomIndex, catalogList)
+		return randomIndex
+	}
+	
+	/**
+	 * Select random catalog element excluding specific ones
+	 */
+	@Keyword
+	public def getRandomCatalogElementExcluding(List<Integer> excludeIndices, List catalogList = []) {
+		CustomLogger.logInfo("Getting random catalog element with exclusions...")
+		
+		int totalElements = getCatalogElementCount()
+		if (totalElements <= 0) {
+			CustomLogger.logInfo("No catalog elements found")
+			return -1
+		}
+		
+		// Build list of available indices
+		List<Integer> availableIndices = []
+		for (int i = 0; i < totalElements; i++) {
+			if (!excludeIndices.contains(i)) {
+				availableIndices.add(i)
+			}
+		}
+		
+		if (availableIndices.isEmpty()) {
+			CustomLogger.logInfo("No available elements after exclusions")
+			return -1
+		}
+		
+		// Select random from available
+		Random random = new Random()
+		int selectedIndex = availableIndices[random.nextInt(availableIndices.size())]
+		
+		CustomLogger.logInfo("Available indices: ${availableIndices}, Selected: ${selectedIndex}")
+		
+		// Use your existing method
+		getSpecifiedCatalogElement(selectedIndex, catalogList)
+		return selectedIndex
 	}
 }
 

@@ -66,11 +66,57 @@ public class Utility {
 	}
 	@Keyword
 	def clickOnObjectusingJavaScript(TestObject testObject) {
-		WebUI.waitForElementClickable(testObject, 0, FailureHandling.STOP_ON_FAILURE)
-		WebElement element = WebUiCommonHelper.findWebElement(testObject,30)
-		WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
+		try {
+		WebUI.waitForElementClickable(testObject, 0, FailureHandling.OPTIONAL)
+		WebElement element = WebUiCommonHelper.findWebElement(testObject,10)
+				
+		if (element != null) {
+			CustomLogger.logInfo("Element found, proceeding with JavaScript click")
+			// First scroll to element
+			WebUI.executeJavaScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", Arrays.asList(element))
+			
+			// Wait a moment for scroll to complete
+			Thread.sleep(500)
+			// Direct click without setTimeout
+			WebUI.executeJavaScript("arguments[0].click();", Arrays.asList(element))
+			CustomLogger.logInfo("JavaScript click executed successfully")
+		} else {
+            CustomLogger.logInfo("Element not found for JavaScript click")
+            throw new Exception("Element not found")
+		}
+		} catch (Exception e) {
+        CustomLogger.logInfo("Error in JavaScript click: ${e.getMessage()}")
+        throw e
+    }
 	}
-
+	@Keyword
+	def clickOnObjectusingJavaScriptEnhanced(TestObject testObject) {
+		WebUI.waitForElementClickable(testObject, 0, FailureHandling.OPTIONAL)
+		WebElement element = WebUiCommonHelper.findWebElement(testObject, 10)
+		
+		if (element != null) {
+			// Scroll into view and add visual feedback
+			WebUI.executeJavaScript("""
+            // Scroll to element
+            arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});
+            
+            // Add highlight effect
+            var originalBg = arguments[0].style.backgroundColor;
+            arguments[0].style.backgroundColor = 'yellow';
+            arguments[0].style.transition = 'background-color 0.3s';
+            
+            // Click after short delay
+            setTimeout(function() {
+                arguments[0].style.backgroundColor = originalBg;
+                arguments[0].click();
+            }, 300);
+        """, Arrays.asList(element))
+			
+			CustomLogger.logInfo("Clicked element with enhanced JavaScript method")
+		} else {
+			CustomLogger.logInfo("Element not found for enhanced JavaScript click")
+		}
+	}
 	@Keyword
 	def setDateUsingJavaScript() {
 		// Set date format to yyyy-MM-dd for date input

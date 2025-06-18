@@ -4,5 +4,6 @@
    <name>Verification Check out components after click on proceed</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>b68f4368-8382-47ce-b192-9f3801a58305</testCaseGuid>
 </TestCaseEntity>

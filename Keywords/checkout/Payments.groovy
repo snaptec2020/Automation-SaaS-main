@@ -6,7 +6,7 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
-import javax.xml.bind.annotation.XmlElementDecl.GLOBAL
+//import javax.xml.bind.annotation.XmlElementDecl.GLOBAL
 
 import org.apache.commons.lang3.StringUtils
 import org.openqa.selenium.WebElement
@@ -54,7 +54,6 @@ public class Payments {
 		if(PaymentMethods.size()==0){
 			//WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)
 			KeywordUtil.markPassed("No Payments Methods in this Page")
-
 		} else{
 			def elementsIndexPayments=generalStrings.getRandomNumberBetweenOnetoTarget(PaymentMethods.size())//Math.abs((randomNumberforProduct.nextInt(PaymentMethods.size())))
 			//KeywordUtil.logInfo(elementIndexproduct.toString() +prod.get(elementIndexproduct).toString())
@@ -94,8 +93,7 @@ public class Payments {
 
 
 
-	def placeOrder()
-	{
+	def placeOrder() {
 		try {
 			def nonVisa = WebUiCommonHelper.findWebElement(utilityFunctions.addXpathToTestObject("//div[contains(@class,'payment-method v2')]/following-sibling::div"),30).getAttribute("class")
 			if(nonVisa !='checkout-com-form-container'){
@@ -118,8 +116,7 @@ public class Payments {
 						//						}else {
 						//							KeywordUtil.logInfo("fail tabby+"+getGrandTotal.toString()+"\t!=\t"+TabbyTotal.toString())
 						//						}
-							switch (GlobalVariable.RunningMode)
-							{
+							switch (GlobalVariable.RunningMode) {
 								case '1':
 									WebUI.verifyEqual(getGrandTotal, TabbyTotal, FailureHandling.CONTINUE_ON_FAILURE)
 
@@ -141,7 +138,6 @@ public class Payments {
 									WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/Close payment method/Fail order check'), 0)
 									WebUI.takeFullPageScreenshot('./TabbyOrderResult.png')
 									break
-
 							}
 							break
 						// ------------------Teler----------------------------------
@@ -193,7 +189,9 @@ public class Payments {
 							WebUI.waitForElementVisible(findTestObject('Object Repository/Check Out/Close payment method/Fail order check'), 0)
 							WebUI.takeFullPageScreenshot('./TamaraOrderResult.png')
 							break
-					}}}else {
+					}
+				}
+			}else {
 				//WebUI.scrollToElement(findTestObject('Object Repository/Check Out/Card Number Field'), 30)
 				//KeywordUtil.logInfo(nonVisa.toString())
 				WebUI.verifyElementVisible(findTestObject('Object Repository/Check Out/Place order check out button'))
@@ -226,7 +224,6 @@ public class Payments {
 
 				WebUI.click(findTestObject('Object Repository/Check Out/Place order check out button'))
 				WebUI.delay(10)
-
 			}
 		} catch (Exception e) {
 			e.printStackTrace()

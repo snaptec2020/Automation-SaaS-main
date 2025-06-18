@@ -4,5 +4,6 @@
    <name>Verification Check out components</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>57eb2766-9cab-459d-8008-ba5fac99904a</testCaseGuid>
 </TestCaseEntity>

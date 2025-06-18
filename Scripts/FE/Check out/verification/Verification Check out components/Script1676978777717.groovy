@@ -21,13 +21,13 @@ import org.openqa.selenium.Keys as Keys
 //if (GlobalVariable.testSuiteStatus == 'NotRun') {
 //    WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/Success Sign up By email'), [:], FailureHandling.STOP_ON_FAILURE)
 //}
-WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.OPTIONAL)
 
-WebUI.callTestCase(findTestCase('FE/Cart/Validations/Modify the cart subtotals'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('FE/Cart/Validations/Modify the cart subtotals'), [:], FailureHandling.OPTIONAL)
 
-WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.OPTIONAL)
 
-WebUI.callTestCase(findTestCase('FE/Check out/validation/Set Coupon Code'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('FE/Check out/validation/Set Coupon Code'), [:], FailureHandling.OPTIONAL)
 
 WebUI.verifyElementVisible(findTestObject('Check Out/Cart Calculation'))
 

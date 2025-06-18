@@ -162,6 +162,11 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
+    public static Object currentURL
+     
+    /**
+     * <p></p>
+     */
     public static Object FE_URL
      
     /**
@@ -284,7 +289,6 @@ public class GlobalVariable {
         try {
             def selectedVariables = TestCaseMain.getGlobalVariables("default")
 			selectedVariables += TestCaseMain.getGlobalVariables(RunConfiguration.getExecutionProfile())
-            selectedVariables += TestCaseMain.getParsedValues(RunConfiguration.getOverridingParameters(), selectedVariables)
     
             Vaild_email = selectedVariables['Vaild_email']
             Wrong_email = selectedVariables['Wrong_email']
@@ -316,6 +320,7 @@ public class GlobalVariable {
             MID_URL = selectedVariables['MID_URL']
             launchingConfig = selectedVariables['launchingConfig']
             isFirstTime = selectedVariables['isFirstTime']
+            currentURL = selectedVariables['currentURL']
             FE_URL = selectedVariables['FE_URL']
             FE_Tel = selectedVariables['FE_Tel']
             BE_UserName = selectedVariables['BE_UserName']
