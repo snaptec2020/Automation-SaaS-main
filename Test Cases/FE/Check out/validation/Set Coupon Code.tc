@@ -4,6 +4,7 @@
    <name>Set Coupon Code</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>a7f37945-fe1b-47f8-ab7f-60fb612801b2</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>

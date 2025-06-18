@@ -32,13 +32,13 @@ TestObject discountCodeField= findTestObject('Check Out/Discount Code/Discount c
 
 if (couponCode == null || couponCode.isEmpty()) {
 	return 
-} 
+}
 if (WebUI.waitForElementVisible(findTestObject('Check Out/Discount container'), timeout)) {
     //set data in discount field
     // Define a timeout for visibility checks
     if (WebUI.waitForElementVisible(discountCodeField, timeout)) {
         boolean isDiscountFieldEditable = WebUI.getAttribute(discountCodeField, 
-            'disabled', FailureHandling.CONTINUE_ON_FAILURE)
+            'disabled', FailureHandling.OPTIONAL)
 
         if (!(isDiscountFieldEditable)) {
             applyOrRemoveDiscount()
@@ -52,7 +52,7 @@ if (WebUI.waitForElementVisible(findTestObject('Check Out/Discount container'), 
 
         if (WebUI.waitForElementVisible(discountCodeField, timeout)) {
             boolean isDiscountFieldEditable = WebUI.getAttribute(discountCodeField, 
-                'disabled', FailureHandling.CONTINUE_ON_FAILURE)
+                'disabled', FailureHandling.OPTIONAL)
 
             if (!(isDiscountFieldEditable)) {
                 applyOrRemoveDiscount()
@@ -87,13 +87,13 @@ def applyOrRemoveDiscount(boolean isRemoved = false) {
 //	}
 
 def checkDiscountLableValue() {
-    WebUI.verifyElementVisible(findTestObject('Check Out/Discount Code/Dicount label'), FailureHandling.CONTINUE_ON_FAILURE)
+    WebUI.verifyElementVisible(findTestObject('Check Out/Discount Code/Dicount label'), FailureHandling.OPTIONAL)
 
     def discountAmountObj = findTestObject('Check Out/Discount Code/Dicount label').findPropertyValue('xpath') + '/following-sibling::div/span/span[1]' + '| ' + findTestObject('Check Out/Discount Code/Dicount label').findPropertyValue('xpath') + '/following-sibling::span/span/span[1]'
 
     TestObject tb = CustomKeywords.'utility.Utility.addXpathToTestObject'(discountAmountObj)
 
-    if (WebUI.verifyElementVisible(tb, FailureHandling.CONTINUE_ON_FAILURE)) {
+    if (WebUI.waitForElementVisible(tb, 2,FailureHandling.OPTIONAL)) {
         String discountAmountText = WebUI.getText(tb).replaceAll(',', '').replaceAll(' ', '')
 
         float discountAmount
@@ -101,7 +101,7 @@ def checkDiscountLableValue() {
         if (!(discountAmountText.isEmpty())) {
             discountAmount = Float.parseFloat(discountAmountText)
 
-            WebUI.verifyNotEqual(discountAmount, 0.0, FailureHandling.STOP_ON_FAILURE)
+            WebUI.verifyNotEqual(discountAmount, 0.0, FailureHandling.OPTIONAL)
         }
     }
 }

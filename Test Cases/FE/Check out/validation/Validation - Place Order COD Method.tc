@@ -4,5 +4,6 @@
    <name>Validation - Place Order COD Method</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>5f0d590f-493b-49f7-8a9f-c2abdcc7cac2</testCaseGuid>
 </TestCaseEntity>

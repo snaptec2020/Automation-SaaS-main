@@ -8,150 +8,206 @@
       <description></description>
       <initValue>'sss@ss.co'</initValue>
       <name>Vaild_email</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'aaa@aaaa.com'</initValue>
       <name>Wrong_email</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>The Languare of Site Ar for Arabic, En for English</description>
       <initValue>'ar'</initValue>
       <name>languageMode</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'jdbc:mysql://perf-cluster.cluster-ciw0fgz2cdaz.me-south-1.rds.amazonaws.com/release_clone'</initValue>
       <name>gDBUrl</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'admin'</initValue>
       <name>gDBUserName</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'wgrZpko:!FaMz=Y'</initValue>
       <name>gDBPassword</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>''</initValue>
       <name>gJDBCClass</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>Test Suites/Test Suites/Regression Suites/Sign In - Up suites</description>
       <initValue>'Not Run'</initValue>
       <name>testSuiteStatus</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>[]</initValue>
       <name>textSearch</name>
+      <protected>false</protected>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'Az0785846593'</initValue>
       <name>ValidPassword</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'3691'</initValue>
       <name>FixedOTP</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'573557581'</initValue>
       <name>phoneNumber</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'Azeez'</initValue>
       <name>FirstName</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'Saleh'</initValue>
       <name>LastName</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>1 = Web Browser, 2 = Mobile Browser, 3= Mobile App</description>
       <initValue>'1'</initValue>
       <name>RunningMode</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>0=All, 1=iPhone, 2=Android</description>
       <initValue>'1'</initValue>
       <name>MobileType</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>Modes(Normal, Non-Normal)</description>
       <initValue>'Normal'</initValue>
       <name>searchMode</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>Tabby and Tamara Target</description>
       <initValue>1000</initValue>
       <name>minimum</name>
+      <protected>false</protected>
+      <valueType>NUMBER</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>Tabby and Tamara Target</description>
       <initValue>2500</initValue>
       <name>maximum</name>
+      <protected>false</protected>
+      <valueType>NUMBER</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>false</initValue>
       <name>shouldRefresh</name>
+      <protected>false</protected>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>['506639627', '576101030', '534375562', '580053732', '553913672', '546932695', '503049792', '564785404', '539774822', '561613356']</initValue>
       <name>productionPhones</name>
+      <protected>false</protected>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>[('bahrain') : 'Manama', ('yemen') : 'Sanaa', ('qatar') : 'Doha', ('oman') : 'Muscat', ('jordan') : 'Amman', ('kuwait') : 'Kuwait City', ('united arab emirates') : 'Abu Dhabi', ('saudi arabia') : 'Riyadh']</initValue>
       <name>Countries</name>
+      <protected>false</protected>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'N/A'</initValue>
       <name>testSuiteReportFolder</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>false</initValue>
       <name>isRunByMultiSites</name>
+      <protected>false</protected>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>[]</initValue>
       <name>storesToVisit</name>
+      <protected>false</protected>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>true</initValue>
       <name>isItFirstSite</name>
+      <protected>false</protected>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>[]</initValue>
       <name>testSuiteJsonReport</name>
+      <protected>false</protected>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>[('Stg') : 'https://staging-mid.9ten.online/', ('Prod') : 'https://mid.thenineten.co/', ('Rel') : 'https://release-mid.snaptec.co/']</initValue>
       <name>MID_URL</name>
+      <protected>false</protected>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>[('SiteUrl') : '', ('BEMode') : '', ('Mode') : '']</initValue>
       <name>launchingConfig</name>
+      <protected>false</protected>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>true</initValue>
       <name>isFirstTime</name>
+      <protected>false</protected>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>currentURL</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -4,5 +4,6 @@
    <name>Modify the cart subtotals</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>3ad88720-6d4b-42db-9ef3-5eb5d128f357</testCaseGuid>
 </TestCaseEntity>

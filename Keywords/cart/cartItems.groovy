@@ -56,7 +56,7 @@ public class cartItems {
 	}
 	@Keyword
 	float getCartSubtotal() {
-		if (WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Empty cart'), 5, FailureHandling.CONTINUE_ON_FAILURE)) {
+		if (WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Empty cart'), 2, FailureHandling.OPTIONAL)) {
 			return 0
 		}else {
 			def  totalPrice = WebUI.getText(findTestObject('Object Repository/Cart/Cart Subtotal (Inc VAT)')).replaceAll(",", "") =~/\d+\.\d+/

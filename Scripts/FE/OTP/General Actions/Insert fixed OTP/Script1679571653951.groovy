@@ -27,3 +27,7 @@ WebUI.callTestCase(findTestCase('FE/OTP/Verification/Check OTP elements'), [:], 
  * WebUI.sendKeys(findTestObject('OTP/OTP code'), Keys.chord(Keys.CONTROL, 'v'))
  */
 WebUI.sendKeys(findTestObject('OTP/OTP code'), GlobalVariable.FixedOTP)
+
+if(WebUI.waitForElementClickable(findTestObject('OTP/Verify btn'), 2,FailureHandling.OPTIONAL)) {
+	WebUI.click(findTestObject('OTP/Verify btn'))
+}

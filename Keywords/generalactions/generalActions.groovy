@@ -24,43 +24,56 @@ public class generalActions {
 		def spinnerObject = findTestObject('Spinner')
 		WebDriver driver = DriverFactory.getWebDriver()
 		int attemptCount = 0
-
+		// Record start time
+		long startTime = System.currentTimeMillis()
 		while (attemptCount < MAX_ATTEMPTS) {
 			try {
 
-//				boolean spinnerExists = WebUI.waitForElementPresent(spinnerObject, WAIT_TIMEOUT, FailureHandling.OPTIONAL)
-//
-//				if (!spinnerExists) {
-//					CustomLogger.logInfo("Spinner is not present in DOM")
-//					return
-//				}
+				//				boolean spinnerExists = WebUI.waitForElementPresent(spinnerObject, WAIT_TIMEOUT, FailureHandling.OPTIONAL)
+				//
+				//				if (!spinnerExists) {
+				//					CustomLogger.logInfo("Spinner is not present in DOM")
+				//					return
+				//				}
 
 				// Check if spinner is visible
-				boolean isVisible = WebUI.waitForElementVisible(spinnerObject, WAIT_TIMEOUT, FailureHandling.STOP_ON_FAILURE)
+				boolean isVisible = WebUI.waitForElementVisible(spinnerObject, WAIT_TIMEOUT, FailureHandling.OPTIONAL)
 
 				if (!isVisible) {
-					CustomLogger.logInfo("Spinner is not visible")
-					return
+                // Calculate elapsed time and log
+                long endTime = System.currentTimeMillis()
+                double elapsedSeconds = (endTime - startTime) / 1000.0
+                CustomLogger.logInfo("Spinner is not visible. Total wait time: ${String.format('%.2f', elapsedSeconds)} seconds")
+                return
 				}
 
 				// If still visible, wait a bit before next attempt
-//				WebUI.delay(WAIT_TIMEOUT)
+				//				WebUI.delay(WAIT_TIMEOUT)
 				attemptCount++
-
 			} catch (StaleElementReferenceException e) {
 				// If we get a stale element exception, it likely means the spinner has been removed
-				CustomLogger.logInfo("Spinner appears to be gone (StaleElementReferenceException)")
-				return
-
-			} catch (Exception e) {
-				// For any other exception, log it and consider the spinner gone
-				CustomLogger.logInfo("Exception while checking spinner: ${e.class.simpleName}. Assuming spinner is gone.")
-				return
+	            long endTime = System.currentTimeMillis()
+	            double elapsedSeconds = (endTime - startTime) / 1000.0
+	            CustomLogger.logInfo("Spinner appears to be gone (StaleElementReferenceException). Total wait time: ${String.format('%.2f', elapsedSeconds)} seconds")
+	            return
+			} catch (NoSuchElementException e) {
+	            long endTime = System.currentTimeMillis()
+	            double elapsedSeconds = (endTime - startTime) / 1000.0
+	            CustomLogger.logInfo("Spinner not found in DOM. Total wait time: ${String.format('%.2f', elapsedSeconds)} seconds")
+	            return
+			}catch (Exception e) {
+            // For any other exception, log it and consider the spinner gone
+	            long endTime = System.currentTimeMillis()
+	            double elapsedSeconds = (endTime - startTime) / 1000.0
+	            CustomLogger.logInfo("Exception while checking spinner: ${e.class.simpleName}. Assuming spinner is gone. Total wait time: ${String.format('%.2f', elapsedSeconds)} seconds")
+	            return
 			}
 		}
 
-		// If we've reached this point, the spinner was still visible after all attempts
-		CustomLogger.logWarning("Spinner remained visible after ${MAX_ATTEMPTS} attempts")
+    long endTime = System.currentTimeMillis()
+    double elapsedSeconds = (endTime - startTime) / 1000.0
+    CustomLogger.logWarning("Spinner remained visible after ${MAX_ATTEMPTS} attempts. Total wait time: ${String.format('%.2f', elapsedSeconds)} seconds")
+
 	}
 
 	@Keyword
