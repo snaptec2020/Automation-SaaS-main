@@ -3,8 +3,8 @@ name: CI FOR KATALON ENGINE
 on:
   repository_dispatch:
     types: [post-deployment] ## 
-  #push:
-   # branches: [ main ]
+  push:
+    branches: [ main ]
 jobs:
   katalon-test:
     runs-on: windows-latest
