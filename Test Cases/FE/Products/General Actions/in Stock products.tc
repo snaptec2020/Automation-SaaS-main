@@ -4,5 +4,19 @@
    <name>in Stock products</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>2d10c2d1-c391-4a41-889f-c78d26b7edfe</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>af9489e7-6788-4ff3-aa6c-d3b7ee545f67</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>true</defaultValue>
+      <description></description>
+      <id>af9489e7-6788-4ff3-aa6c-d3b7ee545f67</id>
+      <masked>false</masked>
+      <name>doNeedClickAddToCart</name>
+   </variable>
 </TestCaseEntity>

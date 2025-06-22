@@ -4,5 +4,6 @@
    <name>Success SignUp by Phone</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>b527efe2-200d-4b7d-85f6-522fa303a900</testCaseGuid>
 </TestCaseEntity>

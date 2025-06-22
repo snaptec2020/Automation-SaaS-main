@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//*[contains(@class,'flatpickr-day') and not(contains(@class,'disabled'))][1]</value>
+         <value>//span[contains(@class,'flatpickr-day') and not(contains(@class,'disabled'))][1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

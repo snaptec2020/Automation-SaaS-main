@@ -14,17 +14,19 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import internal.GlobalVariable
+import utility.CustomWebUI
+
 import org.openqa.selenium.Keys as Keys
 
 //WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Website launch'), [:], FailureHandling.STOP_ON_FAILURE)
 WebUI.callTestCase(findTestCase('FE/Sign in TC/validations/General Actions/Navigate to Sgin in'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('login page/phone page/Login button context'))
+CustomWebUI.verifyElementVisibleWithTimeout(findTestObject('login page/phone page/Login button context'), 5,FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('login page/phone page/Phone number feild'))
+CustomWebUI.verifyElementVisibleWithTimeout(findTestObject('login page/phone page/Phone number feild'),5,FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('login page/email page/Select e-mail Way'))
+CustomWebUI.verifyElementVisibleWithTimeout(findTestObject('login page/email page/Select e-mail Way'),5,FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('login page/phone page/login by phone'))
+CustomWebUI.verifyElementVisibleWithTimeout(findTestObject('login page/phone page/login by phone'),5,FailureHandling.CONTINUE_ON_FAILURE)
 

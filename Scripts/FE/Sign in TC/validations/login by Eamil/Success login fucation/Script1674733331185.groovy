@@ -15,7 +15,9 @@ import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import internal.GlobalVariable
+import utility.CustomWebUI
+
 import org.openqa.selenium.Keys as Keys
 
 
@@ -38,8 +40,10 @@ if (!(WebUI.waitForElementVisible(findTestObject('login page/email page/Check co
     WebUI.setText(findTestObject('login page/email page/password field'), userPassword)
 
     WebUI.click(findTestObject('login page/email page/login in Button Email page'))
-
-    WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'))
+	
+	CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
+	
+    CustomWebUI.verifyElementVisibleWithTimeout(findTestObject('login page/email page/Check context Success login'),2)
 
     GlobalVariable.shouldRefresh = CustomKeywords.'generalactions.notificationsObject.waitNotificationVisble'('الرجاء الانتظار للحظة والمحاولة مرة أخرى', 
         'Please wait for a second and try again')

@@ -33,7 +33,7 @@ if(GlobalVariable.shouldRefresh) {
 	WebUI.navigateToUrl(GlobalVariable.URL)
 	WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sign up By phone/Success SignUp by Phone'), [:], FailureHandling.STOP_ON_FAILURE)
 }
-isPhoneExist = WebUI.waitForElementVisible(findTestObject('OTP/Phone exist error'), 3, FailureHandling.CONTINUE_ON_FAILURE)
+isPhoneExist = WebUI.waitForElementVisible(findTestObject('OTP/Phone exist error'), 3, FailureHandling.OPTIONAL)
 traials++
 
 if(!isPhoneExist) {

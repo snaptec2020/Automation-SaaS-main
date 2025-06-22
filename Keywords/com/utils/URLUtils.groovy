@@ -5,6 +5,8 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import java.time.Duration
+
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.support.ui.WebDriverWait
@@ -34,7 +36,7 @@ public class URLUtils {
 	@Keyword
 	def waitForURLContains(String partialURL, int timeoutSeconds = 30) {
 		WebDriver driver = DriverFactory.getWebDriver()
-		WebDriverWait wait = new WebDriverWait(driver, timeoutSeconds)
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds))
 
 		try {
 			wait.until(ExpectedConditions.urlContains(partialURL))

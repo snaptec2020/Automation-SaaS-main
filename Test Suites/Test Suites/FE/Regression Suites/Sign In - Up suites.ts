@@ -28,7 +28,7 @@
    <testCaseLink>
       <guid>e4e3a42a-583e-481c-82d5-9e603f8a33cb</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Sign up TC/Validations/Sgin up By email/Success Sign up By email</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
@@ -42,21 +42,21 @@
    <testCaseLink>
       <guid>db8e442a-2f85-4723-b939-34b4d7dd3a27</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Sign up TC/Validations/Sgin up By email/Fail sign up by email</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>e4c935e4-e0d2-4d18-951b-68a28cbf1385</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Sign in TC/validations/login by Eamil/Fail login</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>ca284d8b-dacc-40d9-a1a4-41e629b78e3c</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Sign up TC/Validations/Sign up By phone/Success SignUp by Phone</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
@@ -70,7 +70,7 @@
    <testCaseLink>
       <guid>18a2c1a3-56c3-4228-8e25-f3e44b629b81</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Sign up TC/Validations/Sign up By phone/Fail Sign Up by phone cases</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>

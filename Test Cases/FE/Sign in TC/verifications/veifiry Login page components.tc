@@ -4,5 +4,6 @@
    <name>veifiry Login page components</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>4a67484d-fed9-4e75-ace2-d5cd17edadc7</testCaseGuid>
 </TestCaseEntity>

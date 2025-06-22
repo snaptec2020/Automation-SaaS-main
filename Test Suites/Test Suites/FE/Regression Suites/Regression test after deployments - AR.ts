@@ -96,7 +96,7 @@
    <testCaseLink>
       <guid>6616d382-f081-4ce4-9dac-a803f75c790f</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Search/Validation/Search non-existing product</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
       <variableLink>
@@ -109,33 +109,14 @@
    <testCaseLink>
       <guid>aaa88dfe-61a9-4ea6-b0f3-30e0882fc943</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Search/Validation/Search by search button - By Product name</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>2e243f65-8bb7-4f39-8117-9369b7c61e02</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
-      <testCaseId>Test Cases/FE/Search/Validation/View all products from view more in container - By Product Name</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>3362ef26-c942-40b6-90e7-2f4557f6dbf1</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>4f14c89d-a551-48e6-8afb-72e722addc3e</variableId>
-      </variableLink>
-   </testCaseLink>
-   <testCaseLink>
       <guid>c4e1e576-f56e-4db4-8e33-a42a5a1e3276</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Search/Validation/View one product - By Product Name</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
       <variableLink>
@@ -154,7 +135,7 @@
    <testCaseLink>
       <guid>04413ce4-6a64-4d43-8cb9-a6784c35ce75</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Website launch/General Actions/Subscribe email General</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
       <variableLink>
@@ -173,21 +154,21 @@
    <testCaseLink>
       <guid>65f4e0fc-f955-415a-bb98-8bc726ae535a</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Cart/Validations/Remove All products from cart</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>03ded116-034e-48b2-b8bb-f7766f846e5c</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Search/Validation/Search by search button - By Product SKU</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>cc210254-7c55-48bb-a551-5eb2ad5b2cad</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Search/Validation/View one product - By Product SKU</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
       <variableLink>
@@ -204,35 +185,16 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>9ed73f47-677f-4c05-952d-634ce4cde0be</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
-      <testCaseId>Test Cases/FE/Search/Validation/View all products from view more in container - By Product SKU</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>8fe8f347-045c-4d83-a3cc-bdd3ea68b9e3</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>ccccc477-f770-4c72-8150-8c5daf6a4e2b</variableId>
-      </variableLink>
-   </testCaseLink>
-   <testCaseLink>
       <guid>0485f2c8-ea55-4f9f-9ae4-4eca6c4e2fad</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/FE/Products/Validation/Add Product review</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>13c3f865-a5ec-493d-9356-99a67887e248</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/FE/Multi Sites/Multisites New way</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>

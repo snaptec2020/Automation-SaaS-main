@@ -4,6 +4,7 @@
    <name>View one product - By Product SKU</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>927a342d-1f95-48b8-a188-6cc95f97bc8c</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>

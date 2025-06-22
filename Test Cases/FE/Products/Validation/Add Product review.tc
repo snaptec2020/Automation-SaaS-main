@@ -4,5 +4,6 @@
    <name>Add Product review</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>23d83d8f-3160-4349-a3d1-6dc868427b9d</testCaseGuid>
 </TestCaseEntity>

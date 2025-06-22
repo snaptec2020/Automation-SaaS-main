@@ -100,4 +100,13 @@ public class reporting {
 
 
 	}
+	@Keyword
+	public static void takeScreenshot(String screenshotName = "screenshot_${System.currentTimeMillis()}") {
+		try {
+			String screenshotPath = KeywordUtil.takeScreenshot(screenshotName, FailureHandling.OPTIONAL)
+			KeywordUtil.logInfo("Captured screenshot: ${screenshotPath}")
+		} catch(Exception e) {
+			KeywordUtil.logWarning("Failed to capture screenshot: ${ExceptionsUtil.getMessageForThrowable(e)}")
+		}
+	}
 }

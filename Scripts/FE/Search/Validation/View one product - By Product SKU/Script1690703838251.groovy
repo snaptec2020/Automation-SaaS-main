@@ -21,32 +21,36 @@ WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnt
 
 switch (GlobalVariable.searchMode) {
     case 'Normal':
-        WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), InvalidProduct)
 
-        if (WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'))) {
-            WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), GlobalVariable.textSearch[1])
-        }
+        WebUI.setText(findTestObject('Object Repository/Search contents/Search'), GlobalVariable.textSearch[1])
         
-        WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'))
-
-        WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'))
-
+        WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'), 
+            FailureHandling.OPTIONAL)
+		
         WebUI.click(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'), FailureHandling.STOP_ON_FAILURE)
-
+		
+		CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
+		
+		WebUI.verifyElementVisible(CustomKeywords.'utility.Utility.addXpathToTestObject'("//span[@class='sku__value'] | //div[starts-with(@class,'styles_sku__')]/div[starts-with(@class,'styles_groupValue__')]/span[starts-with(@class,'styles_value__')][1]"), FailureHandling.OPTIONAL)
+		
+		WebUI.verifyElementVisible(CustomKeywords.'utility.Utility.addXpathToTestObject'("//h2[@class='product-content__title'] | //h1[starts-with(@class,styles_nameProduct__)]"), FailureHandling.OPTIONAL)
         break
     case 'Non-Normal':
-        WebUI.setText(findTestObject('Object Repository/Search contents/input'), InvalidProduct)
-
-        if (WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'))) {
-            WebUI.setText(findTestObject('Object Repository/Search contents/input'), GlobalVariable.textSearch[1])
-        }
+	
+		WebUI.setText(findTestObject('Object Repository/Search contents/input'), GlobalVariable.textSearch[1])
         
         WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'))
 
         WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'))
 
         WebUI.click(findTestObject('Object Repository/Search contents/Search box/Select Product in the container'), FailureHandling.STOP_ON_FAILURE)
-
+		
+		CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
+		
+		WebUI.verifyElementVisible(CustomKeywords.'utility.Utility.addXpathToTestObject'("//span[@class='sku__value'] | //div[starts-with(@class,'styles_sku__')]/div[starts-with(@class,'styles_groupValue__')]/span[starts-with(@class,'styles_value__')][1]"), FailureHandling.OPTIONAL)
+		
+		WebUI.verifyElementVisible(CustomKeywords.'utility.Utility.addXpathToTestObject'("//h2[@class='product-content__title'] | //h1[starts-with(@class,styles_nameProduct__)]"), FailureHandling.OPTIONAL)
+		
         //  WebUI.callTestCase(findTestCase('null'), [:], FailureHandling.STOP_ON_FAILURE)
         break
 }

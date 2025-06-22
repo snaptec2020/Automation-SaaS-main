@@ -4,5 +4,6 @@
    <name>Out of stock products</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>b04fecad-e743-4902-9f74-4de91cc4f665</testCaseGuid>
 </TestCaseEntity>

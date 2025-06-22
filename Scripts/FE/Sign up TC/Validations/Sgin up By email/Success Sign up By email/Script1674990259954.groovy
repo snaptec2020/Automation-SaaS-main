@@ -54,7 +54,7 @@ WebUI.callTestCase(findTestCase('FE/Sign up TC/Validations/Sgin up By email/Sign
 
 for (int i = 5; i > 0; i--) {
     //KeywordUtil.logInfo(">>>>>>>>>>>>>>>>>>>>>>>>>")
-    if (!(WebUI.waitForElementClickable(findTestObject('Sign up Page/Sgin up By phone/Submit Button Sign up mobile page'), 5, FailureHandling.CONTINUE_ON_FAILURE))) {
+    if (!(WebUI.waitForElementClickable(findTestObject('Sign up Page/Sgin up By phone/Submit Button Sign up mobile page'), 5, FailureHandling.OPTIONAL))) {
         //WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight/2);", null);
         break
     }

@@ -46,6 +46,11 @@ public class generalStrings {
 	@Keyword
 	def generateRandomPhoneNumber(def objectToGetFormula = 'Object Repository/OTP/input Phone number') {
 		if(StringUtils.indexOfIgnoreCase(executionProfile, "-Live")>0) {
+			// Check if productionPhones list is empty
+			if (GlobalVariable.productionPhones == null || GlobalVariable.productionPhones.size() == 0) {
+				KeywordUtil.markWarning("Production phones list is empty")
+				return ""
+			}
 			return GlobalVariable.productionPhones.get(getRandomNumberBetweenAnytoAny(GlobalVariable.productionPhones.size()-1,0))
 		} else {
 			def generator = { String alphabet, int n ->
@@ -110,7 +115,21 @@ public class generalStrings {
 	}
 	@Keyword
 	int getRandomNumberBetweenAnytoAny(int upperLimit, int lowerLimit) {
-		return Math.abs(random.nextInt((upperLimit+1)-lowerLimit))+lowerLimit
+		// Ensure the bounds are valid
+		if (upperLimit < lowerLimit) {
+			// Swap the values if upperLimit is less than lowerLimit
+			int temp = upperLimit
+			upperLimit = lowerLimit
+			lowerLimit = temp
+		}
+		
+		// Handle the case where the range is invalid
+		if (upperLimit < 0) {
+			return 0
+		}
+		
+		// Calculate the range and return a random number within it
+		return lowerLimit + (upperLimit - lowerLimit > 0 ? random.nextInt(upperLimit - lowerLimit + 1) : 0)
 	}
 	@Keyword
 	def isNotEnglish(String text) {

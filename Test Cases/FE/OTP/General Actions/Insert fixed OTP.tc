@@ -4,5 +4,6 @@
    <name>Insert fixed OTP</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>e9e13c46-60d8-4183-85c3-253a0bed1ce3</testCaseGuid>
 </TestCaseEntity>

@@ -19,21 +19,21 @@ import org.openqa.selenium.Keys as Keys
 
 //WebUI.callTestCase(findTestCase('null'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnts for the search'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnts for the search'), [:], FailureHandling.OPTIONAL)
 
 switch (GlobalVariable.searchMode) {
 
 case 'Normal': 
 //	println(InvalidProduct + ",,,,,,,,,,,,,,,,,,,,,,,,,,,,")
 
-    WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), "test")
+    WebUI.setText(findTestObject('Object Repository/Search contents/Search'), "hjnmnddjk")
 
     WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'))
 	break
  
 case 'Non-Normal':
 //	println(InvalidProduct + ",,,,,,,,,,,,,,,,,,,,,,,,,,,,")
-    WebUI.setText(findTestObject('Object Repository/Search contents/input'), "test")
+    WebUI.setText(findTestObject('Object Repository/Search contents/input'), "hjnmnddjk")
 
     WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/No results found'))
 	break

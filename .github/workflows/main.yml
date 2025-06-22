@@ -4,7 +4,7 @@ on:
   repository_dispatch:
     types: [post-deployment] ## 
   push:
-    branches: [ main ]
+    branches: [ main, ST-11067-Updating-the-Flow-of-COD-Checkout ]
 jobs:
   katalon-test:
     runs-on: windows-latest

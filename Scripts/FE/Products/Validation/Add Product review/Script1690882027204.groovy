@@ -17,14 +17,26 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('FE/Products/General Actions/in Stock products'), [:], FailureHandling.STOP_ON_FAILURE)
+//WebUI.callTestCase(findTestCase('FE/Products/General Actions/in Stock products'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('FE/Products/General Actions/in Stock products'), [('doNeedClickAddToCart') : false], FailureHandling.STOP_ON_FAILURE)
+
 //CustomKeywords.'generalactions.scrolling.scrollToClick'('Object Repository/Products/Review View')
 CustomKeywords.'utility.Utility.clickOnObjectusingJavaScript'(findTestObject('Object Repository/Products/Review View'))
+
 //WebUI.click(findTestObject('Object Repository/Products/Review View'))
 CustomKeywords.'utility.Utility.clickOnObjectusingJavaScript'(findTestObject('Object Repository/Products/Add your Review'))
+
 //WebUI.click(findTestObject('Object Repository/Products/Add your Review'))
-WebUI.click(findTestObject('Object Repository/Products/Review Stars', [('rnd'):CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenOnetoTarget'(5)]))
+WebUI.click(findTestObject('Object Repository/Products/Review Stars', [('rnd') : CustomKeywords.'generalactions.generalStrings.getRandomNumberBetweenOnetoTarget'(
+                5)]))
+
 WebUI.setText(findTestObject('Object Repository/Products/Review Comments'), 'Automation Test ---> This is Amaizing Product')
+
 WebUI.setText(findTestObject('Object Repository/Products/Review NickName'), 'Automation Script SnapTec')
+
 WebUI.click(findTestObject('Object Repository/Products/Submit Review'))
+
 CustomKeywords.'generalactions.notificationsObject.verifyNotificationVisble'('تقييمك قيد المراجعة', 'You submitted your review for moderation.')
+
+
+

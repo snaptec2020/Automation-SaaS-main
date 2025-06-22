@@ -15,10 +15,12 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import internal.GlobalVariable
+import utility.CustomWebUI
+
 import org.openqa.selenium.Keys as Keys
 
-if(WebUI.verifyElementVisible(findTestObject('login page/email page/Check context Success login'), FailureHandling.CONTINUE_ON_FAILURE)) {
+if(CustomWebUI.verifyElementVisibleWithTimeout(findTestObject('login page/email page/Check context Success login'),5, FailureHandling.CONTINUE_ON_FAILURE)) {
 WebUI.verifyEqual(WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Sign up Page/Verifications/firstName'),30).getAttribute("value"), firstName, FailureHandling.CONTINUE_ON_FAILURE)
 WebUI.verifyEqual(WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Sign up Page/Verifications/lastName'),30).getAttribute("value"), lastName, FailureHandling.CONTINUE_ON_FAILURE)
 if(isSignupByPhone==1) {

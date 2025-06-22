@@ -18,5 +18,5 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
-CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategory'()
+CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategory'(doNeedClickAddToCart)
 

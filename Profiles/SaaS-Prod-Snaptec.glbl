@@ -8,20 +8,27 @@
       <description></description>
       <initValue>'https://prod-saas.snaptec.co'</initValue>
       <name>URL</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'Test2024'</initValue>
+      <initValue>''</initValue>
       <name>couponCode</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'test20'</initValue>
       <name>labelValue</name>
+      <protected>false</protected>
+      <valueType>STRING</valueType>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>true</initValue>
+      <initValue>false</initValue>
       <name>normalEcommerce</name>
+      <protected>false</protected>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

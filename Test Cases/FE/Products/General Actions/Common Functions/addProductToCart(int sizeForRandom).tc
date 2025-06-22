@@ -4,6 +4,7 @@
    <name>addProductToCart(int sizeForRandom)</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>ac13dfa5-1c0c-47f1-99e7-a9d5ec8f925f</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>

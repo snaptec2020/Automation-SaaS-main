@@ -493,6 +493,18 @@ def static "generalactions.reporting.exportKatalonReports"(
 }
 
 
+def static "generalactions.reporting.takeScreenshot"(
+    	String screenshotName	) {
+    (new generalactions.reporting()).takeScreenshot(
+        	screenshotName)
+}
+
+
+def static "generalactions.reporting.takeScreenshot"() {
+    (new generalactions.reporting()).takeScreenshot()
+}
+
+
 def static "generalactions.generalActions.waiteSpinnerToHide"() {
     (new generalactions.generalActions()).waiteSpinnerToHide()
 }
@@ -887,6 +899,45 @@ def static "catalog.catlogComponants.getSpecifiedCatalogElement"(
     (new catalog.catlogComponants()).getSpecifiedCatalogElement(
         	elementIndex
          , 	catalogList)
+}
+
+ /**
+	 * Get total count of available catalog elements
+	 */ 
+def static "catalog.catlogComponants.getCatalogElementCount"() {
+    (new catalog.catlogComponants()).getCatalogElementCount()
+}
+
+ /**
+	 * Select and click a random catalog element
+	 */ 
+def static "catalog.catlogComponants.getRandomCatalogElement"(
+    	List catalogList	) {
+    (new catalog.catlogComponants()).getRandomCatalogElement(
+        	catalogList)
+}
+
+ /**
+	 * Select random catalog element excluding specific ones
+	 */ 
+def static "catalog.catlogComponants.getRandomCatalogElementExcluding"(
+    	List excludeIndices	
+     , 	List catalogList	) {
+    (new catalog.catlogComponants()).getRandomCatalogElementExcluding(
+        	excludeIndices
+         , 	catalogList)
+}
+
+
+def static "catalog.catlogComponants.getRandomCatalogElement"() {
+    (new catalog.catlogComponants()).getRandomCatalogElement()
+}
+
+
+def static "catalog.catlogComponants.getRandomCatalogElementExcluding"(
+    	List excludeIndices	) {
+    (new catalog.catlogComponants()).getRandomCatalogElementExcluding(
+        	excludeIndices)
 }
 
 

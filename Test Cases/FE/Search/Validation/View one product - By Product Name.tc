@@ -4,6 +4,7 @@
    <name>View one product - By Product Name</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>fc8d2ed4-02f3-4c86-a757-77e0a841b9ec</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
