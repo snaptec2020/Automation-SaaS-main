@@ -19,27 +19,27 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 
-WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.OPTIONAL)
         
 
            // WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Lets stay in touch field'), FailureHandling.STOP_ON_FAILURE)
 
-            if (WebUI.verifyElementVisible(findTestObject('Subscribe/Subcribe Footer field'), FailureHandling.CONTINUE_ON_FAILURE)) {
-                WebUI.setText(findTestObject('Subscribe/Subcribe Footer field'), CustomKeywords.'generalactions.generalStrings.generatRandomEmail'(), FailureHandling.CONTINUE_ON_FAILURE)
-                WebUI.click(findTestObject('Subscribe/Subscribe Footer Button'), FailureHandling.CONTINUE_ON_FAILURE)
+            if (WebUI.verifyElementVisible(findTestObject('Subscribe/Subcribe Footer field'), FailureHandling.OPTIONAL)) {
+                WebUI.setText(findTestObject('Subscribe/Subcribe Footer field'), CustomKeywords.'generalactions.generalStrings.generatRandomEmail'(), FailureHandling.OPTIONAL)
+                WebUI.click(findTestObject('Subscribe/Subscribe Footer Button'), FailureHandling.OPTIONAL)
 				verifyTheMessage()
             } 
-			if(WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Lets stay in touch field'), FailureHandling.CONTINUE_ON_FAILURE)) {
-                WebUI.setText(findTestObject('Headers and Footers/Header contents/Lets stay in touch field'), CustomKeywords.'generalactions.generalStrings.generatRandomEmail'(), FailureHandling.CONTINUE_ON_FAILURE)
-                WebUI.click(findTestObject('Subscribe/Subcribe Button on touch'), FailureHandling.CONTINUE_ON_FAILURE)
+			if(WebUI.verifyElementVisible(findTestObject('Headers and Footers/Header contents/Lets stay in touch field'), FailureHandling.OPTIONAL)) {
+                WebUI.setText(findTestObject('Headers and Footers/Header contents/Lets stay in touch field'), CustomKeywords.'generalactions.generalStrings.generatRandomEmail'(), FailureHandling.OPTIONAL)
+                WebUI.click(findTestObject('Subscribe/Subcribe Button on touch'), FailureHandling.OPTIONAL)
 				verifyTheMessage()
             }
 
 def verifyTheMessage() {
 	if(GlobalVariable.languageMode.toString().equalsIgnoreCase('ar')) {
-		WebUI.verifyEqual(CustomKeywords.'generalactions.notificationsObject.getMessageText'(), 'تم تحديث اشتراكك.', FailureHandling.CONTINUE_ON_FAILURE)
+		WebUI.verifyEqual(CustomKeywords.'generalactions.notificationsObject.getMessageText'(), 'تم تحديث اشتراكك.', FailureHandling.OPTIONAL)
 	} else {
-		WebUI.verifyEqual(CustomKeywords.'generalactions.notificationsObject.getMessageText'(), 'Your subscription have been updated.', FailureHandling.CONTINUE_ON_FAILURE)
+		WebUI.verifyEqual(CustomKeywords.'generalactions.notificationsObject.getMessageText'(), 'Your subscription have been updated.', FailureHandling.OPTIONAL)
 	}
 }
 

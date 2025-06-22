@@ -4,5 +4,6 @@
    <name>Veifiry login by Email components</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>2f2dbd28-7fbb-49d7-a2ce-4fb950d854c2</testCaseGuid>
 </TestCaseEntity>

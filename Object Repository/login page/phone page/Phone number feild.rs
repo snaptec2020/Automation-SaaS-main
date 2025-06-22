@@ -6,13 +6,14 @@
    <elementGuidId>b7387380-d40f-4567-8c92-89632cd68873</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[starts-with(@class,'input-phone form-block-element styles_inputPhone__')]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@class='input-phone form-block-element styles_inputPhone__qgQ_i ']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>

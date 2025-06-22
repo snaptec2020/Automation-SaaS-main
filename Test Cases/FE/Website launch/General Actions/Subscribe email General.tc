@@ -4,6 +4,7 @@
    <name>Subscribe email General</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>c184306c-aaa4-4eff-9af9-ae6f9a94efec</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>

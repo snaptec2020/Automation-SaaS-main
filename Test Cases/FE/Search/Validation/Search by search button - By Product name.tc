@@ -4,5 +4,6 @@
    <name>Search by search button - By Product name</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>421d8dbf-6df4-4d78-b75c-a8ddfb90dd9e</testCaseGuid>
 </TestCaseEntity>

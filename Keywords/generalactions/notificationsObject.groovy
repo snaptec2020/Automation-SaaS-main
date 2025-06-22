@@ -50,7 +50,7 @@ public class notificationsObject {
 	}
 	@Keyword
 	boolean waitNotificationVisble(def arText, def enText) {
-		return WebUI.waitForElementVisible(getNotificationObject(arText,enText), 10)
+		return WebUI.waitForElementVisible(getNotificationObject(arText,enText), 2)
 	}
 	@Keyword
 	def getMessageText() {

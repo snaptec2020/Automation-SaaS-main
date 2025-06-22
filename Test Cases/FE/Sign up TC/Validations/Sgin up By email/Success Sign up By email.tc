@@ -4,5 +4,6 @@
    <name>Success Sign up By email</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>94a0c65e-8db0-48a1-896c-008201034c8f</testCaseGuid>
 </TestCaseEntity>

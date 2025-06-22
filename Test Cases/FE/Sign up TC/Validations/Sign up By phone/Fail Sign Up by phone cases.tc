@@ -4,5 +4,6 @@
    <name>Fail Sign Up by phone cases</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>2b5fd225-16f2-4bcb-83da-20dbc4ac7daa</testCaseGuid>
 </TestCaseEntity>

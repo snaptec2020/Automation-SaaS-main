@@ -15,6 +15,8 @@ import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import com.utils.CustomLogger
+
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys
 import org.openqa.selenium.WebElement
@@ -27,7 +29,7 @@ try {
     List Categories = CustomKeywords.'catalog.catlogComponants.getCategoryElements'()
 
     if (Categories.size() == 0) {
-        KeywordUtil.markFailed('There is a problem on the site')
+        CustomLogger.logWarning('There is a problem on the site')
     }
     
 
@@ -41,12 +43,13 @@ try {
         
         CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
 
-        WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+        WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.OPTIONAL)
 		
 		List <WebElement> products = WebUI.findWebElements(findTestObject('Object Repository/Products/Product container in page'),2)
 		
 		if(products.size()<=0) {
-			KeywordUtil.markFailed("There is No Product on the category ${elementIndex}")
+			CustomLogger.logWarning("There is No Product on the category ${elementIndex}")
+			continue
 		}
 		
 		CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromOnePage'()

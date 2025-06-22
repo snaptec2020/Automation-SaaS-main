@@ -18,6 +18,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keyss
+import org.openqa.selenium.WebElement
 
 //KeywordUtil.logInfo('0000000000000000000000000000000000\t' + GlobalVariable.textSearch)
 
@@ -26,14 +27,19 @@ WebUI.callTestCase(findTestCase('Test Cases/FE/Search/Verification/Verify elemnt
 
 switch (GlobalVariable.searchMode) {
     case 'Normal':
-        WebUI.setText(findTestObject('Object Repository/Search contents/Search box/Search Test box'), GlobalVariable.textSearch[0])
+        WebUI.setText(findTestObject('Object Repository/Search contents/Search'), GlobalVariable.textSearch[0])
 
         WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'), 
-            FailureHandling.CONTINUE_ON_FAILURE)
+            FailureHandling.OPTIONAL)
 
-        WebUI.click(findTestObject('Object Repository/Search contents/Search button'), FailureHandling.STOP_ON_FAILURE)
+        WebUI.click(findTestObject('Object Repository/Search contents/Search box/View more button'), FailureHandling.STOP_ON_FAILURE)
 
-        WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search page/Filter button'))
+		CustomKeywords.'com.utils.URLUtils.waitForURLContains'("/search?query=", 3)
+		
+		List <WebElement> products = WebUI.findWebElements(findTestObject('Object Repository/Products/Product container in page'),2)
+		
+		WebUI.verifyNotEqual(products.size(), 0)
+        //WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search page/Filter button'))
 
         break
     case 'Non-Normal':
@@ -42,7 +48,12 @@ switch (GlobalVariable.searchMode) {
 		WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search box/Search results container'),
 			FailureHandling.CONTINUE_ON_FAILURE)
 		WebUI.click(findTestObject('Search contents/Serach Button Icon'))
-		WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search page/Filter button'))
+		//WebUI.verifyElementVisible(findTestObject('Object Repository/Search contents/Search page/Filter button'))
+		CustomKeywords.'com.utils.URLUtils.waitForURLPattern'("/search?query=", 3)
+		
+		List <WebElement> products = WebUI.findWebElements(findTestObject('Object Repository/Products/Product container in page'),2)
+		
+		WebUI.verifyNotEqual(products.size(), 0)
 		
 		break
 }

@@ -3,6 +3,7 @@
    <description></description>
    <name>Signup phone TD</name>
    <tag></tag>
+   <connectionProperties/>
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
    <dataFileGUID>57fcb3c5-9fcd-44b8-ba10-51f8b2ecd6fd</dataFileGUID>
@@ -12,8 +13,8 @@
    <data>Ahmad2 null 542450503 checked ButtonDisabled null null</data>
    <data>null Khaled3 542450508 checked ButtonDisabled null null</data>
    <data>null null 542450508+ checked ButtonDisabled null null</data>
-   <data>Ahmad5 Khaled5 9999999999 checked ButtonDisabled null null</data>
-   <data>Ahmad6 Khaled6 54245050 checked ButtonDisabled null null</data>
+   <data>Ahmad5 Khaled5 9999999999 checked null %D8%B1%D9%82%D9%85+%D8%A7%D9%84%D8%AC%D9%88%D8%A7%D9%84+%D8%BA%D9%8A%D8%B1+%D8%B5%D8%A7%D9%84%D8%AD Invalid+Phone+number</data>
+   <data>Ahmad6 Khaled6 54245050 checked null %D8%B1%D9%82%D9%85+%D8%A7%D9%84%D8%AC%D9%88%D8%A7%D9%84+%D8%BA%D9%8A%D8%B1+%D8%B5%D8%A7%D9%84%D8%AD Invalid+Phone+number</data>
    <data>Ahmad7 Khaled7 542450508+ unchecked ButtonDisabled null null</data>
    <data>Ahmad8 Khaled8 exist checked null %D8%B1%D9%82%D9%85+%D8%A7%D9%84%D9%87%D8%A7%D8%AA%D9%81+%D9%87%D8%B0%D8%A7+%D9%85%D9%88%D8%AC%D9%88%D8%AF+%D8%A8%D8%A7%D9%84%D9%81%D8%B9%D9%84 Phone+exist.+Please+try+another+number.</data>
    <internalDataColumns>

@@ -3,7 +3,7 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
-import javax.xml.bind.annotation.XmlElementDecl.GLOBAL as GLOBAL
+//import javax.xml.bind.annotation.XmlElementDecl.GLOBAL as GLOBAL
 import com.kms.katalon.core.annotation.Keyword as Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -17,6 +17,8 @@ import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import com.utils.CustomLogger
+
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
@@ -83,6 +85,7 @@ for (def rowData : td.allData) {
 		 * lastname, ('PhoneNumber') : phoneNumber], FailureHandling.STOP_ON_FAILURE)
 		 */
     if (td.getValue(5, rowNumber) != 'ButtonDisabled') {
+		CustomLogger.logInfo("The row number is: ${rowNumber}")
         if (GlobalVariable.languageMode == 'en') {
             messageColumn = 7
         }
@@ -91,6 +94,7 @@ for (def rowData : td.allData) {
                 messageColumn, rowNumber) //WebUI.delay(3)
             )
     } else {
+		CustomLogger.logInfo("The row number is: ${rowNumber}")
         CustomKeywords.'signup.signupPhoneVerifications.verificationElementPhoneSignUp'()
     }
 }

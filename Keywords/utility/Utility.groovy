@@ -39,8 +39,10 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import org.openqa.selenium.ElementClickInterceptedException
 import org.openqa.selenium.JavascriptExecutor
 import org.openqa.selenium.WebElement
+import generalactions.generalActions
 public class Utility {
 	TestObject tb=new TestObject()
+	def generalActions = new generalActions()
 	@Keyword
 	def checkIfElementExist(def objPath) {
 
@@ -80,6 +82,7 @@ public class Utility {
 			// Direct click without setTimeout
 			WebUI.executeJavaScript("arguments[0].click();", Arrays.asList(element))
 			CustomLogger.logInfo("JavaScript click executed successfully")
+			generalActions.waiteSpinnerToHide()
 		} else {
             CustomLogger.logInfo("Element not found for JavaScript click")
             throw new Exception("Element not found")
@@ -88,6 +91,29 @@ public class Utility {
         CustomLogger.logInfo("Error in JavaScript click: ${e.getMessage()}")
         throw e
     }
+	}
+	@Keyword
+	def clickOnObjectusingJavaScript(String xpath) {
+		WebUI.executeJavaScript("""
+    const button = document.evaluate(
+        "${xpath}", 
+        document, 
+        null, 
+        XPathResult.FIRST_ORDERED_NODE_TYPE, 
+        null
+    ).singleNodeValue;
+    
+    if (button) {
+        button.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => {
+            button.click();
+            console.log('Clicked Add to Cart button successfully');
+        }, 500);
+    } else {
+        console.log('Add to Cart button not found');
+    }
+""", null)
+		generalActions.waiteSpinnerToHide()
 	}
 	@Keyword
 	def clickOnObjectusingJavaScriptEnhanced(TestObject testObject) {

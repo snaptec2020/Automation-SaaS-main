@@ -4,5 +4,6 @@
    <name>Success login fucation</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>6bddf775-abd1-4c8d-9ed8-06c5bf7af4a6</testCaseGuid>
 </TestCaseEntity>

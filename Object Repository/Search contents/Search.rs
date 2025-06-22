@@ -7,10 +7,11 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='core-input-button-group input search-product-input'] |//div [starts-with(@class,'styles_searchBox___')]</value>
+         <value>//div[@class='core-input-button-group input search-product-input'] | //div [starts-with(@class,'styles_searchBox')]//input</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>true</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -18,7 +19,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>DIV</value>
-      <webElementGuid>ca74a6c4-c956-4db9-b80b-c908d03a4eb8</webElementGuid>
+      <webElementGuid>d6211a32-e145-410d-9537-77e82b09b343</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -26,6 +27,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>xpath1674658486391</value>
-      <webElementGuid>d9c387a1-e089-4313-bc46-670ee2e35501</webElementGuid>
+      <webElementGuid>7c62885b-0b93-471f-b92a-6c900ead4bf9</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

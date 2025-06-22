@@ -22,47 +22,47 @@ import internal.GlobalVariable
 
 public class test {
 	static void main(String[] args) {
-WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
-if(WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Out Of Stock Items'),5)) {
-	CustomKeywords.'cart.removeItem.deleteOutStockFromCart'()
-	//cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
-}
-//CustomKeywords.'cart.removeItem.clearCart'()
-//WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog - Select All Categories and Scrolling'), [:], FailureHandling.STOP_ON_FAILURE)
-float cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()//WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'), 10).size()
-
-//KeywordUtil.logInfo(cartSubTotal.toString())
-if (cartSubTotal == 0 || !(cartSubTotal>=GlobalVariable.minimum && cartSubTotal<=GlobalVariable.maximum)) {
-    //CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromRandomCategory'()
-	while(!(cartSubTotal>=GlobalVariable.minimum && cartSubTotal<=GlobalVariable.maximum))	{
-		//switch(cartSubTotal){
-			if(cartSubTotal > GlobalVariable.maximum) { 
-				CustomKeywords.'cart.removeItem.deleteItemFromCart'()
-				cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
-			}else if (cartSubTotal < GlobalVariable.minimum) {
-				CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategoryInTarget'()
-				cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
-			}else if(WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Out Of Stock Items'),5)) {
-				CustomKeywords.'cart.removeItem.deleteOutStockFromCart'()
-				cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
-			}else{ 
-				CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategoryInTarget'()
-				cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
-			}
-	//}
-	}
-}
-
-WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
-
-
-
-WebUI.verifyElementVisible(findTestObject('Check Out/Apply Discount Button'))
-
-WebUI.verifyElementVisible(findTestObject('Check Out/Cart Calculation'))
-
-WebUI.verifyElementVisible(findTestObject('Check Out/Proceed To Checkout Button'))
-
-WebUI.verifyElementVisible(findTestObject('Check Out/Shopping Cart head'))
+		WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
+		if(WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Out Of Stock Items'),5)) {
+			CustomKeywords.'cart.removeItem.deleteOutStockFromCart'()
+			//cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
 		}
+		//CustomKeywords.'cart.removeItem.clearCart'()
+		//WebUI.callTestCase(findTestCase('FE/menu Items/Select Catalog - Select All Categories and Scrolling'), [:], FailureHandling.STOP_ON_FAILURE)
+		float cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()//WebUI.findWebElements(findTestObject('Object Repository/Cart/Cart count'), 10).size()
+
+		//KeywordUtil.logInfo(cartSubTotal.toString())
+		if (cartSubTotal == 0 || !(cartSubTotal>=GlobalVariable.minimum && cartSubTotal<=GlobalVariable.maximum)) {
+			//CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromRandomCategory'()
+			while(!(cartSubTotal>=GlobalVariable.minimum && cartSubTotal<=GlobalVariable.maximum))	{
+				//switch(cartSubTotal){
+				if(cartSubTotal > GlobalVariable.maximum) {
+					CustomKeywords.'cart.removeItem.deleteItemFromCart'()
+					cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
+				}else if (cartSubTotal < GlobalVariable.minimum) {
+					CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategoryInTarget'()
+					cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
+				}else if(WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Out Of Stock Items'),5)) {
+					CustomKeywords.'cart.removeItem.deleteOutStockFromCart'()
+					cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
+				}else{
+					CustomKeywords.'products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategoryInTarget'()
+					cartSubTotal = CustomKeywords.'cart.cartItems.getCartSubtotal'()
+				}
+				//}
+			}
+		}
+
+		WebUI.callTestCase(findTestCase('FE/Cart/General Actions/View Cart'), [:], FailureHandling.STOP_ON_FAILURE)
+
+
+
+		WebUI.verifyElementVisible(findTestObject('Check Out/Apply Discount Button'))
+
+		WebUI.verifyElementVisible(findTestObject('Check Out/Cart Calculation'))
+
+		WebUI.verifyElementVisible(findTestObject('Check Out/Proceed To Checkout Button'))
+
+		WebUI.verifyElementVisible(findTestObject('Check Out/Shopping Cart head'))
+	}
 }
