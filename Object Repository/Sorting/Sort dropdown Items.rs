@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Forget password context</name>
+   <name>Sort dropdown Items</name>
    <tag></tag>
-   <elementGuidId>0c72c9df-0f8b-4b26-addf-911932614b47</elementGuidId>
+   <elementGuidId>241074a0-2628-4cc6-b27d-c3c6712ac433</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[starts-with(@class,'styles_forgotPassword_')]/a[contains(@href,'/forgot-password')]</value>
+         <value>//div[starts-with(@class,'styles_sortContainer__')]//div[@class='general-dropdown__menu display']/ul/*[@class='menu__item']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

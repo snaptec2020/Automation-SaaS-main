@@ -167,6 +167,11 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
+    public static Object MID_Token
+     
+    /**
+     * <p></p>
+     */
     public static Object FE_URL
      
     /**
@@ -321,6 +326,7 @@ public class GlobalVariable {
             launchingConfig = selectedVariables['launchingConfig']
             isFirstTime = selectedVariables['isFirstTime']
             currentURL = selectedVariables['currentURL']
+            MID_Token = selectedVariables['MID_Token']
             FE_URL = selectedVariables['FE_URL']
             FE_Tel = selectedVariables['FE_Tel']
             BE_UserName = selectedVariables['BE_UserName']

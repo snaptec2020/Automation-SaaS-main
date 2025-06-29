@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Select random Catalog</name>
+   <name>Filters Select random Option</name>
    <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
-   <testCaseGuid>88ef6e36-5212-4b8c-975c-7e2904357055</testCaseGuid>
+   <testCaseGuid>81ff58ea-febe-4422-96b7-63782103b22c</testCaseGuid>
 </TestCaseEntity>

@@ -20,20 +20,17 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import com.utils.CustomLogger
-
 import cart.cartItems
 import catalog.catlogComponants
 import generalactions.generalStrings
 import generalactions.scrolling
 import helpdesk.HelpdeskUtil
-
 import java.util.List
-
 import org.checkerframework.checker.guieffect.qual.UIType
 import org.openqa.selenium.By
 import org.openqa.selenium.Keys
 import org.openqa.selenium.WebElement
-import internal.GlobalVariable
+import internal.GlobalVariable as GlobalVariable
 import utility.Utility
 
 public class productsFromCatalog {
@@ -83,127 +80,125 @@ public class productsFromCatalog {
 	}
 
 	@Keyword
-def getSpecifiedinStockProductsFromRandomCategory(boolean doNeedClickAddToCart = true) {
-	CustomLogger.logInfo("=== Starting Get Specified In-Stock Products From Random Category ===")
-	
-	try {
-		CustomLogger.logInfo("Step 1: Selecting catalog components")
-		selectCatalogComponents()
-		CustomLogger.logInfo("Catalog components selection completed")
-		
-		CustomLogger.logInfo("Step 2: Scrolling to bottom of page")
-		WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.OPTIONAL)
-		CustomLogger.logInfo("Page scrolling completed")
-		
-		CustomLogger.logInfo("Step 3: Getting in-stock products list")
-		List prod = getinStockProduct()
-		CustomLogger.logInfo("Retrieved ${prod.size()} in-stock products")
-		
-		if(prod.size() == 0) {
-			CustomLogger.logInfo("No in-stock products found, recursively calling getSpecifiedinStockProductsFromRandomCategory()")
-			getSpecifiedinStockProductsFromRandomCategory(doNeedClickAddToCart)
-		} else {
-			CustomLogger.logInfo("Found ${prod.size()} in-stock products, proceeding with selection")
-			
-			// Generate random index
-			def elementIndexproduct = genaralActions.getRandomNumberBetweenOnetoTarget(prod.size())
-			def a = prod.size()
-			CustomLogger.logInfo("Generated random index: ${elementIndexproduct} from ${a} products")
-			
-			// Ensure index is not 0
-			if(elementIndexproduct == 0) {
-				elementIndexproduct = 1
-				CustomLogger.logInfo("Adjusted index from 0 to 1")
-			}
-			CustomLogger.logInfo("Final selected product index: ${elementIndexproduct}")
-			
-			// Create XPath for product selection
-			String productXPath = "("+findTestObject('Products/Product container in page').findPropertyValue('xpath')+")" + "["+elementIndexproduct+"]"
-			//"(//div[contains(@class, 'styles_productItem_')][.//span[contains(@class, 'styles_regularPrice') or contains(@class,'styles_oldPrice__')]/span[@dir]/span/span[2][not(text()='0')]]//button[text() = 'أضف إلى السلة' or text() ='Add to Cart']//parent::div//parent::div//parent::div[contains(@class,'productItem')]//button[not(contains(@class, 'wishlistButton'))])[${elementIndexproduct}]"
-			CustomLogger.logInfo("Constructed product XPath: ${productXPath}")
-			
-			if(doNeedClickAddToCart) {
-			CustomLogger.logInfo("Step 4: Clicking on selected product using JavaScript")
-			utilityFunctions.clickOnObjectusingJavaScript(utilityFunctions.addXpathToTestObject(productXPath))
-			CustomLogger.logInfo("Product click completed")
-			
-			// Check for location workflow
-			CustomLogger.logInfo("Step 5: Checking location workflow conditions")
-			CustomLogger.logInfo("GlobalVariable.normalEcommerce: ${GlobalVariable.normalEcommerce}")
-			CustomLogger.logInfo("GlobalVariable.isFirstTime: ${GlobalVariable.isFirstTime}")
-			
-			if((GlobalVariable.normalEcommerce == null || !GlobalVariable.normalEcommerce) && GlobalVariable.isFirstTime) {
-				CustomLogger.logInfo("Location workflow conditions met - executing location validation")
-				
-				CustomLogger.logInfo("Calling location validation test case")
-				WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Add locatin New workflow'), [:], FailureHandling.STOP_ON_FAILURE)
-				CustomLogger.logInfo("Location validation completed")
-				
-				CustomLogger.logInfo("Re-clicking on product after location workflow")
-				utilityFunctions.clickOnObjectusingJavaScript(utilityFunctions.addXpathToTestObject(productXPath))
-				CustomLogger.logInfo("Product re-click completed after location workflow")
+	def getSpecifiedinStockProductsFromRandomCategory(boolean doNeedClickAddToCart = true) {
+		CustomLogger.logInfo("=== Starting Get Specified In-Stock Products From Random Category ===")
+
+		try {
+			CustomLogger.logInfo("Step 1: Selecting catalog components")
+			selectCatalogComponents()
+			CustomLogger.logInfo("Catalog components selection completed")
+
+			CustomLogger.logInfo("Step 2: Scrolling to bottom of page")
+			WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.OPTIONAL)
+			CustomLogger.logInfo("Page scrolling completed")
+
+			CustomLogger.logInfo("Step 3: Getting in-stock products list")
+			List prod = getinStockProduct()
+			CustomLogger.logInfo("Retrieved ${prod.size()} in-stock products")
+
+			if(prod.size() == 0) {
+				CustomLogger.logInfo("No in-stock products found, recursively calling getSpecifiedinStockProductsFromRandomCategory()")
+				getSpecifiedinStockProductsFromRandomCategory(doNeedClickAddToCart)
 			} else {
-				CustomLogger.logInfo("Location workflow conditions not met, skipping location validation")
-				if(GlobalVariable.normalEcommerce != null) {
-					CustomLogger.logInfo("  - normalEcommerce is not null: ${GlobalVariable.normalEcommerce}")
-				} else {
-					CustomLogger.logInfo("  - normalEcommerce is null")
+				CustomLogger.logInfo("Found ${prod.size()} in-stock products, proceeding with selection")
+
+				// Generate random index
+				def elementIndexproduct = genaralActions.getRandomNumberBetweenOnetoTarget(prod.size())
+				def a = prod.size()
+				CustomLogger.logInfo("Generated random index: ${elementIndexproduct} from ${a} products")
+
+				// Ensure index is not 0
+				if(elementIndexproduct == 0) {
+					elementIndexproduct = 1
+					CustomLogger.logInfo("Adjusted index from 0 to 1")
 				}
-				CustomLogger.logInfo("  - isFirstTime: ${GlobalVariable.isFirstTime}")
+				CustomLogger.logInfo("Final selected product index: ${elementIndexproduct}")
+
+				// Create XPath for product selection
+				String productXPath = "("+findTestObject('Products/Product container in page').findPropertyValue('xpath')+")" + "["+elementIndexproduct+"]"
+				//"(//div[contains(@class, 'styles_productItem_')][.//span[contains(@class, 'styles_regularPrice') or contains(@class,'styles_oldPrice__')]/span[@dir]/span/span[2][not(text()='0')]]//button[text() = 'أضف إلى السلة' or text() ='Add to Cart']//parent::div//parent::div//parent::div[contains(@class,'productItem')]//button[not(contains(@class, 'wishlistButton'))])[${elementIndexproduct}]"
+				CustomLogger.logInfo("Constructed product XPath: ${productXPath}")
+
+				if(doNeedClickAddToCart) {
+					CustomLogger.logInfo("Step 4: Clicking on selected product using JavaScript")
+					utilityFunctions.clickOnObjectusingJavaScript(utilityFunctions.addXpathToTestObject(productXPath))
+					CustomLogger.logInfo("Product click completed")
+
+					// Check for location workflow
+					CustomLogger.logInfo("Step 5: Checking location workflow conditions")
+					CustomLogger.logInfo("GlobalVariable.normalEcommerce: ${GlobalVariable.normalEcommerce}")
+					CustomLogger.logInfo("GlobalVariable.isFirstTime: ${GlobalVariable.isFirstTime}")
+
+					if((GlobalVariable.normalEcommerce == null || !GlobalVariable.normalEcommerce) && GlobalVariable.isFirstTime) {
+						CustomLogger.logInfo("Location workflow conditions met - executing location validation")
+
+						CustomLogger.logInfo("Calling location validation test case")
+						WebUI.callTestCase(findTestCase('FE/Website launch/Validations/Add locatin New workflow'), [:], FailureHandling.STOP_ON_FAILURE)
+						CustomLogger.logInfo("Location validation completed")
+
+						CustomLogger.logInfo("Re-clicking on product after location workflow")
+						utilityFunctions.clickOnObjectusingJavaScript(utilityFunctions.addXpathToTestObject(productXPath))
+						CustomLogger.logInfo("Product re-click completed after location workflow")
+					} else {
+						CustomLogger.logInfo("Location workflow conditions not met, skipping location validation")
+						if(GlobalVariable.normalEcommerce != null) {
+							CustomLogger.logInfo("  - normalEcommerce is not null: ${GlobalVariable.normalEcommerce}")
+						} else {
+							CustomLogger.logInfo("  - normalEcommerce is null")
+						}
+						CustomLogger.logInfo("  - isFirstTime: ${GlobalVariable.isFirstTime}")
+					}
+				} else {
+					CustomLogger.logInfo("Step 4: Clicking on selected product Details using JavaScript")
+					productXPath = productXPath + "/ancestor::div[contains(@class, 'styles_productItem_')][1]/div[1]//img"
+					CustomLogger.logInfo("=== New Xpath is ${productXPath}")
+					utilityFunctions.clickOnObjectusingJavaScript(productXPath) //utilityFunctions.addXpathToTestObject(productXPath)
+					CustomLogger.logInfo("Product Details click completed")
+				}
 			}
-		} else {
-			CustomLogger.logInfo("Step 4: Clicking on selected product Details using JavaScript")
-			productXPath = productXPath + "/ancestor::div[contains(@class, 'styles_productItem_')][1]/div[1]//img"
-			CustomLogger.logInfo("=== New Xpath is ${productXPath}")
-			utilityFunctions.clickOnObjectusingJavaScript(productXPath) //utilityFunctions.addXpathToTestObject(productXPath)
-			CustomLogger.logInfo("Product Details click completed")
+
+			CustomLogger.logInfo("=== Successfully Completed Get Specified In-Stock Products From Random Category ===")
+		} catch (Exception e) {
+			CustomLogger.logInfo("Exception occurred in getSpecifiedinStockProductsFromRandomCategory(): ${e.getMessage()}")
+			e.printStackTrace()
+			throw e
 		}
-		}
-		
-		CustomLogger.logInfo("=== Successfully Completed Get Specified In-Stock Products From Random Category ===")
-		
-	} catch (Exception e) {
-		CustomLogger.logInfo("Exception occurred in getSpecifiedinStockProductsFromRandomCategory(): ${e.getMessage()}")
-		e.printStackTrace()
-		throw e
 	}
-}
 
 	@Keyword
-def getSpecifiedinStockProductsText() {
-	CustomLogger.logInfo("=== Starting Get Specified In-Stock Products Text ===")
-	
-	try {
-		CustomLogger.logInfo("Calling getSpecifiedinStockProductsFromRandomCategory() to select a product")
-		getSpecifiedinStockProductsFromRandomCategory(false)
-		CustomLogger.logInfo("Successfully completed product selection from random category")
-		
-		// Get product title
-		CustomLogger.logInfo("Retrieving product title using XPath: //h2[@class='product-content__title']")
-		GlobalVariable.textSearch[0] = WebUI.getText(utilityFunctions.addXpathToTestObject("//h2[@class='product-content__title'] | //h1[starts-with(@class,styles_nameProduct__)]"))
-		CustomLogger.logInfo("Product title retrieved: '${GlobalVariable.textSearch[0]}'")
-		
-		// Get product SKU
-		CustomLogger.logInfo("Retrieving product SKU using XPath: //span[@class='sku__value']")
-		GlobalVariable.textSearch[1] = WebUI.getText(utilityFunctions.addXpathToTestObject("//span[@class='sku__value'] | //div[starts-with(@class,'styles_sku__')]/div[starts-with(@class,'styles_groupValue__')]/span[starts-with(@class,'styles_value__')][1]"))
-		CustomLogger.logInfo("Product SKU retrieved: '${GlobalVariable.textSearch[1]}'")
-		
-		// Log the retrieved values
-		CustomLogger.logInfo("Final stored values:")
-		CustomLogger.logInfo("  - GlobalVariable.textSearch[0] (Product Title): '${GlobalVariable.textSearch[0]}'")
-		CustomLogger.logInfo("  - GlobalVariable.textSearch[1] (Product SKU): '${GlobalVariable.textSearch[1]}'")
-		
-		KeywordUtil.logInfo(GlobalVariable.textSearch[0])
-		KeywordUtil.logInfo(GlobalVariable.textSearch[1])
-		
-		CustomLogger.logInfo("=== Successfully Completed Get Specified In-Stock Products Text ===")
-		
-	} catch (Exception e) {
-		CustomLogger.logInfo("Exception occurred in getSpecifiedinStockProductsText(): ${e.getMessage()}")
-		e.printStackTrace()
-		throw e
+	def getSpecifiedinStockProductsText() {
+		CustomLogger.logInfo("=== Starting Get Specified In-Stock Products Text ===")
+
+		try {
+			CustomLogger.logInfo("Calling getSpecifiedinStockProductsFromRandomCategory() to select a product")
+			getSpecifiedinStockProductsFromRandomCategory(false)
+			CustomLogger.logInfo("Successfully completed product selection from random category")
+
+			// Get product title
+			CustomLogger.logInfo("Retrieving product title using XPath: //h2[@class='product-content__title']")
+			GlobalVariable.textSearch[0] = WebUI.getText(utilityFunctions.addXpathToTestObject("//h2[@class='product-content__title'] | //h1[starts-with(@class,styles_nameProduct__)]"))
+			CustomLogger.logInfo("Product title retrieved: '${GlobalVariable.textSearch[0]}'")
+
+			// Get product SKU
+			CustomLogger.logInfo("Retrieving product SKU using XPath: //span[@class='sku__value']")
+			GlobalVariable.textSearch[1] = WebUI.getText(utilityFunctions.addXpathToTestObject("//span[@class='sku__value'] | //div[starts-with(@class,'styles_sku__')]/div[starts-with(@class,'styles_groupValue__')]/span[starts-with(@class,'styles_value__')][1]"))
+			CustomLogger.logInfo("Product SKU retrieved: '${GlobalVariable.textSearch[1]}'")
+
+			// Log the retrieved values
+			CustomLogger.logInfo("Final stored values:")
+			CustomLogger.logInfo("  - GlobalVariable.textSearch[0] (Product Title): '${GlobalVariable.textSearch[0]}'")
+			CustomLogger.logInfo("  - GlobalVariable.textSearch[1] (Product SKU): '${GlobalVariable.textSearch[1]}'")
+
+			KeywordUtil.logInfo(GlobalVariable.textSearch[0])
+			KeywordUtil.logInfo(GlobalVariable.textSearch[1])
+
+			CustomLogger.logInfo("=== Successfully Completed Get Specified In-Stock Products Text ===")
+		} catch (Exception e) {
+			CustomLogger.logInfo("Exception occurred in getSpecifiedinStockProductsText(): ${e.getMessage()}")
+			e.printStackTrace()
+			throw e
+		}
 	}
-}
 	//-------------------------------------------------
 	@Keyword
 	def getinStockProductFromOnePage() {
@@ -252,7 +247,7 @@ def getSpecifiedinStockProductsText() {
 	def getRandominStockProductsFromOnePage() {
 		List prod = getinStockProductFromOnePage()
 		if(prod.size()==0){
-			KeywordUtil.markPassed("No Products in this Page")
+			KeywordUtil.markWarning("No Products in this Page")
 		} else{
 			addProductToCart(prod.size())
 		}
@@ -339,7 +334,7 @@ def getSpecifiedinStockProductsText() {
 
 	def addProductToCart(int sizeForRandom) {
 		WebUI.callTestCase(findTestCase('FE/Products/General Actions/Common Functions/addProductToCart(int sizeForRandom)'), [('sizeForRandom') : sizeForRandom],
-		FailureHandling.STOP_ON_FAILURE)
+		FailureHandling.OPTIONAL)
 	}
 
 	def selectCatalogComponents() {

@@ -15,9 +15,12 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import utility.LocalStorageUtility as LocalStorageUtility
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('Test Cases/BE/MID/General Test Cases/Sign In General Steps'), [:], FailureHandling.STOP_ON_FAILURE)
+if (!(CustomKeywords.'utility.localStorageUtility.isLocalStorageValueBasedOnKeyExists'('BROWSER_PERSISTENCE__signin_token'))) {
+    WebUI.callTestCase(findTestCase('Test Cases/BE/MID/SignIn - SingOut/Sucess SignIn'), [:], FailureHandling.STOP_ON_FAILURE)
+}
 
 WebUI.click(findTestObject('BE/MID/Sign Out/Dropdown to logout'))
 
@@ -26,4 +29,3 @@ WebUI.click(findTestObject('BE/MID/Sign Out/Signout button'))
 WebUI.click(findTestObject('BE/MID/Sign Out/Confirm Logout'))
 
 WebUI.verifyElementVisible(findTestObject('BE/MID/Sign In/button_Sign-In'))
-

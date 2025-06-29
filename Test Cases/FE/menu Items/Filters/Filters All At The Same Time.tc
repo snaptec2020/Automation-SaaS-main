@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Select random Catalog</name>
+   <name>Filters All At The Same Time</name>
    <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
-   <testCaseGuid>88ef6e36-5212-4b8c-975c-7e2904357055</testCaseGuid>
+   <testCaseGuid>78dc06be-cda8-4112-93c3-e1c307e63cba</testCaseGuid>
 </TestCaseEntity>

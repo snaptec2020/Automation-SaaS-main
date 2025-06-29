@@ -33,16 +33,16 @@ try {
     }
     
 
-    for (int elementIndex = 0; elementIndex <= (Categories.size() - 1); elementIndex++) {
+    for (int elementIndex = 0; elementIndex <= (Categories.size()); elementIndex++) {
 
 //        if ((elementIndex == 0) & (GlobalVariable.RunningMode > 1)) {
 //            WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 //
 //            CustomKeywords.'products.productsFromCatalog.getRandominStockProductsFromOnePage'()
 //        }
-        
+        if(elementIndex !=0) {
         CustomKeywords.'catalog.catlogComponants.getSpecifiedCatalogElement'(elementIndex, Categories)
-
+        }
         WebUI.callTestCase(findTestCase('FE/Scrolling/scrollingAtTheBottom'), [:], FailureHandling.OPTIONAL)
 		
 		List <WebElement> products = WebUI.findWebElements(findTestObject('Object Repository/Products/Product container in page'),2)

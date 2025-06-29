@@ -102,4 +102,11 @@
       <testCaseId>Test Cases/FE/Multi Sites/Multisites New way</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
+   <testCaseLink>
+      <guid>1c405682-fb67-45bc-9dc8-8ef2e9f6a874</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/FE/Sign in TC/validations/login by Eamil/Forget password</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
 </TestSuiteEntity>

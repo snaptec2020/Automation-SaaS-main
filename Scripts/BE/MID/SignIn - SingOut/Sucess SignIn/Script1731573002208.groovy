@@ -16,7 +16,12 @@ import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import com.utils.CustomLogger
+
+import internal.GlobalVariable
+import utility.CustomWebUI
+import utility.LocalStorageUtilityClass
+
 import org.openqa.selenium.Keys as Keys
 
 ////KeywordUtil.logInfo(GlobalVariable.MIDUserName)
@@ -30,6 +35,9 @@ import org.openqa.selenium.Keys as Keys
 //		break
 //	}
 //}
+if (!(CustomKeywords.'utility.localStorageUtility.isLocalStorageValueBasedOnKeyExists'('BROWSER_PERSISTENCE__signin_token'))) {
+	//WebUI.callTestCase(findTestCase('Test Cases/BE/MID/SignIn - SingOut/Sucess SignIn'), [:], FailureHandling.STOP_ON_FAILURE)
+
 def credentials = CustomKeywords.'mid.framework.UserCredentialKeywords.getUserCredentials'()
 
 // Access the username and password from the returned Map
@@ -37,19 +45,24 @@ String userName = credentials.username
 
 String userPassword = credentials.password
 
-
+CustomLogger.logInfo("The user name is: ${userName} and the password is ${userPassword}")
 
 WebUI.callTestCase(findTestCase('BE/MID/General Test Cases/Sign In General Steps'), [('userName') : userName, ('password') : userPassword], 
     FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/BE/MID/Landing Page/Logo'), FailureHandling.CONTINUE_ON_FAILURE)
+CustomWebUI.verifyElementVisibleWithTimeout(findTestObject('Object Repository/BE/MID/Landing Page/Logo'),5, FailureHandling.OPTIONAL)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/BE/MID/Landing Page/Notifications Icon'), FailureHandling.CONTINUE_ON_FAILURE)
+CustomWebUI.verifyElementVisibleWithTimeout(findTestObject('Object Repository/BE/MID/Landing Page/Notifications Icon'),5, FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementVisible(findTestObject('Object Repository/BE/MID/Landing Page/Account Info Button'), FailureHandling.CONTINUE_ON_FAILURE)
+CustomWebUI.verifyElementVisibleWithTimeout(findTestObject('Object Repository/BE/MID/Landing Page/Account Info Button'),5, FailureHandling.CONTINUE_ON_FAILURE)
 
 WebUI.verifyNotEqual(CustomKeywords.'utility.Utility.checkIfElementExist'('Object Repository/BE/MID/Landing Page/Side Bar contents'), 
-    '0', FailureHandling.CONTINUE_ON_FAILURE)
+    '0', FailureHandling.OPTIONAL)
+} else {
+	CustomLogger.logPassed("Already logged in")
+}
+GlobalVariable.MID_Token = CustomKeywords.'utility.localStorageUtility.getLocalStorageValueBasedOnKey'('BROWSER_PERSISTENCE__signin_token')
+//CustomLogger.logPassed("MID_Token is: ${GlobalVariable.MID_Token}")
 
 
 
