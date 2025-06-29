@@ -23,6 +23,9 @@ import com.utils.CustomLogger
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 
 import internal.GlobalVariable
+import utility.LocalStorageUtilityClass
+import utility.browserConsole
+
 //import io.netty.util.concurrent.GlobalEventExecutor
 //import sun.security.util.KeyUtil
 
@@ -119,6 +122,7 @@ class TestCaseAndSuiteListener {
 	List storesToVisit = []
 	TestObject tb = new TestObject()
 	def multiwebsiteDrop
+	def browserConsole = new browserConsole()
 	//File finalReport
 	//boolean isItFirstSite = true
 	@BeforeTestCase
@@ -151,7 +155,9 @@ class TestCaseAndSuiteListener {
 		//			WebUI.takeFullPageScreenshot("./ScreenAfterTestcase_${testCaseContext.getTestCaseId()}.png",FailureHandling.CONTINUE_ON_FAILURE)
 		//			//WebUI.closeBrowser()
 		//		}
-		//WebUI.closeBrowser()
+
+		browserConsole.checkBrowserConsoleLogs()
+		WebUI.closeBrowser()
 		GlobalVariable.isFirstTime = true
 		//		WebUI.comment("done")
 	}
@@ -164,7 +170,7 @@ class TestCaseAndSuiteListener {
 	}
 	@AfterTestSuite
 	def sampleAfterTestSuite(TestSuiteContext testSuiteContext) {
-		//newReportGenerator()
+		newReportGenerator()
 		//generateReport(testSuiteContext)
 		CustomLogger.logError("")
 		//KeywordUtil.logInfo(testSuiteContext.testSuiteId.toString())
@@ -184,12 +190,12 @@ class TestCaseAndSuiteListener {
 		//KatalonExportReportProvider kerp = new KatalonExportReportProvider()
 		String reportFolder = RunConfiguration.getReportFolder();
 		String projectDir = RunConfiguration.getProjectDir();
-		def store = "test"
 		File reportFolderFile = new File(reportFolder);
-		File folderTemp = Files.createTempDirectory(reportFolderFile.getName()+"_${store}").toFile();
-		FileUtils.copyDirectory(reportFolderFile, folderTemp);
-		String folderTempString = folderTemp.getAbsolutePath();
-		exportTestSuite(folderTemp, projectDir, folderTempString, "HTML")
+		//File folderTemp = Files.createTempDirectory(reportFolderFile.getName()).toFile();
+		File outputFile = new File(reportFolderFile, "${reportFolderFile.getName()}_generatedbyScript.html");
+		//FileUtils.copyDirectory(reportFolderFile, folderTemp);
+		//String folderTempString = folderTemp.getAbsolutePath();
+		exportTestSuite(outputFile, projectDir, reportFolder, "HTML")
 	}
 	public File exportTestSuite(File exportLocation, String projectDir, String reportId, String formatType)
 	throws IOException, URISyntaxException, XMLParserException, XMLStreamException {

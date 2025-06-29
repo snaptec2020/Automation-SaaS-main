@@ -8,7 +8,6 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
-import com.kms.katalon.core.testcase.Variable as Variable
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
@@ -18,13 +17,6 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.setText(findTestObject('Object Repository/BE/MID/Sign In/User Name'), userName)
+WebUI.callTestCase(findTestCase('FE/menu Items/Filters/Collection cases'), [('FILTER_OPTION_MODE') : 'OneByOne', ('MAX_RETRY_ATTEMPTS') : 5
+        , ('DEFAULT_TIMEOUT') : 3, ('ELEMENT_WAIT_TIMEOUT') : 2], FailureHandling.STOP_ON_FAILURE)
 
-//WebUI.setEncryptedText(findTestObject('Object Repository/BE/MID/Sign In/Password'), '9NLz+4tGZcQ=')
-WebUI.setText(findTestObject('Object Repository/BE/MID/Sign In/Password'), password)
-
-WebUI.delay(2)
-
-WebUI.click(findTestObject('Object Repository/BE/MID/Sign In/button_Sign-In'))
-
-CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()

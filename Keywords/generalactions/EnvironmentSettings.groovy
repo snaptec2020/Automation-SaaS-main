@@ -20,8 +20,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import com.utils.CustomLogger
-
-import internal.GlobalVariable
+import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.webui.driver.DriverFactory
 import org.openqa.selenium.WebDriver
 
@@ -42,7 +41,7 @@ public class EnvironmentSettings {
 
 		if (webUIPreferences != null) {
 			if (webUIPreferences.get('mobileEmulation') != null ||
-			(webUIPreferences.get('platformName')?.toLowerCase() in ['android', 'ios'])) {
+					(webUIPreferences.get('platformName')?.toLowerCase() in ['android', 'ios'])) {
 				return '2'
 			}
 		}

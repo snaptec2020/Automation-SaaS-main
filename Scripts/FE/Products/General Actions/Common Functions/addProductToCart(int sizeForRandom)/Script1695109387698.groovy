@@ -38,7 +38,7 @@ if((GlobalVariable.normalEcommerce == null || !GlobalVariable.normalEcommerce) &
 }
 //WebElement element = WebUiCommonHelper.findWebElement(tb,30)
 //WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(element))
-WebUI.delay(5)
+WebUI.delay(2)
 
 //checkOnAddToStoreClickable(currentURL)
 

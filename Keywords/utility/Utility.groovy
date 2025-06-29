@@ -32,7 +32,7 @@ import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import com.utils.CustomLogger
 
-import internal.GlobalVariable
+import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.webui.driver.DriverFactory
 
@@ -69,28 +69,28 @@ public class Utility {
 	@Keyword
 	def clickOnObjectusingJavaScript(TestObject testObject) {
 		try {
-		WebUI.waitForElementClickable(testObject, 0, FailureHandling.OPTIONAL)
-		WebElement element = WebUiCommonHelper.findWebElement(testObject,10)
-				
-		if (element != null) {
-			CustomLogger.logInfo("Element found, proceeding with JavaScript click")
-			// First scroll to element
-			WebUI.executeJavaScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", Arrays.asList(element))
-			
-			// Wait a moment for scroll to complete
-			Thread.sleep(500)
-			// Direct click without setTimeout
-			WebUI.executeJavaScript("arguments[0].click();", Arrays.asList(element))
-			CustomLogger.logInfo("JavaScript click executed successfully")
-			generalActions.waiteSpinnerToHide()
-		} else {
-            CustomLogger.logInfo("Element not found for JavaScript click")
-            throw new Exception("Element not found")
-		}
+			WebUI.waitForElementClickable(testObject, 0, FailureHandling.OPTIONAL)
+			WebElement element = WebUiCommonHelper.findWebElement(testObject,10)
+
+			if (element != null) {
+				CustomLogger.logInfo("Element found, proceeding with JavaScript click")
+				// First scroll to element
+				WebUI.executeJavaScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", Arrays.asList(element))
+
+				// Wait a moment for scroll to complete
+				Thread.sleep(500)
+				// Direct click without setTimeout
+				WebUI.executeJavaScript("arguments[0].click();", Arrays.asList(element))
+				CustomLogger.logInfo("JavaScript click executed successfully")
+				generalActions.waiteSpinnerToHide()
+			} else {
+				CustomLogger.logInfo("Element not found for JavaScript click")
+				throw new Exception("Element not found")
+			}
 		} catch (Exception e) {
-        CustomLogger.logInfo("Error in JavaScript click: ${e.getMessage()}")
-        throw e
-    }
+			CustomLogger.logInfo("Error in JavaScript click: ${e.getMessage()}")
+			throw e
+		}
 	}
 	@Keyword
 	def clickOnObjectusingJavaScript(String xpath) {
@@ -119,7 +119,7 @@ public class Utility {
 	def clickOnObjectusingJavaScriptEnhanced(TestObject testObject) {
 		WebUI.waitForElementClickable(testObject, 0, FailureHandling.OPTIONAL)
 		WebElement element = WebUiCommonHelper.findWebElement(testObject, 10)
-		
+
 		if (element != null) {
 			// Scroll into view and add visual feedback
 			WebUI.executeJavaScript("""
@@ -137,7 +137,7 @@ public class Utility {
                 arguments[0].click();
             }, 300);
         """, Arrays.asList(element))
-			
+
 			CustomLogger.logInfo("Clicked element with enhanced JavaScript method")
 		} else {
 			CustomLogger.logInfo("Element not found for enhanced JavaScript click")

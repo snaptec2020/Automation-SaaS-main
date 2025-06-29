@@ -4,6 +4,7 @@
    <name>checkOnAddToStoreClickable(def currentURL)</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>2af59ac5-6c22-4173-b981-592765ed5cca</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>

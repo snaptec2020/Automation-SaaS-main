@@ -48,6 +48,12 @@ switch (GlobalVariable.launchingConfig.get('Mode')) {
 		WebUI.maximizeWindow(FailureHandling.CONTINUE_ON_FAILURE)
         if (GlobalVariable.launchingConfig.get('BEMode') == 'MID') {
                 WebUI.navigateToUrl(GlobalVariable.MID_URL.get(GlobalVariable.launchingConfig.get('SiteUrl')))
+				if(GlobalVariable.MID_Token != '' || GlobalVariable.MID_Token != '[:]') {
+					def localStorageValue = GlobalVariable.MID_Token.toString().replace("\\", "\\\\").replace("\"", "\\\"")
+					CustomKeywords.'utility.localStorageUtility.setLocalStorageValue'('BROWSER_PERSISTENCE__signin_token',localStorageValue)
+					WebUI.refresh()
+					CustomKeywords.'generalactions.generalActions.waiteSpinnerToHide'()
+				}
         }
 		break
 }

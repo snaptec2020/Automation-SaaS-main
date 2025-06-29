@@ -23,11 +23,9 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import com.utils.CustomLogger
-
-import CustomKeywords
-import generalactions.generalActions
-import internal.GlobalVariable
+import com.utils.CustomLogger as CustomLogger
+import generalactions.generalActions as generalActions
+import internal.GlobalVariable as GlobalVariable
 import utility.Utility
 
 public class catlogComponants {
@@ -63,7 +61,7 @@ public class catlogComponants {
 			case "2":WebUI.waitForElementClickable(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'), 0)
 				WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
 
-				Thread.sleep(1000);						
+				Thread.sleep(1000);
 				tb = utilityFunctions.addXpathToTestObject("("+findTestObject('Object Repository/Mega Menu/MenuSider on mobile').findPropertyValue('xpath') + ")["+elementIndex+"]")
 				break
 		}
@@ -78,7 +76,7 @@ public class catlogComponants {
 		utilityFunctions.moveToElement()
 		CustomLogger.logInfo("getSpecifiedCatalogElement finished")
 	}
-	
+
 	/**
 	 * Get total count of available catalog elements
 	 */
@@ -91,65 +89,65 @@ public class catlogComponants {
 					xpath = findTestObject('Object Repository/Mega Menu/Catalog list').findPropertyValue('xpath')
 					break
 				case "2":
-					// Open mobile menu first
+				// Open mobile menu first
 					WebUI.waitForElementClickable(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'), 0)
 					WebUI.click(findTestObject('Object Repository/Mega Menu/MegaMenuefromMobile'))
 					Thread.sleep(1000)
 					xpath = findTestObject('Object Repository/Mega Menu/MenuSider on mobile').findPropertyValue('xpath')
 					break
 			}
-			
+
 			// Count elements using JavaScript
 			def elementCount = WebUI.executeJavaScript("""
             var xpath = "${xpath.replace('xpath=', '')}";
             var result = document.evaluate(xpath, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
             return result.snapshotLength;
         """, [])
-			
+
 			return elementCount as Integer
 		} catch (Exception e) {
 			CustomLogger.logInfo("Error counting elements: ${e.getMessage()}")
 			return 0
 		}
 	}
-	
+
 	/**
 	 * Select and click a random catalog element
 	 */
 	@Keyword
 	public def getRandomCatalogElement(List catalogList = []) {
 		CustomLogger.logInfo("Getting random catalog element...")
-		
+
 		int totalElements = getCatalogElementCount()
 		if (totalElements <= 0) {
 			CustomLogger.logInfo("No catalog elements found")
 			return -1
 		}
-		
+
 		// Generate random index (0-based)
 		Random random = new Random()
 		int randomIndex = random.nextInt(totalElements)
-		
+
 		CustomLogger.logInfo("Total elements: ${totalElements}, Selected random index: ${randomIndex}")
-		
+
 		// Use your existing method
 		getSpecifiedCatalogElement(randomIndex, catalogList)
 		return randomIndex
 	}
-	
+
 	/**
 	 * Select random catalog element excluding specific ones
 	 */
 	@Keyword
 	public def getRandomCatalogElementExcluding(List<Integer> excludeIndices, List catalogList = []) {
 		CustomLogger.logInfo("Getting random catalog element with exclusions...")
-		
+
 		int totalElements = getCatalogElementCount()
 		if (totalElements <= 0) {
 			CustomLogger.logInfo("No catalog elements found")
 			return -1
 		}
-		
+
 		// Build list of available indices
 		List<Integer> availableIndices = []
 		for (int i = 0; i < totalElements; i++) {
@@ -157,18 +155,18 @@ public class catlogComponants {
 				availableIndices.add(i)
 			}
 		}
-		
+
 		if (availableIndices.isEmpty()) {
 			CustomLogger.logInfo("No available elements after exclusions")
 			return -1
 		}
-		
+
 		// Select random from available
 		Random random = new Random()
 		int selectedIndex = availableIndices[random.nextInt(availableIndices.size())]
-		
+
 		CustomLogger.logInfo("Available indices: ${availableIndices}, Selected: ${selectedIndex}")
-		
+
 		// Use your existing method
 		getSpecifiedCatalogElement(selectedIndex, catalogList)
 		return selectedIndex

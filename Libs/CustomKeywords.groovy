@@ -129,8 +129,10 @@ def static "products.productsFromCatalog.getSpecifiedinStockProducts"(
 }
 
 
-def static "products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategory"() {
-    (new products.productsFromCatalog()).getSpecifiedinStockProductsFromRandomCategory()
+def static "products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategory"(
+    	boolean doNeedClickAddToCart	) {
+    (new products.productsFromCatalog()).getSpecifiedinStockProductsFromRandomCategory(
+        	doNeedClickAddToCart)
 }
 
 
@@ -233,6 +235,11 @@ def static "products.productsFromCatalog.checkOnAddToStoreClickable"(
     	Object currentURL	) {
     (new products.productsFromCatalog()).checkOnAddToStoreClickable(
         	currentURL)
+}
+
+
+def static "products.productsFromCatalog.getSpecifiedinStockProductsFromRandomCategory"() {
+    (new products.productsFromCatalog()).getSpecifiedinStockProductsFromRandomCategory()
 }
 
 
@@ -739,6 +746,23 @@ def static "mid.framework.UserCredentialKeywords.getUserCredentials"() {
 }
 
 
+def static "mid.framework.UserCredentialKeywords.validateProfileExists"(
+    	String profileName	) {
+    (new mid.framework.UserCredentialKeywords()).validateProfileExists(
+        	profileName)
+}
+
+
+def static "mid.framework.UserCredentialKeywords.getAvailableProfiles"() {
+    (new mid.framework.UserCredentialKeywords()).getAvailableProfiles()
+}
+
+
+def static "mid.framework.UserCredentialKeywords.validateProfileExists"() {
+    (new mid.framework.UserCredentialKeywords()).validateProfileExists()
+}
+
+
 def static "utility.Utility.checkIfElementExist"(
     	Object objPath	) {
     (new utility.Utility()).checkIfElementExist(
@@ -772,6 +796,20 @@ def static "utility.Utility.findWebElements"(
 def static "utility.Utility.clickOnObjectusingJavaScript"(
     	TestObject testObject	) {
     (new utility.Utility()).clickOnObjectusingJavaScript(
+        	testObject)
+}
+
+
+def static "utility.Utility.clickOnObjectusingJavaScript"(
+    	String xpath	) {
+    (new utility.Utility()).clickOnObjectusingJavaScript(
+        	xpath)
+}
+
+
+def static "utility.Utility.clickOnObjectusingJavaScriptEnhanced"(
+    	TestObject testObject	) {
+    (new utility.Utility()).clickOnObjectusingJavaScriptEnhanced(
         	testObject)
 }
 
@@ -868,6 +906,55 @@ def static "generalactions.notificationsObject.refreshSignByPhone"(
     	Object testCasePath	) {
     (new generalactions.notificationsObject()).refreshSignByPhone(
         	testCasePath)
+}
+
+
+def static "utility.LocalStorageUtilityClass.getLocalStorageValueBasedOnKey"(
+    	Object keyToCheck	) {
+    (new utility.LocalStorageUtilityClass()).getLocalStorageValueBasedOnKey(
+        	keyToCheck)
+}
+
+
+def static "utility.LocalStorageUtilityClass.isLocalStorageValueBasedOnKeyExists"(
+    	Object keyToCheck	) {
+    (new utility.LocalStorageUtilityClass()).isLocalStorageValueBasedOnKeyExists(
+        	keyToCheck)
+}
+
+
+def static "utility.LocalStorageUtilityClass.checkMultipleKeys"(
+    	List keys	) {
+    (new utility.LocalStorageUtilityClass()).checkMultipleKeys(
+        	keys)
+}
+
+
+def static "utility.LocalStorageUtilityClass.doesLocalStorageKeyExist"(
+    	Object keyToCheck	) {
+    (new utility.LocalStorageUtilityClass()).doesLocalStorageKeyExist(
+        	keyToCheck)
+}
+
+
+def static "utility.LocalStorageUtilityClass.getAllLocalStorageKeys"() {
+    (new utility.LocalStorageUtilityClass()).getAllLocalStorageKeys()
+}
+
+
+def static "utility.LocalStorageUtilityClass.removeLocalStorageKey"(
+    	Object keyToRemove	) {
+    (new utility.LocalStorageUtilityClass()).removeLocalStorageKey(
+        	keyToRemove)
+}
+
+
+def static "utility.LocalStorageUtilityClass.setLocalStorageValue"(
+    	Object key	
+     , 	Object value	) {
+    (new utility.LocalStorageUtilityClass()).setLocalStorageValue(
+        	key
+         , 	value)
 }
 
 

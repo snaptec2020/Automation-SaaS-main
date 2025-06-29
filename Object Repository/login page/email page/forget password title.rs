@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Forget password context</name>
+   <name>forget password title</name>
    <tag></tag>
-   <elementGuidId>0c72c9df-0f8b-4b26-addf-911932614b47</elementGuidId>
+   <elementGuidId>bd2c1d52-5545-4803-bef0-2d123e44e7a6</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[starts-with(@class,'styles_forgotPassword_')]/a[contains(@href,'/forgot-password')]</value>
+         <value>//h2[starts-with(@class,'forgot-passwords__title')]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

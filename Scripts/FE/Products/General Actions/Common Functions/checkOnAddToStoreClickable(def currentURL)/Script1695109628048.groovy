@@ -58,7 +58,7 @@ if (WebUI.getUrl() == currentURL) {
     }
     catch (Exception e) {
         for (int i = 5; i > 0; i--) {
-            if (WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'), 5, FailureHandling.CONTINUE_ON_FAILURE) && 
+            if (WebUI.waitForElementVisible(findTestObject('Object Repository/Cart/Continue Shopping'), 2, FailureHandling.CONTINUE_ON_FAILURE) && 
             (i != 5)) {
                 WebUI.click(findTestObject('Object Repository/Cart/Continue Shopping'), FailureHandling.CONTINUE_ON_FAILURE)
 
@@ -66,8 +66,8 @@ if (WebUI.getUrl() == currentURL) {
             }
             
             WebUI.executeJavaScript(('window.scrollTo(0, document.body.scrollHeight/' + i.toString()) + ');', null)
-
-            WebUI.click(tb, FailureHandling.CONTINUE_ON_FAILURE)
+			
+            WebUI.click(tb, FailureHandling.OPTIONAL)
         }
         
         e.printStackTrace()
